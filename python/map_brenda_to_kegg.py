@@ -59,5 +59,5 @@ for d in brenda_input:
         df = pd.merge(df, ligand_df, how='inner', on='LigandID')
         df = df[['EC_number', 'KEGG_ID', 'Commentary']]
         
-    df.to_csv(os.path.join(settings.CACHE_PATH, d['fname'] + '_kegg.csv'))
+    df.to_csv(os.path.join(settings.CACHE_DIR, d['fname'] + '_kegg.csv'))
 

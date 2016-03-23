@@ -11,10 +11,11 @@ import pandas as pd
 
 SCRIPT_DIR = os.path.dirname(main.__file__)
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
-DATA_PATH = os.path.join(BASE_DIR, 'data')
-CACHE_PATH = os.path.join(BASE_DIR, 'cache')
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+CACHE_DIR = os.path.join(BASE_DIR, 'cache')
 
-KEGG2CHEBI_FNAME = os.path.join(CACHE_PATH, 'kegg2chebi.csv')
+KEGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'kegg2chebi.csv')
+ECOLI_MODEL_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
 
 def get_data_df(fname):
-    return pd.DataFrame.from_csv(os.path.join(DATA_PATH, fname + '.csv'), header=0, index_col=None)
+    return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
