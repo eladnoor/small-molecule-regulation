@@ -1,0 +1,559 @@
+,EC_number,Value,KEGG_ID,Commentary
+0,1.1.1.1,18.26,C07837,
+1,1.1.1.169,0.61,C00002,pH 7.6
+2,1.1.1.94,1.4,C00002,"pH 7.4, 23°C, wild-type enzyme and feedback-resistant mutant enzyme"
+3,1.6.5.11,9.0,C00002,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme"
+4,2.7.1.105,0.008,C00002,"pH 8.2, 30°C, mutant strain DF905"
+5,2.7.1.105,0.01,C00002,"pH 8.2, 30°C, mutant strain DF903"
+6,2.7.2.8,30.4,C00002,"wild-type, pH 7.0, 25°C"
+7,2.7.2.8,41.5,C00002,"mutant N158Q, pH 7.0, 25°C"
+8,3.1.3.31,0.0017,C00002,"pH 8.0, 37°C, YfbR, versus 5'-dAMP, with Co2+"
+9,3.1.3.31,0.024,C00002,"pH 7.0, 37°C, SurE, versus 3'-AMP, with Mn2+"
+10,3.1.3.41,0.5,C00002,"about, pH 7.8, 37°C, inhibition of 4-nitrophenyl phosphatase activity"
+11,3.1.3.5,1.65,C00002,
+12,3.1.3.5,24.1,C00002,with 3'-AMP as substrate
+13,3.1.3.6,24.1,C00002,with 3'-AMP as substrate
+14,3.6.1.11,24.1,C00002,with 3'-AMP as substrate
+15,3.6.3.16,0.792,C00002,"pH 7.5, in absence of SbIII"
+16,3.6.3.16,0.945,C00002,"pH 7.5, in presence of SbIII"
+17,6.3.4.14,27.0,C00002,"wild type enzyme, in 100 mM HEPES (pH 8.0), 5 mM MgCl2, at 30°C"
+18,1.1.1.169,1.05,C00008,pH 7.6
+19,1.1.1.94,0.7,C00008,"pH 7.4, 23°C, feedback-resistant mutant enzyme"
+20,1.1.1.94,0.8,C00008,"pH 7.4, 23°C, wild-type enzyme"
+21,1.6.5.11,0.7,C00008,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme"
+22,1.6.5.11,1.0,C00008,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, purified enzyme"
+23,2.7.1.170,0.4,C00008,"in 100 mM Tris-HCl (pH 7.5), 20 mM MgCl2, at 37°C"
+24,2.7.1.56,0.28,C00008,"pH 7.6, 37°C"
+25,2.7.11.5,0.45,C00008,"pH 7.3, 37°C"
+26,2.7.2.11,0.06,C00008,"pH 7.0, 37°C"
+27,2.7.4.1,0.09,C00008,"pH 7.2, 37°C"
+28,2.7.6.1,0.334,C00008,"pH 8.0, 37ºC, D-ribose 5-phosphate 0.5 mM, Kii value"
+29,3.1.3.31,0.0013,C00008,"pH 8.0, 37°C, YfbR, versus 5'-dAMP, with Co2+"
+30,3.1.3.5,1.3,C00008,
+31,3.6.3.50,2.06,C00008,
+32,1.1.1.169,27.0,C00009,pH 7.6
+33,3.1.3.1,0.0061,C00009,"25°C, pH 8, wild-type enzyme"
+34,3.1.3.1,0.0065,C00009,"25°C, pH 8, mutant enzyme T81A"
+35,3.1.3.1,0.045,C00009,"25°C, pH 8.0, wild-type enzyme"
+36,3.1.3.1,0.069,C00009,"pH 10.5, 37°C, free-enzyme"
+37,3.1.3.1,0.1,C00009,"25°C, pH 10.5, wild-type enzyme"
+38,3.1.3.1,0.14,C00009,"25°C, pH 10.5, mutant enzyme T81A"
+39,3.1.3.1,0.423,C00009,"pH 10.5, 37°C, enzyme immobilized by phosphatase-polyresorcinol complex"
+40,3.1.3.11,0.35,C00009,
+41,4.2.3.3,9.3e-05,C00009,"pH 7, 25°C, H98Q variant"
+42,5.3.1.6,8.0,C00009,
+43,1.1.1.169,6.3,C00020,pH 7.6
+44,1.1.1.94,4.8,C00020,"pH 7.4, 23°C, feedback-resistant mutant enzyme"
+45,1.1.1.94,5.0,C00020,"pH 7.4, 23°C, wild-type enzyme"
+46,1.6.5.11,0.5,C00020,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme"
+47,1.6.5.11,0.6,C00020,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, purified enzyme"
+48,2.4.2.14,0.36,C00020,
+49,2.4.2.7,0.026,C00020,
+50,2.7.11.5,0.008,C00020,"pH 7.5, 37°C"
+51,2.7.11.5,0.02,C00020,"pH 7.5, 37°C, mutant AceK4, kinase activity"
+52,2.7.11.5,0.056,C00020,"pH 7.3, 37°C"
+53,2.7.11.5,0.17,C00020,"pH 7.5, 37°C, mutant AceK3, kinase activity"
+54,2.7.7.27,0.007,C00020,"pH 8.0, 37°C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate"
+55,2.7.7.27,0.04,C00020,"pH 7.6, 37°C, wild-type enzyme"
+56,2.7.7.27,0.06,C00020,"pH 7.6, 37°C, mutant enzyme D142E"
+57,2.7.7.27,0.094,C00020,"pH 7.0, 37°C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+58,2.7.7.27,0.13,C00020,"pH 7.6, 37°C, mutant enzyme D142A"
+59,2.7.7.27,0.3,C00020,"pH 7.0, 37°C, mutant enzyme P295G, in the presence of a saturating concentration of fructose 1,6-bisphosphate,"
+60,2.7.7.27,0.34,C00020,"pH 7.0, 37°C, mutant enzyme P295N, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+61,2.7.7.27,0.38,C00020,"pH 7.0, 37°C, mutant enzyme P295Q, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+62,2.7.7.27,0.95,C00020,"pH 7.0, 37°C, mutant enzyme G336D, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+63,2.7.7.27,0.96,C00020,"pH 7.0, 37°C, mutant enzyme P295E, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+64,2.7.7.27,1.0,C00020,"pH 7.6, 37°C, mutant enzyme D142N"
+65,2.7.7.27,2.0,C00020,"pH 7.0, 37°C, mutant enzyme P295D, in the presence of a saturating concentration of fructose 1,6-bisphosphate"
+66,2.7.7.27,4.95,C00020,"pH 7.0, 37°C, double mutant enzyme P295D/G336D"
+67,2.7.7.27,9.0,C00020,"pH 8.0, 37°C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM"
+68,2.7.9.3,0.17,C00020,"pH 7.2, 37°C"
+69,3.1.3.11,0.00062,C00020,"wild-type, 22°C, pH 7.5"
+70,3.1.3.11,3.0,C00020,"mutant L54A, 22°C, pH 7.5"
+71,6.1.1.1,0.35,C00020,"in absence of KCl, pH 7.4, 30°C"
+72,6.1.1.1,0.5,C00020,"in presence of 0.5 mM KCl, pH 7.4, 30°C"
+73,6.1.1.1,0.9,C00020,"in presence of 0.9 mM KCl, pH 7.4, 30°C"
+74,1.1.1.17,8.0,C00604,
+75,3.5.1.88,0.17,C00604,
+76,1.1.1.205,0.092,C00144,
+77,2.7.4.1,0.0007,C00144,"pH 7.5, 37°C, competitive inhibition of GDP in guanosine 5'-tetraphosphate synthesis"
+78,2.7.4.1,0.0014,C00144,"pH 7.5, 37°C, competitive inhibition of polyphosphate 750 in guanosine 5'-tetraphosphate synthesis"
+79,6.3.5.2,0.33,C00144,
+80,1.1.1.271,0.061,C00035,
+81,1.17.4.1,0.007,C00035,competitive vs. CDP
+82,2.4.1.69,1.41,C00035,
+83,3.6.5.4,0.0002,C00035,"pH 7.5, 25°C, in the absence of 4.5S RNA"
+84,3.6.5.4,0.00032,C00035,"pH 7.5, 25°C, in the presence of 4.5S RNA"
+85,1.1.1.290,0.017,C01087,"pH 8.0, 22°C, recombinant enzyme, versus 2-oxoglutarate"
+86,1.1.1.290,0.03,C01087,"pH 8.0, 22°C, recombinant enzyme, versus 4-phospho-D-erythronate"
+87,1.1.1.42,0.31,C00074,pH 7.1
+88,2.7.11.5,0.55,C00074,"pH 7.3, 37°C"
+89,4.1.3.1,0.893,C00074,"in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine"
+90,1.1.1.49,0.01,C00005,"pH 8.0, temperature not specified in the publication, varied substrate: NADP+"
+91,1.1.1.49,0.038,C00005,"25°C, pH 8.0, competitive inhibition constant"
+92,1.1.1.49,0.04,C00005,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant"
+93,1.1.1.49,0.18,C00005,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant"
+94,1.1.1.49,2.09,C00005,"25°C, pH 8.0, non-competitive inhibition constant"
+95,1.1.1.86,0.0012,C00005,"pH 8.0, 22°C, wild-type enzyme"
+96,1.1.1.86,0.0018,C00005,"pH 8.0, 22°C, mutant enzyme K69L"
+97,1.1.1.86,0.0039,C00005,"pH 8.0, 22°C, mutant enzyme K75Q"
+98,1.1.1.86,0.0085,C00005,"pH 8.0, 22°C, mutant enzyme R68Q"
+99,1.1.1.86,0.0226,C00005,"pH 8.0, 22°C, mutant enzyme K76Q"
+100,1.2.1.41,0.002,C00005,
+101,1.5.1.30,0.0035,C00005,"25°C, enzyme in complex with monooxygenase SsuD, presence of octanesulfonate"
+102,1.5.1.30,0.0039,C00005,"25°C, single-enzyme assay"
+103,1.6.1.2,0.0035,C00005,
+104,1.6.1.2,0.26,C00005,vs. oxidized acetylpyridine adenine dinucleotide
+105,2.7.11.5,0.042,C00005,"pH 7.3, 37°C"
+106,2.7.11.5,0.058,C00005,"pH 7.5, 37°C, mutant AceK4, kinase activity"
+107,2.7.11.5,0.073,C00005,"pH 7.5, 37°C, mutant AceK3, kinase activity"
+108,2.7.11.5,0.082,C00005,"pH 7.5, 37°C, wild-type, kinase activity"
+109,1.1.1.94,0.0044,C03189,"pH 7.4, 23°C, wild-type enzyme"
+110,1.1.1.94,0.043,C03189,"pH 7.4, 23°C, resistant mutant enzyme"
+111,1.1.99.33,7.1,C00058,"pH 7.5, 24°C"
+112,1.10.3.10,0.00074,C04284,"wild type enzyme, at 37°C, pH 7.0"
+113,1.10.3.11,7.4e-05,C04284,"pH 7.0, 37°C, wild-type enzyme"
+114,1.14.12.17,0.0013,C06922,
+115,1.14.12.17,-999.0,C00237,Ki value less than 1 microM
+116,1.17.4.1,0.5,C00015,competitive vs. CDP
+117,1.2.1.10,265.0,C00084,"at 25°C in 50 mM Tris/HCl buffer, pH 8.0"
+118,1.2.1.8,5.7,C00084,
+119,1.2.1.11,17.0,C06701,
+120,1.2.1.21,0.00085,C00160,isozyme B
+121,1.2.1.21,0.085,C00160,isozyme A
+122,1.2.1.21,0.13,C00160,isozyme C
+123,1.2.1.21,0.0021,C00266,isozyme A
+124,1.2.1.21,0.004,C00266,isozyme B
+125,1.2.1.21,8.3,C00266,isozyme C
+126,5.1.3.4,0.37,C00266,"37°C, pH 7.6, mutant enzyme H97N, with L-ribulose 5-phosphate as substrate"
+127,1.2.1.21,0.33,C00314,inhibition of isozyme C
+128,2.7.1.49,0.0027,C00314,"pH 6.2, 37°C"
+129,1.2.1.8,78.0,C00189,
+130,1.2.1.8,0.53,C00601,
+131,1.2.1.8,7.4,C02154,
+132,1.2.1.8,0.1,C07329,
+133,1.2.1.8,0.7,C00193,
+134,1.2.4.1,0.5,C00048,assay with whole enzyme complex
+135,1.2.4.1,1.0,C00168,assay with whole enzyme complex
+136,1.2.4.1,2.25,C00109,assay with whole enzyme complex
+137,1.2.4.2,1.7,C00048,
+138,4.1.2.52,0.4,C00048,"pH 8.0, 25°C"
+139,4.1.3.39,0.4,C00048,"pH 8.0, 25°C"
+140,1.3.1.12,0.17,C05852,"pH 7.8, 37°C"
+141,1.3.1.38,0.198,C01944,
+142,1.3.1.38,0.0092,C02593,
+143,1.3.1.38,0.063,C05274,
+144,1.3.1.38,0.045,C01832,
+145,1.3.1.9,0.0071,C01514,"pH 7.5, 22°C"
+146,1.3.1.9,0.00015,C00463,
+147,1.3.1.9,0.015,C10443,"pH 7.5, 22°C"
+148,1.3.1.9,0.00099,C12059,
+149,1.3.5.1,-999.0,C02575,"with menaquinone EC 1.3.5.4, fumarate reduction: 0.013 mM, pH 7.8, 30°C; with menaquinone EC 1.3.5.4, succinate oxidation: 0.017 mM, pH 7.8, 30°C"
+150,1.3.5.1,0.013,C02575,"succinate dehydrogenase, succinate oxidation reaction"
+151,1.3.5.1,0.017,C02575,"30°C, pH 7.8"
+152,1.3.5.1,0.017,C02575,"succinate dehydrogenase, fumarate reduction reaction"
+153,1.3.5.1,0.023,C02575,"fumarate reductase, succinate oxidation reaction"
+154,1.3.5.1,0.037,C02575,"fumarate reductase, fumarate reduction reaction"
+155,1.3.5.1,0.083,C02575,"30°C, pH 7.8, H84L mutant"
+156,1.3.5.4,0.023,C02575,"fumarate reduction, pH 7.8, 30°C"
+157,1.3.5.4,0.037,C02575,"succinate oxidation, pH 7.8, 30°C"
+158,1.7.5.1,0.057,C02575,"pH 7.0, competitive inhibition constant"
+159,1.7.5.1,0.49,C02575,"pH 7.0, uncompetitive inhibition constant"
+160,1.3.5.1,3e-05,C04284,"mutant E29L, pH 7.9, 30°C"
+161,1.3.5.1,5e-05,C04284,"wild-type, pH 7.0, 30°C"
+162,1.3.5.4,6e-05,C04284,"mutant E29L, pH 7.9, 30°C"
+163,1.3.5.4,7.5e-05,C04284,"fumarate reduction, pH 7.8, 30°C"
+164,1.3.5.4,0.0002,C04284,"succinate oxidation, pH 7.8, 30°C"
+165,1.3.5.4,0.0002,C04284,"wild-type, pH 7.0, 30°C"
+166,1.3.5.1,0.03,C11255,"succinate dehydrogenase, succinate oxidation reaction"
+167,1.3.5.1,0.035,C11255,"succinate dehydrogenase, fumarate reduction reaction"
+168,1.3.5.1,7.5e-05,C04284,"fumarate reductase, succinate oxidation reaction"
+169,1.3.5.1,0.0002,C04284,"fumarate reductase, fumarate reduction reaction"
+170,1.3.5.1,-999.0,C11255,"with menaquinone EC 1.3.5.4, fumarate reduction: 0.030 mM, pH 7.8, 30°C; with menaquinone EC 1.3.5.4, succinate oxidation: 0.035 mM, pH 7.8, 30°C"
+171,1.3.5.2,0.0134,C00295,
+172,1.3.5.4,6e-05,C00036,"mutant E49A, pH 7.0, 30°C"
+173,1.3.5.4,0.0001,C00036,"mutant E49A, pH 7.0, 30°C"
+174,1.3.5.4,0.0003,C00036,"wild-type, pH 7.0, 30°C"
+175,2.3.3.16,0.003,C00036,"mutant enzyme H110A, in presence of 0.1 M KCl"
+176,2.3.3.16,0.004,C00036,"mutant enzyme T204A, in presence of 0.1 M KCl"
+177,2.3.3.16,0.005,C00036,"mutant enzyme R163L, in presence of 0.1 M KCl"
+178,2.3.3.16,0.007,C00036,"mutant enzyme R109L, in presence of 0.1 M KCl"
+179,2.3.3.16,0.01,C00036,"mutant enzyme Q182A, in presence of 0.1 M KCl"
+180,2.3.3.16,0.017,C00036,"mutant enzyme N189A, in presence of 0.1 M KCl"
+181,2.3.3.16,0.018,C00036,"mutant enzyme T111A, in presence of 0.1 M KCl"
+182,2.3.3.16,0.026,C00036,"wild-type enzyme, in presence of 0.1 M KCl"
+183,2.3.3.16,0.037,C00036,"mutant enzyme K167A, in presence of 0.1 M KCl"
+184,2.3.3.16,0.051,C00036,"mutant enzyme Y145A, in presence of 0.1 M KCl"
+185,1.3.5.4,0.005,C00383,"mutant E49A, pH 7.0, 30°C"
+186,1.3.5.4,0.01,C00383,"mutant E49A, pH 7.0, 30°C"
+187,1.3.5.4,0.025,C00383,"wild-type, pH 7.0, 30°C"
+188,2.7.2.4,108.0,C00383,"pH 8.0, 25°C, aspartokinase III"
+189,1.4.1.13,0.86,C03444,
+190,1.4.3.5,0.008,C00018,
+191,1.4.3.5,0.008,C00018,pH and temperature not specified in the publication
+192,1.4.3.5,0.05,C00627,substrate inhibition
+193,1.5.1.20,0.014,C00004,"recombinant wild-type enzyme, pH 7.2, 4°C, the mutant enzymes all show a Km below 0.0035 mM"
+194,1.8.1.4,0.009,C00004,free dihydrolipoamide dehydrogenase
+195,1.8.1.4,0.016,C00004,complex-bound dihydrolipoamide dehydrogenase
+196,2.3.3.16,0.0017,C00004,mutant enzyme R109L
+197,2.3.3.16,0.0028,C00004,wild-type enzyme
+198,2.3.3.16,0.018,C00004,mutant enzyme Q182A
+199,2.3.3.16,0.08,C00004,mutant enzyme T111A
+200,2.3.3.16,0.121,C00004,mutant enzyme H110A
+201,2.3.3.16,0.165,C00004,mutant enzyme T204A
+202,2.3.3.16,0.242,C00004,mutant enzyme N189A
+203,2.3.3.16,0.4,C00004,mutant enzyme R163L
+204,2.3.3.16,0.63,C00004,mutant enzyme K167A
+205,2.3.3.16,0.79,C00004,mutant enzyme Y145A
+206,1.5.1.20,0.16,C00143,"mutant F223L, pH 7.2, 25°C"
+207,1.5.1.20,0.32,C00143,"wild-type, pH 7.2, 25°C"
+208,1.5.1.3,0.0059,C01937,competitive
+209,1.5.1.34,0.26,C01937,
+210,1.5.5.2,3.3,C00022,
+211,2.3.3.9,0.6,C00022,C438S mutant protein
+212,2.3.3.9,0.65,C00022,wild-type protein
+213,2.3.3.9,1.0,C00022,C617 mutant protein; wild-type protein
+214,2.3.3.9,1.0,C00022,"mutant C617S, pH 8.0, 37°C; wild-type, pH 8.0, 37°C"
+215,2.3.3.9,1.6,C00022,"mutant R338K, pH 8.0, 37°C"
+216,2.7.11.5,0.2,C00022,"pH 7.5, 37°C, wild-type, kinase activity"
+217,2.7.11.5,1.0,C00022,"pH 7.5, 37°C, mutant AceK4, kinase activity"
+218,2.7.11.5,4.0,C00022,"pH 7.5, 37°C, mutant AceK3, kinase activity"
+219,4.1.2.52,0.51,C00022,"pH 8.0, 25°C"
+220,4.1.2.52,0.53,C00022,"pH 8.0, 25°C"
+221,4.1.2.52,2.01,C00022,"pH 8.0, 25°C"
+222,4.1.3.39,0.51,C00022,"pH 8.0, 25°C"
+223,1.5.5.2,30.0,C00033,
+224,2.5.1.47,160.0,C00033,"pH 7.5, 25 C, free enzyme"
+225,2.5.1.47,340.0,C00033,"pH 7.5, 25 C, enzyme bound to serine acetyltransferase"
+226,1.5.5.2,1.0,C00186,
+227,1.5.5.2,1.4,C00186,
+228,1.5.5.2,2.1,C00256,
+229,1.5.5.2,20.0,C08267,
+230,1.6.1.2,3.4,C00020,vs. oxidized acetylpyridine adenine dinucleotide
+231,1.6.1.2,3.7,C00020,vs. NADPH
+232,3.1.3.5,6.0,C00020,"mutant P90C/L424C, pH 7.5, 25°C"
+233,3.1.3.5,23.0,C00020,"wild-type, pH 7.5, 25°C"
+234,3.1.4.16,0.59,C00020,
+235,3.1.4.37,0.59,C00020,
+236,1.6.1.2,2.3,C00946,vs. NADPH
+237,1.6.1.2,8.0,C00946,vs. oxidized acetylpyridine adenine dinucleotide
+238,1.6.5.11,0.00022,C00796,"pH 7.5, 30°C"
+239,1.6.5.3,0.00022,C00796,"pH 7.5, 30°C"
+240,1.7.99.4,0.044,C01326,"at pH 10.5, reduced enzyme"
+241,1.8.1.2,0.006,C01326,
+242,1.8.1.2,0.08,C13619,
+243,2.1.1.228,0.0347,C00212,"pH not specified in the publication, 37°C"
+244,2.1.1.228,0.488,C00294,"pH not specified in the publication, 37°C"
+245,2.1.1.228,0.03,C00170,"pH not specified in the publication, 37°C"
+246,2.1.1.79,2.02,C12486,
+247,2.1.1.79,0.037,C11275,"37°C, pH 7.4"
+248,2.1.3.2,0.051,C00013,
+249,2.1.3.2,0.09,C00013,
+250,2.7.7.3,0.12,C00013,"Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)"
+251,3.5.4.25,0.024,C00013,"pH 8.5, 37°C"
+252,3.6.1.55,0.413,C00013,"pH 7.5, 23°C, Mn2+-activated, Ki(intercept)"
+253,3.6.1.55,4.95,C00013,"pH 7.5, 23°C, Mg2+-activated, Ki(intercept)"
+254,6.1.1.1,0.056,C00013,"in presence of 0.9 mM KCl, pH 7.4, 30°C"
+255,6.1.1.1,0.12,C00013,"in presence of 0.5 mM KCl, pH 7.4, 30°C"
+256,6.1.1.1,0.14,C00013,"in absence of KCl, pH 7.4, 30°C"
+257,2.1.3.2,3.5,C00042,"inhibition of catalytic subunits, C3"
+258,2.6.1.19,27.0,C00042,"wild-type, pH 7.8, 25°C"
+259,2.6.1.19,197.0,C00042,"mutant I50Q, pH 7.8, 25°C"
+260,2.6.1.19,720.0,C00042,"mutant V241A, pH 7.8, 25°C"
+261,2.7.2.4,159.0,C00042,"pH 8.0, 25°C, aspartokinase III"
+262,6.3.4.4,0.08,C00042,"pH 7.7, 25°C, mutant V273T"
+263,6.3.4.4,0.89,C00042,"pH 7.7, 25°C, wild-type"
+264,6.3.4.4,1.0,C00042,
+265,2.1.3.2,7.9,C00049,"substrate inhibition, complex of catalytic and regulatory subunits, C3R6"
+266,2.1.3.2,5.3,C00122,"inhibition of catalytic subunits, C3"
+267,6.3.4.4,0.04,C00122,"pH 7.7, 25°C, mutant V273N"
+268,6.3.4.4,0.18,C00122,"pH 7.7, 25°C, mutant V273A"
+269,6.3.4.4,0.64,C00122,"pH 7.7, 25°C, mutant V273T"
+270,2.1.3.2,1.1,C01327,"inhibition of catalytic subunits, C3"
+271,2.1.3.2,0.17,C01384,"inhibition of catalytic subunits, C3"
+272,2.6.1.19,3.9,C01384,"wild-type, pH 7.8, 25°C"
+273,2.6.1.19,46.0,C01384,"mutant I50Q, pH 7.8, 25°C"
+274,2.6.1.19,780.0,C01384,"mutant V241A, pH 7.8, 25°C"
+275,6.3.2.6,12.0,C01384,"37°C, Kis, noncompetitive versus ATP"
+276,6.3.2.6,15.0,C01384,"37°C, Kis, competitive versus 1-(5'-phosphoribosyl)-5-amino-4-carboxyimidazole"
+277,6.3.2.6,16.0,C01384,"37°C, Kis, competitive versus L-Asp"
+278,6.3.2.6,40.0,C01384,"37°C, Kii, competitive versus 1-(5'-phosphoribosyl)-5-amino-4-carboxyimidazole"
+279,6.3.2.6,50.0,C01384,"37°C, Kii, noncompetitive versus ATP"
+280,6.3.4.4,0.078,C01384,"pH 7.7, 25°C, mutant V273T"
+281,6.3.4.4,0.21,C01384,"pH 7.7, 25°C, mutant V273N"
+282,6.3.4.4,1.0,C01384,"pH 7.7, 25°C, mutant V273A"
+283,6.3.4.4,3.1,C01384,"pH 7.7, 25°C, wild-type"
+284,2.1.3.2,80.0,C00049,"substrate inhibition, complex of catalytic subunits, C3"
+285,2.1.3.2,0.15,C05682,
+286,6.3.4.14,7.0,C05682,
+287,2.1.3.2,0.022,C06456,
+288,2.1.3.2,0.7,C00552,"inhibition of catalytic subunits, C3"
+289,2.2.1.6,1.4,C00193,isozyme AHAS II
+290,2.2.1.7,3.2,C00577,"pH 8.0, 37°C"
+291,2.3.1.18,0.068,C00010,
+292,2.3.1.38,0.03,C00010,
+293,2.7.7.3,0.011,C00010,"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)"
+294,2.7.7.3,0.014,C00010,"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)"
+295,2.7.7.3,0.07,C00010,"Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)"
+296,2.7.7.3,0.117,C00010,"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)"
+297,2.3.1.18,0.057,C00024,
+298,2.3.1.29,0.14,C00872,
+299,2.3.1.29,3.6,C11033,
+300,2.3.1.38,3.2,C00831,
+301,2.3.1.60,0.093,C01822,
+302,2.3.1.60,0.0004,C01737,
+303,2.3.1.60,2.0,C02627,
+304,2.3.1.60,0.026,C01823,
+305,2.3.2.12,3.2,C00750,
+306,2.3.2.12,7e-05,C00918,initial phase of competitive inhibition
+307,2.3.2.12,0.007,C00918,
+308,2.3.2.12,5.0,C02567,
+309,2.3.2.12,0.0002,C02010,
+310,2.3.2.12,33.0,C03413,
+311,2.3.2.12,0.52,C16200,
+312,2.3.2.6,10.0,C00062,inhibition of reaction with alphaS1-casein as acceptor
+313,2.3.3.16,0.76,C00026,wild-type
+314,2.3.3.9,0.023,C00209,wild-type protein
+315,2.3.3.9,0.037,C00209,wild-type protein
+316,2.7.3.9,0.28,C00209,inhibits the phosphorylated enzyme
+317,2.8.3.16,23.0,C00209,
+318,2.4.1.1,2.0,C00029,
+319,2.4.1.1,2.5,C00031,
+320,2.4.1.1,0.5,C01478,
+321,2.4.1.1,0.7,C00498,
+322,2.4.1.1,1.0,C00842,
+323,2.4.1.1,0.9,C00198,
+324,2.4.1.21,0.38,C00198,
+325,2.4.2.1,0.49,C01736,
+326,2.4.2.29,0.09,C00385,"37°C, pH 7.3, mutant enzyme D143T"
+327,2.4.2.29,0.12,C00385,"37°C, pH 7.3, mutant enzyme D143S"
+328,2.4.2.4,0.06,C00299,"in 50 mM potassium phosphate buffer, pH 6.5, 25°C"
+329,2.4.2.4,0.45,C12673,"25°C, pH 6.5; in 50 mM potassium phosphate buffer, pH 6.5, 25°C"
+330,2.4.2.4,0.4,C12673,"pH 7.5, 25°C, activity with thymidine"
+331,2.4.2.4,0.45,C12673,"pH 7.5, 25°C, activity with 4-thiothymidine"
+332,2.5.1.15,0.0057,C07458,
+333,2.5.1.15,0.00013,C07315,
+334,2.5.1.15,0.00053,C11160,
+335,2.5.1.19,-999.0,C01705,any substitutions for residue Pro101 decrease glyphosate binding affinity and inhibitor potency
+336,2.5.1.19,0.0003,C01705,wild-type
+337,2.5.1.19,0.0004,C01705,+/-0.00006 mM
+338,2.5.1.19,0.0015,C01705,"pH 7.0, 30°C, wild-type EcaroA"
+339,2.5.1.19,0.003,C01705,mutant P101S
+340,2.5.1.19,0.0055,C01705,"+/-0.0003 mM, mutant P101S"
+341,2.5.1.19,0.012,C01705,"+/-0.004 mM, mutant P101G"
+342,2.5.1.19,0.019,C01705,"+/-0.003 mM, mutant P101A"
+343,2.5.1.19,0.0305,C01705,"pH 7.0, 30°C, mutant EcaroA-T42M"
+344,2.5.1.19,0.066,C01705,"+/-0.002 mM, mutant P101L"
+345,2.5.1.19,0.09,C01705,mutant P101S
+346,2.5.1.19,0.0008,C01705,H385N mutant enzyme
+347,2.5.1.19,0.0009,C01705,"vs. shikimate 3-phosphate, recombinant enzyme"
+348,2.5.1.19,0.001,C01705,"vs. shikimate 3-phosphate, native enzyme"
+349,2.5.1.19,0.0012,C01705,wild-type enzyme
+350,2.5.1.19,0.01,C01705,
+351,2.5.1.19,0.96,C01705,"recombinant enzyme, in crude extracts"
+352,2.5.1.31,1.1,C00305,"pH 7.5, 25°C; pH 7.5, 25°C"
+353,2.5.1.54,0.67,C19156,"buffer bis-tris-propane, 50 mM, pH 6.8, Mn2+, UV-visible spectroscopy at 232 nm, substrates phosphoenolpyruvate and D-erythrose 4-phosphate"
+354,2.5.1.55,1.0,C00117,"pH 7.3, 37°C"
+355,2.7.6.1,0.716,C00117,"pH 8.0, 37ºC, Kii value"
+356,2.7.6.1,1.18,C00117,"pH 8.0, 37ºC, Kis value"
+357,2.5.1.7,0.0086,C06454,wild-type enzyme
+358,2.5.1.7,1.0,C06454,at pH 8.0; mutant C115D
+359,2.5.1.7,2.0,C06454,at pH 6.0; mutant C115D
+360,2.6.1.16,2.46,C01096,pH 7.2
+361,2.6.1.16,0.023,C04322,
+362,2.6.1.16,0.56,C00352,wild type enzyme
+363,2.6.1.19,19.0,C00489,"wild-type, pH 7.8, 25°C"
+364,2.6.1.19,140.0,C00489,"mutant V241A, pH 7.8, 25°C"
+365,2.6.1.19,233.0,C00489,"mutant I50Q, pH 7.8, 25°C"
+366,2.7.1.21,7.5,C07481,"pH 7.8, 37°C"
+367,2.7.1.25,0.0004,C00224,"pH 8.0, 25°C"
+368,2.7.1.29,0.15,C02154,"pH 7.5, 30°C"
+369,2.7.1.39,0.2,C00025,wild-type enzyme
+370,6.1.1.18,17.0,C00025,"truncated mutant, pH 7.2, 37°C"
+371,6.1.1.18,21.0,C00025,"mutant Y240E, pH 7.2, 37°C"
+372,6.1.1.18,29.0,C00025,"mutant F90L, pH 7.2, 37°C"
+373,6.1.1.18,47.0,C00025,"mutant Y240G, pH 7.2, 37°C"
+374,6.1.1.18,96.0,C00025,"wild-type enzyme, pH 7.2, 37°C"
+375,2.7.1.39,2.7,C01005,
+376,2.7.1.39,0.4,C02356,"pH 7.8, 37°C"
+377,2.7.2.4,28.0,C02356,"pH 8.0, 25°C, aspartokinase III"
+378,2.7.1.49,0.09,C01279,"pH 6.2, 37°C"
+379,2.7.1.56,6.1,C05378,"pH 7.6, 37°C"
+380,2.7.1.59,0.01,C00329,"37°C, pH 7.8"
+381,2.7.1.7,0.1,C03570,"pH 7.5, 25°C"
+382,2.7.11.5,1.0,C00597,"pH 7.5, 37°C, wild-type, kinase activity"
+383,2.7.11.5,4.0,C00597,"pH 7.5, 37°C, mutant AceK4, kinase activity"
+384,2.7.11.5,20.0,C00597,"pH 7.5, 37°C, mutant AceK3, kinase activity"
+385,2.7.11.5,0.011,C00311,"pH 7.5, 37°C, mutant AceK4, kinase activity"
+386,2.7.11.5,0.015,C00311,"pH 7.5, 37°C, mutant AceK3, kinase activity"
+387,2.7.11.5,0.016,C00311,"pH 7.5, 37°C, wild-type, kinase activity"
+388,2.7.11.5,0.023,C00311,"pH 7.3, 37°C"
+389,2.7.2.4,128.0,C00025,"pH 8.0, 25°C, aspartokinase III"
+390,2.7.2.4,53.0,C00149,"pH 8.0, 25°C, aspartokinase III"
+391,2.7.4.12,0.04,C03997,"pH 7.4, 37°C, dTMP is substrate"
+392,2.7.4.12,0.044,C03997,"pH 7.4, 37°C, dGMP is substrate"
+393,2.7.4.22,0.44,C00105,"at 2.0 mM ATP, without GTP"
+394,2.7.4.22,0.44,C00105,"D159N mutant protein, 2 mM ATP; pH 7.4, 30°C, wild-type enzyme, in absence of GTP"
+395,2.7.4.22,0.6,C00105,"at 2.0 mM ATP, without GTP"
+396,2.7.4.22,10.9,C00105,"N72A/D93A/D159N mutant protein, 2 mM ATP; pH 7.4, 30°C, mutant N72A/D93A, in absence of GTP"
+397,4.1.1.23,0.5,C00105,
+398,6.3.5.5,0.0018,C00105,"pH 8.0, 37°C, wild-type enzyme in comparison to mutant enzymes"
+399,6.3.5.5,0.004,C00105,"pH 8.0, 24°C"
+400,6.3.5.5,0.005,C00105,"pH 7.5, 37°C, value of wild-type enzyme in comparison to values of mutant enzymes"
+401,2.7.6.1,0.032,C00076,"pH 8.0, 37ºC, D-ribose 5-phosphate 5 mM, Kis value"
+402,2.7.6.1,0.047,C00076,"pH 8.0, 37ºC, D-ribose 5-phosphate 5 mM, Kii value"
+403,2.7.6.1,0.053,C00076,"pH 8.0, 37ºC, D-ribose 5-phosphate 0.5 mM, Kis value"
+404,2.7.6.1,0.11,C00076,"pH 8.0, 37ºC, D-ribose 5-phosphate 0.5 mM, Kii value"
+405,2.7.6.3,0.00031,C13740,
+406,2.7.7.3,0.121,C00882,"Substrate: phosphopantetheine, Cosubstrate: ATP (3.0 mM)"
+407,2.7.7.3,0.192,C00882,"Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)"
+408,2.7.7.3,0.0084,C01134,"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)"
+409,2.7.7.3,0.131,C01134,"Substrate: diphosphate, Cosubstrate: dephospho-CoA (500 microM)"
+410,2.7.7.41,0.75,C00458,"pH 7, 37°C"
+411,2.7.7.46,0.154,C00494,
+412,2.8.2.22,0.048,C00146,"at pH 8.0, at 25°C"
+413,2.8.2.22,1.1,C00146,"at pH 10.0, at 25°C"
+414,3.1.1.1,0.15,C06747,
+415,3.1.13.1,10.0,C00284,malE-malF mRNA transcripts incubated at 37°C
+416,3.1.26.3,0.0017,C11161,"pH 8.0, 37°C"
+417,3.1.3.1,0.0011,C00009,"pH 8.0, 25°C, wild-type"
+418,3.1.3.1,0.075,C00009,"pH 8.0, 25°C, mutant R166K"
+419,3.1.3.1,0.46,C00009,"pH 8.0, 25°C, mutant R166S"
+420,3.1.3.1,0.65,C00009,"pH 8.0, 25°C, mutant R166A"
+421,3.1.3.31,0.0014,C00131,"pH 8.0, 37°C, YfbR, versus 5'-dAMP, with Co2+"
+422,3.1.3.5,1.39,C00131,
+423,3.1.3.8,0.0002,C11627,"pH 4.0, 55°C, 0.0005 mM orthovanadate"
+424,3.1.3.82,1.0,C00860,"pH 7.5, 25°C, Ki(slope)"
+425,3.1.3.82,6.0,C00860,"pH 7.5, 25°C, Ki(intercept)"
+426,3.2.1.177,0.13,C16843,"pH 7.0, 37°C"
+427,3.2.1.23,3.3,C00124,"mutant enzyme H418N, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+428,3.2.1.23,3.4,C00124,"mutant enzyme H418E, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+429,3.2.1.23,21.0,C00124,"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+430,3.2.1.23,24.0,C00124,native enzyme
+431,3.2.1.23,211.0,C00124,mutant enzyme E416V
+432,3.2.1.23,220.0,C00124,mutant enzyme E416Q
+433,3.2.1.23,0.9,C01970,"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+434,3.2.1.23,1.0,C01970,native enzyme
+435,3.2.1.23,5.1,C01970,"mutant enzyme H418N, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+436,3.2.1.23,13.0,C01970,"mutant enzyme H418E, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+437,3.2.1.23,107.0,C01970,mutant enzyme E416V
+438,3.2.1.23,154.0,C01970,mutant enzyme E416Q
+439,3.2.1.23,2.0,C06115,"mutant enzyme H418N, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+440,3.2.1.23,130.0,C06115,"mutant enzyme H418E, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+441,3.2.1.23,220.0,C06115,"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+442,3.2.1.23,0.4,C02669,"mutant enzyme H418E, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C; mutant enzyme H418N, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+443,3.2.1.23,0.6,C02669,native enzyme
+444,3.2.1.23,0.64,C02669,"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+445,3.2.1.23,4.9,C02669,mutant enzyme E416V
+446,3.2.1.23,24.0,C02669,mutant enzyme E416Q
+447,3.2.1.23,1.0,C02262,"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+448,3.2.1.23,1.3,C02262,"mutant enzyme H418E, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+449,3.2.1.23,1.4,C02262,"mutant enzyme H418N, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25°C"
+450,3.2.2.20,1.6,C00913,"pH 7.8, 37°C"
+451,3.2.2.9,0.3,C00147,"in 50 mM potassium phosphate (pH 7.0), at 37°C"
+452,6.3.3.3,2.2,C00147,"25°C, pH 7.8"
+453,3.4.23.36,3.6e-05,C01700,
+454,3.5.1.11,0.03,C07086,"mutant F146Y, pH 7.0, 30°C"
+455,3.5.1.11,0.06,C07086,"wild-type, pH 7.0, 30°C"
+456,3.5.1.11,0.07,C07086,"pH not specified in the publication, temperature not specified in the publication"
+457,3.5.1.11,1.0,C07086,"mutant F146Y/F24A, pH 7.0, 30°C"
+458,3.5.1.11,1.1,C07086,"mutant F24A, pH 7.0, 30°C"
+459,3.5.1.11,0.05,C02505,"mutant F146Y, pH 7.0, 30°C"
+460,3.5.1.11,0.2,C02505,"wild-type, pH 7.0, 30°C"
+461,3.5.1.11,1.5,C02505,"mutant F146Y/F24A, pH 7.0, 30°C"
+462,3.5.1.11,2.0,C02505,"mutant F24A, pH 7.0, 30°C"
+463,3.5.1.11,3.5,C01983,"mutant F24A, pH 7.0, 30°C"
+464,3.5.1.11,6.2,C01983,"mutant F146Y/F24A, pH 7.0, 30°C"
+465,3.5.1.11,13.0,C01983,"mutant F146Y, pH 7.0, 30°C"
+466,3.5.1.11,31.0,C01983,"wild-type, pH 7.0, 30°C"
+467,3.5.1.11,4.05,C01984,"mutant F146Y, pH 7.0, 30°C"
+468,3.5.1.11,5.7,C01984,"mutant F24A, pH 7.0, 30°C"
+469,3.5.1.11,8.2,C01984,"mutant F146Y/F24A, pH 7.0, 30°C"
+470,3.5.1.11,10.0,C01984,"wild-type, pH 7.0, 30°C"
+471,3.5.1.2,3.5,C06574,competitive inhibitor
+472,3.5.1.88,0.0109,C02924,
+473,3.5.1.88,0.0402,C10922,
+474,3.5.2.6,0.32,C06662,"37°C, pH 7.0"
+475,3.5.2.6,0.0087,C07771,"37°C, pH 7.0"
+476,3.5.2.6,0.0092,C07770,"37°C, pH 7.0"
+477,3.5.2.6,0.014,C07231,
+478,3.6.1.1,0.0028,C16487,"pH 7.4, 25°C, with 0.05 mM Mn2+"
+479,3.6.1.1,0.0358,C16487,"pH 7.4, 25°C, with 5 mM Mn2+"
+480,4.1.1.18,0.0002377,C01228,"uncompetitive inhibition, at pH 6.5, between 4°C and 10°C"
+481,4.1.1.18,0.000374,C01228,"noncompetitive inhibition, at pH 6.5, between 4°C and 10°C"
+482,4.1.1.18,0.002791,C01228,"mixed type inhibition, at pH 6.5, between 4°C and 10°C"
+483,4.1.1.8,0.08,C00010,at pH 6.5 and 30°C
+484,4.1.2.13,0.13,C00111,"30°C, wild-type enzyme"
+485,4.1.2.13,1.7,C00111,"30°C, N268A mutant"
+486,4.1.2.14,0.25,C02132,"pH 7.6, 25°C"
+487,4.1.2.19,1.0,C00175,
+488,4.1.2.52,0.5,C00109,"pH 8.0, 25°C"
+489,4.1.2.52,6.98,C00233,"pH 8.0, 25°C"
+490,4.1.3.39,6.98,C00233,"pH 8.0, 25°C"
+491,4.1.2.52,3.6,C06255,"pH 8.0, 25°C"
+492,4.1.3.1,0.04,C05669,
+493,4.1.3.1,15.0,C02170,
+494,4.1.3.1,0.5,C02287,
+495,4.1.3.27,0.26,C06672,pH 7.5
+496,4.1.3.40,0.26,C06672,"pH 7.5, wild-type enzyme"
+497,4.1.3.27,0.33,C00633,pH 7.5
+498,4.1.3.27,0.002,C00156,pH 7.5
+499,4.1.3.39,3.6,C06255,"pH 8.0, 25°C"
+500,4.1.3.39,0.5,C00109,"pH 8.0, 25°C"
+501,4.1.3.40,0.0021,C00156,"pH 7.5, wild-type enzyme"
+502,4.1.3.40,0.33,C00633,"pH 7.5, wild-type enzyme"
+503,4.1.3.42,0.0125,C00168,
+504,4.2.1.20,0.004,C04229,competitive in the catalysis of indoleglycerol phosphate cleavage
+505,4.2.1.46,0.097,C02097,"pH 7.5, 37°C, wild-type enzyme"
+506,4.2.3.3,5.8e-06,C00988,"pH 7, 25°C, H98N variant"
+507,4.3.1.1,1.1,C03339,
+508,4.3.1.1,0.66,C00497,
+509,4.3.1.1,0.83,C05669,
+510,4.3.1.1,0.2,C02532,
+511,4.3.1.1,0.66,C05672,
+512,4.3.3.7,0.18,C00047,"mutant D193A, with respect to (S)-aspartate 4-semialdehyde"
+513,4.3.3.7,0.19,C00047,"mutant Q196D, with respect to (S)-aspartate 4-semialdehyde"
+514,4.3.3.7,0.21,C00047,
+515,4.3.3.7,0.32,C00047,with (S)-aspartate 4-semialdehyde as substrate
+516,4.3.3.7,0.4,C00047,"wild-type, with respect to (S)-aspartate 4-semialdehyde"
+517,4.3.3.7,1.0,C00047,
+518,4.3.3.7,2.2,C00047,"mutant D193A, with respect to pyruvate"
+519,4.3.3.7,3.6,C00047,"wild-type, with respect to pyruvate"
+520,4.3.3.7,3.9,C00047,with pyruvate as substrate
+521,4.3.3.7,4.1,C00047,"mutant Q196D, with respect to pyruvate"
+522,4.3.3.7,0.12,C00047,"wild-type, with pyruvate as substrate"
+523,4.3.3.7,0.14,C00047,"mutant K161A, with pyruvate as substrate; mutant K161R, with L-aspartate 4-semialdehyde as substrate; mutant K161R, with pyruvate as substrate"
+524,4.3.3.7,0.18,C00047,"wild-type, with L-aspartate 4-semialdehyde as substrate"
+525,4.3.3.7,0.23,C00047,"mutant K161A, with L-aspartate 4-semialdehyde as substrate"
+526,4.3.3.7,0.21,C00168,"time-dependent inhibition, value similar to that of (S)-lysine"
+527,4.3.3.7,0.32,C00047,versus (S)-aspartate 4-semialdehyde
+528,4.3.3.7,3.9,C00047,versus pyruvate
+529,4.3.3.7,0.3,C00232,"in 50 mM Tris-HCl (pH 8.2), at 22°C"
+530,4.3.3.7,0.17,C16588,"in 50 mM Tris-HCl (pH 8.2), at 22°C"
+531,4.3.3.7,0.32,C00047,with respect to L-aspartate 4-semialdehyde
+532,4.3.3.7,3.9,C00047,with respect to pyruvate
+533,5.2.1.8,5.59e-05,C03840,mutant enzyme C69A
+534,5.3.1.1,6.0,C00988,
+535,5.3.1.12,0.00043,C00800,Zn2+ reconstituted enzyme
+536,6.1.1.6,12.0,C00739,"pH 7.2, 37°C"
+537,6.3.1.2,0.0011,C04650,
+538,6.3.1.2,5.0,C02989,above
+539,6.3.1.2,0.054,C17962,
+540,6.3.2.2,2.0,C00051,"about, strain B"
+541,6.3.2.2,4.0,C00051,"about, strain KM"
+542,6.3.2.4,0.0097,C00389,"pH 7.4, 25°C, versus ATP"
+543,6.3.2.4,0.0101,C00389,"pH 7.4, 25°C, versus D-Ala"
+544,6.3.2.4,0.0807,C01477,"pH 7.4, 25°C, versus ATP"
+545,6.3.2.4,0.1195,C01477,"pH 7.4, 25°C, versus D-Ala"
+546,6.3.2.4,1.4,C15195,
+547,6.3.2.6,7.0,C00130,"37°C, Kis, noncompetitive versus ATP; 37°C, Kis, noncompetitive versus L-Asp"
+548,6.3.2.6,9.0,C00130,"37°C, Kii, noncompetitive versus ATP"
+549,6.3.2.6,9.1,C00130,"37°C, Kis, competitive versus 1-(5'-phosphoribosyl)-5-amino-4-carboxyimidazole"
+550,6.3.2.6,13.0,C00130,"37°C, Kii, noncompetitive versus L-Asp"
+551,6.3.4.2,0.12,C00044,0.2 mM guanosine
+552,6.3.4.2,0.22,C00044,0.1 mM guanosine
+553,6.3.4.2,0.28,C00044,no guanosine
+554,6.3.4.2,4.5,C00081,
+555,6.3.4.2,11.0,C05942,"pH 8.0, reaction with ammonia"
+556,6.3.4.2,0.36,C00286,
+557,6.3.4.2,12.6,C01879,"pH 8.0, reaction with ammonia"
