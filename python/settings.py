@@ -22,6 +22,7 @@ BIGG2KEGG_FNAME  = os.path.join(CACHE_DIR, 'bigg2kegg.csv')
 BIGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'bigg2chebi.csv')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
 ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml.gz')
+ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
 
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
@@ -42,3 +43,7 @@ def get_ecoli_json():
             S[metabolites.index(met), j] = coeff
     
     return model, metabolites, reactions, S
+    
+def get_reaction_table_from_xls():
+    with open(ECOLI_XLS_FNAME) as fp:
+        return pd.read_excel(fp, sheetname=2, header=0)
