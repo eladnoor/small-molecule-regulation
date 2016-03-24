@@ -1,0 +1,397 @@
+,EC_number,bigg.metabolite,Commentary
+0,1.1.1.6,so4_c,about 100% activation at 10 mM
+1,2.4.1.21,so4_c,
+2,1.1.1.6,k_c,activates NADH production
+3,2.1.1.13,k_c,at 67 mM 1.4 fold activity
+4,2.3.2.12,k_c,reaction is completely dependent upon potassium ions
+5,2.3.2.12,k_c,stimulation not so marked as that caused by NH4+ ions
+6,2.7.1.73,k_c,the enzyme requires both Mg2+ and K+
+7,1.1.1.6,nh4_c,activates NADH production
+8,2.1.1.13,nh4_c,at 67 mM 1.5 fold activity
+9,2.1.1.61,nh4_c,
+10,2.3.2.12,nh4_c,reaction is completely dependent upon ammonium ions
+11,2.3.2.12,nh4_c,
+12,2.3.2.12,nh4_c,combination of NH4+ ions with spermine produces an additive activity increase
+13,2.7.1.11,nh4_c,
+14,2.7.1.11,nh4_c,can replace K+
+15,2.7.1.15,nh4_c,activates
+16,2.7.1.39,nh4_c,30% of the activity obtained with 0.5 M K+
+17,3.1.13.5,nh4_c,stimulates
+18,3.1.26.3,nh4_c,maximum activity at 0.15-0.3 M
+19,3.1.26.3,nh4_c,cleavage pattern depends on concentration
+20,3.1.26.3,nh4_c,required
+21,3.1.26.3,nh4_c,stimualtion at 20 mM
+22,3.1.26.3,nh4_c,
+23,3.1.26.7,nh4_c,stimulates in presence of Mg2+
+24,3.6.5.3,nh4_c,
+25,1.1.1.49,spmd_c,activation constant: 0.2 mM
+26,1.6.5.11,spmd_c,enzyme optimally activated by phospholipids is additionally activated 2fold
+27,2.1.1.35,spmd_c,slight activation at 20 mM in presence of 50 mM ammonium acetate
+28,2.1.1.35,spmd_c,"activates, inhibitory at optimal Mg2+ concentration"
+29,2.1.1.193,spmd_c,"in the presence of spermidine, Mg2+ is not required for activity. Activity could be restored up to 60% of that with Mg2+ by addition of spermidine at 30 mM"
+30,2.7.7.8,spmd_c,"0.1-1.0 mM, activates ADP-phosphate exchange 2fold"
+31,3.1.13.1,spmd_c,can replace missing Mg2+ to a small extent
+32,3.1.26.5,spmd_c,M1 RNA subunit can catalyze the cleavage of tRNA precursor molecules in the presence of 5 mM spermine or spermidine
+33,3.2.2.21,spmd_c,stimulates activity
+34,3.4.21.53,spmd_c,"activation, at physiological concentration, ATP hydrolysis and protease activity"
+35,6.1.1.5,spmd_c,at least 2 bound Mg2+ or spermidines required for binding of tRNA to the enzyme
+36,6.1.1.5,spmd_c,activates
+37,6.1.1.19,spmd_c,supports aminoacylation in presence of crude tRNA not in presence of resolved tRNA
+38,1.1.1.78,gthrd_c,slight activation
+39,1.1.1.205,gthrd_c,
+40,1.2.1.22,gthrd_c,
+41,2.1.1.35,gthrd_c,activates
+42,2.7.1.25,gthrd_c,reduced glutathione increases the activity significantly
+43,3.5.1.16,gthrd_c,
+44,4.1.1.98,gthrd_c,slight stimulation of activity at 10 mM
+45,1.1.1.169,for_c,"E256A mutant activity greatly increased, twice as high at pH 7.2 as at pH 5.9"
+46,6.3.2.10,for_c,slight activation of mutant K202A
+47,1.1.1.202,glyc_c,
+48,4.3.1.1,glyc_c,activates
+49,1.1.5.3,fad_c,stimulates the reaction with phenazine methosulfate and methylene blue. 20% increase in activity of the reaction with phenazine methosulfate with a half-maximal concentration of 200 nM
+50,4.1.99.3,fad_c,enzyme contains FAD as catalytic cofactor and a second chromophore as a light harvesting antenna
+51,4.1.99.3,fad_c,FAD binding pocket is similar to that of cryptochrome 1
+52,1.1.5.3,fmn_c,stimulates the reaction with phenazine methosulfate. 6fold increase in activity with a half-maximal concentration of 0.13 mM
+53,1.7.1.6,fmn_c,
+54,1.2.1.4,etoh_c,0.5-2% increases activity in crude extracts
+55,2.7.6.5,etoh_c,"little activity unless activated either by a complex of 70S ribosomes, mRNA and uncharged tRNA or by a solvent like ethanol at approximately 20%"
+56,6.3.4.14,etoh_c,"maximal activation, 10fold, at 15% v/v. Inactivation at 20% v/v"
+57,6.3.4.14,etoh_c,"maximal activation, 11fold at 15%"
+58,1.2.1.16,4abut_c,induction
+59,1.2.1.16,4abut_c,induces GabD dehydrogenase
+60,1.2.1.21,pydx_c,"approx. 0.1 mM, 1.4fold increase in activity of isozyme A"
+61,1.2.1.21,pydx5p_c,"approx. 0.1 mM, 1.5fold increase in activity of isozyme B"
+62,2.6.1.102,pydx5p_c,pyridoxal 5'-phosphate dependent aminotransferase
+63,2.7.7.27,pydx5p_c,activation
+64,2.7.7.27,pydx5p_c,activation; allosteric activator; wild-type enzyme and mutant SG14
+65,2.7.7.27,pydx5p_c,
+66,2.8.1.6,pydx5p_c,required for cysteine desulfurase activity of the enzyme
+67,1.2.1.21,pydxn_c,"0.1 mM, 1.5fold increase in activity of isozyme B"
+68,1.2.4.2,adp_c,
+69,1.6.1.1,adp_c,75.5% activation at 2 mM
+70,2.7.1.11,adp_c,
+71,2.7.7.27,adp_c,"activation, less effective than 3-phosphoglycerate"
+72,3.1.11.5,adp_c,less effective than ATP
+73,3.6.3.12,adp_c,
+74,4.1.1.8,adp_c,"the presence of 0.3 mM ADP results in a marginal increase in kcat and a small decrease in Km, leading to a 1.7fold higher catalytic efficiency. One molecule of ADP is bound per monomer distant from the CoA binding site"
+75,1.2.4.2,pi_c,
+76,1.8.1.9,pi_c,2fold activation
+77,2.3.1.41,pi_c,"activation, 0.2 M"
+78,2.7.4.1,pi_c,"inhibiton above 20 mM; required for activity, only in the presence of histone"
+79,2.7.7.8,pi_c,"1-10 mM, strong activation of PNPase exonuclease activity"
+80,2.7.7.8,pi_c,
+81,3.1.11.6,pi_c,5-10fold higher activity compared to Tris-HCL buffer
+82,3.1.11.6,pi_c,stimulates
+83,3.5.1.16,pi_c,
+84,1.2.5.1,ocdcea_c,122% of the activitation with palmitic acid
+85,1.2.5.1,ddca_c,126% of the activitation with palmitic acid
+86,1.2.5.1,ddca_c,"activation by covalent attachment, binding site Lys544"
+87,1.2.5.1,ttdca_c,109% of the activitation with palmitic acid
+88,1.2.5.1,ocdcea_c,
+89,1.2.5.1,ocdcea_c,102% of the activitation with palmitic acid
+90,2.7.1.107,ocdcea_c,activates only in presence of Triton X-100
+91,1.2.5.1,hdca_c,
+92,1.2.5.1,hdca_c,activation
+93,2.7.1.107,hdca_c,activates only in presence of Triton X-100
+94,1.2.5.1,hdcea_c,137% of the activitation with palmitic acid
+95,1.3.3.11,nadph_c,NAD(P)H enhances pyrroloquinoline quinone production in the presence of activating factor ActF
+96,5.4.99.9,nadph_c,"enzyme activation mechanism, overview"
+97,1.3.5.1,atp_c,activation
+98,1.3.5.1,atp_c,
+99,1.4.1.4,atp_c,"at 2 mM, 50% activation"
+100,1.6.1.1,atp_c,53.4% activation at 2 mM
+101,1.17.4.1,atp_c,stimulation of CDP reduction; stimulation of UDP reduction
+102,1.17.4.1,atp_c,ATP is an allosteric effector
+103,1.17.4.1,atp_c,
+104,1.17.4.1,atp_c,activation by ATP has a regulatory function
+105,2.1.3.2,atp_c,
+106,2.1.3.2,atp_c,"allosteric effector, increases the apparent rate of unliganded T-state to substrate-bound R-state"
+107,2.1.3.2,atp_c,"ATP enhances ATCase activity. Experimentally driven, statistical modeling approach (high-dimensional model representation, RS-HDMR) to investigate regulation of ATCase in response to varying concentrations of its nucleotide regulators ATP, CTP, GTP, and UTP (at fixed substrate concentrations)"
+108,2.1.3.2,atp_c,addition of ATP along with the substrates increases the rate of the transition from the low activity T to the high activity R state and also decreases the duration of the R-state steady-state phase
+109,2.1.3.2,atp_c,"the effects of binding of nucleotides are monitored in a series of 1H-13C methyl TROSY spectroscopy spectra recorded on the 300 kDa aspartate transcarbamoylase holoenzyme in both the absence and the presence of saturating amounts of ATP or CTP. No changes in shifts of methyl probes of the catalytic chains that include the active sites are observed, consistent with a lack of structural changes. Results indicate that the mechanism of action of ATP and CTP can be explained fully by the Monod-Wyman-Changeux model"
+110,2.3.1.15,atp_c,activation of acyltransferase in isolated membrane preparations
+111,2.7.1.89,atp_c,dependent on the presence of
+112,2.7.7.41,atp_c,a maximal stimulation of about 3fold with CTP as substrate and 1.25fold with dCTP
+113,3.1.3.41,atp_c,"stimulates the 4-nitrophenyl phosphatase activity 3.5fold at concentrations of 0.001-0.030 mM, but inhibits it at concentrations above 0.5 mM, mechanism"
+114,3.1.21.5,atp_c,"ATP hydrolysis activated by recognition site binding leads to release of the enzyme from the site, dissociation from the substrate via a free DNA end and cleavage of the DNA"
+115,3.1.21.7,atp_c,required
+116,3.2.2.4,atp_c,
+117,3.4.24.B17,atp_c,ATP-dependent metalloendoprotease belonging to the AAA family (ATPases associated with diverse cellular activities)
+118,3.4.24.B20,atp_c,dependent on
+119,3.4.24.B20,atp_c,"dependent on, the C-terminus comprise the cytoplasmic ATPase and protease domain. The ATPase domain contains the Walker A/B motifs and the second region of homology responsible for the binding and hydrolysis of ATP"
+120,3.6.1.1,atp_c,"ATP activates hydrolysis of MgPPi by E-PPase, molecular docking and kinetic analysis involving Lys112 and Lys115, activation mechanism, and regulatory function of ATP, modelling, overview"
+121,3.6.3.1,atp_c,"flippase activity is essentially supported only by ATP. If the ATP concentration in the assay falls below 5 mM, there is a significant decrease in flippase activity. Maximal translocation occurs at 10 mM ATP"
+122,3.6.3.12,atp_c,
+123,3.6.4.10,atp_c,"in 1:1 mixture with ATP-gammaS, greatly stimulates protein remodeling"
+124,4.1.1.8,atp_c,weak activating effect
+125,4.2.1.30,atp_c,
+126,1.3.5.1,ppi_c,activation
+127,2.7.4.1,ppi_c,"10 mM, 100% activation of guanosine 5'-tetraphosphate synthesis"
+128,2.7.7.8,ppi_c,activation of PNPase RNA synthesis activity at very low concentrations of phosphate
+129,1.3.5.1,so4_c,activation
+130,2.4.1.1,so4_c,activation
+131,1.4.1.4,amp_c,slight activation up to 1 mM
+132,1.6.1.1,amp_c,71.8% activation at 2 mM
+133,2.7.7.27,amp_c,"activation, less effective than 3-phosphoglycerate"
+134,2.7.7.27,amp_c,
+135,4.1.1.8,amp_c,weak activating effect
+136,1.4.1.4,utp_c,activates up to 70%
+137,2.1.3.2,utp_c,"allosteric effector, makes steady state vanishingly short"
+138,3.1.11.5,utp_c,less effective than ATP
+139,1.5.1.30,nadh_c,
+140,1.17.1.8,nadh_c,
+141,1.5.1.30,nadph_c,
+142,1.17.1.8,nadph_c,similar affinity as NADH
+143,2.7.7.27,nadph_c,activation; no activation
+144,2.8.1.10,nadph_c,strong stimulation
+145,4.2.1.47,nadph_c,activates
+146,1.7.1.6,h2o2_c,"1 mM, increase in expression of azoR mRNA relative to the expression at zero time before stress is applied, at 10 min 0.9, at 20 min 0.6, 10 mM, 10 min 3.0, 20 min 1.9"
+147,1.17.4.1,h2o2_c,activation
+148,1.7.2.2,ca2_c,
+149,2.4.1.227,ca2_c,
+150,1.7.99.1,cyan_c,stimulates at concentrations above 5 mM
+151,1.14.13.59,23dappa_c,"stimulates, but remains unchanged"
+152,1.17.4.1,datp_c,stimulation of CDP and UDP reduction
+153,1.17.4.1,datp_c,
+154,3.1.11.5,datp_c,nearly as effective as ATP
+155,1.17.4.1,dctp_c,stimulation of UDP reduction
+156,2.7.1.21,dctp_c,activation
+157,3.1.11.5,dctp_c,less effective than ATP
+158,1.17.4.1,dgtp_c,stimulation of ADP reduction; stimulation of GDP reduction
+159,1.17.4.1,dgtp_c,stimulation of ADP reduction; stimulation of tubercidin diphosphate reduction
+160,1.17.4.1,dgtp_c,stimulation of ADP reduction
+161,1.17.4.1,dgtp_c,
+162,2.7.4.22,dgtp_c,lower affinity or extent of activation than GTP
+163,2.7.4.22,dgtp_c,
+164,1.17.4.1,dttp_c,stimulation of ADP reduction; stimulation of CDP reduction; stimulation of GDP reduction; stimulation of UDP reduction
+165,1.17.4.1,dttp_c,"stimulation of 2,6-diaminopurine riboside reduction; stimulation of 2-aminopurineriboside diphosphate reduction; stimulation of benzimidazoleriboside diphosphate reduction; stimulation of CDP reduction; stimulation of GDP reduction; stimulation of purine riboside diphosphate reduction; stimulation of UDP reduction"
+166,1.17.4.1,dttp_c,stimulation of GDP reduction
+167,1.17.4.1,dttp_c,stimulation of CDP reduction; stimulation of UDP reduction
+168,1.17.4.1,dttp_c,
+169,1.17.99.6,cbl1_c,stimulates
+170,1.20.4.1,gthrd_c,required
+171,1.20.4.1,gthrd_c,glutathione is not effective as electron donor
+172,1.20.4.1,gthrd_c,the enzyme uses GSH with glutaredoxin as electron donor
+173,2.7.7.38,gthrd_c,
+174,6.3.4.21,gthrd_c,activation
+175,2.1.1.13,na1_c,at 67 mM 1.5 fold activity
+176,2.1.1.13,amet_c,required
+177,2.8.1.6,amet_c,"two molecules of S-adenosyl-L-methionine are used to synthesize one molecule of biotin, one from dethiobiotin to the intermediate, and a second from the intermediate to biotin"
+178,2.8.1.6,amet_c,required
+179,2.8.1.6,amet_c,one molecule S-adenosyl-L-methionine is required to form one molecule of biotin
+180,2.8.1.6,amet_c,
+181,3.1.21.3,amet_c,"stimulates, not required"
+182,3.1.21.3,amet_c,required
+183,3.1.21.3,amet_c,
+184,2.1.1.13,amet_c,at about 0.0001 mM
+185,2.3.1.54,amet_c,
+186,2.3.1.54,amet_c,obligatory component of the activation reaction
+187,2.5.1.6,amet_c,enhances tripolyphosphatase activity
+188,2.8.1.10,amet_c,strong stimulation
+189,3.1.11.5,amet_c,less effective than ATP
+190,2.1.1.35,ptrc_c,"activates, inhibitory at optimal Mg2+ concentration"
+191,3.1.13.1,ptrc_c,can replace missing Mg2+ to a small extent
+192,2.1.3.2,adn_c,very weak activation
+193,2.7.7.89,adn_c,"activation by nucleotides, most efficient in presence of two different nucleotides"
+194,3.1.11.5,adn_c,less effective than ATP
+195,2.1.3.2,ctp_c,"allosteric effector, slightly shifts the dynamical equilibrium during steady state toward unliganded T-state"
+196,2.1.3.2,ctp_c,"the effects of binding of nucleotides are monitored in a series of 1H-13C methyl TROSY spectroscopy spectra recorded on the 300 kDa aspartate transcarbamoylase holoenzyme in both the absence and the presence of saturating amounts of ATP or CTP. No changes in shifts of methyl probes of the catalytic chains that include the active sites are observed, consistent with a lack of structural changes. Results indicate that the mechanism of action of ATP and CTP can be explained fully by the Monod-Wyman-Changeux model"
+197,3.1.11.5,ctp_c,less effective than ATP
+198,2.1.3.2,succ_c,activation in presence of excess carbamoyl phosphate and limiting L-aspartate
+199,3.1.3.2,succ_c,stimulates
+200,3.4.24.B17,succ_c,"stimulates, antagonist of carbonyl cyanide-3-chlorophenylhydrazone"
+201,2.2.1.1,h2o2_c,"oxidative stress increases tktA expression. Induces tktA at 1 h treatment, while an increase in marRAB operon expression occurs only after 3 h exposure"
+202,2.2.1.9,thmpp_c,"required, Km: 0.0024 mM"
+203,2.3.1.8,pyr_c,
+204,2.3.1.8,pyr_c,156% of activation at 5 mM
+205,2.3.1.54,pyr_c,obligatory component of the activation reaction
+206,2.7.7.27,pyr_c,activation of chimeric enzyme EA contains the N-terminus of Escherichia coli enzyme and the C-terminus of Agrobacterium tumefaciens enzyme with higher affinity than activation of chimeric enzyme AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme
+207,2.8.1.7,pyr_c,"increases activity of CSD towards L-selenocysteine, but not towards L-cysteine"
+208,3.1.3.2,pyr_c,stimulates
+209,4.1.1.50,pyr_c,contains pyruvate
+210,4.1.1.50,pyr_c,cofactor; contains 1 pyruvoyl residue for each alphabeta pair
+211,4.1.1.50,pyr_c,each subunit contains one covalently linked pyruvate
+212,4.1.1.65,pyr_c,dependent on
+213,4.1.1.65,pyr_c,the small subunit contains a pyruvoyl prosthetic group
+214,4.1.1.65,pyr_c,the pyruvoyl residue is covalently bound to the amino terminus of one of the two nonidentical subunits
+215,4.1.1.65,pyr_c,dependent on; the pyruvate prosthetic group is in amide linkage to the amino terminus of the alpha-subunit. The prosthetic group is derived from Ser through a post-tranlational cleavage of a proenzyme
+216,4.4.1.16,pyr_c,
+217,2.3.1.54,oxam_c,
+218,2.3.1.54,oxam_c,obligatory component of the activation reaction
+219,2.3.1.181,ac_c,"100 mM, slight activation"
+220,2.3.2.12,meoh_c,optimal concentration: 45-50%
+221,4.1.1.98,meoh_c,strong stimulation
+222,2.4.1.1,amp_c,activation; in both directions
+223,3.1.11.5,amp_c,less effective than ATP
+224,2.4.1.21,ac_c,"500 mM, strong activation of unprimed reaction"
+225,2.7.7.6,ac_c,activates
+226,2.4.1.21,ac_c,"500 mM, strong activation of unprimed reaction"
+227,2.4.99.17,ac_c,100% activity in the presence of 750 mM sodium acetate
+228,2.4.1.129,dmso_c,"activation, in the absence of methanol, inhibits in the presence of 0.05% sarkosyl"
+229,3.4.21.53,dmso_c,activation
+230,4.3.1.1,dmso_c,activates
+231,2.4.1.227,dmso_c,
+232,2.4.1.227,dmso_c,high concentration (35%) of dimethylsulfoxide is necessary for maximal enzyme activity
+233,2.4.1.227,mg2_c,
+234,2.7.1.73,mg2_c,enzyme requires both Mg2+ and K+
+235,3.1.3.1,mg2_c,
+236,3.1.27.10,mg2_c,strong decrease of efficiency of oligonucleotide hybridization
+237,2.4.2.8,ac_c,slightly activating
+238,3.1.3.2,ac_c,stimulates
+239,6.3.2.10,ac_c,activation of mutant K202A
+240,2.4.2.9,gtp_c,"effect is pH-dependent, pH 7.5: lowers Km value for 5-phospho-alpha-D-ribose 1-diphosphate and increases Vmax 2fold, no effect on Km for uracil, pH 8.0: no effect"
+241,2.4.2.9,gtp_c,"about 5-7fold increase of Km for 5-phosphoribose 1-diphosphate, unaltered Vmax; highly activating at low 5-phosphoribose 1-diphosphate concentration, e.g. 0.2 mM, by modification of the structure from dimer/trimer to pentamer/hexamer; kinetics"
+242,2.4.2.9,gtp_c,"activation of wild-type and mutant P131D, maximal at 0.08 mM"
+243,2.7.1.21,gtp_c,activation
+244,2.7.4.22,gtp_c,"activates only the wild-type, not the mutant D201N"
+245,2.7.4.22,gtp_c,most effective at pH 8 and a high (1 mM) UMP concentration
+246,2.7.4.22,gtp_c,"0.5 mM, reverses the inhibition of excess UMP, it increases the affinity for ATP"
+247,2.7.4.22,gtp_c,"; allosteric activator, the GTP-binding site, situated at 15 A from the UMP-binding site and at 24 A from the ATP-binding site, is delineated by two contiguous dimers. movements induced by binding GTP, overview. UTP and GTP are tightly coupled in both wild-type enzyme and N140A variant"
+248,2.7.4.22,gtp_c,
+249,2.7.7.89,gtp_c,"activation by nucleotides, most efficient in presence of two different nucleotides"
+250,3.1.11.5,gtp_c,less effective than ATP
+251,3.4.21.53,gtp_c,"activation; hydrolysis at 113% the rate of ATP, supports proteolysis with 14% the efficiency of ATP"
+252,3.4.21.53,gtp_c,not
+253,3.4.21.53,gtp_c,activation; less efficient than ATP
+254,3.6.5.4,gtp_c,GTP binding to both the SRP and SR is a prerequisite for the formation of the SRP-SR complex in which GTP hydrolysis is activated in a composite active site
+255,4.1.1.31,gtp_c,activates
+256,6.3.4.2,gtp_c,required as an allosteric effector to promote glutamine hydrolysis
+257,6.3.4.2,gtp_c,"required as allosteric effector to promote reaction with glutamine as substrate, GTP functions by stabilizing the protein conformation that binds the tetrahedral intermediate(s) formed during glutamine hydrolysis"
+258,6.3.4.2,gtp_c,activates enzyme-catalyzed glutamine hydrolysis
+259,6.3.4.2,gtp_c,"0.1 mM guanosine, kact: 10.3/sec, KA: 0.088 mM, Ki: 0.22 mM; 0.2 mM guanosine, kact: 8.2/sec, KA: 0.078 mM, Ki: 0.12 mM; 0 mM guanosine, kact: 10.6/sec, KA: 0.081 mM, Ki: 0.28 mM; allosteric effector, structural requirements for activation are stringent, but requirements for inhibition are lax. GTP promotes Gln hydrolysis but inhibits Gln-dependent CTP formation at concentrations of over 0.15 mM"
+260,6.3.4.2,gtp_c,"required, activates"
+261,6.3.4.2,gtp_c,"GTP acts a positive allosteric effector for Gln-dependent CTP formation. However, at concentrations exceeding 0.15 mM, GTP inhibits Gln-dependent CTP formation. Moreover, GTP is an inhibitor of NH3-dependent CTP formation at all concentrations"
+262,6.3.5.5,gtp_c,enhances activity
+263,2.4.2.14,prpp_c,3-4fold activation of glutaminase activity in the presence of phosphate or diphosphate
+264,2.6.1.85,4abz_c,
+265,2.7.1.11,gdp_c,activation
+266,2.7.1.11,gdp_c,
+267,2.7.1.21,dcdp_c,activation
+268,2.7.1.40,fdp_c,"heterotropic activator of PK1, the modulation of oligomeric state by the allosteric effector D-fructose 1,6-bisphosphate does not occur at a concentration of 10 nM or above"
+269,2.7.7.27,fdp_c,allosteric activator
+270,2.7.7.27,fdp_c,allosteric activator; most important in vivo
+271,2.7.7.27,fdp_c,"mainly Escherichia coli and chimeric enzyme AE containing the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme, not chimeric enzyme EA containing the N-terminus of Escherichia coli enzyme and the C-terminus of Agrobacterium tumefaciens enzyme, C-terminus of Escherichia coli is relavant for the selectivity"
+272,2.7.7.27,fdp_c,
+273,2.7.7.27,fdp_c,"50% activation at 0.0364 mM for wild-type, at 0.0523 mM for mutant lacking N-terminal 3 amino acids, at 0.0887 mM for mutant lacking N-terminal 7 amino acids"
+274,2.7.1.40,fdp_c,activation
+275,2.7.7.27,fdp_c,50% of maximal activation at 0.059 for wild-type
+276,2.7.1.40,g6p_c,isozyme PK II
+277,2.7.7.27,g6p_c,activation
+278,2.7.7.27,g6p_c,
+279,2.7.1.40,r5p_c,activation; isozyme PK II
+280,2.7.1.40,r5p_c,
+281,2.7.7.27,r5p_c,D-fructose 6-phosphate analog
+282,2.7.1.40,pep_c,"homotropic activator of PK1, the modulation of oligomeric state by the allosteric effector phosphoenolpyruvate does not occur at a concentration of 10 nM or above"
+283,2.7.3.9,pep_c,"physiological concentrations of phosphoenolpyruvate and Mg2+ increase the amount of dimeric, active dephospho-enzyme I"
+284,2.7.7.27,pep_c,activation; less effective than fructose bisphosphate
+285,2.7.7.27,pep_c,
+286,3.1.3.11,pep_c,
+287,3.1.3.11,pep_c,up to 300% activation
+288,3.1.3.11,pep_c,activates
+289,4.1.2.13,pep_c,"enhances D-fructose 1,6-bisphosphate-cleavage activity, fructose 1-phosphate-cleavage activity is unaffected"
+290,2.7.1.107,ocdca_c,activates only in presence of Triton X-100
+291,2.7.4.1,so4_c,
+292,2.7.4.1,so4_c,"activation, up to 100 mM, inhibition at higher concentrations"
+293,2.7.4.1,so4_c,"40 mM, approx. 14fold activation of ATP synthesis"
+294,3.6.1.11,so4_c,"50 mM, stimulates"
+295,2.7.4.22,35cgmp_c,lower affinity or extent of activation than GTP
+296,2.7.4.22,gmp_c,lower affinity or extent of activation than GTP
+297,2.7.4.22,gsn_c,lower affinity or extent of activation than GTP
+298,2.7.4.22,itp_c,
+299,2.7.7.89,itp_c,"activation by nucleotides, most efficient in presence of two different nucleotides"
+300,6.3.4.2,itp_c,"0 mM guanosine, kact: 5.2/sec, KA: 2.9 mM, Ki: 4.5 mM; the GTP analogue is capable of activating Gln-dependent CTP formation"
+301,6.3.5.5,itp_c,enhances activity
+302,2.7.4.22,xtp_c,
+303,2.7.7.6,k_c,activates
+304,2.7.7.19,camp_c,slight stimulation
+305,2.7.7.27,2ddg6p_c,"activation; fructose 6-phosphate and pyruvate analog, less effective than fructose bisphosphate"
+306,2.7.7.27,2obut_c,"slight activation, pyruvate analog"
+307,2.7.7.27,3pg_c,activation
+308,2.7.7.27,3pg_c,activation; pH-dependent
+309,2.7.7.27,3pg_c,
+310,2.7.7.27,f6p_c,activation
+311,2.7.7.27,f6p_c,"mainly Agrobacterium tumefaciens and chimeric enzyme AE containing the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme, not chimeric enzyme EA containing the N-terminus of Escherichia coli enzyme and the C-terminus of Agrobacterium tumefaciens enzyme"
+312,2.7.7.27,f6p_c,
+313,2.7.7.27,2dr5p_c,"activation, D-fructose 6-phosphate analog"
+314,2.7.7.27,g3p_c,less effective than fructose bisphosphate
+315,2.7.7.27,hpyr_c,"slight activation, pyruvate analog"
+316,2.7.7.27,s17bp_c,activation; isosteric analog of fructose bisphosphate
+317,2.7.7.42,akg_c,0.02 mM
+318,2.7.7.42,akg_c,"1 mM; regulates both adenylyltransferase and adenylyl-removing reaction, acts through its binding to signal transduction protein PII and signal transduction protein PII-UMP does not alter the binding of signal transduction protein PII or signal transduction protein PII-UMP to the enzyme, adenylyltransferase assay with 0.05 mM and adenylyl-removing assay with 1 mM alpha-ketoglutarate"
+319,2.7.7.59,akg_c,"at low concentration, required for PII uridylylation"
+320,2.7.7.89,akg_c,activation
+321,4.1.2.13,akg_c,"enhances D-fructose 1,6-bisphosphate-cleavage activity, fructose 1-phosphate-cleavage activity is unaffected"
+322,2.7.7.65,o2_c,
+323,2.7.13.3,fum_c,effector of DcuS
+324,2.8.1.6,fdp_c,
+325,2.8.1.7,pydx5p_c,
+326,3.1.1.1,cobalt2_c,150% activation of recombinant BioHe at 5-10 mM
+327,3.1.3.1,zn2_c,"stimulation of mutant enzymes, in presence or absence of a phosphoryl group acceptor in the reaction, except for mutnat H412Y, whose activity is reduced in presence of phosphoryl group acceptor and 0.1 mM Zn2+"
+328,3.1.3.11,k_c,slightly increases activity by 20%
+329,3.1.11.3,k_c,stimulates at 20 mM
+330,3.5.1.88,k_c,"2fold increase within 0-0.5 M, beyond 0.5 M smaller extend of increase"
+331,3.6.1.11,k_c,150-300 mM
+332,3.1.3.11,so4_c,up to 300% activation
+333,3.1.11.6,so4_c,stimulates
+334,3.1.3.18,cl_c,"the activity is 11fold increased, cooperative effect of Cl- and Mg2+"
+335,4.1.1.15,cl_c,activates
+336,3.1.11.5,camp_c,less effective than ATP
+337,3.1.11.5,ade_c,less effective than ATP
+338,3.2.2.20,ade_c,
+339,3.1.11.5,na1_c,ATP molecules hydrolyzed per base pair unwound slightly increased
+340,3.1.11.5,dttp_c,less effective than ATP
+341,3.1.13.1,15dap_c,can replace missing Mg2+ to a small extent
+342,3.1.21.3,amet_c,stimulates DNA cleavage activity
+343,3.4.23.49,urea_c,"optimal concentration: 4-5 M, inclusion bodies from Escherichia coli as substrate"
+344,3.4.24.B17,dmso_c,"induces conformational changes, stimulates with SecY s substrate, at concentration up to 20% v/v, slightly inhibitory with casein as a substrate"
+345,3.5.1.28,gam_e,30% activation at 10 mM
+346,3.5.4.1,gly_c,"1 mM, relative activity 130%"
+347,3.5.4.5,cytd_c,
+348,3.5.99.6,acgam6p_c,activates; increases reaction velocity when D-glucosamine 6-phosphate is present at levels below that required for saturation
+349,3.5.99.6,acgam6p_c,activates
+350,3.5.99.6,acgam6p_c,
+351,3.5.99.6,acgam6p_c,allosteric activator of NagB
+352,3.6.3.1,lipa_c,
+353,3.6.3.16,aso3_c,allosteric activation
+354,3.6.3.16,aso3_c,"activates 3fold the ATPase activity of wild-type ArsA, activation rates of mutants, overview"
+355,4.1.1.11,accoa_c,acetyl-CoA is required for activation
+356,4.1.1.49,accoa_c,
+357,4.1.1.31,fdp_c,activates
+358,4.1.1.98,lipoate_c,slight (20%) stimulation of activity at 10 mM
+359,4.1.99.1,pi_c,"diammonium hydrogen phosphate serves as an activator on tryptophan synthesis from D-serine, maximum activity at 20% saturation concentration"
+360,4.1.99.3,methf_c,binds to the enzyme and acts as a light-harvesting pigment
+361,4.1.99.3,fadh2_c,"in wild-type, substantial losses occur prior to formation of the ultimate (FADH- 306TrpH°+) charge pair but that there is no significant kinetic development in the 100 ps-to-10 ns time window. The quantum yield of FADH- W306°+ is at 19%, in reference to the established quantum yield of the long-lived excited state of [Ru(bpy)3]2+"
+362,4.1.99.3,fadh2_c,"FADH-/FADH reduction potential of the cryptochrome1 is significantly higher than that of the photolyase at 164 mV vs normal hydrogen electrode, but it also increases upon substrate binding (to 195 mV vs normal hydrogen electrode) similar to what is observed in photolyase. FADH-/FADH reduction potential is insensitive to ATP binding"
+363,4.2.1.79,ppa_c,induces the enzyme expression from acnC and prpD
+364,6.3.2.10,ppa_c,strong activation of mutant K202A
+365,4.2.1.104,cynt_c,"extracellular, enzyme induction"
+366,4.2.3.3,2pglyc_c,activates H98Q variant
+367,5.1.3.2,udp_c,activates the reduction of epimerase-bound NAD+
+368,5.1.3.2,ump_c,activates the reduction of epimerase-bound NAD+
+369,5.1.3.14,uacgam_c,allosteric activation
+370,5.1.3.14,uacgam_c,the reverse reaction with UDP-N-acetylmannosamine requires the presence of UDP-N-acetylglucosamine
+371,5.3.4.1,gthox_c,promotes the activation of carbonic anhydrase IV
+372,5.4.2.7,r15bp_c,"10fold stimulation, Km: 0.00017 mM, optimal concentration: 0.0014 mM"
+373,5.4.2.7,r15bp_c,"stimulates, Km: 0.00024 mM for enzyme form I, 0.00027 mM for enzyme form II and 0.00029 mM for enzyme form III"
+374,5.4.3.8,etha_c,stimulates activity of mutant enzyme Lys265Arg
+375,5.99.1.2,no2_c,acidic nitrite enhanced the bactericidal effect of stabilized topoisomerase I cleavage complex
+376,6.3.1.2,glyb_c,"0.4 M, 67.7% residual activity after 60°C heat treatment"
+377,6.3.1.2,inost_c,"0.4 M, 70.1% residual activity after 60°C heat treatment"
+378,6.3.2.10,but_c,activation of mutant K202A
+379,6.3.4.2,dgtp_c,"0 mM guanosine, kact: 1.5/sec, KA: 0.21 mM, Ki: 0.36 mM; the GTP analogue is capable of activating Gln-dependent CTP formation"
+380,6.3.4.14,btn_c,"required for activation of the ATP synthesis reaction with carbamoyl phosphate and ADP as substrates, E211, E288, N290 and R292 are responsible, at least in part, for the substrate-induced synergism by biotin, activation via a conformational change of enzyme"
+381,6.3.4.14,btn_c,activates the ATP synthesis reaction with ADP and carbamoyl phosphate as substrates
+382,6.3.4.14,btn_c,"substrate-induced synergism, the reaction in presence of biotin is 1100fold faster than in its absence"
+383,6.4.1.2,btn_c,"required for subunit AccB activity, biotin is not involved in regulation of operon accBC transcription"
+384,6.4.1.2,btn_c,required for activity
+385,6.3.4.16,imp_c,"weak activator, the IMP binding site is located at the C-terminus, binding structure analysis from crystal structure with bound IMP, PDB ID 1CE8"
+386,6.3.5.5,nh4_c,
+387,6.3.5.5,imp_c,allosteric effector
+388,6.3.5.5,imp_c,"His995, located in the C-terminal regulatory domain, is cross-linked with IMP"
+389,6.3.5.5,imp_c,"the effector stabilzes the (alpha,beta)4-tetramer of enzyme"
+390,6.3.5.5,imp_c,"allosteric effect on Escherichia coli enzyme in dependence of temperature, no response to chimeric enzyme"
+391,6.3.5.5,imp_c,
+392,6.3.5.5,imp_c,the IMP activator and the UMP inhibitor bind to the same site on the enzyme
+393,6.3.5.5,acglu_c,carbamoyl-phosphate synthase II: no requirement for N-acetylglutamate
+394,6.3.5.5,k_c,
+395,6.3.5.5,xmp_c,enhances activity

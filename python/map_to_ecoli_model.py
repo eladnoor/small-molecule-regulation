@@ -5,17 +5,10 @@ Created on Wed Mar 23 23:42:54 2016
 @author: eladn
 """
 
-import json
 import settings
-import numpy as np
+import os
+import pandas as pd
 
-with open(settings.ECOLI_MODEL_FNAME) as fp:
-    model = json.load(fp)
-
-# read the stoichiometric matrix from the model
-metabolites = [x['id'] for x in model['metabolites']]
-S = np.matrix(np.zeros((len(metabolites), len(model['reactions']))))
-for j, d in enumerate(model['reactions']):
-    for met, coeff in d['metabolites'].iteritems():
-        S[metabolites.index(met), j] = coeff
-
+model, metabolites, reactions, S = settings.get_ecoli_json()
+ki = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_ki_bigg.csv'))
+activators = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_compounds_bigg.csv'))
