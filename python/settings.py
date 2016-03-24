@@ -5,10 +5,9 @@ Created on Wed Mar 23 16:36:02 2016
 @author: noore
 """
 
-import os
+import os, sys
 import __main__ as main
 import pandas as pd
-import cobra
 import json
 import numpy as np
 
@@ -27,9 +26,6 @@ ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
 
-def get_ecoli_sbml():
-    return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)
-
 def get_ecoli_json():
     with open(ECOLI_JSON_FNAME) as fp:
         model = json.load(fp)
@@ -47,3 +43,10 @@ def get_ecoli_json():
 def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:
         return pd.read_excel(fp, sheetname=2, header=0)
+        
+try:
+    import cobra
+    def get_ecoli_sbml():
+        return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)
+except ImportError:
+    sys.stderr.write("WARNING: please install cobrapy to have full functionality")

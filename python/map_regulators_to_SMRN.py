@@ -1,56 +1,40 @@
 # Map activators and inhibitors to ecoli metabolic model
 
-# 1. NB: For now, we are using all possible mappings of EC numbers, and many of them map to multiple reactions. May need to think about how to deal with this.
+# 1. NB: For now, we are using all possible mappings of EC numbers, 
+#        and many of them map to multiple reactions. 
+#        May need to think about how to deal with this.
 # 2. NB: If there is activation and inhibition, we have to deal with this carefully
 
-import os, sys, numpy as np, pandas as pd, pdb, scipy as sp, pickle
-from scipy.io import loadmat
+import os
+import pandas as pd
+import settings
 
-# Load EC number dictionary
-ecdict = pickle.load( open( '../cache/ecgroups.p','rb' ) )
+#%% Read in the data for activators and inhibitors from BRENDA
+act = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_compounds_bigg.csv'),
+                  header=0, index_col=0)
+act['Value'] = 1                  
+inh = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_ki_bigg.csv'),
+                  header=0, index_col=0)
+inh['Value'] = -1
+effectors = pd.concat([act, inh])
+effectors.drop('Commentary', 1, inplace=True)
+
+#%% load BiGG reaction to EC number mapping
+bigg2ec = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'bigg2ec.csv'))
 
 # Read BIGG model
-ecoli = loadmat('../data/iJO1366.mat')['iJO1366']
-fields = ecoli.dtype.names
-mnames = [ecoli['mets'][0][0][item][0][0] for item in range(len(ecoli['mets'][0][0]))]
-rnames = [ecoli['rxns'][0][0][item][0][0] for item in range(len(ecoli['rxns'][0][0]))]
+model, metabolites, reactions, S = settings.get_ecoli_json()
 
 # Set to lower case
-mnames = [unicode.lower(item) for item in mnames]
-rnames = [unicode.lower(item) for item in rnames]
+mnames = map(unicode.lower, metabolites)
+rnames = map(unicode.lower, reactions)
 
-S = pd.DataFrame( ecoli['S'][0,0].todense(), index = mnames, columns = rnames )
-R = pd.DataFrame( 0, index = mnames, columns = rnames )
+#%% merge BRENDA effector data with the bigg2ec table to get the BiGG reaction IDs
+bigg_effectors = pd.merge(effectors, bigg2ec, how='inner', on='EC_number')
 
-# Read in the data
-act = pd.read_csv('../cache/ecoli_activating_compounds_bigg.csv',header = 0,index_col = 0)
-inh = pd.read_csv('../cache/ecoli_ki_bigg.csv',header = 0,index_col = 0)
-vardict = {'act':act,'inh':inh}
-
-numskipped = 0
-numused = 0
-
-for f in vardict.keys():
-	
-	d = vardict[ f ]
-	if f == 'act':
-		val = 1
-	if f == 'inh':
-		val = -1
-	
-	for row in d.index:
-		
-		ecnumber = d.at[ row, 'EC_number' ]
-		if ecnumber in ecdict.keys():
-			
-			rname = ecdict[ ecnumber ]
-			R.ix[ d.at[ row,'bigg.metabolite' ], rname ] += val
-			numused += 1
-			
-		else:
-			
-			print('Skipping ' + ecnumber + ', not in EC dictionary.')
-			numskipped += 1
-			
 # Write to file
-R.to_csv('../cache/iJO1366_SMRN.csv')
+bigg_effectors.to_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN.csv'))
+
+#%% group by the reaction and metabolite IDs and write to another CSV file
+bigg_effectors_grouped = bigg_effectors.groupby(['bigg.reaction', 'bigg.metabolite']).sum().reset_index()
+bigg_effectors_grouped.to_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN_grouped.csv'))

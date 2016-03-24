@@ -1,21 +1,23 @@
 # Import iJO1366 from .mat and format for mapping of regulatory interactions from BRENDA
 
-import os, sys, numpy as np, pandas as pd, pdb, scipy as sp, pickle
-from scipy.io import loadmat
+import os
+import pandas as pd
+import pdb
+import settings
 
 # Read BIGG model
-ecoli = loadmat('../data/iJO1366.mat')['iJO1366']
-fields = ecoli.dtype.names
-rnames = [ecoli['rxns'][0][0][item][0][0] for item in range(len(ecoli['rxns'][0][0]))]
+model, metabolites, reactions, S = settings.get_ecoli_json()
 
 # Set to lower case
-rnames = [unicode.lower(item) for item in rnames]
+rnames = map(unicode.lower, reactions)
 
 # Read mapping from KEGG IDs
 model_reactions = pd.read_excel('../data/inline-supplementary-material-2.xls', sheetname=2, header=0)
 bigg2ec = model_reactions[['Reaction Abbreviation', 'EC Number']]
-bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction'}, inplace=True)
-bigg2ec = bigg2ec.loc[~bigg2ec['EC Number'].isnull()]
+bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction',
+                        'EC Number': 'EC_number'},
+                        inplace=True)
+bigg2ec = bigg2ec.loc[~bigg2ec['EC_number'].isnull()]
 
 # Change all reaction IDs to lower-case (apparently the standards have changed
 # since the model was published, and cases are different now).
@@ -38,14 +40,8 @@ if len(error_rnames) != 0:
 	
 # Confirm that there are no duplicate bigg.reaction names, and if so, use this as the index
 if bigg2ec['bigg.reaction'].duplicated().any():
-	print( 'Multiple reactions with the same name!')
+	print('Multiple reactions with the same name!')
 	pdb.set_trace()
-else:
-	bigg2ec.index = bigg2ec['bigg.reaction']
 
-# Make a dictionary which maps from EC number to unique reaction name
-ecgroups = bigg2ec.groupby('EC Number')
-
-
-# Save the result
-pickle.dump( ecgroups.groups, open( '../cache/ecgroups.p', 'wb' ) )
+# write bigg2ec mapping to csv file
+bigg2ec.to_csv(os.path.join(settings.CACHE_DIR, 'bigg2ec.csv'))
