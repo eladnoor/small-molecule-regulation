@@ -23,11 +23,11 @@ effectors.drop('Commentary', 1, inplace=True)
 bigg2ec = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'bigg2ec.csv'))
 
 # Read BIGG model
-model, metabolites, reactions, S = settings.get_ecoli_json()
+model, S = settings.get_ecoli_json()
 
 # Set to lower case
-mnames = map(unicode.lower, metabolites)
-rnames = map(unicode.lower, reactions)
+mnames = map(unicode.lower, S.index)
+rnames = map(unicode.lower, S.columns)
 
 #%% merge BRENDA effector data with the bigg2ec table to get the BiGG reaction IDs
 bigg_effectors = pd.merge(effectors, bigg2ec, how='inner', on='EC_number')

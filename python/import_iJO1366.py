@@ -6,10 +6,10 @@ import pdb
 import settings
 
 # Read BIGG model
-model, metabolites, reactions, S = settings.get_ecoli_json()
+model, S = settings.get_ecoli_json()
 
 # Set to lower case
-rnames = map(unicode.lower, reactions)
+rnames = map(unicode.lower, S.columns)
 
 # Read mapping from KEGG IDs
 model_reactions = pd.read_excel('../data/inline-supplementary-material-2.xls', sheetname=2, header=0)

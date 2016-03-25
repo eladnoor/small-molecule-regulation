@@ -16,6 +16,7 @@ SCRIPT_DIR = os.path.dirname(main.__file__)
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
+RESULT_DIR = os.path.join(BASE_DIR, 'res')
 
 KEGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'kegg2chebi.csv')
 BIGG2KEGG_FNAME  = os.path.join(CACHE_DIR, 'bigg2kegg.csv')
@@ -30,16 +31,16 @@ def get_data_df(fname):
 def get_ecoli_json():
     with open(ECOLI_JSON_FNAME) as fp:
         model = json.load(fp)
+
+    sparse = []
+    for reaction in model['reactions']:
+        for met, coeff in reaction['metabolites'].iteritems():
+            sparse.append([reaction['id'].lower(), met.lower(), coeff])
     
-    # read the stoichiometric matrix from the model
-    metabolites = [x['id'] for x in model['metabolites']]
-    reactions = [x['id'] for x in model['reactions']]
-    S = np.matrix(np.zeros((len(metabolites), len(model['reactions']))))
-    for j, d in enumerate(model['reactions']):
-        for met, coeff in d['metabolites'].iteritems():
-            S[metabolites.index(met), j] = coeff
-    
-    return model, metabolites, reactions, S
+    sparse = pd.DataFrame(sparse, columns=['bigg.reaction', 'bigg.metabolite', 'stoichiometry'])
+    S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
+    S.fillna(0, inplace=True)
+    return model, S
     
 def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:

@@ -11,49 +11,43 @@ plt.close('all')
 sns.set_style('ticks')
 
 # Read BIGG model
-model, metabolites, reactions, S = settings.get_ecoli_json()
-reactions = [x.lower() for x in reactions]
-
-S = pd.DataFrame( S, index = metabolites, columns = reactions )
-
-Rfull = pd.DataFrame(0,index = metabolites,columns = reactions)
+model, S = settings.get_ecoli_json()
 
 # Read in long-format R
-R = pd.read_csv( '../cache/iJO1366_SMRN.csv',header = 0,index_col = 0 )
+R = pd.read_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN.csv'), header=0, index_col=0)
+R_grouped = R.groupby(['bigg.reaction', 'bigg.metabolite']).sum().reset_index()
+R_grouped['count'] = 1
 
-for ii in R.index:
-    Rfull.set_value( R.at[ii,'bigg.metabolite'], R.at[ii,'bigg.reaction'], 1 )
+rxn_df = pd.DataFrame(index=S.columns)
+rxn_df['Degree of Reaction, R'] = R_grouped[['bigg.reaction', 'count']].groupby('bigg.reaction').sum()
+rxn_df['Degree of Reaction, S'] = S.abs().astype(bool).sum(axis=0)
 
-# Histograms of metabolite and reaction regulation
-gR = Rfull.sum(axis = 0)
-mR =  Rfull.sum(axis = 1)
+met_df = pd.DataFrame(index=S.index)
+met_df['Degree of Metabolite, R'] = R_grouped[['bigg.metabolite', 'count']].groupby('bigg.metabolite').sum()
+met_df['Degree of Metabolite, S'] = S.abs().astype(bool).sum(axis=1)
 
-plt.figure()
-plt.hist( gR,align = 'left', bins = range(np.max(gR)+1) )
-plt.xlabel('Degree of Reaction')
+#%% Histograms of metabolite and reaction regulation
+fig, axs = plt.subplots(2, 3, figsize=(14, 10))
+pd.DataFrame.hist(rxn_df.fillna(0), column=['Degree of Reaction, R'],
+                  grid=False, bins=20, ax=axs[0, 0], linewidth=0)
+axs[0, 0].set_xlabel('Degree of Reaction')
 
-plt.figure()
-plt.hist( gR[gR!=0],align = 'left', bins = range(np.max(gR)+1) )
-plt.xlabel('Degree of Reaction, Null Reactions Removed')
+pd.DataFrame.hist(rxn_df, column=['Degree of Reaction, R'],
+                  grid=False, bins=20, ax=axs[0, 1], linewidth=0)
+axs[0, 1].set_xlabel('Degree of Reaction, Null Reactions Removed')
 
-plt.figure()
-plt.hist( mR,align = 'left', bins = range(np.max(gR)+1) )
-plt.xlabel('Degree of Metabolite')
+pd.DataFrame.hist(met_df.fillna(0), column=['Degree of Metabolite, R'],
+                  grid=False, bins=20, ax=axs[1, 0], linewidth=0)
+axs[1, 0].set_xlabel('Degree of Metabolite')
 
-plt.figure()
-plt.hist( mR[mR!=0],align = 'left', bins = range(np.max(gR)+1) )
-plt.xlabel('Degree of Metabolite, Null Metabolites Removed')
+pd.DataFrame.hist(met_df, column=['Degree of Metabolite, R'],
+                  grid=False, bins=20, ax=axs[1, 1], linewidth=0)
+axs[1, 1].set_xlabel('Degree of Metabolite, Null Metabolites Removed')
 
 # Compare degree of metabolites and degree of reactions
-gS = S.abs().astype(bool).sum(axis = 0)
-mS = S.abs().astype(bool).sum(axis = 1)
+rxn_df.plot(kind='scatter', x='Degree of Reaction, R', y='Degree of Reaction, S',
+            ax=axs[0, 2], linewidth=0)
+met_df.plot(kind='scatter', x='Degree of Metabolite, R', y='Degree of Metabolite, S',
+            ax=axs[1, 2], linewidth=0)
 
-plt.figure()
-plt.loglog(mS,mR,'o')
-plt.xlabel('Degree of Metabolite,S')
-plt.ylabel('Degree of Metabolite,R')
-
-plt.figure()
-plt.loglog(gS,gR,'o')
-plt.xlabel('Degree of Gene,S')
-plt.ylabel('Degree of Gene,R')
+fig.savefig(os.path.join(settings.RESULT_DIR, 'degree_plots.svg'))
