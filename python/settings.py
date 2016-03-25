@@ -10,6 +10,7 @@ import __main__ as main
 import pandas as pd
 import json
 import numpy as np
+import matplotlib.pyplot as plt
 
 SCRIPT_DIR = os.path.dirname(main.__file__)
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
@@ -43,6 +44,14 @@ def get_ecoli_json():
 def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:
         return pd.read_excel(fp, sheetname=2, header=0)
+
+def plotdiag():
+	x1,x2,y1,y2 = plt.axis()
+	minplot = np.min([x1,y1])
+	maxplot = np.max([x2,y2])
+	plt.plot([minplot, maxplot], [minplot,maxplot], 'k-', lw=2)
+	plt.plot([minplot,maxplot/10],[minplot*10,maxplot],'k--',lw=2)
+	plt.plot([minplot*10,maxplot],[minplot,maxplot/10],'k--',lw=2)
         
 try:
     import cobra
