@@ -4,6 +4,7 @@
 #        and many of them map to multiple reactions. 
 #        May need to think about how to deal with this.
 # 2. NB: If there is activation and inhibition, we have to deal with this carefully
+# 3. NB: There are multiple BRENDA entries indicating the same reaction. We should treat this as multiple lines of supporting evidence.
 
 import os
 import pandas as pd
