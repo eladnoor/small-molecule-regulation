@@ -46,13 +46,15 @@ def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:
         return pd.read_excel(fp, sheetname=2, header=0)
 
-def plotdiag():
-	x1,x2,y1,y2 = plt.axis()
-	minplot = np.min([x1,y1])
-	maxplot = np.max([x2,y2])
-	plt.plot([minplot, maxplot], [minplot,maxplot], 'k-', lw=2)
-	plt.plot([minplot,maxplot/10],[minplot*10,maxplot],'k--',lw=2)
-	plt.plot([minplot*10,maxplot],[minplot,maxplot/10],'k--',lw=2)
+def plotdiag(lw=2, ax=None):
+    if ax is None:
+        ax = plt
+    x1, x2, y1, y2 = ax.axis()
+    minplot = np.min([x1, y1])
+    maxplot = np.max([x2, y2])
+    ax.plot([minplot,    maxplot],    [minplot,    maxplot],    'k-',  lw=lw)
+    ax.plot([minplot,    maxplot/10], [minplot*10, maxplot],    'k--', lw=lw)
+    ax.plot([minplot*10, maxplot],    [minplot,    maxplot/10], 'k--', lw=lw)
         
 try:
     import cobra

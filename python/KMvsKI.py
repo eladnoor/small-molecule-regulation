@@ -1,6 +1,8 @@
 # Compare KM and KI 
 
-import os, numpy as np, scipy.stats as st, matplotlib.pyplot as plt, seaborn as sns, pandas as pd, pdb, settings, statsmodels.stats.multitest as smm
+import os, numpy as np, scipy.stats as st, matplotlib.pyplot as plt
+import seaborn as sns, pandas as pd, settings
+import statsmodels.stats.multitest as smm
 
 sns.set_style('ticks')
 
@@ -8,7 +10,8 @@ plt.ion()
 plt.close('all')
 
 # Read the KM and KI data
-km = pd.read_csv('../cache/ecoli_km_kegg.csv',header = 0,index_col = 0)
+km = pd.read_csv(os.path.join(settings.DATA_DIR, 'ecoli_km_kegg.csv'),
+                 header=0, index_col=0)
 km['Type'] = 'KM'
 ki = pd.read_csv('../cache/ecoli_ki_kegg.csv',header = 0, index_col = 0)
 ki['Type'] = 'KI'
@@ -25,7 +28,8 @@ mgroups = km.groupby('KEGG_ID')
 igroups = ki.groupby('KEGG_ID')
 ixmets = mgroups.groups.viewkeys() & igroups.groups.viewkeys()
 
-# For each metabolite in ixmets, test whether there is a significant difference between KM and KI. Restrict to cases where we have at least 3 samples of KM and KI.
+# For each metabolite in ixmets, test whether there is a significant difference 
+# between KM and KI. Restrict to cases where we have at least 3 samples of KM and KI.
 res = pd.DataFrame( columns = ['Log2FC','MannWhitneyP','PAdj','NumKM','NumKI'] )
 for met in ixmets:
 
@@ -51,7 +55,7 @@ medplot = pd.DataFrame( {'KM':km_med.ix[ixmets,'Value'],'KI':ki_med.ix[ixmets,'V
 
 plt.figure()
 plt.loglog( medplot['KM'],medplot['KI'],'o' )
-plt.xlabel('KM')
-plt.ylabel('KI')
+plt.xlabel('$K_M$')
+plt.ylabel('$K_I$')
 settings.plotdiag()
 
