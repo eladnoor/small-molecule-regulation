@@ -11,10 +11,10 @@ import pandas as pd
 
 model, S = settings.get_ecoli_json()
 ki = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_ki_bigg.csv'))
-activators = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_compounds_bigg.csv'))
+activators = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_bigg.csv'))
 
 model_reactions = settings.get_reaction_table_from_xls()
-bigg2ec = model_reactions[['Reaction Abbreviation', 'EC Number']]
+bigg2ec = model_reactions.loc[:, ['Reaction Abbreviation', 'EC Number']]
 bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction'}, inplace=True)
 bigg2ec = bigg2ec.loc[~bigg2ec['EC Number'].isnull()]
 

@@ -11,7 +11,7 @@ import pandas as pd
 import settings
 
 #%% Read in the data for activators and inhibitors from BRENDA
-act = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_compounds_bigg.csv'),
+act = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_bigg.csv'),
                   header=0, index_col=0)
 act['Value'] = 1                  
 inh = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_ki_bigg.csv'),

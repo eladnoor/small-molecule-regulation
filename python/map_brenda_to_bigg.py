@@ -10,6 +10,7 @@ import pandas as pd
 import settings
 import os
 import sys
+import zipfile
 
 bigg2chebi = pd.DataFrame.from_csv(settings.BIGG2CHEBI_FNAME)
 
@@ -35,20 +36,21 @@ sys.stderr.write('Number of mappings between Ligand IDs and BiGG IDs: %d\n' % li
 ligand_df.drop_duplicates(subset=['LigandID'], keep='first', inplace=True)
 sys.stderr.write('After removing duplicates: %d\n' % ligand_df.shape[0])
 
-brenda_input = [{'fname': 'ecoli_turnover', 'value_col': 'Turnover_Number'},
-                {'fname': 'ecoli_ki', 'value_col': 'KI_Value'},
-                {'fname': 'ecoli_km', 'value_col': 'KM_Value'},
-                {'fname': 'ecoli_activating_compounds', 'value_col': None}]
-                
+brenda_input = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
+                {'fname': 'ki',         'value_col': 'KI_Value'},
+                {'fname': 'km',         'value_col': 'KM_Value'},
+                {'fname': 'activating', 'value_col': None}]
+         
+brenda_zip = zipfile.ZipFile(open(settings.ECOLI_BRENDA_ZIP_FNAME, 'r'))
 for d in brenda_input:
-    df = settings.get_data_df(d['fname'])
+    df = pd.DataFrame.from_csv(brenda_zip.open(d['fname'] + '.csv', 'r'), header=0, index_col=None)
     if d['value_col'] is not None:    
         df.rename(columns={d['value_col']: 'Value'}, inplace=True)
         df = pd.merge(df, ligand_df, how='inner', on='LigandID')
-        df = df[['EC_number', 'Value', 'bigg.metabolite', 'Commentary']]
+        df = df[['EC_number', 'Value', 'bigg.metabolite', 'Commentary', 'Literature']]
     else:
         df = pd.merge(df, ligand_df, how='inner', on='LigandID')
-        df = df[['EC_number', 'bigg.metabolite', 'Commentary']]
+        df = df[['EC_number', 'bigg.metabolite', 'Commentary', 'Literature']]
         
-    df.to_csv(os.path.join(settings.CACHE_DIR, d['fname'] + '_bigg.csv'))
+    df.to_csv(os.path.join(settings.CACHE_DIR, 'ecoli_' + d['fname'] + '_bigg.csv'))
 

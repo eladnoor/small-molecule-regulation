@@ -24,6 +24,7 @@ BIGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'bigg2chebi.csv')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
 ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml.gz')
 ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
+ECOLI_BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'ecoli_brenda_query_2016_02_04.zip')
 
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
