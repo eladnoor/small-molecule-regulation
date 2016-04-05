@@ -29,20 +29,6 @@ ECOLI_BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'ecoli_brenda_query_2016_02_04.z
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
 
-def get_ecoli_json():
-    with open(ECOLI_JSON_FNAME) as fp:
-        model = json.load(fp)
-
-    sparse = []
-    for reaction in model['reactions']:
-        for met, coeff in reaction['metabolites'].iteritems():
-            sparse.append([reaction['id'].lower(), met.lower(), coeff])
-    
-    sparse = pd.DataFrame(sparse, columns=['bigg.reaction', 'bigg.metabolite', 'stoichiometry'])
-    S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
-    S.fillna(0, inplace=True)
-    return model, S
-    
 def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:
         return pd.read_excel(fp, sheetname=2, header=0)
