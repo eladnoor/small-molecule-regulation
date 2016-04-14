@@ -35,11 +35,16 @@ class EcoliModel(object):
         self.S.fillna(0, inplace=True)
         
     def _CreateLinearProblem(self):
+        """
+            Generates a linear problem object (using PuLP) with all the mass
+            balance constraints (Sv = 0), and with individual upper and lower
+            bounds on reactions (as given by the model)
+        """
         lp = LpProblem("FBA", LpMaximize)
         
         # create the flux variables
         fluxes = LpVariable.dicts("v", self.reactions,
-                             lowBound=-1000, upBound=1000)
+                                  lowBound=-1000, upBound=1000)
                              
         for d in self.model['reactions']:
             if d['id'] not in self.reactions:
@@ -55,12 +60,14 @@ class EcoliModel(object):
             mass_balance_constraints[met] = (lpSum(mul) == 0)
             lp += mass_balance_constraints[met], "mass_balance_%s" % met
         
-        # set the objective to be the biomass function
-        lp.setObjective(fluxes[EcoliModel.BIOMASS_REACTION])
         return lp, fluxes, mass_balance_constraints
         
     def Solve(self):
         lp, fluxes, mass_balance_constraints = self._CreateLinearProblem()
+
+        # set the objective to be the biomass function
+        lp.setObjective(fluxes[EcoliModel.BIOMASS_REACTION])
+
         lp.solve(EcoliModel.PULP_SOLVER)
         if lp.status != LpStatusOptimal:
             raise solvers.PulpSolverError("cannot solve MDF primal")
@@ -71,7 +78,37 @@ class EcoliModel(object):
         
         return lp.objective.value(), v_sol, shadow_prices
 
+    def SolveForReaction(self, reaction, max_growth_yield=None):
+        if max_growth_yield is None:
+            max_gr, _, _ = self.Solve()
+        
+        lp, fluxes, mass_balance_constraints = self._CreateLinearProblem()
+        
+        # set the objective to be the selected reaction
+        lp.setObjective(fluxes[reaction])
+        
+        # set a biomass constraint
+        lp += fluxes[EcoliModel.BIOMASS_REACTION] >= max_growth_yield*0.99
+
+        lp.solve(EcoliModel.PULP_SOLVER)
+        if lp.status != LpStatusOptimal:
+            raise solvers.PulpSolverError("cannot solve MDF primal")
+        v_all = pd.DataFrame(data=[fluxes[r].value() for r in self.reactions],
+                             index=self.reactions, columns=['flux'])
+        shadow_prices = pd.DataFrame(data=[mass_balance_constraints[m].pi for m in self.metabolites],
+                                     index=self.metabolites, columns=['shadow price'])
+        
+        return lp.objective.value(), v_all, shadow_prices
+
 ###############################################################################
 
 m = EcoliModel()
-growth_yield, v_sol, pi = m.Solve()
+growth_yield, v_all, pi = m.Solve()
+
+result_df = pd.DataFrame(index=m.metabolites, columns=m.reactions)
+for r in m.reactions:
+    v_r, v_all, pi = m.SolveForReaction(r, growth_yield)
+    result_df[r] = pi
+
+result_df = result_df.round(3)
+result_df.to_csv(os.path.join(settings.CACHE_DIR, 'shadow_prices.csv'))
