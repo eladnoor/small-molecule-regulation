@@ -72,23 +72,24 @@ act_minus = act_sp['shadow_price'][pd.isnull(ki_sp['EC_number'])]
 act_plus = act_sp['shadow_price'][~pd.isnull(ki_sp['EC_number'])]
 
 #%%
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-axs[0].hist(ki_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
-axs[0].hist(ki_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
-axs[0].set_xlim(-200, 100)
-axs[0].set_ylim(0, 1)
-axs[0].legend(['non-interacting', 'interacting'], loc='upper left')
-axs[0].set_title('Inhibiting')
-axs[0].set_xlabel('Shadow Price')
-axs[0].set_ylabel('Cumulative Distribution')
+with plt.xkcd():
+    fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+    axs[0].hist(ki_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
+    axs[0].hist(ki_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
+    axs[0].set_xlim(-100, 10)
+    axs[0].set_ylim(0, 1)
+    axs[0].legend(['non-interacting', 'interacting'], loc='upper left')
+    axs[0].set_title('Inhibiting')
+    axs[0].set_xlabel('Shadow Price')
+    axs[0].set_ylabel('Cumulative Distribution')
+    
+    axs[1].hist(act_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
+    axs[1].hist(act_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
+    axs[1].set_xlim(-100, 10)
+    axs[1].set_ylim(0, 1)
+    axs[1].legend(['non-interacting', 'interacting'], loc='upper left')
+    axs[1].set_title('Activating')
+    axs[1].set_xlabel('Shadow Price')
+    axs[1].set_ylabel('Cumulative Distribution')
 
-axs[1].hist(act_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
-axs[1].hist(act_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
-axs[1].set_xlim(-200, 100)
-axs[1].set_ylim(0, 1)
-axs[1].legend(['non-interacting', 'interacting'], loc='upper left')
-axs[1].set_title('Activating')
-axs[1].set_xlabel('Shadow Price')
-axs[1].set_ylabel('Cumulative Distribution')
-
-fig.savefig(os.path.join(settings.RESULT_DIR, 'shadow_price_cdf.svg'))
+    fig.savefig(os.path.join(settings.RESULT_DIR, 'shadow_price_cdf.png'))
