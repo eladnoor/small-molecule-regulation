@@ -8,7 +8,6 @@ Created on Wed Mar 23 16:36:02 2016
 import os, sys
 import __main__ as main
 import pandas as pd
-import json
 import numpy as np
 import matplotlib.pyplot as plt
 
