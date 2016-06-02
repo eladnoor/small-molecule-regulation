@@ -90,23 +90,3 @@ for param in ['K_M', 'K_I']:
                     ha='left', va='top', size=15)
     
     fig.savefig(os.path.join(settings.RESULT_DIR, '%s_vs_conc.svg' % param))
-    #
-
-#%%
-# draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
-ki_fc = np.log2(concensus.iloc[:, 2:].multiply(1.0/concensus['K_I'], axis='index'))
-km_fc = np.log2(concensus.iloc[:, 2:].multiply(1.0/concensus['K_M'], axis='index'))
-
-colmap = dict(map(lambda x: (x, x[:-7]), ki_fc.columns))
-indmap = dict(map(lambda x: (x, x[:-2]), ki_fc.index))
-
-ki_fc.rename(index=indmap, columns=colmap, inplace=True)
-km_fc.rename(index=indmap, columns=colmap, inplace=True)
-fig, (ax0, ax1) = plt.subplots(1, 2, sharey=True, figsize=(20, 10))
-sns.heatmap(km_fc, ax=ax0, mask=km_fc.isnull())
-sns.heatmap(ki_fc, ax=ax1, mask=km_fc.isnull())
-ax0.set_title('$\log_2([S]/K_M)$')
-ax0.set_ylabel('')
-ax1.set_title('$\log_2([S]/K_I)$')
-ax1.set_ylabel('')
-fig.savefig(os.path.join(settings.RESULT_DIR, 'saturation_heatmaps.svg'))

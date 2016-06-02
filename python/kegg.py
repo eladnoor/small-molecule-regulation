@@ -36,7 +36,7 @@ def get_kegg_df():
         cid2chebi.index.name = 'KEGG_ID'
         
         cid2chebi['ChEBI'] = None
-        for cid in cid2chebi.index[0:10]:
+        for cid in cid2chebi.index:
             ChEBI = re.findall('ChEBI: ([\d\s]+)\n', k.get(cid))
             if len(ChEBI) == 0:
                 print 'Cannot find a ChEBI for %s' % cid
