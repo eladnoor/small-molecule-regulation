@@ -8,30 +8,29 @@ Created on Thu Mar 31 11:03:03 2016
 import os
 import pandas as pd
 import scipy
-import numpy as np
-import settings
+import settings as S
 import matplotlib.pyplot as plt
 import seaborn as sns
-#sns.set_style('ticks')
 sns.axes_style('whitegrid')
 
-_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR,
-                                         'ecoli_metabolites_gerosa2015.csv'),
-                            index_col=0)
+organism = 'Escherichia coli'
+
+_df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
 met_conc_std = _df.iloc[:, 10:]
 
-km = pd.read_csv('../cache/ecoli_km_bigg.csv', index_col = 0)
-ki = pd.read_csv('../cache/ecoli_ki_bigg.csv', index_col = 0)
-km.rename(columns={'Value':'K_M'}, inplace=True)
-ki.rename(columns={'Value':'K_I'}, inplace=True)
+km = S.read_cache('km')
+ki = S.read_cache('ki')
 
-km = km[km['K_M'] != -999]
-ki = ki[ki['K_I'] != -999]
+km = km[km['Organism'] == organism]
+ki = ki[ki['Organism'] == organism]
 
-km_median = km.groupby('bigg.metabolite')['K_M'].median().reset_index()
-ki_median = ki.groupby('bigg.metabolite')['K_I'].median().reset_index()
+km = km[km['KM_Value'] != -999]
+ki = ki[ki['KI_Value'] != -999]
+
+km_median = km.groupby('bigg.metabolite')['KM_Value'].median().reset_index()
+ki_median = ki.groupby('bigg.metabolite')['KI_Value'].median().reset_index()
 
 data = pd.merge(km_median, ki_median).join(met_conc_mean, on='bigg.metabolite')
 data.set_index('bigg.metabolite', inplace=True)
@@ -43,8 +42,8 @@ for ax, carbon_source in zip(axs, ['Glucose', 'Acetate']):
     ax.set_xscale('log')
     ax.set_yscale('log')
     xdata = concensus['%s (mean)' % carbon_source]
-    ydata1 = concensus['K_M']
-    ydata2 = concensus['K_I']
+    ydata1 = concensus['KM_Value']
+    ydata2 = concensus['KI_Value']
     for ind in concensus.index:
         ax.plot([xdata[ind], xdata[ind]], [ydata1[ind], ydata2[ind]],
                 'k-', alpha=0.4, linewidth=0.5)
@@ -58,13 +57,13 @@ for ax, carbon_source in zip(axs, ['Glucose', 'Acetate']):
     ax.legend(loc='upper left')
     ax.set_xlabel('mean concentration on %s [mM]' % carbon_source)
     ax.set_ylabel('Affinity [mM]')
-    settings.plotdiag(ax=ax, lw=0.5)
+    S.plotdiag(ax=ax, lw=0.5)
 
-fig.savefig(os.path.join(settings.RESULT_DIR, 'KMandKI_vs_conc.svg'))
+fig.savefig(os.path.join(S.RESULT_DIR, 'KMandKI_vs_conc.svg'))
 
 #%%
 # scatter plot comparing the K_M or K_I and abundance of each metabolite in glucose and acetate
-for param in ['K_M', 'K_I']:
+for param in ['KM_Value', 'KI_Value']:
     fig, axs = plt.subplots(1, 2, figsize=(14, 7))
     for ax, carbon_source in zip(axs, ['Glucose', 'Acetate']):
         ax.set_xscale('log')
@@ -83,10 +82,10 @@ for param in ['K_M', 'K_I']:
         ax.legend(loc='upper left')
         ax.set_xlabel('mean concentration on %s [mM]' % carbon_source)
         ax.set_ylabel('$%s$ in [mM]' % param)
-        settings.plotdiag(ax=ax, lw=0.5)
+        S.plotdiag(ax=ax, lw=0.5)
         r = scipy.stats.spearmanr(xdata, ydata)
         ax.annotate('$r_{spearman}$ = %.2f (p < %.3f)' % (r.correlation, r.pvalue),
                     xy=(0.04, 0.9), xycoords='axes fraction',
                     ha='left', va='top', size=15)
     
-    fig.savefig(os.path.join(settings.RESULT_DIR, '%s_vs_conc.svg' % param))
+    fig.savefig(os.path.join(S.RESULT_DIR, '%s_vs_conc.svg' % param))

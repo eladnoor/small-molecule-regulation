@@ -15,11 +15,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set('notebook', style=None)
 
-KI_FNAME = 'ecoli_ki_bigg.csv'
-KM_FNAME = 'ecoli_km_bigg.csv'
-CONC_FNAME = 'ecoli_metabolites_gerosa2015.csv'
+organism = 'Escherichia coli'
 
-def calc_fold_change(K_df, conc_df):
+def calc_fold_change(K_df, column_name, conc_df):
     """
         calculates the [S]/K_S for all matching EC-metabolite pairs,
         in log2-fold-change.
@@ -31,11 +29,11 @@ def calc_fold_change(K_df, conc_df):
     
     # remove values of -999, which simply means there is no quantitative data
     # for this Ki/Km
-    k = K_df[K_df['Value'] != -999]
+    k = K_df[K_df[column_name] != -999]
     
     # group by and calculate minimum over all repeats (i.e. with the same
     # reaction and the same metabolite)
-    k = k.groupby(['EC_number', 'bigg.metabolite'])['Value'].min().reset_index()
+    k = k.groupby(['EC_number', 'bigg.metabolite'])[column_name].min().reset_index()
     k = k.join(conc_df, on='bigg.metabolite', how='inner')
     
     # remove the _c suffix in the metabolite names
@@ -43,11 +41,11 @@ def calc_fold_change(K_df, conc_df):
     k.drop('bigg.metabolite', axis=1, inplace=True)
 
     k.set_index(['EC_number', 'met'], inplace=True)
-    k = k.div(k['Value'], axis=0)
-    k.drop('Value', axis=1, inplace=True)
+    k = k.div(k[column_name], axis=0)
+    k.drop(column_name, axis=1, inplace=True)
     return np.log2(k)
 
-_df = pd.DataFrame.from_csv(os.path.join(S.DATA_DIR, CONC_FNAME))
+_df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
 met_conc_std = _df.iloc[:, 10:]
@@ -55,14 +53,19 @@ met_conc_std = _df.iloc[:, 10:]
 colmap = dict(map(lambda x: (x, x[:-7]), met_conc_mean.columns))
 met_conc_mean.rename(columns=colmap, inplace=True)
 
-km = pd.DataFrame.from_csv(os.path.join(S.CACHE_DIR, KM_FNAME))
-ki = pd.DataFrame.from_csv(os.path.join(S.CACHE_DIR, KI_FNAME))
+km = S.read_cache('km')
+ki = S.read_cache('ki')
 
-km_fc = calc_fold_change(km, met_conc_mean)
-ki_fc = calc_fold_change(ki, met_conc_mean)
+km = km[km['Organism'] == organism]
+ki = ki[ki['Organism'] == organism]
+
+km_fc = calc_fold_change(km, 'KM_Value', met_conc_mean)
+ki_fc = calc_fold_change(ki, 'KI_Value', met_conc_mean)
 
 km_fc_med = km_fc.reset_index().groupby('met').median()
 ki_fc_med = ki_fc.reset_index().groupby('met').median()
+km_fc_med.sort_index(axis=0, inplace=True)
+ki_fc_med.sort_index(axis=0, inplace=True)
 
 #%%
 # draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
@@ -96,15 +99,16 @@ fig.tight_layout()
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
-fig, ax = plt.subplots(1, 1, figsize=(7, 7))
-pd.melt(km_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                             histtype='step', ax=ax, label='$K_M$', linewidth=2)
-pd.melt(ki_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                             histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 10)
-ax.set_ylim(0, 1)
-ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
-ax.set_ylabel(r'Cumulative distribution')
-ax.set_title('Saturation of substrates and inhibitors')
-ax.legend(loc='upper left')
-fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
+with plt.xkcd():
+    fig, ax = plt.subplots(1, 1, figsize=(7, 7))
+    pd.melt(km_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='$K_M$', linewidth=2)
+    pd.melt(ki_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='$K_I$', linewidth=2)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(0, 1)
+    ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
+    ax.set_ylabel(r'Cumulative distribution')
+    ax.set_title('Saturation of substrates and inhibitors')
+    ax.legend(loc='upper left')
+    fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))

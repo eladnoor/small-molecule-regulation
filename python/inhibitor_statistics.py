@@ -5,16 +5,19 @@ Created on Wed Apr 13 19:12:22 2016
 @author: noore
 """
 
-import settings
+import settings as S
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
+import bigg
 
-ki = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_ki_bigg.csv'))
+ki = S.read_cache('ki')
+ki = ki[ki['Organism'] == 'Escherichia coli']
 ki_unique = ki.groupby(['EC_number', 'bigg.metabolite']).first().reset_index()
 
-act = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activating_bigg.csv'))
+act = S.read_cache('activating')
+act = act[act['Organism'] == 'Escherichia coli']
 act_unique = act.groupby(['EC_number', 'bigg.metabolite']).first().reset_index()
 
 interactions = pd.concat([ki_unique[['EC_number', 'bigg.metabolite']],
@@ -23,53 +26,49 @@ interactions = pd.concat([ki_unique[['EC_number', 'bigg.metabolite']],
 int_count_EC = interactions.groupby('EC_number').count()
 int_count_EC.sort_values('bigg.metabolite', inplace=True, ascending=False)
 int_count_EC.rename(columns={'bigg.metabolite': 'count(metabolites)'}, inplace=True)
-int_count_EC.to_csv(os.path.join(settings.RESULT_DIR, 'count_interactions_per_EC_number.csv'))
+int_count_EC.to_csv(os.path.join(S.RESULT_DIR, 'count_interactions_per_EC_number.csv'))
 
 int_count_met = interactions.groupby('bigg.metabolite').count()
 int_count_met.sort_values('EC_number', inplace=True, ascending=False)
 int_count_met.rename(columns={'EC_number': 'count(EC)'}, inplace=True)
-int_count_met.to_csv(os.path.join(settings.RESULT_DIR, 'count_interactions_per_metabolite.csv'))
+int_count_met.to_csv(os.path.join(S.RESULT_DIR, 'count_interactions_per_metabolite.csv'))
 
 #%%
 # compare the shadow prices of the known interaction pairs the global
 # distribution
 
-shadow_df = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'shadow_prices.csv'))
+shadow_df = S.read_cache('shadow_prices')
 shadow_df.columns = map(str.lower, shadow_df.columns)
 
 # map the EC numbers to the bigg.reaction IDs
-model_reactions = settings.get_reaction_table_from_xls()
-bigg2ec = model_reactions.loc[:, ['Reaction Abbreviation', 'EC Number']]
-bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction', 'EC Number':'EC_number'},
-               inplace=True)
-bigg2ec = bigg2ec.loc[~bigg2ec['EC_number'].isnull()]
+model_reactions = S.get_reaction_table_from_xls()
+bigg2ec = bigg.get_reaction_df()
 
 # change all reaction IDs to lower-case (apparently the case standards have changed
 # since the model was published).
 
-bigg2ec['bigg.reaction'] = bigg2ec['bigg.reaction'].apply(lambda s: str(s).lower())
-
-ki_bigg = pd.merge(ki_unique, bigg2ec, on='EC_number')[['EC_number', 'bigg.metabolite', 'bigg.reaction', 'Value']]
-act_bigg = pd.merge(act_unique, bigg2ec, on='EC_number')[['EC_number', 'bigg.metabolite', 'bigg.reaction']]
-regulating_mets = set(ki_bigg['bigg.metabolite'].unique()).union(act_bigg['bigg.metabolite'])
-regulated_rxns = set(ki_bigg['bigg.reaction'].unique()).union(act_bigg['bigg.reaction'])
+ki_bigg = ki_unique.join(bigg2ec, on='EC_number', how='inner')
+act_bigg = act_unique.join(bigg2ec, on='EC_number', how='inner')
+regulating_mets = set(ki_bigg['bigg.metabolite'].unique()).union(act_bigg['bigg.metabolite'].unique())
+regulated_rxns = set(ki_bigg['bigg.reaction'].unique()).union(act_bigg['bigg.reaction'].unique())
 
 #%%
 df = shadow_df.loc[regulating_mets, regulated_rxns]
-df['bigg.metabolite'] = df.index
+df['bigg.metabolite'] = df.index # add the bigg IDs as another column, in order to "melt" the table later
 
 df = pd.melt(df,
              id_vars=['bigg.metabolite'],
              var_name='bigg.reaction',
              value_name='shadow_price')
+df = df[pd.notnull(df['shadow_price'])]
 ki_sp = pd.merge(df, ki_bigg, on=['bigg.metabolite', 'bigg.reaction'], how='left')
 act_sp = pd.merge(df, act_bigg, on=['bigg.metabolite', 'bigg.reaction'], how='left')
 
-ki_minus = ki_sp['shadow_price'][pd.isnull(ki_sp['EC_number'])]
-ki_plus = ki_sp['shadow_price'][~pd.isnull(ki_sp['EC_number'])]
+ki_minus = ki_sp.loc[pd.isnull(ki_sp['EC_number']), 'shadow_price']
+ki_plus = ki_sp.loc[pd.notnull(ki_sp['EC_number']), 'shadow_price']
 
-act_minus = act_sp['shadow_price'][pd.isnull(ki_sp['EC_number'])]
-act_plus = act_sp['shadow_price'][~pd.isnull(ki_sp['EC_number'])]
+act_minus = act_sp.loc[pd.isnull(act_sp['EC_number']), 'shadow_price']
+act_plus = act_sp.loc[pd.notnull(act_sp['EC_number']), 'shadow_price']
 
 #%%
 with plt.xkcd():
@@ -92,4 +91,4 @@ with plt.xkcd():
     axs[1].set_xlabel('Shadow Price')
     axs[1].set_ylabel('Cumulative Distribution')
 
-    fig.savefig(os.path.join(settings.RESULT_DIR, 'shadow_price_cdf.png'))
+    fig.savefig(os.path.join(S.RESULT_DIR, 'shadow_price_cdf.png'))
