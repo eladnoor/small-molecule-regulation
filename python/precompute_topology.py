@@ -1,5 +1,7 @@
 # Pre-compute the shortest path length in the stoichiometric matrix
 
+# NB: check some of the shortest path calcs?
+
 import os, numpy as np, pdb, settings, networkx as nx, pandas as pd
 
 # Read BIGG model

@@ -10,8 +10,10 @@ import __main__ as main
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import imp
 
 SCRIPT_DIR = os.path.dirname(main.__file__)
+#SCRIPT_DIR = os.path.dirname('/Users/ereznik/Documents/small-molecule-regulation/python/')
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
@@ -57,8 +59,12 @@ def plotdiag(lw=2, ax=None):
     ax.plot([minplot*10, maxplot],    [minplot,    maxplot/10], 'k--', lw=lw)
         
 try:
-    import cobra
-    def get_ecoli_sbml():
-        return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)
+    imp.find_module('cobra')
+    cobrafound = True
 except ImportError:
+    cobrafound = False
     sys.stderr.write("WARNING: please install cobrapy to have full functionality")
+if cobrafound:
+    def get_ecoli_sbml():
+        return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)    
+
