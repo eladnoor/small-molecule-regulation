@@ -128,20 +128,20 @@ with plt.xkcd():
                                        histtype='step', ax=ax, label='substrates', linewidth=2)
     pd.melt(ki_met_conc)['value'].hist(cumulative=True, normed=1, bins=1000,
                                        histtype='step', ax=ax, label='inhibitors', linewidth=2)
-    ax.set_xlim(-7, 4)
+    ax.set_xlim(-10, 10)
     ax.set_ylim(0, 1)
     ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
     ax.set_title('Metabolite concentrations')
     ax.legend(loc='upper left')
 
     ax = axs[2]
-    np.log2(km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
+    np.log2(1.0/km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
                             histtype='step', ax=ax, label='$K_M$', linewidth=2)
-    np.log2(ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
+    np.log2(1.0/ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
                             histtype='step', ax=ax, label='$K_I$', linewidth=2)
-    ax.set_xlim(-11, 9)
+    ax.set_xlim(-10, 10)
     ax.set_ylim(0, 1)
-    ax.set_xlabel(r'$\log_2 K_S (in mM)$')
+    ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
     ax.set_title('Michaelis and inhibition constants')
     ax.legend(loc='upper left')
 
