@@ -1,12 +1,13 @@
 # Compare topology of SMRN to topology of S using pre-computing shortest-distances
 
-import os, sys, numpy as np, pickle, pandas as pd, matplotlib.pyplot as plt, seaborn as sns
+import os, sys, settings, numpy as np, pickle, pandas as pd, matplotlib.pyplot as plt, seaborn as sns
 sns.set_style('ticks')
 plt.ion()
 plt.close('all')
 
 # Read in the SMRN with shortest path lengths
-smrn = pd.read_csv( '../cache/iJO1366_SMRN_spl.csv',header = 0,index_col = 0 )
+smrn = pd.read_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN_spl.csv'),
+                   header = 0,index_col = 0 )
 
 # Make a histogram indicating the relative distance activating/inhibiting edges travel
 fig, axs = plt.subplots(2, 1, figsize=(10, 10))

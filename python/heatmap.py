@@ -59,6 +59,9 @@ ki = S.read_cache('ki')
 km = km[km['Organism'] == organism]
 ki = ki[ki['Organism'] == organism]
 
+ki = ki[pd.notnull(ki['bigg.metabolite'])]
+km = km[pd.notnull(km['bigg.metabolite'])]
+
 km_fc = calc_fold_change(km, 'KM_Value', met_conc_mean)
 ki_fc = calc_fold_change(ki, 'KI_Value', met_conc_mean)
 
@@ -99,16 +102,48 @@ fig.tight_layout()
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
+
+km_met_conc = met_conc_mean.loc[km['bigg.metabolite'].unique(), :]
+km_met_conc = np.log2(km_met_conc[pd.notnull(km_met_conc).any(1)])
+ki_met_conc = met_conc_mean.loc[ki['bigg.metabolite'].unique(), :]
+ki_met_conc = np.log2(ki_met_conc[pd.notnull(ki_met_conc).any(1)])
+
 with plt.xkcd():
-    fig, ax = plt.subplots(1, 1, figsize=(7, 7))
+    fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
+    
+    ax = axs[0]
     pd.melt(km_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='$K_M$', linewidth=2)
+                                 histtype='step', ax=ax, label='substrates', linewidth=2)
     pd.melt(ki_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='$K_I$', linewidth=2)
+                                 histtype='step', ax=ax, label='inhibitors', linewidth=2)
     ax.set_xlim(-10, 10)
     ax.set_ylim(0, 1)
     ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
     ax.set_ylabel(r'Cumulative distribution')
-    ax.set_title('Saturation of substrates and inhibitors')
+    ax.set_title('Saturation')
     ax.legend(loc='upper left')
+
+    ax = axs[1]
+    pd.melt(km_met_conc)['value'].hist(cumulative=True, normed=1, bins=1000,
+                                       histtype='step', ax=ax, label='substrates', linewidth=2)
+    pd.melt(ki_met_conc)['value'].hist(cumulative=True, normed=1, bins=1000,
+                                       histtype='step', ax=ax, label='inhibitors', linewidth=2)
+    ax.set_xlim(-7, 4)
+    ax.set_ylim(0, 1)
+    ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
+    ax.set_title('Metabolite concentrations')
+    ax.legend(loc='upper left')
+
+    ax = axs[2]
+    np.log2(km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='$K_M$', linewidth=2)
+    np.log2(ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='$K_I$', linewidth=2)
+    ax.set_xlim(-11, 9)
+    ax.set_ylim(0, 1)
+    ax.set_xlabel(r'$\log_2 K_S (in mM)$')
+    ax.set_title('Michaelis and inhibition constants')
+    ax.legend(loc='upper left')
+
     fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
+

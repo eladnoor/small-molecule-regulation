@@ -11,10 +11,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import imp
+import json
 
-SCRIPT_DIR = os.path.dirname(main.__file__)
-#SCRIPT_DIR = os.path.dirname('/Users/ereznik/Documents/small-molecule-regulation/python/')
+SCRIPT_DIR = os.path.dirname(os.path.abspath(main.__file__))
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
+
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
 RESULT_DIR = os.path.join(BASE_DIR, 'res')
@@ -68,3 +69,16 @@ if cobrafound:
     def get_ecoli_sbml():
         return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)    
 
+def get_ecoli_json():
+    with open(ECOLI_JSON_FNAME) as fp:
+        model = json.load(fp)
+
+    sparse = []
+    for reaction in model['reactions']:
+        for met, coeff in reaction['metabolites'].iteritems():
+            sparse.append([reaction['id'].lower(), met.lower(), coeff])
+    
+    sparse = pd.DataFrame(sparse, columns=['bigg.reaction', 'bigg.metabolite', 'stoichiometry'])
+    S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
+    S.fillna(0, inplace=True)
+    return model, S

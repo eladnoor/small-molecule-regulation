@@ -29,7 +29,8 @@ print('Calculating shortest path lengths for all pairs...')
 spl = nx.shortest_path_length( nxA )
 
 # Read in the SMRN
-smrn = pd.read_csv( '../cache/iJO1366_SMRN.csv',header = 0,index_col = 0 )
+smrn = pd.read_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN.csv'),
+                   header = 0,index_col = 0 )
 
 # Drop duplicate entries if they exist
 smrn = smrn.drop_duplicates()
@@ -43,5 +44,5 @@ for ii in smrn.index:
     smrn.at[ ii, 'SPL' ] = (spl[ metsource ][ rxntarget ] + 1) / 2 # divide by 2 to account for bipartite graph distance
 
 # Save data
-smrn.to_csv('../cache/iJO1366_SMRN_spl.csv')
+smrn.to_csv(os.path.join(settings.CACHE_DIR, 'iJO1366_SMRN_spl.csv'))
 
