@@ -81,6 +81,7 @@ class EcoliModel(object):
     def SolveForReaction(self, reaction, max_growth_yield=None):
         if max_growth_yield is None:
             max_gr, _, _ = self.Solve()
+            max_growth_yield = 0.99*max_gr
         
         lp, fluxes, mass_balance_constraints = self._CreateLinearProblem()
         
@@ -88,7 +89,7 @@ class EcoliModel(object):
         lp.setObjective(fluxes[reaction])
         
         # set a biomass constraint
-        lp += fluxes[EcoliModel.BIOMASS_REACTION] >= max_growth_yield*0.99
+        lp += fluxes[EcoliModel.BIOMASS_REACTION] >= max_growth_yield
 
         lp.solve(EcoliModel.PULP_SOLVER)
         if lp.status != LpStatusOptimal:
@@ -100,15 +101,3 @@ class EcoliModel(object):
         
         return lp.objective.value(), v_all, shadow_prices
 
-###############################################################################
-
-m = EcoliModel()
-growth_yield, v_all, pi = m.Solve()
-
-result_df = pd.DataFrame(index=m.metabolites, columns=m.reactions)
-for r in m.reactions:
-    v_r, v_all, pi = m.SolveForReaction(r, growth_yield)
-    result_df[r] = pi
-
-result_df = result_df.round(3)
-result_df.to_csv(os.path.join(settings.CACHE_DIR, 'shadow_prices.csv'))
