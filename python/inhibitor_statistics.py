@@ -11,6 +11,20 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import bigg
+import numpy as np
+from matplotlib_venn import venn3
+
+def venn3_sets(set_a, set_b, set_c, set_labels, ax):
+    # order of values for Venn diagram: (Abc, aBc, ABc, abC, AbC, aBC, ABC)
+    Abc = len(set_a.difference(set_b.union(set_c)))
+    aBc = len(set_b.difference(set_a.union(set_c)))
+    abC = len(set_c.difference(set_a.union(set_b)))
+    ABc = len(set_a.intersection(set_b).difference(set_c))
+    AbC = len(set_a.intersection(set_c).difference(set_b))
+    aBC = len(set_b.intersection(set_c).difference(set_a))
+    ABC = len(set_a.intersection(set_b).intersection(set_c))
+    venn3(subsets = (Abc, aBc, ABc, abC, AbC, aBC, ABC),
+          set_labels=set_labels, ax=ax)
 
 ki = S.read_cache('ki')
 ki = ki[ki['Organism'] == 'Escherichia coli']
@@ -43,14 +57,24 @@ shadow_df.columns = map(str.lower, shadow_df.columns)
 # map the EC numbers to the bigg.reaction IDs
 model_reactions = S.get_reaction_table_from_xls()
 bigg2ec = bigg.get_reaction_df()
+chebi2bigg = bigg.get_metabolite_df()
 
 # change all reaction IDs to lower-case (apparently the case standards have changed
 # since the model was published).
 
 ki_bigg = ki_unique.join(bigg2ec, on='EC_number', how='inner')
 act_bigg = act_unique.join(bigg2ec, on='EC_number', how='inner')
-regulating_mets = set(ki_bigg['bigg.metabolite'].unique()).union(act_bigg['bigg.metabolite'].unique())
-regulated_rxns = set(ki_bigg['bigg.reaction'].unique()).union(act_bigg['bigg.reaction'].unique())
+
+all_mets = set(chebi2bigg['bigg.metabolite'].unique())
+inh_mets = set(ki_bigg['bigg.metabolite'].unique())
+act_mets = set(act_bigg['bigg.metabolite'].unique())
+
+all_rxns = set(bigg2ec['bigg.reaction'].unique())
+inh_rxns = set(ki_bigg['bigg.reaction'].unique())
+act_rxns = set(act_bigg['bigg.reaction'].unique())
+
+regulating_mets = inh_mets.union(act_mets)
+regulated_rxns = inh_rxns.union(act_rxns)
 
 #%%
 df = shadow_df.loc[regulating_mets, regulated_rxns]
@@ -71,24 +95,30 @@ act_minus = act_sp.loc[pd.isnull(act_sp['EC_number']), 'shadow_price']
 act_plus = act_sp.loc[pd.notnull(act_sp['EC_number']), 'shadow_price']
 
 #%%
-with plt.xkcd():
-    fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-    axs[0].hist(ki_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
-    axs[0].hist(ki_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
-    axs[0].set_xlim(-100, 10)
-    axs[0].set_ylim(0, 1)
-    axs[0].legend(['non-interacting', 'interacting'], loc='upper left')
-    axs[0].set_title('Inhibiting')
-    axs[0].set_xlabel('Shadow Price')
-    axs[0].set_ylabel('Cumulative Distribution')
-    
-    axs[1].hist(act_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
-    axs[1].hist(act_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
-    axs[1].set_xlim(-100, 10)
-    axs[1].set_ylim(0, 1)
-    axs[1].legend(['non-interacting', 'interacting'], loc='upper left')
-    axs[1].set_title('Activating')
-    axs[1].set_xlabel('Shadow Price')
-    axs[1].set_ylabel('Cumulative Distribution')
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+axs[0].hist(ki_minus.values, bins=1000, cumulative=True, histtype='step', normed=True, linewidth=2)
+axs[0].hist(ki_plus.values, bins=200, cumulative=True, histtype='step', normed=True, linewidth=2)
+axs[0].set_xlim(-100, 0)
+axs[0].set_ylim(0, 1)
+axs[0].legend(['non-interacting', 'interacting'], loc='upper left')
+axs[0].set_title('Inhibiting')
+axs[0].set_xlabel('Shadow Price')
+axs[0].set_ylabel('Cumulative Distribution')
 
-    fig.savefig(os.path.join(S.RESULT_DIR, 'shadow_price_cdf.png'))
+axs[1].hist(act_minus.values, bins=10000, cumulative=True, histtype='step', normed=True, linewidth=2)
+axs[1].hist(act_plus.values, bins=267, cumulative=True, histtype='step', normed=True, linewidth=2)
+axs[1].set_xlim(-100, 0)
+axs[1].set_ylim(0, 1)
+axs[1].legend(['non-interacting', 'interacting'], loc='upper left')
+axs[1].set_title('Activating')
+axs[1].set_xlabel('Shadow Price')
+axs[1].set_ylabel('Cumulative Distribution')
+
+fig.savefig(os.path.join(S.RESULT_DIR, 'shadow_price_cdf.svg'))
+
+#%% 
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+venn3_sets(inh_mets, act_mets, all_mets, set_labels=('Inhibitors', 'Activators', 'All metabolites'), ax=axs[0])
+venn3_sets(inh_rxns, act_rxns, all_rxns, set_labels=('Inhibited', 'Activated', 'All reactions'), ax=axs[1])
+fig.savefig(os.path.join(S.RESULT_DIR, 'venn.svg'))
