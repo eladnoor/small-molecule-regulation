@@ -20,9 +20,8 @@ for (f in list.files(brendadir)){
   temp = fread(paste(brendadir,f,sep = ''),header = TRUE,data.table = FALSE,sep = ',',encoding="Latin-1")
   species = c(species,temp[,2])
 }
-species = sapply(species,tolower)
 uqspecies = unique(species)
-uqspecies = sapply(uqspecies,simpleCap)
+#uqspecies = sapply(uqspecies,simpleCap)
 
 # Resolve species names
 starttime = proc.time()
@@ -42,14 +41,19 @@ for (i in 1:length(uqspecies)){
     print(paste('Skipping',specname,'already imported...'))
     next # we already imported this one
   }
+  
+  # Initialize the rows with NA
+  res[specname,] = NA
 
   # We may have problems modifying the species name, we can fix this
   newspecname = tryCatch({
-    species_resolve = gnr_resolve(specname)
+    species_resolve = gnr_resolve( tolower(specname) )
     newspecname = species_resolve[1,'matched_name'] # Dumbly select the first row among all the options
   }, error = function(e) {
+    print(paste('Skipping the renaming of species:',specname))
     newspecname = NULL
   },warning = function(war) {
+    print(paste('Skipping the renaming of species:',specname))
     newspecname = NULL
   }) #end tryCatch
   
@@ -76,7 +80,7 @@ for (i in 1:length(uqspecies)){
   if (i%%10 == 0){
     print(i)
     # Save the temporary data in case of a crash
-    #write.csv(res,'../cache/TaxonomicData_temp.csv')
+    write.csv(res,'../cache/TaxonomicData_temp.csv')
   }
 
 }
