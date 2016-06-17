@@ -12,9 +12,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import imp
 import json
+import inspect
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 #SCRIPT_DIR = os.path.dirname(os.path.abspath(main.__file__))
-SCRIPT_DIR = '/Users/ereznik/Documents/small-molecule-regulation/'
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
 
 DATA_DIR = os.path.join(BASE_DIR, 'data')
