@@ -17,7 +17,30 @@ sns.set('notebook', style=None)
 
 organism = 'Escherichia coli'
 
-def calc_fold_change(K_df, column_name, conc_df):
+def get_kinetic_param(name, value_col, conc_df, organism='Escherichia coli'):
+    k = S.read_cache(name)
+    k = k[k['Organism'] == organism]         # filter by organsim
+    k = k[pd.notnull(k['bigg.metabolite'])]  # remove values with unmatched ligand
+    k = k[k[value_col] > 0]                  # remove entries lacking quantitative data
+
+    # choose the minimum value among all repeats    
+    k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].min().reset_index()
+    
+    # join data with measured concentrations
+    k = k.join(conc_df, on='bigg.metabolite', how='inner')
+    
+    # melt table so each line will be a combination of EC, substrate/inhibitor and
+    # growth condition
+    k = pd.melt(k, id_vars=('EC_number', 'bigg.metabolite', value_col),
+                var_name='growth condition', value_name='concentration')
+    
+    k['log2(saturation)'] = np.log2(k['concentration'] / k[value_col])
+    k['met'] = k['bigg.metabolite'].apply(lambda x: x[:-2])
+    k['met:EC'] = k['met'].str.cat(k['EC_number'], sep=':')
+
+    return k
+
+def calc_median_fc(k):
     """
         calculates the [S]/K_S for all matching EC-metabolite pairs,
         in log2-fold-change.
@@ -26,25 +49,10 @@ def calc_fold_change(K_df, column_name, conc_df):
             K_df    - a DataFrame with three columns: EC_number, bigg.metabolite, Value
             conc_df - a DataFrame with 
     """
+    fc_med = k.groupby(('met', 'growth condition')).median()[['log2(saturation)']].reset_index()
+    fc_med = fc_med.pivot('met', 'growth condition', 'log2(saturation)')
+    return fc_med.sort_index(axis=0)
     
-    # remove values of -999, which simply means there is no quantitative data
-    # for this Ki/Km
-    k = K_df[K_df[column_name] != -999]
-    
-    # group by and calculate minimum over all repeats (i.e. with the same
-    # reaction and the same metabolite)
-    k = k.groupby(['EC_number', 'bigg.metabolite'])[column_name].min().reset_index()
-    k = k.join(conc_df, on='bigg.metabolite', how='inner')
-    
-    # remove the _c suffix in the metabolite names
-    k['met'] = k['bigg.metabolite'].apply(lambda x: x[:-2])
-    k.drop('bigg.metabolite', axis=1, inplace=True)
-
-    k.set_index(['EC_number', 'met'], inplace=True)
-    k = k.div(k[column_name], axis=0)
-    k.drop(column_name, axis=1, inplace=True)
-    return np.log2(k)
-
 _df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
@@ -53,25 +61,14 @@ met_conc_std = _df.iloc[:, 10:]
 colmap = dict(map(lambda x: (x, x[:-7]), met_conc_mean.columns))
 met_conc_mean.rename(columns=colmap, inplace=True)
 
-km = S.read_cache('km')
-ki = S.read_cache('ki')
-
-km = km[km['Organism'] == organism]
-ki = ki[ki['Organism'] == organism]
-
-ki = ki[pd.notnull(ki['bigg.metabolite'])]
-km = km[pd.notnull(km['bigg.metabolite'])]
-
-km_fc = calc_fold_change(km, 'KM_Value', met_conc_mean)
-ki_fc = calc_fold_change(ki, 'KI_Value', met_conc_mean)
-
-km_fc_med = km_fc.reset_index().groupby('met').median()
-ki_fc_med = ki_fc.reset_index().groupby('met').median()
-km_fc_med.sort_index(axis=0, inplace=True)
-ki_fc_med.sort_index(axis=0, inplace=True)
+km = get_kinetic_param('km', 'KM_Value', met_conc_mean)
+ki = get_kinetic_param('ki', 'KI_Value', met_conc_mean)
 
 #%%
 # draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
+km_fc_med = calc_median_fc(km)
+ki_fc_med = calc_median_fc(ki)
+
 fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 10))
 
 sns.heatmap(km_fc_med, ax=ax0, mask=km_fc_med.isnull(), cbar=False, vmin=-15, vmax=15, annot=True)
@@ -90,6 +87,8 @@ fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
 
 #%%
 # draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
+km_fc = km.pivot('met:EC', 'growth condition', 'log2(saturation)')
+ki_fc = ki.pivot('met:EC', 'growth condition', 'log2(saturation)')
 
 fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
 sns.heatmap(km_fc, ax=ax0, mask=km_fc.isnull(), cbar=False, vmin=-15, vmax=15)
@@ -103,47 +102,40 @@ fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
 
-km_met_conc = met_conc_mean.loc[km['bigg.metabolite'].unique(), :]
-km_met_conc = np.log2(km_met_conc[pd.notnull(km_met_conc).any(1)])
-ki_met_conc = met_conc_mean.loc[ki['bigg.metabolite'].unique(), :]
-ki_met_conc = np.log2(ki_met_conc[pd.notnull(ki_met_conc).any(1)])
+fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
 
-with plt.xkcd():
-    fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
-    
-    ax = axs[0]
-    pd.melt(km_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='substrates', linewidth=2)
-    pd.melt(ki_fc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='inhibitors', linewidth=2)
-    ax.set_xlim(-10, 10)
-    ax.set_ylim(0, 1)
-    ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
-    ax.set_ylabel(r'Cumulative distribution')
-    ax.set_title('Saturation')
-    ax.legend(loc='upper left')
+ax = axs[0]
+km['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='substrates', linewidth=2)
+ki['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(-10, 10)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
+ax.set_ylabel(r'Cumulative distribution')
+ax.set_title('Saturation')
+ax.legend(loc='upper left')
 
-    ax = axs[1]
-    pd.melt(km_met_conc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='substrates', linewidth=2)
-    pd.melt(ki_met_conc)['value'].hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='inhibitors', linewidth=2)
-    ax.set_xlim(-10, 10)
-    ax.set_ylim(0, 1)
-    ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
-    ax.set_title('Metabolite concentrations')
-    ax.legend(loc='upper left')
+ax = axs[1]
+np.log2(km['concentration']).hist(cumulative=True, normed=1, bins=1000,
+                                  histtype='step', ax=ax, label='substrates', linewidth=2)
+np.log2(ki['concentration']).hist(cumulative=True, normed=1, bins=1000,
+                         histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(-10, 10)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
+ax.set_title('Metabolite concentrations')
+ax.legend(loc='upper left')
 
-    ax = axs[2]
-    np.log2(1.0/km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='$K_M$', linewidth=2)
-    np.log2(1.0/ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='$K_I$', linewidth=2)
-    ax.set_xlim(-10, 10)
-    ax.set_ylim(0, 1)
-    ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
-    ax.set_title('Michaelis and inhibition constants')
-    ax.legend(loc='upper left')
+ax = axs[2]
+np.log2(1.0/km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='$K_M$', linewidth=2)
+np.log2(1.0/ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='$K_I$', linewidth=2)
+ax.set_xlim(-10, 10)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
+ax.set_title('Michaelis and inhibition constants')
+ax.legend(loc='upper left')
 
-    fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
-
+fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
