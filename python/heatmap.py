@@ -44,8 +44,12 @@ def calc_fc(k, value_col, conc_df):
     k['log2(saturation)'] = np.log2(k['concentration'] / k[value_col])
     k['met'] = k['bigg.metabolite'].apply(lambda x: x[:-2])
     k['met:EC'] = k['met'].str.cat(k['EC_number'], sep=':')
-
     return k
+
+def calc_heatmap_df(k):
+    df = k.pivot('met:EC', 'growth condition', 'log2(saturation)')
+    df = df.loc[df.mean(1).sort_values().index, :]
+    return df
 
 def calc_median_fc(k):
     """
@@ -58,8 +62,9 @@ def calc_median_fc(k):
     """
     fc_med = k.groupby(('met', 'growth condition')).median()[['log2(saturation)']].reset_index()
     fc_med = fc_med.pivot('met', 'growth condition', 'log2(saturation)')
-    return fc_med.sort_index(axis=0)
-    
+    fc_med = fc_med.loc[fc_med.mean(1).sort_values().index, :]
+    return fc_med
+
 _df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
@@ -76,52 +81,15 @@ conc_df = pd.melt(met_conc_mean.reset_index(level=0),
 km_raw = get_kinetic_param('km', 'KM_Value')
 ki_raw = get_kinetic_param('ki', 'KI_Value')
 
+km_raw_sat = calc_fc(km_raw, 'KM_Value', conc_df)
+ki_raw_sat = calc_fc(ki_raw, 'KI_Value', conc_df)
+
 # choose the minimum value among all replicates of EC:met    
 km_min = km_raw.groupby(['EC_number', 'bigg.metabolite'])['KM_Value'].min().reset_index()
 ki_min = ki_raw.groupby(['EC_number', 'bigg.metabolite'])['KI_Value'].min().reset_index()
 
-km = calc_fc(km_min, 'KM_Value', conc_df)
-ki = calc_fc(ki_min, 'KI_Value', conc_df)
-
-#%%
-# draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
-km_fc_med = calc_median_fc(km)
-ki_fc_med = calc_median_fc(ki)
-
-fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 10))
-
-sns.heatmap(km_fc_med, ax=ax0, mask=km_fc_med.isnull(),
-            cbar=False, vmin=-15, vmax=15, annot=True)
-plt.xticks(rotation=90)
-plt.yticks(rotation=0)
-
-sns.heatmap(ki_fc_med, ax=ax1, mask=ki_fc_med.isnull(),
-            cbar=True, vmin=-15, vmax=15, annot=True)
-plt.xticks(rotation=90)
-plt.yticks(rotation=0)
-
-ax0.set_title('$\log_2([S]/K_M)$')
-ax0.set_ylabel('')
-ax1.set_title('$\log_2([S]/K_I)$')
-ax1.set_ylabel('')
-fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
-
-#%%
-# draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
-km_pivoted = km.pivot('met:EC', 'growth condition', 'log2(saturation)')
-ki_pivoted = ki.pivot('met:EC', 'growth condition', 'log2(saturation)')
-
-fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
-sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
-            cbar=False, vmin=-15, vmax=15)
-sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
-            cbar=True, vmin=-15, vmax=15, annot=True)
-ax0.set_title('$\log_2([S]/K_M)$')
-ax0.set_ylabel('')
-ax1.set_title('$\log_2([S]/K_I)$')
-ax1.set_ylabel('')
-fig.tight_layout()
-fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
+km_min_sat = calc_fc(km_min, 'KM_Value', conc_df)
+ki_min_sat = calc_fc(ki_min, 'KI_Value', conc_df)
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
 
@@ -167,12 +135,12 @@ ax.legend(loc='upper left')
 ###############################################################################
 
 ax = axs[1,0]
-np.log2(km['concentration']).hist(cumulative=True, normed=1, bins=1000,
-                                  histtype='step', ax=ax, label='acting as subs.', linewidth=2)
-np.log2(ki['concentration']).hist(cumulative=True, normed=1, bins=1000,
-                         histtype='step', ax=ax, label='acting as inh.', linewidth=2)
+np.log2(km_min_sat['concentration']).hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='acting as subs.', linewidth=2)
+np.log2(ki_min_sat['concentration']).hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='acting as inh.', linewidth=2)
 np.log2(conc_df['concentration']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='all measured', linewidth=2)
+    histtype='step', ax=ax, label='all measured', linewidth=2)
 ax.set_xlim(-10, 10)
 ax.set_ylim(0, 1)
 ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
@@ -180,10 +148,10 @@ ax.set_title('Metabolite concentrations')
 ax.legend(loc='upper left')
 
 ax = axs[1,1]
-km['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='substrates', linewidth=2)
-ki['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+km_min_sat['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='substrates', linewidth=2)
+ki_min_sat['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='inhibitors', linewidth=2)
 ax.set_xlim(-10, 10)
 ax.set_ylim(0, 1)
 ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
@@ -193,13 +161,58 @@ ax.legend(loc='upper left')
 
 # compare Km and Ki for the intersection of EC numbers 
 
-EC_intersection = set(km_min['EC_number']).intersection(ki_min['EC_number'])
-km_inter = km_min[km_min['EC_number'].isin(EC_intersection)]
-ki_inter = ki_min[ki_min['EC_number'].isin(EC_intersection)]
-
-ax = axs[1,0]
-
+ax = axs[1,2]
+km_raw_sat['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='substrates', linewidth=2)
+ki_raw_sat['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
+    histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(-10, 10)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
+ax.set_ylabel(r'Cumulative distribution')
+ax.set_title('Saturation ratios (without taking the minimum)')
+ax.legend(loc='upper left')
 
 fig.tight_layout()
-
 fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
+
+
+#%%
+# draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
+km_fc_med = calc_median_fc(km_min_sat)
+ki_fc_med = calc_median_fc(ki_min_sat)
+
+fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 10))
+
+sns.heatmap(km_fc_med, ax=ax0, mask=km_fc_med.isnull(),
+            cbar=False, vmin=-15, vmax=15, annot=True)
+plt.xticks(rotation=90)
+plt.yticks(rotation=0)
+
+sns.heatmap(ki_fc_med, ax=ax1, mask=ki_fc_med.isnull(),
+            cbar=True, vmin=-15, vmax=15, annot=True)
+plt.xticks(rotation=90)
+plt.yticks(rotation=0)
+
+ax0.set_title('$\log_2([S]/K_M)$')
+ax0.set_ylabel('')
+ax1.set_title('$\log_2([S]/K_I)$')
+ax1.set_ylabel('')
+fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
+
+#%%
+# draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
+km_pivoted = calc_heatmap_df(km_min_sat)
+ki_pivoted = calc_heatmap_df(ki_min_sat)
+
+fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
+sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
+            cbar=False, vmin=-15, vmax=15)
+sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
+            cbar=True, vmin=-15, vmax=15, annot=True)
+ax0.set_title('$\log_2([S]/K_M)$')
+ax0.set_ylabel('')
+ax1.set_title('$\log_2([S]/K_I)$')
+ax1.set_ylabel('')
+fig.tight_layout()
+fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
