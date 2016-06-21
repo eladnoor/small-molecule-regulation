@@ -1,0 +1,14 @@
+
+% for inhibitors
+select distinct EC_number, Organism, Filename as LigandID, Commentary, Literature
+from Inhibitors_ps
+
+
+$ for cofactors
+select distinct EC_number, Cofactor, Organism, Filename as LigandID, Commentary, Literature
+from Cofactor_ps
+
+
+% for metal ions
+select distinct EC_number, Metals_Ions as Metal, Organism, Filename as LigandID, Commentary, Literature
+from Metals_Ions_ps
