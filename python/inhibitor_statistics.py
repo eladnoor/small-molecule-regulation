@@ -51,7 +51,7 @@ int_count_met.to_csv(os.path.join(S.RESULT_DIR, 'count_interactions_per_metaboli
 # compare the shadow prices of the known interaction pairs the global
 # distribution
 
-shadow_df = S.read_cache('shadow_prices')
+shadow_df = S.read_cache('shadow_prices_0.1')
 shadow_df.columns = map(str.lower, shadow_df.columns)
 
 # map the EC numbers to the bigg.reaction IDs
