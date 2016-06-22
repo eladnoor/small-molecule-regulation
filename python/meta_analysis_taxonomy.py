@@ -24,7 +24,7 @@ def summarystring( subdf ):
 tax2use = 'kingdom'
 minsize = 10
 
-ki = S.read_cache('inhibitors_ps')
+ki = S.read_cache('inhibiting')
 act = S.read_cache('activating')
 tax = S.read_cache('TaxonomicData_temp')
 
