@@ -21,6 +21,13 @@ def summarystring( subdf ):
     # summarizes the entries in subdf
     return ';'.join([item +':' + str(subdf.ix[item]) for item in subdf.index])
 
+def literaturestring( subdf ):
+    # Summarizes literature references
+    litstring = ';'.join(subdf['Literature'])
+    litstring2 = ''.join(litstring.split(' '))
+    uqlit = np.unique( litstring2.split(';') )
+    return len(uqlit),';'.join(uqlit)
+
 tax2use = 'kingdom'
 minsize = 10
 
@@ -67,7 +74,7 @@ act = act.groupby(act.index).first()
 ki_merge = ki.groupby(['EC_number','LigandID'])
 act_merge = act.groupby(['EC_number', 'LigandID'])
 
-res = pd.DataFrame( columns = ['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy','Summary','URL','NullEntropy','NullSummary'] )
+res = pd.DataFrame( columns = ['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy','Summary','URL','NullEntropy','NullSummary','Literature','NumReferences'] )
 
 for dtype in ['ki','act']:
     merge2use = ki_merge if dtype == 'ki' else act_merge
@@ -79,24 +86,31 @@ for dtype in ['ki','act']:
         
             # Get counts for each taxon
             ixname = dtype + ':' + ':'.join(list(g))
-            res.ix[ixname,'Key'] = g
-            res.ix[ixname,'Type'] = dtype
-            res.ix[ixname,'EC_number'] = g[0]
-            res.ix[ixname,'LigandID'] = g[1]
-            res.ix[ixname,'Compound'] = ';'.join(d2use.ix[ merge2use.groups[ g ],:]['Compound'].unique().astype(str))
-            res.ix[ixname,'TotalEntries'] = len(merge2use.groups[ g ] )
+            res.at[ixname,'Key'] = g
+            res.at[ixname,'Type'] = dtype
+            res.at[ixname,'EC_number'] = g[0]
+            res.at[ixname,'LigandID'] = g[1]
+            res.at[ixname,'Compound'] = ';'.join(d2use.ix[ merge2use.groups[ g ],:]['Compound'].unique().astype(str))
+            res.at[ixname,'TotalEntries'] = len(merge2use.groups[ g ] )
         
-            subdf = d2use.ix[ merge2use.groups[ g ],'taxonomy'].value_counts()
-            res.ix[ixname,'Entropy'] = norm_entropy( subdf )
-            res.ix[ixname,'Summary'] = summarystring( subdf )
+            subdf = d2use.ix[ merge2use.groups[ g ],:]
+            res.at[ixname,'Entropy'] = norm_entropy( subdf['taxonomy'].value_counts() )
+            res.at[ixname,'Summary'] = summarystring( subdf['taxonomy'].value_counts() )
             
             urladd = '#INHIBITORS' if dtype == 'ki' else '#ACTIVATING%20COMPOUND'
-            res.ix[ixname,'URL'] = 'http://www.brenda-enzymes.org/enzyme.php?ecno=' + g[0] + urladd
+            res.at[ixname,'URL'] = 'http://www.brenda-enzymes.org/enzyme.php?ecno=' + g[0] + urladd
+            
+            # Get the literature references
+            uqlit,uqlitstring = literaturestring( subdf )
+            res.at[ixname,'Literature'] = uqlitstring
+            res.at[ixname,'NumReferences'] = uqlit
             
             # Also calculate the entropy of all regulators of this EC, to see if it is specific to this metabolite or related to all metabolites
             bigdf = d2use[d2use['EC_number'] == g[0]]['taxonomy'].value_counts()
             res.ix[ixname,'NullEntropy'] = norm_entropy( bigdf )
             res.ix[ixname,'NullSummary'] = summarystring( bigdf )
+
+            
 
 # Calculate change in normalized entropy. Careful, this is not a proper statistical measure, just a heuristic!
 res['DeltaEntropy'] = res['Entropy'] - res['NullEntropy']

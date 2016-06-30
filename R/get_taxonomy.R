@@ -14,11 +14,12 @@ simpleCap <- function(x) {
 }
 
 # Read in taxonomic information for each file in BRENDA query
-brendadir = '../data/brenda_query_2016_06_08/'
+brendadir = '../data/brenda_query_2016_06_20/'
 species = c()
 for (f in list.files(brendadir)){
   temp = fread(paste(brendadir,f,sep = ''),header = TRUE,data.table = FALSE,sep = ',',encoding="Latin-1")
-  species = c(species,temp[,2])
+  print(colnames(temp))
+  species = c(species,temp[,'Organism'])
 }
 uqspecies = unique(species)
 #uqspecies = sapply(uqspecies,simpleCap)
@@ -46,16 +47,17 @@ for (i in 1:length(uqspecies)){
   res[specname,] = NA
 
   # We may have problems modifying the species name, we can fix this
-  newspecname = tryCatch({
-    species_resolve = gnr_resolve( tolower(specname) )
-    newspecname = species_resolve[1,'matched_name'] # Dumbly select the first row among all the options
-  }, error = function(e) {
-    print(paste('Skipping the renaming of species:',specname))
-    newspecname = NULL
-  },warning = function(war) {
-    print(paste('Skipping the renaming of species:',specname))
-    newspecname = NULL
-  }) #end tryCatch
+  newspecname = get_tsn( specname, rows = 1 )
+#   newspecname = tryCatch({
+#     species_resolve = gnr_resolve( tolower(specname) )
+#     newspecname = species_resolve[1,'matched_name'] # Dumbly select the first row among all the options
+#   }, error = function(e) {
+#     print(paste('Skipping the renaming of species:',specname))
+#     newspecname = NULL
+#   },warning = function(war) {
+#     print(paste('Skipping the renaming of species:',specname))
+#     newspecname = NULL
+#   }) #end tryCatch
   
   # If the new species name is null, that means we had an issue, skip it
   if (is.null(newspecname)){
