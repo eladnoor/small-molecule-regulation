@@ -8,11 +8,6 @@ library(data.table)
 
 doRestart = TRUE #if TRUE, then we read in the _temp file we had been working on before
 
-simpleCap <- function(x) {
-  paste(toupper(substring(x, 1,1)), substring(x, 2),
-        sep="", collapse=" ")
-}
-
 # Read in taxonomic information for each file in BRENDA query
 brendadir = '../data/brenda_query_2016_06_20/'
 species = c()

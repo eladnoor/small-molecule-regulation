@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Analyze incidence of inhibitory or activating interactions across 
+# Analyze incidence of inhibitory or activating interactions across taxon
 
 import settings as S
 import pandas as pd
@@ -68,7 +68,7 @@ ki.index = [':'.join( [ki.at[row,'EC_number'],ki.at[row,'LigandID'],ki.at[row,'O
 act.index = [':'.join([act.at[row,'EC_number'], act.at[row,'LigandID'], act.at[row,'Organism'] ]) for row in act.index]
 
 ki = ki[~ki.index.duplicated()]
-act = act.groupby(act.index).first()
+act = act[~act.index.duplicated()]
 
 # Now do some analysis
 ki_merge = ki.groupby(['EC_number','LigandID'])
