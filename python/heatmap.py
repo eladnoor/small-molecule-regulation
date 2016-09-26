@@ -22,9 +22,16 @@ SAT_FORMULA_I = r'$[S]/([S] + K_I)$'
 
 def get_kinetic_param(name, value_col, organism='Escherichia coli'):
     k = S.read_cache(name)
-    k = k[k['Organism'] == organism]         # filter by organsim
-    k = k[pd.notnull(k['bigg.metabolite'])]  # remove values with unmatched ligand
-    k = k[k[value_col] > 0]                  # remove entries lacking quantitative data
+    
+    # filter by organsim
+    k = k[k['Organism'] == organism]
+    
+    # remove values with unmatched ligand
+    k = k[pd.notnull(k['bigg.metabolite'])]
+
+    # remove entries lacking quantitative data
+    k = k[k[value_col] > 0]
+
     return k[['EC_number', 'bigg.metabolite', value_col]]
 
 def calc_sat(k, value_col, conc_df):

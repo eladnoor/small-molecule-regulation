@@ -27,16 +27,19 @@ BIGG_METABOLITE_FNAME = os.path.join(DATA_DIR, 'bigg_models_metabolites.txt')
 BIGG_REACTION_FNAME = os.path.join(DATA_DIR, 'bigg_models_reactions.txt')
 BIGG2KEGG_FNAME  = os.path.join(CACHE_DIR, 'bigg2kegg.csv')
 BIGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'bigg2chebi.csv')
-BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'brenda_query_2016_06_08.zip')
+BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'brenda_query_2016_06_20.zip')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
-ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml.gz')
+ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml')
 ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
-METABOLITE_CONC_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
+ECOLI_METAB_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
+ECOLI_PROT_FNAME = os.path.join(DATA_DIR, 'ecoli_proteins_schmidt2015.csv')
+ECOLI_FLUX_FNAME = os.path.join(DATA_DIR, 'ecoli_fluxes_fba.csv')
 
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
                 {'fname': 'km',         'value_col': 'KM_Value'},
-                {'fname': 'activating', 'value_col': None}]
+                {'fname': 'activating', 'value_col': None},
+                {'fname': 'inhibiting', 'value_col': None},]
 
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)

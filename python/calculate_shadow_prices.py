@@ -6,6 +6,9 @@ Created on Tue Jun 14 15:46:31 2016
 """
 
 from ecoli_model import EcoliModel
+import os
+import settings as S
+import pandas as pd
 
 m = EcoliModel()
 growth_yield, v_all, pi = m.Solve()
@@ -20,5 +23,4 @@ for i, r in enumerate(m.reactions):
     print '\r(%3d of %3d) %40s' % (i+1, len(m.reactions), r)
 
 result_df = result_df.round(3)
-fname = 'shadow_prices_%g.csv' % YIELD_FACTOR
-result_df.to_csv(os.path.join(settings.RESULT_DIR, fname))
+S.write_cache('shadow_prices_%g' % YIELD_FACTOR, result_df)
