@@ -4,13 +4,13 @@ import os, numpy as np, scipy.stats as st, matplotlib.pyplot as plt
 import seaborn as sns, pandas as pd, settings
 import statsmodels.stats.multitest as smm
 
-sns.set_style('ticks')
+sns.set_style('white')
 
 plt.ion()
 plt.close('all')
 
 # Read the KM and KI data
-km = pd.read_csv(os.path.join(settings.DATA_DIR, 'ecoli_km_kegg.csv'),
+km = pd.read_csv(os.path.join(settings.CACHE_DIR, 'ecoli_km_kegg.csv'),
                  header=0, index_col=0)
 km['Type'] = 'KM'
 ki = pd.read_csv('../cache/ecoli_ki_kegg.csv',header = 0, index_col = 0)
@@ -53,8 +53,8 @@ km_med = mgroups.median()
 ki_med = igroups.median()
 medplot = pd.DataFrame( {'KM':km_med.ix[ixmets,'Value'],'KI':ki_med.ix[ixmets,'Value']} )
 
-plt.figure()
-plt.loglog( medplot['KM'],medplot['KI'],'o' )
+plt.figure(figsize=(6,6))
+plt.loglog(medplot['KM'], medplot['KI'], 'o', color=(0.9, 0.5, 0.5))
 plt.xlabel('$K_M$')
 plt.ylabel('$K_I$')
 settings.plotdiag()

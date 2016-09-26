@@ -13,9 +13,12 @@ import numpy as np
 import settings as S
 import matplotlib.pyplot as plt
 import seaborn as sns
-sns.set('notebook', style=None)
+sns.set('notebook', style='white')
 
 organism = 'Escherichia coli'
+SAT_FORMULA_S = r'$[S]/([S] + K_S)$'
+SAT_FORMULA_M = r'$[S]/([S] + K_M)$'
+SAT_FORMULA_I = r'$[S]/([S] + K_I)$'
 
 def get_kinetic_param(name, value_col, organism='Escherichia coli'):
     k = S.read_cache(name)
@@ -24,7 +27,7 @@ def get_kinetic_param(name, value_col, organism='Escherichia coli'):
     k = k[k[value_col] > 0]                  # remove entries lacking quantitative data
     return k[['EC_number', 'bigg.metabolite', value_col]]
 
-def calc_fc(k, value_col, conc_df):
+def calc_sat(k, value_col, conc_df):
     # choose the minimum value among all repeats    
     k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].min().reset_index()
     
@@ -36,13 +39,13 @@ def calc_fc(k, value_col, conc_df):
     k = pd.melt(k, id_vars=('EC_number', 'bigg.metabolite', value_col),
                 var_name='growth condition', value_name='concentration')
     
-    k['log2(saturation)'] = np.log2(k['concentration'] / k[value_col])
+    k['saturation'] = k['concentration'] / (k['concentration'] + k[value_col])
     k['met'] = k['bigg.metabolite'].apply(lambda x: x[:-2])
     k['met:EC'] = k['met'].str.cat(k['EC_number'], sep=':')
 
     return k
 
-def calc_median_fc(k):
+def calc_median_sat(k):
     """
         calculates the [S]/K_S for all matching EC-metabolite pairs,
         in log2-fold-change.
@@ -51,10 +54,11 @@ def calc_median_fc(k):
             K_df    - a DataFrame with three columns: EC_number, bigg.metabolite, Value
             conc_df - a DataFrame with 
     """
-    fc_med = k.groupby(('met', 'growth condition')).median()[['log2(saturation)']].reset_index()
-    fc_med = fc_med.pivot('met', 'growth condition', 'log2(saturation)')
+    fc_med = k.groupby(('met', 'growth condition')).median()[['saturation']].reset_index()
+    fc_med = fc_med.pivot('met', 'growth condition', 'saturation')
     return fc_med.sort_index(axis=0)
     
+#%%
 _df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
@@ -64,47 +68,57 @@ colmap = dict(map(lambda x: (x, x[:-7]), met_conc_mean.columns))
 met_conc_mean.rename(columns=colmap, inplace=True)
 
 km_raw = get_kinetic_param('km', 'KM_Value')
-km = calc_fc(km_raw, 'KM_Value', met_conc_mean)
+km = calc_sat(km_raw, 'KM_Value', met_conc_mean)
 
 ki_raw = get_kinetic_param('ki', 'KI_Value')
-ki = calc_fc(ki_raw, 'KI_Value', met_conc_mean)
+ki = calc_sat(ki_raw, 'KI_Value', met_conc_mean)
+
+ki.to_csv(os.path.join(S.RESULT_DIR, 'ki_vs_conc.csv'))
+km.to_csv(os.path.join(S.RESULT_DIR, 'km_vs_conc.csv'))
 
 #%%
 # draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
-km_fc_med = calc_median_fc(km)
-ki_fc_med = calc_median_fc(ki)
+km_sat_med = calc_median_sat(km)
+ki_sat_med = calc_median_sat(ki)
 
-fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 10))
+sat_joined = km_sat_med.join(ki_sat_med, how='inner', lsuffix='_sub', rsuffix='_inh')
+sat_joined = sat_joined.reindex_axis(sat_joined.mean(axis=1).sort_values(axis=0).index, axis=0)
 
-sns.heatmap(km_fc_med, ax=ax0, mask=km_fc_med.isnull(),
-            cbar=False, vmin=-15, vmax=15, annot=True)
+fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+
+sns.heatmap(sat_joined, ax=ax, mask=sat_joined.isnull(),
+            cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis')
 plt.xticks(rotation=90)
 plt.yticks(rotation=0)
 
-sns.heatmap(ki_fc_med, ax=ax1, mask=ki_fc_med.isnull(),
-            cbar=True, vmin=-15, vmax=15, annot=True)
-plt.xticks(rotation=90)
-plt.yticks(rotation=0)
+#sns.heatmap(ki_sat_med, ax=ax1, mask=ki_sat_med.isnull(),
+#            cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis')
+#plt.xticks(rotation=90)
+#plt.yticks(rotation=0)
 
-ax0.set_title('$\log_2([S]/K_M)$')
+ax0.set_title('median(' + SAT_FORMULA_M + ') over all enzymes')
 ax0.set_ylabel('')
-ax1.set_title('$\log_2([S]/K_I)$')
+ax1.set_title('median(' + SAT_FORMULA_I + ') over all enzymes')
 ax1.set_ylabel('')
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
 
+
 #%%
 # draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
-km_pivoted = km.pivot('met:EC', 'growth condition', 'log2(saturation)')
-ki_pivoted = ki.pivot('met:EC', 'growth condition', 'log2(saturation)')
+km_pivoted = km.pivot('met:EC', 'growth condition', 'saturation')
+ki_pivoted = ki.pivot('met:EC', 'growth condition', 'saturation')
+
+km_pivoted = km_pivoted.reindex_axis(km_pivoted.mean(axis=1).sort_values(axis=0).index, axis=0)
+ki_pivoted = ki_pivoted.reindex_axis(ki_pivoted.mean(axis=1).sort_values(axis=0).index, axis=0)
 
 fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
 sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
-            cbar=False, vmin=-15, vmax=15)
+            cbar=False, vmin=0, vmax=1, cmap='viridis')
 sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
-            cbar=True, vmin=-15, vmax=15, annot=True)
-ax0.set_title('$\log_2([S]/K_M)$')
+            cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis')
+ax0.set_title(SAT_FORMULA_M)
 ax0.set_ylabel('')
-ax1.set_title('$\log_2([S]/K_I)$')
+ax1.set_title(SAT_FORMULA_I)
 ax1.set_ylabel('')
 fig.tight_layout()
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
@@ -113,70 +127,71 @@ fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
 
 fig, axs = plt.subplots(2, 3, figsize=(15, 12), sharey=True)
 
-ax = axs[0,0]
-km['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='substrates', linewidth=2)
-ki['log2(saturation)'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(-10, 10)
+ax = axs[0,2]
+km['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                      histtype='step', ax=ax, label='substrates', linewidth=2)
+ki['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                      histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
-ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_S} \right)$')
-ax.set_ylabel(r'Cumulative distribution')
-ax.set_title('Only for EC:met pairs with $K_s$ and conc.')
+ax.set_xlabel(SAT_FORMULA_S)
+ax.set_title('Only for EC:met pairs with $K_S$ and conc.')
 ax.legend(loc='upper left')
 
-ax = axs[0,1]
+ax = axs[0,0]
 np.log2(km['concentration']).hist(cumulative=True, normed=1, bins=1000,
                                   histtype='step', ax=ax, label='substrates', linewidth=2)
 np.log2(ki['concentration']).hist(cumulative=True, normed=1, bins=1000,
                          histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(-10, 10)
+ax.set_xlim(-7, 4)
 ax.set_ylim(0, 1)
 ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
+ax.set_ylabel(r'Cumulative distribution')
 ax.set_title('Only conc. that have a $K_M$ or $K_I$')
 ax.legend(loc='upper left')
 
-ax = axs[0,2]
+ax = axs[0,1]
 np.log2(1.0/km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
                                  histtype='step', ax=ax, label='$K_M$', linewidth=2)
 np.log2(1.0/ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
                                  histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 10)
+ax.set_xlim(-10, 11)
 ax.set_ylim(0, 1)
-ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
-ax.set_title('Only $K_s$ that correspond to measured met.')
+ax.set_xlabel(r'$\log_2 K_S$ (in mM)')
+ax.set_title('Only $K_S$ that correspond to measured met.')
 ax.legend(loc='upper left')
 
 # compare Km and Ki for the intersection of EC numbers 
 
-EC_intersection = set(km_raw['EC_number']).intersection(ki_raw['EC_number'])
-km_inter = km_raw[km_raw['EC_number'].isin(EC_intersection)]
-ki_inter = ki_raw[ki_raw['EC_number'].isin(EC_intersection)]
+EC_intersection = set(km['EC_number']).intersection(ki['EC_number'])
+km_inter = km[km['EC_number'].isin(EC_intersection)]
+ki_inter = ki[ki['EC_number'].isin(EC_intersection)]
 
 ax = axs[1,0]
-np.log2(1.0/km_inter['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_M$', linewidth=2)
-np.log2(1.0/ki_inter['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 10)
+km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='substrates', linewidth=2)
+ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
-ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
+ax.set_xlabel(SAT_FORMULA_S)
+ax.set_ylabel(r'Cumulative distribution')
 ax.set_title('Only enzymes having both $K_M$ and $K_I$')
 ax.legend(loc='upper left')
 
 
-met_intersection = set(km_raw['bigg.metabolite']).intersection(ki_raw['bigg.metabolite'])
-km_inter = km_raw[km_raw['bigg.metabolite'].isin(met_intersection)]
-ki_inter = ki_raw[ki_raw['bigg.metabolite'].isin(met_intersection)]
+met_intersection = set(km['bigg.metabolite']).intersection(ki['bigg.metabolite'])
+km_inter = km[km['bigg.metabolite'].isin(met_intersection)]
+ki_inter = ki[ki['bigg.metabolite'].isin(met_intersection)]
 
 ax = axs[1,1]
-np.log2(1.0/km_inter['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_M$', linewidth=2)
-np.log2(1.0/ki_inter['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 10)
+km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='substrates', linewidth=2)
+ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
-ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
+ax.set_xlabel(SAT_FORMULA_S)
 ax.set_title('Only metabolites having both $K_M$ and $K_I$')
 ax.legend(loc='upper left')
 
@@ -186,17 +201,51 @@ ki_inter = ki_raw[ki_raw['bigg.metabolite'].isin(met_intersection)]
 
 ax = axs[1,2]
 met_intersection = set(met_conc_mean.index)
-km_inter = km_raw[km_raw['bigg.metabolite'].isin(met_intersection)]
-ki_inter = ki_raw[ki_raw['bigg.metabolite'].isin(met_intersection)]
+km_inter = km[km['bigg.metabolite'].isin(met_intersection)]
+ki_inter = ki[ki['bigg.metabolite'].isin(met_intersection)]
 
-np.log2(1.0/km_inter['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_M$', linewidth=2)
-np.log2(1.0/ki_inter['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                       histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 10)
+km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='substrates', linewidth=2)
+ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
+                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
-ax.set_xlabel(r'$-\log_2 K_S$ (in mM)')
+ax.set_xlabel(SAT_FORMULA_S)
 ax.set_title('Only for metabolites that have measured conc.')
 ax.legend(loc='upper left')
 
 fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
+
+#%% draw violin plots of the saturation distributions
+ki['type'] = 'Inhibitor'
+km['type'] = 'Substrate'
+data = pd.concat([ki, km])
+fig, ax = plt.subplots(1, 1, figsize=(5, 5))
+sns.violinplot(x='type', y='saturation', data=data, ax=ax)
+ax.set_ylabel(SAT_FORMULA_S)
+
+#%%
+fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+ax.set_xscale('log')
+ax.set_yscale('log')
+ki_grouped = ki[['met:EC', 'saturation']].groupby('met:EC')
+km_grouped = km[['met:EC', 'saturation']].groupby('met:EC')
+merge_min = ki_grouped.min().join(km_grouped.min(), how='inner', rsuffix='_km_min', lsuffix='_ki_min')
+merge_max = ki_grouped.max().join(km_grouped.max(), how='inner', rsuffix='_km_max', lsuffix='_ki_max')
+merge_mean = ki_grouped.mean().join(km_grouped.mean(), how='inner', rsuffix='_km_mean', lsuffix='_ki_mean')
+merged = pd.concat([merge_min, merge_max, merge_mean], axis=1)
+for i in merged.index:
+    ax.plot(merged.loc[i, ['saturation_km_min', 'saturation_km_max']],
+            merged.loc[i, ['saturation_ki_mean', 'saturation_ki_mean']],
+            '-', color=(0.5, 0.5, 0.9))
+    ax.plot(merged.loc[i, ['saturation_km_mean', 'saturation_km_mean']],
+            merged.loc[i, ['saturation_ki_min', 'saturation_ki_max']],
+            '-', color=(0.5, 0.5, 0.9))
+    ax.text(merged.loc[i, ['saturation_km_mean']],
+            merged.loc[i, ['saturation_ki_mean']],
+            i)
+ax.set_xlim(1e-4, 1e4)
+ax.set_ylim(1e-4, 1e4)
+ax.plot([1e-2, 1e4], [1e-2, 1e4], 'k--')
+ax.set_xlabel(r'$\log_2 \left( \frac{[S]}{K_M} \right)$')
+ax.set_ylabel(r'$\log_2 \left( \frac{[S]}{K_I} \right)$')
