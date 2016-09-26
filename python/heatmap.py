@@ -66,7 +66,7 @@ def calc_median_sat(k):
     return fc_med.sort_index(axis=0)
     
 #%%
-_df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
+_df = pd.DataFrame.from_csv(S.ECOLI_METAB_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
 met_conc_std = _df.iloc[:, 10:]
@@ -98,15 +98,6 @@ sns.heatmap(sat_joined, ax=ax, mask=sat_joined.isnull(),
 plt.xticks(rotation=90)
 plt.yticks(rotation=0)
 
-#sns.heatmap(ki_sat_med, ax=ax1, mask=ki_sat_med.isnull(),
-#            cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis')
-#plt.xticks(rotation=90)
-#plt.yticks(rotation=0)
-
-ax0.set_title('median(' + SAT_FORMULA_M + ') over all enzymes')
-ax0.set_ylabel('')
-ax1.set_title('median(' + SAT_FORMULA_I + ') over all enzymes')
-ax1.set_ylabel('')
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
 
 
