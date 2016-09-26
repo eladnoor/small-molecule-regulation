@@ -4,8 +4,11 @@ Created on Mon Sep 26 19:49:04 2016
 
 @author: noore
 """
+import json
 import pandas as pd
 import settings as S
+from cobra.io.sbml import create_cobra_model_from_sbml_file
+from cobra.manipulation.modify import convert_to_irreversible
 
 # load the metabolomics data from Gerosa et al. 2015
 _df = pd.DataFrame.from_csv(S.ECOLI_METAB_FNAME)
@@ -19,6 +22,7 @@ met_conc_std.columns = [c[:-6].lower() for c in met_conc_std.columns]
 
 # load the proteomic data from Schmidt et al. 2015
 _df = pd.DataFrame.from_csv(S.ECOLI_PROT_FNAME)
+_df = _df[~pd.isnull(_df['Bnumber'])]
 _df.set_index('Bnumber', inplace=True)
 enz_mw         = _df[['Molecular weight (Da)']]
 enz_count_mean = _df.iloc[:, 7:29]
@@ -47,4 +51,14 @@ data.set_index('bigg.metabolite', inplace=True)
 # for that, we need to use the E. coli model to map between bnumbers and 
 # reactions and their EC-numbers, we also need to make sure we only take
 # reactions with positive flux (in the irreversible model)
+
+flux_df = pd.DataFrame.from_csv(S.ECOLI_FLUX_FNAME)
+flux_df.index.name = 'bigg.reaction'
+
+model = create_cobra_model_from_sbml_file(S.ECOLI_SBML_FNAME)
+convert_to_irreversible(model)
+
+gene_df = pd.DataFrame(data=[(r.id, r.gene_reaction_rule) for r in model.reactions],
+                       columns=('bigg.reaction', 'gene_reaction_rule'))
+gene_df.set_index('bigg.reaction', inplace=True)
 

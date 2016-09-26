@@ -29,10 +29,11 @@ BIGG2KEGG_FNAME  = os.path.join(CACHE_DIR, 'bigg2kegg.csv')
 BIGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'bigg2chebi.csv')
 BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'brenda_query_2016_06_20.zip')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
-ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml.gz')
+ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml')
 ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
 ECOLI_METAB_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
 ECOLI_PROT_FNAME = os.path.join(DATA_DIR, 'ecoli_proteins_schmidt2015.csv')
+ECOLI_FLUX_FNAME = os.path.join(DATA_DIR, 'ecoli_fluxes_fba.csv')
 
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
