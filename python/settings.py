@@ -31,7 +31,8 @@ BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'brenda_query_2016_06_20.zip')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')
 ECOLI_SBML_FNAME = os.path.join(DATA_DIR, 'iJO1366.xml.gz')
 ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
-METABOLITE_CONC_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
+ECOLI_METAB_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
+ECOLI_PROT_FNAME = os.path.join(DATA_DIR, 'ecoli_proteins_schmidt2015.csv')
 
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},

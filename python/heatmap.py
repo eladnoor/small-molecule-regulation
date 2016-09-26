@@ -65,7 +65,7 @@ def calc_median_fc(k):
     fc_med = fc_med.loc[fc_med.mean(1).sort_values().index, :]
     return fc_med
 
-_df = pd.DataFrame.from_csv(S.METABOLITE_CONC_FNAME)
+_df = pd.DataFrame.from_csv(S.ECOLI_METAB_FNAME)
 _df.index.name = 'bigg.metabolite'
 met_conc_mean = _df.iloc[:, 1:9]
 met_conc_std = _df.iloc[:, 10:]
