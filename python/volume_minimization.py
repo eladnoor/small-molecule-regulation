@@ -4,7 +4,6 @@ Created on Mon Sep 26 19:49:04 2016
 
 @author: noore
 """
-import json
 import pandas as pd
 import settings as S
 from cobra.io.sbml import create_cobra_model_from_sbml_file
@@ -39,26 +38,28 @@ km = S.read_cache('km')
 km = km[km['Organism'] == 'Escherichia coli']
 km = km[km['KM_Value'] != -999]
 
-data = km[['EC_number', 'KM_Value', 'bigg.metabolite']].join(met_conc_mean, on='bigg.metabolite', how='inner')
-data.set_index('bigg.metabolite', inplace=True)
+met_data = km[['EC_number', 'KM_Value', 'bigg.metabolite']].join(met_conc_mean, on='bigg.metabolite', how='inner')
 
-# now we need to map the enzyme counts to EC numbers and join with the
-# metabolite+Km data table
+# map the EC numbers to bigg.reaction, note that there might be duplicates
+# since this is many-to-many 
+bigg2ec_df = pd.DataFrame.from_csv(S.BIGG2EC_FNAME)
+met_data = pd.merge(met_data, bigg2ec_df, on='EC_number')
 
-# for that, we need to use the E. coli model to map between bnumbers and 
-# reactions and their EC-numbers, we also need to make sure we only take
-# reactions with positive flux (in the irreversible model)
-
+# get the flux from FBA
 flux_df = pd.DataFrame.from_csv(S.ECOLI_FLUX_FNAME)
 flux_df.index.name = 'bigg.reaction'
 
-# common conditions:
+# keep only the intersection of all conditions 
+# for which we have metabolites, proteins and flux
 cond = met_conc_mean.columns & enz_count_mean.columns & flux_df.columns
 met_conc_mean = met_conc_mean[cond]
 met_conc_std = met_conc_std[cond]
 enz_count_mean = enz_count_mean[cond]
 enz_count_cv = enz_count_cv[cond]
 flux_df = flux_df[cond]
+
+#%% for each reaction, get a single value for the enzyme concentration
+#   in [M] and the molecular weight of the complex
 
 model = create_cobra_model_from_sbml_file(S.ECOLI_SBML_FNAME)
 convert_to_irreversible(model)
@@ -67,13 +68,15 @@ gene_df = pd.DataFrame(data=[(r.id, r.gene_reaction_rule) for r in model.reactio
                        columns=('bigg.reaction', 'gene_reaction_rule'))
 gene_df.set_index('bigg.reaction', inplace=True)
 
-#%% calculate the total mass of enzymes associated with each reaction in each condition
+enz_data = pd.DataFrame(index=gene_df.index, columns=cond)
+
 for c in cond:
     gene_df[c] = 0
     
     rho = 1100 # average cell density gr/L
     DW_fraction = 0.3 # fraction of DW of cells
-    enz_gr_per_gCDW = enz_count_mean[c] * enz_mw * (1e15 / 6.02e23 / rho / DW_fraction)
+    enz_molar       = enz_count_mean[c] * 1e15 / 6.02e23 # convert counts/fL to moles/L (i.e. M)
+    enz_gr_per_gCDW = enz_molar * enz_mw / (rho * DW_fraction) # convert M to gr/gCDW
     enzyme_mass_dict = enz_gr_per_gCDW.to_dict()
     
     for r in gene_df.index:
@@ -84,5 +87,5 @@ for c in cond:
         
         bool_parser = BoolParser(gene_df.loc[r, 'gene_reaction_rule'])
         gene_df.loc[r, c] = bool_parser.evaluate(enzyme_mass_dict)
-
-gene_df.melt()
+        enz_data.loc[r, c] = bool_parser.evaluate(enzyme_mass_dict)
+#%% 

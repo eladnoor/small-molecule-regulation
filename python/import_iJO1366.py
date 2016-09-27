@@ -44,4 +44,4 @@ if bigg2ec['bigg.reaction'].duplicated().any():
 	pdb.set_trace()
 
 # write bigg2ec mapping to csv file
-bigg2ec.to_csv(os.path.join(settings.CACHE_DIR, 'bigg2ec.csv'))
+bigg2ec.to_csv(settings.BIGG2EC_FNAME)
