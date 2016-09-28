@@ -17,7 +17,7 @@ bigg2ec = model_reactions[['Reaction Abbreviation', 'EC Number']]
 bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction',
                         'EC Number': 'EC_number'},
                         inplace=True)
-bigg2ec = bigg2ec.loc[~bigg2ec['EC_number'].isnull()]
+bigg2ec = bigg2ec[~pd.isnull(bigg2ec['EC_Number'])]
 
 # Change all reaction IDs to lower-case (apparently the standards have changed
 # since the model was published, and cases are different now).

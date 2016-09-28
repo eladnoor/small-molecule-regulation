@@ -15,7 +15,7 @@ activators = pd.DataFrame.from_csv(os.path.join(settings.CACHE_DIR, 'ecoli_activ
 model_reactions = settings.get_reaction_table_from_xls()
 bigg2ec = model_reactions.loc[:, ['Reaction Abbreviation', 'EC Number']]
 bigg2ec.rename(columns={'Reaction Abbreviation': 'bigg.reaction'}, inplace=True)
-bigg2ec = bigg2ec.loc[~bigg2ec['EC Number'].isnull()]
+bigg2ec = bigg2ec[~pd.isnull(bigg2ec['EC_Number'])]
 
 # change all reaction IDs to lower-case (apparently the standards have changed
 # since the model was published, and cases are different now).
