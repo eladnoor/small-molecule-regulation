@@ -19,7 +19,6 @@ class Volume(object):
         self.cobra_model = create_cobra_model_from_sbml_file(S.ECOLI_SBML_FNAME)
         convert_to_irreversible(self.cobra_model)
 
-
         self.met_conc_df = self.get_metabolite_data()
         self.km_df = self.get_km_data()
         self.enz_conc_df, self.enz_mw_df = self.get_enzyme_data()
@@ -34,7 +33,7 @@ class Volume(object):
         
         ind = (self.data_df['flux [mmol/gCDW/h]'] > 0) & \
               (self.data_df['enzyme conc [M]'] > 0) & \
-              (self.data_df['stoichiometry'] == 1)
+              (self.data_df['stoichiometry'] == -1)
         
         self.data_df = self.data_df[ind]
         
@@ -66,7 +65,13 @@ class Volume(object):
         km_df = km_df[km_df['Organism'] == 'Escherichia coli']
         km_df = km_df[km_df['KM_Value'] != -999]
         km_df = km_df[['EC_number', 'KM_Value', 'bigg.metabolite']]
-        km_df = km_df.groupby(('EC_number', 'bigg.metabolite')).min().reset_index()
+        km_df = km_df.groupby(('EC_number', 'bigg.metabolite')).median().reset_index()
+
+        # some compounds have specific steriochemistry in BRENDA, but not in the
+        # E. coli model (and other datasets). Therefore, we need to map them to 
+        # the stereo-unspecific BiGG IDs in order to join the tables later
+        stereo_mapping = {'fdp_B_c': 'fdp_c', 'f6p_B_c': 'f6p_c'}
+        km_df['bigg.metabolite'].replace(stereo_mapping, inplace=True)
         
         # get a mapping from EC numbers to bigg.reaction,
         # remember we need to duplicate every reaction ID also for the reverse
@@ -184,10 +189,16 @@ if __name__ == '__main__':
     rV_E_over_Km = r'$\frac{V_E E}{V_s K_M}$'
     data[rV_E_over_Km] = r_V * E / Km
     
+    # for each metabolite:condition, take only the enzyme which
+    # corresponds to the reaction with the highest flux (i.e.
+    # the 'volume-limiting' reaction)
+    data.sort_values('flux [mmol/gCDW/h]', inplace=True, ascending=False)
+    maxflux_data = data.groupby(('bigg.metabolite', 'condition')).first().reset_index()
+    
     #%%
     for hue in ['bigg.metabolite', 'bigg.reaction', 'condition']:
-        pal = sns.husl_palette(len(data[hue].unique()))
-        g = sns.FacetGrid(data, col=None, hue=hue, palette=pal,
+        pal = sns.husl_palette(len(maxflux_data[hue].unique()))
+        g = sns.FacetGrid(maxflux_data, col=None, hue=hue, palette=pal,
                           ylim=(1e-3, 1e3))
         g = g.map(plt.scatter, s_over_Km, rV_E_over_Km).add_legend()
         g.ax.set_xscale('log')
@@ -195,9 +206,9 @@ if __name__ == '__main__':
         g.fig.set_size_inches(12, 7)
         
         # plot the line y = x*(1+x)
-        x = pd.np.logspace(-1, 3, 100)
+        x = pd.np.logspace(-3, 3, 100)
         y = x*(1+x)
         g.ax.plot(x, y, '-')
-        g.ax.set_xlim(1e-1, 1e3)
-        g.ax.set_ylim(1e-3, 1e3)
+        g.ax.set_xlim(1e-3, 1e4)
+        g.ax.set_ylim(1e-3, 1e4)
         g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_%s.svg' % hue))
