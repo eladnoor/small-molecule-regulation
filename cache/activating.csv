@@ -445,7 +445,7 @@
 443,1.1.1.41,Saccharomyces cerevisiae,177,721650,42170,,,
 444,1.1.1.41,Pisum sativum,2,654843,33206,,,
 445,1.1.1.41,Zea mays,2,654914,33206,,,
-446,1.1.1.41,Saccharomyces cerevisiae,7,667647,,,,
+446,1.1.1.41,Saccharomyces cerevisiae,7,667647,15846,nad_c,C00003,NAD+
 447,1.1.1.42,Sus scrofa,751,656180,15366,ac_c,C00033,Acetate
 448,1.1.1.42,Mus musculus,13,656247,16761,adp_c,C00008,ADP
 449,1.1.1.42,Spirodela polyrhiza,1230,656616,32805,acon_C_c,C00417,cis-Aconitate
@@ -500,10 +500,10 @@
 498,1.1.1.47,Bacillus sp.,1443,639123,46837,,,
 499,1.1.1.47,Lysinibacillus sphaericus,21,711501,42191,,C00284,EDTA
 500,1.1.1.47,Haloferax mediterranei,2,654400,33206,,,
-501,1.1.1.47,Bacillus sp.,7,639123,,,,
+501,1.1.1.47,Bacillus sp.,7,639123,15846,nad_c,C00003,NAD+
 502,1.1.1.47,Bacillus sp.,8,639123,16908,nadh_c,C00004,NADH
-503,1.1.1.47,Thermoproteus tenax,10,639097,,,,
-504,1.1.1.47,Bacillus sp.,10,639123,,,,
+503,1.1.1.47,Thermoproteus tenax,10,639097,18009,nadp_c,C00006,NADP+
+504,1.1.1.47,Bacillus sp.,10,639123,18009,nadp_c,C00006,NADP+
 505,1.1.1.47,Bacillus sp.,5,639123,16474,nadph_c,C00005,NADPH
 506,1.1.1.49,Homo sapiens,17287,688050,,,,
 507,1.1.1.49,Homo sapiens,144119,688050,,,,
@@ -762,10 +762,10 @@
 760,1.1.1.159,Bacteroides fragilis,2,697994,33206,,,
 761,1.1.1.159,Bacteroides intestinalis,2,697994,33206,,,
 762,1.1.1.159,Escherichia coli HB101,2,697994,33206,,,
-763,1.1.1.159,Bacteroides fragilis,7,697994,,,,
-764,1.1.1.159,Bacteroides intestinalis,7,697994,,,,
-765,1.1.1.159,Escherichia coli HB101,7,697994,,,,
-766,1.1.1.159,Acinetobacter lwoffii,7,701240,,,,
+763,1.1.1.159,Bacteroides fragilis,7,697994,15846,nad_c,C00003,NAD+
+764,1.1.1.159,Bacteroides intestinalis,7,697994,15846,nad_c,C00003,NAD+
+765,1.1.1.159,Escherichia coli HB101,7,697994,15846,nad_c,C00003,NAD+
+766,1.1.1.159,Acinetobacter lwoffii,7,701240,15846,nad_c,C00003,NAD+
 767,1.1.1.169,Escherichia coli,105617,286109,,,,
 768,1.1.1.169,Escherichia coli,701,286109,15862,,C00797,Ethylamine
 769,1.1.1.169,Escherichia coli,120,286109,30751,for_c,C00058,Formate
@@ -931,7 +931,7 @@
 929,1.1.1.303,Saccharomyces cerevisiae,6,246410,18420,mg2_c,C00305,Magnesium cation
 930,1.1.1.303,Saccharomyces cerevisiae,11,246410,29035,mn2_c,,
 931,1.1.1.304,Rhodococcus erythropolis,896,721396,28262,dmso_c,C11143,Dimethyl sulfoxide
-932,1.1.1.305,Homo sapiens,7,724362,,,,
+932,1.1.1.305,Homo sapiens,7,724362,15846,nad_c,C00003,NAD+
 933,1.1.1.306,Amycolatopsis methanolica,32218,288324,33206,,,
 934,1.1.1.306,Nocardia sp.,130,690518,16842,fald_c,C00067,Formaldehyde
 935,1.1.1.306,Amycolatopsis methanolica,83,288324,17790,meoh_c,C00132,Methanol
@@ -971,7 +971,7 @@
 969,1.1.1.357,Homo sapiens,174815,724209,33206,,,
 970,1.1.1.357,Homo sapiens,1380,724209,58448,thyox__L_c,,
 971,1.1.1.357,Homo sapiens,6595,724209,,,,
-972,1.1.1.363,Leuconostoc mesenteroides,10,721401,,,,
+972,1.1.1.363,Leuconostoc mesenteroides,10,721401,18009,nadp_c,C00006,NADP+
 973,1.1.1.363,Leuconostoc mesenteroides,5,721401,16474,nadph_c,C00005,NADPH
 974,1.1.1.365,Euglena gracilis,22,724580,29192,h2o2_c,,
 975,1.1.1.365,Euglena gracilis,2,724580,33206,,,
@@ -1067,7 +1067,7 @@
 1065,1.1.3.15,Amaranthus retroflexus,279,677109,30887,icit_c,C00311,Isocitrate
 1066,1.1.3.15,Sus scrofa,16,389695,26078,pi_c,C00009,Orthophosphate
 1067,1.1.3.15,Zea mays,58,656622,15741,succ_c,C00042,Succinate
-1068,1.1.3.17,Rattus norvegicus,7,348059,,,,
+1068,1.1.3.17,Rattus norvegicus,7,348059,15846,nad_c,C00003,NAD+
 1069,1.1.3.18,Pseudomonas sp.,1015,348174,42017,,C02496,"2,4-Dinitrophenol"
 1070,1.1.3.18,Bacteria,321,348181,48981,,C19434,8-Hydroxyquinoline
 1071,1.1.3.18,Pseudomonas sp.,1850,348174,30351,,,
@@ -1206,7 +1206,7 @@
 1204,1.2.1.3,Rattus norvegicus,142,348707,16856,,C00051,Glutathione
 1205,1.2.1.3,Sus scrofa,2,348704,33206,,,
 1206,1.2.1.3,Sphingopyxis macrogoltabida,2,710936,33206,,,
-1207,1.2.1.3,Ovis aries,7,348713,,,,
+1207,1.2.1.3,Ovis aries,7,348713,15846,nad_c,C00003,NAD+
 1208,1.2.1.3,Ovis aries,8,348713,16908,nadh_c,C00004,NADH
 1209,1.2.1.3,Pseudomonas aeruginosa,54,348681,16134,nh3_c,C00014,Ammonia
 1210,1.2.1.3,Pseudomonas aeruginosa,54,348725,16134,nh3_c,C00014,Ammonia
@@ -1265,16 +1265,16 @@
 1263,1.2.1.9,Synechococcus sp.,2,288348,33206,,,
 1264,1.2.1.9,Streptococcus equinus,2,673728,33206,,,
 1265,1.2.1.9,Sulfolobus tokodaii,2,725013,33206,,,
-1266,1.2.1.9,Asterionella formosa,10,724917,,,,
-1267,1.2.1.9,Chlamydomonas reinhardtii,10,724917,,,,
-1268,1.2.1.9,Pseudocharaciopsis ovalis,10,724917,,,,
+1266,1.2.1.9,Asterionella formosa,10,724917,18009,nadp_c,C00006,NADP+
+1267,1.2.1.9,Chlamydomonas reinhardtii,10,724917,18009,nadp_c,C00006,NADP+
+1268,1.2.1.9,Pseudocharaciopsis ovalis,10,724917,18009,nadp_c,C00006,NADP+
 1269,1.2.1.9,Sulfolobus solfataricus,31,679719,32816,pyr_c,C00022,Pyruvate
 1270,1.2.1.10,Escherichia coli,63,390164,41218,,C00928,Mercaptoethanol
 1271,1.2.1.10,Propionibacterium freudenreichii,63,390166,41218,,C00928,Mercaptoethanol
 1272,1.2.1.10,Escherichia coli,91545,390164,,,,
 1273,1.2.1.10,Escherichia coli,45,390173,42170,,,
 1274,1.2.1.10,Leuconostoc mesenteroides,142,390167,16856,,C00051,Glutathione
-1275,1.2.1.10,Escherichia coli,7,390164,,,,
+1275,1.2.1.10,Escherichia coli,7,390164,15846,nad_c,C00003,NAD+
 1276,1.2.1.10,Propionibacterium freudenreichii,6645,390166,,,,
 1277,1.2.1.10,Escherichia coli,6645,390171,,,,
 1278,1.2.1.11,Saccharomyces cerevisiae,2657,390187,28976,hco3_c,C01353,Carbonic acid
@@ -1299,7 +1299,7 @@
 1297,1.2.1.12,Homo sapiens,2,684972,33206,,,
 1298,1.2.1.12,Homo sapiens,2,687584,33206,,,
 1299,1.2.1.12,Homo sapiens,2,697687,33206,,,
-1300,1.2.1.12,Entamoeba histolytica,7,686607,,,,
+1300,1.2.1.12,Entamoeba histolytica,7,686607,15846,nad_c,C00003,NAD+
 1301,1.2.1.12,Pseudomonas aeruginosa,5,287919,16474,nadph_c,C00005,NADPH
 1302,1.2.1.12,Thermus thermophilus,4046,287968,28831,ppoh_c,C05979,Propane-1-ol
 1303,1.2.1.12,Thermus thermophilus,1878,287968,17824,2ppoh_c,C01845,Propan-2-ol
@@ -1342,8 +1342,8 @@
 1340,1.2.1.13,Zea mays,2,288031,33206,,,
 1341,1.2.1.13,Arthrospira platensis,2,685291,33206,,,
 1342,1.2.1.13,Sulfolobus tokodaii,2,725013,33206,,,
-1343,1.2.1.13,Spinacia oleracea,10,288032,,,,
-1344,1.2.1.13,Spinacia oleracea,10,"288030, 288034",,,,
+1343,1.2.1.13,Spinacia oleracea,10,288032,18009,nadp_c,C00006,NADP+
+1344,1.2.1.13,Spinacia oleracea,10,"288030, 288034",18009,nadp_c,C00006,NADP+
 1345,1.2.1.13,Phaseolus vulgaris,5,288010,16474,nadph_c,C00005,NADPH
 1346,1.2.1.13,Spinacia oleracea,5,288032,16474,nadph_c,C00005,NADPH
 1347,1.2.1.13,Spinacia oleracea,5,"288030, 288034",16474,nadph_c,C00005,NADPH
@@ -1407,7 +1407,7 @@
 1405,1.2.1.26,Azospirillum brasilense,2195,693021,16002,glcr_c,C00818,D-Glucarate
 1406,1.2.1.26,Azospirillum brasilense,20304,693021,58419,,,
 1407,1.2.1.26,Azospirillum brasilense,206,693021,6178,,C06115,L-Arabinofuranose
-1408,1.2.1.26,Sulfolobus solfataricus,10,719837,,,,
+1408,1.2.1.26,Sulfolobus solfataricus,10,719837,18009,nadp_c,C00006,NADP+
 1409,1.2.1.28,Sorbus aucuparia,1123,699798,,,,
 1410,1.2.1.30,Neurospora crassa,45,288180,42170,,,
 1411,1.2.1.30,Nocardia iowensis,2,692118,33206,,,
@@ -1528,7 +1528,7 @@
 1526,1.2.1.90,Thermoproteus tenax,105,727825,4170,g6p_c,C00092,D-Glucose 6-phosphate
 1527,1.2.1.90,Thermoproteus tenax,183,727825,52742,,C00117,D-Ribose 5-phosphate
 1528,1.2.1.94,Aedes aegypti,7189,725133,15894,,C03461,"2-trans,6-trans-Farnesal"
-1529,1.2.1.94,Manduca sexta,7,717961,,,,
+1529,1.2.1.94,Manduca sexta,7,717961,15846,nad_c,C00003,NAD+
 1530,1.2.1.95,Saccharomycopsis fibuligera,2,695274,33206,,,
 1531,1.2.2.1,Escherichia coli,2,695921,33206,,,
 1532,1.2.2.B2,Methylosinus sp.,324,687432,16830,mma_c,C00218,Methylamine
@@ -1545,12 +1545,12 @@
 1543,1.2.3.1,Rattus norvegicus,2,695270,33206,,,
 1544,1.2.3.1,Rattus norvegicus,13462,691701,21759,,C14592,N-Methyl-N'-nitro-N-nitrosoguanidine
 1545,1.2.3.1,Rattus norvegicus,26019,691701,50102,,C14595,Methylnitrosourea
-1546,1.2.3.1,Mus musculus,7,285726,,,,
-1547,1.2.3.1,Rattus sp.,7,390424,,,,
-1548,1.2.3.1,Rattus sp.,7,390427,,,,
+1546,1.2.3.1,Mus musculus,7,285726,15846,nad_c,C00003,NAD+
+1547,1.2.3.1,Rattus sp.,7,390424,15846,nad_c,C00003,NAD+
+1548,1.2.3.1,Rattus sp.,7,390427,15846,nad_c,C00003,NAD+
 1549,1.2.3.1,Rattus sp.,8,390424,16908,nadh_c,C00004,NADH
 1550,1.2.3.1,Rattus sp.,8,390427,16908,nadh_c,C00004,NADH
-1551,1.2.3.1,Rattus sp.,10,390427,,,,
+1551,1.2.3.1,Rattus sp.,10,390427,18009,nadp_c,C00006,NADP+
 1552,1.2.3.1,Rattus sp.,5,390427,16474,nadph_c,C00005,NADPH
 1553,1.2.3.1,Mus musculus,6962,691701,351346,,,
 1554,1.2.3.1,Oryctolagus cuniculus,3091,691701,36597,,,
@@ -1591,7 +1591,7 @@
 1589,1.2.3.4,Abortiporus biennis,106562,696598,,,,
 1590,1.2.3.4,Pseudomonas sp.,1722,288392,86360,,,
 1591,1.2.3.4,Hordeum vulgare,2,725764,33206,,,
-1592,1.2.3.4,Sorghum bicolor,7,725122,,,,
+1592,1.2.3.4,Sorghum bicolor,7,725122,15846,nad_c,C00003,NAD+
 1593,1.2.3.4,Pseudomonas sp.,3356,288392,34043,,C14402,"1,2-Diaminobenzene"
 1594,1.2.3.4,Hordeum vulgare,2865,288385,31767,,,
 1595,1.2.3.4,Pseudomonas sp.,398,288392,27924,,C02304,Phenylhydrazine
@@ -1662,7 +1662,7 @@
 1660,1.2.4.2,Dictyostelium discoideum,37,349002,15996,gtp_c,C00044,GTP
 1661,1.2.4.2,Solanum tuberosum,3510,672280,26078,pi_c,C00009,Orthophosphate
 1662,1.2.4.2,Rattus norvegicus,2,696124,33206,,,
-1663,1.2.4.2,Homo sapiens,7,349038,,,,
+1663,1.2.4.2,Homo sapiens,7,349038,15846,nad_c,C00003,NAD+
 1664,1.2.4.2,Cavia porcellus,8,656595,16908,nadh_c,C00004,NADH
 1665,1.2.4.2,Sus scrofa,8,656595,16908,nadh_c,C00004,NADH
 1666,1.2.4.2,Rattus norvegicus,54,349037,16134,nh3_c,C00014,Ammonia
@@ -2164,8 +2164,8 @@
 2162,1.3.99.23,Mus musculus,75856,700994,33206,,,
 2163,1.3.99.23,Homo sapiens,18785,700994,50992,,,
 2164,1.3.99.23,Mus musculus,18785,700994,50992,,,
-2165,1.3.99.30,Neurospora crassa,7,712086,,,,
-2166,1.3.99.30,Neurospora crassa,10,712086,,,,
+2165,1.3.99.30,Neurospora crassa,7,712086,15846,nad_c,C00003,NAD+
+2166,1.3.99.30,Neurospora crassa,10,712086,18009,nadp_c,C00006,NADP+
 2167,1.4.1.1,Streptomyces phaeochromogenes,62,349556,44975,,C00604,"1,10-Phenanthroline"
 2168,1.4.1.1,Streptomyces phaeochromogenes,375,349556,30351,,,
 2169,1.4.1.1,Rhodobacter capsulatus,63,349545,41218,,C00928,Mercaptoethanol
@@ -2992,8 +2992,8 @@
 2990,1.7.1.3,Neurospora crassa,239,395970,44975,,C00604,"1,10-Phenanthroline"
 2991,1.7.1.4,Neurospora crassa,56,392935,17621,fmn_c,C00061,FMN
 2992,1.7.1.4,Azotobacter chroococcum,56,392936,17621,fmn_c,C00061,FMN
-2993,1.7.1.4,Escherichia coli,7,392926,,,,
-2994,1.7.1.4,Escherichia coli,7,392928,,,,
+2993,1.7.1.4,Escherichia coli,7,392926,15846,nad_c,C00003,NAD+
+2994,1.7.1.4,Escherichia coli,7,392928,15846,nad_c,C00003,NAD+
 2995,1.7.1.4,Bradyrhizobium sp.,308,655625,17632,no3_c,,
 2996,1.7.1.4,Neurospora crassa,1051,392935,16709,pydxn_c,C00314,Pyridoxine
 2997,1.7.1.6,Escherichia coli,75857,698629,33206,,,
@@ -3023,8 +3023,8 @@
 3021,1.7.1.12,Oryctolagus cuniculus,153,394431,35235,cys__L_c,,
 3022,1.7.1.12,Oryctolagus cuniculus,45,394431,42170,,,
 3023,1.7.1.12,Oryctolagus cuniculus,44,394431,16856,,C00051,Glutathione
-3024,1.7.1.15,Escherichia coli,7,392926,,,,
-3025,1.7.1.15,Escherichia coli,7,721517,,,,
+3024,1.7.1.15,Escherichia coli,7,392926,15846,nad_c,C00003,NAD+
+3025,1.7.1.15,Escherichia coli,7,721517,15846,nad_c,C00003,NAD+
 3026,1.7.2.1,Paracoccus pantotrophus,2,698736,33206,,,
 3027,1.7.2.1,Pseudomonas stutzeri,2,698736,33206,,,
 3028,1.7.2.1,Paracoccus pantotrophus,125210,658738,33206,,,
@@ -3093,7 +3093,7 @@
 3091,1.8.1.4,Mus musculus,2,694854,33206,,,
 3092,1.8.1.4,Sus scrofa,2,694854,33206,,,
 3093,1.8.1.4,Geobacillus stearothermophilus,42,659611,26710,,C13563,Sodium chloride
-3094,1.8.1.4,Microbacterium luteolum,7,712521,,,,
+3094,1.8.1.4,Microbacterium luteolum,7,712521,15846,nad_c,C00003,NAD+
 3095,1.8.1.4,Clostridium kluyveri,410,658431,46234,,,
 3096,1.8.1.4,Sus scrofa,14,659167,29105,zn2_c,C00038,Zinc cation
 3097,1.8.1.4,Mus musculus,14,694361,29105,zn2_c,C00038,Zinc cation
@@ -3129,7 +3129,7 @@
 3127,1.8.1.7,Homo sapiens,2348,394712,63004,,,
 3128,1.8.1.7,Homo sapiens,42,394712,26710,,C13563,Sodium chloride
 3129,1.8.1.7,Oryza sativa,42,656625,26710,,C13563,Sodium chloride
-3130,1.8.1.7,Homo sapiens,10,438075,,,,
+3130,1.8.1.7,Homo sapiens,10,438075,18009,nadp_c,C00006,NADP+
 3131,1.8.1.7,Homo sapiens,5,438075,16474,nadph_c,C00005,NADPH
 3132,1.8.1.7,Rattus norvegicus,2572,673460,17688,,C00745,Nicotine
 3133,1.8.1.7,Rattus norvegicus,181,659592,18208,,C05551,Penicillin G
@@ -3169,7 +3169,7 @@
 3167,1.8.1.9,Homo sapiens,16,394954,26078,pi_c,C00009,Orthophosphate
 3168,1.8.1.9,Mus musculus,5620,690139,32497,,C19302,Thioacetamide
 3169,1.8.1.11,Asparagus officinalis,1929,394703,,,,
-3170,1.8.1.11,Asparagus officinalis,7,"394703, 394704",,,,
+3170,1.8.1.11,Asparagus officinalis,7,"394703, 394704",15846,nad_c,C00003,NAD+
 3171,1.8.1.11,Asparagus officinalis,1066,394704,8984,,C11166,SDS
 3172,1.8.1.11,Asparagus officinalis,514,394703,,,,
 3173,1.8.1.12,Naegleria fowleri,483,673491,48336,,,
@@ -3527,7 +3527,7 @@
 3525,1.11.1.1,Enterococcus faecalis,47,395347,15366,ac_c,C00033,Acetate
 3526,1.11.1.1,Vigna unguiculata,498,699261,30746,bz_c,C00180,Benzoate
 3527,1.11.1.1,Vigna unguiculata,452,699261,17620,fer_c,C01494,Ferulate
-3528,1.11.1.1,Enterococcus faecalis,7,395331,,,,
+3528,1.11.1.1,Enterococcus faecalis,7,395331,15846,nad_c,C00003,NAD+
 3529,1.11.1.1,Vigna unguiculata,1190,676593,32374,T4hcinnm_c,C00811,4-Coumarate
 3530,1.11.1.1,Vigna unguiculata,1190,699261,32374,T4hcinnm_c,C00811,4-Coumarate
 3531,1.11.1.1,Vigna unguiculata,1882,699261,30816,vanlt_c,C06672,Vanillate
@@ -3951,7 +3951,7 @@
 3949,1.13.11.20,Rattus norvegicus,2415,439548,28939,,C06809,Acetylcysteine
 3950,1.13.11.20,Rattus norvegicus,40,439542,16474,nadph_c,C00005,NADPH
 3951,1.13.11.20,Rattus norvegicus,40,439544,16474,nadph_c,C00005,NADPH
-3952,1.13.11.20,Rattus norvegicus,7,439552,,,,
+3952,1.13.11.20,Rattus norvegicus,7,439552,15846,nad_c,C00003,NAD+
 3953,1.13.11.20,Histoplasma capsulatum,8,439543,16908,nadh_c,C00004,NADH
 3954,1.13.11.20,Rattus norvegicus,4845,439548,,,,
 3955,1.13.11.20,Rattus norvegicus,929,439542,45658,,,
@@ -5684,8 +5684,8 @@
 5682,1.16.1.1,Acidithiobacillus ferrooxidans,21,438065,42191,,C00284,EDTA
 5683,1.16.1.1,Pseudomonas aeruginosa,21,438069,42191,,C00284,EDTA
 5684,1.16.1.1,Pseudomonas aeruginosa,2,438075,33206,,,
-5685,1.16.1.1,Pseudomonas aeruginosa,10,438069,,,,
-5686,1.16.1.1,Pseudomonas aeruginosa,10,438075,,,,
+5685,1.16.1.1,Pseudomonas aeruginosa,10,438069,18009,nadp_c,C00006,NADP+
+5686,1.16.1.1,Pseudomonas aeruginosa,10,438075,18009,nadp_c,C00006,NADP+
 5687,1.16.1.1,Pseudomonas aeruginosa,5,438069,16474,nadph_c,C00005,NADPH
 5688,1.16.1.1,Acidithiobacillus ferrooxidans,3098,438065,30065,,C02086,Thioglycolate
 5689,1.16.1.1,Escherichia coli,2763,438070,,,,
@@ -5726,7 +5726,7 @@
 5724,1.17.1.4,Rattus sp.,512,644580,43830,,,
 5725,1.17.1.4,Rhodobacter capsulatus,2,703626,33206,,,
 5726,1.17.1.4,Streptomyces cyanogenus,42,644616,26710,,C13563,Sodium chloride
-5727,1.17.1.4,Rattus sp.,7,644580,,,,
+5727,1.17.1.4,Rattus sp.,7,644580,15846,nad_c,C00003,NAD+
 5728,1.17.1.4,Streptomyces cyanogenus,329,644616,31206,,C12538,Ammonium chloride
 5729,1.17.1.4,Rattus norvegicus,3036,675020,77954,,,
 5730,1.17.1.4,Rattus norvegicus,1483,702963,,,,
@@ -6048,7 +6048,7 @@
 6046,1.18.1.2,Pseudomonas putida,42,688312,26710,,C13563,Sodium chloride
 6047,1.18.1.2,Arthrospira platensis,42,700628,26710,,C13563,Sodium chloride
 6048,1.18.1.2,Cyanidium caldarium,42,700628,26710,,C13563,Sodium chloride
-6049,1.18.1.2,Spinacia oleracea,10,658617,,,,
+6049,1.18.1.2,Spinacia oleracea,10,658617,18009,nadp_c,C00006,NADP+
 6050,1.18.1.2,Pseudomonas putida,4072,698606,34905,,C14701,Paraquat
 6051,1.18.1.2,Spinacia oleracea,2581,285515,,,,
 6052,1.18.1.2,Spinacia oleracea,1209,660092,26711,,,
@@ -6133,7 +6133,7 @@
 6131,1.21.3.3,Papaver somniferum,2,660256,33206,,,
 6132,1.21.3.6,Antirrhinum majus,22,644709,29192,h2o2_c,,
 6133,1.21.3.6,Antirrhinum majus,22,644711,29192,h2o2_c,,
-6134,1.21.4.1,Clostridium sticklandii,7,2121,,,,
+6134,1.21.4.1,Clostridium sticklandii,7,2121,15846,nad_c,C00003,NAD+
 6135,1.21.4.1,Clostridium sticklandii,54,484932,16134,nh3_c,C00014,Ammonia
 6136,1.21.4.1,Clostridium sticklandii,31,484928,32816,pyr_c,C00022,Pyruvate
 6137,1.21.4.1,Clostridium sticklandii,2763,484927,,,,
@@ -8139,7 +8139,7 @@
 8137,2.4.1.18,Triticum aestivum,340,636950,4170,g6p_c,C00092,D-Glucose 6-phosphate
 8138,2.4.1.18,Triticum aestivum,2,706742,33206,,,
 8139,2.4.1.18,Rhodothermus marinus,42,705085,26710,,C13563,Sodium chloride
-8140,2.4.1.18,Triticum aestivum,10,636950,,,,
+8140,2.4.1.18,Triticum aestivum,10,636950,18009,nadp_c,C00006,NADP+
 8141,2.4.1.18,Oryctolagus cuniculus,16,636940,26078,pi_c,C00009,Orthophosphate
 8142,2.4.1.18,Triticum aestivum,16,636950,26078,pi_c,C00009,Orthophosphate
 8143,2.4.1.18,Solanum tuberosum,16,636951,26078,pi_c,C00009,Orthophosphate
@@ -8574,10 +8574,10 @@
 8572,2.4.1.80,Canis lupus familiaris,11540,703917,33206,,,
 8573,2.4.1.80,Chlorocebus sabaeus,11540,703917,33206,,,
 8574,2.4.1.80,Rattus norvegicus,156205,705907,,,,
-8575,2.4.1.80,Homo sapiens,7,489420,,,,
+8575,2.4.1.80,Homo sapiens,7,489420,15846,nad_c,C00003,NAD+
 8576,2.4.1.80,Sus scrofa,8,489410,16908,nadh_c,C00004,NADH
 8577,2.4.1.80,Homo sapiens,8,489420,16908,nadh_c,C00004,NADH
-8578,2.4.1.80,Homo sapiens,10,489420,,,,
+8578,2.4.1.80,Homo sapiens,10,489420,18009,nadp_c,C00006,NADP+
 8579,2.4.1.80,Homo sapiens,5,489420,16474,nadph_c,C00005,NADPH
 8580,2.4.1.81,Petroselinum crispum,274,489425,33206,,,
 8581,2.4.1.82,Arabidopsis thaliana,156206,689615,33206,,,
@@ -9333,8 +9333,8 @@
 9331,2.4.2.31,Meleagris gallopavo,2205,638100,,,,
 9332,2.4.2.31,Meleagris gallopavo,695,638097,,,,
 9333,2.4.2.31,Gallus gallus,2,638118,33206,,,
-9334,2.4.2.31,Bos taurus,7,638116,,,,
-9335,2.4.2.31,Homo sapiens,7,638116,,,,
+9334,2.4.2.31,Bos taurus,7,638116,15846,nad_c,C00003,NAD+
+9335,2.4.2.31,Homo sapiens,7,638116,15846,nad_c,C00003,NAD+
 9336,2.4.2.31,Meleagris gallopavo,867,638097,26078,pi_c,C00009,Orthophosphate
 9337,2.4.2.31,Meleagris gallopavo,1032,638097,,,,
 9338,2.4.2.31,Meleagris gallopavo,3366,638099,,,,
@@ -9739,7 +9739,7 @@
 9737,2.5.1.32,Solanum lycopersicum,37,637870,15996,gtp_c,C00044,GTP
 9738,2.5.1.32,Helianthus annuus,950,659796,33206,,,
 9739,2.5.1.32,Sinapis alba,2,637886,33206,,,
-9740,2.5.1.32,Solanum lycopersicum,10,2941,,,,
+9740,2.5.1.32,Solanum lycopersicum,10,2941,18009,nadp_c,C00006,NADP+
 9741,2.5.1.32,Solanum lycopersicum,61,637885,,,,
 9742,2.5.1.32,Solanum lycopersicum,4875,637885,,,,
 9743,2.5.1.32,Pantoea agglomerans,514,637884,,,,
@@ -10598,7 +10598,7 @@
 10596,2.7.1.33,Homo sapiens,5595,686741,73067,pmtcrn_c,,
 10597,2.7.1.33,Mus musculus,5595,686741,73067,pmtcrn_c,,
 10598,2.7.1.33,Homo sapiens,1629,722018,41774,,C07108,Tamoxifen
-10599,2.7.1.35,Rattus norvegicus,7,391873,,,,
+10599,2.7.1.35,Rattus norvegicus,7,391873,15846,nad_c,C00003,NAD+
 10600,2.7.1.35,Homo sapiens,54,641408,16134,nh3_c,C00014,Ammonia
 10601,2.7.1.35,Ovis aries,54,641419,16134,nh3_c,C00014,Ammonia
 10602,2.7.1.35,Homo sapiens,16,641415,26078,pi_c,C00009,Orthophosphate
@@ -11241,7 +11241,7 @@
 11239,2.7.1.90,Solanum tuberosum,2,642114,33206,,,
 11240,2.7.1.90,Thermoproteus tenax,2,642119,33206,,,
 11241,2.7.1.90,Bruguiera sexangula,42,663038,26710,,C13563,Sodium chloride
-11242,2.7.1.90,Naegleria fowleri,7,642075,,,,
+11242,2.7.1.90,Naegleria fowleri,7,642075,15846,nad_c,C00003,NAD+
 11243,2.7.1.90,Naegleria fowleri,16,642075,26078,pi_c,C00009,Orthophosphate
 11244,2.7.1.90,Naegleria fowleri,2868,642075,,,,
 11245,2.7.1.90,Naegleria fowleri,133,642075,16695,ump_c,C00105,UMP
@@ -13124,10 +13124,10 @@
 13122,2.7.7.27,Solanum tuberosum,2,694734,33206,,,
 13123,2.7.7.27,Zea mays,2,694734,33206,,,
 13124,2.7.7.27,Triticum aestivum,2,706742,33206,,,
-13125,2.7.7.27,Salmonella enterica subsp. enterica serovar Typhimurium,10,643134,,,,
-13126,2.7.7.27,Serratia marcescens,10,643135,,,,
-13127,2.7.7.27,Escherichia coli,10,643144,,,,
-13128,2.7.7.27,Salmonella enterica subsp. enterica serovar Typhimurium,10,643144,,,,
+13125,2.7.7.27,Salmonella enterica subsp. enterica serovar Typhimurium,10,643134,18009,nadp_c,C00006,NADP+
+13126,2.7.7.27,Serratia marcescens,10,643135,18009,nadp_c,C00006,NADP+
+13127,2.7.7.27,Escherichia coli,10,643144,18009,nadp_c,C00006,NADP+
+13128,2.7.7.27,Salmonella enterica subsp. enterica serovar Typhimurium,10,643144,18009,nadp_c,C00006,NADP+
 13129,2.7.7.27,Edwardsiella tarda,5,488901,16474,nadph_c,C00005,NADPH
 13130,2.7.7.27,Hafnia alvei,5,488901,16474,nadph_c,C00005,NADPH
 13131,2.7.7.27,Klebsiella pneumoniae,5,488901,16474,nadph_c,C00005,NADPH
@@ -17346,7 +17346,7 @@
 17344,3.1.2.2,Homo sapiens,2,646194,33206,,,
 17345,3.1.2.2,Mus musculus,2,646197,33206,,,
 17346,3.1.2.2,Mus musculus,2,646200,33206,,,
-17347,3.1.2.2,Rattus norvegicus,7,80783,,,,
+17347,3.1.2.2,Rattus norvegicus,7,80783,15846,nad_c,C00003,NAD+
 17348,3.1.2.2,Rattus norvegicus,47416,646151,,,,
 17349,3.1.2.2,Rattus norvegicus,1282,646151,15940,nac_c,C00253,Nicotinate
 17350,3.1.2.2,Rattus norvegicus,1282,80783,15940,nac_c,C00253,Nicotinate
@@ -17464,7 +17464,7 @@
 17462,3.1.2.20,Escherichia coli K-12,2,696310,33206,,,
 17463,3.1.2.20,Pseudomonas aeruginosa PAO1,2,697481,33206,,,
 17464,3.1.2.20,Amycolatopsis mediterranei,2,698975,33206,,,
-17465,3.1.2.20,Rattus norvegicus,7,80783,,,,
+17465,3.1.2.20,Rattus norvegicus,7,80783,15846,nad_c,C00003,NAD+
 17466,3.1.2.20,Rattus norvegicus,47416,646151,,,,
 17467,3.1.2.20,Rattus norvegicus,1282,646151,15940,nac_c,C00253,Nicotinate
 17468,3.1.2.20,Rattus norvegicus,1282,80783,15940,nac_c,C00253,Nicotinate
@@ -18219,7 +18219,7 @@
 18217,3.1.3.43,Ascaris suum,283,94921,6650,,C00711,Malate
 18218,3.1.3.43,Mammalia,2,642164,33206,,,
 18219,3.1.3.43,Saccharomyces cerevisiae,2,687812,33206,,,
-18220,3.1.3.43,Bos taurus,7,"94881, 94884",,,,
+18220,3.1.3.43,Bos taurus,7,"94881, 94884",15846,nad_c,C00003,NAD+
 18221,3.1.3.43,Bos taurus,1289,94884,,,,
 18222,3.1.3.43,Bos taurus,155,94881,17148,ptrc_c,C00134,Putrescine
 18223,3.1.3.43,Bos taurus,155,94886,17148,ptrc_c,C00134,Putrescine
@@ -20167,8 +20167,8 @@
 20165,3.2.1.20,Bifidobacterium adolescentis,2,681521,33206,,,
 20166,3.2.1.20,Sulfolobus solfataricus,947,393331,28831,ppoh_c,C05979,Propane-1-ol
 20167,3.2.1.20,Chilo suppressalis,42,702988,26710,,C13563,Sodium chloride
-20168,3.2.1.20,Thermotoga maritima,7,655516,,,,
-20169,3.2.1.20,Erwinia rhapontici,7,705622,,,,
+20168,3.2.1.20,Thermotoga maritima,7,655516,15846,nad_c,C00003,NAD+
+20169,3.2.1.20,Erwinia rhapontici,7,705622,15846,nad_c,C00003,NAD+
 20170,3.2.1.20,Rhizobium sp.,54,393333,16134,nh3_c,C00014,Ammonia
 20171,3.2.1.20,Bacillus caldovelox,15909,393264,36419,,,
 20172,3.2.1.20,Bifidobacterium adolescentis,139436,681521,33206,,,
@@ -20306,8 +20306,8 @@
 20304,3.2.1.22,Talaromyces flavus,2,680975,33206,,,
 20305,3.2.1.22,Cucumis sativus,2,706750,33206,,,
 20306,3.2.1.22,Bispora sp.,2,714491,33206,,,
-20307,3.2.1.22,Bacillus halodurans,7,696825,,,,
-20308,3.2.1.22,Bacillus halodurans,10,696825,,,,
+20307,3.2.1.22,Bacillus halodurans,7,696825,15846,nad_c,C00003,NAD+
+20308,3.2.1.22,Bacillus halodurans,10,696825,18009,nadp_c,C00006,NADP+
 20309,3.2.1.22,Bifidobacterium breve,54,697975,16134,nh3_c,C00014,Ammonia
 20310,3.2.1.22,Gibberella sp.,139,695837,49807,,C06696,Lead
 20311,3.2.1.23,Thermoanaerobacter sp.,63,171289,41218,,C00928,Mercaptoethanol
@@ -20971,8 +20971,8 @@
 20969,3.2.1.85,Lactobacillus gasseri,74,208854,35235,cys__L_c,,
 20970,3.2.1.86,Thermotoga maritima,63,655795,41218,,C00928,Mercaptoethanol
 20971,3.2.1.86,Thermotoga maritima,45,655795,42170,,,
-20972,3.2.1.86,Thermotoga maritima,7,655795,,,,
-20973,3.2.1.86,Erwinia rhapontici,7,705622,,,,
+20972,3.2.1.86,Thermotoga maritima,7,655795,15846,nad_c,C00003,NAD+
+20973,3.2.1.86,Erwinia rhapontici,7,705622,15846,nad_c,C00003,NAD+
 20974,3.2.1.91,Penicillium purpurogenum,63,713792,41218,,C00928,Mercaptoethanol
 20975,3.2.1.91,Coprinopsis cinerea,152045,695369,33206,,,
 20976,3.2.1.91,Paenibacillus sp.,2,664401,33206,,,
@@ -21121,7 +21121,7 @@
 21119,3.2.1.139,Thermotoga maritima,177,664349,42170,,,
 21120,3.2.1.139,Thermotoga maritima,74,664349,35235,cys__L_c,,
 21121,3.2.1.139,Aspergillus niger,2,680401,33206,,,
-21122,3.2.1.139,Thermotoga maritima,7,664349,,,,
+21122,3.2.1.139,Thermotoga maritima,7,664349,15846,nad_c,C00003,NAD+
 21123,3.2.1.139,Rasamsonia emersonii,139429,679583,,,,
 21124,3.2.1.139,Rasamsonia emersonii,1423,679583,,,,
 21125,3.2.1.140,Bifidobacterium longum,202491,732113,33206,,,
@@ -21146,7 +21146,7 @@
 21144,3.2.1.143,Homo sapiens,45,665741,42170,,,
 21145,3.2.1.143,Mus musculus,2,732776,33206,,,
 21146,3.2.1.143,Bos taurus,8,208525,16908,nadh_c,C00004,NADH
-21147,3.2.1.143,Bos taurus,10,208525,,,,
+21147,3.2.1.143,Bos taurus,10,208525,18009,nadp_c,C00006,NADP+
 21148,3.2.1.143,Bos taurus,5,208525,16474,nadph_c,C00005,NADPH
 21149,3.2.1.143,Bos taurus,2151,208525,28898,ap5a_c,C04058,Bis(5'-adenosyl) pentaphosphate
 21150,3.2.1.145,Sphingomonas sp.,2,713904,33206,,,
@@ -21320,10 +21320,10 @@
 21318,3.3.1.1,Bos taurus,268,710053,17489,camp_c,C00575,"3',5'-Cyclic AMP"
 21319,3.3.1.1,Alcaligenes faecalis,747,137127,58199,hcys__L_c,,
 21320,3.3.1.1,Homo sapiens,166119,716244,33206,,,
-21321,3.3.1.1,Dictyostelium discoideum,7,137126,,,,
-21322,3.3.1.1,Oryctolagus cuniculus,7,137126,,,,
-21323,3.3.1.1,Rattus norvegicus,7,137138,,,,
-21324,3.3.1.1,Corynebacterium glutamicum,7,731192,,,,
+21321,3.3.1.1,Dictyostelium discoideum,7,137126,15846,nad_c,C00003,NAD+
+21322,3.3.1.1,Oryctolagus cuniculus,7,137126,15846,nad_c,C00003,NAD+
+21323,3.3.1.1,Rattus norvegicus,7,137138,15846,nad_c,C00003,NAD+
+21324,3.3.1.1,Corynebacterium glutamicum,7,731192,15846,nad_c,C00003,NAD+
 21325,3.3.1.1,Bos taurus,16,137143,26078,pi_c,C00009,Orthophosphate
 21326,3.3.1.1,Mesocricetus auratus,36,137129,57856,ahcys_c,,
 21327,3.3.2.6,Cavia porcellus,1519,647015,33206,,,
@@ -24998,8 +24998,8 @@
 24996,3.5.2.9,Rattus norvegicus,102,694485,58359,gln__L_c,,
 24997,3.5.2.9,Paecilomyces variotii,106844,209394,5807,,C11598,Hydroxylamine hydrochloride
 24998,3.5.2.10,Flavobacterium sp.,72,288993,57305,gly_c,,
-24999,3.5.2.13,Thermoplasma acidophilum,7,688323,,,,
-25000,3.5.2.13,Thermoplasma acidophilum,10,688323,,,,
+24999,3.5.2.13,Thermoplasma acidophilum,7,688323,15846,nad_c,C00003,NAD+
+25000,3.5.2.13,Thermoplasma acidophilum,10,688323,18009,nadp_c,C00006,NADP+
 25001,3.5.3.1,Bos taurus,153,696006,35235,cys__L_c,,
 25002,3.5.3.1,Mus musculus,1159,689301,41879,,C15643,Dexamethasone
 25003,3.5.3.1,Bos taurus,655,696006,75832,,,
@@ -27674,7 +27674,7 @@
 27672,4.1.2.32,Dosidicus gigas,8,680290,16908,nadh_c,C00004,NADH
 27673,4.1.2.33,Manduca sexta,63,648382,41218,,C00928,Mercaptoethanol
 27674,4.1.2.33,Manduca sexta,8,648382,16908,nadh_c,C00004,NADH
-27675,4.1.2.33,Manduca sexta,10,648382,,,,
+27675,4.1.2.33,Manduca sexta,10,648382,18009,nadp_c,C00006,NADP+
 27676,4.1.2.33,Manduca sexta,5,648382,16474,nadph_c,C00005,NADPH
 27677,4.1.2.33,Manduca sexta,98,648382,49644,,,
 27678,4.1.2.35,Saccharomyces cerevisiae,63,648385,41218,,C00928,Mercaptoethanol
@@ -27769,7 +27769,7 @@
 27767,4.1.3.32,Eubacterium barkeri,4900,5352,,,,
 27768,4.1.3.39,Burkholderia xenovorans,89244,724341,33206,,,
 27769,4.1.3.39,Mycobacterium tuberculosis,174848,724380,33206,,,
-27770,4.1.3.39,Pseudomonas sp.,7,390175,,,,
+27770,4.1.3.39,Pseudomonas sp.,7,390175,15846,nad_c,C00003,NAD+
 27771,4.1.3.39,Pseudomonas sp.,8,390175,16908,nadh_c,C00004,NADH
 27772,4.1.3.43,Burkholderia xenovorans,89244,721615,33206,,,
 27773,4.1.3.46,Chloroflexus aurantiacus,577,680485,17456,,C00950,Dithioerythritol
@@ -28271,7 +28271,7 @@
 28269,4.2.1.75,Euglena gracilis,2,5875,33206,,,
 28270,4.2.1.75,Rattus norvegicus,2,5880,33206,,,
 28271,4.2.1.75,Rattus norvegicus,2,"5878, 5889",33206,,,
-28272,4.2.1.76,Acanthamoeba polyphaga Mimivirus,7,716065,,,,
+28272,4.2.1.76,Acanthamoeba polyphaga Mimivirus,7,716065,15846,nad_c,C00003,NAD+
 28273,4.2.1.78,Papaver somniferum,118948,653569,33206,,,
 28274,4.2.1.78,Papaver somniferum,2,653569,33206,,,
 28275,4.2.1.79,Escherichia coli,2,488175,33206,,,
@@ -28488,7 +28488,7 @@
 28486,4.2.3.1,Arabidopsis thaliana,404,137561,15414,amet_c,C00019,S-Adenosyl-L-methionine
 28487,4.2.3.1,Arabidopsis thaliana,404,665733,15414,amet_c,C00019,S-Adenosyl-L-methionine
 28488,4.2.3.3,Escherichia coli,1798,650248,17150,2pglyc_c,C00988,2-Phosphoglycolate
-28489,4.2.3.4,Thermus thermophilus,7,666871,,,,
+28489,4.2.3.4,Thermus thermophilus,7,666871,15846,nad_c,C00003,NAD+
 28490,4.2.3.5,Euglena gracilis,950,137663,33206,,,
 28491,4.2.3.8,Ricinus communis,52889,"648606, 648607",33206,,,
 28492,4.2.3.11,Origanum majorana,17,648551,29888,ppi_c,C00013,Diphosphate
@@ -29811,7 +29811,7 @@
 29809,5.1.3.2,Bifidobacterium bifidum,340,2315,4170,g6p_c,C00092,D-Glucose 6-phosphate
 29810,5.1.3.2,Saccharomyces fragilis,340,2322,4170,g6p_c,C00092,D-Glucose 6-phosphate
 29811,5.1.3.2,Poterioochromonas malhamensis,2,2307,33206,,,
-29812,5.1.3.2,Hordeum vulgare,7,661017,,,,
+29812,5.1.3.2,Hordeum vulgare,7,661017,15846,nad_c,C00003,NAD+
 29813,5.1.3.2,Trypanosoma brucei,8,671153,16908,nadh_c,C00004,NADH
 29814,5.1.3.2,Trypanosoma brucei,5,671153,16474,nadph_c,C00005,NADPH
 29815,5.1.3.2,Escherichia coli,26,650515,17659,udp_c,C00015,UDP
@@ -29844,7 +29844,7 @@
 29842,5.1.3.14,Escherichia coli,126,661247,16264,uacgam_c,C00043,UDP-N-acetyl-alpha-D-glucosamine
 29843,5.1.3.14,Bacillus cereus,383,2264,16264,uacgam_c,C00043,UDP-N-acetyl-alpha-D-glucosamine
 29844,5.1.3.14,Escherichia coli,383,"2264, 2265, 2268",16264,uacgam_c,C00043,UDP-N-acetyl-alpha-D-glucosamine
-29845,5.1.3.18,Oryza sativa,7,663048,,,,
+29845,5.1.3.18,Oryza sativa,7,663048,15846,nad_c,C00003,NAD+
 29846,5.1.3.19,Homo sapiens,98630,2303,33206,,,
 29847,5.1.99.3,Comamonas testosteroni,45,2445,42170,,,
 29848,5.1.99.4,Rattus norvegicus,128,2446,57379,pmtcoa_c,,
@@ -30827,7 +30827,7 @@
 30825,6.3.2.10,Escherichia coli,312,651110,30768,ppa_c,C00163,Propanoate
 30826,6.3.2.10,Escherichia coli,1419,651110,39870,,,
 30827,6.3.2.11,Rattus norvegicus,727,996,3647,,C06906,Chlorpromazine
-30828,6.3.2.11,Rattus norvegicus,7,997,,,,
+30828,6.3.2.11,Rattus norvegicus,7,997,15846,nad_c,C00003,NAD+
 30829,6.3.2.17,Homo sapiens,63,1057,41218,,C00928,Mercaptoethanol
 30830,6.3.2.17,Sus scrofa,63,1062,41218,,C00928,Mercaptoethanol
 30831,6.3.2.17,Bos taurus,63,1069,41218,,C00928,Mercaptoethanol

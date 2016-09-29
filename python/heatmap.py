@@ -120,6 +120,8 @@ ax1.set_title(SAT_FORMULA_I)
 ax1.set_ylabel('')
 fig.tight_layout()
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
+km_pivoted.to_csv(os.path.join(S.RESULT_DIR, 'heatmap_km_saturation.csv'))
+ki_pivoted.to_csv(os.path.join(S.RESULT_DIR, 'heatmap_ki_saturation.csv'))
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
 

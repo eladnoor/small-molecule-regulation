@@ -31,7 +31,7 @@
 29,1.1.1.2,Mus musculus,1078,-999.0,"substrate: (2E,4E)-hexa-2,4-dienal, uncompetitive inhibition",677193,33140,,,
 30,1.1.1.3,Glycine max,250,160.0,"pH 8.0, 25°C",712490,57926,thr__L_c,,
 31,1.1.1.6,Pichia membranifaciens,8,0.025,25°C,636285,16908,nadh_c,C00004,NADH
-32,1.1.1.6,Pichia membranifaciens,7,1.09,25°C,636285,,,,
+32,1.1.1.6,Pichia membranifaciens,7,1.09,25°C,636285,15846,nad_c,C00003,NAD+
 33,1.1.1.6,Cellulomonas sp.,620,11.1,,636286,16016,dha_c,C00184,Glycerone
 34,1.1.1.6,Cellulomonas sp.,3210,11.6,,636286,27957,acetol_c,C05235,Hydroxyacetone
 35,1.1.1.8,Oryctolagus cuniculus,2518,0.02,"substrate dihydroxyacetone phosphate, pH 7.4, 25°C; substrate NADH, pH 7.4, 25°C",713328,4806,,C09731,Epigallocatechin 3-gallate
@@ -50,7 +50,7 @@
 48,1.1.1.14,Ovis aries,32000,0.026,pH 9.9,655289,33206,,,
 49,1.1.1.14,Ovis aries,32213,0.029,pH 9.9,655289,,,,
 50,1.1.1.14,Ovis aries,137,0.072,pH 9.9,655289,16243,,C00389,Quercetin
-51,1.1.1.14,Gallus gallus,7,0.22,,668325,,,,
+51,1.1.1.14,Gallus gallus,7,0.22,,668325,15846,nad_c,C00003,NAD+
 52,1.1.1.14,Ovis aries,21445,0.34,pH 9.9,655289,,,,
 53,1.1.1.14,Ovis aries,32090,1.7,pH 9.9,655289,,,,
 54,1.1.1.14,Ovis aries,2424,4.5,pH 9.9,655289,39867,,C07185,Valproic acid
@@ -323,7 +323,7 @@
 321,1.1.1.B40,Mus musculus,3524,0.0064,"pH 7.4, 37°C, isozyme 11beta-HSD1, inhibition of cortisol oxidation",669907,28987,,C06087,Abietate
 322,1.1.1.B40,Cavia porcellus,3524,0.007,"pH 7.4, 37°C, isozyme 11beta-HSD1, inhibition of cortisol oxidation",669907,28987,,C06087,Abietate
 323,1.1.1.B40,Homo sapiens,3524,0.007,"pH 7.4, 37°C, isozyme 11beta-HSD1, inhibition of 11-dehydrocorticosterone reduction",669907,28987,,C06087,Abietate
-324,1.1.1.40,Columba sp.,10,0.0089,"pH 4.5, 25°C, wild-type enzyme",685000,,,,
+324,1.1.1.40,Columba sp.,10,0.0089,"pH 4.5, 25°C, wild-type enzyme",685000,18009,nadp_c,C00006,NADP+
 325,1.1.1.B40,Canis lupus familiaris,3736,0.0097,"pH 7.4, 37°C, isozyme 11beta-HSD1, inhibition of cortisol oxidation",669907,,,,
 326,1.1.1.40,Aspergillus niger,19,0.01,"pH 7.4, 30°C, with Mg2+",655613,29036,cu2_c,,
 327,1.1.1.B40,Homo sapiens,3524,0.011,"pH 7.4, 37°C, isozyme 11beta-HSD2, inhibition of cortisol oxidation",669907,28987,,C06087,Abietate
@@ -372,10 +372,10 @@
 370,1.1.1.42,Mycobacterium tuberculosis,5,0.0046,"isoform ICD-2, pH 7.5, 25°C",668080,16474,nadph_c,C00005,NADPH
 371,1.1.1.42,Pisum sativum,279,0.005,"mitochondrial isozyme, reverse reaction, pH 7.0",654843,30887,icit_c,C00311,Isocitrate
 372,1.1.1.42,Pisum sativum,5,0.005,"mitochondrial isozyme, forward reaction, pH 8.0",654843,16474,nadph_c,C00005,NADPH
-373,1.1.1.42,Pisum sativum,10,0.006,"mitochondrial isozyme, reverse reaction, pH 7.0",654843,,,,
+373,1.1.1.42,Pisum sativum,10,0.006,"mitochondrial isozyme, reverse reaction, pH 7.0",654843,18009,nadp_c,C00006,NADP+
 374,1.1.1.42,Pisum sativum,5,0.007,"cytosolic isozyme, forward reaction, pH 8.0",654843,16474,nadph_c,C00005,NADPH
 375,1.1.1.42,Pisum sativum,279,0.012,"cytosolic isozyme, reverse reaction, pH 7.0",654843,30887,icit_c,C00311,Isocitrate
-376,1.1.1.42,Pisum sativum,10,0.021,"cytosolic isozyme, reverse reaction, pH 7.0",654843,,,,
+376,1.1.1.42,Pisum sativum,10,0.021,"cytosolic isozyme, reverse reaction, pH 7.0",654843,18009,nadp_c,C00006,NADP+
 377,1.1.1.42,Rattus norvegicus,25,0.05,"enzyme from ischemic heart, pH 7.8, 25°C; enzyme from normoxic heart, pH 7.8, 25°C; pH 7.8, 25°C,enzyme from ischemic heart; pH 7.8, 25°C, enzyme from normoxic heart",670236,29033,fe2_c,C14818,Fe2+
 378,1.1.1.42,Pisum sativum,8,0.06,"mitochondrial isozyme, forward reaction, pH 8.0",654843,16908,nadh_c,C00004,NADH
 379,1.1.1.42,Rattus norvegicus,34,0.08,"enzyme from normoxic heart, pH 7.8, 25°C; pH 7.8, 25°C,enzyme from normoxic heart",670236,30915,akg_c,C00026,2-Oxoglutarate
@@ -390,9 +390,9 @@
 388,1.1.1.42,Rattus norvegicus,22,0.45,"enzyme from normoxic heart, pH 7.8, 25°C; pH 7.8, 25°C, enzyme from normoxic heart",670236,29192,h2o2_c,,
 389,1.1.1.42,Pisum sativum,34,1.0,"above, cytosolic isozyme, forward reaction, pH 8.0; above, mitochondrial isozyme, forward reaction, pH 8.0",654843,30915,akg_c,C00026,2-Oxoglutarate
 390,1.1.1.42,Rattus norvegicus,22,1.63,"enzyme from ischemic heart, pH 7.8, 25°C; pH 7.8, 25°C,enzyme from ischemic heart",670236,29192,h2o2_c,,
-391,1.1.1.42,Sus scrofa,7,8.0,"pH 7.4, versus NADPH, recombinant mutant R314Q",654341,,,,
-392,1.1.1.42,Sus scrofa,7,11.0,"pH 7.4, versus NADPH, recombinant wild-type enzyme and mutant Y316L",654341,,,,
-393,1.1.1.42,Sus scrofa,7,12.0,"pH 7.4, versus NADPH, recombinant mutant Y316F",654341,,,,
+391,1.1.1.42,Sus scrofa,7,8.0,"pH 7.4, versus NADPH, recombinant mutant R314Q",654341,15846,nad_c,C00003,NAD+
+392,1.1.1.42,Sus scrofa,7,11.0,"pH 7.4, versus NADPH, recombinant wild-type enzyme and mutant Y316L",654341,15846,nad_c,C00003,NAD+
+393,1.1.1.42,Sus scrofa,7,12.0,"pH 7.4, versus NADPH, recombinant mutant Y316F",654341,15846,nad_c,C00003,NAD+
 394,1.1.1.43,Homo sapiens,41127,0.002,"25°C, pH 8.0, non-competitive inhibition",712601,107736,,C07868,Metoclopramide
 395,1.1.1.43,Homo sapiens,9699,0.0042,,688050,,,,
 396,1.1.1.43,Homo sapiens,41128,0.006,"25°C, pH 8.0, non-competitive inhibition",712601,8872,,C07239,Ritodrine
@@ -504,7 +504,7 @@
 502,1.1.1.49,Aspergillus aculeatus,5,0.02,"pH 7.5, versus NADP+",674379,16474,nadph_c,C00005,NADPH
 503,1.1.1.49,Trypanosoma cruzi,8089,0.0215,"substrate D-glucose 6-phosphate, pH 7.6, temperature not specified in the publication",711462,28689,dhea_c,C01227,Dehydroepiandrosterone
 504,1.1.1.49,Trypanosoma cruzi,8089,0.0223,"substrate NADP+, pH 7.6, temperature not specified in the publication",711462,28689,dhea_c,C01227,Dehydroepiandrosterone
-505,1.1.1.49,Aspergillus aculeatus,10,0.023,pH 7.5,674379,,,,
+505,1.1.1.49,Aspergillus aculeatus,10,0.023,pH 7.5,674379,18009,nadp_c,C00006,NADP+
 506,1.1.1.49,Brugia malayi,5,0.025,"versus D-glucose 6-phosphate, pH 8.0, 25°C",723340,16474,nadph_c,C00005,NADPH
 507,1.1.1.49,Chalcalburnus tarischii,37706,0.032,"25°C, pH 8.5",688131,63845,,,
 508,1.1.1.49,Chalcalburnus tarischii,1096,0.037,"25°C, pH 8.5",688131,45373,,C07458,Sulfanilamide
@@ -636,13 +636,13 @@
 634,1.1.1.64,Rattus norvegicus,7949,0.0285,"isoform 17beta-hydroxysteroid dehydrogenase type 3 , pH 7.4, 37°C",724715,79937,,C15438,Bis(2-butoxyethyl)phthalate
 635,1.1.1.64,Homo sapiens,7949,0.0335,"isoform 3beta-hydroxysteriod dehydrogenase , pH 7.4, 37°C",724715,79937,,C15438,Bis(2-butoxyethyl)phthalate
 636,1.1.1.64,Rattus norvegicus,7949,0.05,"isoform 3beta-hydroxysteriod dehydrogenase , pH 7.4, 37°C",724715,79937,,C15438,Bis(2-butoxyethyl)phthalate
-637,1.1.1.67,Pseudomonas fluorescens,7,0.003,"mutant N191D, pH 7.1, temperature not specified in the publication",712470,,,,
+637,1.1.1.67,Pseudomonas fluorescens,7,0.003,"mutant N191D, pH 7.1, temperature not specified in the publication",712470,15846,nad_c,C00003,NAD+
 638,1.1.1.67,Pseudomonas fluorescens,8,0.061,"mutant N300D, pH 6.8, temperature not specified in the publication",712470,16908,nadh_c,C00004,NADH
 639,1.1.1.67,Pseudomonas fluorescens,8,0.064,"mutant N191D, pH 7.1, temperature not specified in the publication",712470,16908,nadh_c,C00004,NADH
-640,1.1.1.67,Pseudomonas fluorescens,7,0.07,"mutant N300D, pH 6.8, temperature not specified in the publication",712470,,,,
-641,1.1.1.67,Pseudomonas fluorescens,7,0.08,"wild-type, pH 7.1, temperature not specified in the publication",712470,,,,
+640,1.1.1.67,Pseudomonas fluorescens,7,0.07,"mutant N300D, pH 6.8, temperature not specified in the publication",712470,15846,nad_c,C00003,NAD+
+641,1.1.1.67,Pseudomonas fluorescens,7,0.08,"wild-type, pH 7.1, temperature not specified in the publication",712470,15846,nad_c,C00003,NAD+
 642,1.1.1.67,Pseudomonas fluorescens,8,0.08,"wild-type, pH 7.1, temperature not specified in the publication",712470,16908,nadh_c,C00004,NADH
-643,1.1.1.67,Saccharomyces cerevisiae,7,0.6,,287241,,,,
+643,1.1.1.67,Saccharomyces cerevisiae,7,0.6,,287241,15846,nad_c,C00003,NAD+
 644,1.1.1.67,Aspergillus fumigatus,30,2.9,"pH 7.1, 25°C, reduction of fructose",722234,16027,amp_c,C00020,AMP
 645,1.1.1.67,Aspergillus fumigatus,30,4.8,"pH 7.1, 25°C, oxidation of mannitol",722234,16027,amp_c,C00020,AMP
 646,1.1.1.67,Aspergillus fumigatus,13,5.6,"pH 7.1, 25°C, reduction of fructose",722234,16761,adp_c,C00008,ADP
@@ -654,10 +654,10 @@
 652,1.1.1.72,Gluconobacter oxydans,5,0.4,"pH 7.0, 30 °C",711743,16474,nadph_c,C00005,NADPH
 653,1.1.1.76,Corynebacterium glutamicum,63,4.28,Dixon plot; pH 6.0,389580,41218,,C00928,Mercaptoethanol
 654,1.1.1.76,Corynebacterium glutamicum,63,4.3,"pH 8.0, 37°C",712019,41218,,C00928,Mercaptoethanol
-655,1.1.1.79,Arabidopsis thaliana,10,0.0031,competitive with NADPH,685902,,,,
-656,1.1.1.79,Arabidopsis thaliana,10,0.0095,competitive with NADPH when glyoxylate is the fixed substrate,685902,,,,
-657,1.1.1.79,Arabidopsis thaliana,10,0.125,uncompetitive with succinic semialdehyde,685902,,,,
-658,1.1.1.79,Arabidopsis thaliana,10,0.147,uncompetitive with glyoxylate,685902,,,,
+655,1.1.1.79,Arabidopsis thaliana,10,0.0031,competitive with NADPH,685902,18009,nadp_c,C00006,NADP+
+656,1.1.1.79,Arabidopsis thaliana,10,0.0095,competitive with NADPH when glyoxylate is the fixed substrate,685902,18009,nadp_c,C00006,NADP+
+657,1.1.1.79,Arabidopsis thaliana,10,0.125,uncompetitive with succinic semialdehyde,685902,18009,nadp_c,C00006,NADP+
+658,1.1.1.79,Arabidopsis thaliana,10,0.147,uncompetitive with glyoxylate,685902,18009,nadp_c,C00006,NADP+
 659,1.1.1.79,Arabidopsis thaliana,479,22.1,uncompetitive with NADPH,685902,17497,glyclt_c,C00160,Glycolate
 660,1.1.1.79,Arabidopsis thaliana,479,23.7,mixed type inhibition with glyoxylate,685902,17497,glyclt_c,C00160,Glycolate
 661,1.1.1.79,Arabidopsis thaliana,3058,79.9,mixed type inhibition with NADPH,685902,30830,ghb_c,C00989,4-Hydroxybutanoic acid
@@ -682,9 +682,9 @@
 680,1.1.1.86,Oryza sativa,4841,0.00275,,686070,,,,
 681,1.1.1.86,Oryza sativa,1410,0.0032,"pH 8.0, 30°C, recombinant enzyme, uncompetitive mode",699584,30742,,C01380,Ethylene glycol
 682,1.1.1.86,Escherichia coli,5,0.0039,"pH 8.0, 22°C, mutant enzyme K75Q",639183,16474,nadph_c,C00005,NADPH
-683,1.1.1.86,Spinacia oleracea,10,0.005,"pH 8.2, 30°C, NADPH as variable substrate, 0.2 mM (2S)-2-acetolactate as fixed substrate",639179,,,,
+683,1.1.1.86,Spinacia oleracea,10,0.005,"pH 8.2, 30°C, NADPH as variable substrate, 0.2 mM (2S)-2-acetolactate as fixed substrate",639179,18009,nadp_c,C00006,NADP+
 684,1.1.1.86,Oryza sativa,60561,0.0056,"pH 8.0, 30°C, recombinant enzyme",670612,,,,
-685,1.1.1.86,Spinacia oleracea,10,0.0075,"pH 8.2, 30°C, NADPH as variable substrate, 0.2 mM (2S)-2-aceto-2-hydroxybutanoate as fixed substrate",639179,,,,
+685,1.1.1.86,Spinacia oleracea,10,0.0075,"pH 8.2, 30°C, NADPH as variable substrate, 0.2 mM (2S)-2-aceto-2-hydroxybutanoate as fixed substrate",639179,18009,nadp_c,C00006,NADP+
 686,1.1.1.86,Escherichia coli,5,0.0085,"pH 8.0, 22°C, mutant enzyme R68Q",639183,16474,nadph_c,C00005,NADPH
 687,1.1.1.86,Oryza sativa,60562,0.0203,"pH 8.0, 30°C, recombinant enzyme",670612,,,,
 688,1.1.1.86,Escherichia coli,5,0.0226,"pH 8.0, 22°C, mutant enzyme K76Q",639183,16474,nadph_c,C00005,NADPH
@@ -697,10 +697,10 @@
 695,1.1.1.86,Oryza sativa,25256,0.095,"pH 8.0, 30°C",711725,,,,
 696,1.1.1.86,Spinacia oleracea,4465,0.095,"pH 8.2, 30°C, (2S)-2-acetolactate as variable substrate, 0.250 mM NADPH as fixed substrate",639179,15689,,C04039,"2,3-Dihydroxy-3-methylbutanoate"
 697,1.1.1.86,Spinacia oleracea,51261,0.145,"pH 8.2, 30°C, (2S)-2-aceto-2-hydroxybutanoate as variable substrate, 0.250 mM NADPH as fixed substrate",639179,15689,,C04039,"2,3-Dihydroxy-3-methylbutanoate"
-698,1.1.1.86,Spinacia oleracea,10,0.225,"pH 8.2, 30°C, (2S)-2-aceto-2-hydroxybutanoate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,,,,
+698,1.1.1.86,Spinacia oleracea,10,0.225,"pH 8.2, 30°C, (2S)-2-aceto-2-hydroxybutanoate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,18009,nadp_c,C00006,NADP+
 699,1.1.1.86,Spinacia oleracea,13386,0.24,"pH 8.2, 30°C, (2S)-2-aceto-2-hydroxybutanoate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,,,,
 700,1.1.1.86,Spinacia oleracea,13386,0.245,"pH 8.2, 30°C, (2S)-2-acetolactate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,,,,
-701,1.1.1.86,Spinacia oleracea,10,0.33,"pH 8.2, 30°C, (2S)-2-acetolactate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,,,,
+701,1.1.1.86,Spinacia oleracea,10,0.33,"pH 8.2, 30°C, (2S)-2-acetolactate as variable substrate, 0.075 mM NADPH as fixed substrate",639179,18009,nadp_c,C00006,NADP+
 702,1.1.1.86,Oryza sativa,38914,0.35,,697346,7977,,,
 703,1.1.1.86,Oryza sativa,68061,0.351,,686070,,,,
 704,1.1.1.86,Spinacia oleracea,4465,0.935,"pH 8.2, 30°C, NADPH as variable substrate, 0.2 mM (2S)-2-acetolactate as fixed substrate",639179,15689,,C04039,"2,3-Dihydroxy-3-methylbutanoate"
@@ -724,7 +724,7 @@
 722,1.1.1.87,Deinococcus radiodurans,24051,5.2,"pH 7.8, 28°C, recombinant enzyme",667934,,,,
 723,1.1.1.87,Saccharomyces cerevisiae,67942,12.0,,685539,,,,
 724,1.1.1.87,Deinococcus radiodurans,24052,15.3,"pH 7.8, 28°C, recombinant enzyme",667934,,,,
-725,1.1.1.87,Saccharomyces cerevisiae,7,77.0,"pH 8.0, 25°C, in absence of KOAc",696220,,,,
+725,1.1.1.87,Saccharomyces cerevisiae,7,77.0,"pH 8.0, 25°C, in absence of KOAc",696220,15846,nad_c,C00003,NAD+
 726,1.1.1.88,Pseudomonas mevalonii,1239,0.26,"standard conditions, substrate inhibition",657303,25351,mev__R_c,,
 727,1.1.1.88,Pseudomonas mevalonii,17608,0.28,competive inhibition with respect to mevanolate,657303,40303,,C07074,Lovastatin
 728,1.1.1.88,Pseudomonas mevalonii,17608,0.53,competive inhibition with respect to 3-hydroxy-3-methylglutaryl-CoA,657303,40303,,C07074,Lovastatin
@@ -748,11 +748,11 @@
 746,1.1.1.94,Escherichia coli,4869,0.0044,"pH 7.4, 23°C, wild-type enzyme",669175,14336,glyc1p_c,C03189,DL-Glycerol 1-phosphate
 747,1.1.1.94,Escherichia coli,4869,0.043,"pH 7.4, 23°C, resistant mutant enzyme",669175,14336,glyc1p_c,C03189,DL-Glycerol 1-phosphate
 748,1.1.1.94,Escherichia coli,402,0.1,"pH 7.4, 23°C, wild-type enzyme",669177,,,,
-749,1.1.1.94,Escherichia coli,10,0.19,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,,,,
-750,1.1.1.94,Escherichia coli,7,0.2,"pH 7.4, 23°C, wild-type enzyme",669177,,,,
+749,1.1.1.94,Escherichia coli,10,0.19,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,18009,nadp_c,C00006,NADP+
+750,1.1.1.94,Escherichia coli,7,0.2,"pH 7.4, 23°C, wild-type enzyme",669177,15846,nad_c,C00003,NAD+
 751,1.1.1.94,Escherichia coli,402,0.21,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,,,,
-752,1.1.1.94,Escherichia coli,7,0.22,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,,,,
-753,1.1.1.94,Escherichia coli,10,0.25,"pH 7.4, 23°C, wild-type enzyme",669177,,,,
+752,1.1.1.94,Escherichia coli,7,0.22,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,15846,nad_c,C00003,NAD+
+753,1.1.1.94,Escherichia coli,10,0.25,"pH 7.4, 23°C, wild-type enzyme",669177,18009,nadp_c,C00006,NADP+
 754,1.1.1.94,Escherichia coli,13,0.7,"pH 7.4, 23°C, feedback-resistant mutant enzyme",669177,16761,adp_c,C00008,ADP
 755,1.1.1.94,Escherichia coli,13,0.8,"pH 7.4, 23°C, wild-type enzyme",669177,16761,adp_c,C00008,ADP
 756,1.1.1.94,Escherichia coli,4,1.4,"pH 7.4, 23°C, wild-type enzyme and feedback-resistant mutant enzyme",669177,15422,atp_c,C00002,ATP
@@ -796,16 +796,16 @@
 794,1.1.1.105,Homo sapiens,34556,0.0069,"pH 7.3, 37°C, substrate 3alpha-adiol",654431,,,,
 795,1.1.1.117,Candida albicans,5,0.0786,,10663,16474,nadph_c,C00005,NADPH
 796,1.1.1.118,Sulfolobus solfataricus,5,0.075,using D-glucose as a substrate,639110,16474,nadph_c,C00005,NADPH
-797,1.1.1.119,Haloferax mediterranei,10,0.09,"wild-type, pH 8.8, 40°C",699602,,,,
+797,1.1.1.119,Haloferax mediterranei,10,0.09,"wild-type, pH 8.8, 40°C",699602,18009,nadp_c,C00006,NADP+
 798,1.1.1.119,Haloferax mediterranei,50,0.09,with NADP+ as coenzyme,699602,,,,
-799,1.1.1.119,Haloferax mediterranei,10,0.69,"mutant G206D, pH 8.8, 40°C",699602,,,,
-800,1.1.1.119,Haloferax mediterranei,7,1.0,"mutant G206D, pH 8.8, 40°C",699602,,,,
-801,1.1.1.119,Haloferax mediterranei,7,1.17,"mutant G206D/R207I, pH 8.8, 40°C",699602,,,,
-802,1.1.1.119,Haloferax mediterranei,10,1.3,"mutant R207I, pH 8.8, 40°C",699602,,,,
-803,1.1.1.119,Haloferax mediterranei,7,1.7,"mutant G206D/R207I/R208N, pH 8.8, 40°C",699602,,,,
-804,1.1.1.119,Haloferax mediterranei,7,2.0,"wild-type, pH 8.8, 40°C",699602,,,,
+799,1.1.1.119,Haloferax mediterranei,10,0.69,"mutant G206D, pH 8.8, 40°C",699602,18009,nadp_c,C00006,NADP+
+800,1.1.1.119,Haloferax mediterranei,7,1.0,"mutant G206D, pH 8.8, 40°C",699602,15846,nad_c,C00003,NAD+
+801,1.1.1.119,Haloferax mediterranei,7,1.17,"mutant G206D/R207I, pH 8.8, 40°C",699602,15846,nad_c,C00003,NAD+
+802,1.1.1.119,Haloferax mediterranei,10,1.3,"mutant R207I, pH 8.8, 40°C",699602,18009,nadp_c,C00006,NADP+
+803,1.1.1.119,Haloferax mediterranei,7,1.7,"mutant G206D/R207I/R208N, pH 8.8, 40°C",699602,15846,nad_c,C00003,NAD+
+804,1.1.1.119,Haloferax mediterranei,7,2.0,"wild-type, pH 8.8, 40°C",699602,15846,nad_c,C00003,NAD+
 805,1.1.1.119,Haloferax mediterranei,50,2.0,with NAD+ as coenzyme,699602,,,,
-806,1.1.1.119,Haloferax mediterranei,7,2.1,"mutant R207I, pH 8.8, 40°C",699602,,,,
+806,1.1.1.119,Haloferax mediterranei,7,2.1,"mutant R207I, pH 8.8, 40°C",699602,15846,nad_c,C00003,NAD+
 807,1.1.1.121,Thermus thermophilus HB8,2407,0.013,,697263,31669,,C13101,Hexestrol
 808,1.1.1.121,Thermus thermophilus HB8,62,0.025,,697263,44975,,C00604,"1,10-Phenanthroline"
 809,1.1.1.121,Thermus thermophilus HB8,38900,0.042,,697263,35260,,C14512,Benzofuran
@@ -816,8 +816,8 @@
 814,1.1.1.137,Staphylococcus aureus,2912,-999.0,Ki(intercept) and Ki(slope)-values,650236,,,,
 815,1.1.1.138,Tuber borchii,2,-999.0,"substrate/product inhibition patterns, overview",686917,33206,,,
 816,1.1.1.138,Candida magnoliae,19,0.0011,"pH 7.5, 37°C",654271,29036,cu2_c,,
-817,1.1.1.138,Candida magnoliae,10,0.18,"cosubstrate fructose, pH 7.5, 37°C",654271,,,,
-818,1.1.1.138,Candida magnoliae,10,0.21,"cosubstrate NADPH, pH 7.5, 37°C",654271,,,,
+817,1.1.1.138,Candida magnoliae,10,0.18,"cosubstrate fructose, pH 7.5, 37°C",654271,18009,nadp_c,C00006,NADP+
+818,1.1.1.138,Candida magnoliae,10,0.21,"cosubstrate NADPH, pH 7.5, 37°C",654271,18009,nadp_c,C00006,NADP+
 819,1.1.1.138,Candida magnoliae,495,183.0,"pH 7.5, 37°C",655114,16899,mnl_c,C00392,Mannitol
 820,1.1.1.138,Candida magnoliae,1791,188.0,"pH 7.5, 37°C",654271,16899,mnl_c,C00392,Mannitol
 821,1.1.1.141,Homo sapiens,2,-999.0,inhibition kinetics,285916,33206,,,
@@ -843,11 +843,11 @@
 841,1.1.1.141,Homo sapiens,2217,0.0873,,285920,15553,prostgf2_c,C00639,Prostaglandin F2alpha
 842,1.1.1.141,Cavia porcellus,1540,0.098,"pH 7.4, 37°C",285918,28241,,C06533,Papaverine
 843,1.1.1.141,Gallus gallus,1540,0.098,,285918,28241,,C06533,Papaverine
-844,1.1.1.141,Homo sapiens,7,0.117,substrate prostaglandin E1,285920,,,,
+844,1.1.1.141,Homo sapiens,7,0.117,substrate prostaglandin E1,285920,15846,nad_c,C00003,NAD+
 845,1.1.1.141,Sus scrofa,1540,0.12,"; pH 7.4, 37°C",285918,28241,,C06533,Papaverine
 846,1.1.1.141,Bos taurus,546,0.14,,285926,49662,,C01926,Indomethacin
-847,1.1.1.141,Homo sapiens,7,0.163,substrate prostaglandin F2alpha,285920,,,,
-848,1.1.1.141,Homo sapiens,7,0.168,substrate prostaglandin E2,285920,,,,
+847,1.1.1.141,Homo sapiens,7,0.163,substrate prostaglandin F2alpha,285920,15846,nad_c,C00003,NAD+
+848,1.1.1.141,Homo sapiens,7,0.168,substrate prostaglandin E2,285920,15846,nad_c,C00003,NAD+
 849,1.1.1.141,Sus scrofa,11541,0.225,NAD+ as the variable substrate,285924,,,,
 850,1.1.1.141,Homo sapiens,4879,0.26,substrate prostaglandin E1,285920,,,,
 851,1.1.1.141,Rattus norvegicus,1540,0.4,"; kidney enzyme, pH 7.4, 37°C",285918,28241,,C06533,Papaverine
@@ -988,7 +988,7 @@
 986,1.1.1.149,Homo sapiens,3266,0.000273,"mutant L306A, pH and temperature not specified in the publication",724521,,,,
 987,1.1.1.149,Rattus norvegicus,29932,0.0005,"pH 7.8, 23°C",285980,,,,
 988,1.1.1.149,Homo sapiens,3266,0.00058,"mutant enzyme H222S, in 0.1 M potassium phosphate buffer, pH 7.4",699437,,,,
-989,1.1.1.149,Rattus norvegicus,10,0.00074,"pH 7.8, 23°C",285980,,,,
+989,1.1.1.149,Rattus norvegicus,10,0.00074,"pH 7.8, 23°C",285980,18009,nadp_c,C00006,NADP+
 990,1.1.1.149,Homo sapiens,3266,0.00085,"mutant enzyme L54V, in 0.1 M potassium phosphate buffer, pH 7.4",699437,,,,
 991,1.1.1.149,Rattus norvegicus,60357,0.00087,"pH 7.8, 23°C",285980,,,,
 992,1.1.1.149,Rattus norvegicus,60356,0.00134,"pH 7.8, 23°C",285980,,,,
@@ -1040,7 +1040,7 @@
 1038,1.1.1.169,Escherichia coli,30,6.3,pH 7.6,669806,16027,amp_c,C00020,AMP
 1039,1.1.1.169,Escherichia coli,16,27.0,pH 7.6,669806,26078,pi_c,C00009,Orthophosphate
 1040,1.1.1.177,Archaeoglobus fulgidus,2,-999.0,KI-value for NADPH is below 0.005 mM,657307,33206,,,
-1041,1.1.1.177,Archaeoglobus fulgidus,10,0.005,"pH 6.6, 70°C",657307,,,,
+1041,1.1.1.177,Archaeoglobus fulgidus,10,0.005,"pH 6.6, 70°C",657307,18009,nadp_c,C00006,NADP+
 1042,1.1.1.177,Archaeoglobus fulgidus,147,0.1,"pH 6.6, 70°C",657307,29052,g3p_c,C00118,D-Glyceraldehyde 3-phosphate
 1043,1.1.1.177,Archaeoglobus fulgidus,9436,17.0,"pH 6.6, 70°C",657307,15978,glyc3p_c,C00093,sn-Glycerol 3-phosphate
 1044,1.1.1.184,Homo sapiens,19316,4e-05,"pH 6.9, temperature not specified in the publication",711440,,,,
@@ -1279,24 +1279,24 @@
 1277,1.1.1.205,Homo sapiens,37702,0.44,"isoform IMPDH2, pH 8.0, 25°C",685555,,,,
 1278,1.1.1.205,Homo sapiens,37701,0.52,"isoform IMPDH1, pH 8.0, 25°C",685555,,,,
 1279,1.1.1.205,Homo sapiens,30,0.53,,347931,16027,amp_c,C00020,AMP
-1280,1.1.1.205,Cryptosporidium parvum,7,0.6,"absence of K+, pH 8.0, 25°C",724327,,,,
+1280,1.1.1.205,Cryptosporidium parvum,7,0.6,"absence of K+, pH 8.0, 25°C",724327,15846,nad_c,C00003,NAD+
 1281,1.1.1.205,Homo sapiens,37700,0.66,"isoform IMPDH1, pH 8.0, 25°C",685555,,,,
 1282,1.1.1.205,Homo sapiens,37702,0.82,"isoform IMPDH1, pH 8.0, 25°C",685555,,,,
 1283,1.1.1.205,Rattus norvegicus,30,0.854,,347937,16027,amp_c,C00020,AMP
-1284,1.1.1.205,Homo sapiens,7,1.0,"pH 8.0, 37°C, recombinant mutant R224P",667508,,,,
+1284,1.1.1.205,Homo sapiens,7,1.0,"pH 8.0, 37°C, recombinant mutant R224P",667508,15846,nad_c,C00003,NAD+
 1285,1.1.1.205,Homo sapiens,1893,1.3,; ,703193,,,,
-1286,1.1.1.205,Cryptosporidium parvum,7,1.5,"presence of 1 mM K+, pH 8.0, 25°C",724327,,,,
+1286,1.1.1.205,Cryptosporidium parvum,7,1.5,"presence of 1 mM K+, pH 8.0, 25°C",724327,15846,nad_c,C00003,NAD+
 1287,1.1.1.205,Cryptosporidium parvum,1893,1.5,,703193,,,,
-1288,1.1.1.205,Homo sapiens,7,2.0,"pH 8.0, 37°C, recombinant wild-type enzyme",667508,,,,
+1288,1.1.1.205,Homo sapiens,7,2.0,"pH 8.0, 37°C, recombinant wild-type enzyme",667508,15846,nad_c,C00003,NAD+
 1289,1.1.1.205,Tritrichomonas suis,13,2.0,"mutant E323A, pH 8.0, 25°C",711219,16761,adp_c,C00008,ADP
-1290,1.1.1.205,Tritrichomonas suis,7,2.9,"pH 8.0, 25°C, recombinant alphabeta core domain, in presence of 100 mM KCl",667573,,,,
-1291,1.1.1.205,Trypanosoma brucei,7,3.0,"pH 8.0, 25°C",726097,,,,
-1292,1.1.1.205,Bacillus anthracis,7,3.9,"pH 8.0, 22°C",724347,,,,
-1293,1.1.1.205,Homo sapiens,7,4.0,"pH 8.0, 37°C, recombinant mutants D226N and V268I",667508,,,,
+1290,1.1.1.205,Tritrichomonas suis,7,2.9,"pH 8.0, 25°C, recombinant alphabeta core domain, in presence of 100 mM KCl",667573,15846,nad_c,C00003,NAD+
+1291,1.1.1.205,Trypanosoma brucei,7,3.0,"pH 8.0, 25°C",726097,15846,nad_c,C00003,NAD+
+1292,1.1.1.205,Bacillus anthracis,7,3.9,"pH 8.0, 22°C",724347,15846,nad_c,C00003,NAD+
+1293,1.1.1.205,Homo sapiens,7,4.0,"pH 8.0, 37°C, recombinant mutants D226N and V268I",667508,15846,nad_c,C00003,NAD+
 1294,1.1.1.205,Toxoplasma gondii,1127,4.5,"pH 8.0, 37°C, recombinant enzyme",667219,17202,imp_c,C00130,IMP
-1295,1.1.1.205,Cryptosporidium parvum,7,4.9,"presence of 100 mM K+, pH 8.0, 25°C",724327,,,,
-1296,1.1.1.205,Mycobacterium tuberculosis,7,5.0,"pH 8.0, 25°C",712703,,,,
-1297,1.1.1.205,Tritrichomonas suis,7,6.8,"pH 8.0, 25°C, recombinant full-length enzyme, in presence of 100 mM KCl",667573,,,,
+1295,1.1.1.205,Cryptosporidium parvum,7,4.9,"presence of 100 mM K+, pH 8.0, 25°C",724327,15846,nad_c,C00003,NAD+
+1296,1.1.1.205,Mycobacterium tuberculosis,7,5.0,"pH 8.0, 25°C",712703,15846,nad_c,C00003,NAD+
+1297,1.1.1.205,Tritrichomonas suis,7,6.8,"pH 8.0, 25°C, recombinant full-length enzyme, in presence of 100 mM KCl",667573,15846,nad_c,C00003,NAD+
 1298,1.1.1.205,Tritrichomonas suis,13,7.0,"mutant Q324A, pH 8.0, 25°C",711219,16761,adp_c,C00008,ADP
 1299,1.1.1.205,Borrelia burgdorferi,570,8.0,,701583,168396,,,
 1300,1.1.1.205,Homo sapiens,13,8.8,; ,703193,16761,adp_c,C00008,ADP
@@ -1351,7 +1351,7 @@
 1349,1.1.1.213,Rattus norvegicus,3100,0.65,for androsterone oxidation,347982,15365,,C01405,Aspirin
 1350,1.1.1.239,Homo sapiens,8963,0.000107,"pH 7.0, temperature not specified in the publication",725671,,,,
 1351,1.1.1.239,Homo sapiens,8964,0.00273,"pH 7.0, temperature not specified in the publication",725671,,,,
-1352,1.1.1.248,Papaver somniferum,10,0.0012,,698937,,,,
+1352,1.1.1.248,Papaver somniferum,10,0.0012,,698937,18009,nadp_c,C00006,NADP+
 1353,1.1.1.248,Papaver bracteatum,1802,0.14,"pH 6.0, recombinant enzyme",689571,17225,,C05179,Salutaridine
 1354,1.1.1.252,Curvularia lunata,515,0.0012,,697274,18388,,C01477,Apigenin
 1355,1.1.1.252,Curvularia lunata,4661,0.0022,,697274,15335,,C01470,Acacetin
@@ -1435,8 +1435,8 @@
 1433,1.1.1.270,Homo sapiens,1479,0.00256,"3beta-HSD1 mutant R195P, pH 7.4, 27°C",725813,32260,,,
 1434,1.1.1.271,Escherichia coli,439,0.055,,389515,,,,
 1435,1.1.1.271,Escherichia coli,53,0.061,,389515,17552,gdp_c,C00035,GDP
-1436,1.1.1.271,Escherichia coli,10,0.069,,389515,,,,
-1437,1.1.1.274,Corynebacterium sp.,10,0.026,,440304,,,,
+1436,1.1.1.271,Escherichia coli,10,0.069,,389515,18009,nadp_c,C00006,NADP+
+1437,1.1.1.274,Corynebacterium sp.,10,0.026,,440304,18009,nadp_c,C00006,NADP+
 1438,1.1.1.276,Agrobacterium tumefaciens,74,0.067,"versus L-serine, pH 9.0, 30°C",639082,35235,cys__L_c,,
 1439,1.1.1.276,Agrobacterium tumefaciens,74,0.21,"versus NADP+, pH 9.0, 30°C",639082,35235,cys__L_c,,
 1440,1.1.1.276,Agrobacterium tumefaciens,1350,0.59,"versus L-serine, pH 9.0, 30°C",639082,35236,cys__D_c,,
@@ -1478,26 +1478,26 @@
 1476,1.1.1.304,Staphylococcus aureus,2654,150.0,"25°C, pH 6.0",702113,,,,
 1477,1.1.1.304,Staphylococcus aureus,4832,150.0,"25°C, pH 6.0",702113,51850,,,
 1478,1.1.1.304,Staphylococcus aureus,746,300.0,"25°C, pH 6.0",702113,16583,diact_c,C00741,Diacetyl
-1479,1.1.1.307,Candida tenuis,10,0.0015,"pH 7, 25°C, variable substrate: NADH",286260,,,,
+1479,1.1.1.307,Candida tenuis,10,0.0015,"pH 7, 25°C, variable substrate: NADH",286260,18009,nadp_c,C00006,NADP+
 1480,1.1.1.307,Candida tenuis,8,0.0019,"pH 7.0, 25°C",696083,16908,nadh_c,C00004,NADH
-1481,1.1.1.307,Scheffersomyces stipitis,10,0.006,concentration of NADH varied,696073,,,,
+1481,1.1.1.307,Scheffersomyces stipitis,10,0.006,concentration of NADH varied,696073,18009,nadp_c,C00006,NADP+
 1482,1.1.1.307,Candida intermedia,8,0.008,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,16908,nadh_c,C00004,NADH
 1483,1.1.1.307,Candida intermedia,5,0.014,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,16474,nadph_c,C00005,NADPH
 1484,1.1.1.307,Candida tenuis,8,0.016,"pH 7.0, 25°C",696196,16908,nadh_c,C00004,NADH
 1485,1.1.1.307,Candida tenuis,8,0.02,"pH 7.0, 25°C, mutant enzyme D50A",696083,16908,nadh_c,C00004,NADH
 1486,1.1.1.307,Candida intermedia,8,0.02,"pH 7.0, 25°C, monospecific xylose reductase (msXR)",698396,16908,nadh_c,C00004,NADH
 1487,1.1.1.307,Candida tenuis,4,0.0239,"pH 7, 25°C, variable substrate: NADH",286260,15422,atp_c,C00002,ATP
-1488,1.1.1.307,Candida intermedia,10,0.025,"pH 7.0, 25°C, monospecific xylose reductase (msXR)",698396,,,,
-1489,1.1.1.307,Scheffersomyces stipitis,10,0.03,concentration of NADPH varied,696073,,,,
+1488,1.1.1.307,Candida intermedia,10,0.025,"pH 7.0, 25°C, monospecific xylose reductase (msXR)",698396,18009,nadp_c,C00006,NADP+
+1489,1.1.1.307,Scheffersomyces stipitis,10,0.03,concentration of NADPH varied,696073,18009,nadp_c,C00006,NADP+
 1490,1.1.1.307,Candida parapsilosis,19,0.034,pH 6.0,695731,29036,cu2_c,,
-1491,1.1.1.307,Candida intermedia,10,0.053,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,,,,
-1492,1.1.1.307,Candida intermedia,7,0.074,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,,,,
-1493,1.1.1.307,Scheffersomyces stipitis,7,0.13,concentration of NADH varied,696073,,,,
-1494,1.1.1.307,Scheffersomyces stipitis,10,0.17,concentration of D-xylose varied,696073,,,,
-1495,1.1.1.307,Candida parapsilosis,7,0.18,"pH 6.0, competitive with NADH",695731,,,,
-1496,1.1.1.307,Candida tenuis,7,0.195,"pH 7.0, 25°C",696196,,,,
-1497,1.1.1.307,Candida parapsilosis,7,0.325,"pH 6.0, non-competitive with D-xylose",695731,,,,
-1498,1.1.1.307,Scheffersomyces stipitis,7,0.65,concentration of D-xylose varied,696073,,,,
+1491,1.1.1.307,Candida intermedia,10,0.053,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,18009,nadp_c,C00006,NADP+
+1492,1.1.1.307,Candida intermedia,7,0.074,"pH 7.0, 25°C, dual specific xylose reductase (dsXR)",698396,15846,nad_c,C00003,NAD+
+1493,1.1.1.307,Scheffersomyces stipitis,7,0.13,concentration of NADH varied,696073,15846,nad_c,C00003,NAD+
+1494,1.1.1.307,Scheffersomyces stipitis,10,0.17,concentration of D-xylose varied,696073,18009,nadp_c,C00006,NADP+
+1495,1.1.1.307,Candida parapsilosis,7,0.18,"pH 6.0, competitive with NADH",695731,15846,nad_c,C00003,NAD+
+1496,1.1.1.307,Candida tenuis,7,0.195,"pH 7.0, 25°C",696196,15846,nad_c,C00003,NAD+
+1497,1.1.1.307,Candida parapsilosis,7,0.325,"pH 6.0, non-competitive with D-xylose",695731,15846,nad_c,C00003,NAD+
+1498,1.1.1.307,Scheffersomyces stipitis,7,0.65,concentration of D-xylose varied,696073,15846,nad_c,C00003,NAD+
 1499,1.1.1.312,Pseudomonas straminea,12915,6e-05,,288241,33206,,,
 1500,1.1.1.312,Pseudomonas straminea,49199,0.0002,"coenzyme NADP+, similar value with coenzyme NAD+",288241,33206,,,
 1501,1.1.1.312,Pseudomonas straminea,4559,0.0002,"coenzyme NADP+, similar value with coenzyme NAD+",288241,34946,,C13746,Reactive blue 2
@@ -1510,8 +1510,8 @@
 1508,1.1.1.334,Erythroxylum coca,10346,0.001136,"substrate inhibition, pH 6.8, temperature not specified in the publication",718331,67115,,,
 1509,1.1.1.334,Erythroxylum coca,5,0.00248,"substrate inhibition, pH 6.8, temperature not specified in the publication",718331,16474,nadph_c,C00005,NADPH
 1510,1.1.1.334,Erythroxylum coca,10345,0.002673,"substrate inhibition, pH 6.8, temperature not specified in the publication",718331,31529,,C12448,Ecgonine methyl ester
-1511,1.1.1.334,Erythroxylum coca,10,0.506,"substrate inhibition, pH 6.8, temperature not specified in the publication",718331,,,,
-1512,1.1.1.346,Corynebacterium sp.,10,0.026,at pH 9.2 and 25°C,440304,,,,
+1511,1.1.1.334,Erythroxylum coca,10,0.506,"substrate inhibition, pH 6.8, temperature not specified in the publication",718331,18009,nadp_c,C00006,NADP+
+1512,1.1.1.346,Corynebacterium sp.,10,0.026,at pH 9.2 and 25°C,440304,18009,nadp_c,C00006,NADP+
 1513,1.1.1.358,Candida parapsilosis,88496,0.0002,"pH 7.0, 30°C, substrate: isatin",347724,33206,,,
 1514,1.1.1.358,Candida parapsilosis,29442,0.0014,"pH 7.0, 30°C, substrate: isatin",347724,52141,,,
 1515,1.1.1.358,Candida parapsilosis,10830,0.19,"pH 7.0, 30°C, substrate: isatin",347724,18395,,C01125,"Dihydro-4,4-dimethyl-2,3-furandione"
@@ -1519,49 +1519,49 @@
 1517,1.1.1.359,Sulfolobus solfataricus,5,0.075,"pH 9.0, 70°C, substrate: glucose",639110,16474,nadph_c,C00005,NADPH
 1518,1.1.1.360,Picrophilus torridus,4,5.9,"pH 6.5, 55°C, at saturating glucose concentration (50 mM)",668544,15422,atp_c,C00002,ATP
 1519,1.1.1.363,Leuconostoc mesenteroides,233,-999.0,"inhibition constants with respect to D-glucose 6-phosphate, NAD+ or NADP+",721573,46442,,C11627,ortho-Vanadate
-1520,1.1.1.363,Leuconostoc mesenteroides,10,0.00337,"wild type enzyme, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,,,,
-1521,1.1.1.363,Leuconostoc mesenteroides,10,0.0034,"25°C, pH 7.6, wild-type enzyme",723718,,,,
-1522,1.1.1.363,Leuconostoc mesenteroides,10,0.0037,"25°C, pH 6.7",721402,,,,
-1523,1.1.1.363,Leuconostoc mesenteroides,10,0.0037,"25°C, pH 7.6, mutant enzyme H1787N",721580,,,,
-1524,1.1.1.363,Leuconostoc mesenteroides,10,0.0039,"25°C, pH 6.2",721402,,,,
-1525,1.1.1.363,Leuconostoc mesenteroides,10,0.005,"25°C, pH 7.2",721402,,,,
+1520,1.1.1.363,Leuconostoc mesenteroides,10,0.00337,"wild type enzyme, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,18009,nadp_c,C00006,NADP+
+1521,1.1.1.363,Leuconostoc mesenteroides,10,0.0034,"25°C, pH 7.6, wild-type enzyme",723718,18009,nadp_c,C00006,NADP+
+1522,1.1.1.363,Leuconostoc mesenteroides,10,0.0037,"25°C, pH 6.7",721402,18009,nadp_c,C00006,NADP+
+1523,1.1.1.363,Leuconostoc mesenteroides,10,0.0037,"25°C, pH 7.6, mutant enzyme H1787N",721580,18009,nadp_c,C00006,NADP+
+1524,1.1.1.363,Leuconostoc mesenteroides,10,0.0039,"25°C, pH 6.2",721402,18009,nadp_c,C00006,NADP+
+1525,1.1.1.363,Leuconostoc mesenteroides,10,0.005,"25°C, pH 7.2",721402,18009,nadp_c,C00006,NADP+
 1526,1.1.1.363,Leuconostoc mesenteroides,5,0.006,"25°C, pH 6.2",721402,16474,nadph_c,C00005,NADPH
-1527,1.1.1.363,Leuconostoc mesenteroides,10,0.0062,"25°C, pH 7.6, wild-type enzyme, mutant enzyme K121R",723718,,,,
-1528,1.1.1.363,Leuconostoc mesenteroides,10,0.0067,"25°C, pH 7.8, mutant enzyme K343R",721584,,,,
-1529,1.1.1.363,Leuconostoc mesenteroides,10,0.0073,"25°C, pH 7.8, mutant enzyme Y179F",721584,,,,
-1530,1.1.1.363,Leuconostoc mesenteroides,10,0.0078,"25°C, pH 7.8, mutant enzyme K182Q",721584,,,,
-1531,1.1.1.363,Leuconostoc mesenteroides,10,0.0078,"25°C, pH 7.6, wild-type enzyme, mutant enzyme K21Q",723718,,,,
-1532,1.1.1.363,Leuconostoc mesenteroides,10,0.0079,"25°C, pH 7.8, mutant enzyme D374Q",721584,,,,
-1533,1.1.1.363,Leuconostoc mesenteroides,10,0.008,"25°C, pH 7.8, mutant enzyme K182R",721584,,,,
-1534,1.1.1.363,Leuconostoc mesenteroides,10,0.015,"25°C, pH 7.6, mutant enzyme D177N",721580,,,,
-1535,1.1.1.363,Leuconostoc mesenteroides,10,0.016,"25°C, pH 7.8, mutant enzyme T14S",721584,,,,
-1536,1.1.1.363,Leuconostoc mesenteroides,10,0.017,"25°C, pH 7.8, mutant enzyme Y415F",721584,,,,
-1537,1.1.1.363,Leuconostoc mesenteroides,10,0.019,"25°C, pH 7.8, mutant enzyme P149G",721584,,,,
-1538,1.1.1.363,Leuconostoc mesenteroides,10,0.034,"25°C, pH 7.8, mutant enzyme P149V",721584,,,,
+1527,1.1.1.363,Leuconostoc mesenteroides,10,0.0062,"25°C, pH 7.6, wild-type enzyme, mutant enzyme K121R",723718,18009,nadp_c,C00006,NADP+
+1528,1.1.1.363,Leuconostoc mesenteroides,10,0.0067,"25°C, pH 7.8, mutant enzyme K343R",721584,18009,nadp_c,C00006,NADP+
+1529,1.1.1.363,Leuconostoc mesenteroides,10,0.0073,"25°C, pH 7.8, mutant enzyme Y179F",721584,18009,nadp_c,C00006,NADP+
+1530,1.1.1.363,Leuconostoc mesenteroides,10,0.0078,"25°C, pH 7.8, mutant enzyme K182Q",721584,18009,nadp_c,C00006,NADP+
+1531,1.1.1.363,Leuconostoc mesenteroides,10,0.0078,"25°C, pH 7.6, wild-type enzyme, mutant enzyme K21Q",723718,18009,nadp_c,C00006,NADP+
+1532,1.1.1.363,Leuconostoc mesenteroides,10,0.0079,"25°C, pH 7.8, mutant enzyme D374Q",721584,18009,nadp_c,C00006,NADP+
+1533,1.1.1.363,Leuconostoc mesenteroides,10,0.008,"25°C, pH 7.8, mutant enzyme K182R",721584,18009,nadp_c,C00006,NADP+
+1534,1.1.1.363,Leuconostoc mesenteroides,10,0.015,"25°C, pH 7.6, mutant enzyme D177N",721580,18009,nadp_c,C00006,NADP+
+1535,1.1.1.363,Leuconostoc mesenteroides,10,0.016,"25°C, pH 7.8, mutant enzyme T14S",721584,18009,nadp_c,C00006,NADP+
+1536,1.1.1.363,Leuconostoc mesenteroides,10,0.017,"25°C, pH 7.8, mutant enzyme Y415F",721584,18009,nadp_c,C00006,NADP+
+1537,1.1.1.363,Leuconostoc mesenteroides,10,0.019,"25°C, pH 7.8, mutant enzyme P149G",721584,18009,nadp_c,C00006,NADP+
+1538,1.1.1.363,Leuconostoc mesenteroides,10,0.034,"25°C, pH 7.8, mutant enzyme P149V",721584,18009,nadp_c,C00006,NADP+
 1539,1.1.1.363,Leuconostoc mesenteroides,18443,0.034,"25°C, pH 7.8, NAD+-linked reaction",722590,,,,
 1540,1.1.1.363,Leuconostoc mesenteroides,5,0.038,"25°C, pH 7.2",721402,16474,nadph_c,C00005,NADPH
 1541,1.1.1.363,Leuconostoc mesenteroides,32,0.039,"25°C, pH 7.7, competitive inhibition when glucose 6-phosphate is varied at a constant, nearly saturating concentration of NAD+",722578,18405,pydx5p_c,C00018,Pyridoxal phosphate
 1542,1.1.1.363,Leuconostoc mesenteroides,18443,0.04,"25°C, pH 7.8, NADP+-linked reaction",722590,,,,
-1543,1.1.1.363,Leuconostoc mesenteroides,10,0.087,"25°C, pH 7.8, mutant enzyme Q47E",721584,,,,
+1543,1.1.1.363,Leuconostoc mesenteroides,10,0.087,"25°C, pH 7.8, mutant enzyme Q47E",721584,18009,nadp_c,C00006,NADP+
 1544,1.1.1.363,Leuconostoc mesenteroides,1962,0.12,"pH 7.8, 25°C, substrate: NADP+",721400,,,,
 1545,1.1.1.363,Leuconostoc mesenteroides,6749,0.15,"24°C, pH 7.8, inhibition of NAD+-dependent reaction",721511,78146,,,
-1546,1.1.1.363,Leuconostoc mesenteroides,10,0.169,"25°C, pH 7.8, mutant enzyme T14A",721584,,,,
+1546,1.1.1.363,Leuconostoc mesenteroides,10,0.169,"25°C, pH 7.8, mutant enzyme T14A",721584,18009,nadp_c,C00006,NADP+
 1547,1.1.1.363,Leuconostoc mesenteroides,76,0.4,"24°C, pH 7.8, inhibition of NAD+-dependent reaction",721511,15531,malcoa_c,C00083,Malonyl-CoA
 1548,1.1.1.363,Leuconostoc mesenteroides,4,0.5,"24°C, pH 7.8, inhibition of NAD+-dependent reaction",721511,15422,atp_c,C00002,ATP
 1549,1.1.1.363,Leuconostoc mesenteroides,402,0.52,"pH 7.8, 25°C, substrate: NAD+",721400,,,,
 1550,1.1.1.363,Leuconostoc mesenteroides,18,0.7,"24°C, pH 7.8, inhibition of NAD+-dependent reaction",721511,15346,coa_c,C00010,CoA
-1551,1.1.1.363,Leuconostoc mesenteroides,7,0.76,"25°C, pH 7.8",721402,,,,
-1552,1.1.1.363,Leuconostoc mesenteroides,7,0.95,"25°C, pH 6.8",721402,,,,
+1551,1.1.1.363,Leuconostoc mesenteroides,7,0.76,"25°C, pH 7.8",721402,15846,nad_c,C00003,NAD+
+1552,1.1.1.363,Leuconostoc mesenteroides,7,0.95,"25°C, pH 6.8",721402,15846,nad_c,C00003,NAD+
 1553,1.1.1.363,Leuconostoc mesenteroides,29,1.0,"24°C, pH 7.8, inhibition of NAD+-dependent reaction",721511,15351,accoa_c,C00024,Acetyl-CoA
 1554,1.1.1.363,Leuconostoc mesenteroides,771,1.3,"pH 7.8, 25°C, substrate: NAD+",721400,28223,,C00946,Adenosine 2'-phosphate
-1555,1.1.1.363,Leuconostoc mesenteroides,7,1.3,"25°C, pH 6.3",721402,,,,
+1555,1.1.1.363,Leuconostoc mesenteroides,7,1.3,"25°C, pH 6.3",721402,15846,nad_c,C00003,NAD+
 1556,1.1.1.363,Leuconostoc mesenteroides,4,1.5,"pH 7.8, 25°C, substrate: NADP+",721400,15422,atp_c,C00002,ATP
-1557,1.1.1.363,Leuconostoc mesenteroides,10,1.79,"mutant enzyme R46Q, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,,,,
+1557,1.1.1.363,Leuconostoc mesenteroides,10,1.79,"mutant enzyme R46Q, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,18009,nadp_c,C00006,NADP+
 1558,1.1.1.363,Leuconostoc mesenteroides,28808,1.8,"25°C, pH 7.8",722585,33206,,,
-1559,1.1.1.363,Leuconostoc mesenteroides,10,1.8,"25°C, pH 7.6, mutant enzyme R46Q",721411,,,,
+1559,1.1.1.363,Leuconostoc mesenteroides,10,1.8,"25°C, pH 7.6, mutant enzyme R46Q",721411,18009,nadp_c,C00006,NADP+
 1560,1.1.1.363,Leuconostoc mesenteroides,236,2.0,"pH 7.8, 25°C, substrate: NAD+",721400,16027,amp_c,C00020,AMP
 1561,1.1.1.363,Leuconostoc mesenteroides,13,3.1,"pH 7.8, 25°C, substrate: NAD+",721400,16761,adp_c,C00008,ADP
-1562,1.1.1.363,Leuconostoc mesenteroides,10,8.23,"25°C, pH 7.6, mutant enzyme R46A; mutant enzyme R46A, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,,,,
+1562,1.1.1.363,Leuconostoc mesenteroides,10,8.23,"25°C, pH 7.6, mutant enzyme R46A; mutant enzyme R46A, in 33 mM Tris-HCl, pH 7.6, at 25°C",721411,18009,nadp_c,C00006,NADP+
 1563,1.1.1.363,Leuconostoc mesenteroides,122,36.0,"pH 7.8, 25°C, substrate: NAD+",721400,16335,adn_c,C00212,Adenosine
 1564,1.1.1.363,Leuconostoc mesenteroides,30199,95.0,"pH 7.8, 25°C, substrate: NAD+",721400,64399,,,
 1565,1.1.1.363,Leuconostoc mesenteroides,267,105.0,"pH 7.8, 25°C, substrate: NAD+",721400,17154,ncam_c,C00153,Nicotinamide
@@ -1640,7 +1640,7 @@
 1638,1.1.3.13,Ogataea angusta,83,6500.0,,484923,17790,meoh_c,C00132,Methanol
 1639,1.1.3.15,Sus scrofa,2,-999.0,"straight-chain monocarboxylic acids are non-competitive inhibitors with either glycolate or glyoxylate as substrates, dicarboxylic acids are competitive inhibitors with glycolate as substrate, but non-competitive inhibitors for glyoxylate as substrate",389695,33206,,,
 1640,1.1.3.15,Aerococcus viridans,5140,0.00169,at pH 6.0,440391,,,,
-1641,1.1.3.15,Rattus norvegicus,7,0.03,"pH 7.4, 25°C",712020,,,,
+1641,1.1.3.15,Rattus norvegicus,7,0.03,"pH 7.4, 25°C",712020,15846,nad_c,C00003,NAD+
 1642,1.1.3.15,Homo sapiens,165,0.078,,684684,27451,,,
 1643,1.1.3.15,Sus scrofa,2144,0.092,"non-competitive, glycolate oxidation",389695,45571,,C17714,Heptanoic acid
 1644,1.1.3.15,Rattus sp.,4811,0.13,,389688,18047,,C02147,Dihydrolipoate
@@ -1782,7 +1782,7 @@
 1780,1.2.1.2,Arabidopsis thaliana,5,0.24,,657097,16474,nadph_c,C00005,NADPH
 1781,1.2.1.2,Ceriporiopsis subvermispora,1136,1.2,"substrate formate, pH 6.5, 30°C",673381,28976,hco3_c,C01353,Carbonic acid
 1782,1.2.1.2,Ceriporiopsis subvermispora,1136,5.6,"substrate NAD+, pH 6.5, 30°C",673381,28976,hco3_c,C01353,Carbonic acid
-1783,1.2.1.2,Candida boidinii,7,78.14,"at pH 7.5, 25°C",711549,,,,
+1783,1.2.1.2,Candida boidinii,7,78.14,"at pH 7.5, 25°C",711549,15846,nad_c,C00003,NAD+
 1784,1.2.1.3,Homo sapiens,986,0.0002,isoenzyme 1,348720,4659,,C01692,Disulfiram
 1785,1.2.1.3,Homo sapiens,1639,0.0074,"isoform ALDH2, in 0.1 M sodium diphosphate buffer (pH 9.5), at 21-23°C",713544,,,,
 1786,1.2.1.3,Saccharomyces cerevisiae,8,0.162,at 22°C and pH 7.8,723973,16908,nadh_c,C00004,NADH
@@ -1916,9 +1916,9 @@
 1914,1.2.1.12,Lactococcus lactis,93,0.145,"30°C, pH 7.2",712937,74571,,,
 1915,1.2.1.13,Sulfolobus tokodaii,5,0.035,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 50°C",725013,16474,nadph_c,C00005,NADPH
 1916,1.2.1.13,Sulfolobus tokodaii,8,0.081,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 50°C",725013,16908,nadh_c,C00004,NADH
-1917,1.2.1.13,Sulfolobus tokodaii,10,0.75,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,,,,
+1917,1.2.1.13,Sulfolobus tokodaii,10,0.75,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,18009,nadp_c,C00006,NADP+
 1918,1.2.1.13,Sulfolobus tokodaii,3338,2.8,"wild type enzyme, with NAD+ as cosubstrate, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,17138,g3p_c,C00661,Glyceraldehyde 3-phosphate
-1919,1.2.1.13,Sulfolobus tokodaii,7,10.7,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,,,,
+1919,1.2.1.13,Sulfolobus tokodaii,7,10.7,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,15846,nad_c,C00003,NAD+
 1920,1.2.1.13,Sulfolobus tokodaii,3338,13.1,"wild type enzyme, with NADP+ as cosubstrate, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 60°C",725013,17138,g3p_c,C00661,Glyceraldehyde 3-phosphate
 1921,1.2.1.13,Sulfolobus tokodaii,562,49.1,"wild type enzyme, in 50 mM EPPS/NaOH (pH 8.0), 20 mM potassium phosphate, at 50°C",725013,16001,13dpg_c,C00236,3-Phospho-D-glyceroyl phosphate
 1922,1.2.1.15,Pseudomonas aeruginosa,528,0.56,,348638,16265,sucsal_c,C00232,Succinate semialdehyde
@@ -2010,9 +2010,9 @@
 2008,1.2.1.46,Pseudomonas putida,69,90.0,substrate n-butanol,288247,16236,etoh_c,C00469,Ethanol
 2009,1.2.1.59,Sulfolobus tokodaii,5,0.035,"pH 8.0, 60°C",725013,16474,nadph_c,C00005,NADPH
 2010,1.2.1.59,Sulfolobus tokodaii,5,0.081,"pH 8.0, 60°C",725013,16474,nadph_c,C00005,NADPH
-2011,1.2.1.59,Sulfolobus tokodaii,10,0.75,"pH 8.0, 60°C",725013,,,,
+2011,1.2.1.59,Sulfolobus tokodaii,10,0.75,"pH 8.0, 60°C",725013,18009,nadp_c,C00006,NADP+
 2012,1.2.1.59,Sulfolobus tokodaii,147,2.8,"pH 8.0, 60°C, cosubstrate: NAD+",725013,29052,g3p_c,C00118,D-Glyceraldehyde 3-phosphate
-2013,1.2.1.59,Sulfolobus tokodaii,7,10.7,"pH 8.0, 60°C",725013,,,,
+2013,1.2.1.59,Sulfolobus tokodaii,7,10.7,"pH 8.0, 60°C",725013,15846,nad_c,C00003,NAD+
 2014,1.2.1.59,Sulfolobus tokodaii,147,13.1,"pH 8.0, 60°C, cosubstrate: NADP+",725013,29052,g3p_c,C00118,D-Glyceraldehyde 3-phosphate
 2015,1.2.1.59,Sulfolobus tokodaii,562,49.1,"pH 8.0, 60°C",725013,16001,13dpg_c,C00236,3-Phospho-D-glyceroyl phosphate
 2016,1.2.1.79,Mycobacterium tuberculosis,809,0.0628,"partial substrate inhibition, pH 7.5 and 37°C",724115,16265,sucsal_c,C00232,Succinate semialdehyde
@@ -2092,7 +2092,7 @@
 2090,1.2.3.3,Lactobacillus plantarum,13,1.5,"pH 6.0, 25°C, mutant V265A",654686,16761,adp_c,C00008,ADP
 2091,1.2.3.3,Lactobacillus plantarum,4,1.5,"pH 6.0, 25°C, mutant V265A",654686,15422,atp_c,C00002,ATP
 2092,1.2.3.3,Lactobacillus plantarum,30,3.0,"pH 6.0, 25°C, mutant V265A",654686,16027,amp_c,C00020,AMP
-2093,1.2.3.3,Lactobacillus plantarum,7,6.0,"pH 6.0, 25°C, mutant V265A",654686,,,,
+2093,1.2.3.3,Lactobacillus plantarum,7,6.0,"pH 6.0, 25°C, mutant V265A",654686,15846,nad_c,C00003,NAD+
 2094,1.2.3.4,Ceriporiopsis subvermispora,392,3.0,"in citrate buffer, at pH 4.0 and 22°C",724114,30794,malon_c,C00383,Malonate
 2095,1.2.3.4,Ceriporiopsis subvermispora,47,3.9,"in citrate buffer, at pH 4.0 and 22°C",724114,15366,ac_c,C00033,Acetate
 2096,1.2.3.4,Ceriporiopsis subvermispora,101,15.0,"in citrate buffer, at pH 4.0 and 22°C",724114,16891,glx_c,C00048,Glyoxylate
@@ -2191,7 +2191,7 @@
 2189,1.3.1.2,Sus scrofa,2,-999.0,"inhibitory reactions between uracil, NADP+ and dihydrouracil",349228,33206,,,
 2190,1.3.1.2,Mus musculus,48715,0.0002,,349225,,,,
 2191,1.3.1.2,Mus musculus,48413,0.0005,,349225,,,,
-2192,1.3.1.2,Sus scrofa,10,0.001,,349226,,,,
+2192,1.3.1.2,Sus scrofa,10,0.001,,349226,18009,nadp_c,C00006,NADP+
 2193,1.3.1.2,Mus musculus,48596,0.0021,,349225,,,,
 2194,1.3.1.2,Mus musculus,48716,0.0034,,349225,,,,
 2195,1.3.1.2,Mus musculus,48731,0.0038,,349225,,,,
@@ -2199,7 +2199,7 @@
 2197,1.3.1.2,Mus musculus,48714,0.0054,,349224,,,,
 2198,1.3.1.2,Mus musculus,48710,0.0066,,349225,76451,,,
 2199,1.3.1.2,Cupriavidus necator,5,0.007,,349223,16474,nadph_c,C00005,NADPH
-2200,1.3.1.2,Cupriavidus necator,10,0.011,,349223,,,,
+2200,1.3.1.2,Cupriavidus necator,10,0.011,,349223,18009,nadp_c,C00006,NADP+
 2201,1.3.1.2,Cupriavidus necator,2336,0.15,,349223,15901,56dura_c,C00429,"5,6-Dihydrouracil"
 2202,1.3.1.3,Pelophylax esculentus,286,0.00024,,390649,17026,prgstrn_c,C00410,Progesterone
 2203,1.3.1.3,Rattus norvegicus,1277,0.0092,"pH not specified in the publication, temperature not specified in the publication",725633,16755,,C02528,Chenodeoxycholate
@@ -2343,7 +2343,7 @@
 2341,1.3.1.12,Bacillus subtilis,1643,1.3,,390550,58570,,,
 2342,1.3.1.12,Candida maltosa,109,5.5,,33876,58315,tyr__L_c,,
 2343,1.3.1.13,Acinetobacter calcoaceticus,109,0.009,competitive inhibition with respect to substrate and noncompetitively with respect to cofactor,390560,58315,tyr__L_c,,
-2344,1.3.1.13,Acinetobacter calcoaceticus,10,0.038,,390560,,,,
+2344,1.3.1.13,Acinetobacter calcoaceticus,10,0.038,,390560,18009,nadp_c,C00006,NADP+
 2345,1.3.1.14,Bacillus subtilis,446,0.0206,holoenzyme,390928,16742,orot_c,C00295,Orotate
 2346,1.3.1.14,Clostridium oroticum,49605,0.4,,390565,,,,
 2347,1.3.1.14,Clostridium oroticum,49843,0.6,,390565,,,,
@@ -2444,7 +2444,7 @@
 2442,1.3.1.22,Sus scrofa,50107,0.0031,,396222,,,,
 2443,1.3.1.22,Homo sapiens,13267,0.0041,iosenzyme 1,396219,33206,,,
 2444,1.3.1.22,Homo sapiens,49668,0.0042,,390657,,,,
-2445,1.3.1.22,Rattus norvegicus,10,0.0043,versus NADPH,390659,,,,
+2445,1.3.1.22,Rattus norvegicus,10,0.0043,versus NADPH,390659,18009,nadp_c,C00006,NADP+
 2446,1.3.1.22,Homo sapiens,49667,0.0045,,390657,,,,
 2447,1.3.1.22,Homo sapiens,23024,0.0049,"pH 7.0, 30°C, high Km-isoform from prostate",656681,,,,
 2448,1.3.1.22,Sus scrofa,49793,0.0049,,396222,,,,
@@ -2456,20 +2456,20 @@
 2454,1.3.1.22,Homo sapiens,35765,0.01,"isoform II, Ki,app-value",656656,,,,
 2455,1.3.1.22,Penicillium crustosum,55760,0.0126,"pH 6.0, 25°C",657353,,,,
 2456,1.3.1.22,Rattus norvegicus,745,0.026,intercept inhibition constant,390662,16469,estradiol_c,C00951,Estradiol-17beta
-2457,1.3.1.22,Rattus norvegicus,10,0.0319,versus progesterone,390659,,,,
+2457,1.3.1.22,Rattus norvegicus,10,0.0319,versus progesterone,390659,18009,nadp_c,C00006,NADP+
 2458,1.3.1.22,Rattus norvegicus,745,0.036,slope inhibition constant,390662,16469,estradiol_c,C00951,Estradiol-17beta
 2459,1.3.1.22,Rattus norvegicus,104352,0.146,,390765,34584,,C14502,Boldenone
-2460,1.3.1.24,Rattus norvegicus,7,0.0019,at pH 7,437796,,,,
+2460,1.3.1.24,Rattus norvegicus,7,0.0019,at pH 7,437796,15846,nad_c,C00003,NAD+
 2461,1.3.1.24,Bos taurus,599,0.0026,0.01 mM NADPH as substrate,437792,16990,bilirub_c,C00486,Bilirubin
 2462,1.3.1.24,Rattus norvegicus,599,0.0098,at pH 7,437796,16990,bilirub_c,C00486,Bilirubin
 2463,1.3.1.24,Bos taurus,599,0.0117,0.1 mM biliverdin as substrate,437792,16990,bilirub_c,C00486,Bilirubin
-2464,1.3.1.24,Rattus norvegicus,10,0.0454,at pH 8.7,437796,,,,
-2465,1.3.1.24,Bos taurus,10,0.09,0.1 mM biliverdin as substrate,437792,,,,
+2464,1.3.1.24,Rattus norvegicus,10,0.0454,at pH 8.7,437796,18009,nadp_c,C00006,NADP+
+2465,1.3.1.24,Bos taurus,10,0.09,0.1 mM biliverdin as substrate,437792,18009,nadp_c,C00006,NADP+
 2466,1.3.1.28,Pseudomonas putida,29570,0.012,,390633,,,,
 2467,1.3.1.28,Escherichia coli,48911,1.4,,390631,,,,
 2468,1.3.1.28,Escherichia coli,49461,2.3,,390631,,,,
 2469,1.3.1.28,Escherichia coli,48912,3.3,,390631,,,,
-2470,1.3.1.31,Clostridium tyrobutyricum,7,0.84,,390673,,,,
+2470,1.3.1.31,Clostridium tyrobutyricum,7,0.84,,390673,15846,nad_c,C00003,NAD+
 2471,1.3.1.31,Clostridium tyrobutyricum,381,10.0,,390673,,,,
 2472,1.3.1.31,Clostridium tyrobutyricum,381,10.0,,390674,,,,
 2473,1.3.1.31,Clostridium tyrobutyricum,355,20.0,,390673,34905,,C14701,Paraquat
@@ -2495,7 +2495,7 @@
 2493,1.3.1.44,Treponema denticola,718,0.001,"mutant L276A/V277A/F295A, pH not specified in the publication, temperature not specified in the publication",724351,15521,ddcacoa_c,C01832,Lauroyl-CoA
 2494,1.3.1.44,Treponema denticola,718,0.003,"pH and temperature not specified in the publication, 0.010 mM inhibitor, mutant I287A",724351,15521,ddcacoa_c,C01832,Lauroyl-CoA
 2495,1.3.1.44,Treponema denticola,718,0.01,"pH and temperature not specified in the publication, 0.005 mM inhibitor, mutant I287A",724351,15521,ddcacoa_c,C01832,Lauroyl-CoA
-2496,1.3.1.44,Mycobacterium smegmatis,7,0.047,,390807,,,,
+2496,1.3.1.44,Mycobacterium smegmatis,7,0.047,,390807,15846,nad_c,C00003,NAD+
 2497,1.3.1.44,Treponema denticola,395,0.05,"pH and temperature not specified in the publication, 0.05 mM inhibitor, wild-type; wild-type, pH not specified in the publication, temperature not specified in the publication",724351,27540,hxcoa_c,C05270,Hexanoyl-CoA
 2498,1.3.1.44,Treponema denticola,395,0.08,"pH and temperature not specified in the publication, 0.25 mM inhibitor, wild-type",724351,27540,hxcoa_c,C05270,Hexanoyl-CoA
 2499,1.3.1.44,Treponema denticola,270,0.4,"pH and temperature not specified in the publication, 0.5 mM inhibitor, wild-type; wild-type, pH not specified in the publication, temperature not specified in the publication",724351,15517,btcoa_c,C00136,Butanoyl-CoA
@@ -2547,7 +2547,7 @@
 2545,1.3.1.86,Bos taurus,76,0.021,pH and temperature not specified in the publication,390850,15531,malcoa_c,C00083,Malonyl-CoA
 2546,1.3.1.86,Streptomyces collinus,83381,0.4,"Ki above 0.4 mM, in 50 mM Tris/HCI pH 6.5 and 10% (v/v) glycerol, at 30°C",711884,33206,,,
 2547,1.3.1.86,Streptomyces collinus,83382,0.5,"in 50 mM Tris/HCI pH 6.5 and 10% (v/v) glycerol, at 30°C",711884,33206,,,
-2548,1.3.1.86,Streptomyces collinus,10,0.63,"in 50 mM Tris/HCI pH 6.5 and 10% (v/v) glycerol, at 30°C",711884,,,,
+2548,1.3.1.86,Streptomyces collinus,10,0.63,"in 50 mM Tris/HCI pH 6.5 and 10% (v/v) glycerol, at 30°C",711884,18009,nadp_c,C00006,NADP+
 2549,1.3.1.86,Streptomyces collinus,270,0.9,"in 50 mM Tris/HCI pH 6.5 and 10% (v/v) glycerol, at 30°C",711884,15517,btcoa_c,C00136,Butanoyl-CoA
 2550,1.3.1.96,Botryococcus braunii,5340,1e-06,at pH 7.3 and 37°C,718688,,,,
 2551,1.3.1.97,Botryococcus braunii,5340,1e-06,at pH 7.3 and 37°C,718688,,,,
@@ -2979,7 +2979,7 @@
 2977,1.4.1.B2,Clostridium sticklandii,20693,0.1,pH 7.4,696177,,,,
 2978,1.4.1.B2,Clostridium sticklandii,9001,0.19,pH 7.4,696177,16926,,C05161,"2,5-Diaminohexanoate"
 2979,1.4.1.B2,Clostridium sticklandii,9000,0.52,pH 7.4,696177,904,,,
-2980,1.4.1.2,Halobacterium salinarum,10,0.78,"pH 8.0, 40°C, Ki(slope), at 120 mM L-glutamate",727059,,,,
+2980,1.4.1.2,Halobacterium salinarum,10,0.78,"pH 8.0, 40°C, Ki(slope), at 120 mM L-glutamate",727059,18009,nadp_c,C00006,NADP+
 2981,1.4.1.2,Halobacterium salinarum,34,1.0,"pH 8.0, 40°C, Ki(slope), at 2.5 mM NAD+",727059,30915,akg_c,C00026,2-Oxoglutarate
 2982,1.4.1.B2,Clostridium sticklandii,4,1.0,"pH 7.4, with DL-erythro-3,5-diaminohexanoate as variable substrate",696177,15422,atp_c,C00002,ATP
 2983,1.4.1.2,Halobacterium salinarum,170,1.54,"pH 8.0, 40°C, Ki(slope), at 2.5 mM NAD+",727059,18012,fum_c,C00122,Fumarate
@@ -2991,13 +2991,13 @@
 2989,1.4.1.2,Halobacterium salinarum,344,3.0,"pH 8.0, 40°C, Ki(slope), at 120 mM L-glutamate",727059,15966,glu__D_c,C00217,D-Glutamate
 2990,1.4.1.2,Halobacterium salinarum,57,3.0,"pH 8.0, 40°C, Ki(intercept), at 2.5 mM NAD+",727059,30744,oaa_c,C00036,Oxaloacetate
 2991,1.4.1.B2,Clostridium sticklandii,4,4.5,"pH 7.4, with NAD+ as variable substrate",696177,15422,atp_c,C00002,ATP
-2992,1.4.1.2,Halobacterium salinarum,10,5.0,"pH 8.0, 40°C, Ki(slope), at 2.5 mM NAD+",727059,,,,
+2992,1.4.1.2,Halobacterium salinarum,10,5.0,"pH 8.0, 40°C, Ki(slope), at 2.5 mM NAD+",727059,18009,nadp_c,C00006,NADP+
 2993,1.4.1.B2,Clostridium sticklandii,192,5.4,pH 7.4,696177,15729,orn_c,C00077,L-Ornithine
 2994,1.4.1.2,Halobacterium salinarum,34,5.5,"pH 8.0, 40°C, Ki(intercept), at 120 mM L-glutamate",727059,30915,akg_c,C00026,2-Oxoglutarate
 2995,1.4.1.2,Halobacterium salinarum,170,5.7,"pH 8.0, 40°C, Ki(intercept), at 2.5 mM NAD+",727059,18012,fum_c,C00122,Fumarate
 2996,1.4.1.2,Halobacterium salinarum,58,8.3,"pH 8.0, 40°C, Ki(slope), at 2.5 mM NAD+",727059,15741,succ_c,C00042,Succinate
 2997,1.4.1.2,Halobacterium salinarum,170,8.4,"pH 8.0, 40°C, Ki(intercept), at 120 mM L-glutamate",727059,18012,fum_c,C00122,Fumarate
-2998,1.4.1.2,Halobacterium salinarum,10,9.0,"pH 8.0, 40°C, Ki(intercept), at 2.5 mM NAD+",727059,,,,
+2998,1.4.1.2,Halobacterium salinarum,10,9.0,"pH 8.0, 40°C, Ki(intercept), at 2.5 mM NAD+",727059,18009,nadp_c,C00006,NADP+
 2999,1.4.1.2,Halobacterium salinarum,34,10.0,"pH 8.0, 40°C, Ki(slope), at 120 mM L-glutamate",727059,30915,akg_c,C00026,2-Oxoglutarate
 3000,1.4.1.B2,Clostridium sticklandii,1531,11.3,pH 7.4,696177,16855,lys__D_c,C00739,D-Lysine
 3001,1.4.1.2,Halobacterium salinarum,344,18.7,"pH 8.0, 40°C, Ki(intercept), at 120 mM L-glutamate",727059,15966,glu__D_c,C00217,D-Glutamate
@@ -3046,9 +3046,9 @@
 3044,1.4.1.3,Bos taurus,545,0.09,at pH 7.4,671289,17859,glutar_c,C00489,Glutarate
 3045,1.4.1.3,Sulfolobus solfataricus,5587,0.1,vs. NADH,391635,70851,,,
 3046,1.4.1.3,Homo sapiens,37,0.21,inhibition of recombinant H454Y mutant enzyme,391637,15996,gtp_c,C00044,GTP
-3047,1.4.1.3,Bos taurus,10,0.24,,391612,,,,
+3047,1.4.1.3,Bos taurus,10,0.24,,391612,18009,nadp_c,C00006,NADP+
 3048,1.4.1.3,Thunnus thynnus,3474,0.28,,391606,30802,,,
-3049,1.4.1.3,Xenopus laevis,7,0.3,kidney enzyme,391624,,,,
+3049,1.4.1.3,Xenopus laevis,7,0.3,kidney enzyme,391624,15846,nad_c,C00003,NAD+
 3050,1.4.1.3,Bos taurus,34,0.315,,391612,30915,akg_c,C00026,2-Oxoglutarate
 3051,1.4.1.3,Bos taurus,2304,0.36,vs. 2-oxoglutarate,391612,44482,,,
 3052,1.4.1.3,Bos taurus,2304,0.54,vs. NADPH,391612,44482,,,
@@ -3112,7 +3112,7 @@
 3110,1.4.1.13,Azospirillum brasilense,5906,0.0024,,391467,,,,
 3111,1.4.1.13,Azospirillum brasilense,104405,0.0028,,391467,,,,
 3112,1.4.1.13,Azospirillum brasilense,32137,0.0058,,391467,,,,
-3113,1.4.1.13,Azospirillum brasilense,10,0.0059,,391467,,,,
+3113,1.4.1.13,Azospirillum brasilense,10,0.0059,,391467,18009,nadp_c,C00006,NADP+
 3114,1.4.1.13,Brevibacterium flavum,9215,0.01,competitive inhibitor with respect to glutamine,391447,87824,,,
 3115,1.4.1.13,Azospirillum brasilense,344,0.011,good competitive inhibitor with respect to 2-oxoglutarate,391445,15966,glu__D_c,C00217,D-Glutamate
 3116,1.4.1.13,Azospirillum brasilense,5906,0.0112,inhibitor of the NADPH: iodonitrotetrazolium oxidoreductase reaction of wild type-beta subunit,391466,,,,
@@ -3123,7 +3123,7 @@
 3121,1.4.1.13,Geobacillus stearothermophilus,106423,0.022,,391451,33206,,,
 3122,1.4.1.13,Azospirillum brasilense,48457,0.0227,inhibitor of the NADPH: iodonitrotetrazolium oxidoreductase reaction of wild type-beta subunit,391466,,,,
 3123,1.4.1.13,Escherichia coli,5985,0.025,,391457,,,,
-3124,1.4.1.13,Azospirillum brasilense,10,0.037,inhibitor of the NADPH: iodonitrotetrazolium oxidoreductase reaction of G298A-beta subunit,391466,,,,
+3124,1.4.1.13,Azospirillum brasilense,10,0.037,inhibitor of the NADPH: iodonitrotetrazolium oxidoreductase reaction of G298A-beta subunit,391466,18009,nadp_c,C00006,NADP+
 3125,1.4.1.13,Brevibacterium flavum,9215,0.041,uncompetitive inhibitor with respect to alpha-ketoglutarate,391447,87824,,,
 3126,1.4.1.13,Azospirillum brasilense,344,0.044,uncompetitive inhibitor with NADPH,391445,15966,glu__D_c,C00217,D-Glutamate
 3127,1.4.1.13,Brevibacterium flavum,9215,0.045,uncompetitive inhibitor with respect to NADPH,391447,87824,,,
@@ -3163,7 +3163,7 @@
 3161,1.4.1.14,Lupinus angustifolius,8,0.01,,391483,16908,nadh_c,C00004,NADH
 3162,1.4.1.14,Saccharomyces cerevisiae,32629,0.015,,391475,,,,
 3163,1.4.1.14,Saccharomyces cerevisiae,12576,0.1,,391475,6173,,C08264,L-Albizziine
-3164,1.4.1.14,Lupinus angustifolius,7,0.12,,391470,,,,
+3164,1.4.1.14,Lupinus angustifolius,7,0.12,,391470,15846,nad_c,C00003,NAD+
 3165,1.4.1.14,Saccharomyces cerevisiae,30781,0.146,,391475,87826,,,
 3166,1.4.1.14,Saccharomyces cerevisiae,8098,0.178,,391475,,,,
 3167,1.4.1.14,Lupinus angustifolius,5986,0.25,,391480,32797,S2hglut_c,C03196,(S)-2-Hydroxyglutarate
@@ -3194,7 +3194,7 @@
 3192,1.4.1.20,Rhodococcus sp.,8,0.002,,349640,16908,nadh_c,C00004,NADH
 3193,1.4.1.20,Rhodococcus sp.,198,0.07,,349640,30851,phpyr_c,C00166,Phenylpyruvate
 3194,1.4.1.20,Dietzia maris,946,0.14,,349636,57981,,,
-3195,1.4.1.20,Rhodococcus sp.,7,1.27,,349640,,,,
+3195,1.4.1.20,Rhodococcus sp.,7,1.27,,349640,15846,nad_c,C00003,NAD+
 3196,1.4.1.20,Dietzia maris,900,1.52,,349636,18397,peamn_c,C05332,Phenethylamine
 3197,1.4.1.20,Dietzia maris,2139,1.58,,349636,58570,,,
 3198,1.4.1.20,Dietzia maris,8080,1.76,,349636,68663,,,
@@ -3993,12 +3993,12 @@
 3991,1.5.1.2,Cricetulus griseus,2,-999.0,,392128,33206,,,
 3992,1.5.1.2,Homo sapiens,2,-999.0,,392128,33206,,,
 3993,1.5.1.2,Rattus norvegicus,2,-999.0,,392128,33206,,,
-3994,1.5.1.2,Rattus norvegicus,10,0.0037,against NADH,392112,,,,
+3994,1.5.1.2,Rattus norvegicus,10,0.0037,against NADH,392112,18009,nadp_c,C00006,NADP+
 3995,1.5.1.2,Bos taurus,4,0.1,,392117,15422,atp_c,C00002,ATP
 3996,1.5.1.2,Rattus norvegicus,4,0.12,against DL-pyrroline-5-carboxylate,392112,15422,atp_c,C00002,ATP
 3997,1.5.1.2,Rattus norvegicus,4,0.2,against NADH,392112,15422,atp_c,C00002,ATP
 3998,1.5.1.2,Rattus norvegicus,4,0.32,against NADPH,392112,15422,atp_c,C00002,ATP
-3999,1.5.1.2,Rattus norvegicus,10,0.38,against NADPH,392112,,,,
+3999,1.5.1.2,Rattus norvegicus,10,0.38,against NADPH,392112,18009,nadp_c,C00006,NADP+
 4000,1.5.1.3,Bacteria,2,-999.0,"overview, effect of methotrexate and trimethoprim",392207,33206,,,
 4001,1.5.1.3,Escherichia coli,2,-999.0,,392207,33206,,,
 4002,1.5.1.3,Gallus gallus,2,-999.0,,392207,33206,,,
@@ -4332,14 +4332,14 @@
 4330,1.5.1.3,Bacillus anthracis,29125,0.00164,"mutant enzyme Y102F, at pH 7.0 and 25°C",725661,,,,
 4331,1.5.1.3,Bacillus anthracis,29123,0.0017,"mutant enzyme F96I, at pH 7.0 and 25°C",725661,,,,
 4332,1.5.1.3,Homo sapiens,16792,0.00178,"pH 7.4, 25°C",705800,70255,,,
-4333,1.5.1.3,Lactobacillus casei,10,0.0018,,392242,,,,
+4333,1.5.1.3,Lactobacillus casei,10,0.0018,,392242,18009,nadp_c,C00006,NADP+
 4334,1.5.1.3,Homo sapiens,30366,0.0018,,392260,40856,,,
 4335,1.5.1.3,Homo sapiens,503,0.0018,"pH 7.4, 37°C, mutant Q35S",702275,46235,,,
 4336,1.5.1.3,Bacillus anthracis,29124,0.00183,"mutant enzyme Y102F, at pH 7.0 and 25°C",725661,,,,
 4337,1.5.1.3,Trypanosoma brucei,2516,0.001915,"mutant enzyme T86N, in 50 mM TES, pH 7.0, at 37°C",723808,,,,
 4338,1.5.1.3,Bacillus anthracis,7018,0.002,"mutant enzyme Y102F, at pH 7.0 and 25°C",725661,,,,
 4339,1.5.1.3,Homo sapiens,77183,0.0021,"pH 7.4, 25°C",705800,,,,
-4340,1.5.1.3,Sus scrofa,10,0.0023,"with 7,8-dihydrofolate",392269,,,,
+4340,1.5.1.3,Sus scrofa,10,0.0023,"with 7,8-dihydrofolate",392269,18009,nadp_c,C00006,NADP+
 4341,1.5.1.3,Human herpesvirus 8,503,0.0023,,392288,46235,,,
 4342,1.5.1.3,Homo sapiens,14842,0.0025,"pH 7.4, 37°C",702667,,,,
 4343,1.5.1.3,Bacillus anthracis,29119,0.00259,"wild type enzyme, at pH 7.0 and 25°C",725661,33206,,,
@@ -4380,20 +4380,20 @@
 4378,1.5.1.3,Homo sapiens,14845,0.012,"pH 7.4, 37°C",702667,,,,
 4379,1.5.1.3,Bacillus anthracis,503,0.0137,"mutant enzyme F96I, at pH 7.0 and 25°C",725661,46235,,,
 4380,1.5.1.3,Bacillus anthracis,7020,0.0205,"mutant enzyme F96I, at pH 7.0 and 25°C",725661,,,,
-4381,1.5.1.3,Crithidia fasciculata,10,0.021,"with 7,8-dihydrofolate",392230,,,,
+4381,1.5.1.3,Crithidia fasciculata,10,0.021,"with 7,8-dihydrofolate",392230,18009,nadp_c,C00006,NADP+
 4382,1.5.1.3,Bacillus anthracis,503,0.0241,"wild type enzyme, at pH 7.0 and 25°C",725661,46235,,,
 4383,1.5.1.3,Saccharomyces cerevisiae,1322,0.025,"with 7,8-dihydrofolate",392248,27470,fol_c,C00504,Folate
 4384,1.5.1.3,Bacillus anthracis,5852,0.0341,"mutant enzyme F96I, at pH 7.0 and 25°C",725661,,,,
 4385,1.5.1.3,Crithidia fasciculata,1322,0.036,"with 7,8-dihydrofolate",392230,27470,fol_c,C00504,Folate
 4386,1.5.1.3,Leishmania tropica,1373,0.15,,392254,15641,5mthf_c,C00440,5-Methyltetrahydrofolate
-4387,1.5.1.3,Saccharomyces cerevisiae,10,0.3,with NADPH,392248,,,,
+4387,1.5.1.3,Saccharomyces cerevisiae,10,0.3,with NADPH,392248,18009,nadp_c,C00006,NADP+
 4388,1.5.1.5,Leishmania major,11974,0.000105,"pH 7.3, 27°C, Leishmania wild-type growth is inhibited with an EC50 of 1.1 microM, DHCH1 or formate-tetrahydrofolate ligase overexpressing (FTL) Leishmania transfectants show 4-5fold or 3fold resistance, respectively",700281,33206,,,
 4389,1.5.1.5,Leishmania major,18987,0.000105,,700281,,,,
 4390,1.5.1.5,Leishmania major,89790,0.000105,pH and temperature not specified in the publication,720406,33206,,,
 4391,1.5.1.5,Pisum sativum,32446,0.003,varying concentration of tetrahydropteroylmonoglutamate,209737,,,,
 4392,1.5.1.5,Pisum sativum,49991,0.035,varying concentration of tetrahydropteroylmonoglutamate,209737,27470,fol_c,C00504,Folate
 4393,1.5.1.5,Escherichia coli,3218,0.07,,392307,,,,
-4394,1.5.1.5,Moorella thermoacetica,7,0.2,,392311,,,,
+4394,1.5.1.5,Moorella thermoacetica,7,0.2,,392311,15846,nad_c,C00003,NAD+
 4395,1.5.1.5,Salmonella enterica subsp. enterica serovar Typhimurium,4,0.34,,392312,15422,atp_c,C00002,ATP
 4396,1.5.1.5,Pisum sativum,12672,0.61,varying concentration of tetrahydropteroylmonoglutamate,209737,27470,fol_c,C00504,Folate
 4397,1.5.1.6,Sus scrofa,207,0.001,(-)-isomer,392335,15635,thf_c,C00101,Tetrahydrofolate
@@ -4414,22 +4414,22 @@
 4412,1.5.1.7,Saccharomyces cerevisiae,127,0.125,at pH 6.0,685171,57427,leu__L_c,,
 4413,1.5.1.7,Saccharomyces cerevisiae,402,0.29,at pH 7.0,685171,,,,
 4414,1.5.1.7,Saccharomyces cerevisiae,122,0.42,at pH 7.0,685171,16335,adn_c,C00212,Adenosine
-4415,1.5.1.7,Saccharomyces cerevisiae,7,0.5,"mutant E78Q, 25°C, pH 7.2",712442,,,,
+4415,1.5.1.7,Saccharomyces cerevisiae,7,0.5,"mutant E78Q, 25°C, pH 7.2",712442,15846,nad_c,C00003,NAD+
 4416,1.5.1.7,Saccharomyces cerevisiae,820,0.6,at pH 7.0,685171,30915,akg_c,C00026,2-Oxoglutarate
 4417,1.5.1.7,Saccharomyces cerevisiae,545,1.0,at pH 7.0,685171,17859,glutar_c,C00489,Glutarate
 4418,1.5.1.7,Saccharomyces cerevisiae,134,1.1,at pH 7.0,685171,18019,lys__L_c,C00047,L-Lysine
-4419,1.5.1.7,Saccharomyces cerevisiae,7,1.1,"wild-type, 25°C, pH 7.2",712442,,,,
-4420,1.5.1.7,Saccharomyces cerevisiae,7,1.1,"wild type enzyme, at pH 7.0 and 25°C",724117,,,,
+4419,1.5.1.7,Saccharomyces cerevisiae,7,1.1,"wild-type, 25°C, pH 7.2",712442,15846,nad_c,C00003,NAD+
+4420,1.5.1.7,Saccharomyces cerevisiae,7,1.1,"wild type enzyme, at pH 7.0 and 25°C",724117,15846,nad_c,C00003,NAD+
 4421,1.5.1.7,Saccharomyces cerevisiae,1592,1.1,at pH 7.0,685171,44737,,,
 4422,1.5.1.7,Saccharomyces cerevisiae,691,1.13,at pH 7.0,685171,58441,,,
 4423,1.5.1.7,Saccharomyces cerevisiae,2088,1.2,at pH 7.0,685171,,,,
-4424,1.5.1.7,Saccharomyces cerevisiae,7,1.4,"mutant enzyme C205S, at pH 7.0 and 25°C",724117,,,,
+4424,1.5.1.7,Saccharomyces cerevisiae,7,1.4,"mutant enzyme C205S, at pH 7.0 and 25°C",724117,15846,nad_c,C00003,NAD+
 4425,1.5.1.7,Saccharomyces cerevisiae,55356,1.5,at pH 7.0,685171,,,,
-4426,1.5.1.7,Saccharomyces cerevisiae,7,1.5,"mutant enzyme C205V, at pH 7.0 and 25°C",724117,,,,
-4427,1.5.1.7,Saccharomyces cerevisiae,7,1.56,at pH 7.0,685171,,,,
-4428,1.5.1.7,Saccharomyces cerevisiae,7,1.9,"mutant E122Q, 25°C, pH 7.2",712442,,,,
+4426,1.5.1.7,Saccharomyces cerevisiae,7,1.5,"mutant enzyme C205V, at pH 7.0 and 25°C",724117,15846,nad_c,C00003,NAD+
+4427,1.5.1.7,Saccharomyces cerevisiae,7,1.56,at pH 7.0,685171,15846,nad_c,C00003,NAD+
+4428,1.5.1.7,Saccharomyces cerevisiae,7,1.9,"mutant E122Q, 25°C, pH 7.2",712442,15846,nad_c,C00003,NAD+
 4429,1.5.1.7,Saccharomyces cerevisiae,88,3.12,at pH 7.0,685171,57844,met__L_c,,
-4430,1.5.1.7,Saccharomyces cerevisiae,10,3.5,at pH 7.0,685171,,,,
+4430,1.5.1.7,Saccharomyces cerevisiae,10,3.5,at pH 7.0,685171,18009,nadp_c,C00006,NADP+
 4431,1.5.1.7,Saccharomyces cerevisiae,192,5.0,at pH 7.0,685171,15729,orn_c,C00077,L-Ornithine
 4432,1.5.1.7,Saccharomyces cerevisiae,7314,5.3,at pH 7.0,685171,15753,2oxoadp_c,C00322,2-Oxoadipate
 4433,1.5.1.7,Saccharomyces cerevisiae,1531,5.5,at pH 7.0,685171,16855,lys__D_c,C00739,D-Lysine
@@ -4480,7 +4480,7 @@
 4478,1.5.1.30,Rhodococcus erythropolis,4113,0.00338,,392304,27510,,C09315,Umbelliferone
 4479,1.5.1.30,Escherichia coli,5,0.0035,"25°C, enzyme in complex with monooxygenase SsuD, presence of octanesulfonate",657786,16474,nadph_c,C00005,NADPH
 4480,1.5.1.30,Escherichia coli,5,0.0039,"25°C, single-enzyme assay",657786,16474,nadph_c,C00005,NADPH
-4481,1.5.1.30,Escherichia coli,10,0.0139,"25°C, single-enzyme assay",657786,,,,
+4481,1.5.1.30,Escherichia coli,10,0.0139,"25°C, single-enzyme assay",657786,18009,nadp_c,C00006,NADP+
 4482,1.5.1.30,Bacillus subtilis,18211,0.015,"substrate NADPH, pH 7.5, 37°C",672184,,,,
 4483,1.5.1.30,Homo sapiens,2853,0.076,"pH 7.5, 25°C",714077,17781,,C01727,Lumichrome
 4484,1.5.1.33,Trypanosoma brucei,192577,7e-06,pH and temperature not specified in the publication,724770,,,,
@@ -4587,8 +4587,8 @@
 4585,1.5.1.34,Homo sapiens,21748,0.0022,,484981,,,,
 4586,1.5.1.34,Homo sapiens,32655,0.0023,vs. NADH,484988,18418,,C06346,"(R,S)-Norcoclaurine"
 4587,1.5.1.34,Homo sapiens,32484,0.0028,noncompetitive inhibition,484980,,,,
-4588,1.5.1.34,Bos taurus,10,0.0032,NADPH-specific enzyme,484960,,,,
-4589,1.5.1.34,Bos taurus,10,0.0032,,485000,,,,
+4588,1.5.1.34,Bos taurus,10,0.0032,NADPH-specific enzyme,484960,18009,nadp_c,C00006,NADP+
+4589,1.5.1.34,Bos taurus,10,0.0032,,485000,18009,nadp_c,C00006,NADP+
 4590,1.5.1.34,Homo sapiens,5482,0.0037,,484979,15999,2h34hppr_c,C01179,3-(4-Hydroxyphenyl)pyruvate
 4591,1.5.1.34,Homo sapiens,50037,0.0045,"vs. quinonoid 2-amino-6,7-dimethyl-4-hydroxydihydropteridine",484988,,,,
 4592,1.5.1.34,Homo sapiens,15613,0.0049,,484978,,,,
@@ -4774,7 +4774,7 @@
 4772,1.6.1.2,Escherichia coli,114906,0.1,approximate value,392663,33206,,,
 4773,1.6.1.2,Rhodobacter capsulatus,3446,0.116,,392598,,,,
 4774,1.6.1.2,Escherichia coli,2603,0.12,vs. oxidized acetylpyridine adenine dinucleotide,392639,,,,
-4775,1.6.1.2,Escherichia coli,10,0.17,vs. NADPH,392639,,,,
+4775,1.6.1.2,Escherichia coli,10,0.17,vs. NADPH,392639,18009,nadp_c,C00006,NADP+
 4776,1.6.1.2,Mammalia,29,0.2,,392595,15351,accoa_c,C00024,Acetyl-CoA
 4777,1.6.1.2,Mammalia,18,0.2,,392595,15346,coa_c,C00010,CoA
 4778,1.6.1.2,Bos taurus,18,0.2,,"392595, 392620",15346,coa_c,C00010,CoA
@@ -4799,16 +4799,16 @@
 4797,1.6.2.2,Bos taurus,2,-999.0,inhibition kinetics,724717,33206,,,
 4798,1.6.2.2,Bos taurus,484,0.00021,"versus NADH, pH 7.5, 24-25°C",726519,18152,,C10107,Myricetin
 4799,1.6.2.2,Homo sapiens,13,0.08,,392811,16761,adp_c,C00008,ADP
-4800,1.6.2.2,Saccharomyces cerevisiae,7,0.23,,394228,,,,
+4800,1.6.2.2,Saccharomyces cerevisiae,7,0.23,,394228,15846,nad_c,C00003,NAD+
 4801,1.6.2.4,Liza saliens,33,4.8e-05,"; pH 7.7, 24°C",677198,16793,hg2_c,C00703,Mercury(2+)
 4802,1.6.2.4,Homo sapiens,1962,0.0054,"pH 7.0, 25°C",658621,,,,
 4803,1.6.2.4,Liza saliens,37732,0.0056,,687480,,,,
 4804,1.6.2.4,Liza saliens,1785,0.0089,,687480,30114,,,
-4805,1.6.2.4,Anopheles minimus,10,0.0115,"wild type enzyme, pH not specified in the publication, at 25°C",711027,,,,
+4805,1.6.2.4,Anopheles minimus,10,0.0115,"wild type enzyme, pH not specified in the publication, at 25°C",711027,18009,nadp_c,C00006,NADP+
 4806,1.6.2.4,Liza saliens,895,0.0178,"pH 7.7, 24°C",677198,49544,,C19368,Chromium (III)
 4807,1.6.2.4,Liza saliens,895,0.018,,677198,49544,,C19368,Chromium (III)
-4808,1.6.2.4,Anopheles minimus,10,0.0322,"pH 7.7, 25°C, NADPH-cytochrome c oxidoreductase lacking the first 55 amino acid residues (DELTA55AnCY)",684727,,,,
-4809,1.6.2.4,Anopheles minimus,10,0.0459,"pH 7.7, 25°C, triple mutant L86F/L219F/P456A of NADPH-cytochrome c oxidoreductase lacking the first 55 amino acid residues (DELTA55AnCY)",684727,,,,
+4808,1.6.2.4,Anopheles minimus,10,0.0322,"pH 7.7, 25°C, NADPH-cytochrome c oxidoreductase lacking the first 55 amino acid residues (DELTA55AnCY)",684727,18009,nadp_c,C00006,NADP+
+4809,1.6.2.4,Anopheles minimus,10,0.0459,"pH 7.7, 25°C, triple mutant L86F/L219F/P456A of NADPH-cytochrome c oxidoreductase lacking the first 55 amino acid residues (DELTA55AnCY)",684727,18009,nadp_c,C00006,NADP+
 4810,1.6.2.4,Anopheles minimus,771,0.0711,"pH 7.7, 25°C, NADPH-cytochrome c oxidoreductase lacking the first 55 amino acid residues (DELTA55AnCY)",684727,28223,,C00946,Adenosine 2'-phosphate
 4811,1.6.2.4,Liza saliens,52,0.0728,"pH 7.7, 24°C",677198,48775,cd2_c,C01413,Cadmium
 4812,1.6.2.4,Liza saliens,52,0.073,,677198,48775,cd2_c,C01413,Cadmium
@@ -4922,24 +4922,24 @@
 4920,1.6.5.2,Homo sapiens,49837,0.02,,394379,,,,
 4921,1.6.5.2,Rattus norvegicus,9562,0.024,,691774,28487,,C06539,Reserpine
 4922,1.6.5.2,Rattus norvegicus,3150,0.0254,,659782,27504,,C06681,Mitomycin
-4923,1.6.5.2,Microcystis aeruginosa,10,0.039,"vs. NADPH, value derived from from intercept",394358,,,,
+4923,1.6.5.2,Microcystis aeruginosa,10,0.039,"vs. NADPH, value derived from from intercept",394358,18009,nadp_c,C00006,NADP+
 4924,1.6.5.2,Rattus norvegicus,35769,0.04,"pH 7.0, 25°C",671034,,,,
 4925,1.6.5.2,Rattus norvegicus,35775,0.04,"pH 7.0, 25°C",671034,28950,,,
 4926,1.6.5.2,Rattus norvegicus,16780,0.05,,394355,40448,,C16207,Anthraquinone
 4927,1.6.5.2,Rattus norvegicus,35770,0.05,"pH 7.0, 25°C",671034,,,,
 4928,1.6.5.2,Octopus vulgaris,754,0.058,cofactor NADH,394351,4513,,C00796,Dicumarol
-4929,1.6.5.2,Microcystis aeruginosa,10,0.058,"vs. NADPH, value derived from from slope",394358,,,,
+4929,1.6.5.2,Microcystis aeruginosa,10,0.058,"vs. NADPH, value derived from from slope",394358,18009,nadp_c,C00006,NADP+
 4930,1.6.5.2,Rattus norvegicus,35774,0.06,"pH 7.0, 25°C",671034,,,,
 4931,1.6.5.2,Octopus vulgaris,754,0.062,cofactor NADPH,394351,4513,,C00796,Dicumarol
 4932,1.6.5.2,Homo sapiens,3150,0.0648,,659782,27504,,C06681,Mitomycin
 4933,1.6.5.2,Homo sapiens,3522,0.07,,394375,75095,,C10028,Chrysin
 4934,1.6.5.2,Homo sapiens,32642,0.075,,394379,,,,
-4935,1.6.5.2,Microcystis aeruginosa,10,0.077,"vs. 1,4-naphthoquinone, value derived from from slope",394358,,,,
+4935,1.6.5.2,Microcystis aeruginosa,10,0.077,"vs. 1,4-naphthoquinone, value derived from from slope",394358,18009,nadp_c,C00006,NADP+
 4936,1.6.5.2,Rattus norvegicus,3529,0.08,"pH 7.0, 25°C",671034,46053,,C16391,Trinitrotoluene
 4937,1.6.5.2,Rattus norvegicus,3522,0.08,,394375,75095,,C10028,Chrysin
 4938,1.6.5.2,Mus musculus,3150,0.0832,,659782,27504,,C06681,Mitomycin
 4939,1.6.5.2,Rattus norvegicus,35773,0.095,"pH 7.0, 25°C",671034,,,,
-4940,1.6.5.2,Microcystis aeruginosa,10,0.14,"vs. 1,4-naphthoquinone, value derived from intercept",394358,,,,
+4940,1.6.5.2,Microcystis aeruginosa,10,0.14,"vs. 1,4-naphthoquinone, value derived from intercept",394358,18009,nadp_c,C00006,NADP+
 4941,1.6.5.2,Homo sapiens,4336,0.309,value for lysed cells,673789,2268,,C11264,7-Hydroxyflavone
 4942,1.6.5.2,Mus musculus,3522,0.68,,394375,75095,,C10028,Chrysin
 4943,1.6.5.2,Homo sapiens,1977,1.03,value for lysed cells,673789,6052,,C10084,Isorhamnetin
@@ -4983,7 +4983,7 @@
 4981,1.6.5.8,Vibrio cholerae,2812,0.0005,"wild-type enzyme, pH 8.0, temperature not specified in the publication; wild-type, pH 8.0, temperature not specified in the publication",725481,28362,,C04284,2-Heptyl-4-hydroxyquinoline-N-oxide
 4982,1.6.5.8,Vibrio cholerae,2812,0.0012,"mutant G141V, pH 8.0, temperature not specified in the publication; mutant G141V, pH 8.0, temperature not specified in the publication",725481,28362,,C04284,2-Heptyl-4-hydroxyquinoline-N-oxide
 4983,1.6.5.8,Vibrio cholerae,2812,0.0075,"above, mutant G140A, pH 8.0, temperature not specified in the publication; mutant G140A, pH 8.0, temperature not specified in the publication",725481,28362,,C04284,2-Heptyl-4-hydroxyquinoline-N-oxide
-4984,1.6.5.8,Vibrio harveyi,7,11.0,"at 30°C, 100 mM KCl, 20 mM HEPES/Tris (pH 7.5)",712407,,,,
+4984,1.6.5.8,Vibrio harveyi,7,11.0,"at 30°C, 100 mM KCl, 20 mM HEPES/Tris (pH 7.5)",712407,15846,nad_c,C00003,NAD+
 4985,1.6.5.9,Gluconobacter oxydans,9179,0.0014,at 25°C in 100mM Tris-HCl (pH 7.4),715052,,,,
 4986,1.6.5.9,Saccharomyces cerevisiae,1617,0.0054,"hyperbolic uncompetitive inhibition of NADH, pH 7.0, 25°C",392700,42491,,C10043,Flavone
 4987,1.6.5.9,Gluconobacter oxydans,41555,0.0055,at 25°C in 100mM Tris-HCl (pH 7.4),715052,,,,
@@ -4995,25 +4995,25 @@
 4993,1.6.5.9,Saccharomyces cerevisiae,30,11.5,"linear uncompetitive inhibition of 2,6-dichlorophenolindophenol, pH 7.0, 25°C",392700,16027,amp_c,C00020,AMP
 4994,1.6.5.10,Homo sapiens,46374,0.0003,"pH 7.4, 25°C",696015,,,,
 4995,1.6.5.10,Homo sapiens,4231,0.001,"pH 7.4, 25°C",696015,,,,
-4996,1.6.5.10,Homo sapiens,10,0.057,"pH 7.4, 25°C",696015,,,,
+4996,1.6.5.10,Homo sapiens,10,0.057,"pH 7.4, 25°C",696015,18009,nadp_c,C00006,NADP+
 4997,1.6.5.11,Gloeophyllum trabeum,1138,0.0002,,658921,,,,
 4998,1.6.5.11,Escherichia coli,754,0.00022,"pH 7.5, 30°C",394359,4513,,C00796,Dicumarol
 4999,1.6.5.11,Gloeophyllum trabeum,754,0.0005,,658921,4513,,C00796,Dicumarol
-5000,1.6.5.11,Escherichia coli,7,0.02,"inhibition of-2,6-dichlorophenolindophenol reductase activity, purified enzyme",392823,,,,
-5001,1.6.5.11,Escherichia coli,7,0.07,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme",392823,,,,
-5002,1.6.5.11,Propionibacterium freudenreichii subsp. shermanii,7,0.18,,392818,,,,
+5000,1.6.5.11,Escherichia coli,7,0.02,"inhibition of-2,6-dichlorophenolindophenol reductase activity, purified enzyme",392823,15846,nad_c,C00003,NAD+
+5001,1.6.5.11,Escherichia coli,7,0.07,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme",392823,15846,nad_c,C00003,NAD+
+5002,1.6.5.11,Propionibacterium freudenreichii subsp. shermanii,7,0.18,,392818,15846,nad_c,C00003,NAD+
 5003,1.6.5.11,halophilic bacterium,49786,0.4,,392806,,,,
 5004,1.6.5.11,Escherichia coli,30,0.5,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme",392823,16027,amp_c,C00020,AMP
 5005,1.6.5.11,Escherichia coli,30,0.6,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, purified enzyme",392823,16027,amp_c,C00020,AMP
 5006,1.6.5.11,Escherichia coli,13,0.7,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme",392823,16761,adp_c,C00008,ADP
 5007,1.6.5.11,Escherichia coli,13,1.0,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, purified enzyme",392823,16761,adp_c,C00008,ADP
 5008,1.6.5.11,halophilic bacterium,30,1.5,,392806,16027,amp_c,C00020,AMP
-5009,1.6.5.11,halophilic bacterium,7,1.7,,392806,,,,
+5009,1.6.5.11,halophilic bacterium,7,1.7,,392806,15846,nad_c,C00003,NAD+
 5010,1.6.5.11,Escherichia coli,4,9.0,"inhibition of NADH-2,6-dichlorophenolindophenol reductase activity, membrane bound enzyme",392823,15422,atp_c,C00002,ATP
 5011,1.6.99.1,Trypanosoma cruzi,89824,0.057,"pH 7.0, 25°C",725313,33206,,,
-5012,1.6.99.3,Bacillus megaterium,7,0.037,,392825,,,,
+5012,1.6.99.3,Bacillus megaterium,7,0.037,,392825,15846,nad_c,C00003,NAD+
 5013,1.6.99.3,Homo sapiens,13,0.08,,392811,16761,adp_c,C00008,ADP
-5014,1.6.99.3,Bos taurus,7,0.118,,392819,,,,
+5014,1.6.99.3,Bos taurus,7,0.118,,392819,15846,nad_c,C00003,NAD+
 5015,1.7.1.1,Cucurbita pepo,2,-999.0,,392845,33206,,,
 5016,1.7.1.1,Zea mays,2,-999.0,,392845,33206,,,
 5017,1.7.1.1,Hordeum vulgare,36357,1.5e-06,in the presence of 5 mM Mg2+,676499,33206,,,
@@ -5034,15 +5034,15 @@
 5032,1.7.1.1,Spinacia oleracea,13,0.2,inhibition of the recombinant FAD domain,392916,16761,adp_c,C00008,ADP
 5033,1.7.1.1,Spinacia oleracea,1069,0.2,inhibition of the recombinant FAD domain,392916,,,,
 5034,1.7.1.1,Cucurbita sp.,5945,0.3,,392875,59424,,,
-5035,1.7.1.1,Spinacia oleracea,7,0.5,recombinant flavin domain of nitrate reductase C240G mutant,392915,,,,
+5035,1.7.1.1,Spinacia oleracea,7,0.5,recombinant flavin domain of nitrate reductase C240G mutant,392915,15846,nad_c,C00003,NAD+
 5036,1.7.1.1,Spinacia oleracea,30,0.6,inhibition of the recombinant FAD domain,392916,16027,amp_c,C00020,AMP
-5037,1.7.1.1,Spinacia oleracea,7,0.8,recombinant flavin domain of nitrate reductase C240A mutant,392915,,,,
-5038,1.7.1.1,Spinacia oleracea,7,1.2,recombinant flavin domain of nitrate reductase C240S mutant,392915,,,,
+5037,1.7.1.1,Spinacia oleracea,7,0.8,recombinant flavin domain of nitrate reductase C240A mutant,392915,15846,nad_c,C00003,NAD+
+5038,1.7.1.1,Spinacia oleracea,7,1.2,recombinant flavin domain of nitrate reductase C240S mutant,392915,15846,nad_c,C00003,NAD+
 5039,1.7.1.1,Hordeum vulgare,13,1.36,,392905,16761,adp_c,C00008,ADP
-5040,1.7.1.1,Spinacia oleracea,7,1.5,recombinant flavin domain of nitrate reductase C54S mutant,392915,,,,
-5041,1.7.1.1,Spinacia oleracea,7,1.9,recombinant flavin domain of nitrate reductase wild-type and C17S mutant,392915,,,,
-5042,1.7.1.1,Spinacia oleracea,7,1.9,inhibition of the recombinant FAD domain,392916,,,,
-5043,1.7.1.1,Spinacia oleracea,7,2.0,recombinant flavin domain of nitrate reductase C62S mutant,392915,,,,
+5040,1.7.1.1,Spinacia oleracea,7,1.5,recombinant flavin domain of nitrate reductase C54S mutant,392915,15846,nad_c,C00003,NAD+
+5041,1.7.1.1,Spinacia oleracea,7,1.9,recombinant flavin domain of nitrate reductase wild-type and C17S mutant,392915,15846,nad_c,C00003,NAD+
+5042,1.7.1.1,Spinacia oleracea,7,1.9,inhibition of the recombinant FAD domain,392916,15846,nad_c,C00003,NAD+
+5043,1.7.1.1,Spinacia oleracea,7,2.0,recombinant flavin domain of nitrate reductase C62S mutant,392915,15846,nad_c,C00003,NAD+
 5044,1.7.1.1,Spinacia oleracea,122,4.8,inhibition of the recombinant FAD domain,392916,16335,adn_c,C00212,Adenosine
 5045,1.7.1.1,Spinacia oleracea,141,15.0,binding to the native enzyme,392859,17883,cl_c,C01327,Hydrochloric acid
 5046,1.7.1.1,Spinacia oleracea,132,23.0,inhibition of the recombinant FAD domain,392916,5020,,C00324,Ferricyanide
@@ -5052,8 +5052,8 @@
 5050,1.7.1.1,Spinacia oleracea,141,176.0,binding to the enzyme-NO3- complex,392859,17883,cl_c,C01327,Hydrochloric acid
 5051,1.7.1.2,Rhodotorula glutinis,118,0.0094,at low concentration,672297,18407,cyan_c,C01326,Hydrogen cyanide
 5052,1.7.1.2,Rhodotorula glutinis,230,0.044,at low concentration,672297,29449,,,
-5053,1.7.1.3,Aspergillus nidulans,10,0.04,"NADPH as substrate in saturating and non-saturating concentrations, competitive",395968,,,,
-5054,1.7.1.3,Aspergillus nidulans,10,0.065,"nitrate as substrate in non-saturating concentrations, non-competitive",395968,,,,
+5053,1.7.1.3,Aspergillus nidulans,10,0.04,"NADPH as substrate in saturating and non-saturating concentrations, competitive",395968,18009,nadp_c,C00006,NADP+
+5054,1.7.1.3,Aspergillus nidulans,10,0.065,"nitrate as substrate in non-saturating concentrations, non-competitive",395968,18009,nadp_c,C00006,NADP+
 5055,1.7.1.3,Aspergillus nidulans,168,0.15,"NADPH as substrate in non-saturation concentration, non-competitive",395968,25567,no2_c,C00088,Nitrite
 5056,1.7.1.3,Aspergillus nidulans,168,0.18,"nitrate as substrate in saturating and non-saturating concentrations, competitive",395968,25567,no2_c,C00088,Nitrite
 5057,1.7.1.4,Azotobacter chroococcum,176,3.2e-05,,392936,17245,co_c,C00237,CO
@@ -5217,7 +5217,7 @@
 5215,1.8.1.7,Rattus norvegicus,14,0.0065,at 50% inhibition value,394708,29105,zn2_c,C00038,Zinc cation
 5216,1.8.1.7,Homo sapiens,23044,0.0066,"pH 6.9, 25°C",659698,,,,
 5217,1.8.1.7,Homo sapiens,23045,0.0072,"pH 6.9, 25°C",659698,,,,
-5218,1.8.1.7,Homo sapiens,10,0.0072,with NADH at pH 6.8,394727,,,,
+5218,1.8.1.7,Homo sapiens,10,0.0072,with NADH at pH 6.8,394727,18009,nadp_c,C00006,NADP+
 5219,1.8.1.7,Homo sapiens,19377,0.009,"pH 7.0, 0.1 M potassium phosphate, 1 mM EDTA, 25°C",711008,,,,
 5220,1.8.1.7,Litomosoides carinii,3825,0.0091,at 50% inhibition value,394708,,,,
 5221,1.8.1.7,Homo sapiens,55859,0.0093,"pH 6.9, 25°C",659698,,,,
@@ -5238,7 +5238,7 @@
 5236,1.8.1.7,Homo sapiens,1050,0.0165,"in 100 mM Tris-HCl buffer, pH 8.0, at 25°C",699241,17303,,C01516,Morphine
 5237,1.8.1.7,Homo sapiens,38980,0.0174,,696681,,,,
 5238,1.8.1.7,Homo sapiens,38979,0.0179,,696681,,,,
-5239,1.8.1.7,Homo sapiens,10,0.018,with NADH at pH 6.05,394727,,,,
+5239,1.8.1.7,Homo sapiens,10,0.018,with NADH at pH 6.05,394727,18009,nadp_c,C00006,NADP+
 5240,1.8.1.7,Homo sapiens,38978,0.0184,,696681,,,,
 5241,1.8.1.7,Homo sapiens,38977,0.0188,,696681,,,,
 5242,1.8.1.7,Rattus norvegicus,2494,0.02,at 50% inhibition value,394708,,,,
@@ -5251,7 +5251,7 @@
 5249,1.8.1.7,Homo sapiens,2494,0.025,"at 50% inhibition value, enzyme from erythrocytes",394708,,,,
 5250,1.8.1.7,Homo sapiens,38973,0.0256,,696681,,,,
 5251,1.8.1.7,Homo sapiens,1950,0.028,"pH 7.0, 0.1 M potassium phosphate, 1 mM EDTA, 25°C",711008,28869,mndn_c,C05377,Menadione
-5252,1.8.1.7,Homo sapiens,10,0.028,10 mM sodium phosphate,394712,,,,
+5252,1.8.1.7,Homo sapiens,10,0.028,10 mM sodium phosphate,394712,18009,nadp_c,C00006,NADP+
 5253,1.8.1.7,Plasmodium falciparum,18751,0.03,"pH 7.0, 0.1 M potassium phosphate, 1 mM EDTA, 25°C",711008,,,,
 5254,1.8.1.7,Rattus norvegicus,3221,0.03,at 50% inhibition value,394708,,,,
 5255,1.8.1.7,Homo sapiens,30384,0.03,at 50% inhibition value,394708,8927,,C11175,"S-(2,4-Dinitrophenyl)glutathione"
@@ -5259,16 +5259,16 @@
 5257,1.8.1.7,Homo sapiens,38971,0.0351,,696681,,,,
 5258,1.8.1.7,Plasmodium falciparum,1950,0.039,"pH 7.0, 0.1 M potassium phosphate, 1 mM EDTA, 25°C",711008,28869,mndn_c,C05377,Menadione
 5259,1.8.1.7,Homo sapiens,3221,0.04,at 50% inhibition value,394708,,,,
-5260,1.8.1.7,Bos taurus,10,0.043,"pH 7.4, 37°C, NADPH as variable substrate at fixed GSSG concentration",688951,,,,
+5260,1.8.1.7,Bos taurus,10,0.043,"pH 7.4, 37°C, NADPH as variable substrate at fixed GSSG concentration",688951,18009,nadp_c,C00006,NADP+
 5261,1.8.1.7,Homo sapiens,38972,0.0437,,696681,,,,
 5262,1.8.1.7,Homo sapiens,38975,0.0443,,696681,,,,
 5263,1.8.1.7,Homo sapiens,20,0.05,,394712,16238,fad_c,C00016,FAD
-5264,1.8.1.7,Phaeodactylum tricornutum,10,0.052,"competitive product inhibition regarding NADPH, at 30°C and pH 7.5",701146,,,,
-5265,1.8.1.7,Homo sapiens,10,0.055,with NADPH at pH 6.8,394727,,,,
+5264,1.8.1.7,Phaeodactylum tricornutum,10,0.052,"competitive product inhibition regarding NADPH, at 30°C and pH 7.5",701146,18009,nadp_c,C00006,NADP+
+5265,1.8.1.7,Homo sapiens,10,0.055,with NADPH at pH 6.8,394727,18009,nadp_c,C00006,NADP+
 5266,1.8.1.7,Plasmodium falciparum,19329,0.057,"pH 7.0, 0.1 M potassium phosphate, 1 mM EDTA, 25°C",711008,,,,
 5267,1.8.1.7,Homo sapiens,384,0.06,"at 25°C, pH 8.0",699224,471744,,C06665,Imipenem
-5268,1.8.1.7,Homo sapiens,10,0.06,0.1 M sodium phosphate,394712,,,,
-5269,1.8.1.7,Homo sapiens,10,0.07,,394725,,,,
+5268,1.8.1.7,Homo sapiens,10,0.06,0.1 M sodium phosphate,394712,18009,nadp_c,C00006,NADP+
+5269,1.8.1.7,Homo sapiens,10,0.07,,394725,18009,nadp_c,C00006,NADP+
 5270,1.8.1.7,Homo sapiens,25462,0.0723,,688050,,,,
 5271,1.8.1.7,Homo sapiens,14447,0.0725,"in 100 mM Tris-HCl buffer, pH 8.0, at 25°C",699241,,,,
 5272,1.8.1.7,Homo sapiens,38983,0.085,"at 25°C, pH 8.0",699224,,,,
@@ -5285,7 +5285,7 @@
 5283,1.8.1.7,Saccharomyces cerevisiae,41293,0.18,"at 25°C, pH not specified in the publication",712997,,,,
 5284,1.8.1.7,Homo sapiens,55860,0.2,"pH 6.9, 25°C",659698,,,,
 5285,1.8.1.7,Plasmodium falciparum,23050,0.2,"pH 6.9, 25°C",659698,,,,
-5286,1.8.1.7,Bos taurus,10,0.219,"pH 7.4, 37°C, GSSG as variable substrate at fixed NADPH concentration (0.1 mM)",688951,,,,
+5286,1.8.1.7,Bos taurus,10,0.219,"pH 7.4, 37°C, GSSG as variable substrate at fixed NADPH concentration (0.1 mM)",688951,18009,nadp_c,C00006,NADP+
 5287,1.8.1.7,Bos taurus,52,0.221,"with GSSG as the varied substrate, pH 7.4, 37°C",712604,48775,cd2_c,C01413,Cadmium
 5288,1.8.1.7,Scombridae,52,0.25,,394708,48775,cd2_c,C01413,Cadmium
 5289,1.8.1.7,Homo sapiens,3825,0.25,at 50% inhibition value,394708,,,,
@@ -5309,7 +5309,7 @@
 5307,1.8.1.7,Homo sapiens,9814,0.745,"pH 8.0, 25°C",659592,63214,,,
 5308,1.8.1.7,Bos taurus,14,0.761,"with NADPH as the varied substrate, pH 7.4, 37°C",712604,29105,zn2_c,C00038,Zinc cation
 5309,1.8.1.7,Bos taurus,38,0.932,"with NADPH as the varied substrate, pH 7.4, 37°C",712604,49786,ni2_c,,
-5310,1.8.1.7,Phaeodactylum tricornutum,10,1.0,"non-competitive product inhibition regarding glutathione disulfide, at 30°C and pH 7.5",701146,,,,
+5310,1.8.1.7,Phaeodactylum tricornutum,10,1.0,"non-competitive product inhibition regarding glutathione disulfide, at 30°C and pH 7.5",701146,18009,nadp_c,C00006,NADP+
 5311,1.8.1.7,Homo sapiens,44590,1.1,at 50% inhibition value,394708,28925,,C07115,Nitrogen mustard
 5312,1.8.1.7,Homo sapiens,397,2.2,at 50% inhibition value,394708,49900,aso3_c,C13619,Arsenous oxide
 5313,1.8.1.7,Litomosoides carinii,397,3.0,at 50% inhibition value,394708,49900,aso3_c,C13619,Arsenous oxide
@@ -5321,29 +5321,29 @@
 5319,1.8.1.7,Bos taurus,142,7.985,"pH 7.4, 37°C, GSSG as variable substrate at fixed NADPH concentration (0.1 mM)",688951,16856,,C00051,Glutathione
 5320,1.8.1.7,Bos taurus,142,8.506,"pH 7.4, 37°C, NADPH as variable substrate at fixed GSSG concentration",688951,16856,,C00051,Glutathione
 5321,1.8.1.7,Phaeodactylum tricornutum,44,10.0,"non-competitive product inhibition regarding NADPH, at 30°C and pH 7.5",701146,16856,,C00051,Glutathione
-5322,1.8.1.7,Oncorhynchus mykiss,10,10.17,"pH 8.0, 25°C",686233,,,,
+5322,1.8.1.7,Oncorhynchus mykiss,10,10.17,"pH 8.0, 25°C",686233,18009,nadp_c,C00006,NADP+
 5323,1.8.1.7,Homo sapiens,2101,15.11,"at 25°C, pH 8.0",699224,,,,
 5324,1.8.1.7,Homo sapiens,3079,22.14,"in 100 mM Tris-HCl buffer, pH 8.0, at 25°C",699241,6128,,C01716,Ketoprofen
 5325,1.8.1.7,Homo sapiens,818,23.5,"at 25°C, pH 8.0",699224,,,,
 5326,1.8.1.7,Homo sapiens,14659,23.97,"in 100 mM Tris-HCl buffer, pH 8.0, at 25°C",699241,4509,,,
 5327,1.8.1.7,Homo sapiens,14341,28.49,"at 25°C, pH 8.0",699224,75176,,,
 5328,1.8.1.7,Homo sapiens,15109,28.84,"in 40 mM Tris-HCl buffer, pH 8.0, at 25°C",725616,35778,,,
-5329,1.8.1.8,Mycobacterium tuberculosis,10,6e-06,,659424,,,,
+5329,1.8.1.8,Mycobacterium tuberculosis,10,6e-06,,659424,18009,nadp_c,C00006,NADP+
 5330,1.8.1.8,Mycobacterium tuberculosis,16459,0.0008,,659424,,,,
 5331,1.8.1.9,Homo sapiens,2,-999.0,"kinetics of theaflavins exhibit a mixed type of competitive and non-competitive inhibition, with Kis 4 mg/ml and Kii 26 mg/ml against coenzyme NADPH, and with Kis 12 mg/ml and Kii 27 mg/ml against substrate 5,5'-dithiobis(2-nitrobenzoic acid)",696492,33206,,,
 5332,1.8.1.9,Rattus norvegicus,36359,2.4e-05,,672938,,,,
 5333,1.8.1.9,Rattus norvegicus,2131,0.0008,,672938,58968,,,
 5334,1.8.1.9,Rattus norvegicus,36360,0.001,,672938,,,,
 5335,1.8.1.9,Rattus norvegicus,5607,0.0045,,672938,,,,
-5336,1.8.1.9,Entamoeba histolytica,10,0.007,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,,,,
+5336,1.8.1.9,Entamoeba histolytica,10,0.007,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,18009,nadp_c,C00006,NADP+
 5337,1.8.1.9,Sulfolobus solfataricus,1894,0.013,"pH 5.5, 60°C",678481,2922,,,
-5338,1.8.1.9,Escherichia coli,10,0.015,at 25°C,393993,,,,
-5339,1.8.1.9,Entamoeba histolytica,10,0.026,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,,,,
+5338,1.8.1.9,Escherichia coli,10,0.015,at 25°C,393993,18009,nadp_c,C00006,NADP+
+5339,1.8.1.9,Entamoeba histolytica,10,0.026,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,18009,nadp_c,C00006,NADP+
 5340,1.8.1.9,Rattus norvegicus,2490,0.033,,672938,,,,
 5341,1.8.1.9,Sulfolobus solfataricus,3328,0.054,"pH 5.5, 60°C",678481,48131,,C08261,Azelaic acid
-5342,1.8.1.9,Entamoeba histolytica,7,0.313,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,,,,
+5342,1.8.1.9,Entamoeba histolytica,7,0.313,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,15846,nad_c,C00003,NAD+
 5343,1.8.1.9,Plasmodium berghei,182,1.25,pH and temperature not specified in the publication,724148,34718,,C14397,Dinitrochlorobenzene
-5344,1.8.1.9,Entamoeba histolytica,7,1.478,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,,,,
+5344,1.8.1.9,Entamoeba histolytica,7,1.478,"in 50 mM potassium phosphate, pH 7.0, 2 mM EDTA at 30°C",724439,15846,nad_c,C00003,NAD+
 5345,1.8.1.12,Trypanosoma cruzi,2,-999.0,derivatives of 2-amino-diphenylsulfide + phenothiazine,394809,33206,,,
 5346,1.8.1.12,Trypanosoma cruzi,2,-999.0,inhibition kinetics,658262,33206,,,
 5347,1.8.1.12,Trypanosoma cruzi,2,-999.0,inhibition kinetics,659359,33206,,,
@@ -5411,14 +5411,14 @@
 5409,1.8.1.12,Trypanosoma cruzi,727,0.0108,"at pH 7.25, 25°C in 0.02 M HEPES buffer containing 0.15 M KCl, 1 mM EDTA, 0.1 mM NADPH",675292,3647,,C06906,Chlorpromazine
 5410,1.8.1.12,Trypanosoma cruzi,74812,0.011,,696679,,,,
 5411,1.8.1.12,Trypanosoma cruzi,62333,0.011,,672529,,,,
-5412,1.8.1.12,Trypanosoma congolense,10,0.011,wild-type and mutant E201D,394792,,,,
+5412,1.8.1.12,Trypanosoma congolense,10,0.011,wild-type and mutant E201D,394792,18009,nadp_c,C00006,NADP+
 5413,1.8.1.12,Trypanosoma congolense,2037,0.011,mutant E201Q,394792,,,,
 5414,1.8.1.12,Crithidia fasciculata,49893,0.011,,394798,,,,
 5415,1.8.1.12,Trypanosoma cruzi,35751,0.0113,"at pH 7.25, 25°C in 0.02 M HEPES buffer containing 0.15 M KCl, 1 mM EDTA, 0.1 mM NADPH",675292,,,,
 5416,1.8.1.12,Trypanosoma cruzi,56874,0.012,"pH 7.5, 27°C",659359,4785,,,
 5417,1.8.1.12,Trypanosoma cruzi,63021,0.012,,672529,,,,
 5418,1.8.1.12,Trypanosoma cruzi,62329,0.014,,672529,,,,
-5419,1.8.1.12,Trypanosoma congolense,10,0.014,mutant E201Q,394792,,,,
+5419,1.8.1.12,Trypanosoma congolense,10,0.014,mutant E201Q,394792,18009,nadp_c,C00006,NADP+
 5420,1.8.1.12,Trypanosoma cruzi,60053,0.0142,"at pH 7.25, 25°C in 0.02 M HEPES buffer containing 0.15 M KCl, 1 mM EDTA, 0.1 mM NADPH",675292,,,,
 5421,1.8.1.12,Trypanosoma cruzi,68534,0.016,,688574,,,,
 5422,1.8.1.12,Crithidia fasciculata,3825,0.016,with melarsen-trypanothione disulfide-adduct,394761,,,,
@@ -5664,7 +5664,7 @@
 5662,1.10.5.1,Mesocricetus auratus,754,0.566,pH 7.5,659146,4513,,C00796,Dicumarol
 5663,1.10.5.1,Homo sapiens,754,0.62,pH 7.5,659146,4513,,C00796,Dicumarol
 5664,1.10.5.1,Homo sapiens,437,2.933,,659146,28790,srtn_c,C00780,Serotonin
-5665,1.11.1.1,Enterococcus faecalis,7,1.7,at pH 5.5,395347,,,,
+5665,1.11.1.1,Enterococcus faecalis,7,1.7,at pH 5.5,395347,15846,nad_c,C00003,NAD+
 5666,1.11.1.B2,Curvularia inaequalis,85,0.04,competitive inhibition constant,659641,15429,ham_c,C00192,Hydroxylamine
 5667,1.11.1.B2,Curvularia inaequalis,85,0.08,uncompetitive inhibition constant,659641,15429,ham_c,C00192,Hydroxylamine
 5668,1.11.1.B2,Curvularia inaequalis,684,0.35,,659641,35324,,,
@@ -5733,7 +5733,7 @@
 5731,1.11.2.3,Avena sativa,7908,0.01,"in 0.1 M KH2PO4, at pH 7.0 and 26°C",713275,38960,,C18693,Terbufos
 5732,1.11.2.3,Glycine max,7908,0.01,"in 0.1 M KH2PO4, at pH 7.0 and 26°C",713275,38960,,C18693,Terbufos
 5733,1.11.2.3,Zea mays,7908,0.01,"in 0.1 M KH2PO4, at pH 7.0 and 26°C",713275,38960,,C18693,Terbufos
-5734,1.12.1.2,Cupriavidus necator,7,0.2,"pH 8.0, temperature not specified in the publication; pH 8.0, temperature not specified in the publication",726282,,,,
+5734,1.12.1.2,Cupriavidus necator,7,0.2,"pH 8.0, temperature not specified in the publication; pH 8.0, temperature not specified in the publication",726282,15846,nad_c,C00003,NAD+
 5735,1.12.1.2,Cupriavidus necator,8,0.2,"pH 8.0, temperature not specified in the publication; pH 8.0, temperature not specified in the publication",726282,16908,nadh_c,C00004,NADH
 5736,1.12.2.1,Desulfovibrio desulfuricans,2,-999.0,Ki for CO is 1.64 kPa,395560,33206,,,
 5737,1.12.2.1,Desulfovibrio vulgaris,2,-999.0,Ki for CO is 8.9 Torr,395562,33206,,,
@@ -6566,11 +6566,11 @@
 6564,1.14.13.13,Gallus gallus,15629,1.1,,440109,2654,,C07617,Aminoglutethimide
 6565,1.14.13.15,Rattus norvegicus,3061,0.004,,"439029, 439034",16496,xoltriol_c,C05454,"3alpha,7alpha,12alpha-Trihydroxy-5beta-cholestane"
 6566,1.14.13.15,Homo sapiens,2339,2.0,,389410,,,,
-6567,1.14.13.22,Acinetobacter sp.,10,0.038,,438982,,,,
-6568,1.14.13.22,Acinetobacter sp.,10,0.038,"pH 9.0, 25°C",438990,,,,
+6567,1.14.13.22,Acinetobacter sp.,10,0.038,,438982,18009,nadp_c,C00006,NADP+
+6568,1.14.13.22,Acinetobacter sp.,10,0.038,"pH 9.0, 25°C",438990,18009,nadp_c,C00006,NADP+
 6569,1.14.13.22,Acinetobacter sp.,12384,0.062,,"438968, 438982",,,,
-6570,1.14.13.22,Rhodococcus sp. HI-31,10,0.115,"wild type enzyme, 0.1 mM cyclohexanone, 50 mM Tris-HCl buffer (pH 9.0), 25°C",698499,,,,
-6571,1.14.13.22,Rhodococcus sp. HI-31,10,0.39,"mutant W492A, 0.1 mM cyclohexanone, 50 mM Tris-HCl buffer (pH 9.0), 25°C",698499,,,,
+6570,1.14.13.22,Rhodococcus sp. HI-31,10,0.115,"wild type enzyme, 0.1 mM cyclohexanone, 50 mM Tris-HCl buffer (pH 9.0), 25°C",698499,18009,nadp_c,C00006,NADP+
+6571,1.14.13.22,Rhodococcus sp. HI-31,10,0.39,"mutant W492A, 0.1 mM cyclohexanone, 50 mM Tris-HCl buffer (pH 9.0), 25°C",698499,18009,nadp_c,C00006,NADP+
 6572,1.14.13.22,Acinetobacter sp.,43204,2.0,,438973,,,,
 6573,1.14.13.22,Acinetobacter sp.,20265,2.0,,438973,,,,
 6574,1.14.13.22,Acinetobacter sp.,30393,2.0,,438973,89059,,,
@@ -7296,10 +7296,10 @@
 7294,1.16.1.8,Homo sapiens,1962,0.0007,"pH 7.5, 25°C, mutant W697Y, with cytochrome c3+",727476,,,,
 7295,1.16.1.8,Homo sapiens,1962,0.0014,inhibition of reduction of cytochrome c3+,685093,,,,
 7296,1.16.1.8,Homo sapiens,1962,0.0014,"pH 7.5, 25°C, wild-type enzyme",727476,,,,
-7297,1.16.1.8,Homo sapiens,10,0.003,"pH 7.5, 25°C, mutant W697F, with cytochrome c3+",727476,,,,
-7298,1.16.1.8,Homo sapiens,10,0.0042,"pH 7.5, 25°C, mutant W697Y, with cytochrome c3+",727476,,,,
-7299,1.16.1.8,Homo sapiens,10,0.036,inhibition of reduction of cytochrome c3+,685093,,,,
-7300,1.16.1.8,Homo sapiens,10,0.037,"pH 7.5, 25°C, wild-type enzyme",727476,,,,
+7297,1.16.1.8,Homo sapiens,10,0.003,"pH 7.5, 25°C, mutant W697F, with cytochrome c3+",727476,18009,nadp_c,C00006,NADP+
+7298,1.16.1.8,Homo sapiens,10,0.0042,"pH 7.5, 25°C, mutant W697Y, with cytochrome c3+",727476,18009,nadp_c,C00006,NADP+
+7299,1.16.1.8,Homo sapiens,10,0.036,inhibition of reduction of cytochrome c3+,685093,18009,nadp_c,C00006,NADP+
+7300,1.16.1.8,Homo sapiens,10,0.037,"pH 7.5, 25°C, wild-type enzyme",727476,18009,nadp_c,C00006,NADP+
 7301,1.16.3.1,Rhodococcus erythropolis,1441,3.9e-05,"pH 5.5, 30°C, wild-type",728744,49552,cu_c,,
 7302,1.16.3.1,Rhodococcus erythropolis,1441,8e-05,"pH 5.5, 30°C, mutant containing a deleted methionine-rich C-terminal tail",728744,49552,cu_c,,
 7303,1.17.1.2,Escherichia coli,194338,2e-05,"pH 8, 37°C",727692,33206,,,
@@ -7319,7 +7319,7 @@
 7317,1.17.1.8,Zea mays,4005,0.9,,390612,46837,,,
 7318,1.17.1.8,Escherichia coli,5983,5.5,,390620,30802,,,
 7319,1.17.1.8,Escherichia coli,5983,15.0,,390617,30802,,,
-7320,1.17.1.8,Escherichia coli,10,24.0,,390624,,,,
+7320,1.17.1.8,Escherichia coli,10,24.0,,390624,18009,nadp_c,C00006,NADP+
 7321,1.17.3.1,Ricinus communis,211,0.016,,437991,17368,hxan_c,C00262,Hypoxanthine
 7322,1.17.3.1,Ricinus communis,234,0.016,,437991,48517,xan_c,C00385,Xanthine
 7323,1.17.3.2,Mus musculus,2,-999.0,inhibition kinetics,685028,33206,,,
@@ -7485,9 +7485,9 @@
 7483,1.18.6.1,Azotobacter vinelandii,2,-999.0,,440184,33206,,,
 7484,1.18.6.1,Azotobacter vinelandii,2,-999.0,,440189,33206,,,
 7485,1.18.6.1,Azotobacter vinelandii,1032,10.1,,440178,,,,
-7486,1.20.1.1,Pseudomonas stutzeri,7,0.48,"mutant R301A, pH 7.3, 25°C",726981,,,,
-7487,1.20.1.1,Pseudomonas stutzeri,7,0.97,"mutant R301K, pH 7.3, 25°C",726981,,,,
-7488,1.20.1.1,Pseudomonas stutzeri,7,1.03,"mutant 17X-PTDH, pH 7.3, 25°C",726981,,,,
+7486,1.20.1.1,Pseudomonas stutzeri,7,0.48,"mutant R301A, pH 7.3, 25°C",726981,15846,nad_c,C00003,NAD+
+7487,1.20.1.1,Pseudomonas stutzeri,7,0.97,"mutant R301K, pH 7.3, 25°C",726981,15846,nad_c,C00003,NAD+
+7488,1.20.1.1,Pseudomonas stutzeri,7,1.03,"mutant 17X-PTDH, pH 7.3, 25°C",726981,15846,nad_c,C00003,NAD+
 7489,1.20.4.4,Staphylococcus aureus,6694,0.0005,"pH 7.5, 37°C",639368,33206,,,
 7490,1.20.4.4,Staphylococcus aureus,21542,0.01,"pH 7.5, 37°C",639368,33206,,,
 7491,1.20.4.4,Staphylococcus aureus,397,0.5,"pH 7.5, 37°C",639368,49900,aso3_c,C13619,Arsenous oxide
@@ -11170,16 +11170,16 @@
 11168,2.4.2.10,Homo sapiens,160,17.6,"orotidine 5'-phosphate as substrate, pH not specified in the publication, temperature not specified in the publication",721644,26836,so4_c,C00059,Sulfate
 11169,2.4.2.12,Homo sapiens,4,-999.0,"> 4 mM, inhibition of NMN synthesis by phosphorylated NAMPT",690900,15422,atp_c,C00002,ATP
 11170,2.4.2.12,Homo sapiens,5788,-999.0,"10 +/-1 pM, with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in presence of 2.5 mM ATP, KM/Ki = 63000, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min; 150 +/-18 pM, with respect to nicotinamide, in presence of 2.5 mM ATP, KM/Ki = 33, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min; 5000 +/-500 pM, with respect to nicotinamide, in absence of ATP, KM/Ki = 171, 100 microM PRPP, 1 microM nicotinamide, 88 nM NAMPT, 15 min; 730 +/-75 pM, with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in absence of ATP, KM/Ki = 9863, 100 microM PRPP, 1 microM nicotinamide, 88 nM NAMPT, 15 min",690900,,,,
-11171,2.4.2.12,Homo sapiens,7,-999.0,"> 100 microM, with respect to nicotinamide, in absence of ATP",690900,,,,
+11171,2.4.2.12,Homo sapiens,7,-999.0,"> 100 microM, with respect to nicotinamide, in absence of ATP",690900,15846,nad_c,C00003,NAD+
 11172,2.4.2.12,Homo sapiens,8,-999.0,"> 100 microM, with respect to nicotinamide, in absence of ATP",690900,16908,nadh_c,C00004,NADH
-11173,2.4.2.12,Homo sapiens,7,0.00014,"with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in presence of 2.5 mM ATP, KM/Ki = 5, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,,,,
+11173,2.4.2.12,Homo sapiens,7,0.00014,"with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in presence of 2.5 mM ATP, KM/Ki = 5, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,15846,nad_c,C00003,NAD+
 11174,2.4.2.12,Homo sapiens,18787,0.00016,"with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in presence of 2.5 mM ATP, KM/Ki = 4, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,46312,,,
 11175,2.4.2.12,Homo sapiens,8,0.00022,"with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in presence of 2.5 mM ATP, KM/Ki = 3, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,16908,nadh_c,C00004,NADH
 11176,2.4.2.12,Homo sapiens,267,0.00025,NMN synthesis,690900,17154,ncam_c,C00153,Nicotinamide
 11177,2.4.2.12,Homo sapiens,5788,0.0003,free enzyme,661421,,,,
 11178,2.4.2.12,Homo sapiens,5788,0.0004,enzyme-substrate complex,661421,,,,
 11179,2.4.2.12,Homo sapiens,18787,0.00053,"with respect to alpha-D-5-phosphoribosyl 1-diphosphate (PRPP), in absence of ATP, KM/Ki = 14, 100 microM PRPP, 1 microM nicotinamide, 88 nM NAMPT, 15 min",690900,46312,,,
-11180,2.4.2.12,Homo sapiens,7,0.0021,"with respect to nicotinamide, in presence of 2.5 mM ATP, KM/Ki <1, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,,,,
+11180,2.4.2.12,Homo sapiens,7,0.0021,"with respect to nicotinamide, in presence of 2.5 mM ATP, KM/Ki <1, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,15846,nad_c,C00003,NAD+
 11181,2.4.2.12,Homo sapiens,18787,0.0025,"with respect to nicotinamide, in presence of 2.5 mM ATP, KM/Ki <1, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,46312,,,
 11182,2.4.2.12,Homo sapiens,267,0.003,"NMN synthesis, in presence of 5 microM NAD+",690900,17154,ncam_c,C00153,Nicotinamide
 11183,2.4.2.12,Homo sapiens,8,0.0032,"with respect to nicotinamide, in presence of 2.5 mM ATP, KM/Ki <1, 200 microM PRPP, 100 nM nicotinamide, 2.2 nM NAMPT, 15 min",690900,16908,nadh_c,C00004,NADH
@@ -11950,7 +11950,7 @@
 11948,2.5.1.31,Micrococcus luteus,245,17.0,,637492,26836,so4_c,C00059,Sulfate
 11949,2.5.1.32,Solanum lycopersicum,5340,7e-06,"pH 8.0, 28°C, chloroplast enzyme",637885,,,,
 11950,2.5.1.32,Solanum lycopersicum,5340,9e-06,"pH 8.0, 28°C, chromoplast enzyme",637885,,,,
-11951,2.5.1.32,Solanum lycopersicum,10,0.0002,"pH 8.0, 28°C, chloroplast enzyme and chromoplast enzyme",637885,,,,
+11951,2.5.1.32,Solanum lycopersicum,10,0.0002,"pH 8.0, 28°C, chloroplast enzyme and chromoplast enzyme",637885,18009,nadp_c,C00006,NADP+
 11952,2.5.1.32,Solanum lycopersicum,5,0.1,"pH 8.0, 28°C, chloroplast enzyme",637885,16474,nadph_c,C00005,NADPH
 11953,2.5.1.32,Solanum lycopersicum,16,0.2,"pH 8.0, 28°C, chloroplast enzyme and chromoplast enzyme",637885,26078,pi_c,C00009,Orthophosphate
 11954,2.5.1.32,Solanum lycopersicum,5,0.4,"pH 8.0, 28°C, chromoplast enzyme",637885,16474,nadph_c,C00005,NADPH
@@ -13027,14 +13027,14 @@
 13025,2.7.1.23,Strongylocentrotus purpuratus,8,0.03,"pH 6.5, 30°C",641180,16908,nadh_c,C00004,NADH
 13026,2.7.1.23,Listeria monocytogenes,2088,0.04,,693014,,,,
 13027,2.7.1.23,Corynebacterium glutamicum,8,0.11,"in 100 mM HEPES, pH 7.3, containing 20 mM MgCl2, at 30°C",721366,16908,nadh_c,C00004,NADH
-13028,2.7.1.23,Bacillus licheniformis,10,0.13,pH 6.8,641183,,,,
+13028,2.7.1.23,Bacillus licheniformis,10,0.13,pH 6.8,641183,18009,nadp_c,C00006,NADP+
 13029,2.7.1.23,Pisum sativum,5,0.16,pH 8,641200,16474,nadph_c,C00005,NADPH
 13030,2.7.1.23,Corynebacterium glutamicum,5,0.17,at pH 8.0 and 30°C,722144,16474,nadph_c,C00005,NADPH
-13031,2.7.1.23,Corynebacterium glutamicum,10,0.21,at pH 8.0 and 30°C,722144,,,,
+13031,2.7.1.23,Corynebacterium glutamicum,10,0.21,at pH 8.0 and 30°C,722144,18009,nadp_c,C00006,NADP+
 13032,2.7.1.23,Corynebacterium glutamicum subsp. lactofermentum,5,0.22,at pH 7.5 and 30°C,722144,16474,nadph_c,C00005,NADPH
 13033,2.7.1.23,Corynebacterium glutamicum,8,0.24,at pH 8.0 and 30°C,722144,16908,nadh_c,C00004,NADH
-13034,2.7.1.23,Corynebacterium glutamicum,10,0.34,"in 100 mM HEPES, pH 7.3, containing 20 mM MgCl2, at 30°C",721366,,,,
-13035,2.7.1.23,Corynebacterium glutamicum subsp. lactofermentum,10,0.43,at pH 7.5 and 30°C,722144,,,,
+13034,2.7.1.23,Corynebacterium glutamicum,10,0.34,"in 100 mM HEPES, pH 7.3, containing 20 mM MgCl2, at 30°C",721366,18009,nadp_c,C00006,NADP+
+13035,2.7.1.23,Corynebacterium glutamicum subsp. lactofermentum,10,0.43,at pH 7.5 and 30°C,722144,18009,nadp_c,C00006,NADP+
 13036,2.7.1.23,Corynebacterium glutamicum subsp. lactofermentum,8,0.62,at pH 7.5 and 30°C,722144,16908,nadh_c,C00004,NADH
 13037,2.7.1.23,Pisum sativum,8,1.02,pH 8,641200,16908,nadh_c,C00004,NADH
 13038,2.7.1.23,Pisum sativum,977,2.8,pH 8,641200,45951,,C07168,Trifluoperazine
@@ -14225,7 +14225,7 @@
 14223,2.7.7.1,Homo sapiens,1959,0.0591,"pH 7.5, 37°C, isozyme NMNAT1, versus substrate ATP; pH 7.5, 37°C, isozyme NMNAT1, versus substrate ATP; pH 7.5, 37°C, isozyme NMNAT1, versus substrate ATP",672248,,,,
 14224,2.7.7.1,Homo sapiens,8687,0.0668,"substrate: NMN, isoenzyme: NMNAT3",672248,,,,
 14225,2.7.7.1,Homo sapiens,3571,0.0668,"pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN",672248,,,,
-14226,2.7.7.1,Homo sapiens,7,0.067,"product inhibition of NMNAT2, substrate NMN",672248,,,,
+14226,2.7.7.1,Homo sapiens,7,0.067,"product inhibition of NMNAT2, substrate NMN",672248,15846,nad_c,C00003,NAD+
 14227,2.7.7.1,Homo sapiens,14100,0.0679,"substrate: NMN, isoenzyme: NMNAT1",672248,,,,
 14228,2.7.7.1,Homo sapiens,1959,0.0679,"pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN",672248,,,,
 14229,2.7.7.1,Homo sapiens,8688,0.0736,"substrate: NMN, isoenzyme: NMNAT3",672248,,,,
@@ -14236,7 +14236,7 @@
 14234,2.7.7.1,Homo sapiens,1959,0.0883,"pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT3, versus substrate NMN",672248,,,,
 14235,2.7.7.1,Homo sapiens,8687,0.089,"substrate: NMN, isoenzyme: NMNAT1",672248,,,,
 14236,2.7.7.1,Homo sapiens,3571,0.089,"pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN; pH 7.5, 37°C, isozyme NMNAT1, versus substrate NMN",672248,,,,
-14237,2.7.7.1,Homo sapiens,7,0.095,"product inhibition of NMNAT2, substrate ATP",672248,,,,
+14237,2.7.7.1,Homo sapiens,7,0.095,"product inhibition of NMNAT2, substrate ATP",672248,15846,nad_c,C00003,NAD+
 14238,2.7.7.1,Homo sapiens,8689,0.1257,"substrate: NMN, isoenzyme: NMNAT2",672248,,,,
 14239,2.7.7.1,Homo sapiens,1959,0.1257,"pH 7.5, 37°C, isozyme NMNAT2, versus substrate NaMN; pH 7.5, 37°C, isozyme NMNAT2, versus substrate NaMN; pH 7.5, 37°C, isozyme NMNAT2, versus substrate NaMN",672248,,,,
 14240,2.7.7.1,Homo sapiens,17,0.16,"product inhibition of NMNAT2, substrate NMN",672248,29888,ppi_c,C00013,Diphosphate
@@ -14251,14 +14251,14 @@
 14249,2.7.7.1,Homo sapiens,17,0.361,"product inhibition of NMNAT2, substrate ATP",672248,29888,ppi_c,C00013,Diphosphate
 14250,2.7.7.1,Homo sapiens,8696,0.364,"product inhibition of NMNAT3, substrate NMN",672248,,,,
 14251,2.7.7.1,Homo sapiens,17,0.39,"product inhibition of NMNAT1, substrate NMN",672248,29888,ppi_c,C00013,Diphosphate
-14252,2.7.7.1,Homo sapiens,7,0.418,"product inhibition of NMNAT1, substrate NMN",672248,,,,
+14252,2.7.7.1,Homo sapiens,7,0.418,"product inhibition of NMNAT1, substrate NMN",672248,15846,nad_c,C00003,NAD+
 14253,2.7.7.1,Homo sapiens,8696,0.502,"product inhibition of NMNAT1, substrate NMN",672248,,,,
 14254,2.7.7.1,Homo sapiens,8689,0.6576,"substrate: ATP, isoenzyme: NMNAT2",672248,,,,
 14255,2.7.7.1,Homo sapiens,1959,0.6576,"pH 7.5, 37°C, isozyme NMNAT2, versus substrate ATP; pH 7.5, 37°C, isozyme NMNAT2, versus substrate ATP; pH 7.5, 37°C, isozyme NMNAT2, versus substrate ATP",672248,,,,
-14256,2.7.7.1,Homo sapiens,7,0.749,"product inhibition of NMNAT1, substrate ATP",672248,,,,
+14256,2.7.7.1,Homo sapiens,7,0.749,"product inhibition of NMNAT1, substrate ATP",672248,15846,nad_c,C00003,NAD+
 14257,2.7.7.1,Homo sapiens,17,1.0,"product inhibition of NMNAT3, substrate NMN",672248,29888,ppi_c,C00013,Diphosphate
-14258,2.7.7.1,Homo sapiens,7,1.017,"product inhibition of NMNAT3, substrate NMN",672248,,,,
-14259,2.7.7.1,Homo sapiens,7,1.418,"product inhibition of NMNAT3, substrate ATP",672248,,,,
+14258,2.7.7.1,Homo sapiens,7,1.017,"product inhibition of NMNAT3, substrate NMN",672248,15846,nad_c,C00003,NAD+
+14259,2.7.7.1,Homo sapiens,7,1.418,"product inhibition of NMNAT3, substrate ATP",672248,15846,nad_c,C00003,NAD+
 14260,2.7.7.2,Rattus norvegicus,2,-999.0,Ki value for diphosphate against ATP not determined because Lineweaver-Burk plots of inhibition by diphosphate with varying concentrations of ATP are nonlinear,641239,33206,,,
 14261,2.7.7.2,Corynebacterium ammoniagenes,17,0.00064,"pH 7.6, 25°C",643003,29888,ppi_c,C00013,Diphosphate
 14262,2.7.7.2,Rattus norvegicus,20,0.00075,"pH 8.0, 37°C, against FMN",641239,16238,fad_c,C00016,FAD
@@ -14342,7 +14342,7 @@
 14340,2.7.7.4,Rhodovulum sulfidophilum,318,0.66,"pH 8.0, 30°C",643276,29919,h2s_c,,
 14341,2.7.7.4,Penicillium chrysogenum,108,0.71,"pH 8.0, 30°C",643267,30617,,,
 14342,2.7.7.4,Brassica capitata,108,0.75,"pH 8.0, 30°C",643280,30617,,,
-14343,2.7.7.4,Spinacia oleracea,7,0.9,"pH 8.0, 30°C, synthesis of ATP",643282,,,,
+14343,2.7.7.4,Spinacia oleracea,7,0.9,"pH 8.0, 30°C, synthesis of ATP",643282,15846,nad_c,C00003,NAD+
 14344,2.7.7.4,Homo sapiens,4,1.0,"pH 8.0, 30°C, reaction with molybdate",661125,15422,atp_c,C00002,ATP
 14345,2.7.7.4,Homo sapiens,4,1.1,"pH 8.0, 30°C, reaction with sulfate",661125,15422,atp_c,C00002,ATP
 14346,2.7.7.4,Rattus norvegicus,3364,1.13,"pH 8.0, 30°C",641204,5587,tsul_c,C05529,Thiosulfuric acid
@@ -14355,7 +14355,7 @@
 14353,2.7.7.4,Penicillium chrysogenum,2413,2.02,"pH 8.0, 30°C",643258,36264,mobd_c,C06232,Molybdate
 14354,2.7.7.4,Rhodovulum sulfidophilum,30,2.1,"pH 8.0, 30°C",643276,16027,amp_c,C00020,AMP
 14355,2.7.7.4,Rattus norvegicus,673,2.2,"pH 7.8, 37°C",643259,17632,no3_c,,
-14356,2.7.7.4,Spinacia oleracea,7,2.5,"pH 8.0, 30°C, molybdolysis",643282,,,,
+14356,2.7.7.4,Spinacia oleracea,7,2.5,"pH 8.0, 30°C, molybdolysis",643282,15846,nad_c,C00003,NAD+
 14357,2.7.7.4,Saccharomyces cerevisiae,318,3.4,"pH 8.0, 30°C",643269,29919,h2s_c,,
 14358,2.7.7.4,Homo sapiens,509,14.3,"pH 8.0, 30°C",661125,36264,mobd_c,C06232,Molybdate
 14359,2.7.7.5,Saccharomyces cerevisiae,16,11.7,"30°C, pH 8",643455,26078,pi_c,C00009,Orthophosphate
@@ -17116,8 +17116,8 @@
 17114,3.1.3.82,Escherichia coli,12794,6.0,"pH 7.5, 25°C, Ki(intercept)",696367,16255,histd_c,C00860,L-Histidinol
 17115,3.1.3.84,Saccharomyces cerevisiae,402,0.03,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,,,,
 17116,3.1.3.84,Saccharomyces cerevisiae,21543,1.0,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,,,,
-17117,3.1.3.84,Saccharomyces cerevisiae,7,1.5,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,,,,
-17118,3.1.3.84,Saccharomyces cerevisiae,10,2.0,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,,,,
+17117,3.1.3.84,Saccharomyces cerevisiae,7,1.5,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,15846,nad_c,C00003,NAD+
+17118,3.1.3.84,Saccharomyces cerevisiae,10,2.0,"in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,18009,nadp_c,C00006,NADP+
 17119,3.1.3.84,Saccharomyces cerevisiae,7084,10.0,"Ki above 10 mM, in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,28507,,C03104,Cytidine 2'-phosphate
 17120,3.1.3.84,Saccharomyces cerevisiae,652,10.0,"Ki above 10 mM, in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,28931,3amp_c,C01367,3'-AMP
 17121,3.1.3.84,Saccharomyces cerevisiae,13,10.0,"Ki above 10 mM, in 20 mM Tris-HCl, pH 7.5, 5 mM MgCl2, 2.5 mM spermidine, 100 mM dithiothreitol, 0.4% (v/v) Triton X-100, at 30°C",716366,16761,adp_c,C00008,ADP
