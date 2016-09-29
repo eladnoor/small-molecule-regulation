@@ -13,12 +13,12 @@ import numpy as np
 import settings as S
 import matplotlib.pyplot as plt
 import seaborn as sns
-sns.set('notebook', style='white')
+sns.set('paper', style='white')
 
 organism = 'Escherichia coli'
-SAT_FORMULA_S = r'$[S]/([S] + K_S)$'
-SAT_FORMULA_M = r'$[S]/([S] + K_M)$'
-SAT_FORMULA_I = r'$[S]/([S] + K_I)$'
+SAT_FORMULA_S = r'$[S]/\left([S] + K_S\right)$'
+SAT_FORMULA_M = r'$[S]/\left([S] + K_M\right)$'
+SAT_FORMULA_I = r'$[S]/\left([S] + K_I\right)$'
 
 def get_kinetic_param(name, value_col, organism='Escherichia coli'):
     k = S.read_cache(name)
@@ -123,96 +123,49 @@ fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation.svg'))
 
 #%% Compare the CDFs of the two fold-change types (for Ki and Km)
 
-fig, axs = plt.subplots(2, 3, figsize=(15, 12), sharey=True)
-
-ax = axs[0,2]
-km['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                      histtype='step', ax=ax, label='substrates', linewidth=2)
-ki['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                      histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_xlabel(SAT_FORMULA_S)
-ax.set_title('Only for EC:met pairs with $K_S$ and conc.')
-ax.legend(loc='upper left')
-
-ax = axs[0,0]
-np.log2(km['concentration']).hist(cumulative=True, normed=1, bins=1000,
-                                  histtype='step', ax=ax, label='substrates', linewidth=2)
-np.log2(ki['concentration']).hist(cumulative=True, normed=1, bins=1000,
-                         histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(-7, 4)
-ax.set_ylim(0, 1)
-ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
-ax.set_ylabel(r'Cumulative distribution')
-ax.set_title('Only conc. that have a $K_M$ or $K_I$')
-ax.legend(loc='upper left')
-
-ax = axs[0,1]
-np.log2(1.0/km['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='$K_M$', linewidth=2)
-np.log2(1.0/ki['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
-                                 histtype='step', ax=ax, label='$K_I$', linewidth=2)
-ax.set_xlim(-10, 11)
-ax.set_ylim(0, 1)
-ax.set_xlabel(r'$\log_2 K_S$ (in mM)')
-ax.set_title('Only $K_S$ that correspond to measured met.')
-ax.legend(loc='upper left')
-
-# compare Km and Ki for the intersection of EC numbers 
-
-EC_intersection = set(km['EC_number']).intersection(ki['EC_number'])
-km_inter = km[km['EC_number'].isin(EC_intersection)]
-ki_inter = ki[ki['EC_number'].isin(EC_intersection)]
-
-ax = axs[1,0]
-km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='substrates', linewidth=2)
-ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_xlabel(SAT_FORMULA_S)
-ax.set_ylabel(r'Cumulative distribution')
-ax.set_title('Only enzymes having both $K_M$ and $K_I$')
-ax.legend(loc='upper left')
-
+fig, axs = plt.subplots(1, 3, figsize=(7.5, 3), sharey=True)
 
 met_intersection = set(km['bigg.metabolite']).intersection(ki['bigg.metabolite'])
 km_inter = km[km['bigg.metabolite'].isin(met_intersection)]
 ki_inter = ki[ki['bigg.metabolite'].isin(met_intersection)]
 
-ax = axs[1,1]
+ax = axs[0]
+np.log2(pd.melt(met_conc_mean)['value']).hist(cumulative=True, normed=1, bins=1000,
+                                              histtype='step', ax=ax, linewidth=1, color='orange')
+ax.set_xlim(-7, 4)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$\log_2 [S]$ (in mM)')
+ax.set_ylabel(r'Cumulative distribution')
+ax.set_title('Measured metabolite conc.')
+ax.legend(loc='upper left')
+
+ax = axs[1]
+np.log2(1.0/km_inter['KM_Value']).hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='substrates $(K_M)$', linewidth=1)
+np.log2(1.0/ki_inter['KI_Value']).hist(cumulative=True, normed=1, bins=1000,
+                                 histtype='step', ax=ax, label='inhibitors $(K_I)$', linewidth=1)
+ax.set_xlim(-10, 11)
+ax.set_ylim(0, 1)
+ax.set_xlabel(r'$\log_2 K_S$ (in mM)')
+ax.set_title(r'Measured $K_{\rm S}$ values')
+ax.legend(loc='upper left')
+
+# compare Km and Ki for the intersection of EC numbers 
+
+ax = axs[2]
 km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='substrates', linewidth=2)
+                            histtype='step', ax=ax, label='substrates', linewidth=1)
 ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
+                            histtype='step', ax=ax, label='inhibitors', linewidth=1)
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
 ax.set_xlabel(SAT_FORMULA_S)
-ax.set_title('Only metabolites having both $K_M$ and $K_I$')
+ax.set_title(r'Saturation levels')
 ax.legend(loc='upper left')
-
-met_intersection = set(km_raw['bigg.metabolite']).intersection(ki_raw['bigg.metabolite'])
-km_inter = km_raw[km_raw['bigg.metabolite'].isin(met_intersection)]
-ki_inter = ki_raw[ki_raw['bigg.metabolite'].isin(met_intersection)]
-
-ax = axs[1,2]
-met_intersection = set(met_conc_mean.index)
-km_inter = km[km['bigg.metabolite'].isin(met_intersection)]
-ki_inter = ki[ki['bigg.metabolite'].isin(met_intersection)]
-
-km_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='substrates', linewidth=2)
-ki_inter['saturation'].hist(cumulative=True, normed=1, bins=1000,
-                            histtype='step', ax=ax, label='inhibitors', linewidth=2)
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_xlabel(SAT_FORMULA_S)
-ax.set_title('Only for metabolites that have measured conc.')
-ax.legend(loc='upper left')
+fig.tight_layout()
 
 fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.svg'))
+fig.savefig(os.path.join(S.RESULT_DIR, 'saturation_histogram.png'), dpi=600)
 
 #%% draw violin plots of the saturation distributions
 ki['type'] = 'Inhibitor'

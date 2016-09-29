@@ -212,3 +212,25 @@ if __name__ == '__main__':
         g.ax.set_xlim(1e-3, 1e4)
         g.ax.set_ylim(1e-3, 1e4)
         g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_%s.svg' % hue))
+        
+    #%%
+    data['predicted_enzyme'] = 1/r_V * s * (1 + s/Km)
+    data.sort_values('flux [mmol/gCDW/h]', inplace=True, ascending=False)
+    maxflux_data = data.groupby(('bigg.metabolite', 'condition')).first().reset_index()
+    for hue in ['bigg.metabolite', 'bigg.reaction', 'condition']:
+        pal = sns.husl_palette(len(maxflux_data[hue].unique()))
+        g = sns.FacetGrid(data, col=None, hue=hue, palette=pal,
+                          ylim=(1e-3, 1e3))
+        g = g.map(plt.scatter, 'enzyme conc [M]', 'predicted_enzyme').add_legend()
+        g.ax.set_xscale('log')
+        g.ax.set_yscale('log')
+        g.fig.set_size_inches(12, 7)
+        
+        # plot the line y = x*(1+x)
+        #x = pd.np.logspace(-3, 3, 100)
+        #y = x*(1+x)
+        #g.ax.plot(x, y, '-')
+        g.ax.set_xlim(1e-9, 1e1)
+        g.ax.set_ylim(1e-9, 1e1)
+        g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_%s.svg' % hue))
+       
