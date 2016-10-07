@@ -6,6 +6,7 @@ Created on Mon Sep 26 19:49:04 2016
 """
 import os
 import pandas as pd
+import numpy as np
 import settings as S
 from cobra.io.sbml import create_cobra_model_from_sbml_file
 from cobra.manipulation.modify import convert_to_irreversible
@@ -133,7 +134,7 @@ class Volume(object):
         # calculate the MW of each enzyme complex, using the gene reaction rules
         # from the iJO1336 model    
         enz_mw_df = pd.DataFrame(index=reaction2boolparser.keys(),
-                                 columns=['enzyme MW [Da]'])
+                                 columns=['enzyme MW [Da]'], dtype=np.float64)
         enz_mw_df.index.name = 'bigg.reaction'
         enzyme_mw_dict = enz_mw.to_dict()
         for r, bool_parser in reaction2boolparser.iteritems():
@@ -147,7 +148,7 @@ class Volume(object):
         enz_molar = enz_count_mean * 1e15 / 6.02e23
     
         enz_conc_df = pd.DataFrame(index=reaction2boolparser.keys(),
-                                   columns=enz_count_mean.columns)
+                                   columns=enz_count_mean.columns, dtype=np.float64)
         enz_conc_df.index.name = 'bigg.reaction'
         
         for c in enz_count_mean.columns:
@@ -176,9 +177,10 @@ class Volume(object):
 ##############################################################################
 
 if __name__ == '__main__':
-    sns.set()
+    sns.set(context='paper', style='white')
     vol = Volume()
     data = vol.data_df
+    flux = data['flux [mmol/gCDW/h]']
     E = data['enzyme conc [M]']
     r_V = data['enzyme MW [Da]'] / data['metabolite MW [Da]']
     s = data['metabolite conc [M]']
@@ -188,7 +190,10 @@ if __name__ == '__main__':
     data[s_over_Km] = s/Km
     rV_E_over_Km = r'$\frac{V_E E}{V_s K_M}$'
     data[rV_E_over_Km] = r_V * E / Km
-    
+
+    data['predicted_enzyme'] = 1/r_V * s * (1 + s/Km)
+    data['predicted_substrate'] = -0.5 + np.sqrt(0.25 + r_V * E / Km)
+
     # for each metabolite:condition, take only the enzyme which
     # corresponds to the reaction with the highest flux (i.e.
     # the 'volume-limiting' reaction)
@@ -211,26 +216,30 @@ if __name__ == '__main__':
         g.ax.plot(x, y, '-')
         g.ax.set_xlim(1e-3, 1e4)
         g.ax.set_ylim(1e-3, 1e4)
-        g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_%s.svg' % hue))
+        g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_optimality_line_%s.svg' % hue))
         
     #%%
-    data['predicted_enzyme'] = 1/r_V * s * (1 + s/Km)
-    data.sort_values('flux [mmol/gCDW/h]', inplace=True, ascending=False)
-    maxflux_data = data.groupby(('bigg.metabolite', 'condition')).first().reset_index()
     for hue in ['bigg.metabolite', 'bigg.reaction', 'condition']:
         pal = sns.husl_palette(len(maxflux_data[hue].unique()))
-        g = sns.FacetGrid(data, col=None, hue=hue, palette=pal,
+        g = sns.FacetGrid(maxflux_data, col=None, hue=hue, palette=pal,
                           ylim=(1e-3, 1e3))
         g = g.map(plt.scatter, 'enzyme conc [M]', 'predicted_enzyme').add_legend()
         g.ax.set_xscale('log')
         g.ax.set_yscale('log')
         g.fig.set_size_inches(12, 7)
         
-        # plot the line y = x*(1+x)
-        #x = pd.np.logspace(-3, 3, 100)
-        #y = x*(1+x)
-        #g.ax.plot(x, y, '-')
-        g.ax.set_xlim(1e-9, 1e1)
-        g.ax.set_ylim(1e-9, 1e1)
-        g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_%s.svg' % hue))
-       
+        # plot the line x = y
+        x = pd.np.logspace(-7, -1, 2)
+        y = x
+        g.ax.plot(x, y, '-')
+        g.ax.set_xlim(1e-7, 1e-1)
+        g.ax.set_ylim(1e-7, 1e-1)
+        g.fig.savefig(os.path.join(S.RESULT_DIR, 'volume_predict_E_%s.svg' % hue))
+    
+    #%% try to draw the prediction vs. measurement of the substrate concentrations
+    fig, ax = plt.subplots(1, 1, figsize=(6,6))
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+    CS = ax.scatter(maxflux_data.loc[:, 'metabolite conc [M]'], maxflux_data.loc[:, 'predicted_substrate'],
+                    s=20, c=maxflux_data.loc[:, 'flux [mmol/gCDW/h]'], marker='o')
+    
