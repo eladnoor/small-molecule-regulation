@@ -42,5 +42,4 @@ def get_reaction_df():
     
     df = pd.DataFrame(bigg2ec, columns=['bigg.reaction', 'EC_number'])
 
-    # keep only metabolites with a _c suffix (i.e. cytoplasmic)
     return df.groupby('EC_number').first()

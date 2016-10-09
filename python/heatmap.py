@@ -26,6 +26,10 @@ def get_kinetic_param(name, value_col, organism='Escherichia coli'):
     
     # filter by organsim
     k = k[k['Organism'] == organism]
+
+    # filter out mutated enzymes
+    k = k[~(k['Commentary'].str.find('mutant') > 0)]
+    k = k[~(k['Commentary'].str.find('mutation') > 0)]
     
     # remove values with unmatched ligand
     k = k[pd.notnull(k['bigg.metabolite'])]
