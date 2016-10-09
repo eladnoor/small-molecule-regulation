@@ -111,9 +111,10 @@ ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
 clb[0].set_ylabel('saturation', fontsize=16)
 clb[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
 
-ax.axvline(sat_joined.shape[0]/2, 0, 1)
+ax.axvline(sat_joined.shape[1]/2, 0, 1, color='r')
 
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
+fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.png'), dpi=300)
 
 
 #%%
