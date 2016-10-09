@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import settings as S
 import matplotlib.pyplot as plt
+import matplotlib
 import seaborn as sns
 sns.set('paper', style='white')
 
@@ -89,14 +90,28 @@ km_sat_med = calc_median_sat(km)
 ki_sat_med = calc_median_sat(ki)
 
 sat_joined = km_sat_med.join(ki_sat_med, how='inner', lsuffix='_sub', rsuffix='_inh')
-sat_joined = sat_joined.reindex_axis(sat_joined.mean(axis=1).sort_values(axis=0).index, axis=0)
+sat_joined = sat_joined.reindex_axis(sat_joined.mean(axis=1).sort_values(axis=0, ascending=False).index, axis=0)
 
 fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+clb = matplotlib.colorbar.make_axes(ax)
 
-sns.heatmap(sat_joined, ax=ax, mask=sat_joined.isnull(),
-            cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis')
-plt.xticks(rotation=90)
-plt.yticks(rotation=0)
+sns.heatmap(sat_joined, ax=ax, mask=sat_joined.isnull(), annot=True, 
+            cbar=True, vmin=0, vmax=1, cmap='viridis',  cbar_ax=clb[0],
+            annot_kws={'fontdict': {'fontsize': 12}})
+
+# change xtick labels back to the original strings (without the suffixes) and increase the font size
+ax.set_xticklabels(list(ki_sat_med.columns) + list(ki_sat_med.columns), fontsize=12)
+
+# rotate the metabolite names back to horizontal, and increase the font size
+ax.set_yticklabels(sat_joined.index, rotation=0, fontsize=12)
+
+ax.set_xlabel('growth condition', fontsize=16)
+ax.set_ylabel('')
+ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
+clb[0].set_ylabel('saturation', fontsize=16)
+clb[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
+
+ax.axvline(sat_joined.shape[0]/2, 0, 1)
 
 fig.savefig(os.path.join(S.RESULT_DIR, 'heatmap_saturation_median.svg'))
 
