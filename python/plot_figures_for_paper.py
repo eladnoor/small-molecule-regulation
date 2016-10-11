@@ -4,12 +4,11 @@ Created on Sun Oct  9 17:37:42 2016
 
 @author: noore
 """
-import zipfile
 from bigg import BiGG
 from kegg import KEGG
 import settings
 import pandas as pd
-import os, re
+import os, re, zipfile, json
 import seaborn as sns
 import numpy as np
 from matplotlib_venn import venn3
@@ -270,9 +269,13 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.png'), dpi=600)
         
-        #res = {'inhibitors': inh_met, 'activators': act_met, 'all_metabolites': mets_in_cytoplasm,
-        #       'inhibited': inh_ec, 'activated': act_ec, 'all_reactions': native_ec}
-        return native_interactions
+        res = {'inhibitors': list(inh_met), 'activators': list(act_met),
+               'all_metabolites': list(mets_in_cytoplasm),
+               'inhibited': list(inh_ec), 'activated': list(act_ec),
+               'all_reactions': list(native_ec)}
+        with open(os.path.join(settings.RESULT_DIR, 'venn_groups.json'), 'w') as fp:
+            json.dump(res, fp, indent=4)
+        native_interactions.to_csv(open(os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv'), 'w'))
 
     def draw_cdf_plots(self, linewidth=2):
         """
@@ -350,6 +353,6 @@ if __name__ == "__main__":
     #fp.map_ligands()
     #fp.draw_median_heatmaps()
     #fp.draw_full_heapmats()
-    native_interactions = fp.draw_venn_diagrams()
+    fp.draw_venn_diagrams()
     #fp.draw_cdf_plots()
     
