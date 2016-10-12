@@ -10,7 +10,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-import bigg
+from bigg import BiGG
 import numpy as np
 from matplotlib_venn import venn3
 
@@ -56,8 +56,9 @@ shadow_df.columns = map(str.lower, shadow_df.columns)
 
 # map the EC numbers to the bigg.reaction IDs
 model_reactions = S.get_reaction_table_from_xls()
-bigg2ec = bigg.get_reaction_df()
-chebi2bigg = bigg.get_metabolite_df()
+bigg = BiGG()
+bigg2ec = bigg.reaction_df
+chebi2bigg = bigg.metabolite_df
 
 # change all reaction IDs to lower-case (apparently the case standards have changed
 # since the model was published).

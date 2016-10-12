@@ -7,8 +7,9 @@ Created on Sun Oct  9 17:37:42 2016
 from bigg import BiGG
 from kegg import KEGG
 import settings
+import map_ligands
 import pandas as pd
-import os, re, zipfile, json
+import os, re, json
 import seaborn as sns
 import numpy as np
 from matplotlib_venn import venn3
@@ -32,38 +33,9 @@ class FigurePlotter(object):
         self.model, self.S = settings.get_ecoli_json()    
         
         if rebuild_cache:
-            self.map_ligands()
+            map_ligands.rebuild_cache()
         
         self.get_data()
-    
-    def map_ligands(self):
-        """
-            Prepare the cache files that will be used later for making the other
-            plots.
-        """
-        # make a concensus table of the BRENDA ligand IDs, ChEBIs, BiGG and KEGG.
-        
-        # read the ligand ID table and remove the word "chebi:" from the beginning of the string
-        brenda2chebi = settings.get_data_df('ligand_ids')[['LigandID', 'chebiID']]
-        brenda2chebi = brenda2chebi.rename(columns={'chebiID': 'ChEBI'}).set_index('LigandID')
-        brenda2chebi['ChEBI'] = brenda2chebi['ChEBI'].apply(lambda s: s[6:] if pd.notnull(s) else pd.np.nan)
-        
-        # join the bigg IDs into the ligand table (using the ChEBIs)
-        chebi2bigg = self.bigg.metabolite_df
-        ligand_df = brenda2chebi.join(chebi2bigg, how='left', on='ChEBI')
-        
-        # combine the mapping from CIDs to ChEBIs with the mapping from ligand_IDs
-        # to ChEBIs to get a direct mapping from BRENDA to KEGG compound IDs
-        chebi2kegg = self.kegg.get_kegg_df()
-        chebi2kegg.rename(columns={'name': 'Compound'}, inplace=True)
-        chebi2kegg = chebi2kegg.groupby('ChEBI').first()
-        ligand_df = ligand_df.join(chebi2kegg, how='left', on='ChEBI')
-        
-        brenda_zip = zipfile.ZipFile(open(settings.BRENDA_ZIP_FNAME, 'r'))
-        for d in settings.BRENDA_INPUT:
-            df = pd.DataFrame.from_csv(brenda_zip.open(d['fname'] + '.csv', 'r'), index_col=None)
-            df = df.join(ligand_df, how='left', on='LigandID')
-            settings.write_cache(d['fname'], df)
     
     def draw_sankey_diagram(self):
         pass
@@ -350,9 +322,8 @@ if __name__ == "__main__":
     fp = FigurePlotter()
     
     #fp.draw_sankey_diagram()
-    #fp.map_ligands()
-    #fp.draw_median_heatmaps()
-    #fp.draw_full_heapmats()
+    fp.draw_median_heatmaps()
+    fp.draw_full_heapmats()
     fp.draw_venn_diagrams()
-    #fp.draw_cdf_plots()
+    fp.draw_cdf_plots()
     

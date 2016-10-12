@@ -29,13 +29,13 @@ class BiGG(object):
                 database_links = json.loads(row[4])
                 if 'CHEBI' in database_links:
                     for d in database_links['CHEBI']:
-                        bigg2chebi.append((bigg_id, d['id'][6:]))
+                        bigg2chebi.append((bigg_id, d['id']))
         
-        df = pd.DataFrame(bigg2chebi, columns=['bigg.metabolite', 'ChEBI'])
+        df = pd.DataFrame(bigg2chebi, columns=['bigg.metabolite', 'chebiID'])
     
         # keep only metabolites with a _c suffix (i.e. cytoplasmic)
         keep_idx = df['bigg.metabolite'].apply(lambda s: s[-2:] == '_c')
-        return df[keep_idx].groupby('ChEBI').first()
+        return df[keep_idx].groupby('chebiID').first()
     
     @staticmethod
     def _get_reaction_df():

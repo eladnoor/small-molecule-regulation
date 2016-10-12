@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import imp
 import json
 import inspect
+import urllib2
+from contextlib import closing
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 #SCRIPT_DIR = os.path.dirname(os.path.abspath(main.__file__))
@@ -22,6 +24,7 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
 RESULT_DIR = os.path.join(BASE_DIR, 'res')
 
+CHEBI2INCHI_URL = 'ftp://ftp.ebi.ac.uk/pub/databases/chebi/Flat_file_tab_delimited/chebiId_inchi.tsv'
 KEGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'kegg2chebi.csv')
 BIGG_METABOLITE_FNAME = os.path.join(DATA_DIR, 'bigg_models_metabolites.txt')
 BIGG_REACTION_FNAME = os.path.join(DATA_DIR, 'bigg_models_reactions.txt')
@@ -89,3 +92,11 @@ def get_ecoli_json():
     S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
     S.fillna(0, inplace=True)
     return model, S
+    
+def get_chebi_inchi_df():
+    with closing(urllib2.urlopen(CHEBI2INCHI_URL, 'file')) as r:
+        chebi_inchi_df = pd.read_csv(r, sep='\t')
+    chebi_inchi_df['chebiID'] = chebi_inchi_df['CHEBI_ID'].apply(lambda c: 'CHEBI:%d' % c)
+    chebi_inchi_df.rename(columns={'InChI':'inchi'}, inplace=True)
+    chebi_inchi_df.set_index('CHEBI_ID', inplace=True)
+    return chebi_inchi_df

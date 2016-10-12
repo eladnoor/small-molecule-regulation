@@ -42,15 +42,15 @@ class KEGG(object):
             cid2chebi.set_index('KEGG_ID', inplace=True)
             cid2chebi.index.name = 'KEGG_ID'
             
-            cid2chebi['ChEBI'] = None
+            cid2chebi['chebiID'] = None
             for cid in cid2chebi.index:
-                ChEBI = re.findall('ChEBI: ([\d\s]+)\n', KEGG.bioservices_kegg.get(cid))
-                if len(ChEBI) == 0:
+                chebi = re.findall('ChEBI: ([\d\s]+)\n', KEGG.bioservices_kegg.get(cid))
+                if len(chebi) == 0:
                     print 'Cannot find a ChEBI for %s' % cid
-                elif len(ChEBI) > 1:
+                elif len(chebi) > 1:
                     print 'Error parsing compound %s' % cid
                 else:
-                    cid2chebi.at[cid, 'ChEBI'] = ChEBI[0]
+                    cid2chebi.at[cid, 'chebiID'] = chebi[0]
             
             cid2chebi.to_csv(settings.KEGG2CHEBI_FNAME)
         
@@ -58,17 +58,18 @@ class KEGG(object):
                                         header=0, index_col=None)
         
         # remove compounds that have no ChEBI:
-        kegg_df = kegg_df[~kegg_df['ChEBI'].isnull()]
+        kegg_df = kegg_df[~kegg_df['chebiID'].isnull()]
         kegg_df.set_index('KEGG_ID', inplace=True)
         
         # split compounds with more than one ChEBI to several rows:
         tmp_chebi_df = pd.DataFrame(index=kegg_df.index, 
-                                    data=kegg_df['ChEBI'].apply(str.split).tolist())
+                                    data=kegg_df['chebiID'].apply(str.split).tolist())
         kegg_df = kegg_df.join(tmp_chebi_df)
-        kegg_df = kegg_df.drop('ChEBI', axis=1)
+        kegg_df = kegg_df.drop('chebiID', axis=1)
         kegg_df['KEGG_ID'] = kegg_df.index
-        kegg_df = pd.melt(kegg_df, id_vars=['KEGG_ID', 'name'], value_name='ChEBI')
+        kegg_df = pd.melt(kegg_df, id_vars=['KEGG_ID', 'name'], value_name='chebiID')
         kegg_df = kegg_df.drop('variable', axis=1)
-        kegg_df = kegg_df[~kegg_df['ChEBI'].isnull()]
+        kegg_df = kegg_df[~kegg_df['chebiID'].isnull()]
+        kegg_df['chebiID'] = kegg_df['chebiID'].apply(lambda c: 'CHEBI:' + c)
         kegg_df.sort_values('KEGG_ID', inplace=True)
         return kegg_df
