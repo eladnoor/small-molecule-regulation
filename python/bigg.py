@@ -26,16 +26,18 @@ class BiGG(object):
             csv_reader.next()
             for row in csv_reader:
                 bigg_id = row[0]
+                universal_bigg_id = row[1]
                 database_links = json.loads(row[4])
                 if 'CHEBI' in database_links:
                     for d in database_links['CHEBI']:
-                        bigg2chebi.append((bigg_id, d['id']))
+                        bigg2chebi.append((bigg_id, universal_bigg_id, d['id']))
         
-        df = pd.DataFrame(bigg2chebi, columns=['bigg.metabolite', 'chebiID'])
+        df = pd.DataFrame(bigg2chebi, columns=['bigg.metabolite with suffix',
+                                               'bigg.metabolite', 'chebiID'])
     
-        # keep only metabolites with a _c suffix (i.e. cytoplasmic)
-        keep_idx = df['bigg.metabolite'].apply(lambda s: s[-2:] == '_c')
-        return df[keep_idx].groupby('chebiID').first()
+        # keep only the first instance of each chebiID (to avoid
+        # duplicating BRENDA data)
+        return df[['bigg.metabolite', 'chebiID']].groupby('chebiID').first()
     
     @staticmethod
     def _get_reaction_df():

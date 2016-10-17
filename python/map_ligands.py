@@ -9,6 +9,7 @@ Created on Tue Mar 15 14:26:52 2016
 import pandas as pd
 import settings
 import zipfile
+import os
 from kegg import KEGG
 from bigg import BiGG
 
@@ -23,10 +24,7 @@ def map_brenda_to_chebi():
     
     ligand_id_table.sort_values('LigandID', inplace=True)
     
-    # Add NAD(P)+ to the mapping manually
-    ligand_id_table.loc[ligand_id_table['LigandID'] == 7, 'chebiID'] = 'CHEBI:15846'  # NAD+
-    ligand_id_table.loc[ligand_id_table['LigandID'] == 10, 'chebiID'] = 'CHEBI:18009' # NADP+
-    ligand_id_table.loc[ligand_id_table['LigandID'] == 161, 'chebiID'] = 'CHEBI:33191' # KCN
+    # Add remove all references to ChEBI 33206, which is probably a mistake
     ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:33206', 'chebiID'] = None
     
     # divide the table into three groups:
@@ -34,7 +32,6 @@ def map_brenda_to_chebi():
     # 2) ligands that not mapped, but have an InChI so we can try to map them
     # 3) orphan ligands, that have no ChEBI nor InChI
     mapped_ligands = ligand_id_table[~pd.isnull(ligand_id_table['chebiID'])]
-    mapped_ligands = mapped_ligands[['LigandID', 'chebiID']].groupby('LigandID').first()
     
     unmapped_ligands = ligand_id_table[pd.isnull(ligand_id_table['chebiID']) & (~pd.isnull(ligand_id_table['inchi']))]
     unmapped_ligands = unmapped_ligands.drop('chebiID', axis=1)
@@ -50,11 +47,11 @@ def map_brenda_to_chebi():
     chebi_inchi_df = settings.get_chebi_inchi_df()
     chebi_inchi_df.groupby('inchi').first()
     newly_mapped_ligands = unmapped_ligands.join(chebi_inchi_df.groupby('inchi').first(), on='inchi', how='inner')
-    newly_mapped_ligands = newly_mapped_ligands[['LigandID', 'chebiID']].groupby('LigandID').first()
     
     print "There are %d newly mapped ligands, using direct mapping by InChI to ChEBI" % newly_mapped_ligands.shape[0]
     
     brenda2chebi = pd.concat([mapped_ligands, newly_mapped_ligands])
+    brenda2chebi = brenda2chebi[['LigandID', 'chebiID']].groupby('LigandID').first()
     brenda2chebi.index.name = 'LigandID'
     
     return brenda2chebi
@@ -71,6 +68,12 @@ def rebuild_cache():
     kegg = KEGG()
     chebi2bigg = bigg.metabolite_df
     ligand_df = brenda2chebi.join(chebi2bigg, how='left', on='chebiID')
+
+    # load the manually mapped ligand table
+    manually_mapped_ligand_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR, 'ligand_ids_manual_mapping.csv'), index_col=0)
+    print "There are %d manually mapped ligands" % manually_mapped_ligand_df.shape[0]
+    for lid in manually_mapped_ligand_df.index:
+        ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']] = manually_mapped_ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']]
     
     # combine the mapping from CIDs to ChEBIs with the mapping from ligand_IDs
     # to ChEBIs to get a direct mapping from BRENDA to KEGG compound IDs

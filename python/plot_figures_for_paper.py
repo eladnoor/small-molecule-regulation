@@ -14,10 +14,11 @@ import seaborn as sns
 import numpy as np
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
+from matplotlib.sankey import Sankey
 import matplotlib
 sns.set('paper', style='white')
 
-ORGNAISM = 'Escherichia coli'
+ORGANISM = 'Escherichia coli'
 SAT_FORMULA_S = r'$[S]/\left([S] + K_S\right)$'
 SAT_FORMULA_M = r'$[S]/\left([S] + K_M\right)$'
 SAT_FORMULA_I = r'$[S]/\left([S] + K_I\right)$'
@@ -38,10 +39,29 @@ class FigurePlotter(object):
         self.get_data()
     
     def draw_sankey_diagram(self):
-        pass
+        all_brenda_interactions = 100000 # both activation and inhibition
+        
+        # TODO: this is just a fake figure. Needs to be replaced with real data
+        fig, ax = plt.subplots(1, 1, figsize=(6, 6))
+        sankey = Sankey(ax=ax, scale=0.01, offset=0.2, head_angle=180,
+                        format='%.0f', unit='%')
+        sankey.add(flows=[25, 0, 60, -10, -20, -5, -15, -10, -40],
+                   labels=['', '', '', 'First', 'Second', 'Third', 'Fourth',
+                           'Fifth', 'Hurray!'],
+                   orientations=[-1, 1, 0, 1, 1, 1, -1, -1, 0],
+                   pathlengths=[0.25, 0.25, 0.25, 0.25, 0.25, 0.6, 0.25, 0.25,
+                                0.25],
+                   patchlabel="Widget\nA",
+                   alpha=0.2, lw=2.0)  # Arguments to matplotlib.patches.PathPatch()
+        diagrams = sankey.finish()
+        diagrams[0].patch.set_facecolor('#37c959')
+        diagrams[0].texts[-1].set_color('r')
+        diagrams[0].text.set_fontweight('bold')
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'sankey.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'sankey.png'), dpi=600)
     
     @staticmethod
-    def get_kinetic_param(name, value_col=None, organism=ORGNAISM):
+    def get_kinetic_param(name, value_col=None, organism=ORGANISM):
         k = settings.read_cache(name)
         
         # filter by organsim
@@ -49,11 +69,12 @@ class FigurePlotter(object):
     
         # filter out mutated enzymes
         if 'Commentary' in k.columns:
-            k = k[~(k['Commentary'].str.find('mutant') > 0)]
-            k = k[~(k['Commentary'].str.find('mutation') > 0)]
+            k = k[k['Commentary'].str.find('mutant') == -1]
+            k = k[k['Commentary'].str.find('mutation') == -1]
         
         # remove values with unmatched ligand
         k = k[pd.notnull(k['bigg.metabolite'])]
+        k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
     
         if value_col is not None:
             # remove entries lacking quantitative data
@@ -76,8 +97,7 @@ class FigurePlotter(object):
                     var_name='growth condition', value_name='concentration')
         
         k['saturation'] = k['concentration'] / (k['concentration'] + k[value_col])
-        k['met'] = k['bigg.metabolite'].apply(lambda x: x[:-2])
-        k['met:EC'] = k['met'].str.cat(k['EC_number'], sep=':')
+        k['met:EC'] = k['bigg.metabolite'].str.cat(k['EC_number'], sep=':')
         return k
     
     @staticmethod
@@ -90,14 +110,17 @@ class FigurePlotter(object):
                 K_df    - a DataFrame with three columns: EC_number, bigg.metabolite, Value
                 conc_df - a DataFrame with 
         """
-        fc_med = k.groupby(('met', 'growth condition')).median()[['saturation']].reset_index()
-        fc_med = fc_med.pivot('met', 'growth condition', 'saturation')
+        fc_med = k.groupby(('bigg.metabolite', 'growth condition')).median()[['saturation']].reset_index()
+        fc_med = fc_med.pivot('bigg.metabolite', 'growth condition', 'saturation')
         return fc_med.sort_index(axis=0)
     
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
         _df.index.name = 'bigg.metabolite'
         self.met_conc_mean = _df.iloc[:, 1:9]
+        
+        # remove the _c suffix from the compound names
+        self.met_conc_mean.index = map(lambda s: s[0:-2], self.met_conc_mean.index)
         #met_conc_std = _df.iloc[:, 10:]
         
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
@@ -214,16 +237,18 @@ class FigurePlotter(object):
         # keep only interactions that are with a native EC number
         native_interactions = self.interactions[self.interactions['EC_number'].isin(native_ec)]
 
-        # make a list of all the metabolites that are cytoplasmic (end with _c)
+        # make a list of all the metabolites that are cytoplasmic
         mets_in_cytoplasm = set()       
         for d in self.model['metabolites']:
             met = d['id']
             if d['compartment'] == u'c':
-                mets_in_cytoplasm.add(met.lower())
+                mets_in_cytoplasm.add(met.lower()[:-2])
         
         # keep only interactions that involve a small-molecule that is native
         # in the cytoplasm
         native_interactions = native_interactions[native_interactions['bigg.metabolite'].isin(mets_in_cytoplasm)]
+        
+        print "found %d native interactions in %s" % (native_interactions.shape[0], ORGANISM)
         
         ind_inh = native_interactions['type']=='inhibition'
         ind_act = native_interactions['type']=='activation'
@@ -233,11 +258,17 @@ class FigurePlotter(object):
         inh_ec = set(native_interactions.loc[ind_inh, 'EC_number'])
         act_ec = set(native_interactions.loc[ind_act, 'EC_number'])
         
-        fig, axs = plt.subplots(2, 1, figsize=(4, 7))
+        fig, axs = plt.subplots(1, 2, figsize=(7, 5))
         venn3_sets(inh_met, act_met, mets_in_cytoplasm,
                    set_labels=('inhibitors', 'activators', 'E. coli metabolites'), ax=axs[0])
         venn3_sets(inh_ec, act_ec, native_ec,
                    set_labels=('inhibited', 'activated', 'E. coli reactions'), ax=axs[1])
+        axs[0].annotate('a', xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=20)
+        axs[1].annotate('b', xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=20)
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.png'), dpi=600)
         
@@ -315,6 +346,90 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'saturation_histogram.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'saturation_histogram.png'), dpi=600)
 
+    def draw_2D_histograms(self, tax2use='kingdom', minsize=10):
+        """
+            Draw 2D histograms of the number of activating and inhibiting reactions
+            grouped by metabolite and grouped by reaction
+        """
+        
+        def plot_2d_hist(data, xlabel, ylabel, ax, xmax, ymax):
+            """
+                plot the histogram as a heatmap, and make sure
+                empty bins are easily distinguishable from ones that have
+                at least 1 hit.
+            """
+            x = data[xlabel]
+            y = data[ylabel]
+            bins = (np.arange(0, xmax+2), np.arange(0, ymax+2))
+            H, _, _ = np.histogram2d(x, y, bins=bins)
+            # in a heatmap, the matrix columns become rows and vice versa
+            # so we use H.T instead of H
+            sns.heatmap(np.log2(H.T), mask=(H.T==0), ax=ax, annot=False, 
+                        cbar=True, vmin=0, vmax=8, cmap='viridis')
+            ax.invert_yaxis()
+            ax.set_xlabel(xlabel)
+            ax.set_ylabel(ylabel)
+            ax.set_xticks(0.5+np.arange(0, xmax+1, 5))
+            ax.set_xticklabels(np.arange(0, xmax+1, 5), rotation=0)
+            
+            cax = plt.gcf().axes[-1]
+            cax.set_yticks(np.arange(0, 9, 1))
+            cax.set_yticklabels(2**np.arange(0, 9, 1))
+            
+            for i in data.index:
+                x_i = data.at[i, xlabel]
+                y_i = data.at[i, ylabel]
+                if (x_i > 12 or y_i > 5) and (H[x_i, y_i] == 1):
+                    #print i, x_i, y_i, H[x_i, y_i]
+                    ax.annotate(i, xy=(x_i, ymax-y_i), xytext=(x_i+1, ymax-y_i-1),
+                                ha='center', va='top', size=6,
+                                textcoords='data')
+            
+
+        # join interaction table with bigg.reaction IDs (using EC numbers)
+        # and keep only one copy of each reaction-metabolite pair
+        bigg_effectors = self.interactions.join(self.bigg.reaction_df,
+                                                how='inner', on='EC_number')
+        cols = ('bigg.reaction', 'bigg.metabolite')
+        bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()
+        
+        # add columns for counting the positive and negative interactions
+        n_act_label = 'Number of activating interactions'        
+        n_inh_label = 'Number of inhibiting interactions'
+        
+        bigg_effectors[n_act_label] = 0
+        bigg_effectors[n_inh_label] = 0
+        bigg_effectors.loc[bigg_effectors['type'] == 'activation', n_act_label] = 1
+        bigg_effectors.loc[bigg_effectors['type'] == 'inhibition', n_inh_label] = 1
+        
+        grouped_by_met = bigg_effectors.groupby('bigg.metabolite').sum()
+        grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
+        
+        # plot the data as 2D histograms
+        
+        fig, axs = plt.subplots(2, 1, figsize=(7, 5), sharex=False)
+        axs[0].annotate('grouped by metabolite', xy=(0.5, 0.98), 
+                        xycoords='axes fraction', ha='center',
+                        va='top', size=12)
+        axs[1].annotate('grouped by reaction', xy=(0.5, 0.98), 
+                        xycoords='axes fraction', ha='center',
+                        va='top', size=12)
+        axs[0].annotate('c', xy=(0.98, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=20)
+        axs[1].annotate('d', xy=(0.98, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=20)
+        xmax = max(grouped_by_met[n_inh_label].max(), grouped_by_rxn[n_inh_label].max())
+        ymax = max(grouped_by_met[n_act_label].max(), grouped_by_rxn[n_act_label].max())
+
+        plot_2d_hist(grouped_by_met, n_inh_label, n_act_label, axs[0], xmax, ymax)
+        axs[0].set_xlabel('')
+        plot_2d_hist(grouped_by_rxn, n_inh_label, n_act_label, axs[1], xmax, ymax)
+
+        fig.savefig(os.path.join(settings.RESULT_DIR, '2D_histograms.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, '2D_histograms.png'), dpi=600)
+
 ###############################################################################
 if __name__ == "__main__":
     
@@ -322,8 +437,9 @@ if __name__ == "__main__":
     fp = FigurePlotter()
     
     #fp.draw_sankey_diagram()
-    fp.draw_median_heatmaps()
-    fp.draw_full_heapmats()
+    #fp.draw_median_heatmaps()
+    #fp.draw_full_heapmats()
     fp.draw_venn_diagrams()
-    fp.draw_cdf_plots()
+    #fp.draw_cdf_plots()
+    fp.draw_2D_histograms()
     
