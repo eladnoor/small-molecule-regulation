@@ -14,7 +14,6 @@ import seaborn as sns
 import numpy as np
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
-from matplotlib.sankey import Sankey
 import matplotlib
 sns.set('paper', style='white')
 
@@ -38,44 +37,49 @@ class FigurePlotter(object):
         
         self.get_data()
     
-    def draw_sankey_diagram(self):
-        all_brenda_interactions = 100000 # both activation and inhibition
+    def get_native_EC_numbers(self):
+        # make a list of all the EC numbers which are mapped to a BiGG reaction 
+        # in the E. coli model, which in turn is mapped to at least one E. coli gene
+        rids_with_genes = set()       
+        for d in self.model['reactions']:
+            rid = d['id']
+            rule = d['gene_reaction_rule']
+            if re.search('b[0-9]+', rule) is not None:
+                rids_with_genes.add(rid.lower())
         
-        # TODO: this is just a fake figure. Needs to be replaced with real data
-        fig, ax = plt.subplots(1, 1, figsize=(6, 6))
-        sankey = Sankey(ax=ax, scale=0.01, offset=0.2, head_angle=180,
-                        format='%.0f', unit='%')
-        sankey.add(flows=[25, 0, 60, -10, -20, -5, -15, -10, -40],
-                   labels=['', '', '', 'First', 'Second', 'Third', 'Fourth',
-                           'Fifth', 'Hurray!'],
-                   orientations=[-1, 1, 0, 1, 1, 1, -1, -1, 0],
-                   pathlengths=[0.25, 0.25, 0.25, 0.25, 0.25, 0.6, 0.25, 0.25,
-                                0.25],
-                   patchlabel="Widget\nA",
-                   alpha=0.2, lw=2.0)  # Arguments to matplotlib.patches.PathPatch()
-        diagrams = sankey.finish()
-        diagrams[0].patch.set_facecolor('#37c959')
-        diagrams[0].texts[-1].set_color('r')
-        diagrams[0].text.set_fontweight('bold')
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'sankey.svg'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'sankey.png'), dpi=600)
-    
-    @staticmethod
-    def get_kinetic_param(name, value_col=None, organism=ORGANISM):
+        # use the self.bigg object to convert these BiGG IDs to EC numbers
+        bigg_reactions = self.bigg.reaction_df
+        native_ec = set(bigg_reactions[bigg_reactions['bigg.reaction'].isin(rids_with_genes)].index)
+        native_ec.add('2.3.3.16')
+        return native_ec
+
+    def get_kinetic_param(self, name, value_col=None, organism=ORGANISM, filter_using_model=True):
         k = settings.read_cache(name)
+        print "---------- %s -----------" % name
+        print "total BRENDA entries:               %8d" % (k.shape[0])
         
         # filter by organsim
         k = k[k['Organism'] == organism]
+        print "out of which are for E. coli:       %8d" % (k.shape[0])
     
         # filter out mutated enzymes
         if 'Commentary' in k.columns:
             k = k[k['Commentary'].str.find('mutant') == -1]
             k = k[k['Commentary'].str.find('mutation') == -1]
         
+        print "out of which are not mutants:       %8d" % (k.shape[0])
+        
         # remove values with unmatched ligand
         k = k[pd.notnull(k['bigg.metabolite'])]
         k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
     
+        if filter_using_model:
+            k = k[k['EC_number'].isin(self.get_native_EC_numbers())]        
+            print "out of which are native EC numbers: %8d" % k.shape[0]
+            print "out of which are unique met-EC:     %8d" % (k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0])
+            print "out of which are unique met:        %8d" % (k.groupby('bigg.metabolite').first().shape[0])
+            print "out of which are unique EC:         %8d" % (k.groupby('EC_number').first().shape[0])
+
         if value_col is not None:
             # remove entries lacking quantitative data
             k = k[k[value_col] > 0]
@@ -126,21 +130,32 @@ class FigurePlotter(object):
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
         self.met_conc_mean.rename(columns=colmap, inplace=True)
         
-        km_raw = FigurePlotter.get_kinetic_param('km', 'KM_Value')
-        self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value', self.met_conc_mean)
+        self.km_raw = self.get_kinetic_param('km', 'KM_Value')
+        self.km = FigurePlotter.calc_sat(self.km_raw, 'KM_Value', self.met_conc_mean)
+        self.km = self.km.join(self.bigg.reaction_df, on='EC_number', how='left')
         
-        ki_raw = FigurePlotter.get_kinetic_param('ki', 'KI_Value')
-        self.ki = FigurePlotter.calc_sat(ki_raw, 'KI_Value', self.met_conc_mean)
+        self.ki_raw = self.get_kinetic_param('ki', 'KI_Value')
+        self.ki = FigurePlotter.calc_sat(self.ki_raw, 'KI_Value', self.met_conc_mean)
+        self.ki = self.ki.join(self.bigg.reaction_df, on='EC_number', how='left')
     
-        self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_vs_conc.csv'))
-        self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_vs_conc.csv'))
+        self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
+        self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
 
-        act = FigurePlotter.get_kinetic_param('activating', None)
-        inh = FigurePlotter.get_kinetic_param('inhibiting', None)
+        act = self.get_kinetic_param('activating', None)
+        inh = self.get_kinetic_param('inhibiting', None)
         act['type'] = 'activation'
         inh['type'] = 'inhibition'
         self.interactions = pd.concat([act, inh])
-    
+        
+        # for legacy reasons, also calculate the km and ki tables, without
+        # filtering out the non-native EC reactions (in order to
+        # make the full heatmap)
+        km_raw_unfiltered = self.get_kinetic_param('km', 'KM_Value', filter_using_model=False)
+        self.km_unfiltered = FigurePlotter.calc_sat(km_raw_unfiltered, 'KM_Value', self.met_conc_mean)
+        
+        ki_raw_unfiltered = self.get_kinetic_param('ki', 'KI_Value', filter_using_model=False)
+        self.ki_unfiltered = FigurePlotter.calc_sat(ki_raw_unfiltered, 'KI_Value', self.met_conc_mean)
+        
     def draw_median_heatmaps(self):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
@@ -175,12 +190,18 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_median.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_median.png'), dpi=300)
     
-    def draw_full_heapmats(self):
+    def draw_full_heapmats(self, filter_using_model=True):
+        if filter_using_model:
+            km_pivoted = self.km.pivot('met:EC', 'growth condition', 'saturation')
+            ki_pivoted = self.ki.pivot('met:EC', 'growth condition', 'saturation')
+        else:
+            km_pivoted = self.km_unfiltered.pivot('met:EC', 'growth condition', 'saturation')
+            ki_pivoted = self.ki_unfiltered.pivot('met:EC', 'growth condition', 'saturation')
     
-        fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
-    
-        km_pivoted = self.km.pivot('met:EC', 'growth condition', 'saturation')
         km_pivoted = km_pivoted.reindex_axis(km_pivoted.mean(axis=1).sort_values(axis=0, ascending=True).index, axis=0)
+        ki_pivoted = ki_pivoted.reindex_axis(ki_pivoted.mean(axis=1).sort_values(axis=0, ascending=True).index, axis=0)
+
+        fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
         sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
                     cbar=False, vmin=0, vmax=1, cmap='viridis')
         ax0.set_xticklabels(list(km_pivoted.columns), fontsize=12, rotation=90)
@@ -189,8 +210,6 @@ class FigurePlotter(object):
         ax0.set_xlabel('growth condition', fontsize=16)
         ax0.set_ylabel('')
     
-        ki_pivoted = self.ki.pivot('met:EC', 'growth condition', 'saturation')
-        ki_pivoted = ki_pivoted.reindex_axis(ki_pivoted.mean(axis=1).sort_values(axis=0, ascending=True).index, axis=0)
         clb1 = matplotlib.colorbar.make_axes(ax1)
         sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
                     cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis', cbar_ax=clb1[0])
@@ -202,10 +221,13 @@ class FigurePlotter(object):
         clb1[0].set_ylabel('saturation', fontsize=16)
         clb1[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
         
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation.svg'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation.png'), dpi=100)
-        km_pivoted.to_csv(os.path.join(settings.RESULT_DIR, 'heatmap_km_saturation.csv'))
-        ki_pivoted.to_csv(os.path.join(settings.RESULT_DIR, 'heatmap_ki_saturation.csv'))
+        if filter_using_model:
+            fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation.svg'))
+            fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation.png'), dpi=200)
+            km_pivoted.to_csv(os.path.join(settings.RESULT_DIR, 'heatmap_km_saturation.csv'))
+            ki_pivoted.to_csv(os.path.join(settings.RESULT_DIR, 'heatmap_ki_saturation.csv'))
+        else:
+            fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_unfiltered.png'), dpi=100)
     
     def draw_venn_diagrams(self):
     
@@ -221,22 +243,6 @@ class FigurePlotter(object):
             venn3(subsets = (Abc, aBc, ABc, abC, AbC, aBC, ABC),
                   set_labels=set_labels, ax=ax)
         
-        # make a list of all the EC numbers which are mapped to a BiGG reaction 
-        # in the E. coli model, which in turn is mapped to at least one E. coli gene
-        rids_with_genes = set()       
-        for d in self.model['reactions']:
-            rid = d['id']
-            rule = d['gene_reaction_rule']
-            if re.search('b[0-9]+', rule) is not None:
-                rids_with_genes.add(rid.lower())
-        
-        # use the self.bigg object to convert these BiGG IDs to EC numbers
-        bigg_reactions = self.bigg.reaction_df
-        native_ec = set(bigg_reactions[bigg_reactions['bigg.reaction'].isin(rids_with_genes)].index)
-
-        # keep only interactions that are with a native EC number
-        native_interactions = self.interactions[self.interactions['EC_number'].isin(native_ec)]
-
         # make a list of all the metabolites that are cytoplasmic
         mets_in_cytoplasm = set()       
         for d in self.model['metabolites']:
@@ -246,7 +252,8 @@ class FigurePlotter(object):
         
         # keep only interactions that involve a small-molecule that is native
         # in the cytoplasm
-        native_interactions = native_interactions[native_interactions['bigg.metabolite'].isin(mets_in_cytoplasm)]
+        native_interactions = self.interactions[self.interactions['bigg.metabolite'].isin(mets_in_cytoplasm)]
+        native_ec = self.get_native_EC_numbers()        
         
         print "found %d native interactions in %s" % (native_interactions.shape[0], ORGANISM)
         
@@ -430,16 +437,37 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, '2D_histograms.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, '2D_histograms.png'), dpi=600)
 
+    def print_ccm_table(self):
+        ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME, index_col=None)
+        ccm_df.set_index('EC_number', inplace=True)
+        
+        # select only Ki values that involve CCM enzymes
+        ccm_ki = self.ki_raw.join(ccm_df, on='EC_number', how='inner')
+        ccm_ki['type'] = 'KI'
+        ccm_interactions = self.interactions.join(ccm_df, on='EC_number', how='inner')
+        ccm_interactions['KI_Value'] = None
+        
+        ccm_concat = pd.concat([ccm_ki, ccm_interactions])
+        ccm_concat.sort_values(['EC_number', 'bigg.metabolite', 'type'], inplace=True)
+        
+        ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
+        return ccm_concat
+
+
 ###############################################################################
 if __name__ == "__main__":
     
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
     
-    #fp.draw_sankey_diagram()
-    #fp.draw_median_heatmaps()
-    #fp.draw_full_heapmats()
     fp.draw_venn_diagrams()
-    #fp.draw_cdf_plots()
+
+    fp.draw_cdf_plots()
     fp.draw_2D_histograms()
+
+    fp.draw_median_heatmaps()
     
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
+
+    fp.print_ccm_table()

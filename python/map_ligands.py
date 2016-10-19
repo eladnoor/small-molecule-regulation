@@ -22,6 +22,8 @@ def map_brenda_to_chebi():
     with zipfile.ZipFile(open(settings.BRENDA_LIGAND_ID_FNAME, 'r')) as z:
         ligand_id_table = pd.read_csv(z.open('ligand_id_table.csv'), sep=',', escapechar='\\', quotechar='"')
     
+    ligand_id_names = ligand_id_table[['LigandID', 'LigandName']].groupby('LigandID').first().reset_index()
+    
     ligand_id_table.sort_values('LigandID', inplace=True)
     
     # Add remove all references to ChEBI 33206, which is probably a mistake
@@ -52,6 +54,8 @@ def map_brenda_to_chebi():
     
     brenda2chebi = pd.concat([mapped_ligands, newly_mapped_ligands])
     brenda2chebi = brenda2chebi[['LigandID', 'chebiID']].groupby('LigandID').first()
+    brenda2chebi = ligand_id_names.join(brenda2chebi, on='LigandID', how='left')
+    brenda2chebi.set_index('LigandID', inplace=True)
     brenda2chebi.index.name = 'LigandID'
     
     return brenda2chebi
@@ -67,7 +71,7 @@ def rebuild_cache():
     bigg = BiGG()
     kegg = KEGG()
     chebi2bigg = bigg.metabolite_df
-    ligand_df = brenda2chebi.join(chebi2bigg, how='left', on='chebiID')
+    ligand_df = brenda2chebi.join(chebi2bigg, on='chebiID', how='left')
 
     # load the manually mapped ligand table
     manually_mapped_ligand_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR, 'ligand_ids_manual_mapping.csv'), index_col=0)

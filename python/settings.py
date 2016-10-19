@@ -39,6 +39,7 @@ ECOLI_XLS_FNAME = os.path.join(DATA_DIR, 'inline-supplementary-material-2.xls')
 ECOLI_METAB_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
 ECOLI_PROT_FNAME = os.path.join(DATA_DIR, 'ecoli_proteins_schmidt2015.csv')
 ECOLI_FLUX_FNAME = os.path.join(DATA_DIR, 'ecoli_fluxes_fba.csv')
+ECOLI_CCM_FNAME = os.path.join(DATA_DIR, 'ecoli_ccm_ec_numbers.csv')
 
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
