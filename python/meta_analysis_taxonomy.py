@@ -28,8 +28,14 @@ def literaturestring( subdf ):
     uqlit = np.unique( litstring2.split(';') )
     return len(uqlit),';'.join(uqlit)
 
+# Set some parameters
 tax2use = 'kingdom'
 minsize = 10
+
+# Read in central carbon metabolism reactions
+ccm = S.read_cache('CCM_Reactions')
+ccm['EcoliGene'] = ccm.index
+ccm.index = ccm['EC']
 
 ki = S.read_cache('inhibiting')
 act = S.read_cache('activating')
@@ -70,6 +76,11 @@ act.index = [':'.join([act.at[row,'EC_number'], act.at[row,'LigandID'], act.at[r
 ki = ki[~ki.index.duplicated()]
 act = act[~act.index.duplicated()]
 
+# Remove instances of inhibition where "no inhibition" is mentioned
+noinhib_ix = [item for item in ki.index if 'no inhibition' not in str(ki.at[item,'Commentary']).lower() ]
+
+ki = ki.ix[noinhib_ix,:]
+
 # Now do some analysis
 ki_merge = ki.groupby(['EC_number','LigandID'])
 act_merge = act.groupby(['EC_number', 'LigandID'])
@@ -90,10 +101,12 @@ for dtype in ['ki','act']:
             res.at[ixname,'Type'] = dtype
             res.at[ixname,'EC_number'] = g[0]
             res.at[ixname,'LigandID'] = g[1]
-            res.at[ixname,'Compound'] = ';'.join(d2use.ix[ merge2use.groups[ g ],:]['Compound'].unique().astype(str))
+            #res.at[ixname,'Compound'] = ';'.join(d2use.ix[ merge2use.groups[ g ],:]['Compound'].unique().astype(str))
+            
             res.at[ixname,'TotalEntries'] = len(merge2use.groups[ g ] )
         
             subdf = d2use.ix[ merge2use.groups[ g ],:]
+            res.at[ixname,'Compound'] = ';'.join(subdf['LigandName'].unique())
             res.at[ixname,'Entropy'] = norm_entropy( subdf['taxonomy'].value_counts() )
             res.at[ixname,'Summary'] = summarystring( subdf['taxonomy'].value_counts() )
             
@@ -122,3 +135,14 @@ res.to_csv('../res/Regulation_by_taxon.csv')
 plt.plot( res['NullEntropy'],res['Entropy'],'o')
 plt.ylabel('Entropy')
 plt.xlabel('Null Entropy')
+
+# Reduce data to only the EC's in central carbon metabolism
+res_reduced = res[ res['EC_number'].isin(ccm['EC']) ]
+res_reduced['EcoliGene'] = np.nan
+for ii in res_reduced.index:
+    res_reduced.at[ii,'EColigene'] = ccm.at[ res_reduced.at[ii,'EC_number'],'EcoliGene' ]
+    
+# Keep only data with at least 10 references and ligand id 2 (= "more")
+res_reduced = res_reduced[ res_reduced['NumReferences'] >= 10]
+res_reduced = res_reduced[ res_reduced['LigandID'] != '2' ]
+res_reduced.to_csv('../res/Regulation_by_taxon_CCM.csv')

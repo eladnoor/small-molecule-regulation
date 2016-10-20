@@ -45,7 +45,8 @@ BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
                 {'fname': 'km',         'value_col': 'KM_Value'},
                 {'fname': 'activating', 'value_col': None},
-                {'fname': 'inhibiting', 'value_col': None},]
+                {'fname': 'inhibiting', 'value_col': None},
+                {'fname': 'CCM_Reactions', 'value_col': None} ]
 
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)

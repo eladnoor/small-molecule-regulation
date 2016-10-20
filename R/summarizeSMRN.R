@@ -68,3 +68,4 @@ rxnplot = ggplot(met,aes(Activating,Inhibiting,label = Name)) + stat_binhex(binw
 pdf(file = '../res/SMRN_Metabolite_Histogram.pdf',onefile=FALSE)
 ggMarginal(rxnplot,type = 'histogram')
 dev.off()
+
