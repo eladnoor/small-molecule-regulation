@@ -39,7 +39,7 @@ ccm.index = ccm['EC']
 
 ki = S.read_cache('inhibiting')
 act = S.read_cache('activating')
-tax = S.read_cache('TaxonomicData_temp')
+tax = S.read_cache('TaxonomicData')
 
 # Drop entries without organism
 ki = ki[pd.notnull(ki['Organism'])]
