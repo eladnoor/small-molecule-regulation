@@ -62,9 +62,6 @@ def map_brenda_to_chebi():
 
 def rebuild_cache():
     # read the ligand ID table and remove the word "chebi:" from the beginning of the string
-    #brenda2chebi = settings.get_data_df('ligand_ids')[['LigandID', 'chebiID']]
-    #brenda2chebi = brenda2chebi.set_index('LigandID')
-    #brenda2chebi['chebiID'] = brenda2chebi['chebiID'].apply(lambda s: s[6:] if pd.notnull(s) else pd.np.nan)
     brenda2chebi = map_brenda_to_chebi()
     
     # join the bigg IDs into the ligand table (using the ChEBIs)
@@ -86,11 +83,44 @@ def rebuild_cache():
     chebi2kegg = chebi2kegg.groupby('chebiID').first()
     ligand_df = ligand_df.join(chebi2kegg, how='left', on='chebiID')
     
+    # map the BRENDA data that has nothing to do with regulation (i.e. MM-kinetics)
     brenda_zip = zipfile.ZipFile(open(settings.BRENDA_ZIP_FNAME, 'r'))
-    for d in settings.BRENDA_INPUT:
-        df = pd.DataFrame.from_csv(brenda_zip.open(d['fname'] + '.csv', 'r'), index_col=None)
+    for d in ['km', 'turnover']:
+        df = pd.DataFrame.from_csv(brenda_zip.open(d + '.csv', 'r'), index_col=None)
         df = df.join(ligand_df, how='left', on='LigandID')
-        settings.write_cache(d['fname'], df)
+        settings.write_cache(d, df)
+
+    act_df = pd.DataFrame.from_csv(brenda_zip.open('activating.csv', 'r'), index_col=None)
+    inh_df = pd.DataFrame.from_csv(brenda_zip.open('inhibiting.csv', 'r'), index_col=None)
+    ki_df = pd.DataFrame.from_csv(brenda_zip.open('ki.csv', 'r'), index_col=None)
+    act_df['Mode'] = '+'
+    ki_df['Mode'] = '-'
+    inh_df['Mode'] = '-'
+    reg_df = pd.concat([act_df, inh_df, ki_df])
+    reg_df = reg_df.join(ligand_df, how='left', on='LigandID') # we also need to map the ecocyc data using chebis
+    reg_df['Source'] = 'BRENDA'
+    reg_df['Commentary'].fillna('', inplace=True)
+
+    # load the EcoCyc data and merge with BRENDA
+    ecocyc_reg_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR, 'EcoCycRegulation.csv'), index_col=None)
+    ecocyc_reg_df['Commentary'] = ecocyc_reg_df['ReactionID'].map(lambda i : 'ReactionID=%s' % i)
+    ecocyc_reg_df['Source'] = 'EcoCyc'
+    ecocyc_reg_df.drop('ReactionID', axis=1, inplace=True)
+    ecocyc_reg_df = ecocyc_reg_df.join(chebi2bigg, how='left', on='chebiID')
+    ecocyc_reg_df = ecocyc_reg_df.join(chebi2kegg, how='left', on='chebiID')
+    reg_df = pd.concat([reg_df, ecocyc_reg_df])
+
+    settings.write_cache('regulation', reg_df)
+    return reg_df
 
 if __name__ == '__main__':
-    rebuild_cache()
+    reg_df = rebuild_cache()
+    
+    #%% print out some statistics
+    ecoli = reg_df[(reg_df['Organism'] == 'Escherichia coli') & (~pd.isnull(reg_df['bigg.metabolite']))]
+    a = ecoli[['EC_number', 'bigg.metabolite', 'Mode', 'Source']]
+    print a.drop_duplicates().groupby(('Source', 'Mode')).count()
+    
+    b = ecoli[~pd.isnull(ecoli['KI_Value'])]
+    b = b[['EC_number', 'bigg.metabolite', 'Source']]
+    print b.drop_duplicates().groupby(('Source')).count()

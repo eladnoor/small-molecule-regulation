@@ -53,7 +53,7 @@ class FigurePlotter(object):
         native_ec.add('2.3.3.16')
         return native_ec
 
-    def get_kinetic_param(self, name, value_col=None, organism=ORGANISM, filter_using_model=True):
+    def get_kinetic_param(self, name, organism=ORGANISM, filter_using_model=True):
         k = settings.read_cache(name)
         print "---------- %s -----------" % name
         print "total BRENDA entries:               %8d" % (k.shape[0])
@@ -63,10 +63,10 @@ class FigurePlotter(object):
         print "out of which are for E. coli:       %8d" % (k.shape[0])
     
         # filter out mutated enzymes
-        if 'Commentary' in k.columns:
-            k = k[k['Commentary'].str.find('mutant') == -1]
-            k = k[k['Commentary'].str.find('mutation') == -1]
-        
+        k = k[(pd.isnull(k['Commentary'])) |
+              ((k['Commentary'].str.find('mutant') == -1) &
+               (k['Commentary'].str.find('mutation') == -1))]
+    
         print "out of which are not mutants:       %8d" % (k.shape[0])
         
         # remove values with unmatched ligand
@@ -80,12 +80,7 @@ class FigurePlotter(object):
             print "out of which are unique met:        %8d" % (k.groupby('bigg.metabolite').first().shape[0])
             print "out of which are unique EC:         %8d" % (k.groupby('EC_number').first().shape[0])
 
-        if value_col is not None:
-            # remove entries lacking quantitative data
-            k = k[k[value_col] > 0]
-            return k[['EC_number', 'bigg.metabolite', value_col]]
-        else:
-            return k[['EC_number', 'bigg.metabolite']]        
+        return k
     
     @staticmethod
     def calc_sat(k, value_col, conc_df):
@@ -130,31 +125,28 @@ class FigurePlotter(object):
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
         self.met_conc_mean.rename(columns=colmap, inplace=True)
         
-        self.km_raw = self.get_kinetic_param('km', 'KM_Value')
+        self.km_raw = self.get_kinetic_param('km')
+        self.km_raw = self.km_raw[self.km_raw['KM_Value'] > 0]
         self.km = FigurePlotter.calc_sat(self.km_raw, 'KM_Value', self.met_conc_mean)
         self.km = self.km.join(self.bigg.reaction_df, on='EC_number', how='left')
         
-        self.ki_raw = self.get_kinetic_param('ki', 'KI_Value')
-        self.ki = FigurePlotter.calc_sat(self.ki_raw, 'KI_Value', self.met_conc_mean)
+        self.regulation = self.get_kinetic_param('regulation')
+        self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
+                                         'KI_Value', self.met_conc_mean)
         self.ki = self.ki.join(self.bigg.reaction_df, on='EC_number', how='left')
     
         self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
         self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
 
-        act = self.get_kinetic_param('activating', None)
-        inh = self.get_kinetic_param('inhibiting', None)
-        act['type'] = 'activation'
-        inh['type'] = 'inhibition'
-        self.interactions = pd.concat([act, inh])
-        
         # for legacy reasons, also calculate the km and ki tables, without
         # filtering out the non-native EC reactions (in order to
         # make the full heatmap)
-        km_raw_unfiltered = self.get_kinetic_param('km', 'KM_Value', filter_using_model=False)
+        km_raw_unfiltered = self.get_kinetic_param('km', filter_using_model=False)
         self.km_unfiltered = FigurePlotter.calc_sat(km_raw_unfiltered, 'KM_Value', self.met_conc_mean)
         
-        ki_raw_unfiltered = self.get_kinetic_param('ki', 'KI_Value', filter_using_model=False)
-        self.ki_unfiltered = FigurePlotter.calc_sat(ki_raw_unfiltered, 'KI_Value', self.met_conc_mean)
+        regulation_unfiltered = self.get_kinetic_param('regulation', filter_using_model=False)
+        self.ki_unfiltered = FigurePlotter.calc_sat(regulation_unfiltered[~pd.isnull(regulation_unfiltered['KI_Value'])],
+                                                    'KI_Value', self.met_conc_mean)
         
     def draw_median_heatmaps(self):
         """
@@ -252,13 +244,13 @@ class FigurePlotter(object):
         
         # keep only interactions that involve a small-molecule that is native
         # in the cytoplasm
-        native_interactions = self.interactions[self.interactions['bigg.metabolite'].isin(mets_in_cytoplasm)]
+        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytoplasm)]
         native_ec = self.get_native_EC_numbers()        
         
         print "found %d native interactions in %s" % (native_interactions.shape[0], ORGANISM)
         
-        ind_inh = native_interactions['type']=='inhibition'
-        ind_act = native_interactions['type']=='activation'
+        ind_inh = native_interactions['Mode']=='-'
+        ind_act = native_interactions['Mode']=='+'
 
         inh_met = set(native_interactions.loc[ind_inh, 'bigg.metabolite'])
         act_met = set(native_interactions.loc[ind_act, 'bigg.metabolite'])
@@ -395,8 +387,8 @@ class FigurePlotter(object):
 
         # join interaction table with bigg.reaction IDs (using EC numbers)
         # and keep only one copy of each reaction-metabolite pair
-        bigg_effectors = self.interactions.join(self.bigg.reaction_df,
-                                                how='inner', on='EC_number')
+        bigg_effectors = self.regulation.join(self.bigg.reaction_df,
+                                              how='inner', on='EC_number')
         cols = ('bigg.reaction', 'bigg.metabolite')
         bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()
         
@@ -406,8 +398,8 @@ class FigurePlotter(object):
         
         bigg_effectors[n_act_label] = 0
         bigg_effectors[n_inh_label] = 0
-        bigg_effectors.loc[bigg_effectors['type'] == 'activation', n_act_label] = 1
-        bigg_effectors.loc[bigg_effectors['type'] == 'inhibition', n_inh_label] = 1
+        bigg_effectors.loc[bigg_effectors['Mode'] == '+', n_act_label] = 1
+        bigg_effectors.loc[bigg_effectors['Mode'] == '-', n_inh_label] = 1
         
         grouped_by_met = bigg_effectors.groupby('bigg.metabolite').sum()
         grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
@@ -441,14 +433,14 @@ class FigurePlotter(object):
         ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME, index_col=None)
         ccm_df.set_index('EC_number', inplace=True)
         
-        # select only Ki values that involve CCM enzymes
-        ccm_ki = self.ki_raw.join(ccm_df, on='EC_number', how='inner')
-        ccm_ki['type'] = 'KI'
-        ccm_interactions = self.interactions.join(ccm_df, on='EC_number', how='inner')
+        # select only entries that involve CCM enzymes
+        ccm_ki = self.regulation.join(ccm_df, on='EC_number', how='inner')
+        ccm_ki = ccm_ki[~pd.isnull(ccm_ki['KI_Value'])]
+        ccm_interactions = self.regulation.join(ccm_df, on='EC_number', how='inner')
         ccm_interactions['KI_Value'] = None
         
         ccm_concat = pd.concat([ccm_ki, ccm_interactions])
-        ccm_concat.sort_values(['EC_number', 'bigg.metabolite', 'type'], inplace=True)
+        ccm_concat.sort_values(['EC_number', 'bigg.metabolite', 'Mode'], inplace=True)
         
         ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
         return ccm_concat
