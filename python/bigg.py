@@ -14,10 +14,10 @@ import re
 class BiGG(object):
     
     def __init__(self):
-        
         self.metabolite_df = BiGG._get_metabolite_df()
         self.reaction_df = BiGG._get_reaction_df()
-        
+        self.ecoli_model, self.ecoli_S = settings.get_ecoli_json()
+
     @staticmethod
     def _get_metabolite_df():
         bigg2chebi = []
@@ -56,23 +56,35 @@ class BiGG(object):
     
         return df.groupby('EC_number').first()
 
+    def get_native_EC_numbers(self):
+        model, _ = settings.get_ecoli_json()
+        # make a list of all the EC numbers which are mapped to a BiGG reaction 
+        # in the E. coli model, which in turn is mapped to at least one E. coli gene
+        rids_with_genes = set()       
+        for d in self.ecoli_model['reactions']:
+            rid = d['id']
+            rule = d['gene_reaction_rule']
+            if re.search('b[0-9]+', rule) is not None:
+                rids_with_genes.add(rid.lower())
+        
+        # use the self.bigg object to convert these BiGG IDs to EC numbers
+        bigg_reactions = self.reaction_df
+        native_ec = set(bigg_reactions[bigg_reactions['bigg.reaction'].isin(rids_with_genes)].index)
+        native_ec.add('2.3.3.16')
+        return native_ec
+    
+    def get_mets_in_cytosol(self):
+        # make a list of all the metabolites that are cytoplasmic
+        mets_in_cytosol = set()
+        
+        # load the BiGG model for E. coli in order to define the full scope
+        # of metabolites and reactions in this organism
+        for d in self.ecoli_model['metabolites']:
+            met = d['id']
+            if d['compartment'] == u'c':
+                mets_in_cytosol.add(met.lower()[:-2])
+        return mets_in_cytosol
+
 if __name__ == '__main__':
     bigg = BiGG()
-    
-    model, S = settings.get_ecoli_json()    
-    rids_with_genes = []        
-    for d in model['reactions']:
-        rid = d['id']
-        rule = d['gene_reaction_rule']
-        if re.findall('b[0-9]+', rule) != []:
-            rids_with_genes.append(rid.lower())
-            
-    native_ec = set(bigg.reaction_df[bigg.reaction_df['bigg.reaction'].isin(rids_with_genes)].index)
-    
-    
-    mets_in_cytoplasm = set()       
-    for d in model['metabolites']:
-        met = d['id']
-        if d['compartment'] == u'c':
-            mets_in_cytoplasm.add(met.lower())
     

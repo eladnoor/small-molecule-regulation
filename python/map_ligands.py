@@ -96,7 +96,7 @@ def rebuild_cache():
     act_df['Mode'] = '+'
     ki_df['Mode'] = '-'
     inh_df['Mode'] = '-'
-    reg_df = pd.concat([act_df, inh_df, ki_df])
+    reg_df = pd.concat([act_df, inh_df, ki_df], ignore_index=True)
     reg_df = reg_df.join(ligand_df, how='left', on='LigandID') # we also need to map the ecocyc data using chebis
     reg_df['Source'] = 'BRENDA'
     reg_df['Commentary'].fillna('', inplace=True)
@@ -108,19 +108,50 @@ def rebuild_cache():
     ecocyc_reg_df.drop('ReactionID', axis=1, inplace=True)
     ecocyc_reg_df = ecocyc_reg_df.join(chebi2bigg, how='left', on='chebiID')
     ecocyc_reg_df = ecocyc_reg_df.join(chebi2kegg, how='left', on='chebiID')
-    reg_df = pd.concat([reg_df, ecocyc_reg_df])
+    reg_df = pd.concat([reg_df, ecocyc_reg_df], ignore_index=True)
 
     settings.write_cache('regulation', reg_df)
     return reg_df
 
 if __name__ == '__main__':
     reg_df = rebuild_cache()
+
+    #%%
+    k = reg_df.copy()
+    ind_with_ki = k[~pd.isnull(k['KI_Value'])].index
+    k.loc[ind_with_ki, 'Mode'] = 'ki'
+    k = k[['Mode', 'bigg.metabolite', 'EC_number', 'Commentary', 'Organism']]
+    k['Counter'] = 1
+
+    print "All Entries"
+    print k.groupby('Mode').sum()['Counter']
+    k = k[k['Organism'] == 'Escherichia coli']
     
-    #%% print out some statistics
-    ecoli = reg_df[(reg_df['Organism'] == 'Escherichia coli') & (~pd.isnull(reg_df['bigg.metabolite']))]
-    a = ecoli[['EC_number', 'bigg.metabolite', 'Mode', 'Source']]
-    print a.drop_duplicates().groupby(('Source', 'Mode')).count()
+    print "Only E. coli"
+    print k.groupby('Mode').sum()['Counter']
     
-    b = ecoli[~pd.isnull(ecoli['KI_Value'])]
-    b = b[['EC_number', 'bigg.metabolite', 'Source']]
-    print b.drop_duplicates().groupby(('Source')).count()
+    # filter out mutated enzymes
+    k = k[(pd.isnull(k['Commentary'])) |
+          ((k['Commentary'].str.find('mutant') == -1) &
+           (k['Commentary'].str.find('mutation') == -1))]
+
+    print "filtering mutants"
+    print k.groupby('Mode').sum()['Counter']
+    
+    # remove values with unmatched ligand
+    bigg = BiGG()
+    k = k[pd.notnull(k['bigg.metabolite'])]
+    k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
+    k = k[k['EC_number'].isin(bigg.get_native_EC_numbers())]
+    print "leaving only EC numbers from BiGG"
+    print k.groupby('Mode').sum()['Counter']
+
+    k = k.groupby(('bigg.metabolite', 'EC_number', 'Mode')).first().reset_index()
+    print "Unique met-EC pairs"
+    print k.groupby('Mode').sum()['Counter']
+
+    print "Unique metabolites"
+    print k.groupby(('bigg.metabolite', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter']
+    
+    print "Unique EC numbers"
+    print k.groupby(('EC_number', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter']

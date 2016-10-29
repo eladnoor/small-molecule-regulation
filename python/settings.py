@@ -5,7 +5,7 @@ Created on Wed Mar 23 16:36:02 2016
 @author: noore
 """
 
-import os, sys
+import os, sys, re
 import __main__ as main
 import pandas as pd
 import numpy as np
@@ -102,3 +102,4 @@ def get_chebi_inchi_df():
     chebi_inchi_df.rename(columns={'InChI':'inchi'}, inplace=True)
     chebi_inchi_df.set_index('CHEBI_ID', inplace=True)
     return chebi_inchi_df
+    

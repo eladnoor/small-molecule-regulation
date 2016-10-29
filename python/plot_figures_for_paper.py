@@ -28,31 +28,11 @@ class FigurePlotter(object):
         self.bigg = BiGG()
         self.kegg = KEGG()
         
-        # load the BiGG model for E. coli in order to define the full scope
-        # of metabolites and reactions in this organism
-        self.model, self.S = settings.get_ecoli_json()    
-        
         if rebuild_cache:
             map_ligands.rebuild_cache()
         
         self.get_data()
     
-    def get_native_EC_numbers(self):
-        # make a list of all the EC numbers which are mapped to a BiGG reaction 
-        # in the E. coli model, which in turn is mapped to at least one E. coli gene
-        rids_with_genes = set()       
-        for d in self.model['reactions']:
-            rid = d['id']
-            rule = d['gene_reaction_rule']
-            if re.search('b[0-9]+', rule) is not None:
-                rids_with_genes.add(rid.lower())
-        
-        # use the self.bigg object to convert these BiGG IDs to EC numbers
-        bigg_reactions = self.bigg.reaction_df
-        native_ec = set(bigg_reactions[bigg_reactions['bigg.reaction'].isin(rids_with_genes)].index)
-        native_ec.add('2.3.3.16')
-        return native_ec
-
     def get_kinetic_param(self, name, organism=ORGANISM, filter_using_model=True):
         k = settings.read_cache(name)
         print "---------- %s -----------" % name
@@ -74,7 +54,7 @@ class FigurePlotter(object):
         k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
     
         if filter_using_model:
-            k = k[k['EC_number'].isin(self.get_native_EC_numbers())]        
+            k = k[k['EC_number'].isin(self.bigg.get_native_EC_numbers())]        
             print "out of which are native EC numbers: %8d" % k.shape[0]
             print "out of which are unique met-EC:     %8d" % (k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0])
             print "out of which are unique met:        %8d" % (k.groupby('bigg.metabolite').first().shape[0])
@@ -235,17 +215,11 @@ class FigurePlotter(object):
             venn3(subsets = (Abc, aBc, ABc, abC, AbC, aBC, ABC),
                   set_labels=set_labels, ax=ax)
         
-        # make a list of all the metabolites that are cytoplasmic
-        mets_in_cytoplasm = set()       
-        for d in self.model['metabolites']:
-            met = d['id']
-            if d['compartment'] == u'c':
-                mets_in_cytoplasm.add(met.lower()[:-2])
-        
+        mets_in_cytosol = self.bigg.get_mets_in_cytosol()
         # keep only interactions that involve a small-molecule that is native
         # in the cytoplasm
-        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytoplasm)]
-        native_ec = self.get_native_EC_numbers()        
+        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytosol)]
+        native_ec = self.bigg.get_native_EC_numbers()        
         
         print "found %d native interactions in %s" % (native_interactions.shape[0], ORGANISM)
         
@@ -258,7 +232,7 @@ class FigurePlotter(object):
         act_ec = set(native_interactions.loc[ind_act, 'EC_number'])
         
         fig, axs = plt.subplots(1, 2, figsize=(7, 5))
-        venn3_sets(inh_met, act_met, mets_in_cytoplasm,
+        venn3_sets(inh_met, act_met, mets_in_cytosol,
                    set_labels=('inhibitors', 'activators', 'E. coli metabolites'), ax=axs[0])
         venn3_sets(inh_ec, act_ec, native_ec,
                    set_labels=('inhibited', 'activated', 'E. coli reactions'), ax=axs[1])
@@ -272,7 +246,7 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.png'), dpi=600)
         
         res = {'inhibitors': list(inh_met), 'activators': list(act_met),
-               'all_metabolites': list(mets_in_cytoplasm),
+               'all_metabolites': list(mets_in_cytosol),
                'inhibited': list(inh_ec), 'activated': list(act_ec),
                'all_reactions': list(native_ec)}
         with open(os.path.join(settings.RESULT_DIR, 'venn_groups.json'), 'w') as fp:
