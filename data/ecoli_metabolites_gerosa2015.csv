@@ -1,4 +1,4 @@
-Metabolite name (short),Metabolite name (full),Acetate (mean),Fructose (mean),Galactose (mean),Glucose (mean),Glycerol (mean),Gluconate (mean),Pyruvate (mean),Succinate (mean),,Acetate (std),Fructose (std),Galactose (std),Glucose (std),Glycerol (std),Gluconate (std),Pyruvate (std),Succinate (std)
+bigg.metabolite,Metabolite name (full),Acetate (mean),Fructose (mean),Galactose (mean),Glucose (mean),Glycerol (mean),Gluconate (mean),Pyruvate (mean),Succinate (mean),,Acetate (std),Fructose (std),Galactose (std),Glucose (std),Glycerol (std),Gluconate (std),Pyruvate (std),Succinate (std)
 adp_c,Adenosine diphosphate,0.8905,1.3807,0.787,1.3906,0.8456,0.8482,0.9876,1.3452,,0.0207,0.1289,0.0183,0.017,0.0064,0.0377,0.0429,0.043
 amp_c,Adenosine monophosphate,0.7179,1.1019,0.5657,1.1091,0.6928,0.6703,0.7719,1.0864,,0.0558,0.1012,0.019,0.0566,0.0125,0.0083,0.0141,0.0459
 atp_c,Adenosine triphosphate,5.1628,7.4558,4.0886,7.933,4.7673,4.6411,5.776,7.7226,,0.2125,0.6256,0.0741,0.1555,0.2336,0.0805,0.1741,0.1415

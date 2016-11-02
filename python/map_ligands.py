@@ -58,12 +58,6 @@ def map_brenda_to_chebi():
     brenda2chebi.set_index('LigandID', inplace=True)
     brenda2chebi.index.name = 'LigandID'
     
-    return brenda2chebi
-
-def rebuild_cache():
-    # read the ligand ID table and remove the word "chebi:" from the beginning of the string
-    brenda2chebi = map_brenda_to_chebi()
-    
     # join the bigg IDs into the ligand table (using the ChEBIs)
     bigg = BiGG()
     kegg = KEGG()
@@ -82,6 +76,13 @@ def rebuild_cache():
     chebi2kegg.rename(columns={'name': 'Compound'}, inplace=True)
     chebi2kegg = chebi2kegg.groupby('chebiID').first()
     ligand_df = ligand_df.join(chebi2kegg, how='left', on='chebiID')
+
+    return chebi2kegg, chebi2bigg, ligand_df
+
+def rebuild_cache():
+
+    # read the ligand ID table and remove the word "chebi:" from the beginning of the string
+    chebi2kegg, chebi2bigg, ligand_df = map_brenda_to_chebi()
     
     # map the BRENDA data that has nothing to do with regulation (i.e. MM-kinetics)
     brenda_zip = zipfile.ZipFile(open(settings.BRENDA_ZIP_FNAME, 'r'))

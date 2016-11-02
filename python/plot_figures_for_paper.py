@@ -95,11 +95,10 @@ class FigurePlotter(object):
     
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
-        _df.index.name = 'bigg.metabolite'
-        self.met_conc_mean = _df.iloc[:, 1:9]
+        self.met_conc_mean = _df.iloc[:, 1:9] # take only the data columns (8 conditions)
         
         # remove the _c suffix from the compound names
-        self.met_conc_mean.index = map(lambda s: s[0:-2], self.met_conc_mean.index)
+        self.met_conc_mean.index = map(lambda s: s[0:-2].lower(), self.met_conc_mean.index)
         #met_conc_std = _df.iloc[:, 10:]
         
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
