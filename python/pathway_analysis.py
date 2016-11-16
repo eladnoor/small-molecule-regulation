@@ -14,7 +14,8 @@ from bigg import BiGG
 import settings
 import pandas as pd
 import json
-import graphviz as gv
+import networkx as nx
+import matplotlib.pyplot as plt
 from plot_figures_for_paper import FigurePlotter
 
 bigg = BiGG()
@@ -57,8 +58,9 @@ metabolite_subsystem_df.loc[:, 'bigg.metabolite'] = metabolite_subsystem_df['big
 
 # keep only regulating metabolites
 # first, we need to join the regulation table with the EC-to-bigg dataframe
-reg = pd.merge(fplot.regulation, bigg.reaction_df, on='EC_number', how='outer')
-reg = reg.join(reaction_subsystem_df, on='bigg.reaction')
+reg = fplot.regulation
+reg = pd.merge(reg, bigg.reaction_df, on='EC_number', how='inner')
+reg = reg.join(reaction_subsystem_df, on='bigg.reaction', how='inner')
 
 metabolite_set = set(reg['bigg.metabolite']).intersection(metabolite_subsystem_df['bigg.metabolite'])
 subsystem_set = set(metabolite_subsystem_df['subsystem'].unique())
@@ -66,16 +68,16 @@ if pd.np.nan in subsystem_set:
     subsystem_set.remove(pd.np.nan)
 
 #%%
-g1 = gv.Graph(format='svg')
+G = nx.DiGraph()
 for subsys in subsystem_set:
-    g1.node(subsys, color='blue')
+    G.add_node(subsys, color='blue')
 for met in metabolite_set:
-    g1.node(met, color='black')
+    G.add_node(met, color='black')
 for row in metabolite_subsystem_df.iterrows():
     met = row[1]['bigg.metabolite']
     subsys = row[1]['subsystem']
     if met in metabolite_set:
-        g1.edge(met, subsys, color='black')
+        G.add_edge(met, subsys, color='black')
 
 for row in reg.iterrows():
     met = row[1]['bigg.metabolite']
@@ -83,8 +85,10 @@ for row in reg.iterrows():
     mode = row[1]['Mode']
     if met in metabolite_set and subsys in subsystem_set:
         if mode == '+':
-            g1.edge(met, subsys, color='green')
+            G.add_edge(met, subsys, color='green')
         else:
-            g1.edge(met, subsys, color='red')
-    
-g1.render('../res/pathway_analysis')
+            G.add_edge(met, subsys, color='red')
+
+fig, ax = plt.subplots(1, 1, figsize=(20,20))
+nx.draw_spring(G, ax=ax)
+fig.savefig('../res/pathway_analysis.svg')
