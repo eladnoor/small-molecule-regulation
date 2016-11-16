@@ -57,7 +57,7 @@ metabolite_subsystem_df.loc[:, 'bigg.metabolite'] = metabolite_subsystem_df['big
 
 # keep only regulating metabolites
 # first, we need to join the regulation table with the EC-to-bigg dataframe
-reg = fplot.regulation.join(bigg.reaction_df, on='EC_number')
+reg = pd.merge(fplot.regulation, bigg.reaction_df, on='EC_number', how='outer')
 reg = reg.join(reaction_subsystem_df, on='bigg.reaction')
 
 metabolite_set = set(reg['bigg.metabolite']).intersection(metabolite_subsystem_df['bigg.metabolite'])

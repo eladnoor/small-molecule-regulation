@@ -57,7 +57,7 @@ shadow_df.columns = map(str.lower, shadow_df.columns)
 # map the EC numbers to the bigg.reaction IDs
 model_reactions = S.get_reaction_table_from_xls()
 bigg = BiGG()
-bigg2ec = bigg.reaction_df
+bigg2ec = bigg.reaction_df.groupby('EC_number').first()
 chebi2bigg = bigg.metabolite_df
 
 # change all reaction IDs to lower-case (apparently the case standards have changed

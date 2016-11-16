@@ -65,7 +65,7 @@ class FigurePlotter(object):
     @staticmethod
     def calc_sat(k, value_col, conc_df):
         # choose the minimum value among all repeats    
-        k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].min().reset_index()
+        k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].median().reset_index()
         
         # join data with measured concentrations
         k = k.join(conc_df, on='bigg.metabolite', how='inner')
@@ -104,15 +104,18 @@ class FigurePlotter(object):
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
         self.met_conc_mean.rename(columns=colmap, inplace=True)
         
+        # choose only one bigg.reaction for each EC number (arbitrarily)
+        ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
+        
         self.km_raw = self.get_kinetic_param('km')
         self.km_raw = self.km_raw[self.km_raw['KM_Value'] > 0]
         self.km = FigurePlotter.calc_sat(self.km_raw, 'KM_Value', self.met_conc_mean)
-        self.km = self.km.join(self.bigg.reaction_df, on='EC_number', how='left')
+        self.km = self.km.join(ec2bigg, on='EC_number', how='left')
         
         self.regulation = self.get_kinetic_param('regulation')
         self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
                                          'KI_Value', self.met_conc_mean)
-        self.ki = self.ki.join(self.bigg.reaction_df, on='EC_number', how='left')
+        self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
     
         self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
         self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
@@ -357,10 +360,12 @@ class FigurePlotter(object):
                                 ha='center', va='top', size=6,
                                 textcoords='data')
             
+        # choose only one bigg.reaction for each EC number (arbitrarily)
+        ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
 
         # join interaction table with bigg.reaction IDs (using EC numbers)
         # and keep only one copy of each reaction-metabolite pair
-        bigg_effectors = self.regulation.join(self.bigg.reaction_df,
+        bigg_effectors = self.regulation.join(ec2bigg,
                                               how='inner', on='EC_number')
         cols = ('bigg.reaction', 'bigg.metabolite')
         bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()

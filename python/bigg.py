@@ -54,7 +54,7 @@ class BiGG(object):
         
         df = pd.DataFrame(bigg2ec, columns=['bigg.reaction', 'EC_number'])
     
-        return df.groupby('EC_number').first()
+        return df
 
     def get_native_EC_numbers(self):
         model, _ = settings.get_ecoli_json()
@@ -68,7 +68,7 @@ class BiGG(object):
                 rids_with_genes.add(rid.lower())
         
         # use the self.bigg object to convert these BiGG IDs to EC numbers
-        bigg_reactions = self.reaction_df
+        bigg_reactions = self.reaction_df.groupby('EC_number').first()
         native_ec = set(bigg_reactions[bigg_reactions['bigg.reaction'].isin(rids_with_genes)].index)
         native_ec.add('2.3.3.16')
         return native_ec
