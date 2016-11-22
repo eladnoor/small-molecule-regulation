@@ -30,7 +30,7 @@ def literaturestring( subdf ):
 
 # Set some parameters
 tax2use = 'kingdom'
-minsize = 10
+minsize = 6
 
 # Read in central carbon metabolism reactions
 ccm = S.read_cache('CCM_Reactions')
