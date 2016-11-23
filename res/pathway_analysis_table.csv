@@ -1,0 +1,2203 @@
+,bigg.metabolite,subsystem
+0,4crsol,Intracellular demand
+1,5drib,Intracellular demand
+2,aacald,Intracellular demand
+3,amob,Intracellular demand
+4,mththf,Intracellular demand
+5,oxam,Intracellular demand
+6,pydx5p,Biomass and maintenance functions
+7,cobalt2,Biomass and maintenance functions
+8,fe3,Biomass and maintenance functions
+9,mococdp,Biomass and maintenance functions
+10,hemeo,Biomass and maintenance functions
+11,ribflv,Biomass and maintenance functions
+12,spmd,Biomass and maintenance functions
+13,datp,Biomass and maintenance functions
+14,ser__l,Biomass and maintenance functions
+15,thr__l,Biomass and maintenance functions
+17,enter,Biomass and maintenance functions
+18,ala__l,Biomass and maintenance functions
+19,2dmmql8,Biomass and maintenance functions
+20,met__l,Biomass and maintenance functions
+21,cl,Biomass and maintenance functions
+22,gln__l,Biomass and maintenance functions
+23,cu2,Biomass and maintenance functions
+24,nadp,Biomass and maintenance functions
+25,his__l,Biomass and maintenance functions
+26,ppi,Biomass and maintenance functions
+28,pi,Biomass and maintenance functions
+29,fad,Biomass and maintenance functions
+32,ile__l,Biomass and maintenance functions
+33,ni2,Biomass and maintenance functions
+34,pg161,Biomass and maintenance functions
+35,pe161,Biomass and maintenance functions
+36,ctp,Biomass and maintenance functions
+37,gthrd,Biomass and maintenance functions
+38,mg2,Biomass and maintenance functions
+39,mql8,Biomass and maintenance functions
+40,val__l,Biomass and maintenance functions
+41,atp,Biomass and maintenance functions
+42,mn2,Biomass and maintenance functions
+43,2fe2s,Biomass and maintenance functions
+44,so4,Biomass and maintenance functions
+45,coa,Biomass and maintenance functions
+46,thf,Biomass and maintenance functions
+47,accoa,Biomass and maintenance functions
+48,nadh,Biomass and maintenance functions
+50,10fthf,Biomass and maintenance functions
+51,5mthf,Biomass and maintenance functions
+52,amet,Biomass and maintenance functions
+53,nh4,Biomass and maintenance functions
+54,lipopb,Biomass and maintenance functions
+55,btn,Biomass and maintenance functions
+56,mlthf,Biomass and maintenance functions
+57,q8h2,Biomass and maintenance functions
+58,gtp,Biomass and maintenance functions
+60,ptrc,Biomass and maintenance functions
+62,cys__l,Biomass and maintenance functions
+63,utp,Biomass and maintenance functions
+64,mobd,Biomass and maintenance functions
+66,glu__l,Biomass and maintenance functions
+68,4fe4s,Biomass and maintenance functions
+69,pg160,Biomass and maintenance functions
+70,pe160,Biomass and maintenance functions
+71,pg181,Biomass and maintenance functions
+72,pro__l,Biomass and maintenance functions
+74,nad,Biomass and maintenance functions
+75,gly,Biomass and maintenance functions
+76,ca2,Biomass and maintenance functions
+77,mocogdp,Biomass and maintenance functions
+78,phe__l,Biomass and maintenance functions
+79,tyr__l,Biomass and maintenance functions
+82,nadph,Biomass and maintenance functions
+83,asn__l,Biomass and maintenance functions
+84,k,Biomass and maintenance functions
+85,h2o,Biomass and maintenance functions
+86,fe2,Biomass and maintenance functions
+88,udcpdp,Biomass and maintenance functions
+89,thmpp,Biomass and maintenance functions
+90,chor,Biomass and maintenance functions
+91,arg__l,Biomass and maintenance functions
+92,h,Biomass and maintenance functions
+93,pe181,Biomass and maintenance functions
+94,trp__l,Biomass and maintenance functions
+95,malcoa,Biomass and maintenance functions
+97,dgtp,Biomass and maintenance functions
+98,adp,Biomass and maintenance functions
+99,bmocogdp,Biomass and maintenance functions
+100,leu__l,Biomass and maintenance functions
+101,lys__l,Biomass and maintenance functions
+102,adocbl,Biomass and maintenance functions
+104,glycogen,Biomass and maintenance functions
+105,dttp,Biomass and maintenance functions
+106,asp__l,Biomass and maintenance functions
+107,succoa,Biomass and maintenance functions
+108,pheme,Biomass and maintenance functions
+109,dctp,Biomass and maintenance functions
+110,sheme,Biomass and maintenance functions
+111,zn2,Biomass and maintenance functions
+168,2ohph,Biomass and maintenance functions
+509,12dgr120,"Transport, Inner Membrane"
+510,12dgr140,"Transport, Inner Membrane"
+512,12dgr141,"Transport, Inner Membrane"
+515,12dgr160,"Transport, Inner Membrane"
+517,12dgr161,"Transport, Inner Membrane"
+518,12dgr180,"Transport, Inner Membrane"
+520,12dgr181,"Transport, Inner Membrane"
+524,12ppd__r,"Transport, Inner Membrane"
+528,12ppd__s,"Transport, Inner Membrane"
+531,h2o,"Transport, Inner Membrane"
+532,atp,"Transport, Inner Membrane"
+533,14glucan,"Transport, Inner Membrane"
+534,h,"Transport, Inner Membrane"
+535,adp,"Transport, Inner Membrane"
+536,pi,"Transport, Inner Membrane"
+547,23dappa,"Transport, Inner Membrane"
+571,2ddecg3p,"Transport, Inner Membrane"
+573,2tdecg3p,"Transport, Inner Membrane"
+576,2tdec7eg3p,"Transport, Inner Membrane"
+577,2hdecg3p,"Transport, Inner Membrane"
+579,2hdec9eg3p,"Transport, Inner Membrane"
+582,2odecg3p,"Transport, Inner Membrane"
+584,2odec11eg3p,"Transport, Inner Membrane"
+586,2agpe120,"Transport, Inner Membrane"
+587,2agpe140,"Transport, Inner Membrane"
+589,2agpe141,"Transport, Inner Membrane"
+592,2agpe160,"Transport, Inner Membrane"
+594,2agpe161,"Transport, Inner Membrane"
+595,2agpe180,"Transport, Inner Membrane"
+597,2agpe181,"Transport, Inner Membrane"
+599,pe120,Glycerophospholipid Metabolism
+600,atp,Glycerophospholipid Metabolism
+601,ddca,Glycerophospholipid Metabolism
+602,ppi,Glycerophospholipid Metabolism
+603,amp,Glycerophospholipid Metabolism
+604,2agpe120,Glycerophospholipid Metabolism
+606,pe140,Glycerophospholipid Metabolism
+608,2agpe140,Glycerophospholipid Metabolism
+610,ttdca,Glycerophospholipid Metabolism
+613,2agpe141,Glycerophospholipid Metabolism
+614,ttdcea,Glycerophospholipid Metabolism
+615,pe141,Glycerophospholipid Metabolism
+617,2agpe160,Glycerophospholipid Metabolism
+621,hdca,Glycerophospholipid Metabolism
+622,pe160,Glycerophospholipid Metabolism
+625,2agpe161,Glycerophospholipid Metabolism
+626,hdcea,Glycerophospholipid Metabolism
+627,pe161,Glycerophospholipid Metabolism
+629,pe180,Glycerophospholipid Metabolism
+633,ocdca,Glycerophospholipid Metabolism
+634,2agpe180,Glycerophospholipid Metabolism
+635,2agpe181,Glycerophospholipid Metabolism
+637,ocdcea,Glycerophospholipid Metabolism
+640,pe181,Glycerophospholipid Metabolism
+641,2agpg120,"Transport, Inner Membrane"
+644,2agpg140,"Transport, Inner Membrane"
+646,2agpg141,"Transport, Inner Membrane"
+647,2agpg160,"Transport, Inner Membrane"
+649,2agpg161,"Transport, Inner Membrane"
+652,2agpg180,"Transport, Inner Membrane"
+654,2agpg181,"Transport, Inner Membrane"
+659,pg120,Glycerophospholipid Metabolism
+660,2agpg120,Glycerophospholipid Metabolism
+663,pg140,Glycerophospholipid Metabolism
+665,2agpg140,Glycerophospholipid Metabolism
+667,2agpg141,Glycerophospholipid Metabolism
+669,pg141,Glycerophospholipid Metabolism
+673,2agpg160,Glycerophospholipid Metabolism
+677,pg160,Glycerophospholipid Metabolism
+680,2agpg161,Glycerophospholipid Metabolism
+683,pg161,Glycerophospholipid Metabolism
+685,pg180,Glycerophospholipid Metabolism
+690,2agpg180,Glycerophospholipid Metabolism
+693,2agpg181,Glycerophospholipid Metabolism
+696,pg181,Glycerophospholipid Metabolism
+697,glcn,Alternate Carbon Metabolism
+698,nadh,Alternate Carbon Metabolism
+699,h,Alternate Carbon Metabolism
+700,nad,Alternate Carbon Metabolism
+701,2dhguln,Alternate Carbon Metabolism
+703,nadp,Alternate Carbon Metabolism
+704,nadph,Alternate Carbon Metabolism
+707,idon__l,Alternate Carbon Metabolism
+717,h,Cofactor and Prosthetic Group Biosynthesis
+718,4ampm,Cofactor and Prosthetic Group Biosynthesis
+719,pi,Cofactor and Prosthetic Group Biosynthesis
+720,h2o,Cofactor and Prosthetic Group Biosynthesis
+721,2mahmp,Cofactor and Prosthetic Group Biosynthesis
+724,3amac,Nucleotide Salvage Pathway
+725,h2o,Nucleotide Salvage Pathway
+726,nh4,Nucleotide Salvage Pathway
+727,msa,Nucleotide Salvage Pathway
+728,h,Nucleotide Salvage Pathway
+735,tdec2eacp,Cell Envelope Biosynthesis
+736,h2o,Cell Envelope Biosynthesis
+737,3hdecacp,Cell Envelope Biosynthesis
+739,tddec2eacp,Cell Envelope Biosynthesis
+740,3hddecacp,Cell Envelope Biosynthesis
+742,t3c5ddeceacp,Cell Envelope Biosynthesis
+743,3hcddec5eacp,Cell Envelope Biosynthesis
+745,tmrs2eacp,Cell Envelope Biosynthesis
+746,3hmrsacp,Cell Envelope Biosynthesis
+748,t3c7mrseacp,Cell Envelope Biosynthesis
+749,3hcmrs7eacp,Cell Envelope Biosynthesis
+751,3hpalmacp,Cell Envelope Biosynthesis
+752,tpalm2eacp,Cell Envelope Biosynthesis
+753,3hcpalm9eacp,Cell Envelope Biosynthesis
+754,t3c9palmeacp,Cell Envelope Biosynthesis
+756,toctd2eacp,Cell Envelope Biosynthesis
+758,3hoctaacp,Cell Envelope Biosynthesis
+759,t3c11vaceacp,Cell Envelope Biosynthesis
+761,3hcvac11eacp,Cell Envelope Biosynthesis
+762,3haacp,Cell Envelope Biosynthesis
+764,but2eacp,Cell Envelope Biosynthesis
+765,3hhexacp,Cell Envelope Biosynthesis
+766,thex2eacp,Cell Envelope Biosynthesis
+769,toct2eacp,Cell Envelope Biosynthesis
+770,3hoctacp,Cell Envelope Biosynthesis
+771,o2,Alternate Carbon Metabolism
+772,h2o,Alternate Carbon Metabolism
+773,dhcinnm,Alternate Carbon Metabolism
+777,3hcinnm,Alternate Carbon Metabolism
+780,3hpppn,Alternate Carbon Metabolism
+783,dhpppn,Alternate Carbon Metabolism
+787,3hpp,"Transport, Inner Membrane"
+791,3dhgulnp,Alternate Carbon Metabolism
+792,3dhguln,Alternate Carbon Metabolism
+794,adp,Alternate Carbon Metabolism
+795,atp,Alternate Carbon Metabolism
+812,nadp,Cell Envelope Biosynthesis
+813,nadph,Cell Envelope Biosynthesis
+814,h,Cell Envelope Biosynthesis
+815,3odecacp,Cell Envelope Biosynthesis
+821,3oddecacp,Cell Envelope Biosynthesis
+826,3ocddec5eacp,Cell Envelope Biosynthesis
+830,3omrsacp,Cell Envelope Biosynthesis
+835,3ocmrs7eacp,Cell Envelope Biosynthesis
+841,3opalmacp,Cell Envelope Biosynthesis
+842,3ocpalm9eacp,Cell Envelope Biosynthesis
+847,3ooctdacp,Cell Envelope Biosynthesis
+852,3ocvac11eacp,Cell Envelope Biosynthesis
+858,actacp,Cell Envelope Biosynthesis
+866,3ohexacp,Cell Envelope Biosynthesis
+869,3ooctacp,Cell Envelope Biosynthesis
+873,acp,Cell Envelope Biosynthesis
+874,malacp,Cell Envelope Biosynthesis
+875,ocacp,Cell Envelope Biosynthesis
+877,co2,Cell Envelope Biosynthesis
+878,dcaacp,Cell Envelope Biosynthesis
+889,cdec3eacp,Cell Envelope Biosynthesis
+893,ddcaacp,Cell Envelope Biosynthesis
+901,cddec5eacp,Cell Envelope Biosynthesis
+905,myrsacp,Cell Envelope Biosynthesis
+908,tdeacp,Cell Envelope Biosynthesis
+918,palmacp,Cell Envelope Biosynthesis
+925,hdeacp,Cell Envelope Biosynthesis
+927,butacp,Cell Envelope Biosynthesis
+932,hexacp,Cell Envelope Biosynthesis
+938,coa,Alternate Carbon Metabolism
+939,succoa,Alternate Carbon Metabolism
+940,oxadpcoa,Alternate Carbon Metabolism
+941,accoa,Alternate Carbon Metabolism
+942,h2o,Murein Recycling
+943,laladglumdap,Murein Recycling
+944,atp,Murein Recycling
+945,h,Murein Recycling
+946,adp,Murein Recycling
+947,pi,Murein Recycling
+962,phthr,Cofactor and Prosthetic Group Biosynthesis
+964,4hthr,Cofactor and Prosthetic Group Biosynthesis
+966,ala__d,Murein Recycling
+967,laladglumdapdala,Murein Recycling
+983,5dglcn,Alternate Carbon Metabolism
+988,5dglcn,"Transport, Inner Membrane"
+993,dad_5,Cofactor and Prosthetic Group Biosynthesis
+994,ade,Cofactor and Prosthetic Group Biosynthesis
+996,5drib,Cofactor and Prosthetic Group Biosynthesis
+999,5mtr,"Transport, Inner Membrane"
+1003,ara5p,Alternate Carbon Metabolism
+1004,ru5p__d,Alternate Carbon Metabolism
+1005,atp,Cell Envelope Biosynthesis
+1006,ppi,Cell Envelope Biosynthesis
+1008,amp,Cell Envelope Biosynthesis
+1010,ttdca,Cell Envelope Biosynthesis
+1016,ttdcea,Cell Envelope Biosynthesis
+1022,hdca,Cell Envelope Biosynthesis
+1026,hdcea,Cell Envelope Biosynthesis
+1029,ocdcea,Cell Envelope Biosynthesis
+1031,octeacp,Cell Envelope Biosynthesis
+1039,ocdca,Cell Envelope Biosynthesis
+1040,ocdcaacp,Cell Envelope Biosynthesis
+1042,ddca,Cell Envelope Biosynthesis
+1052,dca,Cell Envelope Biosynthesis
+1056,octa,Cell Envelope Biosynthesis
+1059,o2,Methylglyoxal Metabolism
+1060,h2o,Methylglyoxal Metabolism
+1061,aact,Methylglyoxal Metabolism
+1062,h2o2,Methylglyoxal Metabolism
+1063,mthgxl,Methylglyoxal Metabolism
+1064,nh4,Methylglyoxal Metabolism
+1065,unagamuf,Cell Envelope Biosynthesis
+1066,unagamu,Cell Envelope Biosynthesis
+1067,dtdp,Cell Envelope Biosynthesis
+1069,dtdp4aaddg,Cell Envelope Biosynthesis
+1070,14glucan,Alternate Carbon Metabolism
+1071,malthx,Alternate Carbon Metabolism
+1075,g6p,Alternate Carbon Metabolism
+1076,hqn,Alternate Carbon Metabolism
+1077,arbt6p,Alternate Carbon Metabolism
+1078,akg,Arginine and Proline Metabolism
+1079,glu__l,Arginine and Proline Metabolism
+1080,sucsal,Arginine and Proline Metabolism
+1081,4abut,Arginine and Proline Metabolism
+1082,h2o,Arginine and Proline Metabolism
+1083,4abutn,Arginine and Proline Metabolism
+1085,h,Arginine and Proline Metabolism
+1086,nad,Arginine and Proline Metabolism
+1087,nadh,Arginine and Proline Metabolism
+1091,4abut,"Transport, Inner Membrane"
+1094,aacoa,Alternate Carbon Metabolism
+1095,acac,Alternate Carbon Metabolism
+1096,ac,Alternate Carbon Metabolism
+1098,aacoa,Membrane Lipid Metabolism
+1099,coa,Membrane Lipid Metabolism
+1100,accoa,Membrane Lipid Metabolism
+1101,btcoa,Membrane Lipid Metabolism
+1104,3ohcoa,Membrane Lipid Metabolism
+1106,3oocoa,Membrane Lipid Metabolism
+1108,hxcoa,Membrane Lipid Metabolism
+1109,occoa,Membrane Lipid Metabolism
+1110,3odcoa,Membrane Lipid Metabolism
+1113,3oddcoa,Membrane Lipid Metabolism
+1115,dcacoa,Membrane Lipid Metabolism
+1117,ddcacoa,Membrane Lipid Metabolism
+1118,3otdcoa,Membrane Lipid Metabolism
+1122,3ohdcoa,Membrane Lipid Metabolism
+1123,tdcoa,Membrane Lipid Metabolism
+1125,pmtcoa,Membrane Lipid Metabolism
+1126,3oodcoa,Membrane Lipid Metabolism
+1129,acac,"Transport, Inner Membrane"
+1135,accoa,Pyruvate Metabolism
+1136,acald,Pyruvate Metabolism
+1137,coa,Pyruvate Metabolism
+1138,h,Pyruvate Metabolism
+1139,nad,Pyruvate Metabolism
+1140,nadh,Pyruvate Metabolism
+1143,acald,"Transport, Inner Membrane"
+1145,anth,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1146,coa,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1147,accoa,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1148,acanth,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1149,adocbip,Cofactor and Prosthetic Group Biosynthesis
+1150,ppi,Cofactor and Prosthetic Group Biosynthesis
+1151,gtp,Cofactor and Prosthetic Group Biosynthesis
+1153,agdpcbi,Cofactor and Prosthetic Group Biosynthesis
+1154,malcoa,Membrane Lipid Metabolism
+1155,adp,Membrane Lipid Metabolism
+1156,atp,Membrane Lipid Metabolism
+1157,hco3,Membrane Lipid Metabolism
+1158,h,Membrane Lipid Metabolism
+1160,pi,Membrane Lipid Metabolism
+1161,ppcoa,Alternate Carbon Metabolism
+1163,ppa,Alternate Carbon Metabolism
+1166,pi,Alternate Carbon Metabolism
+1181,acgam,Murein Recycling
+1182,acgam6p,Murein Recycling
+1186,uacgam,Cell Envelope Biosynthesis
+1187,ump,Cell Envelope Biosynthesis
+1188,udcpp,Cell Envelope Biosynthesis
+1189,unaga,Cell Envelope Biosynthesis
+1190,pep,"Transport, Inner Membrane"
+1191,pyr,"Transport, Inner Membrane"
+1193,acgam6p,"Transport, Inner Membrane"
+1196,acg5p,Arginine and Proline Metabolism
+1197,acglu,Arginine and Proline Metabolism
+1198,atp,Arginine and Proline Metabolism
+1199,adp,Arginine and Proline Metabolism
+1202,coa,Arginine and Proline Metabolism
+1204,accoa,Arginine and Proline Metabolism
+1205,2ahbut,"Valine, Leucine, and Isoleucine Metabolism"
+1206,pyr,"Valine, Leucine, and Isoleucine Metabolism"
+1207,2obut,"Valine, Leucine, and Isoleucine Metabolism"
+1208,co2,"Valine, Leucine, and Isoleucine Metabolism"
+1209,h,"Valine, Leucine, and Isoleucine Metabolism"
+1210,ac,Pyruvate Metabolism
+1211,actp,Pyruvate Metabolism
+1212,atp,Pyruvate Metabolism
+1213,adp,Pyruvate Metabolism
+1217,alac__s,"Valine, Leucine, and Isoleucine Metabolism"
+1218,lac__d,Alternate Carbon Metabolism
+1219,acmum6p,Alternate Carbon Metabolism
+1220,acgam6p,Alternate Carbon Metabolism
+1222,udp,Cell Envelope Biosynthesis
+1225,uacmamu,Cell Envelope Biosynthesis
+1230,acmanap,"Transport, Inner Membrane"
+1234,acmum6p,"Transport, Inner Membrane"
+1242,acnam,"Transport, Inner Membrane"
+1245,pyr,Alternate Carbon Metabolism
+1246,acmana,Alternate Carbon Metabolism
+1247,acnam,Alternate Carbon Metabolism
+1249,b2coa,Membrane Lipid Metabolism
+1250,fadh2,Membrane Lipid Metabolism
+1251,fad,Membrane Lipid Metabolism
+1255,hx2coa,Membrane Lipid Metabolism
+1256,oc2coa,Membrane Lipid Metabolism
+1261,dc2coa,Membrane Lipid Metabolism
+1267,dd2coa,Membrane Lipid Metabolism
+1271,td2coa,Membrane Lipid Metabolism
+1274,hdd2coa,Membrane Lipid Metabolism
+1276,stcoa,Membrane Lipid Metabolism
+1278,od2coa,Membrane Lipid Metabolism
+1280,acacp,Membrane Lipid Metabolism
+1281,acp,Membrane Lipid Metabolism
+1284,ac,Arginine and Proline Metabolism
+1285,orn,Arginine and Proline Metabolism
+1287,acorn,Arginine and Proline Metabolism
+1288,h2o,Lipopolysaccharide Biosynthesis / Recycling
+1291,atp,Lipopolysaccharide Biosynthesis / Recycling
+1292,h,Lipopolysaccharide Biosynthesis / Recycling
+1293,adp,Lipopolysaccharide Biosynthesis / Recycling
+1294,pi,Lipopolysaccharide Biosynthesis / Recycling
+1295,acon_t,Unassigned
+1296,acon_c,Unassigned
+1297,amet,Unassigned
+1298,ahcys,Unassigned
+1300,aconm,Unassigned
+1301,h2o,Citric Acid Cycle
+1302,acon_c,Citric Acid Cycle
+1303,cit,Citric Acid Cycle
+1305,icit,Citric Acid Cycle
+1309,acg5sa,Arginine and Proline Metabolism
+1311,ddcap,Glycerophospholipid Metabolism
+1312,pi,Glycerophospholipid Metabolism
+1313,ddcaacp,Glycerophospholipid Metabolism
+1314,acp,Glycerophospholipid Metabolism
+1315,h,Glycerophospholipid Metabolism
+1316,ttdcap,Glycerophospholipid Metabolism
+1319,myrsacp,Glycerophospholipid Metabolism
+1321,ttdceap,Glycerophospholipid Metabolism
+1322,tdeacp,Glycerophospholipid Metabolism
+1327,palmacp,Glycerophospholipid Metabolism
+1329,hdcap,Glycerophospholipid Metabolism
+1332,hdceap,Glycerophospholipid Metabolism
+1335,hdeacp,Glycerophospholipid Metabolism
+1336,ocdcaacp,Glycerophospholipid Metabolism
+1338,ocdcap,Glycerophospholipid Metabolism
+1341,octeacp,Glycerophospholipid Metabolism
+1344,ocdceap,Glycerophospholipid Metabolism
+1346,coa,Cofactor and Prosthetic Group Biosynthesis
+1347,acp,Cofactor and Prosthetic Group Biosynthesis
+1348,apoacp,Cofactor and Prosthetic Group Biosynthesis
+1350,pap,Cofactor and Prosthetic Group Biosynthesis
+1352,ppi,Pyruvate Metabolism
+1354,amp,Pyruvate Metabolism
+1360,acser,"Transport, Inner Membrane"
+1362,ac,"Transport, Inner Membrane"
+1368,na1,"Transport, Inner Membrane"
+1372,ins,Nucleotide Salvage Pathway
+1373,adn,Nucleotide Salvage Pathway
+1376,pyr,Cofactor and Prosthetic Group Biosynthesis
+1377,4adcho,Cofactor and Prosthetic Group Biosynthesis
+1379,4abz,Cofactor and Prosthetic Group Biosynthesis
+1380,glu__l,Cofactor and Prosthetic Group Biosynthesis
+1382,chor,Cofactor and Prosthetic Group Biosynthesis
+1383,gln__l,Cofactor and Prosthetic Group Biosynthesis
+1386,ade,Nucleotide Salvage Pathway
+1387,hxan,Nucleotide Salvage Pathway
+1390,ade,"Transport, Inner Membrane"
+1395,amp,Nucleotide Salvage Pathway
+1396,atp,Nucleotide Salvage Pathway
+1397,adp,Nucleotide Salvage Pathway
+1398,gtp,Nucleotide Salvage Pathway
+1399,gdp,Nucleotide Salvage Pathway
+1402,idp,Nucleotide Salvage Pathway
+1404,itp,Nucleotide Salvage Pathway
+1406,ametam,Arginine and Proline Metabolism
+1407,co2,Arginine and Proline Metabolism
+1409,amet,Arginine and Proline Metabolism
+1410,ppi,Nucleotide Salvage Pathway
+1411,camp,Nucleotide Salvage Pathway
+1419,ade,Alternate Carbon Metabolism
+1420,adn,Alternate Carbon Metabolism
+1421,rib__d,Alternate Carbon Metabolism
+1422,adn,"Transport, Inner Membrane"
+1433,adocbi,Cofactor and Prosthetic Group Biosynthesis
+1434,atp,Cofactor and Prosthetic Group Biosynthesis
+1435,adp,Cofactor and Prosthetic Group Biosynthesis
+1437,adocbl,Cofactor and Prosthetic Group Biosynthesis
+1438,gmp,Cofactor and Prosthetic Group Biosynthesis
+1440,rdmbzi,Cofactor and Prosthetic Group Biosynthesis
+1444,adocbl,"Transport, Inner Membrane"
+1450,h,"Transport, Outer Membrane"
+1455,r5p,Nucleotide Salvage Pathway
+1456,adprib,Nucleotide Salvage Pathway
+1461,prpp,Nucleotide Salvage Pathway
+1462,adp,Cysteine Metabolism
+1463,aps,Cysteine Metabolism
+1464,paps,Cysteine Metabolism
+1465,atp,Cysteine Metabolism
+1466,h,Cysteine Metabolism
+1467,fum,Purine and Pyrimidine Biosynthesis
+1468,amp,Purine and Pyrimidine Biosynthesis
+1469,dcamp,Purine and Pyrimidine Biosynthesis
+1470,aicar,Purine and Pyrimidine Biosynthesis
+1472,25aics,Purine and Pyrimidine Biosynthesis
+1473,gdp,Purine and Pyrimidine Biosynthesis
+1474,asp__l,Purine and Pyrimidine Biosynthesis
+1475,gtp,Purine and Pyrimidine Biosynthesis
+1476,h,Purine and Pyrimidine Biosynthesis
+1477,pi,Purine and Pyrimidine Biosynthesis
+1478,imp,Purine and Pyrimidine Biosynthesis
+1483,gam6p,Alternate Carbon Metabolism
+1485,anhgm3p,Murein Recycling
+1487,anhgm,Murein Recycling
+1495,anhm3p,Murein Recycling
+1501,anhgm4p,Murein Recycling
+1519,anhm4p,Murein Recycling
+1525,anhm,Murein Recycling
+1528,adphep_ld,Lipopolysaccharide Biosynthesis / Recycling
+1529,adphep_dd,Lipopolysaccharide Biosynthesis / Recycling
+1530,ptrc,Arginine and Proline Metabolism
+1532,urea,Arginine and Proline Metabolism
+1533,agm,Arginine and Proline Metabolism
+1540,1ddecg3p,Glycerophospholipid Metabolism
+1542,pa120,Glycerophospholipid Metabolism
+1544,1tdecg3p,Glycerophospholipid Metabolism
+1545,pa140,Glycerophospholipid Metabolism
+1549,pa141,Glycerophospholipid Metabolism
+1551,1tdec7eg3p,Glycerophospholipid Metabolism
+1552,pa160,Glycerophospholipid Metabolism
+1554,1hdecg3p,Glycerophospholipid Metabolism
+1556,pa161,Glycerophospholipid Metabolism
+1557,1hdec9eg3p,Glycerophospholipid Metabolism
+1562,1odecg3p,Glycerophospholipid Metabolism
+1563,pa180,Glycerophospholipid Metabolism
+1564,1odec11eg3p,Glycerophospholipid Metabolism
+1567,pa181,Glycerophospholipid Metabolism
+1568,nadp,Arginine and Proline Metabolism
+1569,nadph,Arginine and Proline Metabolism
+1573,pi,Arginine and Proline Metabolism
+1576,h,Inorganic Ion Transport and Metabolism
+1577,ag,Inorganic Ion Transport and Metabolism
+1578,ade,Methionine Metabolism
+1579,h2o,Methionine Metabolism
+1580,ahcys,Methionine Metabolism
+1581,rhcys,Methionine Metabolism
+1583,fprica,Purine and Pyrimidine Biosynthesis
+1584,10fthf,Purine and Pyrimidine Biosynthesis
+1585,thf,Purine and Pyrimidine Biosynthesis
+1586,5caiz,Purine and Pyrimidine Biosynthesis
+1587,atp,Purine and Pyrimidine Biosynthesis
+1588,hco3,Purine and Pyrimidine Biosynthesis
+1590,adp,Purine and Pyrimidine Biosynthesis
+1591,air,Purine and Pyrimidine Biosynthesis
+1594,5aizc,Purine and Pyrimidine Biosynthesis
+1595,akg,Citric Acid Cycle
+1596,nadh,Citric Acid Cycle
+1597,succoa,Citric Acid Cycle
+1598,coa,Citric Acid Cycle
+1599,nad,Citric Acid Cycle
+1600,co2,Citric Acid Cycle
+1601,akg,"Transport, Inner Membrane"
+1609,alaala,Murein Recycling
+1616,alaala,"Transport, Inner Membrane"
+1618,ala__d,Cell Envelope Biosynthesis
+1620,adp,Cell Envelope Biosynthesis
+1621,pi,Cell Envelope Biosynthesis
+1622,alaala,Cell Envelope Biosynthesis
+1625,laladglu,Murein Recycling
+1626,lalalglu,Murein Recycling
+1627,ala__d,Alanine and Aspartate Metabolism
+1628,ala__l,Alanine and Aspartate Metabolism
+1629,ala__d,Cofactor and Prosthetic Group Biosynthesis
+1631,pydx5p,Cofactor and Prosthetic Group Biosynthesis
+1632,pyam5p,Cofactor and Prosthetic Group Biosynthesis
+1633,akg,Alanine and Aspartate Metabolism
+1634,pyr,Alanine and Aspartate Metabolism
+1636,glu__l,Alanine and Aspartate Metabolism
+1639,ala__l,Cofactor and Prosthetic Group Biosynthesis
+1641,trnaala,tRNA Charging
+1642,atp,tRNA Charging
+1643,ppi,tRNA Charging
+1644,ala__l,tRNA Charging
+1645,amp,tRNA Charging
+1646,alatrna,tRNA Charging
+1649,ala__l,"Transport, Inner Membrane"
+1668,glyc,Alternate Carbon Metabolism
+1670,glyald,Alternate Carbon Metabolism
+1674,etoh,Pyruvate Metabolism
+1679,pac,Alternate Carbon Metabolism
+1682,pacald,Alternate Carbon Metabolism
+1685,acald,Alternate Carbon Metabolism
+1700,ppal,Alternate Carbon Metabolism
+1703,btal,Alternate Carbon Metabolism
+1704,but,Alternate Carbon Metabolism
+1708,all6p,Alternate Carbon Metabolism
+1709,all__d,Alternate Carbon Metabolism
+1714,allul6p,Alternate Carbon Metabolism
+1715,alltt,Alternate Carbon Metabolism
+1716,urdglyc,Alternate Carbon Metabolism
+1719,co2,Alternate Carbon Metabolism
+1720,nh4,Alternate Carbon Metabolism
+1721,alltt,Nitrogen Metabolism
+1722,h2o,Nitrogen Metabolism
+1723,h,Nitrogen Metabolism
+1724,alltn,Nitrogen Metabolism
+1725,alltn,"Transport, Inner Membrane"
+1732,f6p,Alternate Carbon Metabolism
+1734,all__d,"Transport, Inner Membrane"
+1750,nadph,Methylglyoxal Metabolism
+1751,nadp,Methylglyoxal Metabolism
+1752,acetol,Methylglyoxal Metabolism
+1753,h,Methylglyoxal Metabolism
+1755,nadh,Glycerophospholipid Metabolism
+1756,acetol,Glycerophospholipid Metabolism
+1757,12ppd__r,Glycerophospholipid Metabolism
+1758,nad,Glycerophospholipid Metabolism
+1761,2ddglcn,Alternate Carbon Metabolism
+1762,altrn,Alternate Carbon Metabolism
+1775,glc__d,Alternate Carbon Metabolism
+1776,malt,Alternate Carbon Metabolism
+1777,malttr,Alternate Carbon Metabolism
+1778,maltttr,Alternate Carbon Metabolism
+1780,maltpt,Alternate Carbon Metabolism
+1788,malthp,Alternate Carbon Metabolism
+1792,acmanap,Alternate Carbon Metabolism
+1798,8aonn,Cofactor and Prosthetic Group Biosynthesis
+1799,dann,Cofactor and Prosthetic Group Biosynthesis
+1800,amob,Cofactor and Prosthetic Group Biosynthesis
+1801,amet,Cofactor and Prosthetic Group Biosynthesis
+1803,mql8,Cofactor and Prosthetic Group Biosynthesis
+1804,ahcys,Cofactor and Prosthetic Group Biosynthesis
+1806,2dmmql8,Cofactor and Prosthetic Group Biosynthesis
+1808,nad,Cofactor and Prosthetic Group Biosynthesis
+1811,for,Cofactor and Prosthetic Group Biosynthesis
+1812,air,Cofactor and Prosthetic Group Biosynthesis
+1813,nadh,Cofactor and Prosthetic Group Biosynthesis
+1818,cys__l,Cysteine Metabolism
+1819,h2o,Cysteine Metabolism
+1820,gly,Cysteine Metabolism
+1821,cgly,Cysteine Metabolism
+1823,pro__l,Arginine and Proline Metabolism
+1824,gly,Arginine and Proline Metabolism
+1825,progly,Arginine and Proline Metabolism
+1835,acmum6p,Murein Recycling
+1837,ppi,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1838,prpp,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1839,pran,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1841,glu__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1842,chor,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1843,h,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1844,pyr,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1845,gln__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+1846,aact,Threonine and Lysine Metabolism
+1847,co2,Threonine and Lysine Metabolism
+1848,h,Threonine and Lysine Metabolism
+1849,2aobut,Threonine and Lysine Metabolism
+1851,co2,Cofactor and Prosthetic Group Biosynthesis
+1854,pimacp,Cofactor and Prosthetic Group Biosynthesis
+1856,ap4a,Nucleotide Salvage Pathway
+1865,ap5a,Nucleotide Salvage Pathway
+1868,15dap,Arginine and Proline Metabolism
+1870,5mta,Arginine and Proline Metabolism
+1872,na15dap,Arginine and Proline Metabolism
+1874,glyc3p,Glycerophospholipid Metabolism
+1910,h2o,Glycerophospholipid Metabolism
+1944,appl,Threonine and Lysine Metabolism
+1945,nadh,Threonine and Lysine Metabolism
+1946,nad,Threonine and Lysine Metabolism
+1948,5apru,Cofactor and Prosthetic Group Biosynthesis
+1949,nadp,Cofactor and Prosthetic Group Biosynthesis
+1950,nadph,Cofactor and Prosthetic Group Biosynthesis
+1951,5aprbu,Cofactor and Prosthetic Group Biosynthesis
+1953,rbl__l,Alternate Carbon Metabolism
+1954,arab__l,Alternate Carbon Metabolism
+1955,arbtn_fe3,Inorganic Ion Transport and Metabolism
+1956,fe2,Inorganic Ion Transport and Metabolism
+1957,arbtn,Inorganic Ion Transport and Metabolism
+1958,fadh2,Inorganic Ion Transport and Metabolism
+1960,fad,Inorganic Ion Transport and Metabolism
+1964,fmnh2,Inorganic Ion Transport and Metabolism
+1965,fmn,Inorganic Ion Transport and Metabolism
+1967,rbflvrd,Inorganic Ion Transport and Metabolism
+1972,ribflv,Inorganic Ion Transport and Metabolism
+1979,arbtn_fe3,"Transport, Inner Membrane"
+1998,arbt6p,"Transport, Inner Membrane"
+2007,arab__l,"Transport, Inner Membrane"
+2019,agm,"Transport, Inner Membrane"
+2020,arg__l,"Transport, Inner Membrane"
+2024,arg__l,Arginine and Proline Metabolism
+2030,orn,"Transport, Inner Membrane"
+2034,argsuc,Arginine and Proline Metabolism
+2035,fum,Arginine and Proline Metabolism
+2038,asp__l,Arginine and Proline Metabolism
+2039,ppi,Arginine and Proline Metabolism
+2042,citr__l,Arginine and Proline Metabolism
+2043,amp,Arginine and Proline Metabolism
+2046,argtrna,tRNA Charging
+2047,trnaarg,tRNA Charging
+2049,arg__l,tRNA Charging
+2063,aspsa,Threonine and Lysine Metabolism
+2064,nadp,Threonine and Lysine Metabolism
+2065,nadph,Threonine and Lysine Metabolism
+2067,pi,Threonine and Lysine Metabolism
+2068,4pasp,Threonine and Lysine Metabolism
+2072,ascb6p,Alternate Carbon Metabolism
+2075,ascb6p,"Transport, Inner Membrane"
+2079,asp__l,Alanine and Aspartate Metabolism
+2080,asn__l,Alanine and Aspartate Metabolism
+2081,nh4,Alanine and Aspartate Metabolism
+2082,h2o,Alanine and Aspartate Metabolism
+2088,atp,Alanine and Aspartate Metabolism
+2091,ppi,Alanine and Aspartate Metabolism
+2092,h,Alanine and Aspartate Metabolism
+2093,gln__l,Alanine and Aspartate Metabolism
+2095,amp,Alanine and Aspartate Metabolism
+2103,trnaasn,tRNA Charging
+2105,asn__l,tRNA Charging
+2107,asntrna,tRNA Charging
+2111,asn__l,"Transport, Inner Membrane"
+2127,aso3,"Transport, Inner Membrane"
+2131,asp__l,Cofactor and Prosthetic Group Biosynthesis
+2134,ala_b,Cofactor and Prosthetic Group Biosynthesis
+2135,cbasp,Purine and Pyrimidine Biosynthesis
+2137,cbp,Purine and Pyrimidine Biosynthesis
+2140,asp__l,Threonine and Lysine Metabolism
+2141,adp,Threonine and Lysine Metabolism
+2142,atp,Threonine and Lysine Metabolism
+2145,q8h2,Cofactor and Prosthetic Group Biosynthesis
+2146,iasp,Cofactor and Prosthetic Group Biosynthesis
+2147,q8,Cofactor and Prosthetic Group Biosynthesis
+2151,mqn8,Cofactor and Prosthetic Group Biosynthesis
+2155,succ,Cofactor and Prosthetic Group Biosynthesis
+2156,fum,Cofactor and Prosthetic Group Biosynthesis
+2160,o2,Cofactor and Prosthetic Group Biosynthesis
+2163,h2o2,Cofactor and Prosthetic Group Biosynthesis
+2165,fum,Alanine and Aspartate Metabolism
+2170,oaa,Alanine and Aspartate Metabolism
+2171,asptrna,tRNA Charging
+2173,asp__l,tRNA Charging
+2176,trnaasp,tRNA Charging
+2180,asp__l,"Transport, Inner Membrane"
+2202,aso4,Inorganic Ion Transport and Metabolism
+2203,h2o,Inorganic Ion Transport and Metabolism
+2204,gthrd,Inorganic Ion Transport and Metabolism
+2205,aso3,Inorganic Ion Transport and Metabolism
+2206,gthox,Inorganic Ion Transport and Metabolism
+2208,sucarg,Arginine and Proline Metabolism
+2210,succoa,Arginine and Proline Metabolism
+2215,athr__l,Threonine and Lysine Metabolism
+2222,h2o,Unassigned
+2223,pi,Unassigned
+2224,atp,Unassigned
+2225,adp,Unassigned
+2226,h,Unassigned
+2227,ppi,Histidine Metabolism
+2228,prpp,Histidine Metabolism
+2229,atp,Histidine Metabolism
+2230,prbatp,Histidine Metabolism
+2231,h2o,Oxidative Phosphorylation
+2233,atp,Oxidative Phosphorylation
+2234,h,Oxidative Phosphorylation
+2235,adp,Oxidative Phosphorylation
+2236,pi,Oxidative Phosphorylation
+2237,ala_b,"Transport, Inner Membrane"
+2244,glyb,Unassigned
+2245,betald,Unassigned
+2247,nad,Unassigned
+2248,nadh,Unassigned
+2250,nadp,Unassigned
+2251,nadph,Unassigned
+2255,cu2,Cofactor and Prosthetic Group Biosynthesis
+2256,moco,Cofactor and Prosthetic Group Biosynthesis
+2257,mptamp,Cofactor and Prosthetic Group Biosynthesis
+2258,amp,Cofactor and Prosthetic Group Biosynthesis
+2259,bmoco,Cofactor and Prosthetic Group Biosynthesis
+2260,bmoco1gdp,Cofactor and Prosthetic Group Biosynthesis
+2269,bmocogdp,Cofactor and Prosthetic Group Biosynthesis
+2271,pi,Cysteine Metabolism
+2272,pap,Cysteine Metabolism
+2273,amp,Cysteine Metabolism
+2275,btn,Cofactor and Prosthetic Group Biosynthesis
+2276,btnso,Cofactor and Prosthetic Group Biosynthesis
+2287,btn,"Transport, Inner Membrane"
+2293,dtbt,Cofactor and Prosthetic Group Biosynthesis
+2295,2fe2s,Cofactor and Prosthetic Group Biosynthesis
+2297,met__l,Cofactor and Prosthetic Group Biosynthesis
+2298,2fe1s,Cofactor and Prosthetic Group Biosynthesis
+2300,btcoa,Alternate Carbon Metabolism
+2307,butso3,"Transport, Inner Membrane"
+2315,but,"Transport, Inner Membrane"
+2320,bwco,Cofactor and Prosthetic Group Biosynthesis
+2323,bwco1gdp,Cofactor and Prosthetic Group Biosynthesis
+2324,bwcogdp,Cofactor and Prosthetic Group Biosynthesis
+2332,wco,Cofactor and Prosthetic Group Biosynthesis
+2335,ca2,Inorganic Ion Transport and Metabolism
+2340,lys__l,"Transport, Inner Membrane"
+2345,15dap,"Transport, Inner Membrane"
+2346,o2,Unassigned
+2348,h2o2,Unassigned
+2350,na1,Inorganic Ion Transport and Metabolism
+2353,pppi,Cofactor and Prosthetic Group Biosynthesis
+2354,cbi,Cofactor and Prosthetic Group Biosynthesis
+2365,cbi,"Transport, Inner Membrane"
+2372,cbl1,"Transport, Inner Membrane"
+2381,cbl1,Cofactor and Prosthetic Group Biosynthesis
+2385,co2,Nucleotide Salvage Pathway
+2387,cbm,Nucleotide Salvage Pathway
+2389,cbp,Unassigned
+2393,co2,Unassigned
+2394,nh4,Unassigned
+2395,cbp,Arginine and Proline Metabolism
+2397,hco3,Arginine and Proline Metabolism
+2403,gln__l,Arginine and Proline Metabolism
+2404,preq0,Cofactor and Prosthetic Group Biosynthesis
+2410,cdg,Cofactor and Prosthetic Group Biosynthesis
+2411,nh4,Cofactor and Prosthetic Group Biosynthesis
+2413,atp,Inorganic Ion Transport and Metabolism
+2414,cd2,Inorganic Ion Transport and Metabolism
+2416,adp,Inorganic Ion Transport and Metabolism
+2417,pi,Inorganic Ion Transport and Metabolism
+2427,cdpdddecg,Glycerophospholipid Metabolism
+2429,cmp,Glycerophospholipid Metabolism
+2432,cdpdtdecg,Glycerophospholipid Metabolism
+2439,cdpdtdec7eg,Glycerophospholipid Metabolism
+2444,cdpdhdecg,Glycerophospholipid Metabolism
+2449,cdpdhdec9eg,Glycerophospholipid Metabolism
+2452,cdpdodecg,Glycerophospholipid Metabolism
+2460,cdpdodec11eg,Glycerophospholipid Metabolism
+2462,preq1,Cofactor and Prosthetic Group Biosynthesis
+2469,cph4,Cofactor and Prosthetic Group Biosynthesis
+2471,4c2me,Cofactor and Prosthetic Group Biosynthesis
+2472,2p4c2me,Cofactor and Prosthetic Group Biosynthesis
+2476,amet,Glycerophospholipid Metabolism
+2477,cpe160,Glycerophospholipid Metabolism
+2480,ahcys,Glycerophospholipid Metabolism
+2485,cpg160,Glycerophospholipid Metabolism
+2486,cpe180,Glycerophospholipid Metabolism
+2492,cpg180,Glycerophospholipid Metabolism
+2502,cgly,"Transport, Inner Membrane"
+2508,chol,"Transport, Inner Membrane"
+2518,chol,Unassigned
+2524,pphn,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+2526,pi,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+2527,3psme,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+2528,4hbz,Cofactor and Prosthetic Group Biosynthesis
+2534,chtbs6p,"Transport, Inner Membrane"
+2538,cenchddd,Alternate Carbon Metabolism
+2539,cinnm,Alternate Carbon Metabolism
+2543,ac,Citric Acid Cycle
+2544,oaa,Citric Acid Cycle
+2549,cit,"Transport, Inner Membrane"
+2551,succ,"Transport, Inner Membrane"
+2622,cl,Inorganic Ion Transport and Metabolism
+2626,csn,Nucleotide Salvage Pathway
+2628,cmp,Nucleotide Salvage Pathway
+2640,co2,"Transport, Inner Membrane"
+2643,cobalt2,Inorganic Ion Transport and Metabolism
+2672,colipa,Lipopolysaccharide Biosynthesis / Recycling
+2681,cpgn,Inorganic Ion Transport and Metabolism
+2685,cpgn_un,Inorganic Ion Transport and Metabolism
+2708,cpgn,"Transport, Inner Membrane"
+2722,acald,Cofactor and Prosthetic Group Biosynthesis
+2723,ahdt,Cofactor and Prosthetic Group Biosynthesis
+2730,cpmp,Cofactor and Prosthetic Group Biosynthesis
+2733,pppg9,Cofactor and Prosthetic Group Biosynthesis
+2734,cpppg3,Cofactor and Prosthetic Group Biosynthesis
+2743,crn,Oxidative Phosphorylation
+2744,bbtcoa,Oxidative Phosphorylation
+2745,crncoa,Oxidative Phosphorylation
+2746,gbbtn,Oxidative Phosphorylation
+2750,coa,Oxidative Phosphorylation
+2753,crndcoa,Oxidative Phosphorylation
+2756,ctbtcoa,Oxidative Phosphorylation
+2758,ctbt,Oxidative Phosphorylation
+2767,crn__d,Oxidative Phosphorylation
+2774,crn__d,"Transport, Inner Membrane"
+2781,crn,"Transport, Inner Membrane"
+2794,gbbtn,"Transport, Inner Membrane"
+2806,h,Citric Acid Cycle
+2807,accoa,Citric Acid Cycle
+2808,ura,Nucleotide Salvage Pathway
+2814,csn,"Transport, Inner Membrane"
+2831,ctbt,"Transport, Inner Membrane"
+2836,tdecoa,Membrane Lipid Metabolism
+2838,hdcoa,Membrane Lipid Metabolism
+2841,odecoa,Membrane Lipid Metabolism
+2842,h2o,Purine and Pyrimidine Biosynthesis
+2844,glu__l,Purine and Pyrimidine Biosynthesis
+2845,utp,Purine and Pyrimidine Biosynthesis
+2848,ctp,Purine and Pyrimidine Biosynthesis
+2850,gln__l,Purine and Pyrimidine Biosynthesis
+2857,cu,Inorganic Ion Transport and Metabolism
+2863,cu2,Inorganic Ion Transport and Metabolism
+2877,cu,"Transport, Outer Membrane"
+2880,cyan,Unassigned
+2881,so3,Unassigned
+2882,tsul,Unassigned
+2884,tcynt,Unassigned
+2892,hco3,Nitrogen Metabolism
+2893,cynt,Nitrogen Metabolism
+2894,co2,Nitrogen Metabolism
+2896,nh4,Nitrogen Metabolism
+2898,cynt,"Transport, Inner Membrane"
+2903,cys__d,Cysteine Metabolism
+2904,pyr,Cysteine Metabolism
+2905,nh4,Cysteine Metabolism
+2906,h2s,Cysteine Metabolism
+2918,cys__d,"Transport, Inner Membrane"
+2923,ac,Cysteine Metabolism
+2924,acser,Cysteine Metabolism
+2927,so2,Cysteine Metabolism
+2928,ala__l,Cysteine Metabolism
+2930,3sala,Cysteine Metabolism
+2931,hcys__l,Methionine Metabolism
+2933,pyr,Methionine Metabolism
+2934,cyst__l,Methionine Metabolism
+2935,nh4,Methionine Metabolism
+2936,cys__l,tRNA Charging
+2938,cystrna,tRNA Charging
+2941,trnacys,tRNA Charging
+2942,cys__l,"Transport, Inner Membrane"
+2960,o2,Oxidative Phosphorylation
+2962,mqn8,Oxidative Phosphorylation
+2965,mql8,Oxidative Phosphorylation
+2969,q8h2,Oxidative Phosphorylation
+2971,q8,Oxidative Phosphorylation
+2978,cytd,Nucleotide Salvage Pathway
+2979,uri,Nucleotide Salvage Pathway
+2983,cytd,Alternate Carbon Metabolism
+2985,csn,Alternate Carbon Metabolism
+2992,cytd,"Transport, Inner Membrane"
+3002,cdp,Nucleotide Salvage Pathway
+3006,dcmp,Nucleotide Salvage Pathway
+3009,dcdp,Nucleotide Salvage Pathway
+3010,lac__d,"Transport, Inner Membrane"
+3018,fadh2,Alanine and Aspartate Metabolism
+3021,fad,Alanine and Aspartate Metabolism
+3022,dad_2,Nucleotide Salvage Pathway
+3023,din,Nucleotide Salvage Pathway
+3027,dadp,Nucleotide Salvage Pathway
+3028,damp,Nucleotide Salvage Pathway
+3031,dad_2,"Transport, Inner Membrane"
+3037,adp,Glycerophospholipid Metabolism
+3038,12dgr120,Glycerophospholipid Metabolism
+3046,12dgr140,Glycerophospholipid Metabolism
+3048,12dgr141,Glycerophospholipid Metabolism
+3053,12dgr160,Glycerophospholipid Metabolism
+3058,12dgr161,Glycerophospholipid Metabolism
+3062,12dgr180,Glycerophospholipid Metabolism
+3067,12dgr181,Glycerophospholipid Metabolism
+3072,ala__d,"Transport, Inner Membrane"
+3083,23dappa,Alternate Carbon Metabolism
+3085,lys__l,Threonine and Lysine Metabolism
+3087,26dap__m,Threonine and Lysine Metabolism
+3088,26dap_ll,Threonine and Lysine Metabolism
+3091,26dap__m,"Transport, Inner Membrane"
+3099,ctp,Glycerophospholipid Metabolism
+3135,datp,Nucleotide Salvage Pathway
+3138,ditp,Nucleotide Salvage Pathway
+3139,db4p,Cofactor and Prosthetic Group Biosynthesis
+3142,ru5p__d,Cofactor and Prosthetic Group Biosynthesis
+3150,acgam,Alternate Carbon Metabolism
+3152,chtbs6p,Alternate Carbon Metabolism
+3159,dutp,Nucleotide Salvage Pathway
+3162,dctp,Nucleotide Salvage Pathway
+3163,dcyt,Nucleotide Salvage Pathway
+3166,duri,Nucleotide Salvage Pathway
+3168,dcyt,"Transport, Inner Membrane"
+3176,2dh3dgal,Alternate Carbon Metabolism
+3177,2dh3dgal6p,Alternate Carbon Metabolism
+3182,2ddglcn,"Transport, Inner Membrane"
+3189,2ddg6p,Alternate Carbon Metabolism
+3192,pep,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3193,h2o,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3195,2dda7p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3196,e4p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3199,g3p,Alternate Carbon Metabolism
+3200,dgdp,Nucleotide Salvage Pathway
+3201,dgmp,Nucleotide Salvage Pathway
+3206,dgsn,"Transport, Inner Membrane"
+3212,3hadpcoa,Alternate Carbon Metabolism
+3214,23dhacoa,Alternate Carbon Metabolism
+3215,h2o,"Valine, Leucine, and Isoleucine Metabolism"
+3216,23dhmb,"Valine, Leucine, and Isoleucine Metabolism"
+3217,3mob,"Valine, Leucine, and Isoleucine Metabolism"
+3218,23dhmp,"Valine, Leucine, and Isoleucine Metabolism"
+3219,3mop,"Valine, Leucine, and Isoleucine Metabolism"
+3221,pep,Alternate Carbon Metabolism
+3223,dhap,Alternate Carbon Metabolism
+3224,dha,Alternate Carbon Metabolism
+3228,dha,"Transport, Inner Membrane"
+3229,23dhb,Cofactor and Prosthetic Group Biosynthesis
+3231,23ddhb,Cofactor and Prosthetic Group Biosynthesis
+3234,23dhba,Cofactor and Prosthetic Group Biosynthesis
+3240,ser__l,Cofactor and Prosthetic Group Biosynthesis
+3242,23dhbzs,Cofactor and Prosthetic Group Biosynthesis
+3249,hkntd,Alternate Carbon Metabolism
+3252,thdp,Threonine and Lysine Metabolism
+3253,23dhdp,Threonine and Lysine Metabolism
+3258,pyr,Threonine and Lysine Metabolism
+3261,h2o,Threonine and Lysine Metabolism
+3262,dhf,Cofactor and Prosthetic Group Biosynthesis
+3265,thf,Cofactor and Prosthetic Group Biosynthesis
+3272,dhpt,Cofactor and Prosthetic Group Biosynthesis
+3275,thmnp,Cofactor and Prosthetic Group Biosynthesis
+3277,dhmpt,Cofactor and Prosthetic Group Biosynthesis
+3280,octdp,Cofactor and Prosthetic Group Biosynthesis
+3284,dhna,Cofactor and Prosthetic Group Biosynthesis
+3285,sbzcoa,Cofactor and Prosthetic Group Biosynthesis
+3288,14dhncoa,Cofactor and Prosthetic Group Biosynthesis
+3294,dhnpt,Cofactor and Prosthetic Group Biosynthesis
+3295,gcald,Cofactor and Prosthetic Group Biosynthesis
+3296,6hmhpt,Cofactor and Prosthetic Group Biosynthesis
+3299,q8h2,Purine and Pyrimidine Biosynthesis
+3300,dhor__s,Purine and Pyrimidine Biosynthesis
+3301,q8,Purine and Pyrimidine Biosynthesis
+3302,orot,Purine and Pyrimidine Biosynthesis
+3304,mqn8,Purine and Pyrimidine Biosynthesis
+3306,mql8,Purine and Pyrimidine Biosynthesis
+3307,succ,Purine and Pyrimidine Biosynthesis
+3315,cechddd,Alternate Carbon Metabolism
+3322,25drapp,Cofactor and Prosthetic Group Biosynthesis
+3326,6hmhptpp,Cofactor and Prosthetic Group Biosynthesis
+3329,dhptd,Methionine Metabolism
+3330,mdhdhf,Methionine Metabolism
+3331,dhptdn,Alternate Carbon Metabolism
+3332,thptdn,Alternate Carbon Metabolism
+3341,dhmptp,Cofactor and Prosthetic Group Biosynthesis
+3343,3dhq,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3346,3dhsk,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+3352,din,"Transport, Inner Membrane"
+3357,25dkglcn,Alternate Carbon Metabolism
+3372,dmpp,Cofactor and Prosthetic Group Biosynthesis
+3374,ipdp,Cofactor and Prosthetic Group Biosynthesis
+3375,grdp,Cofactor and Prosthetic Group Biosynthesis
+3378,h2mb4p,Cofactor and Prosthetic Group Biosynthesis
+3383,2omhmbl,Cofactor and Prosthetic Group Biosynthesis
+3389,dms,Oxidative Phosphorylation
+3390,dmso,Oxidative Phosphorylation
+3400,2dmmq8,Oxidative Phosphorylation
+3401,2dmmql8,Oxidative Phosphorylation
+3410,dmso,"Transport, Inner Membrane"
+3416,dhpmp,Cofactor and Prosthetic Group Biosynthesis
+3424,23doguln,Alternate Carbon Metabolism
+3435,dpcoa,Cofactor and Prosthetic Group Biosynthesis
+3440,pant__r,Cofactor and Prosthetic Group Biosynthesis
+3444,2dhp,Cofactor and Prosthetic Group Biosynthesis
+3447,2dr5p,Alternate Carbon Metabolism
+3448,q8h2,Unassigned
+3450,q8,Unassigned
+3452,mqn8,Unassigned
+3454,mql8,Unassigned
+3460,dsbdrd,Unassigned
+3461,dsbdox,Unassigned
+3462,trdox,Unassigned
+3463,trdrd,Unassigned
+3468,2amsa,Glycine and Serine Metabolism
+3469,ser__d,Glycine and Serine Metabolism
+3470,nadp,Glycine and Serine Metabolism
+3471,nadph,Glycine and Serine Metabolism
+3472,h,Glycine and Serine Metabolism
+3474,ser__d,"Transport, Inner Membrane"
+3480,tartr__d,Alternate Carbon Metabolism
+3481,oaa,Alternate Carbon Metabolism
+3482,dtmp,Nucleotide Salvage Pathway
+3483,dtdp,Nucleotide Salvage Pathway
+3491,nadh,Nucleotide Salvage Pathway
+3493,nad,Nucleotide Salvage Pathway
+3494,56dura,Nucleotide Salvage Pathway
+3496,dump,Nucleotide Salvage Pathway
+3501,2dr1p,Nucleotide Salvage Pathway
+3502,pi,Nucleotide Salvage Pathway
+3506,duri,"Transport, Inner Membrane"
+3515,2me4p,Cofactor and Prosthetic Group Biosynthesis
+3516,dxyl5p,Cofactor and Prosthetic Group Biosynthesis
+3524,g3p,Cofactor and Prosthetic Group Biosynthesis
+3526,dxyl,Cofactor and Prosthetic Group Biosynthesis
+3530,4per,Cofactor and Prosthetic Group Biosynthesis
+3532,e4p,Cofactor and Prosthetic Group Biosynthesis
+3538,nadh,Cell Envelope Biosynthesis
+3540,nad,Cell Envelope Biosynthesis
+3683,unagamuf,Lipopolysaccharide Biosynthesis / Recycling
+3684,h2o,Membrane Lipid Metabolism
+3685,3hbcoa,Membrane Lipid Metabolism
+3687,3hhcoa,Membrane Lipid Metabolism
+3692,3hocoa,Membrane Lipid Metabolism
+3695,3hdcoa,Membrane Lipid Metabolism
+3697,3hddcoa,Membrane Lipid Metabolism
+3700,3htdcoa,Membrane Lipid Metabolism
+3704,3hhdcoa,Membrane Lipid Metabolism
+3705,3hodcoa,Membrane Lipid Metabolism
+3708,pyr,Pentose Phosphate Pathway
+3709,g3p,Pentose Phosphate Pathway
+3710,2ddg6p,Pentose Phosphate Pathway
+3711,6pgc,Pentose Phosphate Pathway
+3712,h2o,Pentose Phosphate Pathway
+3714,kdo2lipid4,Lipopolysaccharide Biosynthesis / Recycling
+3715,kdo2lipid4l,Lipopolysaccharide Biosynthesis / Recycling
+3716,acp,Lipopolysaccharide Biosynthesis / Recycling
+3717,ddcaacp,Lipopolysaccharide Biosynthesis / Recycling
+3720,lipa,Lipopolysaccharide Biosynthesis / Recycling
+3721,myrsacp,Lipopolysaccharide Biosynthesis / Recycling
+3724,hdeacp,Lipopolysaccharide Biosynthesis / Recycling
+3725,kdo2lipid4p,Lipopolysaccharide Biosynthesis / Recycling
+3727,lipa_cold,Lipopolysaccharide Biosynthesis / Recycling
+3730,egmeacp,Cofactor and Prosthetic Group Biosynthesis
+3734,gmeacp,Cofactor and Prosthetic Group Biosynthesis
+3742,pep,Glycolysis/Gluconeogenesis
+3743,h2o,Glycolysis/Gluconeogenesis
+3744,2pg,Glycolysis/Gluconeogenesis
+3746,seramp,Cofactor and Prosthetic Group Biosynthesis
+3747,enter,Cofactor and Prosthetic Group Biosynthesis
+3751,enter,Inorganic Ion Transport and Metabolism
+3753,23dhbzs,Inorganic Ion Transport and Metabolism
+3754,fe3,Inorganic Ion Transport and Metabolism
+3756,feenter,Inorganic Ion Transport and Metabolism
+3759,pmeacp,Cofactor and Prosthetic Group Biosynthesis
+3760,epmeacp,Cofactor and Prosthetic Group Biosynthesis
+3764,acald,Cell Envelope Biosynthesis
+3765,nh4,Cell Envelope Biosynthesis
+3766,etha,Cell Envelope Biosynthesis
+3769,etha,"Transport, Inner Membrane"
+3775,ethso3,"Transport, Inner Membrane"
+3785,etoh,"Transport, Inner Membrane"
+3786,g3p,Glycolysis/Gluconeogenesis
+3787,dha,Glycolysis/Gluconeogenesis
+3788,f6p,Glycolysis/Gluconeogenesis
+3791,fru,Alternate Carbon Metabolism
+3796,f6p,"Transport, Inner Membrane"
+3836,coa,Cell Envelope Biosynthesis
+3838,dcacoa,Cell Envelope Biosynthesis
+3839,ddcacoa,Cell Envelope Biosynthesis
+3847,tdcoa,Cell Envelope Biosynthesis
+3852,tdecoa,Cell Envelope Biosynthesis
+3854,pmtcoa,Cell Envelope Biosynthesis
+3860,hdcoa,Cell Envelope Biosynthesis
+3864,stcoa,Cell Envelope Biosynthesis
+3871,odecoa,Cell Envelope Biosynthesis
+3876,hxa,Cell Envelope Biosynthesis
+3877,hxcoa,Cell Envelope Biosynthesis
+3879,occoa,Cell Envelope Biosynthesis
+3964,fad,Cofactor and Prosthetic Group Biosynthesis
+3965,fadh2,Cofactor and Prosthetic Group Biosynthesis
+3976,hmgth,Cofactor and Prosthetic Group Biosynthesis
+3978,sfglutth,Cofactor and Prosthetic Group Biosynthesis
+3982,fald,"Transport, Inner Membrane"
+3983,gthrd,Cofactor and Prosthetic Group Biosynthesis
+3985,fald,Cofactor and Prosthetic Group Biosynthesis
+3986,dhap,Glycolysis/Gluconeogenesis
+3987,fdp,Glycolysis/Gluconeogenesis
+3989,e4p,Pentose Phosphate Pathway
+3990,dhap,Pentose Phosphate Pathway
+3991,s17bp,Pentose Phosphate Pathway
+3993,pi,Glycolysis/Gluconeogenesis
+3996,fuc__l,Alternate Carbon Metabolism
+3997,fcl__l,Alternate Carbon Metabolism
+3998,fc1p,Alternate Carbon Metabolism
+4005,lald__l,Alternate Carbon Metabolism
+4006,fe2,Cofactor and Prosthetic Group Biosynthesis
+4007,ppp9,Cofactor and Prosthetic Group Biosynthesis
+4009,pheme,Cofactor and Prosthetic Group Biosynthesis
+4022,o2,Inorganic Ion Transport and Metabolism
+4023,so3,Inorganic Ion Transport and Metabolism
+4024,isetac,Inorganic Ion Transport and Metabolism
+4029,gcald,Inorganic Ion Transport and Metabolism
+4032,mso3,Inorganic Ion Transport and Metabolism
+4034,fald,Inorganic Ion Transport and Metabolism
+4040,acald,Inorganic Ion Transport and Metabolism
+4041,ethso3,Inorganic Ion Transport and Metabolism
+4048,butso3,Inorganic Ion Transport and Metabolism
+4049,btal,Inorganic Ion Transport and Metabolism
+4058,sulfac,Inorganic Ion Transport and Metabolism
+4061,glx,Inorganic Ion Transport and Metabolism
+4084,cit,Inorganic Ion Transport and Metabolism
+4094,fe3dhbzs,Inorganic Ion Transport and Metabolism
+4108,fe3hox_un,Inorganic Ion Transport and Metabolism
+4109,fe3hox,Inorganic Ion Transport and Metabolism
+4148,fe3,Cofactor and Prosthetic Group Biosynthesis
+4162,fecrm,Inorganic Ion Transport and Metabolism
+4166,fecrm_un,Inorganic Ion Transport and Metabolism
+4240,enter,"Transport, Inner Membrane"
+4241,feoxam,Inorganic Ion Transport and Metabolism
+4245,feoxam_un,Inorganic Ion Transport and Metabolism
+4289,4fe4s,Cofactor and Prosthetic Group Biosynthesis
+4290,3fe4s,Cofactor and Prosthetic Group Biosynthesis
+4295,no,Cofactor and Prosthetic Group Biosynthesis
+4296,n2o,Cofactor and Prosthetic Group Biosynthesis
+4302,suc6p,Alternate Carbon Metabolism
+4306,co2,Pyruvate Metabolism
+4307,h2,Pyruvate Metabolism
+4309,for,Pyruvate Metabolism
+4310,flxr,Unassigned
+4311,flxso,Unassigned
+4315,rbflvrd,Cofactor and Prosthetic Group Biosynthesis
+4319,ribflv,Cofactor and Prosthetic Group Biosynthesis
+4325,thf,tRNA Charging
+4326,mettrna,tRNA Charging
+4327,10fthf,tRNA Charging
+4328,fmettrna,tRNA Charging
+4329,h,tRNA Charging
+4331,fmn,Cofactor and Prosthetic Group Biosynthesis
+4335,fmnh2,Cofactor and Prosthetic Group Biosynthesis
+4345,5fthf,Folate Metabolism
+4346,h2o,Folate Metabolism
+4347,h,Folate Metabolism
+4348,methf,Folate Metabolism
+4349,oxa,Alternate Carbon Metabolism
+4350,oxalcoa,Alternate Carbon Metabolism
+4351,forcoa,Alternate Carbon Metabolism
+4352,for,Alternate Carbon Metabolism
+4353,for,"Transport, Inner Membrane"
+4361,succ,Citric Acid Cycle
+4362,fum,Citric Acid Cycle
+4363,mqn8,Citric Acid Cycle
+4364,mql8,Citric Acid Cycle
+4367,2dmmq8,Citric Acid Cycle
+4368,2dmmql8,Citric Acid Cycle
+4370,f1p,Alternate Carbon Metabolism
+4373,fdp,Alternate Carbon Metabolism
+4375,lys__l,Alternate Carbon Metabolism
+4377,frulysp,Alternate Carbon Metabolism
+4378,frulys,Alternate Carbon Metabolism
+4379,psclys,Alternate Carbon Metabolism
+4385,frulys,"Transport, Inner Membrane"
+4392,fruur,"Transport, Inner Membrane"
+4402,f1p,"Transport, Inner Membrane"
+4407,thf,Folate Metabolism
+4409,10fthf,Folate Metabolism
+4410,for,Folate Metabolism
+4412,adp,Folate Metabolism
+4413,atp,Folate Metabolism
+4416,pi,Folate Metabolism
+4421,fuc__l,"Transport, Inner Membrane"
+4426,mal__l,Citric Acid Cycle
+4428,fum,"Transport, Inner Membrane"
+4443,gam1p,Cell Envelope Biosynthesis
+4445,acgam1p,Cell Envelope Biosynthesis
+4446,accoa,Cell Envelope Biosynthesis
+4452,dtdpglu,Cell Envelope Biosynthesis
+4454,dttp,Cell Envelope Biosynthesis
+4456,g1p,Cell Envelope Biosynthesis
+4459,5aop,Cofactor and Prosthetic Group Biosynthesis
+4460,glu1sa,Cofactor and Prosthetic Group Biosynthesis
+4464,glyc2p,Alternate Carbon Metabolism
+4503,g3pc,"Transport, Inner Membrane"
+4506,glyc3p,Alternate Carbon Metabolism
+4512,glyc3p,Oxidative Phosphorylation
+4513,dhap,Oxidative Phosphorylation
+4525,g3pe,"Transport, Inner Membrane"
+4535,g3pg,"Transport, Inner Membrane"
+4544,g3pi,"Transport, Inner Membrane"
+4556,g3ps,"Transport, Inner Membrane"
+4563,1pyr5c,Arginine and Proline Metabolism
+4564,glu5sa,Arginine and Proline Metabolism
+4572,glu5p,Arginine and Proline Metabolism
+4577,g6p,Pentose Phosphate Pathway
+4578,6pgl,Pentose Phosphate Pathway
+4579,nadph,Pentose Phosphate Pathway
+4580,h,Pentose Phosphate Pathway
+4581,nadp,Pentose Phosphate Pathway
+4582,glc__d,Glycolysis/Gluconeogenesis
+4585,g6p,Glycolysis/Gluconeogenesis
+4588,g6p,"Transport, Inner Membrane"
+4601,5dh4dglc,Alternate Carbon Metabolism
+4602,galct__d,Alternate Carbon Metabolism
+4603,galctn__l,Alternate Carbon Metabolism
+4605,tagur,Alternate Carbon Metabolism
+4608,galctn__d,Alternate Carbon Metabolism
+4611,galctn__l,"Transport, Inner Membrane"
+4617,galctn__d,"Transport, Inner Membrane"
+4624,galct__d,"Transport, Inner Membrane"
+4630,gal,Alternate Carbon Metabolism
+4633,gal1p,Alternate Carbon Metabolism
+4639,melib,Alternate Carbon Metabolism
+4640,gagicolipa,Lipopolysaccharide Biosynthesis / Recycling
+4641,udp,Lipopolysaccharide Biosynthesis / Recycling
+4642,udpg,Lipopolysaccharide Biosynthesis / Recycling
+4644,gicolipa,Lipopolysaccharide Biosynthesis / Recycling
+4647,galt1p,"Transport, Inner Membrane"
+4651,galur,"Transport, Inner Membrane"
+4657,utp,Cell Envelope Biosynthesis
+4659,udpg,Cell Envelope Biosynthesis
+4664,gal,"Transport, Inner Membrane"
+4677,gam6p,"Transport, Inner Membrane"
+4688,nad,Glycolysis/Gluconeogenesis
+4690,h,Glycolysis/Gluconeogenesis
+4691,13dpg,Glycolysis/Gluconeogenesis
+4692,nadh,Glycolysis/Gluconeogenesis
+4694,gar,Purine and Pyrimidine Biosynthesis
+4695,fgam,Purine and Pyrimidine Biosynthesis
+4698,for,Purine and Pyrimidine Biosynthesis
+4708,glyclt,Folate Metabolism
+4710,nad,Folate Metabolism
+4711,nadh,Folate Metabolism
+4712,gcald,Folate Metabolism
+4713,gdpddman,Cell Envelope Biosynthesis
+4714,gdpofuc,Cell Envelope Biosynthesis
+4715,ppgpp,Cofactor and Prosthetic Group Biosynthesis
+4716,gdp,Cofactor and Prosthetic Group Biosynthesis
+4721,gdp,Cell Envelope Biosynthesis
+4723,gdpmann,Cell Envelope Biosynthesis
+4724,man,Cell Envelope Biosynthesis
+4726,gmp,Cell Envelope Biosynthesis
+4727,man1p,Cell Envelope Biosynthesis
+4730,gdptp,Cofactor and Prosthetic Group Biosynthesis
+4736,glu__l,Cell Envelope Biosynthesis
+4737,gln__l,Cell Envelope Biosynthesis
+4738,gam6p,Cell Envelope Biosynthesis
+4739,f6p,Cell Envelope Biosynthesis
+4743,gg4abut,Alternate Carbon Metabolism
+4745,ggbutal,Alternate Carbon Metabolism
+4748,glu__l,Alternate Carbon Metabolism
+4749,4abut,Alternate Carbon Metabolism
+4752,ggptrc,Alternate Carbon Metabolism
+4753,h2o2,Alternate Carbon Metabolism
+4761,ptrc,Alternate Carbon Metabolism
+4763,ghb,Arginine and Proline Metabolism
+4768,thf,Glycine and Serine Metabolism
+4769,h2o,Glycine and Serine Metabolism
+4770,ser__l,Glycine and Serine Metabolism
+4771,mlthf,Glycine and Serine Metabolism
+4772,gly,Glycine and Serine Metabolism
+4773,gmp,Nucleotide Salvage Pathway
+4777,bglycogen,Glycolysis/Gluconeogenesis
+4778,glycogen,Glycolysis/Gluconeogenesis
+4780,acglc__d,Alternate Carbon Metabolism
+4790,glcn,"Transport, Inner Membrane"
+4797,g1p,Glycolysis/Gluconeogenesis
+4803,2h3oppan,Alternate Carbon Metabolism
+4806,glcr,Alternate Carbon Metabolism
+4809,glcr,"Transport, Inner Membrane"
+4813,adp,Glycolysis/Gluconeogenesis
+4814,adpglc,Glycolysis/Gluconeogenesis
+4817,icolipa,Lipopolysaccharide Biosynthesis / Recycling
+4823,ggagicolipa,Lipopolysaccharide Biosynthesis / Recycling
+4827,gggagicolipa,Lipopolysaccharide Biosynthesis / Recycling
+4834,glcur,"Transport, Inner Membrane"
+4845,glc__d,"Transport, Inner Membrane"
+4862,ppi,Glycolysis/Gluconeogenesis
+4864,atp,Glycolysis/Gluconeogenesis
+4866,atp,Glutamate Metabolism
+4867,glu__l,Glutamate Metabolism
+4868,h,Glutamate Metabolism
+4869,adp,Glutamate Metabolism
+4870,pi,Glutamate Metabolism
+4871,nh4,Glutamate Metabolism
+4872,gln__l,Glutamate Metabolism
+4873,glntrna,tRNA Charging
+4875,trnagln,tRNA Charging
+4878,gln__l,tRNA Charging
+4885,gln__l,"Transport, Inner Membrane"
+4889,tag6p__d,Alternate Carbon Metabolism
+4890,galt1p,Alternate Carbon Metabolism
+4898,glu__l,"Transport, Inner Membrane"
+4901,cys__l,Cofactor and Prosthetic Group Biosynthesis
+4907,glucys,Cofactor and Prosthetic Group Biosynthesis
+4909,co2,Glutamate Metabolism
+4911,4abut,Glutamate Metabolism
+4912,akg,Glutamate Metabolism
+4913,h2o,Glutamate Metabolism
+4914,nadp,Glutamate Metabolism
+4915,nadph,Glutamate Metabolism
+4927,pram,Purine and Pyrimidine Biosynthesis
+4929,ppi,Purine and Pyrimidine Biosynthesis
+4931,prpp,Purine and Pyrimidine Biosynthesis
+4933,glu__d,Cell Envelope Biosynthesis
+4944,trnaglu,Cofactor and Prosthetic Group Biosynthesis
+4946,glutrna,Cofactor and Prosthetic Group Biosynthesis
+4970,co2,Glyoxylate Metabolism
+4971,glx,Glyoxylate Metabolism
+4972,h,Glyoxylate Metabolism
+4973,2h3oppan,Glyoxylate Metabolism
+4976,glyald,"Transport, Inner Membrane"
+4978,coa,Glycine and Serine Metabolism
+4979,2aobut,Glycine and Serine Metabolism
+4980,accoa,Glycine and Serine Metabolism
+4984,glyb,"Transport, Inner Membrane"
+5001,glyc2p,"Transport, Inner Membrane"
+5006,glyc3p,"Transport, Inner Membrane"
+5017,glyc__r,"Transport, Inner Membrane"
+5028,atp,Glyoxylate Metabolism
+5029,glyc__r,Glyoxylate Metabolism
+5031,adp,Glyoxylate Metabolism
+5032,3pg,Glyoxylate Metabolism
+5033,atp,Glycine and Serine Metabolism
+5034,glyc__r,Glycine and Serine Metabolism
+5036,2pg,Glycine and Serine Metabolism
+5037,adp,Glycine and Serine Metabolism
+5039,mlthf,Folate Metabolism
+5040,gly,Folate Metabolism
+5043,co2,Folate Metabolism
+5044,nh4,Folate Metabolism
+5045,glyclt,Glyoxylate Metabolism
+5047,nadh,Glyoxylate Metabolism
+5048,nad,Glyoxylate Metabolism
+5050,nadph,Glyoxylate Metabolism
+5054,nadp,Glyoxylate Metabolism
+5056,glyclt,"Transport, Inner Membrane"
+5065,q8h2,Alternate Carbon Metabolism
+5066,glyclt,Alternate Carbon Metabolism
+5067,glx,Alternate Carbon Metabolism
+5068,q8,Alternate Carbon Metabolism
+5071,mqn8,Alternate Carbon Metabolism
+5072,mql8,Alternate Carbon Metabolism
+5075,2dmmq8,Alternate Carbon Metabolism
+5076,2dmmql8,Alternate Carbon Metabolism
+5079,glyc,"Transport, Inner Membrane"
+5086,gthrd,Methylglyoxal Metabolism
+5088,lac__d,Methylglyoxal Metabolism
+5090,lgt__s,Methylglyoxal Metabolism
+5095,glytrna,tRNA Charging
+5098,trnagly,tRNA Charging
+5100,gly,tRNA Charging
+5102,gly,"Transport, Inner Membrane"
+5118,ppi,Lipopolysaccharide Biosynthesis / Recycling
+5119,gmhep1p,Lipopolysaccharide Biosynthesis / Recycling
+5124,gmhep17bp,Lipopolysaccharide Biosynthesis / Recycling
+5125,gmhep7p,Lipopolysaccharide Biosynthesis / Recycling
+5132,gmp,Purine and Pyrimidine Biosynthesis
+5133,nadph,Purine and Pyrimidine Biosynthesis
+5135,nadp,Purine and Pyrimidine Biosynthesis
+5137,nh4,Purine and Pyrimidine Biosynthesis
+5138,xmp,Purine and Pyrimidine Biosynthesis
+5150,co2,Pentose Phosphate Pathway
+5153,ru5p__d,Pentose Phosphate Pathway
+5154,6pgc,Alternate Carbon Metabolism
+5159,gdpfuc,Cell Envelope Biosynthesis
+5164,gp4g,Nucleotide Salvage Pathway
+5168,chol,Glycerophospholipid Metabolism
+5172,g3pc,Glycerophospholipid Metabolism
+5179,g3pe,Glycerophospholipid Metabolism
+5181,etha,Glycerophospholipid Metabolism
+5189,ser__l,Glycerophospholipid Metabolism
+5190,g3ps,Glycerophospholipid Metabolism
+5198,g3pg,Glycerophospholipid Metabolism
+5202,glyc,Glycerophospholipid Metabolism
+5209,g3pi,Glycerophospholipid Metabolism
+5210,inost,Glycerophospholipid Metabolism
+5220,frdp,Cofactor and Prosthetic Group Biosynthesis
+5222,grxox,Unassigned
+5223,gthrd,Unassigned
+5224,grxrd,Unassigned
+5225,gthox,Unassigned
+5230,gsn,Nucleotide Salvage Pathway
+5234,gsn,"Transport, Inner Membrane"
+5237,gtspmd,Arginine and Proline Metabolism
+5239,gthrd,Arginine and Proline Metabolism
+5240,spmd,Arginine and Proline Metabolism
+5254,gthox,Cofactor and Prosthetic Group Biosynthesis
+5269,gthrd,"Transport, Inner Membrane"
+5285,gly,Cofactor and Prosthetic Group Biosynthesis
+5311,xtp,Nucleotide Salvage Pathway
+5316,35cgmp,Nucleotide Salvage Pathway
+5318,gua,Nucleotide Salvage Pathway
+5320,xan,Nucleotide Salvage Pathway
+5327,gua,"Transport, Inner Membrane"
+5334,glcur,Alternate Carbon Metabolism
+5335,fruur,Alternate Carbon Metabolism
+5336,galur,Alternate Carbon Metabolism
+5350,h2s,Inorganic Ion Transport and Metabolism
+5351,so4,Inorganic Ion Transport and Metabolism
+5353,h2s,"Transport, Inner Membrane"
+5358,h2,"Transport, Inner Membrane"
+5362,nadh,Membrane Lipid Metabolism
+5364,nad,Membrane Lipid Metabolism
+5406,3ophb,Cofactor and Prosthetic Group Biosynthesis
+5412,3hcinnm,"Transport, Inner Membrane"
+5415,hco3,Unassigned
+5420,amet,Methionine Metabolism
+5422,h,Methionine Metabolism
+5423,met__l,Methionine Metabolism
+5425,mmet,Methionine Metabolism
+5433,hemeo,Cofactor and Prosthetic Group Biosynthesis
+5437,hhlipa,Lipopolysaccharide Biosynthesis / Recycling
+5438,phhlipa,Lipopolysaccharide Biosynthesis / Recycling
+5442,hphhlipa,Lipopolysaccharide Biosynthesis / Recycling
+5443,phphhlipa,Lipopolysaccharide Biosynthesis / Recycling
+5449,hlipa,Lipopolysaccharide Biosynthesis / Recycling
+5467,4mhetz,Cofactor and Prosthetic Group Biosynthesis
+5468,4mpetz,Cofactor and Prosthetic Group Biosynthesis
+5477,man,Alternate Carbon Metabolism
+5478,man6p,Alternate Carbon Metabolism
+5488,hxa,"Transport, Inner Membrane"
+5494,hg2,Inorganic Ion Transport and Metabolism
+5504,histd,Histidine Metabolism
+5505,h2o,Histidine Metabolism
+5506,his__l,Histidine Metabolism
+5507,h,Histidine Metabolism
+5508,nad,Histidine Metabolism
+5509,nadh,Histidine Metabolism
+5510,hisp,Histidine Metabolism
+5513,pi,Histidine Metabolism
+5514,histrna,tRNA Charging
+5516,his__l,tRNA Charging
+5518,trnahis,tRNA Charging
+5523,his__l,"Transport, Inner Membrane"
+5533,hkndd,Alternate Carbon Metabolism
+5534,succ,Alternate Carbon Metabolism
+5535,op4en,Alternate Carbon Metabolism
+5539,fum,Alternate Carbon Metabolism
+5543,ppbng,Cofactor and Prosthetic Group Biosynthesis
+5544,hmbil,Cofactor and Prosthetic Group Biosynthesis
+5551,4ahmmp,Cofactor and Prosthetic Group Biosynthesis
+5552,hom__l,"Transport, Inner Membrane"
+5560,4h2opntn,Alternate Carbon Metabolism
+5573,3hpppn,"Transport, Inner Membrane"
+5576,hpyr,Alternate Carbon Metabolism
+5580,glyc__r,Alternate Carbon Metabolism
+5588,hom__l,Threonine and Lysine Metabolism
+5593,phom,Threonine and Lysine Metabolism
+5598,hom__l,Methionine Metabolism
+5599,coa,Methionine Metabolism
+5600,suchms,Methionine Metabolism
+5601,succoa,Methionine Metabolism
+5603,akg,Histidine Metabolism
+5604,glu__l,Histidine Metabolism
+5605,imacp,Histidine Metabolism
+5615,hxcoa,Alternate Carbon Metabolism
+5617,hxa,Alternate Carbon Metabolism
+5621,imp,Nucleotide Salvage Pathway
+5623,h2,Oxidative Phosphorylation
+5637,pydam,Cofactor and Prosthetic Group Biosynthesis
+5643,hxan,"Transport, Inner Membrane"
+5647,iscssh,Cofactor and Prosthetic Group Biosynthesis
+5648,iscs,Cofactor and Prosthetic Group Biosynthesis
+5649,iscu_2fe2s,Cofactor and Prosthetic Group Biosynthesis
+5652,iscu,Cofactor and Prosthetic Group Biosynthesis
+5662,iscu_2fe2s2,Cofactor and Prosthetic Group Biosynthesis
+5675,iscu_4fe4s,Cofactor and Prosthetic Group Biosynthesis
+5683,nadph,Citric Acid Cycle
+5686,nadp,Citric Acid Cycle
+5687,ichor,Cofactor and Prosthetic Group Biosynthesis
+5695,succ,Anaplerotic Reactions
+5696,icit,Anaplerotic Reactions
+5697,glx,Anaplerotic Reactions
+5712,idon__l,"Transport, Inner Membrane"
+5718,aicar,Histidine Metabolism
+5720,eig3p,Histidine Metabolism
+5722,prlp,Histidine Metabolism
+5723,gln__l,Histidine Metabolism
+5728,co2,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+5730,2cpr5p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+5731,3ig3p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+5732,akg,"Valine, Leucine, and Isoleucine Metabolism"
+5733,ile__l,"Valine, Leucine, and Isoleucine Metabolism"
+5734,glu__l,"Valine, Leucine, and Isoleucine Metabolism"
+5736,iletrna,tRNA Charging
+5737,trnaile,tRNA Charging
+5739,ile__l,tRNA Charging
+5745,ile__l,"Transport, Inner Membrane"
+5761,nad,Purine and Pyrimidine Biosynthesis
+5762,nadh,Purine and Pyrimidine Biosynthesis
+5767,indole,"Transport, Inner Membrane"
+5778,inost,"Transport, Inner Membrane"
+5783,rib__d,Nucleotide Salvage Pathway
+5794,ins,"Transport, Inner Membrane"
+5809,3c4mop,"Valine, Leucine, and Isoleucine Metabolism"
+5810,3c2hmp,"Valine, Leucine, and Isoleucine Metabolism"
+5811,nadh,"Valine, Leucine, and Isoleucine Metabolism"
+5813,nad,"Valine, Leucine, and Isoleucine Metabolism"
+5814,2ippm,"Valine, Leucine, and Isoleucine Metabolism"
+5819,3c3hmp,"Valine, Leucine, and Isoleucine Metabolism"
+5821,accoa,"Valine, Leucine, and Isoleucine Metabolism"
+5823,coa,"Valine, Leucine, and Isoleucine Metabolism"
+5826,isetac,"Transport, Inner Membrane"
+5840,kdo2lipid4,"Transport, Inner Membrane"
+5849,nadp,"Valine, Leucine, and Isoleucine Metabolism"
+5850,nadph,"Valine, Leucine, and Isoleucine Metabolism"
+5861,malacp,Membrane Lipid Metabolism
+5863,actacp,Membrane Lipid Metabolism
+5864,co2,Membrane Lipid Metabolism
+5871,ctp,Lipopolysaccharide Biosynthesis / Recycling
+5872,ckdo,Lipopolysaccharide Biosynthesis / Recycling
+5874,kdo,Lipopolysaccharide Biosynthesis / Recycling
+5875,kdo8p,Lipopolysaccharide Biosynthesis / Recycling
+5879,ara5p,Lipopolysaccharide Biosynthesis / Recycling
+5883,pep,Lipopolysaccharide Biosynthesis / Recycling
+5885,xu5p__l,Alternate Carbon Metabolism
+5893,k,Inorganic Ion Transport and Metabolism
+5906,pyr,Oxidative Phosphorylation
+5907,lac__l,Oxidative Phosphorylation
+5913,lac__l,"Transport, Inner Membrane"
+5923,lcts,Alternate Carbon Metabolism
+5934,26dap__m,Murein Recycling
+5938,laladglu,"Transport, Inner Membrane"
+5944,lalalglu,"Transport, Inner Membrane"
+5947,nad,Methylglyoxal Metabolism
+5948,nadh,Methylglyoxal Metabolism
+5951,lald__d,Methylglyoxal Metabolism
+5955,lald__l,Methylglyoxal Metabolism
+5958,ala__l,Murein Recycling
+5959,glu__l,Murein Recycling
+5963,lac__l,Alternate Carbon Metabolism
+5971,12ppd__r,Methylglyoxal Metabolism
+5974,12ppd__s,Alternate Carbon Metabolism
+5977,lcts,"Transport, Inner Membrane"
+5987,pyr,Pyruvate Metabolism
+5989,lac__d,Pyruvate Metabolism
+5994,lac__d,Oxidative Phosphorylation
+5997,leu__l,"Valine, Leucine, and Isoleucine Metabolism"
+5998,4mop,"Valine, Leucine, and Isoleucine Metabolism"
+6000,leutrna,tRNA Charging
+6001,leu__l,tRNA Charging
+6005,trnaleu,tRNA Charging
+6008,leu__l,"Transport, Inner Membrane"
+6040,lipopb,Cofactor and Prosthetic Group Biosynthesis
+6041,lipoamp,Cofactor and Prosthetic Group Biosynthesis
+6043,lipoate,Cofactor and Prosthetic Group Biosynthesis
+6060,octapb,Cofactor and Prosthetic Group Biosynthesis
+6061,ocacp,Cofactor and Prosthetic Group Biosynthesis
+6076,lipoate,"Transport, Inner Membrane"
+6081,u23ga,Lipopolysaccharide Biosynthesis / Recycling
+6084,lipidads,Lipopolysaccharide Biosynthesis / Recycling
+6085,lipidx,Lipopolysaccharide Biosynthesis / Recycling
+6193,2ddecg3p,Glycerophospholipid Metabolism
+6198,2tdecg3p,Glycerophospholipid Metabolism
+6204,2tdec7eg3p,Glycerophospholipid Metabolism
+6206,2hdecg3p,Glycerophospholipid Metabolism
+6211,2hdec9eg3p,Glycerophospholipid Metabolism
+6217,2odecg3p,Glycerophospholipid Metabolism
+6225,2odec11eg3p,Glycerophospholipid Metabolism
+6227,apg120,Glycerophospholipid Metabolism
+6232,apg140,Glycerophospholipid Metabolism
+6235,apg141,Glycerophospholipid Metabolism
+6240,apg160,Glycerophospholipid Metabolism
+6244,apg161,Glycerophospholipid Metabolism
+6247,apg180,Glycerophospholipid Metabolism
+6250,apg181,Glycerophospholipid Metabolism
+6357,15dap,Threonine and Lysine Metabolism
+6361,trnalys,tRNA Charging
+6362,lys__l,tRNA Charging
+6366,lystrna,tRNA Charging
+6384,xylu__l,Alternate Carbon Metabolism
+6385,lyx__l,Alternate Carbon Metabolism
+6387,lyx__l,"Transport, Inner Membrane"
+6394,mnl1p,Alternate Carbon Metabolism
+6402,malcoame,Cofactor and Prosthetic Group Biosynthesis
+6403,malcoa,Cofactor and Prosthetic Group Biosynthesis
+6406,mal__d,Alternate Carbon Metabolism
+6411,mal__d,"Transport, Inner Membrane"
+6416,h2o,Anaplerotic Reactions
+6417,mal__l,Anaplerotic Reactions
+6419,h,Anaplerotic Reactions
+6420,accoa,Anaplerotic Reactions
+6421,coa,Anaplerotic Reactions
+6422,acmalt,Alternate Carbon Metabolism
+6427,malthx,"Transport, Inner Membrane"
+6440,maltpt,"Transport, Inner Membrane"
+6450,malttr,"Transport, Inner Membrane"
+6455,maltttr,"Transport, Inner Membrane"
+6467,malt,"Transport, Inner Membrane"
+6471,malt6p,"Transport, Inner Membrane"
+6476,mal__l,"Transport, Inner Membrane"
+6499,man6p,"Transport, Inner Membrane"
+6504,mana,Alternate Carbon Metabolism
+6509,man6pglyc,"Transport, Inner Membrane"
+6516,man6pglyc,Alternate Carbon Metabolism
+6523,2mcit,Alternate Carbon Metabolism
+6524,2mcacn,Alternate Carbon Metabolism
+6528,micit,Alternate Carbon Metabolism
+6539,cyan,Cysteine Metabolism
+6542,mercppyr,Cysteine Metabolism
+6543,tcynt,Cysteine Metabolism
+6590,q8h2,Citric Acid Cycle
+6592,q8,Citric Acid Cycle
+6598,nad,Anaplerotic Reactions
+6599,pyr,Anaplerotic Reactions
+6600,co2,Anaplerotic Reactions
+6602,nadh,Anaplerotic Reactions
+6605,nadph,Anaplerotic Reactions
+6606,nadp,Anaplerotic Reactions
+6608,2mecdp,Cofactor and Prosthetic Group Biosynthesis
+6610,flxso,Cofactor and Prosthetic Group Biosynthesis
+6611,flxr,Cofactor and Prosthetic Group Biosynthesis
+6616,cmp,Cofactor and Prosthetic Group Biosynthesis
+6618,melib,"Transport, Inner Membrane"
+6630,meoh,"Transport, Inner Membrane"
+6631,ctp,Cofactor and Prosthetic Group Biosynthesis
+6637,atp,Methionine Metabolism
+6638,ppi,Methionine Metabolism
+6641,pi,Methionine Metabolism
+6648,met__d,"Transport, Inner Membrane"
+6651,h2o2,Methionine Metabolism
+6654,metsox_s__l,Methionine Metabolism
+6655,metsox_r__l,Methionine Metabolism
+6660,5mthf,Methionine Metabolism
+6663,thf,Methionine Metabolism
+6666,metsox_s__l,"Transport, Inner Membrane"
+6676,metsox_r__l,"Transport, Inner Membrane"
+6683,trdox,Methionine Metabolism
+6684,trdrd,Methionine Metabolism
+6696,met__l,tRNA Charging
+6697,trnamet,tRNA Charging
+6702,met__l,"Transport, Inner Membrane"
+6708,mg2,Inorganic Ion Transport and Metabolism
+6722,dhap,Methylglyoxal Metabolism
+6723,pi,Methylglyoxal Metabolism
+6727,inost,Cell Envelope Biosynthesis
+6728,mi1p__d,Cell Envelope Biosynthesis
+6798,g1p,Alternate Carbon Metabolism
+6808,mmcoa__s,Alternate Carbon Metabolism
+6813,mmet,"Transport, Inner Membrane"
+6821,mn2,Inorganic Ion Transport and Metabolism
+6833,mnl1p,"Transport, Inner Membrane"
+6840,mn2,"Transport, Inner Membrane"
+6846,moadcosh,Cofactor and Prosthetic Group Biosynthesis
+6848,moadamp,Cofactor and Prosthetic Group Biosynthesis
+6853,kdolipid4,Lipopolysaccharide Biosynthesis / Recycling
+6854,cmp,Lipopolysaccharide Biosynthesis / Recycling
+6856,lipida,Lipopolysaccharide Biosynthesis / Recycling
+6866,kphphhlipa,Lipopolysaccharide Biosynthesis / Recycling
+6869,mobd,Inorganic Ion Transport and Metabolism
+6877,mococdp,Cofactor and Prosthetic Group Biosynthesis
+6883,mobd,Cofactor and Prosthetic Group Biosynthesis
+6891,mocogdp,Cofactor and Prosthetic Group Biosynthesis
+6894,3mob,Cofactor and Prosthetic Group Biosynthesis
+6896,mlthf,Cofactor and Prosthetic Group Biosynthesis
+6898,o2,Citric Acid Cycle
+6901,h2o2,Citric Acid Cycle
+6904,mpt,Cofactor and Prosthetic Group Biosynthesis
+6907,udcpdp,Murein Biosynthesis
+6909,h,Murein Biosynthesis
+6910,uaagmda,Murein Biosynthesis
+6921,moadcoo,Cofactor and Prosthetic Group Biosynthesis
+6927,3hpp,Nucleotide Salvage Pathway
+6928,nadp,Nucleotide Salvage Pathway
+6929,nadph,Nucleotide Salvage Pathway
+6933,mso3,"Transport, Inner Membrane"
+6941,5mtr,Arginine and Proline Metabolism
+6944,ade,Arginine and Proline Metabolism
+6949,nadp,Folate Metabolism
+6950,nadph,Folate Metabolism
+6957,5mthf,Folate Metabolism
+6959,mththf,Methionine Metabolism
+6961,o2,Glycine and Serine Metabolism
+6963,nmtrp,Glycine and Serine Metabolism
+6964,fald,Glycine and Serine Metabolism
+6965,h2o2,Glycine and Serine Metabolism
+6966,trp__l,Glycine and Serine Metabolism
+6969,n2o,Inorganic Ion Transport and Metabolism
+6977,nac,"Transport, Inner Membrane"
+6980,nmn,Cofactor and Prosthetic Group Biosynthesis
+6985,nadh,Oxidative Phosphorylation
+6988,nad,Oxidative Phosphorylation
+7023,adprib,Cofactor and Prosthetic Group Biosynthesis
+7026,ncam,Cofactor and Prosthetic Group Biosynthesis
+7028,nadp,Oxidative Phosphorylation
+7029,nadph,Oxidative Phosphorylation
+7046,dnad,Cofactor and Prosthetic Group Biosynthesis
+7059,nicrnt,Cofactor and Prosthetic Group Biosynthesis
+7061,nac,Cofactor and Prosthetic Group Biosynthesis
+7064,prpp,Cofactor and Prosthetic Group Biosynthesis
+7083,udp,Nucleotide Salvage Pathway
+7084,utp,Nucleotide Salvage Pathway
+7087,ctp,Nucleotide Salvage Pathway
+7092,dttp,Nucleotide Salvage Pathway
+7096,dgtp,Nucleotide Salvage Pathway
+7102,dudp,Nucleotide Salvage Pathway
+7113,nh4,Inorganic Ion Transport and Metabolism
+7117,nad,Nitrogen Metabolism
+7118,no,Nitrogen Metabolism
+7119,n2o,Nitrogen Metabolism
+7120,nadh,Nitrogen Metabolism
+7123,ni2,Inorganic Ion Transport and Metabolism
+7153,r5p,Cofactor and Prosthetic Group Biosynthesis
+7157,nmn,"Transport, Inner Membrane"
+7161,ncam,"Transport, Inner Membrane"
+7162,r5p,"Transport, Inner Membrane"
+7170,nicrnt,Nucleotide Salvage Pathway
+7171,dnad,Nucleotide Salvage Pathway
+7175,dmbzid,Cofactor and Prosthetic Group Biosynthesis
+7176,5prdmbz,Cofactor and Prosthetic Group Biosynthesis
+7182,quln,Cofactor and Prosthetic Group Biosynthesis
+7188,no2,Inorganic Ion Transport and Metabolism
+7195,q8,Nitrogen Metabolism
+7196,q8h2,Nitrogen Metabolism
+7199,no3,Oxidative Phosphorylation
+7203,no2,Oxidative Phosphorylation
+7207,mql8,Nitrogen Metabolism
+7208,mqn8,Nitrogen Metabolism
+7219,no3,Inorganic Ion Transport and Metabolism
+7222,o2,Nitrogen Metabolism
+7223,no3,Nitrogen Metabolism
+7229,nadp,Nitrogen Metabolism
+7230,nadph,Nitrogen Metabolism
+7243,no,Inorganic Ion Transport and Metabolism
+7248,xmp,Nucleotide Salvage Pathway
+7251,xtsn,Nucleotide Salvage Pathway
+7266,dimp,Nucleotide Salvage Pathway
+7279,ump,Nucleotide Salvage Pathway
+7303,thymd,Nucleotide Salvage Pathway
+7324,dgsn,Nucleotide Salvage Pathway
+7350,didp,Nucleotide Salvage Pathway
+7358,xdp,Nucleotide Salvage Pathway
+7431,pppi,Nucleotide Salvage Pathway
+7442,nh4,Oxidative Phosphorylation
+7482,ragund,Lipopolysaccharide Biosynthesis / Recycling
+7483,coa,Lipopolysaccharide Biosynthesis / Recycling
+7484,accoa,Lipopolysaccharide Biosynthesis / Recycling
+7485,aragund,Lipopolysaccharide Biosynthesis / Recycling
+7486,o16aund,Lipopolysaccharide Biosynthesis / Recycling
+7488,gfgaragund,Lipopolysaccharide Biosynthesis / Recycling
+7489,garagund,Lipopolysaccharide Biosynthesis / Recycling
+7491,udpgalfur,Lipopolysaccharide Biosynthesis / Recycling
+7512,oaa,Pyruvate Metabolism
+7513,2obut,Alternate Carbon Metabolism
+7535,octa,Cofactor and Prosthetic Group Biosynthesis
+7538,hgmeacp,Cofactor and Prosthetic Group Biosynthesis
+7545,ogmeacp,Cofactor and Prosthetic Group Biosynthesis
+7547,malacp,Cofactor and Prosthetic Group Biosynthesis
+7552,akg,Cofactor and Prosthetic Group Biosynthesis
+7555,ohpb,Cofactor and Prosthetic Group Biosynthesis
+7557,2omph,Cofactor and Prosthetic Group Biosynthesis
+7560,2ohph,Cofactor and Prosthetic Group Biosynthesis
+7561,2ombzl,Cofactor and Prosthetic Group Biosynthesis
+7565,2ommbl,Cofactor and Prosthetic Group Biosynthesis
+7582,ump,Purine and Pyrimidine Biosynthesis
+7583,co2,Purine and Pyrimidine Biosynthesis
+7585,orot5p,Purine and Pyrimidine Biosynthesis
+7604,2oph,Cofactor and Prosthetic Group Biosynthesis
+7618,hpmeacp,Cofactor and Prosthetic Group Biosynthesis
+7624,opmeacp,Cofactor and Prosthetic Group Biosynthesis
+7646,orot,"Transport, Inner Membrane"
+7655,oxam,Unassigned
+7656,oxur,Unassigned
+7665,3oxdhscoa,Alternate Carbon Metabolism
+7667,2oxpaccoa,Alternate Carbon Metabolism
+7689,pa120,"Transport, Inner Membrane"
+7691,pa140,"Transport, Inner Membrane"
+7702,pa141,"Transport, Inner Membrane"
+7709,pa160,"Transport, Inner Membrane"
+7714,pa161,"Transport, Inner Membrane"
+7720,pa180,"Transport, Inner Membrane"
+7731,pa181,"Transport, Inner Membrane"
+7735,pacald,"Transport, Inner Membrane"
+7742,phaccoa,Alternate Carbon Metabolism
+7744,rephaccoa,Alternate Carbon Metabolism
+7746,ppi,Alternate Carbon Metabolism
+7750,amp,Alternate Carbon Metabolism
+7753,pnto__r,Cofactor and Prosthetic Group Biosynthesis
+7816,uagmda,Cell Envelope Biosynthesis
+7817,ugmda,Cell Envelope Biosynthesis
+7818,so3,Cysteine Metabolism
+7820,trdox,Cysteine Metabolism
+7823,trdrd,Cysteine Metabolism
+7826,grxrd,Cysteine Metabolism
+7829,grxox,Cysteine Metabolism
+7840,pyr,Glycolysis/Gluconeogenesis
+7841,coa,Glycolysis/Gluconeogenesis
+7842,accoa,Glycolysis/Gluconeogenesis
+7843,co2,Glycolysis/Gluconeogenesis
+7846,pdx5p,Cofactor and Prosthetic Group Biosynthesis
+7862,pydxn,Cofactor and Prosthetic Group Biosynthesis
+7866,pe120,"Transport, Inner Membrane"
+7875,pe140,"Transport, Inner Membrane"
+7886,pe141,"Transport, Inner Membrane"
+7893,pe160,"Transport, Inner Membrane"
+7897,pe161,"Transport, Inner Membrane"
+7902,pe180,"Transport, Inner Membrane"
+7913,pe181,"Transport, Inner Membrane"
+7944,tagdp__d,Alternate Carbon Metabolism
+7946,s7p,Pentose Phosphate Pathway
+7949,adp,Pentose Phosphate Pathway
+7950,atp,Pentose Phosphate Pathway
+7960,pg120,"Transport, Inner Membrane"
+7965,pg140,"Transport, Inner Membrane"
+7972,pg141,"Transport, Inner Membrane"
+7977,pg160,"Transport, Inner Membrane"
+7986,pg161,"Transport, Inner Membrane"
+7996,pg180,"Transport, Inner Membrane"
+8003,pg181,"Transport, Inner Membrane"
+8006,3php,Glycine and Serine Metabolism
+8007,nadh,Glycine and Serine Metabolism
+8009,nad,Glycine and Serine Metabolism
+8010,3pg,Glycine and Serine Metabolism
+8013,3pg,Glycolysis/Gluconeogenesis
+8021,2pglyc,Alternate Carbon Metabolism
+8031,pgp120,"Transport, Inner Membrane"
+8039,pgp140,"Transport, Inner Membrane"
+8046,pgp141,"Transport, Inner Membrane"
+8053,pgp160,"Transport, Inner Membrane"
+8063,pgp161,"Transport, Inner Membrane"
+8066,pgp180,"Transport, Inner Membrane"
+8077,pgp181,"Transport, Inner Membrane"
+8080,pgp120,Glycerophospholipid Metabolism
+8086,pgp140,Glycerophospholipid Metabolism
+8095,pgp141,Glycerophospholipid Metabolism
+8104,pgp160,Glycerophospholipid Metabolism
+8112,pgp161,Glycerophospholipid Metabolism
+8120,pgp180,Glycerophospholipid Metabolism
+8129,pgp181,Glycerophospholipid Metabolism
+8171,pheme,"Transport, Inner Membrane"
+8178,phpyr,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8179,akg,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8181,phe__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8182,trnaphe,tRNA Charging
+8184,phe__l,tRNA Charging
+8187,phetrna,tRNA Charging
+8191,phe__l,"Transport, Inner Membrane"
+8413,man1p,Alternate Carbon Metabolism
+8415,4r5au,Cofactor and Prosthetic Group Biosynthesis
+8422,meoh,Cofactor and Prosthetic Group Biosynthesis
+8427,4ppan,Cofactor and Prosthetic Group Biosynthesis
+8434,pnto__r,"Transport, Inner Membrane"
+8441,poaac,Nucleotide Salvage Pathway
+8443,flxso,Pyruvate Metabolism
+8445,flxr,Pyruvate Metabolism
+8453,ac,Oxidative Phosphorylation
+8454,co2,Oxidative Phosphorylation
+8456,ppi,Anaplerotic Reactions
+8457,pi,Anaplerotic Reactions
+8460,pppi,Anaplerotic Reactions
+8468,ppap,Alternate Carbon Metabolism
+8472,ppal,"Transport, Inner Membrane"
+8475,ppa,"Transport, Inner Membrane"
+8485,pep,Anaplerotic Reactions
+8487,oaa,Anaplerotic Reactions
+8489,pan4p,Cofactor and Prosthetic Group Biosynthesis
+8492,4ppcys,Cofactor and Prosthetic Group Biosynthesis
+8495,adp,Anaplerotic Reactions
+8497,atp,Anaplerotic Reactions
+8506,pppi,Oxidative Phosphorylation
+8507,ppi,Oxidative Phosphorylation
+8514,r5p,Alternate Carbon Metabolism
+8515,r1p,Alternate Carbon Metabolism
+8516,2dr1p,Alternate Carbon Metabolism
+8525,nad,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8528,34hpp,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8529,nadh,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8544,pppn,Alternate Carbon Metabolism
+8550,pppn,"Transport, Inner Membrane"
+8561,amp,Glycolysis/Gluconeogenesis
+8574,gly,Purine and Pyrimidine Biosynthesis
+8579,fpram,Purine and Pyrimidine Biosynthesis
+8583,prfp,Histidine Metabolism
+8585,prbamp,Histidine Metabolism
+8610,fadh2,Arginine and Proline Metabolism
+8613,fad,Arginine and Proline Metabolism
+8616,progly,"Transport, Inner Membrane"
+8624,trnapro,tRNA Charging
+8626,pro__l,tRNA Charging
+8627,protrna,tRNA Charging
+8631,pro__l,"Transport, Inner Membrane"
+8646,amp,Histidine Metabolism
+8647,r5p,Histidine Metabolism
+8651,psclys,"Transport, Inner Membrane"
+8659,skm5p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8662,ps120,Glycerophospholipid Metabolism
+8663,co2,Glycerophospholipid Metabolism
+8666,ps140,Glycerophospholipid Metabolism
+8670,ps141,Glycerophospholipid Metabolism
+8675,ps160,Glycerophospholipid Metabolism
+8680,ps161,Glycerophospholipid Metabolism
+8681,ps180,Glycerophospholipid Metabolism
+8685,ps181,Glycerophospholipid Metabolism
+8689,akg,Glycine and Serine Metabolism
+8691,glu__l,Glycine and Serine Metabolism
+8692,pser__l,Glycine and Serine Metabolism
+8696,pi,Glycine and Serine Metabolism
+8743,pi,Pyruvate Metabolism
+8755,ptrc,"Transport, Inner Membrane"
+8779,r1p,Nucleotide Salvage Pathway
+8817,pydam,"Transport, Inner Membrane"
+8823,pydx,Cofactor and Prosthetic Group Biosynthesis
+8831,pydxn,"Transport, Inner Membrane"
+8839,pydx,"Transport, Inner Membrane"
+8851,uracp,Nucleotide Salvage Pathway
+8852,o2,Nucleotide Salvage Pathway
+8863,o2s,Oxidative Phosphorylation
+8875,quin,"Transport, Inner Membrane"
+8876,quin,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+8885,dhap,Cofactor and Prosthetic Group Biosynthesis
+8886,r15bp,Alternate Carbon Metabolism
+8887,prpp,Alternate Carbon Metabolism
+8913,dmlz,Cofactor and Prosthetic Group Biosynthesis
+8927,ru5p__l,Alternate Carbon Metabolism
+8928,xu5p__d,Alternate Carbon Metabolism
+8938,dtdprmn,Lipopolysaccharide Biosynthesis / Recycling
+8940,dtdp,Lipopolysaccharide Biosynthesis / Recycling
+8952,rib__d,"Transport, Inner Membrane"
+8955,rmn,Alternate Carbon Metabolism
+8956,rml,Alternate Carbon Metabolism
+8961,rml1p,Alternate Carbon Metabolism
+8964,rmn,"Transport, Inner Membrane"
+8972,trdox,Nucleotide Salvage Pathway
+8973,trdrd,Nucleotide Salvage Pathway
+8978,grxrd,Nucleotide Salvage Pathway
+8980,grxox,Nucleotide Salvage Pathway
+9013,flxso,Nucleotide Salvage Pathway
+9014,flxr,Nucleotide Salvage Pathway
+9035,xu5p__d,Pentose Phosphate Pathway
+9037,r5p,Pentose Phosphate Pathway
+9043,sufbcd_2fe2s,Cofactor and Prosthetic Group Biosynthesis
+9046,sufbcd,Cofactor and Prosthetic Group Biosynthesis
+9047,sufsesh,Cofactor and Prosthetic Group Biosynthesis
+9050,sufse,Cofactor and Prosthetic Group Biosynthesis
+9068,sufbcd_2fe2s2,Cofactor and Prosthetic Group Biosynthesis
+9081,sufbcd_4fe4s,Cofactor and Prosthetic Group Biosynthesis
+9091,s7p,Lipopolysaccharide Biosynthesis / Recycling
+9095,sucorn,Arginine and Proline Metabolism
+9097,nh4,Arginine and Proline Metabolism
+9099,gdp,Cysteine Metabolism
+9102,ppi,Cysteine Metabolism
+9103,so4,Cysteine Metabolism
+9104,gtp,Cysteine Metabolism
+9108,sarcs,Glycine and Serine Metabolism
+9112,sbt6p,Alternate Carbon Metabolism
+9120,sbt6p,"Transport, Inner Membrane"
+9127,sl26da,Threonine and Lysine Metabolism
+9129,succ,Threonine and Lysine Metabolism
+9131,akg,Threonine and Lysine Metabolism
+9132,sl2a6o,Threonine and Lysine Metabolism
+9134,glu__l,Threonine and Lysine Metabolism
+9135,sertrna_sec,tRNA Charging
+9136,pi,tRNA Charging
+9137,selnp,tRNA Charging
+9139,sectrna,tRNA Charging
+9140,dgslnt,Inorganic Ion Transport and Metabolism
+9143,slnt,Inorganic Ion Transport and Metabolism
+9147,nadp,Inorganic Ion Transport and Metabolism
+9148,nadph,Inorganic Ion Transport and Metabolism
+9149,gslnt,Inorganic Ion Transport and Metabolism
+9153,seln,Inorganic Ion Transport and Metabolism
+9157,seln,Unassigned
+9160,selnp,Unassigned
+9161,amp,Unassigned
+9164,sel,Inorganic Ion Transport and Metabolism
+9165,mqn8,Inorganic Ion Transport and Metabolism
+9167,mql8,Inorganic Ion Transport and Metabolism
+9178,2sephchc,Cofactor and Prosthetic Group Biosynthesis
+9184,ser__l,Cysteine Metabolism
+9186,coa,Cysteine Metabolism
+9187,accoa,Cysteine Metabolism
+9189,pyr,Glycine and Serine Metabolism
+9190,nh4,Glycine and Serine Metabolism
+9196,sertrna,tRNA Charging
+9197,ser__l,tRNA Charging
+9199,trnaser,tRNA Charging
+9200,trnasecys,tRNA Charging
+9207,ser__l,"Transport, Inner Membrane"
+9221,sucglu,Arginine and Proline Metabolism
+9224,succ,Arginine and Proline Metabolism
+9227,sucgsa,Arginine and Proline Metabolism
+9232,2shchc,Cofactor and Prosthetic Group Biosynthesis
+9234,dscl,Cofactor and Prosthetic Group Biosynthesis
+9238,scl,Cofactor and Prosthetic Group Biosynthesis
+9240,sheme,Cofactor and Prosthetic Group Biosynthesis
+9244,skm,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9245,nadp,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9246,nadph,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9248,atp,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9251,adp,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9253,cys__l,Methionine Metabolism
+9254,succ,Methionine Metabolism
+9258,skm,"Transport, Inner Membrane"
+9273,so2,Inorganic Ion Transport and Metabolism
+9288,n1aspmd,Arginine and Proline Metabolism
+9291,n8aspmd,Arginine and Proline Metabolism
+9296,spmd,"Transport, Inner Membrane"
+9317,o2s,Unassigned
+9338,sucbz,Cofactor and Prosthetic Group Biosynthesis
+9362,succ,Oxidative Phosphorylation
+9363,fum,Oxidative Phosphorylation
+9373,atp,Citric Acid Cycle
+9377,adp,Citric Acid Cycle
+9378,pi,Citric Acid Cycle
+9384,tartr__d,"Transport, Inner Membrane"
+9386,suc6p,"Transport, Inner Membrane"
+9392,sulfac,"Transport, Inner Membrane"
+9399,nadp,Cysteine Metabolism
+9400,nadph,Cysteine Metabolism
+9419,f6p,Pentose Phosphate Pathway
+9423,tartr__l,Alternate Carbon Metabolism
+9430,tartr__l,"Transport, Inner Membrane"
+9437,akg,Alternate Carbon Metabolism
+9439,so3,Alternate Carbon Metabolism
+9440,taur,Alternate Carbon Metabolism
+9444,aacald,Alternate Carbon Metabolism
+9447,taur,"Transport, Inner Membrane"
+9456,thmpp,Cofactor and Prosthetic Group Biosynthesis
+9460,thmmp,Cofactor and Prosthetic Group Biosynthesis
+9461,dtdp4addg,Cell Envelope Biosynthesis
+9466,akg,Cell Envelope Biosynthesis
+9469,dtdp4d6dg,Cell Envelope Biosynthesis
+9470,dtdp4d6dm,Cell Envelope Biosynthesis
+9472,dtdprmn,Cell Envelope Biosynthesis
+9486,dsbdox,"Transport, Inner Membrane"
+9487,dsbdrd,"Transport, Inner Membrane"
+9505,coa,Threonine and Lysine Metabolism
+9506,succoa,Threonine and Lysine Metabolism
+9518,thymd,"Transport, Inner Membrane"
+9525,thm,"Transport, Inner Membrane"
+9534,acald,Threonine and Lysine Metabolism
+9535,gly,Threonine and Lysine Metabolism
+9538,thr__l,Threonine and Lysine Metabolism
+9540,thr__l,Glycine and Serine Metabolism
+9545,thr__l,"Valine, Leucine, and Isoleucine Metabolism"
+9547,nh4,"Valine, Leucine, and Isoleucine Metabolism"
+9555,thrtrna,tRNA Charging
+9558,thr__l,tRNA Charging
+9559,trnathr,tRNA Charging
+9565,thr__l,"Transport, Inner Membrane"
+9581,thym,"Transport, Inner Membrane"
+9594,dhgly,Cofactor and Prosthetic Group Biosynthesis
+9611,tmao,Oxidative Phosphorylation
+9612,tma,Oxidative Phosphorylation
+9643,thym,Nucleotide Salvage Pathway
+9645,mlthf,Nucleotide Salvage Pathway
+9647,dhf,Nucleotide Salvage Pathway
+9649,thm,Cofactor and Prosthetic Group Biosynthesis
+9665,2tpr3dpcoa,Cofactor and Prosthetic Group Biosynthesis
+9669,trdox,Oxidative Phosphorylation
+9673,trdrd,Oxidative Phosphorylation
+9674,tre6p,Alternate Carbon Metabolism
+9679,tre,Alternate Carbon Metabolism
+9683,udp,Alternate Carbon Metabolism
+9684,udpg,Alternate Carbon Metabolism
+9693,tre6p,"Transport, Inner Membrane"
+9700,nh4,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9702,trp__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9703,indole,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9706,ser__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9708,g3p,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9718,trnatrp,tRNA Charging
+9720,trptrna,tRNA Charging
+9721,trp__l,tRNA Charging
+9724,trp__l,"Transport, Inner Membrane"
+9739,tsul,Inorganic Ion Transport and Metabolism
+9754,tungs,Inorganic Ion Transport and Metabolism
+9767,4crsol,Cofactor and Prosthetic Group Biosynthesis
+9770,tyr__l,Cofactor and Prosthetic Group Biosynthesis
+9787,tyr__l,"Tyrosine, Tryptophan, and Phenylalanine Metabolism"
+9790,tyrtrna,tRNA Charging
+9791,trnatyr,tRNA Charging
+9793,tyr__l,tRNA Charging
+9797,tyr__l,"Transport, Inner Membrane"
+9801,athtp,Cofactor and Prosthetic Group Biosynthesis
+9805,u3hga,Lipopolysaccharide Biosynthesis / Recycling
+9808,3hmrsacp,Lipopolysaccharide Biosynthesis / Recycling
+9810,26dap__m,Cell Envelope Biosynthesis
+9815,uamag,Cell Envelope Biosynthesis
+9816,ugmd,Cell Envelope Biosynthesis
+9831,uacmam,Cell Envelope Biosynthesis
+9837,u3aga,Lipopolysaccharide Biosynthesis / Recycling
+9838,uacgam,Lipopolysaccharide Biosynthesis / Recycling
+9841,pep,Cell Envelope Biosynthesis
+9843,uaccg,Cell Envelope Biosynthesis
+9851,uaagmda,Cell Envelope Biosynthesis
+9860,uama,Cell Envelope Biosynthesis
+9863,uamr,Cell Envelope Biosynthesis
+9864,ala__l,Cell Envelope Biosynthesis
+9874,udcpdp,Cell Envelope Biosynthesis
+9879,udcpdp,Cofactor and Prosthetic Group Biosynthesis
+9889,udcpp,Lipopolysaccharide Biosynthesis / Recycling
+9892,udpgal,Alternate Carbon Metabolism
+9894,udpgal,Cell Envelope Biosynthesis
+9895,udpgalfur,Cell Envelope Biosynthesis
+9904,udpglcur,Cell Envelope Biosynthesis
+9909,udpglcur,Lipopolysaccharide Biosynthesis / Recycling
+9910,co2,Lipopolysaccharide Biosynthesis / Recycling
+9911,udpla4o,Lipopolysaccharide Biosynthesis / Recycling
+9912,nadh,Lipopolysaccharide Biosynthesis / Recycling
+9913,nad,Lipopolysaccharide Biosynthesis / Recycling
+9923,akg,Lipopolysaccharide Biosynthesis / Recycling
+9924,glu__l,Lipopolysaccharide Biosynthesis / Recycling
+9926,udpla4n,Lipopolysaccharide Biosynthesis / Recycling
+9936,urdglyc,Nitrogen Metabolism
+9938,glx,Nitrogen Metabolism
+9951,ac,Lipopolysaccharide Biosynthesis / Recycling
+9953,udpla4fn,Lipopolysaccharide Biosynthesis / Recycling
+9955,10fthf,Lipopolysaccharide Biosynthesis / Recycling
+9956,thf,Lipopolysaccharide Biosynthesis / Recycling
+9959,ula4n,Lipopolysaccharide Biosynthesis / Recycling
+9962,uamr,Murein Recycling
+9966,ugmd,Murein Recycling
+9969,um4p,Murein Recycling
+9985,ula4fn,Lipopolysaccharide Biosynthesis / Recycling
+9986,for,Lipopolysaccharide Biosynthesis / Recycling
+9996,uppg3,Cofactor and Prosthetic Group Biosynthesis
+10013,ura,"Transport, Inner Membrane"
+10025,oxur,Alternate Carbon Metabolism
+10031,urea,"Transport, Inner Membrane"
+10034,urate,Unassigned
+10037,alltn,Unassigned
+10038,uri,Alternate Carbon Metabolism
+10041,ura,Alternate Carbon Metabolism
+10047,uri,"Transport, Inner Membrane"
+10061,ump,Lipopolysaccharide Biosynthesis / Recycling
+10065,val__l,"Valine, Leucine, and Isoleucine Metabolism"
+10066,valtrna,tRNA Charging
+10070,trnaval,tRNA Charging
+10071,val__l,tRNA Charging
+10078,val__l,"Transport, Inner Membrane"
+10087,ala__l,"Valine, Leucine, and Isoleucine Metabolism"
+10091,tungs,Cofactor and Prosthetic Group Biosynthesis
+10100,urate,Nucleotide Salvage Pathway
+10106,xan,"Transport, Inner Membrane"
+10125,xtsn,"Transport, Inner Membrane"
+10128,xylu__d,Alternate Carbon Metabolism
+10129,xyl__d,Alternate Carbon Metabolism
+10142,xylu__l,"Transport, Inner Membrane"
+10154,xyl__d,"Transport, Inner Membrane"
+10167,zn2,Inorganic Ion Transport and Metabolism
