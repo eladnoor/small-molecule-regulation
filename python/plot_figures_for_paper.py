@@ -9,9 +9,10 @@ from kegg import KEGG
 import settings
 import map_ligands
 import pandas as pd
-import os, re, json
+import os, json
 import seaborn as sns
 import numpy as np
+from scipy.stats import gmean
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
@@ -63,10 +64,15 @@ class FigurePlotter(object):
         return k
     
     @staticmethod
-    def calc_sat(k, value_col, conc_df):
-        # choose the minimum value among all repeats    
-        k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].median().reset_index()
-        
+    def calc_sat(k, value_col, conc_df, agg_type='gmean'):
+        # choose the minimum value among all repeats
+        if agg_type == 'minimum':
+            k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].min().reset_index()
+        elif agg_type == 'gmean':
+            k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].apply(gmean).reset_index()
+        elif agg_type == 'median':
+            k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].median().reset_index()
+            
         # join data with measured concentrations
         k = k.join(conc_df, on='bigg.metabolite', how='inner')
         
@@ -80,7 +86,7 @@ class FigurePlotter(object):
         return k
     
     @staticmethod
-    def calc_median_sat(k):
+    def calc_agg_sat(k, agg_type='gmean'):
         """
             calculates the [S]/K_S for all matching EC-metabolite pairs,
             in log2-fold-change.
@@ -89,10 +95,15 @@ class FigurePlotter(object):
                 K_df    - a DataFrame with three columns: EC_number, bigg.metabolite, Value
                 conc_df - a DataFrame with 
         """
-        fc_med = k.groupby(('bigg.metabolite', 'growth condition')).median()[['saturation']].reset_index()
+        if agg_type == 'median':
+            fc_med = k.groupby(('bigg.metabolite', 'growth condition')).median()
+        elif agg_type == 'gmean':
+            fc_med = k.groupby(('bigg.metabolite', 'growth condition')).agg(lambda x: gmean(list(x)))
+            
+        fc_med = fc_med[['saturation']].reset_index()
         fc_med = fc_med.pivot('bigg.metabolite', 'growth condition', 'saturation')
         return fc_med.sort_index(axis=0)
-    
+
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
         self.met_conc_mean = _df.iloc[:, 1:9] # take only the data columns (8 conditions)
@@ -130,14 +141,13 @@ class FigurePlotter(object):
         self.ki_unfiltered = FigurePlotter.calc_sat(regulation_unfiltered[~pd.isnull(regulation_unfiltered['KI_Value'])],
                                                     'KI_Value', self.met_conc_mean)
         
-    def draw_median_heatmaps(self):
+    def draw_agg_heatmaps(self, agg_type='median'):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
         """
-        km_sat_med = FigurePlotter.calc_median_sat(self.km)
-        ki_sat_med = FigurePlotter.calc_median_sat(self.ki)
-        
-        sat_joined = km_sat_med.join(ki_sat_med, how='inner', lsuffix='_sub', rsuffix='_inh')
+        km_sat_agg = FigurePlotter.calc_agg_sat(self.km, agg_type)
+        ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki, agg_type)
+        sat_joined = km_sat_agg.join(ki_sat_agg, how='inner', lsuffix='_sub', rsuffix='_inh')
         sat_joined = sat_joined.reindex_axis(sat_joined.mean(axis=1).sort_values(axis=0, ascending=False).index, axis=0)
         
         fig, ax = plt.subplots(1, 1, figsize=(12, 10))
@@ -148,7 +158,7 @@ class FigurePlotter(object):
                     annot_kws={'fontdict': {'fontsize': 12}})
         
         # change xtick labels back to the original strings (without the suffixes) and increase the font size
-        ax.set_xticklabels(list(ki_sat_med.columns) + list(ki_sat_med.columns), rotation=90, fontsize=12)
+        ax.set_xticklabels(list(km_sat_agg.columns) + list(ki_sat_agg.columns), rotation=90, fontsize=12)
         
         # rotate the metabolite names back to horizontal, and increase the font size
         ax.set_yticklabels(reversed(sat_joined.index), rotation=0, fontsize=12)
@@ -156,13 +166,13 @@ class FigurePlotter(object):
         ax.set_xlabel('growth condition', fontsize=16)
         ax.set_ylabel('')
         ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
-        clb[0].set_ylabel('median saturation over all reactions', fontsize=16)
+        clb[0].set_ylabel('%s saturation over all reactions' % agg_type, fontsize=16)
         clb[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
         
         ax.axvline(sat_joined.shape[1]/2, 0, 1, color='r')
         
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_median.svg'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_median.png'), dpi=300)
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_%s.svg' % agg_type))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'heatmap_saturation_%s.png' % agg_type), dpi=300)
     
     def draw_full_heapmats(self, filter_using_model=True):
         if filter_using_model:
@@ -435,7 +445,8 @@ if __name__ == "__main__":
     fp.draw_cdf_plots()
     fp.draw_2D_histograms()
 
-    fp.draw_median_heatmaps()
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
     
     fp.draw_full_heapmats()
     fp.draw_full_heapmats(filter_using_model=False)
