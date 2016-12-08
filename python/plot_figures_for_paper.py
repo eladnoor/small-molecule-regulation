@@ -12,7 +12,7 @@ import pandas as pd
 import os, json
 import seaborn as sns
 import numpy as np
-from scipy.stats import gmean
+from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
@@ -104,6 +104,49 @@ class FigurePlotter(object):
         fc_med = fc_med.pivot('bigg.metabolite', 'growth condition', 'saturation')
         return fc_med.sort_index(axis=0)
 
+    @staticmethod        
+    def get_subsystem_data():
+        """
+            Returns:
+                - 1-to-many mapping BiGG Reaction IDs to cellular subsystems
+                - many-to-many mapping of BiGG metabolites IDs to subsystems
+        """
+        with open(settings.ECOLI_JSON_FNAME) as fp:
+            ecoli_model = json.load(fp, encoding='UTF-8')
+        
+        subsystem_data = []
+        stoich_data = []
+        for r in ecoli_model['reactions']:
+            rid = r['id'].lower()
+            if 'subsystem' in r:
+                subsystem_data.append((rid, r['subsystem']))
+            if 'metabolites' in r:
+                for met, coeff in r['metabolites'].iteritems():
+                    stoich_data.append((rid, met, coeff))
+        
+        reaction_subsystem_df = pd.DataFrame(subsystem_data,
+                                             columns=('bigg.reaction', 'subsystem'))
+        reaction_subsystem_df.set_index('bigg.reaction', inplace=True)
+        
+        stoich_df = pd.DataFrame(stoich_data,
+                                 columns=('bigg.reaction', 'bigg.metabolite', 'coeff'))                            
+                  
+        # now associate every metabolite to subsystems by joining the two tables
+                                 
+        metabolite_subsystem_df = stoich_df.join(reaction_subsystem_df, on='bigg.reaction')
+        metabolite_subsystem_df.drop('bigg.reaction', axis=1, inplace=True)
+        metabolite_subsystem_df.drop('coeff', axis=1, inplace=True)
+        metabolite_subsystem_df.drop_duplicates(inplace=True)
+        
+        # keep only cytoplasmic metabolites, and remove the suffix _c
+        metabolite_subsystem_df = \
+            metabolite_subsystem_df[metabolite_subsystem_df['bigg.metabolite'].str[-2:] == '_c']
+
+        metabolite_subsystem_df.loc[:, 'bigg.metabolite'] = \
+            metabolite_subsystem_df['bigg.metabolite'].apply(lambda s: s[0:-2].lower())
+        
+        return reaction_subsystem_df, metabolite_subsystem_df
+        
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
         self.met_conc_mean = _df.iloc[:, 1:9] # take only the data columns (8 conditions)
@@ -127,7 +170,13 @@ class FigurePlotter(object):
         self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
                                          'KI_Value', self.met_conc_mean)
         self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
+        self.regulation = self.regulation.join(ec2bigg, on='EC_number', how='left')
     
+        reaction_subsystem_df, metabolite_subsystem_df = FigurePlotter.get_subsystem_data()                                                    
+        self.regulation = self.regulation.join(reaction_subsystem_df, on='bigg.reaction', how='left')
+        self.ki = self.ki.join(reaction_subsystem_df, on='bigg.reaction', how='left')
+        self.km = self.km.join(reaction_subsystem_df, on='bigg.reaction', how='left')
+
         self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
         self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
 
@@ -140,7 +189,7 @@ class FigurePlotter(object):
         regulation_unfiltered = self.get_kinetic_param('regulation', filter_using_model=False)
         self.ki_unfiltered = FigurePlotter.calc_sat(regulation_unfiltered[~pd.isnull(regulation_unfiltered['KI_Value'])],
                                                     'KI_Value', self.met_conc_mean)
-        
+                                                    
     def draw_agg_heatmaps(self, agg_type='median'):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
@@ -282,7 +331,7 @@ class FigurePlotter(object):
         
         ax = axs[0]
         
-        concentrations = pd.melt(fp.met_conc_mean)['value']
+        concentrations = pd.melt(self.met_conc_mean)['value']
         concentrations = concentrations[~pd.isnull(concentrations)]
         
         #concentrations.hist(cumulative=True, normed=1, bins=1000, histtype='step', ax=ax, linewidth=1, color='orange')
@@ -307,6 +356,12 @@ class FigurePlotter(object):
         ax.set_ylim(0, 1)
         ax.set_xlabel(r'$K_S$ (in mM)')
         ax.set_title(r'Measured $K_{\rm S}$ values')
+
+        ranksum_res = ranksums(km_inter['KM_Value'], ki_inter['KI_Value'])
+        ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+                horizontalalignment='left',
+                verticalalignment='top',
+                transform=ax.transAxes)
         ax.legend(loc='upper left')
         
         # compare Km and Ki for the intersection of EC numbers 
@@ -326,6 +381,12 @@ class FigurePlotter(object):
         ax.set_xlabel(SAT_FORMULA_S)
         ax.set_title(r'Saturation levels')
         ax.legend(loc='upper left')
+
+        ranksum_res = ranksums(km_saturation, ki_saturation)
+        ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+                horizontalalignment='left',
+                verticalalignment='top',
+                transform=ax.transAxes)
         fig.tight_layout()
         
         fig.savefig(os.path.join(settings.RESULT_DIR, 'saturation_histogram.svg'))
@@ -370,15 +431,10 @@ class FigurePlotter(object):
                                 ha='center', va='top', size=6,
                                 textcoords='data')
             
-        # choose only one bigg.reaction for each EC number (arbitrarily)
-        ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
-
-        # join interaction table with bigg.reaction IDs (using EC numbers)
+        # join interaction table with bigg.reaction IDs
         # and keep only one copy of each reaction-metabolite pair
-        bigg_effectors = self.regulation.join(ec2bigg,
-                                              how='inner', on='EC_number')
         cols = ('bigg.reaction', 'bigg.metabolite')
-        bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()
+        bigg_effectors = self.regulation.groupby(cols).first().reset_index()
         
         # add columns for counting the positive and negative interactions
         n_act_label = 'Number of activating interactions'        
@@ -433,6 +489,31 @@ class FigurePlotter(object):
         ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
         return ccm_concat
 
+    def draw_pathway_histogram(self):
+        mets_in_cytosol = self.bigg.get_mets_in_cytosol()
+        # keep only interactions that involve a small-molecule that is native
+        # in the cytoplasm
+        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytosol)]
+
+        reg_unique = native_interactions[['bigg.metabolite', 'bigg.reaction', 'subsystem', 'Mode']].drop_duplicates()
+        met_system_counter = reg_unique.groupby(('bigg.metabolite', 'subsystem', 'Mode')).count().reset_index()
+        act_table = met_system_counter[met_system_counter['Mode'] == '+'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
+        inh_table = met_system_counter[met_system_counter['Mode'] == '-'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
+        
+        fig, axs = plt.subplots(1, 2, figsize=(15, 30))
+
+        ax = axs[0]
+        sns.heatmap(act_table, mask=(act_table==0), ax=ax, annot=False, 
+                    cbar=True, vmin=0, vmax=10, cmap='viridis')
+        ax.set_title('activators')
+
+        ax = axs[1]
+        sns.heatmap(inh_table, mask=(inh_table==0), ax=ax, annot=False, 
+                    cbar=True, vmin=0, vmax=10, cmap='viridis')
+        ax.set_title('inhibitors')
+        
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.png'), dpi=300)
 
 ###############################################################################
 if __name__ == "__main__":
@@ -440,6 +521,7 @@ if __name__ == "__main__":
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
     
+    fp.draw_pathway_histogram()   
     fp.draw_venn_diagrams()
 
     fp.draw_cdf_plots()

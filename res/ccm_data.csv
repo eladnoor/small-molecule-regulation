@@ -1,297 +1,297 @@
-,Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mode,Organism,Source,bigg.metabolite,chebiID,pathway,enzyme_name
-301297,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,ACETYL-COA,,,-,Escherichia coli,EcoCyc,accoa,CHEBI:57288,Anaplerosis+TCA,maeB
-301300,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,ACETYL-P,,,+,Escherichia coli,EcoCyc,actp,CHEBI:22191,Anaplerosis+TCA,maeB
-302431,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,L-ASPARTATE,,,+,Escherichia coli,EcoCyc,asp__l,CHEBI:29991,Anaplerosis+TCA,maeB
-35422,,Calcium cation,1.1.1.40,C00076,,15,Ca2+,722940,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,Anaplerosis+TCA,maeB
-301520,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,CAMP,,,-,Escherichia coli,EcoCyc,camp,CHEBI:58165,Anaplerosis+TCA,maeB
-35443,,Cobalt ion,1.1.1.40,C00175,,23,Co2+,722940,-,Escherichia coli,BRENDA,cobalt2,CHEBI:48828,Anaplerosis+TCA,maeB
-35448,strong inhibition,,1.1.1.40,,,19,Cu2+,722940,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,Anaplerosis+TCA,maeB
-302162,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,FUM,,,-,Escherichia coli,EcoCyc,fum,CHEBI:29806,Anaplerosis+TCA,maeB
-302197,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,GLC-6-P,,,+,Escherichia coli,EcoCyc,g6p_b,CHEBI:58247,Anaplerosis+TCA,maeB
-302204,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,GLT,,,+,Escherichia coli,EcoCyc,glu__l,CHEBI:29985,Anaplerosis+TCA,maeB
-302402,ReactionID=MALIC-NADP-RXN,Potassium cation,1.1.1.40,C00238,,K+,,,+,Escherichia coli,EcoCyc,k,CHEBI:29103,Anaplerosis+TCA,maeB
-35536,"activates at up to 4 mM, inhibition above, probably due to blockage of substrate binding, Km is 0.19 mM",Magnesium cation,1.1.1.40,C00305,,6,Mg2+,687388,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,Anaplerosis+TCA,maeB
-302618,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,NADH,,,-,Escherichia coli,EcoCyc,nadh,CHEBI:57945,Anaplerosis+TCA,maeB
-302629,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,NADP,,,-,Escherichia coli,EcoCyc,nadp,CHEBI:58349,Anaplerosis+TCA,maeB
-301370,ReactionID=MALIC-NADP-RXN,NH4+,1.1.1.40,C01342,,AMMONIUM,,,+,Escherichia coli,EcoCyc,nh3,CHEBI:28938,Anaplerosis+TCA,maeB
-302705,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,Anaplerosis+TCA,maeB
-35634,strong inhibition,Zinc cation,1.1.1.40,C00038,,14,Zn2+,722940,-,Escherichia coli,BRENDA,zn2,CHEBI:29105,Anaplerosis+TCA,maeB
-303000,ReactionID=MALIC-NADP-RXN,Zinc cation,1.1.1.40,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,Anaplerosis+TCA,maeB
-302703,ReactionID=ISOCITDEH-RXN,,1.1.1.42,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,Anaplerosis+TCA,icd
-263249,pH 7.1,Phosphoenolpyruvate,1.1.1.42,C00074,0.31,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,icd
-35921,"allosteric inhibition. Phosphoenolpyruvate enhances the uncompetitive inhibition of isocitrate lyase by increasing isocitrate, which protects isocitrate dehydrogenase from the inhibition, and contributes to the control through the tricarboxylic acid cycle and glyoxylate shunt",Phosphoenolpyruvate,1.1.1.42,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,icd
-263249,pH 7.1,Phosphoenolpyruvate,1.1.1.42,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,icd
-302756,ReactionID=ISOCITDEH-RXN,,1.1.1.42,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Anaplerosis+TCA,icd
-36108,,ATP,1.1.1.44,C00002,,4,ATP,"286861, 286882, 286904",-,Escherichia coli,BRENDA,atp,CHEBI:15422,PPP+ED,gnd
-301444,ReactionID=RXN-9952,,1.1.1.44,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,PPP+ED,gnd
-301599,ReactionID=RXN-9952,,1.1.1.44,,,CO-A,,,-,Escherichia coli,EcoCyc,coa,CHEBI:57287,PPP+ED,gnd
-36151,,"beta-D-Fructose 1,6-bisphosphate",1.1.1.44,C05378,,583,"D-fructose 1,6-diphosphate","286851, 286861, 286882, 286904",-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,PPP+ED,gnd
-302154,ReactionID=RXN-9952,,1.1.1.44,,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,PPP+ED,gnd
-302525,ReactionID=RXN-9952,Magnesium cation,1.1.1.44,C00305,,MG+2,,,+,Escherichia coli,EcoCyc,mg2,CHEBI:18420,PPP+ED,gnd
-302634,ReactionID=RXN-9952,,1.1.1.44,,,NADP,,,-,Escherichia coli,EcoCyc,nadp,CHEBI:58349,PPP+ED,gnd
-36237,,NADPH,1.1.1.44,C00005,,5,2 NADPH,"286851, 286882, 286904",-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,gnd
-302863,ReactionID=RXN-9952,,1.1.1.44,,,RIBULOSE-5P,,,-,Escherichia coli,EcoCyc,ru5p__d,CHEBI:58121,PPP+ED,gnd
-36478,"10 mM, 50-75% inhibition, assay without MgCl2",ATP,1.1.1.49,C00002,,4,ATP,722473,-,Escherichia coli,BRENDA,atp,CHEBI:15422,PPP+ED,zwf
-36486,"1 mM, 83% inhibition",Cadmium,1.1.1.49,C01413,,52,Cd2+,722473,-,Escherichia coli,BRENDA,cd2,CHEBI:48775,PPP+ED,zwf
-36493,"1 mM, 56% inhibition",Cobalt ion,1.1.1.49,C00175,,23,Co2+,722473,-,Escherichia coli,BRENDA,cobalt2,CHEBI:48828,PPP+ED,zwf
-36497,"1 mM, complete inhibition",,1.1.1.49,,,19,Cu2+,722473,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,PPP+ED,zwf
-36533,"1 mM, complete inhibition",Mercury(2+),1.1.1.49,C00703,,33,Hg2+,722473,-,Escherichia coli,BRENDA,hg2,CHEBI:16793,PPP+ED,zwf
-36548,"1 mM, 56% inhibition",,1.1.1.49,,,11,Mn2+,722473,-,Escherichia coli,BRENDA,mn2,CHEBI:29035,PPP+ED,zwf
-36568,"allosteric inhibition, inhibition is not reversed by NAD+, AMP, or spermidine",NADH,1.1.1.49,C00004,,8,2 NADH,722577,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,PPP+ED,zwf
-263362,"pH 8.0, temperature not specified in the publication, varied substrate: NADP+",NADPH,1.1.1.49,C00005,0.01,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263373,"25°C, pH 8.0, competitive inhibition constant",NADPH,1.1.1.49,C00005,0.038,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263374,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",NADPH,1.1.1.49,C00005,0.04,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263386,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",NADPH,1.1.1.49,C00005,0.18,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263401,"25°C, pH 8.0, non-competitive inhibition constant",NADPH,1.1.1.49,C00005,2.09,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-36595,product inhibition with NADP+ or D-glucose 6-phosphate as the varying substrate,NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-36596,,NADPH,1.1.1.49,C00005,,5,2 NADPH,722473,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-36597,"when NADP+ is the varied substrate, NADPH NADPH is a competitive inhibitor both in the presence and absence of Mg2+, linear competitive inhibition. When glucose 6-phosphate is the varied substrate NADPH causes linear noncompetitive inhibition",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263362,"pH 8.0, temperature not specified in the publication, varied substrate: NADP+",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263373,"25°C, pH 8.0, competitive inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263374,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263386,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-263401,"25°C, pH 8.0, non-competitive inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,PPP+ED,zwf
-533,,Spermidine,1.1.1.49,C00315,,148,spermidine,722577,+,Escherichia coli,BRENDA,spmd,CHEBI:16610,PPP+ED,zwf
-90018,competitive inhibition,D-Arabinose 5-phosphate,2.2.1.1,C01112,,538,D-arabinose 5-phosphate,486023,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,PPP+ED,tkt
-301410,ReactionID=1TRANSKETO-RXN,,2.2.1.1,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,PPP+ED,tkt
-90027,competitive inhibition,L-Erythrulose,2.2.1.1,C02045,,1981,L-erythrulose,486024,-,Escherichia coli,BRENDA,eryth,CHEBI:27913,PPP+ED,tkt
-6716,,,2.2.1.1,,,1126,hydrogen peroxide,694217,+,Escherichia coli,BRENDA,h2o2,CHEBI:29192,PPP+ED,tkt
-302908,ReactionID=2TRANSKETO-RXN,O2.-,2.2.1.1,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,PPP+ED,tkt
-90057,"denaturation of holo-transketolase by urea displays at least three transitions, where only the final equilibrium denaturation transition is the same for both apo-transketolase and holo-transketolase. Enzyme is deactivated initially by changes in structure associated with the cofactors, but this event does not release the cofactor from the enzyme. Holo-transketolase does not denature to apo-transketolase at 2 M urea. Complete dissociation of cofactors from holo-transketolase at 3.8 M urea without formation of the compact form of apo-transketolase (intermediate form). Holo-transketolase and apo-transketolase at 7.2 M urea both show a common denatured form",,2.2.1.1,,,116,Urea,692117,-,Escherichia coli,BRENDA,urea,CHEBI:32285,PPP+ED,tkt
-90059,,D-Arabinose 5-phosphate,2.2.1.2,C01112,,15695,D-arabinose-5-phosphate,486041,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,PPP+ED,talB
-301409,ReactionID=TRANSALDOL-RXN,,2.2.1.2,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,PPP+ED,talB
-90061,,(R)-Lactaldehyde,2.2.1.2,C00937,,4237,D-lactaldehyde,719298,-,Escherichia coli,BRENDA,lald__d,CHEBI:17167,PPP+ED,talB
-90095,,Orthophosphate,2.2.1.2,C00009,,16,phosphate,"486027, 486041",-,Escherichia coli,BRENDA,pi,CHEBI:26078,PPP+ED,talB
-90068,,Diphosphate,2.2.1.2,C00013,,17,diphosphate,486027,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,PPP+ED,talB
-90103,,Sulfate,2.2.1.2,C00059,,160,sulfate,486027,-,Escherichia coli,BRENDA,so4,CHEBI:26836,PPP+ED,talB
-91426,complete inactivation at 2.5 mol iodine per mol of subunit,Iodine,2.3.1.12,C01382,,1619,Iodine,486208,-,Escherichia coli,BRENDA,iodine,CHEBI:17606,Anaplerosis+TCA,pdh
-302235,ReactionID=MALSYN-RXN,,2.3.3.9,,,GLYCOLLATE,,,-,Escherichia coli,EcoCyc,glyclt,CHEBI:29805,Anaplerosis+TCA,aceB
-272638,wild-type protein,Oxalate,2.3.3.9,C00209,0.023,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceB
-272639,wild-type protein,Oxalate,2.3.3.9,C00209,0.037,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceB
-302711,ReactionID=MALSYN-RXN,,2.3.3.9,,37.0,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,Anaplerosis+TCA,aceB
-98213,; competitive,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceB
-272638,wild-type protein,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceB
-272639,wild-type protein,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceB
-302711,ReactionID=MALSYN-RXN,,2.3.3.9,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,Anaplerosis+TCA,aceB
-302714,ReactionID=MALSYN-RXN,,2.3.3.9,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,Anaplerosis+TCA,aceB
-272661,wild-type protein,Pyruvate,2.3.3.9,C00022,0.65,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,Anaplerosis+TCA,aceB
-302842,ReactionID=MALSYN-RXN,,2.3.3.9,,650.0,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,Anaplerosis+TCA,aceB
-98230,,Pyruvate,2.3.3.9,C00022,,31,pyruvate,660456,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,Anaplerosis+TCA,aceB
-98233,; competitive,Pyruvate,2.3.3.9,C00022,,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,Anaplerosis+TCA,aceB
-272661,wild-type protein,Pyruvate,2.3.3.9,C00022,,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,Anaplerosis+TCA,aceB
-302842,ReactionID=MALSYN-RXN,,2.3.3.9,,,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,Anaplerosis+TCA,aceB
-302853,ReactionID=MALSYN-RXN,,2.3.3.9,,,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,Anaplerosis+TCA,aceB
-10220,,ADP,2.7.1.11,C00008,,13,ADP,722736,+,Escherichia coli,BRENDA,adp,CHEBI:16761,Glycolysis,pfk
-301338,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,ADP,,,+,Escherichia coli,EcoCyc,adp,CHEBI:456216,Glycolysis,pfk
-113235,,ATP,2.7.1.11,C00002,,4,ATP,640421,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,pfk
-113273,at alkaline pH; mechanism,ATP,2.7.1.11,C00002,,4,ATP,640490,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,pfk
-113284,inhibition of fructose 1-phosphate phosphorylation above 0.08 mM ATP,ATP,2.7.1.11,C00002,,4,ATP,640526,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,pfk
-301438,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,Glycolysis,pfk
-113308,strong inhibition,,2.7.1.11,,,131,citrate,640421,-,Escherichia coli,BRENDA,cit,CHEBI:76049,Glycolysis,pfk
-113338,isoenzyme PFK2,,2.7.1.11,,,131,citrate,640463,-,Escherichia coli,BRENDA,cit,CHEBI:76049,Glycolysis,pfk
-113350,"cAMP, ADP or fructose 1,6-bisphosphate restore activity",,2.7.1.11,,,131,citrate,640486,-,Escherichia coli,BRENDA,cit,CHEBI:76049,Glycolysis,pfk
-113387,,,2.7.1.11,,,671,D-Fructose 1-phosphate,640421,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,Glycolysis,pfk
-113402,inhibition occurs at low concentrations of fructose 6-phosphate,D-Fructose 6-phosphate,2.7.1.11,C00085,,87,D-fructose 6-phosphate,722736,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,Glycolysis,pfk
-302159,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,FRUCTOSE-6P,,,+,Escherichia coli,EcoCyc,f6p_b,CHEBI:57634,Glycolysis,pfk
-302151,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,Glycolysis,pfk
-10302,,GDP,2.7.1.11,C00035,,53,GDP,640489,+,Escherichia coli,BRENDA,gdp,CHEBI:17552,Glycolysis,pfk
-10304,,GDP,2.7.1.11,C00035,,53,GDP,"640490, 722736",+,Escherichia coli,BRENDA,gdp,CHEBI:17552,Glycolysis,pfk
-302181,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,GDP,,,+,Escherichia coli,EcoCyc,gdp,CHEBI:58189,Glycolysis,pfk
-302389,ReactionID=6PFRUCTPHOS-RXN,Potassium cation,2.7.1.11,C00238,,K+,,,-,Escherichia coli,EcoCyc,k,CHEBI:29103,Glycolysis,pfk
-10323,,Ammonia,2.7.1.11,C00014,,54,NH4+,640421,+,Escherichia coli,BRENDA,nh3,CHEBI:16134,Glycolysis,pfk
-10339,,Ammonia,2.7.1.11,C00014,,54,NH4+,640486,+,Escherichia coli,BRENDA,nh3,CHEBI:16134,Glycolysis,pfk
-113544,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,"640421, 640463",-,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,pfk
-113550,feedback inhibition,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,640486,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,pfk
-113558,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,722736,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,pfk
-302769,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,pfk
-301399,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,AMP,,,+,Escherichia coli,EcoCyc,amp,CHEBI:456215,Glycolysis,pykF
-301451,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,Glycolysis,pykF
-301509,ReactionID=PEPDEPHOS-RXN,Calcium cation,2.7.1.40,C00076,,CA+2,,,+,Escherichia coli,EcoCyc,ca2,CHEBI:29108,Glycolysis,pykF
-115893,,Calcium cation,2.7.1.40,C00076,,15,Ca2+,654470,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,Glycolysis,pykF
-301508,ReactionID=PEPDEPHOS-RXN,Calcium cation,2.7.1.40,C00076,,CA+2,,,-,Escherichia coli,EcoCyc,ca2,CHEBI:29108,Glycolysis,pykF
-10703,,"beta-D-Fructose 1,6-bisphosphate",2.7.1.40,C05378,,106,"D-fructose 1,6-bisphosphate",707589,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Glycolysis,pykF
-10728,,"beta-D-Fructose 1,6-bisphosphate",2.7.1.40,C05378,,583,"D-fructose 1,6-diphosphate",641557,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Glycolysis,pykF
-302155,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,Glycolysis,pykF
-10775,,D-Glucose 6-phosphate,2.7.1.40,C00092,,105,D-glucose 6-phosphate,641557,+,Escherichia coli,BRENDA,g6p,CHEBI:4170,Glycolysis,pykF
-302252,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,GTP,,,-,Escherichia coli,EcoCyc,gtp,CHEBI:37565,Glycolysis,pykF
-10916,,Phosphoenolpyruvate,2.7.1.40,C00074,,51,phosphoenolpyruvate,707589,+,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,pykF
-302902,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,SUC-COA,,,-,Escherichia coli,EcoCyc,succoa,CHEBI:57292,Glycolysis,pykF
-125619,,ADP,2.7.9.2,C00008,,13,ADP,"645472, 645473",-,Escherichia coli,BRENDA,adp,CHEBI:16761,Glycolysis,ppsA
-301320,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,Glycolysis,ppsA
-125621,weak,ADP-glucose,2.7.9.2,C00498,,598,ADP-glucose,645473,-,Escherichia coli,BRENDA,adpglc,CHEBI:15751,Glycolysis,ppsA
-125614,,2-Oxoglutarate,2.7.9.2,C00026,,34,2-oxoglutarate,"645472, 645473",-,Escherichia coli,BRENDA,akg,CHEBI:30915,Glycolysis,ppsA
-301229,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,Glycolysis,ppsA
-125622,,AMP,2.7.9.2,C00020,,30,AMP,645473,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,ppsA
-301397,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,Glycolysis,ppsA
-125624,excess of ATP inhibits at high concentrations of MgCl2 or MnCl2,ATP,2.7.9.2,C00002,,4,ATP,645468,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,ppsA
-125625,inhibits Mn2+-activated enzyme,Calcium cation,2.7.9.2,C00076,,15,Ca2+,645468,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,Glycolysis,ppsA
-125616,,Glyceraldehyde 3-phosphate,2.7.9.2,C00661,,29510,3-phosphoglyceraldehyde,645472,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,Glycolysis,ppsA
-125617,weak,Glyceraldehyde 3-phosphate,2.7.9.2,C00661,,29510,3-phosphoglyceraldehyde,645473,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,Glycolysis,ppsA
-125629,"divalent metal ion Mg2+ or Mn2+ required for forward reaction, inhibition at high concentrations of Mg2+ or Mn2+",Magnesium cation,2.7.9.2,C00305,,6,Mg2+,645468,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,Glycolysis,ppsA
-125630,"divalent metal ion Mg2+ or Mn2+ required for forward reaction, inhibition at high concentrations of Mg2+ or Mn2+",,2.7.9.2,,,11,Mn2+,645468,-,Escherichia coli,BRENDA,mn2,CHEBI:29035,Glycolysis,ppsA
-125633,,Oxaloacetate,2.7.9.2,C00036,,2575,oxalacetate,"645472, 645473",-,Escherichia coli,BRENDA,oaa,CHEBI:30744,Glycolysis,ppsA
-302698,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,Glycolysis,ppsA
-302709,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,Glycolysis,ppsA
-125635,competitive to ATP,Phosphoenolpyruvate,2.7.9.2,C00074,,51,phosphoenolpyruvate,645473,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,ppsA
-302772,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,ppsA
-144875,,ADP,3.1.3.11,C00008,,13,ADP,651666,-,Escherichia coli,BRENDA,adp,CHEBI:16761,Glycolysis,fbpase
-301328,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,Glycolysis,fbpase
-279606,"wild-type, 22°C, pH 7.5",AMP,3.1.3.11,C00020,0.00062,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-144891,50% inhibition at 0.015 mM,AMP,3.1.3.11,C00020,,30,AMP,170730,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-144934,"transformation of enzyme to inactive T-state, inhibition shows quarternary transition and cooperativity",AMP,3.1.3.11,C00020,,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-144940,,AMP,3.1.3.11,C00020,,30,AMP,"650375, 680756",-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-144941,FBPase undergoes a quaternary transition from the canonical R-state to a T-like state in response to AMP. Glc-6-P and AMP are synergistic inhibitors,AMP,3.1.3.11,C00020,,30,AMP,680799,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-144942,"AMP and D-fructose 2,6-bisphosphate are not synergistic inhibitors of the type I FBPase",AMP,3.1.3.11,C00020,,30,AMP,680855,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-279606,"wild-type, 22°C, pH 7.5",AMP,3.1.3.11,C00020,,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,Glycolysis,fbpase
-301401,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,Glycolysis,fbpase
-144958,,ATP,3.1.3.11,C00002,,4,ATP,651666,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,fbpase
-144960,"1 mM, reduces activity by 40%",ATP,3.1.3.11,C00002,,4,ATP,693243,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Glycolysis,fbpase
-301431,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,Glycolysis,fbpase
-17834,,,3.1.3.11,,,131,citrate,680756,+,Escherichia coli,BRENDA,cit,CHEBI:76049,Glycolysis,fbpase
-301553,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,CIT,,,+,Escherichia coli,EcoCyc,cit,CHEBI:16947,Glycolysis,fbpase
-302077,ReactionID=F16BDEPHOS-RXN,Dithiothreitol,3.1.3.11,C00265,,DITHIOTHREITOL,,,+,Escherichia coli,EcoCyc,dtt,CHEBI:42106,Glycolysis,fbpase
-279635,pH 7.7,,3.1.3.11,,1.0,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,Glycolysis,fbpase
-145001,,,3.1.3.11,,,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,Glycolysis,fbpase
-279635,pH 7.7,,3.1.3.11,,,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,Glycolysis,fbpase
-144995,substrate inhibition at high concentrations,"beta-D-Fructose 1,6-bisphosphate",3.1.3.11,C05378,,106,"D-fructose 1,6-bisphosphate",651666,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Glycolysis,fbpase
-145080,substrate inhibition above 0.05 M,"beta-D-Fructose 1,6-bisphosphate",3.1.3.11,C05378,,295,"fructose 1,6-diphosphate",170730,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Glycolysis,fbpase
-145021,allosteric inhibition. FBPase undergoes a quaternary transition from the canonical R-state to a T-like state in response to glucose 6-phosphate. Glc-6-P and AMP are synergistic inhibitors,D-Glucose 6-phosphate,3.1.3.11,C00092,,105,D-glucose 6-phosphate,680799,-,Escherichia coli,BRENDA,g6p,CHEBI:4170,Glycolysis,fbpase
-302198,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,GLC-6-P,,,-,Escherichia coli,EcoCyc,g6p_b,CHEBI:58247,Glycolysis,fbpase
-17913,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,651666,+,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,fbpase
-17914,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,665719,+,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,fbpase
-17915,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,680756,+,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,fbpase
-302764,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,fbpase
-302774,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,fbpase
-145272,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,170730,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,fbpase
-302773,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,fbpase
-279629,,Orthophosphate,3.1.3.11,C00009,0.35,16,phosphate,651666,-,Escherichia coli,BRENDA,pi,CHEBI:26078,Glycolysis,fbpase
-145266,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,"651666, 693243",-,Escherichia coli,BRENDA,pi,CHEBI:26078,Glycolysis,fbpase
-145267,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,693243,-,Escherichia coli,BRENDA,pi,CHEBI:26078,Glycolysis,fbpase
-279629,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,651666,-,Escherichia coli,BRENDA,pi,CHEBI:26078,Glycolysis,fbpase
-17918,,Sulfate,3.1.3.11,C00059,,160,sulfate,665719,+,Escherichia coli,BRENDA,so4,CHEBI:26836,Glycolysis,fbpase
-302906,ReactionID=F16BDEPHOS-RXN,Sulfate,3.1.3.11,C00059,,SULFATE,,,+,Escherichia coli,EcoCyc,so4,CHEBI:16189,Glycolysis,fbpase
-301295,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,ACETYL-COA,,,+,Escherichia coli,EcoCyc,accoa,CHEBI:57288,Anaplerosis+TCA,ppc
-234130,,L-Aspartate,4.1.1.31,C00049,,304,Asp,"4308, 4311, 657356",-,Escherichia coli,BRENDA,asp__l,CHEBI:17053,Anaplerosis+TCA,ppc
-302433,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,L-ASPARTATE,,,-,Escherichia coli,EcoCyc,asp__l,CHEBI:29991,Anaplerosis+TCA,ppc
-301541,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,CDP,,,+,Escherichia coli,EcoCyc,cdp,CHEBI:58069,Anaplerosis+TCA,ppc
-234159,,,4.1.1.31,,,131,citrate,4311,-,Escherichia coli,BRENDA,cit,CHEBI:76049,Anaplerosis+TCA,ppc
-301569,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,CMP,,,+,Escherichia coli,EcoCyc,cmp,CHEBI:60377,Anaplerosis+TCA,ppc
-234170,,,4.1.1.31,,,553,Cys,4311,-,Escherichia coli,BRENDA,cys__l,CHEBI:35235,Anaplerosis+TCA,ppc
-27260,,"beta-D-Fructose 1,6-bisphosphate",4.1.1.31,C05378,,93409,fructose diphosphate,4286,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Anaplerosis+TCA,ppc
-302153,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,Anaplerosis+TCA,ppc
-234188,,Fumarate,4.1.1.31,C00122,,170,fumarate,4311,-,Escherichia coli,BRENDA,fum,CHEBI:18012,Anaplerosis+TCA,ppc
-27297,,GTP,4.1.1.31,C00044,,37,GTP,4286,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,Anaplerosis+TCA,ppc
-302259,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,GTP,,,+,Escherichia coli,EcoCyc,gtp,CHEBI:37565,Anaplerosis+TCA,ppc
-302484,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,MAL,,,-,Escherichia coli,EcoCyc,mal__l,CHEBI:15589,Anaplerosis+TCA,ppc
-234309,,Maleic acid,4.1.1.31,C01384,,575,Maleate,4311,-,Escherichia coli,BRENDA,male,CHEBI:18300,Anaplerosis+TCA,ppc
-234373,,Succinate,4.1.1.31,C00042,,58,succinate,4311,-,Escherichia coli,BRENDA,succ,CHEBI:15741,Anaplerosis+TCA,ppc
-235042,,Glycerate 3-phosphate,4.1.1.49,C00597,,2742,glycerate 3-phosphate,649304,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,Anaplerosis+TCA,pck
-27407,,Acetyl-CoA,4.1.1.49,C00024,,29,acetyl-CoA,727382,+,Escherichia coli,BRENDA,accoa,CHEBI:15351,Anaplerosis+TCA,pck
-234966,the presence of 9.6 mM ATP decreases 3folds the catalytic efficiency of the enzyme,ATP,4.1.1.49,C00002,,4,ATP,727382,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Anaplerosis+TCA,pck
-301441,ReactionID=PEPCARBOXYKIN-RXN,,4.1.1.49,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,Anaplerosis+TCA,pck
-301490,ReactionID=PEPCARBOXYKIN-RXN,Calcium cation,4.1.1.49,C00076,,CA+2,,,+,Escherichia coli,EcoCyc,ca2,CHEBI:29108,Anaplerosis+TCA,pck
-235016,,Glycerone phosphate,4.1.1.49,C00111,,278,dihydroxyacetone phosphate,649304,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,Anaplerosis+TCA,pck
-234996,,D-Fructose 6-phosphate,4.1.1.49,C00085,,87,D-fructose 6-phosphate,649304,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,Anaplerosis+TCA,pck
-234976,,"beta-D-Fructose 1,6-bisphosphate",4.1.1.49,C05378,,106,"D-fructose 1,6-bisphosphate",649304,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,Anaplerosis+TCA,pck
-235071,,Magnesium cation,4.1.1.49,C00305,,6,Mg2+,649304,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,Anaplerosis+TCA,pck
-235086,,NADH,4.1.1.49,C00004,,8,2 NADH,4621,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,Anaplerosis+TCA,pck
-235091,competitive inhibitor,Oxalate,4.1.1.49,C00209,,185,oxalate,650420,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,pck
-302768,ReactionID=PEPCARBOXYKIN-RXN,,4.1.1.49,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Anaplerosis+TCA,pck
-236054,,Glycerate 3-phosphate,4.1.2.13,C00597,,194,3-phosphoglycerate,4943,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,Glycolysis,fba
-27628,,2-Oxoglutarate,4.1.2.13,C00026,,34,2-oxoglutarate,4914,+,Escherichia coli,BRENDA,akg,CHEBI:30915,Glycolysis,fba
-301230,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,2-KETOGLUTARATE,,,+,Escherichia coli,EcoCyc,akg,CHEBI:16810,Glycolysis,fba
-27630,,,4.1.2.13,,,131,citrate,4914,+,Escherichia coli,BRENDA,cit,CHEBI:76049,Glycolysis,fba
-301554,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,CIT,,,+,Escherichia coli,EcoCyc,cit,CHEBI:16947,Glycolysis,fba
-236136,,,4.1.2.13,,,553,Cys,4913,-,Escherichia coli,BRENDA,cys__l,CHEBI:35235,Glycolysis,fba
-294812,"30°C, wild-type enzyme",Glycerone phosphate,4.1.2.13,C00111,0.13,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,Glycolysis,fba
-236151,,Glycerone phosphate,4.1.2.13,C00111,,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,Glycolysis,fba
-236230,,Glycerone phosphate,4.1.2.13,C00111,,482,glycerone phosphate,4943,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,Glycolysis,fba
-294812,"30°C, wild-type enzyme",Glycerone phosphate,4.1.2.13,C00111,,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,Glycolysis,fba
-236223,,Glyceraldehyde 3-phosphate,4.1.2.13,C00661,,574,glyceraldehyde 3-phosphate,4943,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,Glycolysis,fba
-236224,non-competitive inhibitor,Glyceraldehyde 3-phosphate,4.1.2.13,C00661,,574,glyceraldehyde 3-phosphate,652787,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,Glycolysis,fba
-27650,,DL-Glycerol 1-phosphate,4.1.2.13,C03189,,422,sn-glycerol 3-phosphate,4914,+,Escherichia coli,BRENDA,glyc1p,CHEBI:14336,Glycolysis,fba
-302231,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,GLYCEROL-3P,,,+,Escherichia coli,EcoCyc,glyc3p,CHEBI:57597,Glycolysis,fba
-302390,ReactionID=F16ALDOLASE-RXN,Potassium cation,4.1.2.13,C00238,,K+,,,+,Escherichia coli,EcoCyc,k,CHEBI:29103,Glycolysis,fba
-301363,ReactionID=F16ALDOLASE-RXN,NH4+,4.1.2.13,C01342,,AMMONIUM,,,+,Escherichia coli,EcoCyc,nh3,CHEBI:28938,Glycolysis,fba
-236290,"cells stressed by 8 microM Ni(II) for 20 min lose 75% of their FbaA activity. In presence of 8 microM Ni(II), purified FbaA loses 80% of its activity within 2 min. Inhibition is due to Ni(II) binding to a secondary zinc binding site",,4.1.2.13,,,38,Ni2+,728325,-,Escherichia coli,BRENDA,ni2,CHEBI:49786,Glycolysis,fba
-302658,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,NI+2,,,-,Escherichia coli,EcoCyc,ni2,CHEBI:49786,Glycolysis,fba
-27648,,Phosphoenolpyruvate,4.1.2.13,C00074,,51,phosphoenolpyruvate,4914,+,Escherichia coli,BRENDA,pep,CHEBI:44897,Glycolysis,fba
-302765,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,fba
-236154,,Diphosphate,4.1.2.13,C00013,,17,diphosphate,4943,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,Glycolysis,fba
-301706,ReactionID=KDPGALDOL-RXN,,4.1.2.55,,,CPD-2961,,,-,Escherichia coli,EcoCyc,6pgc,CHEBI:58759,PPP+ED,eda
-302177,ReactionID=KDPGALDOL-RXN,,4.1.2.55,,,GAP,,,-,Escherichia coli,EcoCyc,g3p,CHEBI:59776,PPP+ED,eda
-236968,,Glycerate 3-phosphate,4.1.3.1,C00597,,194,3-phosphoglycerate,33118,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,Anaplerosis+TCA,aceA
-302171,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,G3P,,,-,Escherichia coli,EcoCyc,3pg,CHEBI:58272,Anaplerosis+TCA,aceA
-301551,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,CIS-ACONITATE,,,-,Escherichia coli,EcoCyc,acon_c,CHEBI:16383,Anaplerosis+TCA,aceA
-236944,,2-Oxoglutarate,4.1.3.1,C00026,,34,2-oxoglutarate,33118,-,Escherichia coli,BRENDA,akg,CHEBI:30915,Anaplerosis+TCA,aceA
-301237,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,Anaplerosis+TCA,aceA
-237083,,Calcium cation,4.1.3.1,C00076,,15,Ca2+,33117,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,Anaplerosis+TCA,aceA
-301511,ReactionID=ISOCIT-CLEAV-RXN,Calcium cation,4.1.3.1,C00076,,CA+2,,,-,Escherichia coli,EcoCyc,ca2,CHEBI:29108,Anaplerosis+TCA,aceA
-237093,,Hydrochloric acid,4.1.3.1,C01327,,141,Cl-,33118,-,Escherichia coli,BRENDA,cl,CHEBI:17883,Anaplerosis+TCA,aceA
-301566,ReactionID=ISOCIT-CLEAV-RXN,Cl-,4.1.3.1,C00698,,CL-,,,-,Escherichia coli,EcoCyc,cl,CHEBI:17996,Anaplerosis+TCA,aceA
-237132,linear competitive inhibitor,Glyoxylate,4.1.3.1,C00048,,101,glyoxylate,33156,-,Escherichia coli,BRENDA,glx,CHEBI:16891,Anaplerosis+TCA,aceA
-237119,50% inhibition at 5 mM,Glycolate,4.1.3.1,C00160,,479,glycolate,33117,-,Escherichia coli,BRENDA,glyclt,CHEBI:17497,Anaplerosis+TCA,aceA
-237120,,Glycolate,4.1.3.1,C00160,,479,glycolate,33118,-,Escherichia coli,BRENDA,glyclt,CHEBI:17497,Anaplerosis+TCA,aceA
-302236,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,GLYCOLLATE,,,-,Escherichia coli,EcoCyc,glyclt,CHEBI:29805,Anaplerosis+TCA,aceA
-302295,ReactionID=ISOCIT-CLEAV-RXN,Mercury(2+),4.1.3.1,C00703,,HG+2,,,-,Escherichia coli,EcoCyc,hg2,CHEBI:16793,Anaplerosis+TCA,aceA
-302384,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,ITACONATE,,,-,Escherichia coli,EcoCyc,itacon,CHEBI:17240,Anaplerosis+TCA,aceA
-237180,,Malonate,4.1.3.1,C00383,,392,malonate,33117,-,Escherichia coli,BRENDA,malon,CHEBI:30794,Anaplerosis+TCA,aceA
-302495,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,MALONATE,,,-,Escherichia coli,EcoCyc,malon,CHEBI:15792,Anaplerosis+TCA,aceA
-294900,,Methylmalonate,4.1.3.1,C02170,15.0,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,Anaplerosis+TCA,aceA
-237205,50% inhibition at 15 mM,Methylmalonate,4.1.3.1,C02170,,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,Anaplerosis+TCA,aceA
-294900,,Methylmalonate,4.1.3.1,C02170,,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,Anaplerosis+TCA,aceA
-301739,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,CPD-546,,,-,Escherichia coli,EcoCyc,mm,CHEBI:17453,Anaplerosis+TCA,aceA
-237258,,Oxalate,4.1.3.1,C00209,,185,oxalate,33117,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,Anaplerosis+TCA,aceA
-302716,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,Anaplerosis+TCA,aceA
-294895,"in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine",Phosphoenolpyruvate,4.1.3.1,C00074,0.893,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,aceA
-237279,,Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,33118,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,aceA
-237289,uncompetitive inhibitor,Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,aceA
-294895,"in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine",Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,Anaplerosis+TCA,aceA
-302763,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Anaplerosis+TCA,aceA
-237277,,Orthophosphate,4.1.3.1,C00009,,16,phosphate,33118,-,Escherichia coli,BRENDA,pi,CHEBI:26078,Anaplerosis+TCA,aceA
-237294,,Sulfate,4.1.3.1,C00059,,245,SO42-,33118,-,Escherichia coli,BRENDA,so4,CHEBI:26836,Anaplerosis+TCA,aceA
-237302,,Succinate,4.1.3.1,C00042,,58,succinate,"33117, 33118",-,Escherichia coli,BRENDA,succ,CHEBI:15741,Anaplerosis+TCA,aceA
-302900,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,SUC,,,-,Escherichia coli,EcoCyc,succ,CHEBI:30031,Anaplerosis+TCA,aceA
-241170,the enzyme is much less sensitive to O2 or H2O2 than to O2-,,4.2.1.12,,,22,H2O2,33658,-,Escherichia coli,BRENDA,h2o2,CHEBI:29192,PPP+ED,edd
-241172,the enzyme is much less sensitive to O2 or H2O2 than to O2-,,4.2.1.12,,,9,O2,33658,-,Escherichia coli,BRENDA,o2,CHEBI:27140,PPP+ED,edd
-240522,,cis-Aconitate,4.2.1.2,C00417,,1230,cis-aconitate,33771,-,Escherichia coli,BRENDA,acon_c,CHEBI:32805,Anaplerosis+TCA,fumA
-240583,,trans-Aconitate,4.2.1.2,C02341,,2874,trans-aconitate,33771,-,Escherichia coli,BRENDA,acon_t,CHEBI:32806,Anaplerosis+TCA,fumA
-301356,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,AG+,,,-,Escherichia coli,EcoCyc,ag,CHEBI:49468,Anaplerosis+TCA,fumA
-301528,ReactionID=FUMHYDR-RXN,Cadmium,4.2.1.2,C01413,,CD+2,,,-,Escherichia coli,EcoCyc,cd2,CHEBI:48775,Anaplerosis+TCA,fumA
-240525,,,4.2.1.2,,,131,citrate,33771,-,Escherichia coli,BRENDA,cit,CHEBI:76049,Anaplerosis+TCA,fumA
-301552,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,CIT,,,-,Escherichia coli,EcoCyc,cit,CHEBI:16947,Anaplerosis+TCA,fumA
-240523,,2-Methylmaleate,4.2.1.2,C02226,,5952,citraconate,33771,-,Escherichia coli,BRENDA,citac,CHEBI:17626,Anaplerosis+TCA,fumA
-240540,wild-type enzyme is inhibited due to a viscogenic effect on the recycling rate,Glycerol,4.2.1.2,C00116,,135,glycerol,653600,-,Escherichia coli,BRENDA,glyc,CHEBI:17754,Anaplerosis+TCA,fumA
-302300,ReactionID=FUMHYDR-RXN,Mercury(2+),4.2.1.2,C00703,,HG+2,,,-,Escherichia coli,EcoCyc,hg2,CHEBI:16793,Anaplerosis+TCA,fumA
-302909,ReactionID=FUMHYDR-RXN,O2.-,4.2.1.2,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,Anaplerosis+TCA,fumA
-302910,ReactionID=FUMHYDR-RXN,O2.-,4.2.1.2,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,Anaplerosis+TCA,fumA
-240506,,"(R,R)-Tartaric acid",4.2.1.2,C00898,,42777,"(2R,3R)-Tartrate",33771,-,Escherichia coli,BRENDA,tartr__l,CHEBI:15671,Anaplerosis+TCA,fumA
-302950,ReactionID=FUMHYDR-RXN,,4.2.1.2,,2300.0,TUNGSTATE,,,-,Escherichia coli,EcoCyc,tungs,CHEBI:46502,Anaplerosis+TCA,fumA
-302950,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,TUNGSTATE,,,-,Escherichia coli,EcoCyc,tungs,CHEBI:46502,Anaplerosis+TCA,fumA
-303001,ReactionID=FUMHYDR-RXN,Zinc cation,4.2.1.2,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,Anaplerosis+TCA,fumA
-299679,,2-Phosphoglycolate,5.3.1.1,C00988,6.0,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,Glycolysis,tpi
-301758,ReactionID=TRIOSEPISOMERIZATION-RXN,,5.3.1.1,,6000.0,CPD-67,,,-,Escherichia coli,EcoCyc,2pglyc,CHEBI:58033,Glycolysis,tpi
-249563,,2-Phosphoglycolate,5.3.1.1,C00988,,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,Glycolysis,tpi
-299679,,2-Phosphoglycolate,5.3.1.1,C00988,,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,Glycolysis,tpi
-301758,ReactionID=TRIOSEPISOMERIZATION-RXN,,5.3.1.1,,,CPD-67,,,-,Escherichia coli,EcoCyc,2pglyc,CHEBI:58033,Glycolysis,tpi
-250021,,6-Phospho-D-gluconate,5.3.1.6,C00345,,391,6-phosphogluconate,2787,-,Escherichia coli,BRENDA,6pgc,CHEBI:48928,PPP+ED,rpiA
-250029,,AMP,5.3.1.6,C00020,,30,AMP,2787,-,Escherichia coli,BRENDA,amp,CHEBI:16027,PPP+ED,rpiA
-301384,ReactionID=RIB5PISOM-RXN,,5.3.1.6,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,PPP+ED,rpiA
-250033,,D-Arabinose 5-phosphate,5.3.1.6,C01112,,6486,arabinose 5-phosphate,653911,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,PPP+ED,rpiA
-301407,ReactionID=RIB5PISOM-RXN,,5.3.1.6,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,PPP+ED,rpiA
-250046,,D-Fructose 6-phosphate,5.3.1.6,C00085,,453,fructose 6-phosphate,2787,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,PPP+ED,rpiA
-299723,,Orthophosphate,5.3.1.6,C00009,8.0,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,PPP+ED,rpiA
-250082,,Orthophosphate,5.3.1.6,C00009,,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,PPP+ED,rpiA
-299723,,Orthophosphate,5.3.1.6,C00009,,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,PPP+ED,rpiA
-250278,,6-Phospho-D-gluconate,5.3.1.9,C00345,,391,6-phosphogluconate,"2624, 2841",-,Escherichia coli,BRENDA,6pgc,CHEBI:48928,Glycolysis,pgi
-301705,ReactionID=PGLUCISOM-RXN,,5.3.1.9,,,CPD-2961,,,-,Escherichia coli,EcoCyc,6pgc,CHEBI:58759,Glycolysis,pgi
-302758,ReactionID=PGLUCISOM-RXN,,5.3.1.9,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,Glycolysis,pgi
-301376,ReactionID=ACETATE--COA-LIGASE-RXN,,6.2.1.1,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,Anaplerosis+TCA,acs
-302814,ReactionID=ACETATE--COA-LIGASE-RXN,,6.2.1.1,,,PROPIONATE,,,-,Escherichia coli,EcoCyc,ppa,CHEBI:17272,Anaplerosis+TCA,acs
-302781,ReactionID=ACETATE--COA-LIGASE-RXN,Diphosphate,6.2.1.1,C00013,,PPI,,,-,Escherichia coli,EcoCyc,ppi,CHEBI:29888,Anaplerosis+TCA,acs
-301324,ReactionID=SUCCCOASYN-RXN,,6.2.1.5,,,ADP,,,+,Escherichia coli,EcoCyc,adp,CHEBI:456216,Anaplerosis+TCA,sucC
-257616,adenosine 5´-tetraphosphate formation,ADP,6.2.1.5,C00008,,13,ADP,823,-,Escherichia coli,BRENDA,adp,CHEBI:16761,Anaplerosis+TCA,sucC
-257605,,2-Oxoglutarate,6.2.1.5,C00026,,34,2-oxoglutarate,799,-,Escherichia coli,BRENDA,akg,CHEBI:30915,Anaplerosis+TCA,sucC
-257619,,ATP,6.2.1.5,C00002,,4,ATP,799,-,Escherichia coli,BRENDA,atp,CHEBI:15422,Anaplerosis+TCA,sucC
-257647,,NADH,6.2.1.5,C00004,,8,2 NADH,799,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,Anaplerosis+TCA,sucC
-257663,presence of succinate plus CoA inhibits adenosine 5'-tetraphosphate formation,Succinate,6.2.1.5,C00042,,58,succinate,823,-,Escherichia coli,BRENDA,succ,CHEBI:15741,Anaplerosis+TCA,sucC
+,Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mode,Organism,Source,bigg.metabolite,chebiID,bigg.reaction,subsystem,pathway,enzyme_name
+301297,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,ACETYL-COA,,,-,Escherichia coli,EcoCyc,accoa,CHEBI:57288,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+301300,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,ACETYL-P,,,+,Escherichia coli,EcoCyc,actp,CHEBI:22191,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302431,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,L-ASPARTATE,,,+,Escherichia coli,EcoCyc,asp__l,CHEBI:29991,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+35422,,Calcium cation,1.1.1.40,C00076,,15,Ca2+,722940,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+301520,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,CAMP,,,-,Escherichia coli,EcoCyc,camp,CHEBI:58165,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+35443,,Cobalt ion,1.1.1.40,C00175,,23,Co2+,722940,-,Escherichia coli,BRENDA,cobalt2,CHEBI:48828,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+35448,strong inhibition,,1.1.1.40,,,19,Cu2+,722940,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302162,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,FUM,,,-,Escherichia coli,EcoCyc,fum,CHEBI:29806,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302197,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,GLC-6-P,,,+,Escherichia coli,EcoCyc,g6p_b,CHEBI:58247,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302204,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,GLT,,,+,Escherichia coli,EcoCyc,glu__l,CHEBI:29985,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302402,ReactionID=MALIC-NADP-RXN,Potassium cation,1.1.1.40,C00238,,K+,,,+,Escherichia coli,EcoCyc,k,CHEBI:29103,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+35536,"activates at up to 4 mM, inhibition above, probably due to blockage of substrate binding, Km is 0.19 mM",Magnesium cation,1.1.1.40,C00305,,6,Mg2+,687388,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302618,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,NADH,,,-,Escherichia coli,EcoCyc,nadh,CHEBI:57945,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302629,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,NADP,,,-,Escherichia coli,EcoCyc,nadp,CHEBI:58349,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+301370,ReactionID=MALIC-NADP-RXN,NH4+,1.1.1.40,C01342,,AMMONIUM,,,+,Escherichia coli,EcoCyc,nh3,CHEBI:28938,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302705,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+35634,strong inhibition,Zinc cation,1.1.1.40,C00038,,14,Zn2+,722940,-,Escherichia coli,BRENDA,zn2,CHEBI:29105,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+303000,ReactionID=MALIC-NADP-RXN,Zinc cation,1.1.1.40,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,me2,Anaplerotic Reactions,Anaplerosis+TCA,maeB
+302703,ReactionID=ISOCITDEH-RXN,,1.1.1.42,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,icdhyr,Citric Acid Cycle,Anaplerosis+TCA,icd
+263249,pH 7.1,Phosphoenolpyruvate,1.1.1.42,C00074,0.31,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icdhyr,Citric Acid Cycle,Anaplerosis+TCA,icd
+35921,"allosteric inhibition. Phosphoenolpyruvate enhances the uncompetitive inhibition of isocitrate lyase by increasing isocitrate, which protects isocitrate dehydrogenase from the inhibition, and contributes to the control through the tricarboxylic acid cycle and glyoxylate shunt",Phosphoenolpyruvate,1.1.1.42,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icdhyr,Citric Acid Cycle,Anaplerosis+TCA,icd
+263249,pH 7.1,Phosphoenolpyruvate,1.1.1.42,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icdhyr,Citric Acid Cycle,Anaplerosis+TCA,icd
+302756,ReactionID=ISOCITDEH-RXN,,1.1.1.42,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,icdhyr,Citric Acid Cycle,Anaplerosis+TCA,icd
+36108,,ATP,1.1.1.44,C00002,,4,ATP,"286861, 286882, 286904",-,Escherichia coli,BRENDA,atp,CHEBI:15422,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+301444,ReactionID=RXN-9952,,1.1.1.44,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+301599,ReactionID=RXN-9952,,1.1.1.44,,,CO-A,,,-,Escherichia coli,EcoCyc,coa,CHEBI:57287,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+36151,,"beta-D-Fructose 1,6-bisphosphate",1.1.1.44,C05378,,583,"D-fructose 1,6-diphosphate","286851, 286861, 286882, 286904",-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+302154,ReactionID=RXN-9952,,1.1.1.44,,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+302525,ReactionID=RXN-9952,Magnesium cation,1.1.1.44,C00305,,MG+2,,,+,Escherichia coli,EcoCyc,mg2,CHEBI:18420,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+302634,ReactionID=RXN-9952,,1.1.1.44,,,NADP,,,-,Escherichia coli,EcoCyc,nadp,CHEBI:58349,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+36237,,NADPH,1.1.1.44,C00005,,5,2 NADPH,"286851, 286882, 286904",-,Escherichia coli,BRENDA,nadph,CHEBI:16474,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+302863,ReactionID=RXN-9952,,1.1.1.44,,,RIBULOSE-5P,,,-,Escherichia coli,EcoCyc,ru5p__d,CHEBI:58121,gnd,Pentose Phosphate Pathway,PPP+ED,gnd
+36478,"10 mM, 50-75% inhibition, assay without MgCl2",ATP,1.1.1.49,C00002,,4,ATP,722473,-,Escherichia coli,BRENDA,atp,CHEBI:15422,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36486,"1 mM, 83% inhibition",Cadmium,1.1.1.49,C01413,,52,Cd2+,722473,-,Escherichia coli,BRENDA,cd2,CHEBI:48775,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36493,"1 mM, 56% inhibition",Cobalt ion,1.1.1.49,C00175,,23,Co2+,722473,-,Escherichia coli,BRENDA,cobalt2,CHEBI:48828,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36497,"1 mM, complete inhibition",,1.1.1.49,,,19,Cu2+,722473,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36533,"1 mM, complete inhibition",Mercury(2+),1.1.1.49,C00703,,33,Hg2+,722473,-,Escherichia coli,BRENDA,hg2,CHEBI:16793,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36548,"1 mM, 56% inhibition",,1.1.1.49,,,11,Mn2+,722473,-,Escherichia coli,BRENDA,mn2,CHEBI:29035,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36568,"allosteric inhibition, inhibition is not reversed by NAD+, AMP, or spermidine",NADH,1.1.1.49,C00004,,8,2 NADH,722577,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263362,"pH 8.0, temperature not specified in the publication, varied substrate: NADP+",NADPH,1.1.1.49,C00005,0.01,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263373,"25°C, pH 8.0, competitive inhibition constant",NADPH,1.1.1.49,C00005,0.038,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263374,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",NADPH,1.1.1.49,C00005,0.04,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263386,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",NADPH,1.1.1.49,C00005,0.18,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263401,"25°C, pH 8.0, non-competitive inhibition constant",NADPH,1.1.1.49,C00005,2.09,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36595,product inhibition with NADP+ or D-glucose 6-phosphate as the varying substrate,NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36596,,NADPH,1.1.1.49,C00005,,5,2 NADPH,722473,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+36597,"when NADP+ is the varied substrate, NADPH NADPH is a competitive inhibitor both in the presence and absence of Mg2+, linear competitive inhibition. When glucose 6-phosphate is the varied substrate NADPH causes linear noncompetitive inhibition",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263362,"pH 8.0, temperature not specified in the publication, varied substrate: NADP+",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263373,"25°C, pH 8.0, competitive inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263374,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263386,"pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722577,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+263401,"25°C, pH 8.0, non-competitive inhibition constant",NADPH,1.1.1.49,C00005,,5,2 NADPH,722244,-,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+533,,Spermidine,1.1.1.49,C00315,,148,spermidine,722577,+,Escherichia coli,BRENDA,spmd,CHEBI:16610,g6pdh2r,Pentose Phosphate Pathway,PPP+ED,zwf
+90018,competitive inhibition,D-Arabinose 5-phosphate,2.2.1.1,C01112,,538,D-arabinose 5-phosphate,486023,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+301410,ReactionID=1TRANSKETO-RXN,,2.2.1.1,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+90027,competitive inhibition,L-Erythrulose,2.2.1.1,C02045,,1981,L-erythrulose,486024,-,Escherichia coli,BRENDA,eryth,CHEBI:27913,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+6716,,,2.2.1.1,,,1126,hydrogen peroxide,694217,+,Escherichia coli,BRENDA,h2o2,CHEBI:29192,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+302908,ReactionID=2TRANSKETO-RXN,O2.-,2.2.1.1,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+90057,"denaturation of holo-transketolase by urea displays at least three transitions, where only the final equilibrium denaturation transition is the same for both apo-transketolase and holo-transketolase. Enzyme is deactivated initially by changes in structure associated with the cofactors, but this event does not release the cofactor from the enzyme. Holo-transketolase does not denature to apo-transketolase at 2 M urea. Complete dissociation of cofactors from holo-transketolase at 3.8 M urea without formation of the compact form of apo-transketolase (intermediate form). Holo-transketolase and apo-transketolase at 7.2 M urea both show a common denatured form",,2.2.1.1,,,116,Urea,692117,-,Escherichia coli,BRENDA,urea,CHEBI:32285,tkt1,Pentose Phosphate Pathway,PPP+ED,tkt
+90059,,D-Arabinose 5-phosphate,2.2.1.2,C01112,,15695,D-arabinose-5-phosphate,486041,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,tala,Pentose Phosphate Pathway,PPP+ED,talB
+301409,ReactionID=TRANSALDOL-RXN,,2.2.1.2,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,tala,Pentose Phosphate Pathway,PPP+ED,talB
+90061,,(R)-Lactaldehyde,2.2.1.2,C00937,,4237,D-lactaldehyde,719298,-,Escherichia coli,BRENDA,lald__d,CHEBI:17167,tala,Pentose Phosphate Pathway,PPP+ED,talB
+90095,,Orthophosphate,2.2.1.2,C00009,,16,phosphate,"486027, 486041",-,Escherichia coli,BRENDA,pi,CHEBI:26078,tala,Pentose Phosphate Pathway,PPP+ED,talB
+90068,,Diphosphate,2.2.1.2,C00013,,17,diphosphate,486027,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,tala,Pentose Phosphate Pathway,PPP+ED,talB
+90103,,Sulfate,2.2.1.2,C00059,,160,sulfate,486027,-,Escherichia coli,BRENDA,so4,CHEBI:26836,tala,Pentose Phosphate Pathway,PPP+ED,talB
+91426,complete inactivation at 2.5 mol iodine per mol of subunit,Iodine,2.3.1.12,C01382,,1619,Iodine,486208,-,Escherichia coli,BRENDA,iodine,CHEBI:17606,pdh,Glycolysis/Gluconeogenesis,Anaplerosis+TCA,pdh
+302235,ReactionID=MALSYN-RXN,,2.3.3.9,,,GLYCOLLATE,,,-,Escherichia coli,EcoCyc,glyclt,CHEBI:29805,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272638,wild-type protein,Oxalate,2.3.3.9,C00209,0.023,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272639,wild-type protein,Oxalate,2.3.3.9,C00209,0.037,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302711,ReactionID=MALSYN-RXN,,2.3.3.9,,37.0,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+98213,; competitive,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272638,wild-type protein,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272639,wild-type protein,Oxalate,2.3.3.9,C00209,,185,oxalate,706621,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302711,ReactionID=MALSYN-RXN,,2.3.3.9,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302714,ReactionID=MALSYN-RXN,,2.3.3.9,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272661,wild-type protein,Pyruvate,2.3.3.9,C00022,0.65,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302842,ReactionID=MALSYN-RXN,,2.3.3.9,,650.0,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+98230,,Pyruvate,2.3.3.9,C00022,,31,pyruvate,660456,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+98233,; competitive,Pyruvate,2.3.3.9,C00022,,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+272661,wild-type protein,Pyruvate,2.3.3.9,C00022,,31,pyruvate,706621,-,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302842,ReactionID=MALSYN-RXN,,2.3.3.9,,,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+302853,ReactionID=MALSYN-RXN,,2.3.3.9,,,PYRUVATE,,,-,Escherichia coli,EcoCyc,pyr,CHEBI:15361,mals,Anaplerotic Reactions,Anaplerosis+TCA,aceB
+10220,,ADP,2.7.1.11,C00008,,13,ADP,722736,+,Escherichia coli,BRENDA,adp,CHEBI:16761,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+301338,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,ADP,,,+,Escherichia coli,EcoCyc,adp,CHEBI:456216,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113235,,ATP,2.7.1.11,C00002,,4,ATP,640421,-,Escherichia coli,BRENDA,atp,CHEBI:15422,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113273,at alkaline pH; mechanism,ATP,2.7.1.11,C00002,,4,ATP,640490,-,Escherichia coli,BRENDA,atp,CHEBI:15422,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113284,inhibition of fructose 1-phosphate phosphorylation above 0.08 mM ATP,ATP,2.7.1.11,C00002,,4,ATP,640526,-,Escherichia coli,BRENDA,atp,CHEBI:15422,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+301438,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113308,strong inhibition,,2.7.1.11,,,131,citrate,640421,-,Escherichia coli,BRENDA,cit,CHEBI:76049,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113338,isoenzyme PFK2,,2.7.1.11,,,131,citrate,640463,-,Escherichia coli,BRENDA,cit,CHEBI:76049,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113350,"cAMP, ADP or fructose 1,6-bisphosphate restore activity",,2.7.1.11,,,131,citrate,640486,-,Escherichia coli,BRENDA,cit,CHEBI:76049,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113387,,,2.7.1.11,,,671,D-Fructose 1-phosphate,640421,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113402,inhibition occurs at low concentrations of fructose 6-phosphate,D-Fructose 6-phosphate,2.7.1.11,C00085,,87,D-fructose 6-phosphate,722736,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+302159,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,FRUCTOSE-6P,,,+,Escherichia coli,EcoCyc,f6p_b,CHEBI:57634,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+302151,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+10302,,GDP,2.7.1.11,C00035,,53,GDP,640489,+,Escherichia coli,BRENDA,gdp,CHEBI:17552,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+10304,,GDP,2.7.1.11,C00035,,53,GDP,"640490, 722736",+,Escherichia coli,BRENDA,gdp,CHEBI:17552,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+302181,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,GDP,,,+,Escherichia coli,EcoCyc,gdp,CHEBI:58189,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+302389,ReactionID=6PFRUCTPHOS-RXN,Potassium cation,2.7.1.11,C00238,,K+,,,-,Escherichia coli,EcoCyc,k,CHEBI:29103,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+10323,,Ammonia,2.7.1.11,C00014,,54,NH4+,640421,+,Escherichia coli,BRENDA,nh3,CHEBI:16134,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+10339,,Ammonia,2.7.1.11,C00014,,54,NH4+,640486,+,Escherichia coli,BRENDA,nh3,CHEBI:16134,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113544,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,"640421, 640463",-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113550,feedback inhibition,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,640486,-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+113558,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,722736,-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+302769,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pfk,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+301399,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,AMP,,,+,Escherichia coli,EcoCyc,amp,CHEBI:456215,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+301451,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+301509,ReactionID=PEPDEPHOS-RXN,Calcium cation,2.7.1.40,C00076,,CA+2,,,+,Escherichia coli,EcoCyc,ca2,CHEBI:29108,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+115893,,Calcium cation,2.7.1.40,C00076,,15,Ca2+,654470,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+301508,ReactionID=PEPDEPHOS-RXN,Calcium cation,2.7.1.40,C00076,,CA+2,,,-,Escherichia coli,EcoCyc,ca2,CHEBI:29108,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+10703,,"beta-D-Fructose 1,6-bisphosphate",2.7.1.40,C05378,,106,"D-fructose 1,6-bisphosphate",707589,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+10728,,"beta-D-Fructose 1,6-bisphosphate",2.7.1.40,C05378,,583,"D-fructose 1,6-diphosphate",641557,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+302155,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+10775,,D-Glucose 6-phosphate,2.7.1.40,C00092,,105,D-glucose 6-phosphate,641557,+,Escherichia coli,BRENDA,g6p,CHEBI:4170,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+302252,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,GTP,,,-,Escherichia coli,EcoCyc,gtp,CHEBI:37565,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+10916,,Phosphoenolpyruvate,2.7.1.40,C00074,,51,phosphoenolpyruvate,707589,+,Escherichia coli,BRENDA,pep,CHEBI:44897,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+302902,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,SUC-COA,,,-,Escherichia coli,EcoCyc,succoa,CHEBI:57292,pyk,Glycolysis/Gluconeogenesis,Glycolysis,pykF
+125619,,ADP,2.7.9.2,C00008,,13,ADP,"645472, 645473",-,Escherichia coli,BRENDA,adp,CHEBI:16761,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+301320,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125621,weak,ADP-glucose,2.7.9.2,C00498,,598,ADP-glucose,645473,-,Escherichia coli,BRENDA,adpglc,CHEBI:15751,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125614,,2-Oxoglutarate,2.7.9.2,C00026,,34,2-oxoglutarate,"645472, 645473",-,Escherichia coli,BRENDA,akg,CHEBI:30915,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+301229,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125622,,AMP,2.7.9.2,C00020,,30,AMP,645473,-,Escherichia coli,BRENDA,amp,CHEBI:16027,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+301397,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125624,excess of ATP inhibits at high concentrations of MgCl2 or MnCl2,ATP,2.7.9.2,C00002,,4,ATP,645468,-,Escherichia coli,BRENDA,atp,CHEBI:15422,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125625,inhibits Mn2+-activated enzyme,Calcium cation,2.7.9.2,C00076,,15,Ca2+,645468,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125616,,Glyceraldehyde 3-phosphate,2.7.9.2,C00661,,29510,3-phosphoglyceraldehyde,645472,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125617,weak,Glyceraldehyde 3-phosphate,2.7.9.2,C00661,,29510,3-phosphoglyceraldehyde,645473,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125629,"divalent metal ion Mg2+ or Mn2+ required for forward reaction, inhibition at high concentrations of Mg2+ or Mn2+",Magnesium cation,2.7.9.2,C00305,,6,Mg2+,645468,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125630,"divalent metal ion Mg2+ or Mn2+ required for forward reaction, inhibition at high concentrations of Mg2+ or Mn2+",,2.7.9.2,,,11,Mn2+,645468,-,Escherichia coli,BRENDA,mn2,CHEBI:29035,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125633,,Oxaloacetate,2.7.9.2,C00036,,2575,oxalacetate,"645472, 645473",-,Escherichia coli,BRENDA,oaa,CHEBI:30744,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+302698,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,OXALACETIC_ACID,,,-,Escherichia coli,EcoCyc,oaa,CHEBI:16452,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+302709,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+125635,competitive to ATP,Phosphoenolpyruvate,2.7.9.2,C00074,,51,phosphoenolpyruvate,645473,-,Escherichia coli,BRENDA,pep,CHEBI:44897,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+302772,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pps,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+144875,,ADP,3.1.3.11,C00008,,13,ADP,651666,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+301328,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279606,"wild-type, 22°C, pH 7.5",AMP,3.1.3.11,C00020,0.00062,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144891,50% inhibition at 0.015 mM,AMP,3.1.3.11,C00020,,30,AMP,170730,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144934,"transformation of enzyme to inactive T-state, inhibition shows quarternary transition and cooperativity",AMP,3.1.3.11,C00020,,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144940,,AMP,3.1.3.11,C00020,,30,AMP,"650375, 680756",-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144941,FBPase undergoes a quaternary transition from the canonical R-state to a T-like state in response to AMP. Glc-6-P and AMP are synergistic inhibitors,AMP,3.1.3.11,C00020,,30,AMP,680799,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144942,"AMP and D-fructose 2,6-bisphosphate are not synergistic inhibitors of the type I FBPase",AMP,3.1.3.11,C00020,,30,AMP,680855,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279606,"wild-type, 22°C, pH 7.5",AMP,3.1.3.11,C00020,,30,AMP,665621,-,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+301401,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144958,,ATP,3.1.3.11,C00002,,4,ATP,651666,-,Escherichia coli,BRENDA,atp,CHEBI:15422,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144960,"1 mM, reduces activity by 40%",ATP,3.1.3.11,C00002,,4,ATP,693243,-,Escherichia coli,BRENDA,atp,CHEBI:15422,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+301431,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+17834,,,3.1.3.11,,,131,citrate,680756,+,Escherichia coli,BRENDA,cit,CHEBI:76049,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+301553,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,CIT,,,+,Escherichia coli,EcoCyc,cit,CHEBI:16947,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302077,ReactionID=F16BDEPHOS-RXN,Dithiothreitol,3.1.3.11,C00265,,DITHIOTHREITOL,,,+,Escherichia coli,EcoCyc,dtt,CHEBI:42106,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279635,pH 7.7,,3.1.3.11,,1.0,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145001,,,3.1.3.11,,,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279635,pH 7.7,,3.1.3.11,,,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+144995,substrate inhibition at high concentrations,"beta-D-Fructose 1,6-bisphosphate",3.1.3.11,C05378,,106,"D-fructose 1,6-bisphosphate",651666,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145080,substrate inhibition above 0.05 M,"beta-D-Fructose 1,6-bisphosphate",3.1.3.11,C05378,,295,"fructose 1,6-diphosphate",170730,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145021,allosteric inhibition. FBPase undergoes a quaternary transition from the canonical R-state to a T-like state in response to glucose 6-phosphate. Glc-6-P and AMP are synergistic inhibitors,D-Glucose 6-phosphate,3.1.3.11,C00092,,105,D-glucose 6-phosphate,680799,-,Escherichia coli,BRENDA,g6p,CHEBI:4170,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302198,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,GLC-6-P,,,-,Escherichia coli,EcoCyc,g6p_b,CHEBI:58247,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+17913,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,651666,+,Escherichia coli,BRENDA,pep,CHEBI:44897,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+17914,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,665719,+,Escherichia coli,BRENDA,pep,CHEBI:44897,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+17915,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,680756,+,Escherichia coli,BRENDA,pep,CHEBI:44897,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302764,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302774,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145272,,Phosphoenolpyruvate,3.1.3.11,C00074,,51,phosphoenolpyruvate,170730,-,Escherichia coli,BRENDA,pep,CHEBI:44897,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302773,ReactionID=F16BDEPHOS-RXN,,3.1.3.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279629,,Orthophosphate,3.1.3.11,C00009,0.35,16,phosphate,651666,-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145266,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,"651666, 693243",-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+145267,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,693243,-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+279629,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,651666,-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+17918,,Sulfate,3.1.3.11,C00059,,160,sulfate,665719,+,Escherichia coli,BRENDA,so4,CHEBI:26836,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+302906,ReactionID=F16BDEPHOS-RXN,Sulfate,3.1.3.11,C00059,,SULFATE,,,+,Escherichia coli,EcoCyc,so4,CHEBI:16189,fbp,Glycolysis/Gluconeogenesis,Glycolysis,fbpase
+301295,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,ACETYL-COA,,,+,Escherichia coli,EcoCyc,accoa,CHEBI:57288,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234130,,L-Aspartate,4.1.1.31,C00049,,304,Asp,"4308, 4311, 657356",-,Escherichia coli,BRENDA,asp__l,CHEBI:17053,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+302433,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,L-ASPARTATE,,,-,Escherichia coli,EcoCyc,asp__l,CHEBI:29991,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+301541,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,CDP,,,+,Escherichia coli,EcoCyc,cdp,CHEBI:58069,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234159,,,4.1.1.31,,,131,citrate,4311,-,Escherichia coli,BRENDA,cit,CHEBI:76049,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+301569,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,CMP,,,+,Escherichia coli,EcoCyc,cmp,CHEBI:60377,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234170,,,4.1.1.31,,,553,Cys,4311,-,Escherichia coli,BRENDA,cys__l,CHEBI:35235,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+27260,,"beta-D-Fructose 1,6-bisphosphate",4.1.1.31,C05378,,93409,fructose diphosphate,4286,+,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+302153,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp_b,CHEBI:32966,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234188,,Fumarate,4.1.1.31,C00122,,170,fumarate,4311,-,Escherichia coli,BRENDA,fum,CHEBI:18012,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+27297,,GTP,4.1.1.31,C00044,,37,GTP,4286,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+302259,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,GTP,,,+,Escherichia coli,EcoCyc,gtp,CHEBI:37565,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+302484,ReactionID=PEPCARBOX-RXN,,4.1.1.31,,,MAL,,,-,Escherichia coli,EcoCyc,mal__l,CHEBI:15589,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234309,,Maleic acid,4.1.1.31,C01384,,575,Maleate,4311,-,Escherichia coli,BRENDA,male,CHEBI:18300,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+234373,,Succinate,4.1.1.31,C00042,,58,succinate,4311,-,Escherichia coli,BRENDA,succ,CHEBI:15741,ppc,Anaplerotic Reactions,Anaplerosis+TCA,ppc
+235042,,Glycerate 3-phosphate,4.1.1.49,C00597,,2742,glycerate 3-phosphate,649304,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+27407,,Acetyl-CoA,4.1.1.49,C00024,,29,acetyl-CoA,727382,+,Escherichia coli,BRENDA,accoa,CHEBI:15351,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+234966,the presence of 9.6 mM ATP decreases 3folds the catalytic efficiency of the enzyme,ATP,4.1.1.49,C00002,,4,ATP,727382,-,Escherichia coli,BRENDA,atp,CHEBI:15422,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+301441,ReactionID=PEPCARBOXYKIN-RXN,,4.1.1.49,,,ATP,,,-,Escherichia coli,EcoCyc,atp,CHEBI:30616,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+301490,ReactionID=PEPCARBOXYKIN-RXN,Calcium cation,4.1.1.49,C00076,,CA+2,,,+,Escherichia coli,EcoCyc,ca2,CHEBI:29108,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+235016,,Glycerone phosphate,4.1.1.49,C00111,,278,dihydroxyacetone phosphate,649304,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+234996,,D-Fructose 6-phosphate,4.1.1.49,C00085,,87,D-fructose 6-phosphate,649304,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+234976,,"beta-D-Fructose 1,6-bisphosphate",4.1.1.49,C05378,,106,"D-fructose 1,6-bisphosphate",649304,-,Escherichia coli,BRENDA,fdp_b,CHEBI:28013,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+235071,,Magnesium cation,4.1.1.49,C00305,,6,Mg2+,649304,-,Escherichia coli,BRENDA,mg2,CHEBI:18420,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+235086,,NADH,4.1.1.49,C00004,,8,2 NADH,4621,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+235091,competitive inhibitor,Oxalate,4.1.1.49,C00209,,185,oxalate,650420,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+302768,ReactionID=PEPCARBOXYKIN-RXN,,4.1.1.49,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,ppck,Anaplerotic Reactions,Anaplerosis+TCA,pck
+236054,,Glycerate 3-phosphate,4.1.2.13,C00597,,194,3-phosphoglycerate,4943,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+27628,,2-Oxoglutarate,4.1.2.13,C00026,,34,2-oxoglutarate,4914,+,Escherichia coli,BRENDA,akg,CHEBI:30915,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+301230,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,2-KETOGLUTARATE,,,+,Escherichia coli,EcoCyc,akg,CHEBI:16810,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+27630,,,4.1.2.13,,,131,citrate,4914,+,Escherichia coli,BRENDA,cit,CHEBI:76049,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+301554,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,CIT,,,+,Escherichia coli,EcoCyc,cit,CHEBI:16947,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236136,,,4.1.2.13,,,553,Cys,4913,-,Escherichia coli,BRENDA,cys__l,CHEBI:35235,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+294812,"30°C, wild-type enzyme",Glycerone phosphate,4.1.2.13,C00111,0.13,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236151,,Glycerone phosphate,4.1.2.13,C00111,,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236230,,Glycerone phosphate,4.1.2.13,C00111,,482,glycerone phosphate,4943,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+294812,"30°C, wild-type enzyme",Glycerone phosphate,4.1.2.13,C00111,,278,dihydroxyacetone phosphate,652787,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236223,,Glyceraldehyde 3-phosphate,4.1.2.13,C00661,,574,glyceraldehyde 3-phosphate,4943,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236224,non-competitive inhibitor,Glyceraldehyde 3-phosphate,4.1.2.13,C00661,,574,glyceraldehyde 3-phosphate,652787,-,Escherichia coli,BRENDA,g3p,CHEBI:17138,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+27650,,DL-Glycerol 1-phosphate,4.1.2.13,C03189,,422,sn-glycerol 3-phosphate,4914,+,Escherichia coli,BRENDA,glyc1p,CHEBI:14336,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+302231,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,GLYCEROL-3P,,,+,Escherichia coli,EcoCyc,glyc3p,CHEBI:57597,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+302390,ReactionID=F16ALDOLASE-RXN,Potassium cation,4.1.2.13,C00238,,K+,,,+,Escherichia coli,EcoCyc,k,CHEBI:29103,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+301363,ReactionID=F16ALDOLASE-RXN,NH4+,4.1.2.13,C01342,,AMMONIUM,,,+,Escherichia coli,EcoCyc,nh3,CHEBI:28938,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236290,"cells stressed by 8 microM Ni(II) for 20 min lose 75% of their FbaA activity. In presence of 8 microM Ni(II), purified FbaA loses 80% of its activity within 2 min. Inhibition is due to Ni(II) binding to a secondary zinc binding site",,4.1.2.13,,,38,Ni2+,728325,-,Escherichia coli,BRENDA,ni2,CHEBI:49786,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+302658,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,NI+2,,,-,Escherichia coli,EcoCyc,ni2,CHEBI:49786,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+27648,,Phosphoenolpyruvate,4.1.2.13,C00074,,51,phosphoenolpyruvate,4914,+,Escherichia coli,BRENDA,pep,CHEBI:44897,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+302765,ReactionID=F16ALDOLASE-RXN,,4.1.2.13,,,PHOSPHO-ENOL-PYRUVATE,,,+,Escherichia coli,EcoCyc,pep,CHEBI:58702,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+236154,,Diphosphate,4.1.2.13,C00013,,17,diphosphate,4943,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,fba,Glycolysis/Gluconeogenesis,Glycolysis,fba
+301706,ReactionID=KDPGALDOL-RXN,,4.1.2.55,,,CPD-2961,,,-,Escherichia coli,EcoCyc,6pgc,CHEBI:58759,ddpgala,Alternate Carbon Metabolism,PPP+ED,eda
+302177,ReactionID=KDPGALDOL-RXN,,4.1.2.55,,,GAP,,,-,Escherichia coli,EcoCyc,g3p,CHEBI:59776,ddpgala,Alternate Carbon Metabolism,PPP+ED,eda
+236968,,Glycerate 3-phosphate,4.1.3.1,C00597,,194,3-phosphoglycerate,33118,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302171,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,G3P,,,-,Escherichia coli,EcoCyc,3pg,CHEBI:58272,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+301551,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,CIS-ACONITATE,,,-,Escherichia coli,EcoCyc,acon_c,CHEBI:16383,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+236944,,2-Oxoglutarate,4.1.3.1,C00026,,34,2-oxoglutarate,33118,-,Escherichia coli,BRENDA,akg,CHEBI:30915,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+301237,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237083,,Calcium cation,4.1.3.1,C00076,,15,Ca2+,33117,-,Escherichia coli,BRENDA,ca2,CHEBI:29108,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+301511,ReactionID=ISOCIT-CLEAV-RXN,Calcium cation,4.1.3.1,C00076,,CA+2,,,-,Escherichia coli,EcoCyc,ca2,CHEBI:29108,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237093,,Hydrochloric acid,4.1.3.1,C01327,,141,Cl-,33118,-,Escherichia coli,BRENDA,cl,CHEBI:17883,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+301566,ReactionID=ISOCIT-CLEAV-RXN,Cl-,4.1.3.1,C00698,,CL-,,,-,Escherichia coli,EcoCyc,cl,CHEBI:17996,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237132,linear competitive inhibitor,Glyoxylate,4.1.3.1,C00048,,101,glyoxylate,33156,-,Escherichia coli,BRENDA,glx,CHEBI:16891,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237119,50% inhibition at 5 mM,Glycolate,4.1.3.1,C00160,,479,glycolate,33117,-,Escherichia coli,BRENDA,glyclt,CHEBI:17497,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237120,,Glycolate,4.1.3.1,C00160,,479,glycolate,33118,-,Escherichia coli,BRENDA,glyclt,CHEBI:17497,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302236,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,GLYCOLLATE,,,-,Escherichia coli,EcoCyc,glyclt,CHEBI:29805,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302295,ReactionID=ISOCIT-CLEAV-RXN,Mercury(2+),4.1.3.1,C00703,,HG+2,,,-,Escherichia coli,EcoCyc,hg2,CHEBI:16793,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302384,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,ITACONATE,,,-,Escherichia coli,EcoCyc,itacon,CHEBI:17240,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237180,,Malonate,4.1.3.1,C00383,,392,malonate,33117,-,Escherichia coli,BRENDA,malon,CHEBI:30794,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302495,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,MALONATE,,,-,Escherichia coli,EcoCyc,malon,CHEBI:15792,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+294900,,Methylmalonate,4.1.3.1,C02170,15.0,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237205,50% inhibition at 15 mM,Methylmalonate,4.1.3.1,C02170,,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+294900,,Methylmalonate,4.1.3.1,C02170,,2208,methylmalonate,33117,-,Escherichia coli,BRENDA,mm,CHEBI:30860,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+301739,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,CPD-546,,,-,Escherichia coli,EcoCyc,mm,CHEBI:17453,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237258,,Oxalate,4.1.3.1,C00209,,185,oxalate,33117,-,Escherichia coli,BRENDA,oxa,CHEBI:16995,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302716,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,OXALATE,,,-,Escherichia coli,EcoCyc,oxa,CHEBI:30623,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+294895,"in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine",Phosphoenolpyruvate,4.1.3.1,C00074,0.893,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237279,,Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,33118,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237289,uncompetitive inhibitor,Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+294895,"in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine",Phosphoenolpyruvate,4.1.3.1,C00074,,51,phosphoenolpyruvate,680481,-,Escherichia coli,BRENDA,pep,CHEBI:44897,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302763,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237277,,Orthophosphate,4.1.3.1,C00009,,16,phosphate,33118,-,Escherichia coli,BRENDA,pi,CHEBI:26078,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237294,,Sulfate,4.1.3.1,C00059,,245,SO42-,33118,-,Escherichia coli,BRENDA,so4,CHEBI:26836,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+237302,,Succinate,4.1.3.1,C00042,,58,succinate,"33117, 33118",-,Escherichia coli,BRENDA,succ,CHEBI:15741,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+302900,ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,,,SUC,,,-,Escherichia coli,EcoCyc,succ,CHEBI:30031,icl,Anaplerotic Reactions,Anaplerosis+TCA,aceA
+241170,the enzyme is much less sensitive to O2 or H2O2 than to O2-,,4.2.1.12,,,22,H2O2,33658,-,Escherichia coli,BRENDA,h2o2,CHEBI:29192,edd,Pentose Phosphate Pathway,PPP+ED,edd
+241172,the enzyme is much less sensitive to O2 or H2O2 than to O2-,,4.2.1.12,,,9,O2,33658,-,Escherichia coli,BRENDA,o2,CHEBI:27140,edd,Pentose Phosphate Pathway,PPP+ED,edd
+240522,,cis-Aconitate,4.2.1.2,C00417,,1230,cis-aconitate,33771,-,Escherichia coli,BRENDA,acon_c,CHEBI:32805,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+240583,,trans-Aconitate,4.2.1.2,C02341,,2874,trans-aconitate,33771,-,Escherichia coli,BRENDA,acon_t,CHEBI:32806,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+301356,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,AG+,,,-,Escherichia coli,EcoCyc,ag,CHEBI:49468,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+301528,ReactionID=FUMHYDR-RXN,Cadmium,4.2.1.2,C01413,,CD+2,,,-,Escherichia coli,EcoCyc,cd2,CHEBI:48775,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+240525,,,4.2.1.2,,,131,citrate,33771,-,Escherichia coli,BRENDA,cit,CHEBI:76049,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+301552,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,CIT,,,-,Escherichia coli,EcoCyc,cit,CHEBI:16947,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+240523,,2-Methylmaleate,4.2.1.2,C02226,,5952,citraconate,33771,-,Escherichia coli,BRENDA,citac,CHEBI:17626,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+240540,wild-type enzyme is inhibited due to a viscogenic effect on the recycling rate,Glycerol,4.2.1.2,C00116,,135,glycerol,653600,-,Escherichia coli,BRENDA,glyc,CHEBI:17754,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+302300,ReactionID=FUMHYDR-RXN,Mercury(2+),4.2.1.2,C00703,,HG+2,,,-,Escherichia coli,EcoCyc,hg2,CHEBI:16793,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+302909,ReactionID=FUMHYDR-RXN,O2.-,4.2.1.2,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+302910,ReactionID=FUMHYDR-RXN,O2.-,4.2.1.2,C00704,,SUPER-OXIDE,,,-,Escherichia coli,EcoCyc,o2s,CHEBI:18421,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+240506,,"(R,R)-Tartaric acid",4.2.1.2,C00898,,42777,"(2R,3R)-Tartrate",33771,-,Escherichia coli,BRENDA,tartr__l,CHEBI:15671,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+302950,ReactionID=FUMHYDR-RXN,,4.2.1.2,,2300.0,TUNGSTATE,,,-,Escherichia coli,EcoCyc,tungs,CHEBI:46502,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+302950,ReactionID=FUMHYDR-RXN,,4.2.1.2,,,TUNGSTATE,,,-,Escherichia coli,EcoCyc,tungs,CHEBI:46502,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+303001,ReactionID=FUMHYDR-RXN,Zinc cation,4.2.1.2,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,fum,Citric Acid Cycle,Anaplerosis+TCA,fumA
+299679,,2-Phosphoglycolate,5.3.1.1,C00988,6.0,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,tpi,Glycolysis/Gluconeogenesis,Glycolysis,tpi
+301758,ReactionID=TRIOSEPISOMERIZATION-RXN,,5.3.1.1,,6000.0,CPD-67,,,-,Escherichia coli,EcoCyc,2pglyc,CHEBI:58033,tpi,Glycolysis/Gluconeogenesis,Glycolysis,tpi
+249563,,2-Phosphoglycolate,5.3.1.1,C00988,,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,tpi,Glycolysis/Gluconeogenesis,Glycolysis,tpi
+299679,,2-Phosphoglycolate,5.3.1.1,C00988,,1317,2-Phosphoglycolate,2586,-,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,tpi,Glycolysis/Gluconeogenesis,Glycolysis,tpi
+301758,ReactionID=TRIOSEPISOMERIZATION-RXN,,5.3.1.1,,,CPD-67,,,-,Escherichia coli,EcoCyc,2pglyc,CHEBI:58033,tpi,Glycolysis/Gluconeogenesis,Glycolysis,tpi
+250021,,6-Phospho-D-gluconate,5.3.1.6,C00345,,391,6-phosphogluconate,2787,-,Escherichia coli,BRENDA,6pgc,CHEBI:48928,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+250029,,AMP,5.3.1.6,C00020,,30,AMP,2787,-,Escherichia coli,BRENDA,amp,CHEBI:16027,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+301384,ReactionID=RIB5PISOM-RXN,,5.3.1.6,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+250033,,D-Arabinose 5-phosphate,5.3.1.6,C01112,,6486,arabinose 5-phosphate,653911,-,Escherichia coli,BRENDA,ara5p,CHEBI:16241,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+301407,ReactionID=RIB5PISOM-RXN,,5.3.1.6,,,ARABINOSE-5P,,,-,Escherichia coli,EcoCyc,ara5p,CHEBI:57693,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+250046,,D-Fructose 6-phosphate,5.3.1.6,C00085,,453,fructose 6-phosphate,2787,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+299723,,Orthophosphate,5.3.1.6,C00009,8.0,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+250082,,Orthophosphate,5.3.1.6,C00009,,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+299723,,Orthophosphate,5.3.1.6,C00009,,16,phosphate,653911,-,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi,Pentose Phosphate Pathway,PPP+ED,rpiA
+250278,,6-Phospho-D-gluconate,5.3.1.9,C00345,,391,6-phosphogluconate,"2624, 2841",-,Escherichia coli,BRENDA,6pgc,CHEBI:48928,pgi,Glycolysis/Gluconeogenesis,Glycolysis,pgi
+301705,ReactionID=PGLUCISOM-RXN,,5.3.1.9,,,CPD-2961,,,-,Escherichia coli,EcoCyc,6pgc,CHEBI:58759,pgi,Glycolysis/Gluconeogenesis,Glycolysis,pgi
+302758,ReactionID=PGLUCISOM-RXN,,5.3.1.9,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pgi,Glycolysis/Gluconeogenesis,Glycolysis,pgi
+301376,ReactionID=ACETATE--COA-LIGASE-RXN,,6.2.1.1,,,AMP,,,-,Escherichia coli,EcoCyc,amp,CHEBI:456215,acs,Pyruvate Metabolism,Anaplerosis+TCA,acs
+302814,ReactionID=ACETATE--COA-LIGASE-RXN,,6.2.1.1,,,PROPIONATE,,,-,Escherichia coli,EcoCyc,ppa,CHEBI:17272,acs,Pyruvate Metabolism,Anaplerosis+TCA,acs
+302781,ReactionID=ACETATE--COA-LIGASE-RXN,Diphosphate,6.2.1.1,C00013,,PPI,,,-,Escherichia coli,EcoCyc,ppi,CHEBI:29888,acs,Pyruvate Metabolism,Anaplerosis+TCA,acs
+301324,ReactionID=SUCCCOASYN-RXN,,6.2.1.5,,,ADP,,,+,Escherichia coli,EcoCyc,adp,CHEBI:456216,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
+257616,adenosine 5´-tetraphosphate formation,ADP,6.2.1.5,C00008,,13,ADP,823,-,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
+257605,,2-Oxoglutarate,6.2.1.5,C00026,,34,2-oxoglutarate,799,-,Escherichia coli,BRENDA,akg,CHEBI:30915,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
+257619,,ATP,6.2.1.5,C00002,,4,ATP,799,-,Escherichia coli,BRENDA,atp,CHEBI:15422,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
+257647,,NADH,6.2.1.5,C00004,,8,2 NADH,799,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
+257663,presence of succinate plus CoA inhibits adenosine 5'-tetraphosphate formation,Succinate,6.2.1.5,C00042,,58,succinate,823,-,Escherichia coli,BRENDA,succ,CHEBI:15741,sucoas,Citric Acid Cycle,Anaplerosis+TCA,sucC
