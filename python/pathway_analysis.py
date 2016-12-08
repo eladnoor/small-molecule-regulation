@@ -14,8 +14,7 @@ from bigg import BiGG
 import settings
 import pandas as pd
 import json
-import networkx as nx
-import matplotlib.pyplot as plt
+import graphviz as gv
 from plot_figures_for_paper import FigurePlotter
 
 bigg = BiGG()
@@ -58,9 +57,8 @@ metabolite_subsystem_df.loc[:, 'bigg.metabolite'] = metabolite_subsystem_df['big
 
 # keep only regulating metabolites
 # first, we need to join the regulation table with the EC-to-bigg dataframe
-reg = fplot.regulation
-reg = pd.merge(reg, bigg.reaction_df, on='EC_number', how='inner')
-reg = reg.join(reaction_subsystem_df, on='bigg.reaction', how='inner')
+reg = fplot.regulation.join(bigg.reaction_df, on='EC_number')
+reg = reg.join(reaction_subsystem_df, on='bigg.reaction')
 
 metabolite_set = set(reg['bigg.metabolite']).intersection(metabolite_subsystem_df['bigg.metabolite'])
 subsystem_set = set(metabolite_subsystem_df['subsystem'].unique())
@@ -68,16 +66,16 @@ if pd.np.nan in subsystem_set:
     subsystem_set.remove(pd.np.nan)
 
 #%%
-G = nx.DiGraph()
+g1 = gv.Graph(format='svg')
 for subsys in subsystem_set:
-    G.add_node(subsys, color='blue')
+    g1.node(subsys, color='blue')
 for met in metabolite_set:
-    G.add_node(met, color='black')
+    g1.node(met, color='black')
 for row in metabolite_subsystem_df.iterrows():
     met = row[1]['bigg.metabolite']
     subsys = row[1]['subsystem']
     if met in metabolite_set:
-        G.add_edge(met, subsys, color='black')
+        g1.edge(met, subsys, color='black')
 
 for row in reg.iterrows():
     met = row[1]['bigg.metabolite']
@@ -85,10 +83,9 @@ for row in reg.iterrows():
     mode = row[1]['Mode']
     if met in metabolite_set and subsys in subsystem_set:
         if mode == '+':
-            G.add_edge(met, subsys, color='green')
+            g1.edge(met, subsys, color='green')
         else:
-            G.add_edge(met, subsys, color='red')
-
-fig, ax = plt.subplots(1, 1, figsize=(20,20))
-nx.draw_spring(G, ax=ax)
-fig.savefig('../res/pathway_analysis.svg')
+            g1.edge(met, subsys, color='red')
+    
+g1.render('../res/pathway_analysis')
+metabolite_subsystem_df.to_csv('../res/pathway_analysis_table.csv')
