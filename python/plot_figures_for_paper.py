@@ -16,6 +16,7 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
+import pdb
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
@@ -500,20 +501,26 @@ class FigurePlotter(object):
         act_table = met_system_counter[met_system_counter['Mode'] == '+'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
         inh_table = met_system_counter[met_system_counter['Mode'] == '-'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
         
+        # Trim to metabolites which are interesting
+        act2 = act_table[act_table.sum(axis=1)>3]
+        inh2 = inh_table[inh_table.sum(axis=1)>3]
+        
         fig, axs = plt.subplots(1, 2, figsize=(15, 30))
 
         ax = axs[0]
-        sns.heatmap(act_table, mask=(act_table==0), ax=ax, annot=False, 
+        sns.heatmap(act2, mask=(act2==0), ax=ax, annot=False, 
                     cbar=True, vmin=0, vmax=10, cmap='viridis')
         ax.set_title('activators')
 
         ax = axs[1]
-        sns.heatmap(inh_table, mask=(inh_table==0), ax=ax, annot=False, 
+        sns.heatmap(inh2, mask=(inh2==0), ax=ax, annot=False, 
                     cbar=True, vmin=0, vmax=10, cmap='viridis')
         ax.set_title('inhibitors')
         
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.png'), dpi=300)
+        act_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_activating.csv'))
+        inh_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_inhibiting.csv'))
 
 ###############################################################################
 if __name__ == "__main__":
