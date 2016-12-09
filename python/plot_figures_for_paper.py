@@ -8,6 +8,7 @@ from bigg import BiGG
 from kegg import KEGG
 import settings
 import map_ligands
+
 import pandas as pd
 import os, json
 import seaborn as sns
@@ -23,48 +24,61 @@ SAT_FORMULA_S = r'$[S]/\left([S] + K_S\right)$'
 SAT_FORMULA_M = r'$[S]/\left([S] + K_M\right)$'
 SAT_FORMULA_I = r'$[S]/\left([S] + K_I\right)$'
 
+STAT_TABLE_INDEX = ['all entries',
+                    'keeping only E. coli data',
+                    'filtering out data about mutated enzymes',
+                    'keeping only data mapping to BiGG model',
+                    'unique metabolite-enzyme pairs',
+                    'unique metabolites',
+                    'unique enzymes']
+
 class FigurePlotter(object):
     
     def __init__(self, rebuild_cache=False):
-        self.bigg = BiGG()
+        self.stat_df = pd.DataFrame(index=STAT_TABLE_INDEX,
+                                    columns=['km', 'KM_Value', 'regulation', 'KI_Value'])
         self.kegg = KEGG()
-        
+
+        self.bigg = BiGG()
+        self.native_mets = self.bigg.get_mets_in_cytosol()
+        self.native_ECs = self.bigg.get_native_EC_numbers()
+
         if rebuild_cache:
             map_ligands.rebuild_cache()
         
         self.get_data()
     
-    def get_kinetic_param(self, name, organism=ORGANISM, filter_using_model=True):
+    def get_kinetic_param(self, name, value_col, organism=ORGANISM):
         k = settings.read_cache(name)
-        print "---------- %s -----------" % name
-        print "total BRENDA entries:               %8d" % (k.shape[0])
+        self.stat_df[name].iat[0] = k.shape[0] # all entries
+        self.stat_df[value_col].iat[0] = (k[value_col] > 0).sum()
         
-        # filter by organsim
         k = k[k['Organism'] == organism]
-        print "out of which are for E. coli:       %8d" % (k.shape[0])
-    
-        # filter out mutated enzymes
+        self.stat_df[name].iat[1] = k.shape[0] # filtered by organsim
+        self.stat_df[value_col].iat[1] = (k[value_col] > 0).sum()
+
         k = k[(pd.isnull(k['Commentary'])) |
               ((k['Commentary'].str.find('mutant') == -1) &
                (k['Commentary'].str.find('mutation') == -1))]
-    
-        print "out of which are not mutants:       %8d" % (k.shape[0])
-        
+        self.stat_df[name].iat[2] = k.shape[0] # filtering mutants
+        self.stat_df[value_col].iat[2] = (k[value_col] > 0).sum()
+
         # remove values with unmatched ligand
         k = k[pd.notnull(k['bigg.metabolite'])]
         k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
     
-        if filter_using_model:
-            k = k[k['EC_number'].isin(self.bigg.get_native_EC_numbers())]        
-            print "out of which are native EC numbers: %8d" % k.shape[0]
-            print "out of which are unique met-EC:     %8d" % (k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0])
-            print "out of which are unique met:        %8d" % (k.groupby('bigg.metabolite').first().shape[0])
-            print "out of which are unique EC:         %8d" % (k.groupby('EC_number').first().shape[0])
-
         return k
+    
+    def filter_non_native_interactions(self, k):
+        k = k[k['bigg.metabolite'].isin(self.native_mets)]
+        k = k[k['EC_number'].isin(self.native_ECs)]        
+        return k        
     
     @staticmethod
     def calc_sat(k, value_col, conc_df, agg_type='gmean'):
+        # filter missing Km or Ki values and -999 cases.        
+        k = k[k[value_col] > 0]
+        
         # choose the minimum value among all repeats
         if agg_type == 'minimum':
             k = k.groupby(['EC_number', 'bigg.metabolite'])[value_col].min().reset_index()
@@ -125,7 +139,7 @@ class FigurePlotter(object):
                     stoich_data.append((rid, met, coeff))
         
         reaction_subsystem_df = pd.DataFrame(subsystem_data,
-                                             columns=('bigg.reaction', 'subsystem'))
+                                             columns=('bigg.reaction', 'bigg.subsystem.reaction'))
         reaction_subsystem_df.set_index('bigg.reaction', inplace=True)
         
         stoich_df = pd.DataFrame(stoich_data,
@@ -134,6 +148,7 @@ class FigurePlotter(object):
         # now associate every metabolite to subsystems by joining the two tables
                                  
         metabolite_subsystem_df = stoich_df.join(reaction_subsystem_df, on='bigg.reaction')
+        metabolite_subsystem_df.rename(columns={'bigg.subsystem.reaction': 'bigg.subsystem.metabolite'}, inplace=True)
         metabolite_subsystem_df.drop('bigg.reaction', axis=1, inplace=True)
         metabolite_subsystem_df.drop('coeff', axis=1, inplace=True)
         metabolite_subsystem_df.drop_duplicates(inplace=True)
@@ -146,7 +161,7 @@ class FigurePlotter(object):
             metabolite_subsystem_df['bigg.metabolite'].apply(lambda s: s[0:-2].lower())
         
         return reaction_subsystem_df, metabolite_subsystem_df
-        
+
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
         self.met_conc_mean = _df.iloc[:, 1:9] # take only the data columns (8 conditions)
@@ -158,38 +173,58 @@ class FigurePlotter(object):
         colmap = dict(map(lambda x: (x, x[:-7]), self.met_conc_mean.columns))
         self.met_conc_mean.rename(columns=colmap, inplace=True)
         
-        # choose only one bigg.reaction for each EC number (arbitrarily)
-        ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
-        
-        self.km_raw = self.get_kinetic_param('km')
-        self.km_raw = self.km_raw[self.km_raw['KM_Value'] > 0]
-        self.km = FigurePlotter.calc_sat(self.km_raw, 'KM_Value', self.met_conc_mean)
-        self.km = self.km.join(ec2bigg, on='EC_number', how='left')
-        
-        self.regulation = self.get_kinetic_param('regulation')
-        self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
-                                         'KI_Value', self.met_conc_mean)
-        self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
-        self.regulation = self.regulation.join(ec2bigg, on='EC_number', how='left')
-    
-        reaction_subsystem_df, metabolite_subsystem_df = FigurePlotter.get_subsystem_data()                                                    
-        self.regulation = self.regulation.join(reaction_subsystem_df, on='bigg.reaction', how='left')
-        self.ki = self.ki.join(reaction_subsystem_df, on='bigg.reaction', how='left')
-        self.km = self.km.join(reaction_subsystem_df, on='bigg.reaction', how='left')
-
-        self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
-        self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
-
         # for legacy reasons, also calculate the km and ki tables, without
         # filtering out the non-native EC reactions (in order to
         # make the full heatmap)
-        km_raw_unfiltered = self.get_kinetic_param('km', filter_using_model=False)
+        km_raw_unfiltered = self.get_kinetic_param('km', 'KM_Value')
         self.km_unfiltered = FigurePlotter.calc_sat(km_raw_unfiltered, 'KM_Value', self.met_conc_mean)
         
-        regulation_unfiltered = self.get_kinetic_param('regulation', filter_using_model=False)
-        self.ki_unfiltered = FigurePlotter.calc_sat(regulation_unfiltered[~pd.isnull(regulation_unfiltered['KI_Value'])],
-                                                    'KI_Value', self.met_conc_mean)
-                                                    
+        regulation_unfiltered = self.get_kinetic_param('regulation', 'KI_Value')
+        ki_raw_unfiltered = regulation_unfiltered[~pd.isnull(regulation_unfiltered['KI_Value'])]
+        self.ki_unfiltered = FigurePlotter.calc_sat(ki_raw_unfiltered, 'KI_Value', self.met_conc_mean)
+        
+        km_raw = self.filter_non_native_interactions(km_raw_unfiltered)
+        self.regulation = self.filter_non_native_interactions(regulation_unfiltered)
+
+        self.calc_unique_stats(km_raw, 'km', 'KM_Value')
+        self.calc_unique_stats(self.regulation, 'regulation', 'KI_Value')
+        
+        # choose only one bigg.reaction for each EC number (arbitrarily)
+        ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
+
+        self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value', self.met_conc_mean)
+        self.km = self.km.join(ec2bigg, on='EC_number', how='left')
+        
+        self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
+                                         'KI_Value', self.met_conc_mean)
+
+        self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
+
+        self.regulation = self.regulation.join(ec2bigg, on='EC_number', how='left')
+    
+        reaction_subsystem_df, metabolite_subsystem_df = FigurePlotter.get_subsystem_data()                                                    
+        self.regulation = self.regulation.join(reaction_subsystem_df,
+                                               on='bigg.reaction', how='left')
+        self.regulation = pd.merge(self.regulation, metabolite_subsystem_df,
+                                   on='bigg.metabolite', how='left')
+
+        self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
+        self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
+        self.stat_df.drop('km', axis=1, inplace=True)
+        self.stat_df.to_csv(os.path.join(settings.RESULT_DIR, 'statistics.csv'))
+
+    def calc_unique_stats(self, k, name, value_col):
+        self.stat_df[name].iat[3] = k.shape[0]
+        self.stat_df[name].iat[4] = k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
+        self.stat_df[name].iat[5] = k.groupby('bigg.metabolite').first().shape[0]
+        self.stat_df[name].iat[6] = k.groupby('EC_number').first().shape[0]
+
+        k_val = k[k[value_col] > 0]
+        self.stat_df[value_col].iat[3] = k_val.shape[0]
+        self.stat_df[value_col].iat[4] = k_val.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
+        self.stat_df[value_col].iat[5] = k_val.groupby('bigg.metabolite').first().shape[0]
+        self.stat_df[value_col].iat[6] = k_val.groupby('EC_number').first().shape[0]
+        
     def draw_agg_heatmaps(self, agg_type='median'):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across the 8 conditions
@@ -276,26 +311,20 @@ class FigurePlotter(object):
             venn3(subsets = (Abc, aBc, ABc, abC, AbC, aBC, ABC),
                   set_labels=set_labels, ax=ax)
         
-        mets_in_cytosol = self.bigg.get_mets_in_cytosol()
-        # keep only interactions that involve a small-molecule that is native
-        # in the cytoplasm
-        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytosol)]
-        native_ec = self.bigg.get_native_EC_numbers()        
+        print "found %d native interactions in %s" % (self.regulation.shape[0], ORGANISM)
         
-        print "found %d native interactions in %s" % (native_interactions.shape[0], ORGANISM)
-        
-        ind_inh = native_interactions['Mode']=='-'
-        ind_act = native_interactions['Mode']=='+'
+        ind_inh = self.regulation['Mode']=='-'
+        ind_act = self.regulation['Mode']=='+'
 
-        inh_met = set(native_interactions.loc[ind_inh, 'bigg.metabolite'])
-        act_met = set(native_interactions.loc[ind_act, 'bigg.metabolite'])
-        inh_ec = set(native_interactions.loc[ind_inh, 'EC_number'])
-        act_ec = set(native_interactions.loc[ind_act, 'EC_number'])
+        inh_met = set(self.regulation.loc[ind_inh, 'bigg.metabolite'])
+        act_met = set(self.regulation.loc[ind_act, 'bigg.metabolite'])
+        inh_ec = set(self.regulation.loc[ind_inh, 'EC_number'])
+        act_ec = set(self.regulation.loc[ind_act, 'EC_number'])
         
         fig, axs = plt.subplots(1, 2, figsize=(7, 5))
-        venn3_sets(inh_met, act_met, mets_in_cytosol,
+        venn3_sets(inh_met, act_met, self.native_mets,
                    set_labels=('inhibitors', 'activators', 'E. coli metabolites'), ax=axs[0])
-        venn3_sets(inh_ec, act_ec, native_ec,
+        venn3_sets(inh_ec, act_ec, self.native_ECs,
                    set_labels=('inhibited', 'activated', 'E. coli reactions'), ax=axs[1])
         axs[0].annotate('a', xy=(0.02, 0.98),
                         xycoords='axes fraction', ha='left', va='top',
@@ -307,12 +336,12 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'venn.png'), dpi=600)
         
         res = {'inhibitors': list(inh_met), 'activators': list(act_met),
-               'all_metabolites': list(mets_in_cytosol),
+               'all_metabolites': list(self.native_mets),
                'inhibited': list(inh_ec), 'activated': list(act_ec),
-               'all_reactions': list(native_ec)}
+               'all_reactions': list(self.native_ECs)}
         with open(os.path.join(settings.RESULT_DIR, 'venn_groups.json'), 'w') as fp:
             json.dump(res, fp, indent=4)
-        native_interactions.to_csv(open(os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv'), 'w'))
+        self.regulation.to_csv(open(os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv'), 'w'))
 
     def draw_cdf_plots(self, linewidth=2):
         """
@@ -490,28 +519,60 @@ class FigurePlotter(object):
         return ccm_concat
 
     def draw_pathway_histogram(self):
-        mets_in_cytosol = self.bigg.get_mets_in_cytosol()
-        # keep only interactions that involve a small-molecule that is native
-        # in the cytoplasm
-        native_interactions = self.regulation[self.regulation['bigg.metabolite'].isin(mets_in_cytosol)]
+        pathways = set(self.regulation['bigg.subsystem.reaction'])
+        pathways.update(self.regulation['bigg.subsystem.metabolite'])
+        pathways = sorted(pathways)
+        if np.nan in pathways:
+            pathways.remove(np.nan)
 
-        reg_unique = native_interactions[['bigg.metabolite', 'bigg.reaction', 'subsystem', 'Mode']].drop_duplicates()
-        met_system_counter = reg_unique.groupby(('bigg.metabolite', 'subsystem', 'Mode')).count().reset_index()
-        act_table = met_system_counter[met_system_counter['Mode'] == '+'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
-        inh_table = met_system_counter[met_system_counter['Mode'] == '-'].pivot(index='bigg.metabolite', columns='subsystem', values='bigg.reaction').fillna(0)
+        cols = ['bigg.metabolite', 'bigg.subsystem.metabolite', 'bigg.reaction', 'bigg.subsystem.reaction', 'Mode']
+        reg_unique = self.regulation[cols].drop_duplicates()
+        met_system_counter = reg_unique.groupby(('bigg.subsystem.metabolite', 'bigg.subsystem.reaction', 'Mode')).count().reset_index()
+
+        act_table = met_system_counter[met_system_counter['Mode'] == '+']
+        act_table = act_table.pivot(index='bigg.subsystem.metabolite',
+                                    columns='bigg.subsystem.reaction',
+                                    values='bigg.reaction').fillna(0)
         
-        fig, axs = plt.subplots(1, 2, figsize=(15, 30))
+        inh_table = met_system_counter[met_system_counter['Mode'] == '-']
+        inh_table = inh_table.pivot(index='bigg.subsystem.metabolite',
+                                    columns='bigg.subsystem.reaction',
+                                    values='bigg.reaction').fillna(0)
+        
+        N = len(pathways)
+        hist_mat_act = np.zeros((N, N))
+        for i in xrange(N):
+            if pathways[i] in act_table.index:
+                for j in xrange(N):
+                    if pathways[j] in act_table.columns:
+                        hist_mat_act[i, j] = act_table.at[pathways[i], pathways[j]]
+        
+        N = len(pathways)
+        hist_mat_inh = np.zeros((N, N))
+        for i in xrange(N):
+            if pathways[i] in inh_table.index:
+                for j in xrange(N):
+                    if pathways[j] in inh_table.columns:
+                        hist_mat_inh[i, j] = inh_table.at[pathways[i], pathways[j]]
+        
+        vmax = max(hist_mat_act.max(), hist_mat_inh.max())
+        
+        fig, axs = plt.subplots(1, 2, figsize=(20, 9))
 
         ax = axs[0]
-        sns.heatmap(act_table, mask=(act_table==0), ax=ax, annot=False, 
-                    cbar=True, vmin=0, vmax=10, cmap='viridis')
-        ax.set_title('activators')
-
-        ax = axs[1]
-        sns.heatmap(inh_table, mask=(inh_table==0), ax=ax, annot=False, 
-                    cbar=True, vmin=0, vmax=10, cmap='viridis')
-        ax.set_title('inhibitors')
+        sns.heatmap(hist_mat_act, ax=ax, annot=False, cbar=False, cmap='viridis',
+                    xticklabels=pathways, yticklabels=pathways, vmin=0, vmax=vmax)
+        ax.set_title('activation')
+        ax.set_ylabel('metabolite subsystem')
+        ax.set_xlabel('activated enzyme subsystem')
         
+        ax = axs[1]
+        sns.heatmap(hist_mat_inh, ax=ax, annot=False, cbar=True, cmap='viridis',
+                    xticklabels=pathways, yticklabels=False, vmin=0, vmax=vmax)
+        ax.set_title('inhibition')
+        ax.set_xlabel('inhibited enzyme subsystem')
+       
+        fig.tight_layout(pad=4)
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.png'), dpi=300)
 
@@ -534,3 +595,4 @@ if __name__ == "__main__":
     fp.draw_full_heapmats(filter_using_model=False)
 
     fp.print_ccm_table()
+    
