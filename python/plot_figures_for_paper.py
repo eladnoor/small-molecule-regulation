@@ -17,6 +17,7 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
+import pdb
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
@@ -575,6 +576,8 @@ class FigurePlotter(object):
         fig.tight_layout(pad=4)
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.png'), dpi=300)
+        act_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_activating.csv'))
+        inh_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_inhibiting.csv'))
 
 ###############################################################################
 if __name__ == "__main__":
