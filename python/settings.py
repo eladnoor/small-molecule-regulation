@@ -31,6 +31,8 @@ BIGG_REACTION_FNAME = os.path.join(DATA_DIR, 'bigg_models_reactions.txt')
 BIGG2KEGG_FNAME  = os.path.join(CACHE_DIR, 'bigg2kegg.csv')
 BIGG2CHEBI_FNAME = os.path.join(CACHE_DIR, 'bigg2chebi.csv')
 BIGG2EC_FNAME = os.path.join(CACHE_DIR, 'bigg2ec.csv')
+ECOLI_THERMO_CACHE_FNAME = os.path.join(CACHE_DIR, 'ecoli_thermodynamics.csv')
+
 BRENDA_ZIP_FNAME = os.path.join(DATA_DIR, 'brenda_query_2016_06_20.zip')
 BRENDA_LIGAND_ID_FNAME = os.path.join(DATA_DIR, 'ligand_id_table.csv.zip')
 ECOLI_JSON_FNAME = os.path.join(DATA_DIR, 'iJO1366.json')

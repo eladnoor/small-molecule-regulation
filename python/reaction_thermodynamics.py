@@ -101,16 +101,17 @@ class reaction_thermodynamics(object):
         logRI = 2.0 * (inv_adj_count * dGm_prime) / (self.RT)
         
         res_df = pd.DataFrame(index=map(lambda r: r.id.lower(), self.reactions),
-                              columns=[r"dG'0", r"dG'0 std", r"dG'm", r"logRI"])
+                              columns=[r"dG'0", r"dG'0 std", r"dG'm", r"logRI"],
+                              dtype=float)
 
         for i, r in enumerate(self.reactions):
             res_df.at[r.id.lower(), r"dG'0"] = dG0_prime[i, 0]
             res_df.at[r.id.lower(), r"dG'0 std"] = dG0_cov[i, 0]
             res_df.at[r.id.lower(), r"dG'm"] = dGm_prime[i, 0]
             res_df.at[r.id.lower(), r"logRI"] = logRI[i, 0]
-        return res_df
+        return res_df.round(2)
         
 if __name__ == '__main__':
     Th = reaction_thermodynamics()
     df = Th.get_thermodynamics()
-    df.to_csv(os.path.join(settings.CACHE_DIR, 'ecoli_thermodynamics.csv'))
+    df.to_csv(settings.ECOLI_THERMO_CACHE_FNAME)

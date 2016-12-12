@@ -579,23 +579,92 @@ class FigurePlotter(object):
         act_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_activating.csv'))
         inh_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_inhibiting.csv'))
 
+    def draw_thermodynamics_cdf(self, linewidth=2):
+        """
+            Test the hypothesis that irreversible reactions are more likely
+            to be regulated allosterically
+        """
+        def comparative_cdf(x, y, data, ax):
+            xvals = data[x].unique()
+            for xval in xvals:
+                d = data.loc[data[x] == xval, y]
+                sns.kdeplot(d,
+                            cumulative=True, ax=ax, bw=.15,
+                            linewidth=linewidth, label=xval + ' (N = %d)' % d.shape[0])
+            ax.set_ylim(0, 1)
+            ax.set_ylabel(r'Cumulative distribution')
+            ax.set_xlabel(x)
+            
+            if len(xvals) == 2:
+                ranksum_res = ranksums(data.loc[data[x] == xvals[0], y],
+                                       data.loc[data[x] == xvals[1], y])
+                ax.set_title('$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
+        
+        thermo_df = pd.DataFrame.from_csv(settings.ECOLI_THERMO_CACHE_FNAME)
+        
+        # remove data about reactions with std=0 (i.e. known values)
+        # and reactions with std > 20 (high uncertainty)
+        thermo_df = thermo_df[(thermo_df["dG'0 std"] > 0) & (thermo_df["dG'0 std"] < 20)]
+        
+        activated = set(self.regulation.loc[self.regulation['Mode'] == '+', 'bigg.reaction'].unique())
+        inhibited = set(self.regulation.loc[self.regulation['Mode'] == '-', 'bigg.reaction'].unique())
+        ki_valued = set(self.regulation.loc[~pd.isnull(self.regulation['KI_Value']), 'bigg.reaction'].unique())
+        activated = activated.intersection(thermo_df.index)
+        inhibited = inhibited.intersection(thermo_df.index)
+        ki_valued = ki_valued.intersection(thermo_df.index)
+        regulated = activated.union(inhibited)
+        
+        thermo_df['Regulation'] = 'not regulated'
+        thermo_df.loc[regulated, 'Regulation'] = 'regulated'
+
+        thermo_df['Activation'] = 'not activated'
+        thermo_df.loc[activated, 'Activation'] = 'activated'
+
+        thermo_df['Inhibition'] = 'not inhibited'
+        thermo_df.loc[inhibited, 'Inhibition'] = 'inhibited'
+
+        thermo_df['KI_Value'] = 'no $K_I$'
+        thermo_df.loc[ki_valued, 'KI_Value'] = 'has $K_I$'
+        
+        irr_index_l = r"$| log(\Gamma) |$"
+        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
+        #irr_index_l = r"$| $\Delta G'^\circ |$"
+        #thermo_df[irr_index_l] = thermo_df["dG'0"].abs()
+        
+        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
+        
+        comparative_cdf(x='Regulation', y=irr_index_l, data=thermo_df, ax=axs[0])
+        comparative_cdf(x='Activation', y=irr_index_l, data=thermo_df, ax=axs[1])
+        comparative_cdf(x='Inhibition', y=irr_index_l, data=thermo_df, ax=axs[2])
+        comparative_cdf(x='KI_Value',   y=irr_index_l, data=thermo_df, ax=axs[3])
+        axs[0].set_xlim(0, 25)
+        axs[1].set_xlim(0, 25)
+        axs[2].set_xlim(0, 25)
+        axs[3].set_xlim(0, 25)
+
+        fig.tight_layout()
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.png'), dpi=600)
+        return thermo_df
+        
 ###############################################################################
 if __name__ == "__main__":
     
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
+    thermo_df = fp.draw_thermodynamics_cdf()
     
-    fp.draw_pathway_histogram()   
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-    fp.draw_2D_histograms()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-    
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
-    
+#    fp.draw_pathway_histogram()   
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
+#    fp.draw_2D_histograms()
+#
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#    
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
+#    
