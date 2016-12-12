@@ -662,8 +662,10 @@ class FigurePlotter(object):
         plt.loglog( thermo_df_nz[irr_index_l],thermo_df_nz['Div'], 'o' )
         plt.xlabel('logRI')
         plt.ylabel('# Literature Refs/ # Regulators')
-    	fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.svg'))
-    	fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.png'),dpi = 600)
+        fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.svg'))
+        fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.png'),dpi = 600)
+        thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'thermodynamics_and_regulation.csv'))
+        
         return thermo_df
         
 ###############################################################################
@@ -671,19 +673,19 @@ if __name__ == "__main__":
     
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    thermo_df = fp.draw_thermodynamics_cdf()
+    fp.draw_thermodynamics_cdf()
     
     fp.draw_pathway_histogram()   
-#     fp.draw_venn_diagrams()
-# 
-#     fp.draw_cdf_plots()
-#     fp.draw_2D_histograms()
-# 
-#     fp.draw_agg_heatmaps(agg_type='gmean')
-#     fp.draw_agg_heatmaps(agg_type='median')
-# 
-#     fp.draw_full_heapmats()
-#     fp.draw_full_heapmats(filter_using_model=False)
-# 
-#     fp.print_ccm_table()
+    fp.draw_venn_diagrams()
+
+    fp.draw_cdf_plots()
+    fp.draw_2D_histograms()
+
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
+
+    fp.print_ccm_table()
 
