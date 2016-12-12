@@ -626,6 +626,16 @@ class FigurePlotter(object):
         thermo_df['KI_Value'] = 'no $K_I$'
         thermo_df.loc[ki_valued, 'KI_Value'] = 'has $K_I$'
         
+        num_refs = self.regulation.groupby('bigg.reaction')['Literature'].nunique()
+        ixrefs = num_refs.index.intersection( thermo_df.index )
+        thermo_df['Num_Refs'] = 0
+        thermo_df.loc[ixrefs,'Num_Refs'] = num_refs.loc[ixrefs]
+        
+        num_regs = self.regulation.groupby('bigg.reaction')['bigg.metabolite'].nunique()
+        ixmets = num_regs.index.intersection( thermo_df.index )
+        thermo_df['Num_Regs'] = 0
+        thermo_df.loc[ixmets,'Num_Regs'] = num_regs.loc[ixmets]
+        
         irr_index_l = r"$| log(\Gamma) |$"
         thermo_df[irr_index_l] = thermo_df['logRI'].abs()
         #irr_index_l = r"$| $\Delta G'^\circ |$"
@@ -645,6 +655,15 @@ class FigurePlotter(object):
         fig.tight_layout()
         fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.svg'))
         fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.png'), dpi=600)
+        
+        fig2, axs2 = plt.subplots(1, 1, figsize=(10, 3))
+        thermo_df_nz = thermo_df[thermo_df['Num_Regs']!=0]
+        thermo_df_nz['Div'] = thermo_df_nz['Num_Refs'] / thermo_df_nz['Num_Regs']
+        plt.loglog( thermo_df_nz[irr_index_l],thermo_df_nz['Div'], 'o' )
+        plt.xlabel('logRI')
+        plt.ylabel('# Literature Refs/ # Regulators')
+    	fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.svg'))
+    	fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.png'),dpi = 600)
         return thermo_df
         
 ###############################################################################
@@ -654,17 +673,17 @@ if __name__ == "__main__":
     fp = FigurePlotter()
     thermo_df = fp.draw_thermodynamics_cdf()
     
-#    fp.draw_pathway_histogram()   
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_cdf_plots()
-#    fp.draw_2D_histograms()
-#
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
-#    
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
-#
-#    fp.print_ccm_table()
-#    
+    fp.draw_pathway_histogram()   
+#     fp.draw_venn_diagrams()
+# 
+#     fp.draw_cdf_plots()
+#     fp.draw_2D_histograms()
+# 
+#     fp.draw_agg_heatmaps(agg_type='gmean')
+#     fp.draw_agg_heatmaps(agg_type='median')
+# 
+#     fp.draw_full_heapmats()
+#     fp.draw_full_heapmats(filter_using_model=False)
+# 
+#     fp.print_ccm_table()
+
