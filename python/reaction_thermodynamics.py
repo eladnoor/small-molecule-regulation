@@ -27,20 +27,20 @@ class reaction_thermodynamics(object):
         self.reactions = []
         self._not_balanced = []
 
-        rstrings = []
+        self.rstrings = []
         for r in reactions:
             k = r.kegg_reaction
             if k:
                 if k.is_balanced() and not k.is_empty():
-                    rstrings.append(k.write_formula())
+                    self.rstrings.append(k.write_formula())
                     self.reactions.append(r)
             else:
                 self._not_balanced.append(r)
-        self.Kmodel = KeggModel.from_formulas(rstrings)
+        self.Kmodel = KeggModel.from_formulas(self.rstrings)
 
         self.cc = ComponentContribution.init()
-        self.pH = 7.5
-        self.I = 0.2
+        self.pH = 7.3
+        self.I = 0.25
         self.RT = R * default_T
 
     @staticmethod
@@ -109,7 +109,9 @@ class reaction_thermodynamics(object):
             res_df.at[r.id.lower(), r"dG'0 std"] = dG0_cov[i, 0]
             res_df.at[r.id.lower(), r"dG'm"] = dGm_prime[i, 0]
             res_df.at[r.id.lower(), r"logRI"] = logRI[i, 0]
-        return res_df.round(2)
+        res_df = res_df.round(2)
+        res_df['formula'] = self.rstrings
+        return res_df
         
 if __name__ == '__main__':
     Th = reaction_thermodynamics()
