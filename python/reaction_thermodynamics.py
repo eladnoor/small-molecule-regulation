@@ -10,7 +10,6 @@ calculates dG'0 and dG'm for reaction from a Cobra model
 
 import settings
 
-import os
 import numpy as np
 import pandas as pd
 from component_contribution.kegg_reaction import KeggReaction
@@ -23,6 +22,8 @@ class reaction_thermodynamics(object):
 
     def __init__(self):
         reactions = reaction_thermodynamics.get_reactions_from_model()
+        self.ec_numbers = {r.id.lower() : '|'.join(r.notes.get('EC NUMBER', []))
+                           for r in reactions}
 
         self.reactions = []
         self._not_balanced = []
@@ -45,6 +46,11 @@ class reaction_thermodynamics(object):
 
     @staticmethod
     def get_reactions_from_model():
+        """
+            Read all the reaction descriptions in the SBML file, and 
+            map them to KEGG reaction (using another file of all
+            E. coli metabolites and their BiGG and KEGG IDs)
+        """
         cobra_model = create_cobra_model_from_sbml_file(settings.ECOLI_SBML_FNAME)
         metab_info = pd.DataFrame.from_csv(settings.ECOLI_MODEL_METABOLITES, sep='\t')        
         metab_info.dropna(inplace=True)
@@ -101,16 +107,14 @@ class reaction_thermodynamics(object):
         logRI = 2.0 * (inv_adj_count * dGm_prime) / (self.RT)
         
         res_df = pd.DataFrame(index=map(lambda r: r.id.lower(), self.reactions),
-                              columns=[r"dG'0", r"dG'0 std", r"dG'm", r"logRI"],
                               dtype=float)
-
-        for i, r in enumerate(self.reactions):
-            res_df.at[r.id.lower(), r"dG'0"] = dG0_prime[i, 0]
-            res_df.at[r.id.lower(), r"dG'0 std"] = dG0_cov[i, 0]
-            res_df.at[r.id.lower(), r"dG'm"] = dGm_prime[i, 0]
-            res_df.at[r.id.lower(), r"logRI"] = logRI[i, 0]
+        res_df['EC_number']     = map(self.ec_numbers.get, res_df.index)
+        res_df['dG0_prime']     = dG0_prime
+        res_df['dG0_prime_std'] = dG0_cov
+        res_df['dGm_prime']     = dGm_prime
+        res_df['logRI']         = logRI
+        res_df['formula']       = self.rstrings
         res_df = res_df.round(2)
-        res_df['formula'] = self.rstrings
         return res_df
         
 if __name__ == '__main__':

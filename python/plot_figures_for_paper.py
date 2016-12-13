@@ -604,7 +604,7 @@ class FigurePlotter(object):
         
         # remove data about reactions with std=0 (i.e. known values)
         # and reactions with std > 20 (high uncertainty)
-        thermo_df = thermo_df[(thermo_df["dG'0 std"] > 0) & (thermo_df["dG'0 std"] < 20)]
+        thermo_df = thermo_df[(thermo_df["dG0_prime_std"] > 0) & (thermo_df["dG0_prime_std"] < 20)]
         
         activated = set(self.regulation.loc[self.regulation['Mode'] == '+', 'bigg.reaction'].unique())
         inhibited = set(self.regulation.loc[self.regulation['Mode'] == '-', 'bigg.reaction'].unique())
@@ -675,17 +675,17 @@ if __name__ == "__main__":
     fp = FigurePlotter()
     fp.draw_thermodynamics_cdf()
     
-    fp.draw_pathway_histogram()   
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-    fp.draw_2D_histograms()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
-
+#    fp.draw_pathway_histogram()   
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
+#    fp.draw_2D_histograms()
+#
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
+#
