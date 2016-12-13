@@ -50,7 +50,13 @@ BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'km',         'value_col': 'KM_Value'},
                 {'fname': 'activating', 'value_col': None},
                 {'fname': 'inhibiting', 'value_col': None},
-                {'fname': 'CCM_Reactions', 'value_col': None} ]
+                {'fname': 'CCM_Reactions', 'value_col': None}]
+
+CCM_SUBSYSTEMS = ['Glycolysis/Gluconeogenesis',
+                  'Citric Acid Cycle',
+                  'Glyoxylate Metabolism',
+                  'Pentose Phosphate Pathway',
+                  'Anaplerotic Reactions']
 
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
@@ -74,7 +80,7 @@ def plotdiag(lw=2, ax=None):
     ax.plot([minplot,    maxplot],    [minplot,    maxplot],    'k-',  lw=lw)
     ax.plot([minplot,    maxplot/10], [minplot*10, maxplot],    'k--', lw=lw)
     ax.plot([minplot*10, maxplot],    [minplot,    maxplot/10], 'k--', lw=lw)
-        
+
 try:
     imp.find_module('cobra')
     cobrafound = True
@@ -83,7 +89,7 @@ except ImportError:
     sys.stderr.write("WARNING: please install cobrapy to have full functionality")
 if cobrafound:
     def get_ecoli_sbml():
-        return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)    
+        return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)
 
 def get_ecoli_json():
     with open(ECOLI_JSON_FNAME) as fp:
@@ -93,12 +99,12 @@ def get_ecoli_json():
     for reaction in model['reactions']:
         for met, coeff in reaction['metabolites'].iteritems():
             sparse.append([reaction['id'].lower(), met.lower(), coeff])
-    
+
     sparse = pd.DataFrame(sparse, columns=['bigg.reaction', 'bigg.metabolite', 'stoichiometry'])
     S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
     S.fillna(0, inplace=True)
     return model, S
-    
+
 def get_chebi_inchi_df():
     with closing(urllib2.urlopen(CHEBI2INCHI_URL, 'file')) as r:
         chebi_inchi_df = pd.read_csv(r, sep='\t')
@@ -106,4 +112,4 @@ def get_chebi_inchi_df():
     chebi_inchi_df.rename(columns={'InChI':'inchi'}, inplace=True)
     chebi_inchi_df.set_index('CHEBI_ID', inplace=True)
     return chebi_inchi_df
-    
+
