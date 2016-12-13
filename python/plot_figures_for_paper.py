@@ -542,15 +542,18 @@ class FigurePlotter(object):
 
         cols = ['bigg.metabolite', 'bigg.subsystem.metabolite', 'bigg.reaction', 'bigg.subsystem.reaction', 'Mode']
         reg_unique = self.regulation[cols].drop_duplicates()
-        met_system_counter = reg_unique.groupby(('bigg.subsystem.metabolite', 'bigg.subsystem.reaction', 'Mode')).count().reset_index()
+
+        ylabel = 'bigg.subsystem.metabolite'
+        met_system_counter = reg_unique.groupby(
+            (ylabel, 'bigg.subsystem.reaction', 'Mode')).count().reset_index()
 
         act_table = met_system_counter[met_system_counter['Mode'] == '+']
-        act_table = act_table.pivot(index='bigg.subsystem.metabolite',
+        act_table = act_table.pivot(index=ylabel,
                                     columns='bigg.subsystem.reaction',
                                     values='bigg.reaction').fillna(0)
 
         inh_table = met_system_counter[met_system_counter['Mode'] == '-']
-        inh_table = inh_table.pivot(index='bigg.subsystem.metabolite',
+        inh_table = inh_table.pivot(index=ylabel,
                                     columns='bigg.subsystem.reaction',
                                     values='bigg.reaction').fillna(0)
 
@@ -578,7 +581,7 @@ class FigurePlotter(object):
         sns.heatmap(hist_mat_act, ax=ax, annot=False, cbar=False, cmap='viridis',
                     xticklabels=pathways, yticklabels=pathways, vmin=0, vmax=vmax)
         ax.set_title('activation')
-        ax.set_ylabel('metabolite subsystem')
+        ax.set_ylabel(ylabel)
         ax.set_xlabel('activated enzyme subsystem')
 
         ax = axs[1]
@@ -592,6 +595,50 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'pathway_histograms.png'), dpi=300)
         act_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_activating.csv'))
         inh_table.to_csv(os.path.join(settings.RESULT_DIR, 'pathway_histograms_inhibiting.csv'))
+
+    def draw_pathway_met_histogram(self):
+        cols = ['bigg.metabolite', 'bigg.reaction',
+                'bigg.subsystem.reaction', 'Mode']
+        reg_unique = self.regulation[cols].drop_duplicates()
+
+        ylabel = 'bigg.metabolite'
+        met_system_counter = reg_unique.groupby(
+            (ylabel, 'bigg.subsystem.reaction', 'Mode')).count().reset_index()
+
+        act_table = met_system_counter[met_system_counter['Mode'] == '+']
+        act_table = act_table.pivot(index=ylabel,
+                                    columns='bigg.subsystem.reaction',
+                                    values='bigg.reaction')
+
+        inh_table = met_system_counter[met_system_counter['Mode'] == '-']
+        inh_table = inh_table.pivot(index=ylabel,
+                                    columns='bigg.subsystem.reaction',
+                                    values='bigg.reaction')
+
+        fig, axs = plt.subplots(1, 2, figsize=(20, 30), sharey=True)
+
+        ax = axs[0]
+        sns.heatmap(act_table, ax=ax, annot=False, cbar=True, cmap='viridis',
+                    vmin=1, vmax=12)
+        ax.set_title('activation')
+        ax.set_ylabel(ylabel)
+        ax.set_xlabel('activated enzyme subsystem')
+
+        ax = axs[1]
+        sns.heatmap(inh_table, ax=ax, annot=False, cbar=True, cmap='viridis',
+                    vmin=1, vmax=12)
+        ax.set_title('inhibition')
+        ax.set_xlabel('inhibited enzyme subsystem')
+
+        fig.tight_layout(pad=4)
+        fig.savefig(os.path.join(
+            settings.RESULT_DIR, 'pathway_met_histograms.svg'))
+        fig.savefig(os.path.join(
+            settings.RESULT_DIR, 'pathway_met_histograms.png'), dpi=300)
+        act_table.to_csv(os.path.join(
+            settings.RESULT_DIR, 'pathway_met_histograms_activating.csv'))
+        inh_table.to_csv(os.path.join(
+            settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
 
     def draw_thermodynamics_cdf(self, linewidth=2):
         """
@@ -721,18 +768,19 @@ if __name__ == "__main__":
 
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    thermo_df = fp.draw_thermodynamics_cdf()
-#
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_cdf_plots()
-#    fp.draw_2D_histograms()
-#
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
-#
-#    fp.print_ccm_table()
+    fp.draw_thermodynamics_cdf()
+
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
+    fp.draw_cdf_plots()
+    fp.draw_2D_histograms()
+
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
+
+    fp.print_ccm_table()
