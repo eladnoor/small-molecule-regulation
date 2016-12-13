@@ -593,39 +593,95 @@ class FigurePlotter(object):
                             linewidth=linewidth, label=xval + ' (N = %d)' % d.shape[0])
             ax.set_ylim(0, 1)
             ax.set_ylabel(r'Cumulative distribution')
-            ax.set_xlabel(x)
+            ax.set_xlabel(y)
             
             if len(xvals) == 2:
                 ranksum_res = ranksums(data.loc[data[x] == xvals[0], y],
                                        data.loc[data[x] == xvals[1], y])
-                ax.set_title('$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
-        
+                ax.set_title(x + '\n$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
+            else:
+                ax.set_title(x)
+                    
+        # get the irreversibility constant (absolute) for all reactions
+        # in the BiGG iJO1336 model    
         thermo_df = pd.DataFrame.from_csv(settings.ECOLI_THERMO_CACHE_FNAME)
-        
+
         # remove data about reactions with std=0 (i.e. known values)
         # and reactions with std > 20 (high uncertainty)
         thermo_df = thermo_df[(thermo_df["dG0_prime_std"] > 0) & (thermo_df["dG0_prime_std"] < 20)]
-        
-        activated = set(self.regulation.loc[self.regulation['Mode'] == '+', 'bigg.reaction'].unique())
-        inhibited = set(self.regulation.loc[self.regulation['Mode'] == '-', 'bigg.reaction'].unique())
-        ki_valued = set(self.regulation.loc[~pd.isnull(self.regulation['KI_Value']), 'bigg.reaction'].unique())
-        activated = activated.intersection(thermo_df.index)
-        inhibited = inhibited.intersection(thermo_df.index)
-        ki_valued = ki_valued.intersection(thermo_df.index)
-        regulated = activated.union(inhibited)
-        
-        thermo_df['Regulation'] = 'not regulated'
-        thermo_df.loc[regulated, 'Regulation'] = 'regulated'
 
-        thermo_df['Activation'] = 'not activated'
-        thermo_df.loc[activated, 'Activation'] = 'activated'
-
-        thermo_df['Inhibition'] = 'not inhibited'
-        thermo_df.loc[inhibited, 'Inhibition'] = 'inhibited'
-
-        thermo_df['KI_Value'] = 'no $K_I$'
-        thermo_df.loc[ki_valued, 'KI_Value'] = 'has $K_I$'
+        # select the median value of log(gamma) for each EC number
+        # (in general, there should be only one value for each EC number anyway)
+        irr_index_l = r"$| log(\Gamma) |$"
+        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
+        thermo_df = thermo_df[~pd.isnull(thermo_df.EC_number)]
         
+        reg_thermo_df = thermo_df.reset_index()[['EC_number', 'subsystem']].drop_duplicates()
+        reg_thermo_df = reg_thermo_df.join(thermo_df.groupby('EC_number').median()[irr_index_l], on='EC_number')
+        
+        # print the regulation table with the new irreversibility values
+        #reg_thermo_df = self.regulation.join(thermo_df[irr_index_l], on='EC_number')
+        #reg_thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'regulation_with_thermo.csv'))
+        
+        # for each EC number, check if it regulated, and if it it positive (+),
+        # negative (-) or both (+/-)
+        mode_df = self.regulation.groupby('EC_number')['Mode'].apply(set).str.join('/')
+        ecs_with_ki = self.regulation.loc[~pd.isnull(self.regulation['KI_Value']), 'EC_number'].unique()
+        
+        reg_thermo_df = reg_thermo_df.join(mode_df, on='EC_number')
+        
+        reg_thermo_df['Regulation'] = 'regulated'
+        reg_thermo_df.loc[pd.isnull(reg_thermo_df['Mode']), 'Regulation'] = 'not regulated'
+
+        reg_thermo_df['Activation'] = 'not activated'
+        reg_thermo_df.loc[reg_thermo_df['Mode'].isin(['+', '+/-']), 'Activation'] = 'activated'
+
+        reg_thermo_df['Inhibition'] = 'not inhibited'
+        reg_thermo_df.loc[reg_thermo_df['Mode'].isin(['-', '+/-']), 'Inhibition'] = 'inhibited'
+
+        reg_thermo_df['KI_Value'] = 'no $K_I$'
+        reg_thermo_df.loc[reg_thermo_df['EC_number'].isin(ecs_with_ki), 'KI_Value'] = 'has $K_I$'
+
+        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
+        
+        comparative_cdf(x='Regulation', y=irr_index_l, data=reg_thermo_df, ax=axs[0])
+        comparative_cdf(x='Activation', y=irr_index_l, data=reg_thermo_df, ax=axs[1])
+        comparative_cdf(x='Inhibition', y=irr_index_l, data=reg_thermo_df, ax=axs[2])
+        comparative_cdf(x='KI_Value',   y=irr_index_l, data=reg_thermo_df, ax=axs[3])
+        axs[0].set_xlim(0, 25)
+        axs[1].set_xlim(0, 25)
+        axs[2].set_xlim(0, 25)
+        axs[3].set_xlim(0, 25)
+
+        fig.tight_layout()
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.png'), dpi=600)
+
+        # repeat analysis only for CCM reactions
+        CCM_SUBSYSTEMS = ['Glycolysis/Gluconeogenesis',
+                          'Citric Acid Cycle',
+                          'Glyoxylate Metabolism',
+                          'Pentose Phosphate Pathway',
+                          'Anaplerotic Reactions']
+        ccm_thermo_df = reg_thermo_df[reg_thermo_df.subsystem.isin(CCM_SUBSYSTEMS)]
+        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
+        
+        comparative_cdf(x='Regulation', y=irr_index_l, data=ccm_thermo_df, ax=axs[0])
+        comparative_cdf(x='Activation', y=irr_index_l, data=ccm_thermo_df, ax=axs[1])
+        comparative_cdf(x='Inhibition', y=irr_index_l, data=ccm_thermo_df, ax=axs[2])
+        comparative_cdf(x='KI_Value',   y=irr_index_l, data=ccm_thermo_df, ax=axs[3])
+        axs[0].set_xlim(0, 15)
+        axs[1].set_xlim(0, 15)
+        axs[2].set_xlim(0, 15)
+        axs[3].set_xlim(0, 15)
+
+        fig.tight_layout()
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram_ccm.svg'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram_ccm.png'), dpi=600)
+
+        # correlate irreversibility also with the number of references and 
+        # unique regulating metabolites
+
         num_refs = self.regulation.groupby('bigg.reaction')['Literature'].nunique()
         ixrefs = num_refs.index.intersection( thermo_df.index )
         thermo_df['Num_Refs'] = 0
@@ -636,35 +692,15 @@ class FigurePlotter(object):
         thermo_df['Num_Regs'] = 0
         thermo_df.loc[ixmets,'Num_Regs'] = num_regs.loc[ixmets]
         
-        irr_index_l = r"$| log(\Gamma) |$"
-        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
-        #irr_index_l = r"$| $\Delta G'^\circ |$"
-        #thermo_df[irr_index_l] = thermo_df["dG'0"].abs()
-        
-        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-        
-        comparative_cdf(x='Regulation', y=irr_index_l, data=thermo_df, ax=axs[0])
-        comparative_cdf(x='Activation', y=irr_index_l, data=thermo_df, ax=axs[1])
-        comparative_cdf(x='Inhibition', y=irr_index_l, data=thermo_df, ax=axs[2])
-        comparative_cdf(x='KI_Value',   y=irr_index_l, data=thermo_df, ax=axs[3])
-        axs[0].set_xlim(0, 25)
-        axs[1].set_xlim(0, 25)
-        axs[2].set_xlim(0, 25)
-        axs[3].set_xlim(0, 25)
-
-        fig.tight_layout()
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.svg'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_histogram.png'), dpi=600)
-        
-        fig2, axs2 = plt.subplots(1, 1, figsize=(10, 3))
+        fig2, axs2 = plt.subplots(1, 3, figsize=(14, 4), sharey=True)
         thermo_df_nz = thermo_df[thermo_df['Num_Regs']!=0]
-        thermo_df_nz['Div'] = thermo_df_nz['Num_Refs'] / thermo_df_nz['Num_Regs']
-        plt.loglog( thermo_df_nz[irr_index_l],thermo_df_nz['Div'], 'o' )
-        plt.xlabel('logRI')
-        plt.ylabel('# Literature Refs/ # Regulators')
+        thermo_df_nz['# References / # Regulators'] = thermo_df_nz['Num_Refs'] / thermo_df_nz['Num_Regs']
+        thermo_df_nz.plot(kind='scatter', y=irr_index_l,
+                          x='# References / # Regulators', ax=axs2[0])
+        sns.boxplot(x='Num_Refs', y=irr_index_l, data=thermo_df, ax=axs2[1])
+        sns.boxplot(x='Num_Regs', y=irr_index_l, data=thermo_df, ax=axs2[2])
         fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.svg'))
         fig2.savefig(os.path.join(settings.RESULT_DIR, 'gibbs_literature_plot.png'),dpi = 600)
-        thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'thermodynamics_and_regulation.csv'))
         
         return thermo_df
         
@@ -673,7 +709,7 @@ if __name__ == "__main__":
     
     #fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_thermodynamics_cdf()
+    thermo_df = fp.draw_thermodynamics_cdf()
     
 #    fp.draw_pathway_histogram()   
 #    fp.draw_venn_diagrams()

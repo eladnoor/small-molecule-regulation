@@ -12,6 +12,7 @@ import settings
 
 import numpy as np
 import pandas as pd
+import json
 from component_contribution.kegg_reaction import KeggReaction
 from component_contribution.kegg_model import KeggModel
 from component_contribution.component_contribution_trainer import ComponentContribution
@@ -24,7 +25,7 @@ class reaction_thermodynamics(object):
         reactions = reaction_thermodynamics.get_reactions_from_model()
         self.ec_numbers = {r.id.lower() : '|'.join(r.notes.get('EC NUMBER', []))
                            for r in reactions}
-
+        self.subsystems = reaction_thermodynamics.get_reaction_subsystems()
         self.reactions = []
         self._not_balanced = []
 
@@ -71,6 +72,20 @@ class reaction_thermodynamics(object):
         
         return cobra_model.reactions
 
+    @staticmethod
+    def get_reaction_subsystems():
+        with open(settings.ECOLI_JSON_FNAME) as fp:
+            ecoli_model = json.load(fp, encoding='UTF-8')
+        
+        subsystem_dict = {}
+        for r in ecoli_model['reactions']:
+            rid = r['id'].lower()
+            if 'subsystem' in r:
+                subsystem_dict[rid] = r['subsystem']
+            else:
+                subsystem_dict[rid] = None
+        return subsystem_dict
+
     def get_thermodynamics(self):
         '''
             Calculates the dG0 of a list of a reaction.
@@ -109,6 +124,7 @@ class reaction_thermodynamics(object):
         res_df = pd.DataFrame(index=map(lambda r: r.id.lower(), self.reactions),
                               dtype=float)
         res_df['EC_number']     = map(self.ec_numbers.get, res_df.index)
+        res_df['subsystem']     = map(self.subsystems.get, res_df.index)
         res_df['dG0_prime']     = dG0_prime
         res_df['dG0_prime_std'] = dG0_cov
         res_df['dGm_prime']     = dGm_prime
