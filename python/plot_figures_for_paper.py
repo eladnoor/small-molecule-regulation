@@ -17,7 +17,6 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
-import pdb
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
@@ -711,17 +710,17 @@ if __name__ == "__main__":
     fp = FigurePlotter()
     thermo_df = fp.draw_thermodynamics_cdf()
     
-#    fp.draw_pathway_histogram()   
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_cdf_plots()
-#    fp.draw_2D_histograms()
-#
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
-#
-#    fp.print_ccm_table()
-#
+    fp.draw_pathway_histogram()   
+    fp.draw_venn_diagrams()
+
+    fp.draw_cdf_plots()
+    fp.draw_2D_histograms()
+
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
+
+    fp.print_ccm_table()
+

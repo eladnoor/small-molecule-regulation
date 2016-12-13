@@ -9,6 +9,8 @@ calculates dG'0 and dG'm for reaction from a Cobra model
 """
 
 import settings
+import bigg
+import kegg
 
 import numpy as np
 import pandas as pd
@@ -22,10 +24,9 @@ from cobra.io.sbml import create_cobra_model_from_sbml_file
 class reaction_thermodynamics(object):
 
     def __init__(self):
-        reactions = reaction_thermodynamics.get_reactions_from_model()
-        self.ec_numbers = {r.id.lower() : '|'.join(r.notes.get('EC NUMBER', []))
-                           for r in reactions}
-        self.subsystems = reaction_thermodynamics.get_reaction_subsystems()
+        self.prepare_mappings()
+        
+        reactions = self.get_reactions_from_model()
         self.reactions = []
         self._not_balanced = []
 
@@ -45,21 +46,34 @@ class reaction_thermodynamics(object):
         self.I = 0.25
         self.RT = R * default_T
 
-    @staticmethod
-    def get_reactions_from_model():
+    def prepare_mappings(self):
+        b = bigg.BiGG()
+        k = kegg.KEGG()
+        
+        met_df = k.kegg_df.join(b.metabolite_df, on='chebiID')
+        self.bigg2kegg = met_df.groupby('bigg.metabolite')['KEGG_ID'].min().to_dict()
+        self.bigg2ec = b.reaction_df.groupby('bigg.reaction')['EC_number'].min().to_dict()
+
+        with open(settings.ECOLI_JSON_FNAME) as fp:
+            ecoli_model = json.load(fp, encoding='UTF-8')
+        
+        self.bigg2subsystem = {}
+        for r in ecoli_model['reactions']:
+            rid = r['id'].lower()
+            if 'subsystem' in r:
+                self.bigg2subsystem[rid] = r['subsystem']
+            else:
+                self.bigg2subsystem[rid] = None
+
+    def get_reactions_from_model(self):
         """
             Read all the reaction descriptions in the SBML file, and 
             map them to KEGG reaction (using another file of all
             E. coli metabolites and their BiGG and KEGG IDs)
         """
         cobra_model = create_cobra_model_from_sbml_file(settings.ECOLI_SBML_FNAME)
-        metab_info = pd.DataFrame.from_csv(settings.ECOLI_MODEL_METABOLITES, sep='\t')        
-        metab_info.dropna(inplace=True)
         for m in cobra_model.metabolites:
-            try:
-                m.CID = metab_info.kegg_id[m.id[:-2]]
-            except KeyError:
-                m.CID = None
+            m.CID = self.bigg2kegg.get(m.id[:-2], None)
 
         for r in cobra_model.reactions:
             CIDS = dict(zip(r.metabolites.keys(), map(lambda x: x.CID, r.metabolites.keys())))
@@ -71,20 +85,6 @@ class reaction_thermodynamics(object):
                 r.kegg_reaction = KeggReaction(sparse)
         
         return cobra_model.reactions
-
-    @staticmethod
-    def get_reaction_subsystems():
-        with open(settings.ECOLI_JSON_FNAME) as fp:
-            ecoli_model = json.load(fp, encoding='UTF-8')
-        
-        subsystem_dict = {}
-        for r in ecoli_model['reactions']:
-            rid = r['id'].lower()
-            if 'subsystem' in r:
-                subsystem_dict[rid] = r['subsystem']
-            else:
-                subsystem_dict[rid] = None
-        return subsystem_dict
 
     def get_thermodynamics(self):
         '''
@@ -123,8 +123,8 @@ class reaction_thermodynamics(object):
         
         res_df = pd.DataFrame(index=map(lambda r: r.id.lower(), self.reactions),
                               dtype=float)
-        res_df['EC_number']     = map(self.ec_numbers.get, res_df.index)
-        res_df['subsystem']     = map(self.subsystems.get, res_df.index)
+        res_df['EC_number']     = map(self.bigg2ec.get, res_df.index)
+        res_df['subsystem']     = map(self.bigg2subsystem.get, res_df.index)
         res_df['dG0_prime']     = dG0_prime
         res_df['dG0_prime_std'] = dG0_cov
         res_df['dGm_prime']     = dGm_prime
