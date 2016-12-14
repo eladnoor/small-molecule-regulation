@@ -2,7 +2,7 @@
 all entries,130759,303053,37461
 keeping only E. coli data,9439,14628,2003
 filtering out data about mutated enzymes,5913,14252,1735
-keeping only data mapping to BiGG model,2390,2721,242
-unique metabolite-enzyme pairs,980,1664,183
-unique metabolites,391,320,109
-unique enzymes,397,363,94
+keeping only data mapping to BiGG model,2391,2729,243
+unique metabolite-enzyme pairs,981,1669,184
+unique metabolites,391,321,110
+unique enzymes,398,364,95

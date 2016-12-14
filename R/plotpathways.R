@@ -8,9 +8,10 @@ library(reshape2)
 library(NMF)
 library(pheatmap)
 
-act = read.csv('../res/pathway_histograms_activating.csv',header = TRUE,row.names = 1,check.names = FALSE)
-inh = read.csv('../res/pathway_histograms_inhibiting.csv',header = TRUE,row.names = 1,check.names = FALSE)
-
+act = read.csv('../res/pathway_met_histograms_activating.csv',header = TRUE,row.names = 1,check.names = FALSE)
+inh = read.csv('../res/pathway_met_histograms_inhibiting.csv',header = TRUE,row.names = 1,check.names = FALSE)
+act[is.na(act)] = 0
+inh[is.na(inh)] = 0
 # Cluster the data
 # for (dname in c('act','inh')){
 #   d = get(dname)

@@ -216,6 +216,9 @@ class FigurePlotter(object):
         self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
 
         self.regulation = self.regulation.join(ec2bigg, on='EC_number', how='left')
+        
+        # write out SMRN prior to mapping to subsystems
+        self.regulation.to_csv(os.path.join(settings.RESULT_DIR, 'iJO1366_SMRN.csv'))
 
         reaction_subsystem_df, metabolite_subsystem_df = FigurePlotter.get_subsystem_data()
         self.regulation = self.regulation.join(reaction_subsystem_df,
@@ -227,6 +230,7 @@ class FigurePlotter(object):
         self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
         self.stat_df.drop('km', axis=1, inplace=True)
         self.stat_df.to_csv(os.path.join(settings.RESULT_DIR, 'statistics.csv'))
+        
 
     def calc_unique_stats(self, k, name, value_col):
         self.stat_df[name].iat[3] = k.shape[0]
@@ -784,3 +788,5 @@ if __name__ == "__main__":
     fp.draw_full_heapmats(filter_using_model=False)
 
     fp.print_ccm_table()
+    
+    plt.close('all')
