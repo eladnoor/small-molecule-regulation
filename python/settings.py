@@ -44,6 +44,7 @@ ECOLI_METAB_FNAME = os.path.join(DATA_DIR, 'ecoli_metabolites_gerosa2015.csv')
 ECOLI_PROT_FNAME = os.path.join(DATA_DIR, 'ecoli_proteins_schmidt2015.csv')
 ECOLI_FLUX_FNAME = os.path.join(DATA_DIR, 'ecoli_fluxes_fba.csv')
 ECOLI_CCM_FNAME = os.path.join(DATA_DIR, 'ecoli_ccm_ec_numbers.csv')
+ECOLI_CCM_THERMO_FNAME = os.path.join(DATA_DIR, 'ecoli_ccm_reg_thermo.csv')
 
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
@@ -91,6 +92,7 @@ if cobrafound:
     def get_ecoli_sbml():
         return cobra.io.read_sbml_model(ECOLI_SBML_FNAME)
 
+
 def get_ecoli_json():
     with open(ECOLI_JSON_FNAME) as fp:
         model = json.load(fp)
@@ -100,16 +102,23 @@ def get_ecoli_json():
         for met, coeff in reaction['metabolites'].iteritems():
             sparse.append([reaction['id'].lower(), met.lower(), coeff])
 
-    sparse = pd.DataFrame(sparse, columns=['bigg.reaction', 'bigg.metabolite', 'stoichiometry'])
-    S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction', values='stoichiometry')
+    sparse = pd.DataFrame(sparse, columns=['bigg.reaction',
+                                           'bigg.metabolite', 'stoichiometry'])
+    S = sparse.pivot(index='bigg.metabolite', columns='bigg.reaction',
+                     values='stoichiometry')
     S.fillna(0, inplace=True)
     return model, S
+
 
 def get_chebi_inchi_df():
     with closing(urllib2.urlopen(CHEBI2INCHI_URL, 'file')) as r:
         chebi_inchi_df = pd.read_csv(r, sep='\t')
     chebi_inchi_df['chebiID'] = chebi_inchi_df['CHEBI_ID'].apply(lambda c: 'CHEBI:%d' % c)
-    chebi_inchi_df.rename(columns={'InChI':'inchi'}, inplace=True)
+    chebi_inchi_df.rename(columns={'InChI': 'inchi'}, inplace=True)
     chebi_inchi_df.set_index('CHEBI_ID', inplace=True)
     return chebi_inchi_df
 
+
+def savefig(fig, name, dpi=600):
+    fig.savefig(os.path.join(RESULT_DIR, name + '.svg'))
+    fig.savefig(os.path.join(RESULT_DIR, name + '.png'), dpi=dpi)
