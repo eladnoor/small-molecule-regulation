@@ -652,6 +652,9 @@ class FigurePlotter(object):
         inh_table = inh_table.pivot(index=ylabel,
                                     columns='bigg.subsystem.reaction',
                                     values='bigg.reaction')
+        
+        #act_table = act_table.fillna(0)
+        #inh_table = inh_table.fillna(0)
 
         act_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_activating.csv'))
@@ -659,11 +662,11 @@ class FigurePlotter(object):
             settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
         
         # Remove metabolites and pathways with insufficient numbers of data points
-        act2plot = act_table[act_table.sum(axis = 1) > 3]
-        act2plot = act2plot.drop( act2plot.columns[ act2plot.sum(axis = 0)<3],axis = 1)
+        act2plot = act_table[act_table.sum(axis = 1).fillna(0) > 3]
+        act2plot = act2plot.drop( act2plot.columns[ act2plot.sum(axis = 0).fillna(0)<3],axis = 1)
         
-        inh2plot = inh_table[inh_table.sum(axis = 1) > 7]
-        inh2plot = inh2plot.drop( inh2plot.columns[ inh2plot.sum(axis = 0)<7],axis = 1)
+        inh2plot = inh_table[inh_table.sum(axis = 1).fillna(0) > 7]
+        inh2plot = inh2plot.drop( inh2plot.columns[ inh2plot.sum(axis = 0).fillna(0)<7],axis = 1)
         
         # Plot activating and inhibiting matrices in seaborn
         
