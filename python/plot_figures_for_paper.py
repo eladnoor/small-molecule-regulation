@@ -18,6 +18,7 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
+import pdb
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
@@ -652,27 +653,66 @@ class FigurePlotter(object):
                                     columns='bigg.subsystem.reaction',
                                     values='bigg.reaction')
 
-        fig, axs = plt.subplots(1, 2, figsize=(20, 30), sharey=True)
-
-        ax = axs[0]
-        sns.heatmap(act_table, ax=ax, annot=False, cbar=True, cmap='viridis',
-                    vmin=1, vmax=12)
-        ax.set_title('activation')
-        ax.set_ylabel(ylabel)
-        ax.set_xlabel('activated enzyme subsystem')
-
-        ax = axs[1]
-        sns.heatmap(inh_table, ax=ax, annot=False, cbar=True, cmap='viridis',
-                    vmin=1, vmax=12)
-        ax.set_title('inhibition')
-        ax.set_xlabel('inhibited enzyme subsystem')
-
-        fig.tight_layout(pad=4)
-        settings.savefig(fig, 'pathway_met_histograms', dpi=300)
         act_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_activating.csv'))
         inh_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
+        
+        # Remove metabolites and pathways with insufficient numbers of data points
+        act2plot = act_table[act_table.sum(axis = 1) > 3]
+        act2plot = act2plot.drop( act2plot.columns[ act2plot.sum(axis = 0)<3],axis = 1)
+        
+        inh2plot = inh_table[inh_table.sum(axis = 1) > 7]
+        inh2plot = inh2plot.drop( inh2plot.columns[ inh2plot.sum(axis = 0)<7],axis = 1)
+        
+        # Plot activating and inhibiting matrices in seaborn
+        
+        act_roworder = FigurePlotter.cluster_matrix(act2plot)
+        act_colorder = FigurePlotter.cluster_matrix(act2plot.T)
+        
+        inh_roworder = FigurePlotter.cluster_matrix(inh2plot)
+        inh_colorder = FigurePlotter.cluster_matrix(inh2plot.T)
+        
+        fig, axs = plt.subplots(1, 2, figsize=(10, 10), sharey=False)
+
+        ax = axs[0]
+        p1 = sns.heatmap(act2plot.ix[act_roworder,act_colorder], ax=ax, annot=False, cbar=True, cmap='viridis')
+        ax.set_title('activation')
+        ax.set_ylabel(ylabel)
+        ax.set_xlabel('activated enzyme subsystem')
+        for label in ax.get_xticklabels():
+        	label.set(rotation = 90)
+        for label in ax.get_yticklabels():
+        	label.set(rotation = 0)
+
+        ax = axs[1]
+        sns.heatmap(inh2plot.ix[inh_roworder,inh_colorder], ax=ax, annot=False, cbar=True, cmap='viridis')
+        ax.set_title('inhibition')
+        ax.set_xlabel('inhibited enzyme subsystem')
+        for label in ax.get_xticklabels():
+        	label.set(rotation = 90)
+        for label in ax.get_yticklabels():
+        	label.set(rotation = 0)
+
+        fig.tight_layout(pad=4)
+        settings.savefig(fig, 'pathway_met_histograms', dpi=300)
+        
+        
+        
+    @staticmethod
+    def cluster_matrix(X):
+		import scipy.cluster.hierarchy as sch
+		import scipy.spatial.distance as dist
+	
+		# X is a pandas dataframe
+		X = X.fillna(0)
+		Xd = dist.pdist(X,metric = 'euclidean')
+		Xd2 = dist.squareform(Xd)
+		links = sch.linkage(Xd2, method='ward', metric='euclidean') 
+		dendro = sch.dendrogram(links,no_plot = True)
+		leaves = dendro['leaves']
+	
+		return leaves
 
     @staticmethod
     def comparative_cdf(x, y, data, ax, linewidth=2):
@@ -818,21 +858,21 @@ if __name__ == "__main__":
 
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_thermodynamics_cdf()
-    fp.draw_ccm_thermodynamics_cdf()
-
+#     fp.draw_thermodynamics_cdf()
+#     fp.draw_ccm_thermodynamics_cdf()
+# 
     fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-    fp.draw_2D_histograms()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
+#     fp.draw_pathway_histogram()
+#     fp.draw_venn_diagrams()
+# 
+#     fp.draw_cdf_plots()
+#     fp.draw_2D_histograms()
+# 
+#     fp.draw_agg_heatmaps(agg_type='gmean')
+#     fp.draw_agg_heatmaps(agg_type='median')
+# 
+#     fp.draw_full_heapmats()
+#     fp.draw_full_heapmats(filter_using_model=False)
+# 
+#     fp.print_ccm_table()
     plt.close('all')

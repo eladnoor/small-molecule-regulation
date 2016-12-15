@@ -34,8 +34,11 @@ print('Calculating shortest path lengths for all pairs...')
 spl = nx.shortest_path_length( nxA )
 
 # Read in the SMRN
-smrn = pd.read_csv(os.path.join(settings.RESULT_DIR, 'iJO1366_SMRN.csv'),
+smrn_temp = pd.read_csv(os.path.join(settings.RESULT_DIR, 'iJO1366_SMRN.csv'),
                    header = 0,index_col = 0 )
+                   
+# Get unique groups
+smrn = smrn_temp.groupby(['bigg.metabolite','bigg.reaction']).first().reset_index()
 
 # Only grab data relating to edges in SMRN in order to save space
 print('Grabbing only relevant shortest path lengths...')
