@@ -475,6 +475,7 @@ class FigurePlotter(object):
             """
             x = data[xlabel]
             y = data[ylabel]
+
             bins = (np.arange(0, xmax+2), np.arange(0, ymax+2))
             H, _, _ = np.histogram2d(x, y, bins=bins)
             # in a heatmap, the matrix columns become rows and vice versa
@@ -500,6 +501,45 @@ class FigurePlotter(object):
                                 xytext=(x_i+1, ymax-y_i-1),
                                 ha='center', va='top', size=6,
                                 textcoords='data')
+        
+        def plot_jointhist(data, xlabel, ylabel, xmax, ymax):
+            """
+                plot the histogram as a scatter plot with marginal histograms, and ensure 
+                empty bins are easily distinguishable from ones that have
+                at least 1 hit.
+            """
+            x = data[xlabel]
+            y = data[ylabel]
+            
+            # First, plot the scatter plot
+            g = sns.JointGrid(x=x,y=y)
+            g = g.plot_joint(plt.scatter,alpha = 0.5)
+            plt.gcf()
+            
+            plt.xlabel(xlabel)
+            plt.ylabel(ylabel)
+            
+            plt.axis((-1,xmax + 1,-1,ymax + 1))
+
+            for i in data.index:
+                x_i = data.at[i, xlabel]
+                y_i = data.at[i, ylabel]
+                
+                if data[(data[xlabel] == x_i) & (data[ylabel] == y_i)].shape[0] != 1:
+                	continue
+                
+                if (x_i > 12 or y_i > 5):
+                    # print i, x_i, y_i, H[x_i, y_i]
+                    plt.annotate(i, xy=(x_i, y_i),
+                                xytext=(x_i+1, y_i+1),
+                                ha='center', va='top', size=10,
+                                textcoords='data')
+            
+            # Next, plot the marginal histograms
+            g = g.plot_marginals(sns.distplot, kde=False)
+            
+            return plt.gcf()           
+            
 
         # join interaction table with bigg.reaction IDs
         # and keep only one copy of each reaction-metabolite pair
@@ -545,6 +585,12 @@ class FigurePlotter(object):
                      axs[1], xmax, ymax)
 
         settings.savefig(fig, '2D_historgrams')
+        
+        fig = plot_jointhist(grouped_by_met, n_inh_label, n_act_label, xmax, ymax)
+        settings.savefig(fig, '2D_historgrams_met_EdsVersion')
+
+        fig = plot_jointhist(grouped_by_rxn, n_inh_label, n_act_label, xmax, ymax)
+        settings.savefig(fig, '2D_historgrams_rxn_EdsVersion')
 
     def print_ccm_table(self):
         ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
@@ -858,18 +904,18 @@ class FigurePlotter(object):
 
 ###############################################################################
 if __name__ == "__main__":
-
-#    fp = FigurePlotter(rebuild_cache=True)
-    fp = FigurePlotter()
+    plt.close('all')
+    fp = FigurePlotter(rebuild_cache=True)
+    # fp = FigurePlotter()
 #     fp.draw_thermodynamics_cdf()
 #     fp.draw_ccm_thermodynamics_cdf()
 # 
-    fp.draw_pathway_met_histogram()
+#     fp.draw_pathway_met_histogram()
 #     fp.draw_pathway_histogram()
 #     fp.draw_venn_diagrams()
 # 
 #     fp.draw_cdf_plots()
-#     fp.draw_2D_histograms()
+    fp.draw_2D_histograms()
 # 
 #     fp.draw_agg_heatmaps(agg_type='gmean')
 #     fp.draw_agg_heatmaps(agg_type='median')
