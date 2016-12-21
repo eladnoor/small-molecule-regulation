@@ -18,7 +18,6 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
-import pdb
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
@@ -33,6 +32,9 @@ STAT_TABLE_INDEX = ['all entries',
                     'unique metabolite-enzyme pairs',
                     'unique metabolites',
                     'unique enzymes']
+
+N_ACT_LABEL = 'Number of activating interactions'
+N_INH_LABEL = 'Number of inhibiting interactions'
 
 
 class FigurePlotter(object):
@@ -359,10 +361,12 @@ class FigurePlotter(object):
         fig, axs = plt.subplots(1, 2, figsize=(7, 5))
         venn3_sets(inh_met, act_met, self.native_mets, ax=axs[0],
                    set_labels=('inhibitors', 'activators',
-                               'E. coli metabolites'))
+                               'E. coli metabolites (%d total)' %
+                               len(self.native_mets)))
         venn3_sets(inh_ec, act_ec, self.native_ECs, ax=axs[1],
                    set_labels=('inhibited', 'activated',
-                               'E. coli reactions'))
+                               'E. coli reactions (%d total)' %
+                               len(self.native_ECs)))
         axs[0].annotate('a', xy=(0.02, 0.98),
                         xycoords='axes fraction', ha='left', va='top',
                         size=20)
@@ -460,6 +464,27 @@ class FigurePlotter(object):
 
         settings.savefig(fig, 'saturation_histogram')
 
+    def get_grouped_data(self):
+        """
+            generate dataframes for metabolite and reactions
+            containing counts of activations and inhibitions
+        """
+        # join interaction table with bigg.reaction IDs
+        # and keep only one copy of each reaction-metabolite pair
+        cols = ('bigg.reaction', 'bigg.metabolite')
+        bigg_effectors = self.regulation.groupby(cols).first().reset_index()
+        bigg_effectors.drop('KI_Value', axis=1, inplace=True)
+
+        # add columns for counting the positive and negative interactions
+        bigg_effectors[N_ACT_LABEL] = 0
+        bigg_effectors[N_INH_LABEL] = 0
+        bigg_effectors.loc[bigg_effectors['Mode'] == '+', N_ACT_LABEL] = 1
+        bigg_effectors.loc[bigg_effectors['Mode'] == '-', N_INH_LABEL] = 1
+
+        grouped_by_met = bigg_effectors.groupby('bigg.metabolite').sum()
+        grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
+        return grouped_by_met, grouped_by_rxn
+
     def draw_2D_histograms(self, tax2use='kingdom', minsize=10):
         """
             Draw 2D histograms of the number of activating and
@@ -501,62 +526,41 @@ class FigurePlotter(object):
                                 xytext=(x_i+1, ymax-y_i-1),
                                 ha='center', va='top', size=6,
                                 textcoords='data')
-        
+
         def plot_jointhist(data, xlabel, ylabel, xmax, ymax):
             """
-                plot the histogram as a scatter plot with marginal histograms, and ensure 
-                empty bins are easily distinguishable from ones that have
-                at least 1 hit.
+                plot the histogram as a scatter plot with marginal histograms,
+                and ensure empty bins are easily distinguishable from ones
+                that have at least 1 hit.
             """
             x = data[xlabel]
             y = data[ylabel]
-            
+
             # First, plot the scatter plot
-            g = sns.JointGrid(x=x,y=y)
-            g = g.plot_joint(plt.scatter,alpha = 0.5)
+            g = sns.JointGrid(x=x, y=y, size=4,
+                              xlim=(-1, xmax+1), ylim=(-1, ymax+1))
+            g = g.plot_joint(plt.scatter, alpha=0.2)
             plt.gcf()
-            
+
             plt.xlabel(xlabel)
             plt.ylabel(ylabel)
-            
-            plt.axis((-1,xmax + 1,-1,ymax + 1))
 
-            for i in data.index:
-                x_i = data.at[i, xlabel]
-                y_i = data.at[i, ylabel]
-                
-                if data[(data[xlabel] == x_i) & (data[ylabel] == y_i)].shape[0] != 1:
-                	continue
-                
-                if (x_i > 12 or y_i > 5):
-                    # print i, x_i, y_i, H[x_i, y_i]
-                    plt.annotate(i, xy=(x_i, y_i),
-                                xytext=(x_i+1, y_i+1),
-                                ha='center', va='top', size=10,
-                                textcoords='data')
-            
+            # annotate only unique points
+            # annotate only unique points
+            ann_df = data.drop_duplicates((xlabel, ylabel), keep=False)
+            ann_df = ann_df[(ann_df[xlabel] > 12) | (ann_df[ylabel] > 5)]
+            for i, row in ann_df.iterrows():
+                    plt.annotate(i, xy=(row[xlabel], row[ylabel]),
+                                 xytext=(row[xlabel]+1, row[ylabel]+1),
+                                 ha='center', va='top', size=10,
+                                 textcoords='data')
+
             # Next, plot the marginal histograms
             g = g.plot_marginals(sns.distplot, kde=False)
-            
-            return plt.gcf()           
-            
 
-        # join interaction table with bigg.reaction IDs
-        # and keep only one copy of each reaction-metabolite pair
-        cols = ('bigg.reaction', 'bigg.metabolite')
-        bigg_effectors = self.regulation.groupby(cols).first().reset_index()
+            return plt.gcf()
 
-        # add columns for counting the positive and negative interactions
-        n_act_label = 'Number of activating interactions'
-        n_inh_label = 'Number of inhibiting interactions'
-
-        bigg_effectors[n_act_label] = 0
-        bigg_effectors[n_inh_label] = 0
-        bigg_effectors.loc[bigg_effectors['Mode'] == '+', n_act_label] = 1
-        bigg_effectors.loc[bigg_effectors['Mode'] == '-', n_inh_label] = 1
-
-        grouped_by_met = bigg_effectors.groupby('bigg.metabolite').sum()
-        grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
+        grouped_by_met, grouped_by_rxn = self.get_grouped_data()
 
         # plot the data as 2D histograms
 
@@ -573,24 +577,26 @@ class FigurePlotter(object):
         axs[1].annotate('d', xy=(0.98, 0.98),
                         xycoords='axes fraction', ha='left', va='top',
                         size=20)
-        xmax = max(grouped_by_met[n_inh_label].max(),
-                   grouped_by_rxn[n_inh_label].max())
-        ymax = max(grouped_by_met[n_act_label].max(),
-                   grouped_by_rxn[n_act_label].max())
+        xmax = max(grouped_by_met[N_INH_LABEL].max(),
+                   grouped_by_rxn[N_INH_LABEL].max())
+        ymax = max(grouped_by_met[N_ACT_LABEL].max(),
+                   grouped_by_rxn[N_ACT_LABEL].max())
 
-        plot_2d_hist(grouped_by_met, n_inh_label, n_act_label,
+        plot_2d_hist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
                      axs[0], xmax, ymax)
         axs[0].set_xlabel('')
-        plot_2d_hist(grouped_by_rxn, n_inh_label, n_act_label,
+        plot_2d_hist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
                      axs[1], xmax, ymax)
 
-        settings.savefig(fig, '2D_historgrams')
-        
-        fig = plot_jointhist(grouped_by_met, n_inh_label, n_act_label, xmax, ymax)
-        settings.savefig(fig, '2D_historgrams_met_EdsVersion')
+        settings.savefig(fig, '2D_histograms_heatmap')
 
-        fig = plot_jointhist(grouped_by_rxn, n_inh_label, n_act_label, xmax, ymax)
-        settings.savefig(fig, '2D_historgrams_rxn_EdsVersion')
+        fig = plot_jointhist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
+                             xmax, ymax)
+        settings.savefig(fig, 'jointplot_met')
+
+        fig = plot_jointhist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
+                             xmax, ymax)
+        settings.savefig(fig, 'jointplot_rxn')
 
     def print_ccm_table(self):
         ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
@@ -613,7 +619,7 @@ class FigurePlotter(object):
 
     def draw_pathway_histogram(self):
         pathways = set(self.regulation['bigg.subsystem.reaction'])
-        pathways.update(self.regulation['bigg.subsystem.metabolite'])
+        pathways.update(self.regulation['bigg.sub.metabolite'])
         pathways = sorted(pathways)
         if np.nan in pathways:
             pathways.remove(np.nan)
@@ -698,70 +704,70 @@ class FigurePlotter(object):
         inh_table = inh_table.pivot(index=ylabel,
                                     columns='bigg.subsystem.reaction',
                                     values='bigg.reaction')
-        
-        #act_table = act_table.fillna(0)
-        #inh_table = inh_table.fillna(0)
 
         act_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_activating.csv'))
         inh_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
-        
-        # Remove metabolites and pathways with insufficient numbers of data points
-        act2plot = act_table[act_table.sum(axis = 1).fillna(0) > 3]
-        act2plot = act2plot.drop( act2plot.columns[ act2plot.sum(axis = 0).fillna(0)<3],axis = 1)
-        
-        inh2plot = inh_table[inh_table.sum(axis = 1).fillna(0) > 7]
-        inh2plot = inh2plot.drop( inh2plot.columns[ inh2plot.sum(axis = 0).fillna(0)<7],axis = 1)
-        
+
+        # Remove metabolites and pathways with insufficient numbers of
+        # data points
+        act2plot = act_table[act_table.sum(axis=1).fillna(0) > 3]
+        dropcol = act2plot.columns[act2plot.sum(axis=0).fillna(0) < 3]
+        act2plot = act2plot.drop(dropcol, axis=1)
+
+        inh2plot = inh_table[inh_table.sum(axis=1).fillna(0) > 7]
+        dropcol = inh2plot.columns[inh2plot.sum(axis=0).fillna(0) < 7]
+        inh2plot = inh2plot.drop(dropcol, axis=1)
+
         # Plot activating and inhibiting matrices in seaborn
-        
+
         act_roworder = FigurePlotter.cluster_matrix(act2plot)
         act_colorder = FigurePlotter.cluster_matrix(act2plot.T)
-        
+
         inh_roworder = FigurePlotter.cluster_matrix(inh2plot)
         inh_colorder = FigurePlotter.cluster_matrix(inh2plot.T)
-        
+
         fig, axs = plt.subplots(1, 2, figsize=(10, 10), sharey=False)
 
         ax = axs[0]
-        p1 = sns.heatmap(act2plot.ix[act_roworder,act_colorder], ax=ax, annot=False, cbar=True, cmap='viridis')
+        sns.heatmap(act2plot.ix[act_roworder, act_colorder],
+                    ax=ax, annot=False, cbar=True, cmap='viridis')
         ax.set_title('activation')
         ax.set_ylabel(ylabel)
         ax.set_xlabel('activated enzyme subsystem')
         for label in ax.get_xticklabels():
-        	label.set(rotation = 90)
+            label.set(rotation=90)
         for label in ax.get_yticklabels():
-        	label.set(rotation = 0)
+            label.set(rotation=0)
 
         ax = axs[1]
-        sns.heatmap(inh2plot.ix[inh_roworder,inh_colorder], ax=ax, annot=False, cbar=True, cmap='viridis')
+        sns.heatmap(inh2plot.ix[inh_roworder, inh_colorder],
+                    ax=ax, annot=False, cbar=True, cmap='viridis')
         ax.set_title('inhibition')
         ax.set_xlabel('inhibited enzyme subsystem')
         for label in ax.get_xticklabels():
-        	label.set(rotation = 90)
+            label.set(rotation=90)
         for label in ax.get_yticklabels():
-        	label.set(rotation = 0)
+            label.set(rotation=0)
 
         fig.tight_layout(pad=4)
         settings.savefig(fig, 'pathway_met_histograms', dpi=300)
-        
-        
-        
+
     @staticmethod
     def cluster_matrix(X):
-		import scipy.cluster.hierarchy as sch
-		import scipy.spatial.distance as dist
-	
-		# X is a pandas dataframe
-		X = X.fillna(0)
-		Xd = dist.pdist(X,metric = 'euclidean')
-		Xd2 = dist.squareform(Xd)
-		links = sch.linkage(Xd2, method='ward', metric='euclidean') 
-		dendro = sch.dendrogram(links,no_plot = True)
-		leaves = dendro['leaves']
-	
-		return leaves
+        import scipy.cluster.hierarchy as sch
+        import scipy.spatial.distance as dist
+
+        # X is a pandas dataframe
+        X = X.fillna(0)
+        Xd = dist.pdist(X, metric='euclidean')
+        Xd2 = dist.squareform(Xd)
+        links = sch.linkage(Xd2, method='ward', metric='euclidean')
+        dendro = sch.dendrogram(links, no_plot=True)
+        leaves = dendro['leaves']
+
+        return leaves
 
     @staticmethod
     def comparative_cdf(x, y, data, ax, linewidth=2):
@@ -905,23 +911,23 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-    fp = FigurePlotter(rebuild_cache=True)
-    # fp = FigurePlotter()
-#     fp.draw_thermodynamics_cdf()
-#     fp.draw_ccm_thermodynamics_cdf()
-# 
-#     fp.draw_pathway_met_histogram()
-#     fp.draw_pathway_histogram()
-#     fp.draw_venn_diagrams()
-# 
-#     fp.draw_cdf_plots()
+#    fp = FigurePlotter(rebuild_cache=True)
+    fp = FigurePlotter()
     fp.draw_2D_histograms()
-# 
-#     fp.draw_agg_heatmaps(agg_type='gmean')
-#     fp.draw_agg_heatmaps(agg_type='median')
-# 
-#     fp.draw_full_heapmats()
-#     fp.draw_full_heapmats(filter_using_model=False)
-# 
-#     fp.print_ccm_table()
+#    fp.draw_thermodynamics_cdf()
+#    fp.draw_ccm_thermodynamics_cdf()
+#
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
+#
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
     plt.close('all')
