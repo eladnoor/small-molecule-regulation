@@ -913,7 +913,7 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_2D_histograms()
+#    fp.draw_2D_histograms()
 #    fp.draw_thermodynamics_cdf()
 #    fp.draw_ccm_thermodynamics_cdf()
 #
@@ -923,11 +923,11 @@ if __name__ == "__main__":
 #
 #    fp.draw_cdf_plots()
 #
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
 #
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
 #
 #    fp.print_ccm_table()
     plt.close('all')

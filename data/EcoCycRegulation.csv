@@ -1,4 +1,4 @@
-ReactionID,EC_number,LigandID,chebiID,Mode,KI_Value,Organism
+ReactionID,EC_number,LigandID,chebiID,Mode,KI_Value_uM,Organism
 ETHAMLY-RXN,4.3.1.7,1-AMINO-PROPAN-2-OL,CHEBI:42677,-,,Escherichia coli
 METHYLENETHFDEHYDROG-NADP-RXN,1.5.1.5,10-FORMYL-THF,CHEBI:57454,-,,Escherichia coli
 METHENYLTHFCYCLOHYDRO-RXN,3.5.4.9,10-FORMYL-THF,CHEBI:57454,-,,Escherichia coli

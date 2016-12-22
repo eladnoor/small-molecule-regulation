@@ -46,6 +46,8 @@ ECOLI_FLUX_FNAME = os.path.join(DATA_DIR, 'ecoli_fluxes_fba.csv')
 ECOLI_CCM_FNAME = os.path.join(DATA_DIR, 'ecoli_ccm_ec_numbers.csv')
 ECOLI_CCM_THERMO_FNAME = os.path.join(DATA_DIR, 'ecoli_ccm_reg_thermo.csv')
 
+ECOCYC_REG_FNAME = os.path.join(DATA_DIR, 'EcoCycRegulation.csv')
+
 BRENDA_INPUT = [{'fname': 'turnover',   'value_col': 'Turnover_Number'},
                 {'fname': 'ki',         'value_col': 'KI_Value'},
                 {'fname': 'km',         'value_col': 'KM_Value'},
