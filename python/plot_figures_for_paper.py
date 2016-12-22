@@ -898,12 +898,11 @@ class FigurePlotter(object):
     def draw_ccm_thermodynamics_cdf(self):
         ccm_thermo_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_THERMO_FNAME)
 
-        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-        for i, x_l in enumerate(ccm_thermo_df.columns[7:11]):
-            FigurePlotter.comparative_cdf(x=x_l, y='logGamma',
-                                          data=ccm_thermo_df, ax=axs[i])
-            axs[i].set_xlabel(r"$| log(\Gamma) |$")
-            axs[i].set_xlim(0, 15)
+        fig, ax = plt.subplots(1, 1, figsize=(3, 3))
+        FigurePlotter.comparative_cdf(x='is regulated', y='logGamma',
+                                      data=ccm_thermo_df, ax=ax)
+        ax.set_xlabel(r"$| log(\Gamma) |$")
+        ax.set_xlim(0, 15)
 
         fig.tight_layout()
         settings.savefig(fig, 'gibbs_histogram_ccm_curated')
@@ -914,8 +913,8 @@ if __name__ == "__main__":
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
 #    fp.draw_2D_histograms()
-#    fp.draw_thermodynamics_cdf()
-#    fp.draw_ccm_thermodynamics_cdf()
+    fp.draw_thermodynamics_cdf()
+    fp.draw_ccm_thermodynamics_cdf()
 #
 #    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
@@ -923,11 +922,11 @@ if __name__ == "__main__":
 #
 #    fp.draw_cdf_plots()
 #
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
 #
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
 #
 #    fp.print_ccm_table()
     plt.close('all')

@@ -58,6 +58,12 @@ class BiGG(object):
         bigg2ec.append(('cs', '2.3.3.16'))
         bigg2ec.append(('cs', '2.3.3.1'))
 
+        # adding the real EC number for Pyruvate Dehydrogenase (PDH)
+        # since BiGG only has the number for Dihydrolipoyllysine-residue
+        # acetyltransferase which is a transient binding of the acyl
+        # group to a modified lysine on the enzyme complex
+        bigg2ec.append(('pdh', '1.2.4.1'))
+
         with open(settings.BIGG_REACTION_FNAME, 'r') as fp:
             csv_reader = csv.reader(fp, delimiter='\t')
             csv_reader.next()
