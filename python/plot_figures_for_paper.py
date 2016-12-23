@@ -18,7 +18,7 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
-import pdb
+import pdb  # this is a reminder for Elad not to remove this pdb import
 
 sns.set('paper', style='white')
 
@@ -885,7 +885,7 @@ class FigurePlotter(object):
         thermo_df['Num_Regs'] = 0
         thermo_df.loc[ixmets, 'Num_Regs'] = num_regs.loc[ixmets]
         thermo_df['is regulated'] = 'No'
-        thermo_df.ix[thermo_df['Num_Regs'] >0,'is regulated'] = 'Yes'
+        thermo_df.ix[thermo_df['Num_Regs'] > 0,'is regulated'] = 'Yes'
 
         fig2, axs2 = plt.subplots(1, 4, figsize=(14, 4), sharey=True)
         thermo_df_nz = thermo_df[thermo_df['Num_Regs'] != 0].copy()
@@ -895,13 +895,16 @@ class FigurePlotter(object):
                           x='# References / # Regulators', ax=axs2[0])
         sns.boxplot(x='Num_Refs', y=irr_index_l, data=thermo_df, ax=axs2[1])
         sns.boxplot(x='Num_Regs', y=irr_index_l, data=thermo_df, ax=axs2[2])
-        
+
         from scipy.stats import mannwhitneyu as mwu
-        regulated = thermo_df.ix[thermo_df['is regulated'] == 'Yes','logRI']
-        notregulated = thermo_df.ix[thermo_df['is regulated'] == 'No','logRI']
-        stat,p = mwu(regulated,notregulated)
-        
-        sns.boxplot(x='is regulated', y=irr_index_l, data=thermo_df, ax=axs2[3])
+        regulated = thermo_df.ix[thermo_df['is regulated'] == 'Yes',
+                                 irr_index_l]
+        notregulated = thermo_df.ix[thermo_df['is regulated'] == 'No',
+                                    irr_index_l]
+        stat, p = mwu(regulated, notregulated)
+
+        sns.boxplot(x='is regulated', y=irr_index_l, data=thermo_df,
+                    ax=axs2[3])
         axs2[3].set_title('Mann Whitney P Value = ' + str(p))
         settings.savefig(fig2, 'gibbs_literature_plot')
 
@@ -909,26 +912,29 @@ class FigurePlotter(object):
 
     def draw_ccm_thermodynamics_cdf(self):
         ccm_thermo_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_THERMO_FNAME)
-        
+        irr_index_l = r"$| log(\Gamma) |$"
+        ccm_thermo_df[irr_index_l] = ccm_thermo_df['logRI'].abs()
+
         from scipy.stats import mannwhitneyu as mwu
         fig, ax = plt.subplots(1, 1, figsize=(8, 8), sharey=True)
-        sns.boxplot(x='is regulated',y='logRI',data = ccm_thermo_df, ax = ax)
+        sns.boxplot(x='is regulated', y=irr_index_l, data=ccm_thermo_df, ax=ax)
         plt.xlabel('Is Regulated')
         plt.ylabel('Log Reversibility Index')
-        
-        regulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'yes','logRI']
-        notregulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'no','logRI']
-        stat,p = mwu(regulated,notregulated)
-        
+
+        regulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'yes',
+                                     irr_index_l]
+        notregulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'no',
+                                        irr_index_l]
+        stat, p = mwu(regulated, notregulated)
+
         plt.title('Mann Whitney P Value: ' + str(p))
-        settings.savefig(fig,'gibbs_boxplot_ccm_curated')
+        settings.savefig(fig, 'gibbs_boxplot_ccm_curated')
         plt.close('boxplot')
-        
-        
+
         fig, ax = plt.subplots(1, 1, figsize=(3, 3))
-        FigurePlotter.comparative_cdf(x='is regulated', y='logGamma',
+        FigurePlotter.comparative_cdf(x='is regulated', y=irr_index_l,
                                       data=ccm_thermo_df, ax=ax)
-        ax.set_xlabel(r"$| log(\Gamma) |$")
+        ax.set_xlabel(irr_index_l)
         ax.set_xlim(0, 15)
 
         fig.tight_layout()
@@ -940,9 +946,9 @@ if __name__ == "__main__":
     fp = FigurePlotter(rebuild_cache=True)
 #    fp = FigurePlotter()
 #    fp.draw_2D_histograms()
-    fp.draw_thermodynamics_cdf()
+#    fp.draw_thermodynamics_cdf()
 
-#    fp.draw_ccm_thermodynamics_cdf()
+    fp.draw_ccm_thermodynamics_cdf()
 #
 #    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
