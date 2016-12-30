@@ -440,13 +440,15 @@ class FigurePlotter(object):
         ax.set_title('Measured metabolite conc.')
 
         ax = axs[1]
-        sns.kdeplot(-np.log10(km_inter['KM_Value']), cumulative=True,
+        km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
+        ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
+        sns.kdeplot(-np.log10(km_values), cumulative=True,
                     ax=ax, bw=.15, color=km_color,
-                    label='substrates (N = %d)' % km_inter.shape[0],
+                    label='substrates (N = %d)' % km_values.shape[0],
                     linewidth=linewidth)
-        sns.kdeplot(-np.log10(ki_inter['KI_Value']), cumulative=True,
+        sns.kdeplot(-np.log10(ki_values), cumulative=True,
                     ax=ax, bw=.15, color=ki_color,
-                    label='inhibitors (N = %d)' % ki_inter.shape[0],
+                    label='inhibitors (N = %d)' % ki_values.shape[0],
                     linewidth=linewidth)
         ax.set_xlim(-2.1, 2.7)
         ax.set_xticks(np.arange(-2, 3, 1))
@@ -455,7 +457,7 @@ class FigurePlotter(object):
         ax.set_xlabel(r'$K_S$ (in mM)')
         ax.set_title(r'Measured $K_{\rm S}$ values')
 
-        ranksum_res = ranksums(km_inter['KM_Value'], ki_inter['KI_Value'])
+        ranksum_res = ranksums(km_values, ki_values)
         ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
                 horizontalalignment='left',
                 verticalalignment='top',
@@ -470,9 +472,11 @@ class FigurePlotter(object):
         km_saturation = km_inter['saturation']
         km_saturation = km_saturation[~pd.isnull(km_saturation)]
         sns.kdeplot(km_saturation, cumulative=True, ax=ax, bw=.01,
-                    label='substrates', linewidth=linewidth, color=km_color)
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=linewidth, color=km_color)
         sns.kdeplot(ki_saturation, cumulative=True, ax=ax, bw=.01,
-                    label='inhibitors', linewidth=linewidth, color=ki_color)
+                    label='inhibitors(N = %d)' % ki_saturation.shape[0],
+                    linewidth=linewidth, color=ki_color)
         ax.grid(visible=False)
         ax.set_xlim(-0.01, 1.01)
         ax.set_ylim(0, 1)
@@ -481,7 +485,8 @@ class FigurePlotter(object):
         ax.legend(loc='upper left')
 
         ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+        ax.text(0.5, 0.1, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
                 horizontalalignment='left',
                 verticalalignment='top',
                 transform=ax.transAxes)
