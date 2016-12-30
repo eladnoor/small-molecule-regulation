@@ -105,7 +105,8 @@ class FigurePlotter(object):
         k = pd.melt(k, id_vars=('EC_number', 'bigg.metabolite', value_col),
                     var_name='growth condition', value_name='concentration')
 
-        k['saturation'] = k['concentration'] / (k['concentration'] + k[value_col])
+        k['saturation'] = k['concentration'] / (k['concentration'] +
+                                                k[value_col])
         k['met:EC'] = k['bigg.metabolite'].str.cat(k['EC_number'], sep=':')
         return k
 
@@ -116,16 +117,19 @@ class FigurePlotter(object):
             in log2-fold-change.
 
             Input:
-                K_df    - a DataFrame with three columns: EC_number, bigg.metabolite, Value
+                K_df    - a DataFrame with three columns: EC_number,
+                          bigg.metabolite, Value
                 conc_df - a DataFrame with
         """
+        k_grp = k.groupby(('bigg.metabolite', 'growth condition'))
         if agg_type == 'median':
-            fc_med = k.groupby(('bigg.metabolite', 'growth condition')).median()
+            fc_med = k_grp.median()
         elif agg_type == 'gmean':
-            fc_med = k.groupby(('bigg.metabolite', 'growth condition')).agg(lambda x: gmean(list(x)))
+            fc_med = k_grp.agg(lambda x: gmean(list(x)))
 
         fc_med = fc_med[['saturation']].reset_index()
-        fc_med = fc_med.pivot('bigg.metabolite', 'growth condition', 'saturation')
+        fc_med = fc_med.pivot('bigg.metabolite', 'growth condition',
+                              'saturation')
         return fc_med.sort_index(axis=0)
 
     @staticmethod
@@ -148,17 +152,21 @@ class FigurePlotter(object):
                 for met, coeff in r['metabolites'].iteritems():
                     stoich_data.append((rid, met, coeff))
 
-        reaction_subsystem_df = pd.DataFrame(subsystem_data,
-                                             columns=('bigg.reaction', 'bigg.subsystem.reaction'))
+        reaction_subsystem_df = pd.DataFrame(
+            subsystem_data,
+            columns=('bigg.reaction', 'bigg.subsystem.reaction'))
         reaction_subsystem_df.set_index('bigg.reaction', inplace=True)
 
         stoich_df = pd.DataFrame(stoich_data,
-                                 columns=('bigg.reaction', 'bigg.metabolite', 'coeff'))
-
-        # now associate every metabolite to subsystems by joining the two tables
-
-        metabolite_subsystem_df = stoich_df.join(reaction_subsystem_df, on='bigg.reaction')
-        metabolite_subsystem_df.rename(columns={'bigg.subsystem.reaction': 'bigg.subsystem.metabolite'}, inplace=True)
+                                 columns=('bigg.reaction',
+                                          'bigg.metabolite', 'coeff'))
+        # now associate every metabolite to subsystems by joining the two
+        # tables
+        metabolite_subsystem_df = stoich_df.join(
+            reaction_subsystem_df, on='bigg.reaction')
+        metabolite_subsystem_df.rename(
+            columns={'bigg.subsystem.reaction': 'bigg.subsystem.metabolite'},
+            inplace=True)
         metabolite_subsystem_df.drop('bigg.reaction', axis=1, inplace=True)
         metabolite_subsystem_df.drop('coeff', axis=1, inplace=True)
         metabolite_subsystem_df.drop_duplicates(inplace=True)
@@ -215,42 +223,54 @@ class FigurePlotter(object):
         # choose only one bigg.reaction for each EC number (arbitrarily)
         ec2bigg = self.bigg.reaction_df.groupby('EC_number').first()
 
-        self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value', self.met_conc_mean)
+        self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value',
+                                         self.met_conc_mean)
         self.km = self.km.join(ec2bigg, on='EC_number', how='left')
 
-        self.ki = FigurePlotter.calc_sat(self.regulation[~pd.isnull(self.regulation['KI_Value'])],
-                                         'KI_Value', self.met_conc_mean)
+        self.ki = FigurePlotter.calc_sat(
+            self.regulation[~pd.isnull(self.regulation['KI_Value'])],
+            'KI_Value', self.met_conc_mean)
 
         self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
 
-        self.regulation = self.regulation.join(ec2bigg, on='EC_number', how='left')
+        self.regulation = self.regulation.join(ec2bigg,
+                                               on='EC_number', how='left')
 
         # write out SMRN prior to mapping to subsystems
-        self.regulation.to_csv(os.path.join(settings.RESULT_DIR, 'iJO1366_SMRN.csv'))
+        self.regulation.to_csv(os.path.join(settings.RESULT_DIR,
+                                            'iJO1366_SMRN.csv'))
 
-        reaction_subsystem_df, metabolite_subsystem_df = FigurePlotter.get_subsystem_data()
+        reaction_subsystem_df, metabolite_subsystem_df = \
+            FigurePlotter.get_subsystem_data()
         self.regulation = self.regulation.join(reaction_subsystem_df,
                                                on='bigg.reaction', how='left')
         self.regulation = pd.merge(self.regulation, metabolite_subsystem_df,
                                    on='bigg.metabolite', how='left')
 
-        self.ki.to_csv(os.path.join(settings.RESULT_DIR, 'ki_saturation_full.csv'))
-        self.km.to_csv(os.path.join(settings.RESULT_DIR, 'km_saturation_full.csv'))
+        self.ki.to_csv(os.path.join(settings.RESULT_DIR,
+                                    'ki_saturation_full.csv'))
+        self.km.to_csv(os.path.join(settings.RESULT_DIR,
+                                    'km_saturation_full.csv'))
         self.stat_df.drop('km', axis=1, inplace=True)
-        self.stat_df.to_csv(os.path.join(settings.RESULT_DIR, 'statistics.csv'))
-
+        self.stat_df.to_csv(os.path.join(settings.RESULT_DIR,
+                                         'statistics.csv'))
 
     def calc_unique_stats(self, k, name, value_col):
         self.stat_df[name].iat[3] = k.shape[0]
-        self.stat_df[name].iat[4] = k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
-        self.stat_df[name].iat[5] = k.groupby('bigg.metabolite').first().shape[0]
+        self.stat_df[name].iat[4] = \
+            k.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
+        self.stat_df[name].iat[5] = \
+            k.groupby('bigg.metabolite').first().shape[0]
         self.stat_df[name].iat[6] = k.groupby('EC_number').first().shape[0]
 
         k_val = k[k[value_col] > 0]
         self.stat_df[value_col].iat[3] = k_val.shape[0]
-        self.stat_df[value_col].iat[4] = k_val.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
-        self.stat_df[value_col].iat[5] = k_val.groupby('bigg.metabolite').first().shape[0]
-        self.stat_df[value_col].iat[6] = k_val.groupby('EC_number').first().shape[0]
+        self.stat_df[value_col].iat[4] = \
+            k_val.groupby(('bigg.metabolite', 'EC_number')).first().shape[0]
+        self.stat_df[value_col].iat[5] = \
+            k_val.groupby('bigg.metabolite').first().shape[0]
+        self.stat_df[value_col].iat[6] = \
+            k_val.groupby('EC_number').first().shape[0]
 
     def draw_agg_heatmaps(self, agg_type='median'):
         """
@@ -261,7 +281,8 @@ class FigurePlotter(object):
         ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki, agg_type)
         sat_joined = km_sat_agg.join(ki_sat_agg, how='inner',
                                      lsuffix='_sub', rsuffix='_inh')
-        ind = sat_joined.mean(axis=1).sort_values(axis=0, ascending=False).index
+        ind = sat_joined.mean(axis=1).sort_values(axis=0,
+                                                  ascending=False).index
         sat_joined = sat_joined.reindex_axis(ind, axis=0)
 
         fig, ax = plt.subplots(1, 1, figsize=(12, 10))
@@ -421,10 +442,12 @@ class FigurePlotter(object):
         ax = axs[1]
         sns.kdeplot(-np.log10(km_inter['KM_Value']), cumulative=True,
                     ax=ax, bw=.15, color=km_color,
-                    label='substrates $(K_M)$', linewidth=linewidth)
+                    label='substrates (N = %d)' % km_inter.shape[0],
+                    linewidth=linewidth)
         sns.kdeplot(-np.log10(ki_inter['KI_Value']), cumulative=True,
                     ax=ax, bw=.15, color=ki_color,
-                    label='inhibitors $(K_I)$', linewidth=linewidth)
+                    label='inhibitors (N = %d)' % ki_inter.shape[0],
+                    linewidth=linewidth)
         ax.set_xlim(-2.1, 2.7)
         ax.set_xticks(np.arange(-2, 3, 1))
         ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
@@ -464,7 +487,7 @@ class FigurePlotter(object):
                 transform=ax.transAxes)
         fig.tight_layout()
 
-        settings.savefig(fig, 'saturation_histogram')
+        settings.savefig(fig, 'cdf_saturation')
 
     def get_grouped_data(self):
         """
@@ -885,7 +908,7 @@ class FigurePlotter(object):
         thermo_df['Num_Regs'] = 0
         thermo_df.loc[ixmets, 'Num_Regs'] = num_regs.loc[ixmets]
         thermo_df['is regulated'] = 'No'
-        thermo_df.ix[thermo_df['Num_Regs'] > 0,'is regulated'] = 'Yes'
+        thermo_df.ix[thermo_df['Num_Regs'] > 0, 'is regulated'] = 'Yes'
 
         fig2, axs2 = plt.subplots(1, 4, figsize=(14, 4), sharey=True)
         thermo_df_nz = thermo_df[thermo_df['Num_Regs'] != 0].copy()
@@ -948,13 +971,13 @@ if __name__ == "__main__":
 #    fp.draw_2D_histograms()
 #    fp.draw_thermodynamics_cdf()
 
-    fp.draw_ccm_thermodynamics_cdf()
+#    fp.draw_ccm_thermodynamics_cdf()
 #
 #    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
-#    fp.draw_cdf_plots()
+    fp.draw_cdf_plots()
 #
 #    fp.draw_agg_heatmaps(agg_type='gmean')
 #    fp.draw_agg_heatmaps(agg_type='median')
