@@ -200,11 +200,15 @@ class FigurePlotter(object):
         # filtering out the non-native EC reactions (in order to
         # make the full heatmap)
         km_raw_unfiltered = self.get_kinetic_param('km', 'KM_Value')
+        self.km_unfiltered_ALL = km_raw_unfiltered
+        
         self.km_unfiltered = FigurePlotter.calc_sat(
             km_raw_unfiltered, 'KM_Value', self.met_conc_mean)
 
         regulation_unfiltered = self.get_kinetic_param(
             'regulation', 'KI_Value')
+            
+        self.ki_unfiltered_ALL = regulation_unfiltered
 
         ki_raw_unfiltered = regulation_unfiltered[
             ~pd.isnull(regulation_unfiltered['KI_Value'])]
@@ -967,6 +971,71 @@ class FigurePlotter(object):
 
         fig.tight_layout()
         settings.savefig(fig, 'gibbs_histogram_ccm_curated')
+        
+    def compare_km_ki(self, filter_using_model=False):
+    
+        from statsmodels.sandbox.stats.multicomp import multipletests as padjust
+        import scipy.stats as st
+
+        km = self.km if filter_using_model else self.km_unfiltered_ALL
+        ki = self.ki if filter_using_model else self.ki_unfiltered_ALL
+        
+        # Get rid of non-positive entries
+        km = km[km['KM_Value'] > 0]
+        ki = ki[ki['KI_Value'] > 0]
+        
+        # Drop duplicates for multiple conditions
+        km = km.drop_duplicates(subset = ['EC_number', 'bigg.metabolite','KM_Value'])
+        ki = ki.drop_duplicates(subset = ['EC_number', 'bigg.metabolite','KI_Value'])
+        
+        res = pd.DataFrame()
+
+        res['KI_Values'] = ki.groupby('bigg.metabolite')['KI_Value'].mean()
+        res['KI_Number'] = ki.groupby('bigg.metabolite')['EC_number'].nunique()
+        res['KM_Values'] = km.groupby('bigg.metabolite')['KM_Value'].mean()
+        res['KM_Number'] = km.groupby('bigg.metabolite')['EC_number'].nunique()
+        
+        # Drop rows where we don't have data for both
+        res = res.dropna()
+        
+        # Keep only metabolites with at least 2 measurements of each
+        res = res[res['KI_Number'] > 1]
+        res = res[res['KM_Number'] > 1]
+        
+        res['PValue'] = np.nan
+        
+        # for each metabolite, if there is sufficient data, test
+        for ii in res.index:
+            kid = ki[ki['bigg.metabolite'] == ii]['KI_Value']
+            kmd = km[km['bigg.metabolite'] == ii]['KM_Value']
+        
+            s,p = st.mannwhitneyu( kid,kmd )
+            res.at[ii,'PValue'] = p
+            res['QValue'] = padjust(res['PValue'],method = 'fdr_bh')[1]
+        res = res.sort_values('PValue')
+        
+        maxval = 2*np.max( [res['KI_Values'].max(),res['KM_Values'].max()] )
+        minval = 0.5*np.min( [res['KI_Values'].min(),res['KM_Values'].min()] )
+        
+        fig,ax = plt.subplots(figsize = (8,8))
+        ax.scatter(res['KI_Values'],res['KM_Values'],s = 10*res['KI_Number'])
+        ax.axis([minval,maxval,minval,maxval])
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        
+        # Calculate log ratio of values
+        res['Ratio'] = np.log2( res['KI_Values'] / res['KM_Values'] )
+        
+        for ii in res.index:
+            if res.at[ii,'QValue'] < 0.1:
+            	ax.scatter(res.at[ii,'KI_Values'], res.at[ii,'KM_Values'], color = 'r', s = 10*res.at[ii,'KI_Number'])
+                ax.text(1.2*res.at[ii,'KI_Values'],res.at[ii,'KM_Values'],ii)
+        plt.xlabel('Mean KI')
+        plt.ylabel('Mean KM')
+        
+        diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
+        
+        settings.savefig(fig, 'km_vs_ki')
 
 ###############################################################################
 if __name__ == "__main__":
@@ -982,7 +1051,7 @@ if __name__ == "__main__":
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
-    fp.draw_cdf_plots()
+#    fp.draw_cdf_plots()
 #
 #    fp.draw_agg_heatmaps(agg_type='gmean')
 #    fp.draw_agg_heatmaps(agg_type='median')
@@ -991,4 +1060,5 @@ if __name__ == "__main__":
 #    fp.draw_full_heapmats(filter_using_model=False)
 #
 #    fp.print_ccm_table()
+    fp.compare_km_ki()
     plt.close('all')
