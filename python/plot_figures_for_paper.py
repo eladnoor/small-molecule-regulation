@@ -462,7 +462,7 @@ class FigurePlotter(object):
         ax.set_title(r'Measured $K_{\rm S}$ values')
 
         ranksum_res = ranksums(km_values, ki_values)
-        ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+        ax.text(0.05, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
                 horizontalalignment='left',
                 verticalalignment='top',
                 transform=ax.transAxes)
@@ -481,6 +481,34 @@ class FigurePlotter(object):
         sns.kdeplot(ki_saturation, cumulative=True, ax=ax, bw=.01,
                     label='inhibitors(N = %d)' % ki_saturation.shape[0],
                     linewidth=linewidth, color=ki_color)
+                    
+        # Find positions for horizontal annotations
+        ki_8 = float(ki_saturation[ki_saturation <= 0.8].shape[0])/ki_saturation.shape[0]
+        ki_2 = float(ki_saturation[ki_saturation <= 0.2].shape[0])/ki_saturation.shape[0]
+        
+        km_8 = float(km_saturation[km_saturation <= 0.8].shape[0])/km_saturation.shape[0]
+        km_2 = float(km_saturation[km_saturation <= 0.2].shape[0])/km_saturation.shape[0]
+        
+        # Add vertical lines
+        ax.plot( (0.2,0.2),(0,np.max([ki_2,km_2])),'k--' )
+        ax.plot( (0.8,0.8),(0,np.max([ki_8,km_8])),'k--' )
+        
+        # Add horizontal lines
+        ax.plot( (1,0.2),(km_2,km_2),color = km_color,linestyle = '--' )
+        ax.plot( (1,0.8),(km_8,km_8),color = km_color,linestyle = '--' )
+        ax.plot( (0,0.2),(ki_2,ki_2),color = ki_color,linestyle = '--' )
+        ax.plot( (0,0.8),(ki_8,ki_8),color = ki_color,linestyle = '--' )
+        
+        # Annotate
+        ax.annotate(s='', xytext=(.05,ki_2), xy=(.05,ki_8), arrowprops=dict(facecolor=ki_color, width = 3))
+        
+        ax.annotate(s='', xytext=(.85,km_2), xy=(.85,km_8), arrowprops=dict(facecolor=km_color, width = 3))
+        
+        ax.text(0.9, 0.2, format((km_8-km_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top',transform=ax.transAxes, color = km_color)
+        
+        ax.text(0.1, 0.4, format((ki_8-ki_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes,color = ki_color)
+        
+        
         ax.grid(visible=False)
         ax.set_xlim(-0.01, 1.01)
         ax.set_ylim(0, 1)
@@ -489,7 +517,7 @@ class FigurePlotter(object):
         ax.legend(loc='upper left')
 
         ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.1, '$p_{ranksum}$ < 10$^{%d}$' %
+        ax.text(0.05, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
                 np.ceil(np.log10(ranksum_res.pvalue)),
                 horizontalalignment='left',
                 verticalalignment='top',
@@ -1018,7 +1046,7 @@ class FigurePlotter(object):
         minval = 0.5*np.min( [res['KI_Values'].min(),res['KM_Values'].min()] )
         
         fig,ax = plt.subplots(figsize = (8,8))
-        ax.scatter(res['KI_Values'],res['KM_Values'],s = 10*res['KI_Number'])
+        ax.scatter(res['KI_Values'],res['KM_Values'],s = 10*res['KI_Number'], color = 'grey')
         ax.axis([minval,maxval,minval,maxval])
         ax.set_xscale('log')
         ax.set_yscale('log')
@@ -1040,7 +1068,7 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-    fp = FigurePlotter(rebuild_cache=True)
+    fp = FigurePlotter(rebuild_cache=False)
 #    fp = FigurePlotter()
 #    fp.draw_2D_histograms()
 #    fp.draw_thermodynamics_cdf()
@@ -1051,7 +1079,7 @@ if __name__ == "__main__":
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
-#    fp.draw_cdf_plots()
+    fp.draw_cdf_plots()
 #
 #    fp.draw_agg_heatmaps(agg_type='gmean')
 #    fp.draw_agg_heatmaps(agg_type='median')
