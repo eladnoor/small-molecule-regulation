@@ -482,31 +482,33 @@ class FigurePlotter(object):
                     label='inhibitors(N = %d)' % ki_saturation.shape[0],
                     linewidth=linewidth, color=ki_color)
                     
-        # Find positions for horizontal annotations
-        ki_8 = float(ki_saturation[ki_saturation <= 0.8].shape[0])/ki_saturation.shape[0]
-        ki_2 = float(ki_saturation[ki_saturation <= 0.2].shape[0])/ki_saturation.shape[0]
+        # Find positions for horizontal annotations 
+        highval = 0.8
+        lowval = 0
+        ki_high = float(ki_saturation[ki_saturation <= highval ].shape[0])/ ki_saturation.shape[0]
+        ki_low = float(ki_saturation[ki_saturation <= lowval].shape[0])/ ki_saturation.shape[0]
         
-        km_8 = float(km_saturation[km_saturation <= 0.8].shape[0])/km_saturation.shape[0]
-        km_2 = float(km_saturation[km_saturation <= 0.2].shape[0])/km_saturation.shape[0]
+        km_high = float(km_saturation[km_saturation <= highval].shape[0])/ km_saturation.shape[0]
+        km_low = float(km_saturation[km_saturation <= lowval].shape[0])/ km_saturation.shape[0]
         
         # Add vertical lines
-        ax.plot( (0.2,0.2),(0,np.max([ki_2,km_2])),'k--' )
-        ax.plot( (0.8,0.8),(0,np.max([ki_8,km_8])),'k--' )
+        #ax.plot( (lowval,lowval),(0,np.max([ki_low,km_low])),'k--' )
+        ax.plot( (highval,highval),(0,np.max([ki_high,km_high])),'k--' )
         
         # Add horizontal lines
-        ax.plot( (1,0.2),(km_2,km_2),color = km_color,linestyle = '--' )
-        ax.plot( (1,0.8),(km_8,km_8),color = km_color,linestyle = '--' )
-        ax.plot( (0,0.2),(ki_2,ki_2),color = ki_color,linestyle = '--' )
-        ax.plot( (0,0.8),(ki_8,ki_8),color = ki_color,linestyle = '--' )
+        ax.plot( (1,lowval),(km_low,km_low),color = km_color,linestyle = '--' )
+        ax.plot( (1,highval),(km_high,km_high),color = km_color,linestyle = '--' )
+        ax.plot( (0,lowval),(ki_low,ki_low),color = ki_color,linestyle = '--' )
+        ax.plot( (0,highval),(ki_high,ki_high),color = ki_color,linestyle = '--' )
         
         # Annotate
-        ax.annotate(s='', xytext=(.05,ki_2), xy=(.05,ki_8), arrowprops=dict(facecolor=ki_color, width = 3))
+        ax.annotate(s='', xytext=(.05,ki_low), xy=(.05,ki_high), arrowprops=dict(facecolor=ki_color, width = 3))
         
-        ax.annotate(s='', xytext=(.85,km_2), xy=(.85,km_8), arrowprops=dict(facecolor=km_color, width = 3))
+        ax.annotate(s='', xytext=(.85,km_low), xy=(.85,km_high), arrowprops=dict(facecolor=km_color, width = 3))
         
-        ax.text(0.9, 0.2, format((km_8-km_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top',transform=ax.transAxes, color = km_color)
+        ax.text(0.88, 0.2, format((km_high-km_low)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top',transform=ax.transAxes, color = km_color)
         
-        ax.text(0.1, 0.4, format((ki_8-ki_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes,color = ki_color)
+        ax.text(0.1, 0.4, format((ki_high-ki_low)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes,color = ki_color)
         
         
         ax.grid(visible=False)
@@ -1064,29 +1066,48 @@ class FigurePlotter(object):
         diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
         
         settings.savefig(fig, 'km_vs_ki')
-
+        
+        # Make volcano plot
+        fig,ax = plt.subplots(figsize = (8,8))
+        ax.scatter(res['Ratio'],-np.log10(res['QValue']),color = 'grey',s = 4*(res['KI_Number'] + res['KM_Number']) )
+        
+        for ii in res.index:
+            if res.at[ii,'QValue'] < 0.1 and np.abs(res.at[ii,'Ratio']) > 1:
+            	ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']), color = 'r', s = 4*(res['KI_Number'] + res['KM_Number']) )
+                ax.text(1.2*res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']),ii)
+        
+        plt.xlabel('Log2 (Mean KI/Mean KM)')
+        plt.ylabel('-Log10 Q Value')
+        
+        # Plot some lines
+        highq = -np.log10(res['QValue'].min()) + .1
+        highfc = res['Ratio'].max() + 1
+        ax.axis([-highfc,highfc,0,highq])
+        #ax.plot( (0,0),(0,highq),'k--' ) # vertical line
+        #ax.plot( (-highfc,highfc),(0,0),'k--' ) # horizontal line
+        settings.savefig(fig, 'km_vs_ki_volcano')
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_2D_histograms()
-    fp.draw_thermodynamics_cdf()
-
-    fp.draw_ccm_thermodynamics_cdf()
-
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
+#    fp.draw_2D_histograms()
+#    fp.draw_thermodynamics_cdf()
+#
+#    fp.draw_ccm_thermodynamics_cdf()
+#
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
     fp.draw_cdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
+#
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
     fp.compare_km_ki()
     plt.close('all')

@@ -229,6 +229,8 @@
 16677,,GTP,2.7.1.21,C00044,,37,3 GTP,641123,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,durik1
 16758,,,2.7.1.25,,,74,L-cysteine,641217,+,Escherichia coli,BRENDA,cys__l,CHEBI:35235,adsk
 16759,,,2.7.1.25,,,74,2 L-cysteine,641217,+,Escherichia coli,BRENDA,cys__l,CHEBI:35235,adsk
+17041,,"D-Fructose 1,6-bisphosphate",2.7.1.40,C00354,,106,"D-fructose 1,6-bisphosphate",707589,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,pyk
+17066,,"D-Fructose 1,6-bisphosphate",2.7.1.40,C00354,,583,"D-fructose 1,6-diphosphate",641557,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,pyk
 17115,,D-Glucose 6-phosphate,2.7.1.40,C00092,,105,D-glucose 6-phosphate,641557,+,Escherichia coli,BRENDA,g6p,CHEBI:4170,pyk
 17283,,Phosphoenolpyruvate,2.7.1.40,C00074,,51,phosphoenolpyruvate,707589,+,Escherichia coli,BRENDA,pep,CHEBI:44897,pyk
 17458,,Potassium cation,2.7.1.73,C00238,,39,K+,641925,+,Escherichia coli,BRENDA,k,CHEBI:29103,gsnk
@@ -276,6 +278,12 @@
 19755,,AMP,2.7.7.27,C00020,,30,2 AMP,643161,+,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
 19756,,AMP,2.7.7.27,C00020,,30,6 AMP,643161,+,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
 19757,,AMP,2.7.7.27,C00020,,30,3 AMP,643161,+,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+19785,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,106,"D-fructose 1,6-bisphosphate",643127,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
+19817,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,106,"D-fructose 1,6-bisphosphate",643144,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
+19849,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,106,"D-fructose 1,6-bisphosphate",643152,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
+19858,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,106,"D-fructose 1,6-bisphosphate","643141, 643146, 643150, 643161, 643164, 661743, 663026",+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
+19859,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,106,"D-fructose 1,6-bisphosphate",671752,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
+19865,,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,583,"D-fructose 1,6-diphosphate",674737,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,glgc
 19903,,D-Fructose 6-phosphate,2.7.7.27,C00085,,87,D-fructose 6-phosphate,"643131, 643141, 643144",+,Escherichia coli,BRENDA,f6p,CHEBI:61553,glgc
 19935,,D-Fructose 6-phosphate,2.7.7.27,C00085,,87,D-fructose 6-phosphate,643152,+,Escherichia coli,BRENDA,f6p,CHEBI:61553,glgc
 19941,,D-Fructose 6-phosphate,2.7.7.27,C00085,,87,D-fructose 6-phosphate,"643161, 643164",+,Escherichia coli,BRENDA,f6p,CHEBI:61553,glgc
@@ -413,6 +421,7 @@
 38923,,ATP,4.1.1.8,C00002,,4,4 ATP,714955,+,Escherichia coli,BRENDA,atp,CHEBI:15422,oxcdc
 39072,,Hydrochloric acid,4.1.1.15,C01327,,141,Cl-,3973,+,Escherichia coli,BRENDA,cl,CHEBI:17883,asp1dc
 39073,,Hydrochloric acid,4.1.1.15,C01327,,141,2 Cl-,3973,+,Escherichia coli,BRENDA,cl,CHEBI:17883,asp1dc
+39411,,"D-Fructose 1,6-bisphosphate",4.1.1.31,C00354,,93409,fructose diphosphate,4286,+,Escherichia coli,BRENDA,fdp,CHEBI:37736,ppc
 39453,,GTP,4.1.1.31,C00044,,37,GTP,4286,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,ppc
 39454,,GTP,4.1.1.31,C00044,,37,2 GTP,4286,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,ppc
 39455,,GTP,4.1.1.31,C00044,,37,3 GTP,4286,+,Escherichia coli,BRENDA,gtp,CHEBI:15996,ppc
@@ -586,6 +595,7 @@
 52859,,ATP,1.1.1.44,C00002,,4,6 ATP,"286861, 286882, 286904",-,Escherichia coli,BRENDA,atp,CHEBI:15422,gnd
 52860,,ATP,1.1.1.44,C00002,,4,3 ATP,"286861, 286882, 286904",-,Escherichia coli,BRENDA,atp,CHEBI:15422,gnd
 52861,,ATP,1.1.1.44,C00002,,4,4 ATP,"286861, 286882, 286904",-,Escherichia coli,BRENDA,atp,CHEBI:15422,gnd
+52927,,"D-Fructose 1,6-bisphosphate",1.1.1.44,C00354,,583,"D-fructose 1,6-diphosphate","286851, 286861, 286882, 286904",-,Escherichia coli,BRENDA,fdp,CHEBI:37736,gnd
 53240,,NADPH,1.1.1.44,C00005,,5,2 NADPH,"286851, 286882, 286904",-,Escherichia coli,BRENDA,nadph,CHEBI:16474,gnd
 53241,,NADPH,1.1.1.44,C00005,,5,NADPH,"286851, 286882, 286904",-,Escherichia coli,BRENDA,nadph,CHEBI:16474,gnd
 53242,,NADPH,1.1.1.44,C00005,,5,3 NADPH,"286851, 286882, 286904",-,Escherichia coli,BRENDA,nadph,CHEBI:16474,gnd
@@ -1687,6 +1697,7 @@
 145413,feed-back inhibition,,2.4.2.17,,,349,L-histidine,"637667, 637674",-,Escherichia coli,BRENDA,his__l,CHEBI:57595,atpprt
 145432,"transferase activity of component II is only inhibitable by L-tryptophan when the component is in the complex, this inhibition does not appear to depend upon the feedback-sensitive site of complex I",,2.4.2.18,,,119,L-tryptophan,638663,-,Escherichia coli,BRENDA,trp__l,CHEBI:57912,anprt
 145435,,,2.4.2.18,,,119,L-tryptophan,638674,-,Escherichia coli,BRENDA,trp__l,CHEBI:57912,anprt
+145517,competitive with respect to 5-phosphoribosyl-1-diphosphate and noncompetitive with respect to quinolinate,"D-Fructose 1,6-bisphosphate",2.4.2.19,C00354,,10623,"D-fructose-1,6-diphosphate",638020,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,nndpr
 145518,noncompetitive with respect to both 5-phosphoribosyl-1-diphosphate and quinolinate,Diphosphate,2.4.2.19,C00013,,17,diphosphate,638020,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,nndpr
 145519,noncompetitive with respect to both 5-phosphoribosyl-1-diphosphate and quinolinate,Diphosphate,2.4.2.19,C00013,,17,2 diphosphate,638020,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,nndpr
 145520,noncompetitive with respect to both 5-phosphoribosyl-1-diphosphate and quinolinate,Diphosphate,2.4.2.19,C00013,,17,5 diphosphate,638020,-,Escherichia coli,BRENDA,ppi,CHEBI:29888,nndpr
@@ -1838,6 +1849,7 @@
 150862,"0.02 mM, complete inactivation; Phe-sensitive isozyme, complete inactivation at 0.02 mM, destabilization of the enzymes quarternary structure; phosphoenolpyruvate protects",,2.5.1.54,,,19,Cu2+,639771,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,ddpa
 150863,"0.02 mM, complete inactivation; Phe-sensitive isozyme, complete inactivation at 0.02 mM, destabilization of the enzymes quarternary structure; phosphoenolpyruvate protects",,2.5.1.54,,,19,4 Cu2+,639771,-,Escherichia coli,BRENDA,cu2,CHEBI:29036,ddpa
 150867,"Phe-sensitive isozyme: in absence of phosphoenolpyruvate the enzyme is inhibited via formation of a covalent binding to Lys186 via a slow Schiff base reaction, mechanism",D-Erythrose 4-phosphate,2.5.1.54,C00279,,500,D-erythrose 4-phosphate,639796,-,Escherichia coli,BRENDA,e4p,CHEBI:48153,ddpa
+150868,,"D-Fructose 1,6-bisphosphate",2.5.1.54,C00354,,583,"D-fructose 1,6-diphosphate",639741,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,ddpa
 150869,,"Sedoheptulose 1,7-bisphosphate",2.5.1.54,C00447,,101771,"D-sedoheptulose 1,7-diphosphate",639741,-,Escherichia coli,BRENDA,s17bp,CHEBI:17969,ddpa
 150870,,Sedoheptulose 7-phosphate,2.5.1.54,C05382,,3626,D-sedoheptulose 7-phosphate,639741,-,Escherichia coli,BRENDA,s7p,CHEBI:15721,ddpa
 150923,"0.02 mM: 60% inactivation. 0.2 mM: 90% inactivation; Phe-sensitive isozyme, 60% inactivation at 0.02 mM, 90% inactivation at 0.2 mM; phosphoenolpyruvate protects",Fe2+,2.5.1.54,C14818,,25,Fe2+,639771,-,Escherichia coli,BRENDA,fe2,CHEBI:29033,ddpa
@@ -2039,6 +2051,12 @@
 159205,substrate inhibition,ATP,2.7.1.30,C00002,,4,6 ATP,722712,-,Escherichia coli,BRENDA,atp,CHEBI:15422,glyk
 159206,substrate inhibition,ATP,2.7.1.30,C00002,,4,3 ATP,722712,-,Escherichia coli,BRENDA,atp,CHEBI:15422,glyk
 159207,substrate inhibition,ATP,2.7.1.30,C00002,,4,4 ATP,722712,-,Escherichia coli,BRENDA,atp,CHEBI:15422,glyk
+159211,,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,106,"D-fructose 1,6-bisphosphate",701931,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
+159212,allosteric inhibition,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,1895,"D-fructose-1,6-bisphosphate",722712,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
+159219,,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,1755,"fructose 1,6-bisphosphate",661122,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
+159225,,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,295,"fructose 1,6-diphosphate","641287, 641294, 641295, 641309",-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
+159227,"normal enzyme is inhibited, genetically altered enzyme not, inhibition is reduced by high pH, high ionic strength or 0.2 M guanidine HCl","D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,295,"fructose 1,6-diphosphate",641311,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
+159229,mechanism,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,,295,"fructose 1,6-diphosphate",641326,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,glyk
 159276,,,2.7.1.30,,,445,glycerol 3-phosphate,641287,-,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,glyk
 159789,,Acetoacetyl-CoA,2.7.1.33,C00332,,187,acetoacetyl-CoA,641393,-,Escherichia coli,BRENDA,aacoa,CHEBI:15345,pntk
 159798,,Acetyl-CoA,2.7.1.33,C00024,,29,acetyl-CoA,641393,-,Escherichia coli,BRENDA,accoa,CHEBI:15351,pntk
@@ -2144,6 +2162,7 @@
 161673,kinetics,ADP,2.7.1.56,C00008,,13,6 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
 161674,kinetics,ADP,2.7.1.56,C00008,,13,3 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
 161675,kinetics,ADP,2.7.1.56,C00008,,13,4 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+161722,kinetics,"D-Fructose 1,6-bisphosphate",2.7.1.56,C00354,,106,"D-fructose 1,6-bisphosphate",641683,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,fruk
 161754,strong competitive inhibitor,ADP,2.7.1.59,C00008,,13,ADP,641692,-,Escherichia coli,BRENDA,adp,CHEBI:16761,acgamk
 161755,strong competitive inhibitor,ADP,2.7.1.59,C00008,,13,2 ADP,641692,-,Escherichia coli,BRENDA,adp,CHEBI:16761,acgamk
 161756,strong competitive inhibitor,ADP,2.7.1.59,C00008,,13,16 ADP,641692,-,Escherichia coli,BRENDA,adp,CHEBI:16761,acgamk
@@ -2549,8 +2568,10 @@
 202271,"1 mM, reduces activity by 40%",ATP,3.1.3.11,C00002,,4,6 ATP,693243,-,Escherichia coli,BRENDA,atp,CHEBI:15422,fbp
 202272,"1 mM, reduces activity by 40%",ATP,3.1.3.11,C00002,,4,3 ATP,693243,-,Escherichia coli,BRENDA,atp,CHEBI:15422,fbp
 202273,"1 mM, reduces activity by 40%",ATP,3.1.3.11,C00002,,4,4 ATP,693243,-,Escherichia coli,BRENDA,atp,CHEBI:15422,fbp
+202341,substrate inhibition at high concentrations,"D-Fructose 1,6-bisphosphate",3.1.3.11,C00354,,106,"D-fructose 1,6-bisphosphate",651666,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,fbp
 202347,,,3.1.3.11,,,671,D-Fructose 1-phosphate,651666,-,Escherichia coli,BRENDA,f1p,CHEBI:78736,fbp
 202367,allosteric inhibition. FBPase undergoes a quaternary transition from the canonical R-state to a T-like state in response to glucose 6-phosphate. Glc-6-P and AMP are synergistic inhibitors,D-Glucose 6-phosphate,3.1.3.11,C00092,,105,D-glucose 6-phosphate,680799,-,Escherichia coli,BRENDA,g6p,CHEBI:4170,fbp
+202453,substrate inhibition above 0.05 M,"D-Fructose 1,6-bisphosphate",3.1.3.11,C00354,,295,"fructose 1,6-diphosphate",170730,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,fbp
 202686,,Orthophosphate,3.1.3.11,C00009,,16,phosphate,"651666, 693243",-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
 202687,,Orthophosphate,3.1.3.11,C00009,,16,2 phosphate,"651666, 693243",-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
 202688,,Orthophosphate,3.1.3.11,C00009,,16,16 phosphate,"651666, 693243",-,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
@@ -2672,6 +2693,7 @@
 233216,,ATP,3.2.1.86,C00002,,4,4 ATP,136924,-,Escherichia coli,BRENDA,atp,CHEBI:15422,ab6pgh
 233217,,CMP,3.2.1.86,C00055,,100,CMP,136924,-,Escherichia coli,BRENDA,cmp,CHEBI:17361,ab6pgh
 233224,,,3.2.1.86,,,102724,DL-alpha-glycerol-phosphate,136924,-,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,ab6pgh
+233231,,"D-Fructose 1,6-bisphosphate",3.2.1.86,C00354,,93410,"fructose-1,6-diphosphate",136924,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,ab6pgh
 233236,,NADH,3.2.1.86,C00004,,8,2 NADH,136924,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,ab6pgh
 233237,,NADH,3.2.1.86,C00004,,8,NADH,136924,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,ab6pgh
 233238,,NADH,3.2.1.86,C00004,,8,3 NADH,136924,-,Escherichia coli,BRENDA,nadh,CHEBI:16908,ab6pgh
@@ -3120,6 +3142,7 @@
 309490,the presence of 9.6 mM ATP decreases 3folds the catalytic efficiency of the enzyme,ATP,4.1.1.49,C00002,,4,6 ATP,727382,-,Escherichia coli,BRENDA,atp,CHEBI:15422,ppck
 309491,the presence of 9.6 mM ATP decreases 3folds the catalytic efficiency of the enzyme,ATP,4.1.1.49,C00002,,4,3 ATP,727382,-,Escherichia coli,BRENDA,atp,CHEBI:15422,ppck
 309492,the presence of 9.6 mM ATP decreases 3folds the catalytic efficiency of the enzyme,ATP,4.1.1.49,C00002,,4,4 ATP,727382,-,Escherichia coli,BRENDA,atp,CHEBI:15422,ppck
+309502,,"D-Fructose 1,6-bisphosphate",4.1.1.49,C00354,,106,"D-fructose 1,6-bisphosphate",649304,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,ppck
 309522,,D-Fructose 6-phosphate,4.1.1.49,C00085,,87,D-fructose 6-phosphate,649304,-,Escherichia coli,BRENDA,f6p,CHEBI:61553,ppck
 309542,,Glycerone phosphate,4.1.1.49,C00111,,278,dihydroxyacetone phosphate,649304,-,Escherichia coli,BRENDA,dhap,CHEBI:16108,ppck
 309568,,Glycerate 3-phosphate,4.1.1.49,C00597,,2742,glycerate 3-phosphate,649304,-,Escherichia coli,BRENDA,3pg,CHEBI:17050,ppck
@@ -4290,6 +4313,7 @@
 366296,"pH 7.6, 37°C",ADP,2.7.1.56,C00008,0.28,13,6 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
 366297,"pH 7.6, 37°C",ADP,2.7.1.56,C00008,0.28,13,3 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
 366298,"pH 7.6, 37°C",ADP,2.7.1.56,C00008,0.28,13,4 ADP,641683,-,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+366305,"pH 7.6, 37°C","D-Fructose 1,6-bisphosphate",2.7.1.56,C00354,6.1,1895,"D-fructose-1,6-bisphosphate",641683,-,Escherichia coli,BRENDA,fdp,CHEBI:37736,fruk
 367398,"recombinant wild-type bifunctional holoenzyme, inhibition of asparate kinase activity",,2.7.2.4,,0.33,250,L-threonine,654640,-,Escherichia coli,BRENDA,thr__l,CHEBI:57926,aspk
 367411,"pH 8.0, 25°C, aspartokinase III",,2.7.2.4,,7.7,345,L-homoserine,642329,-,Escherichia coli,BRENDA,hom__l,CHEBI:57476,aspk
 367419,"pH 8.0, 25°C, aspartokinase III",(S)-Malate,2.7.2.4,C00149,53.0,247,L-Malate,642329,-,Escherichia coli,BRENDA,mal__l,CHEBI:30797,aspk
@@ -4985,6 +5009,14 @@
 398136,ReactionID=SAMDECARB-RXN,Fe3+,4.1.1.50,C14819,,FE+3,,,+,Escherichia coli,EcoCyc,fe3,CHEBI:29034,admdc
 398137,ReactionID=D-PPENTOMUT-RXN,Fe3+,5.4.2.7,C14819,,FE+3,,,-,Escherichia coli,EcoCyc,fe3,CHEBI:29034,ppm2
 398139,ReactionID=3-CH3-2-OXOBUTANOATE-OH-CH3-XFER-RXN,Formaldehyde,2.1.2.11,C00067,,FORMALDEHYDE,,,-,Escherichia coli,EcoCyc,fald,CHEBI:16842,mohmt
+398142,ReactionID=GLYCEROL-KIN-RXN,"D-Fructose 1,6-bisphosphate",2.7.1.30,C00354,0.5,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp,CHEBI:37736,glyk
+398144,ReactionID=6PFRUCTPHOS-RXN,"D-Fructose 1,6-bisphosphate",2.7.1.11,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp,CHEBI:37736,pfk
+398145,ReactionID=1PFRUCTPHOSN-RXN,"D-Fructose 1,6-bisphosphate",2.7.1.56,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp,CHEBI:37736,fruk
+398146,ReactionID=PEPCARBOX-RXN,"D-Fructose 1,6-bisphosphate",4.1.1.31,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp,CHEBI:37736,ppc
+398147,ReactionID=RXN-9952,"D-Fructose 1,6-bisphosphate",1.1.1.44,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp,CHEBI:37736,gnd
+398148,ReactionID=PEPDEPHOS-RXN,"D-Fructose 1,6-bisphosphate",2.7.1.40,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp,CHEBI:37736,pyk
+398149,ReactionID=GLUC1PADENYLTRANS-RXN,"D-Fructose 1,6-bisphosphate",2.7.7.27,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,+,Escherichia coli,EcoCyc,fdp,CHEBI:37736,glgc
+398150,ReactionID=QUINOPRIBOTRANS-RXN,"D-Fructose 1,6-bisphosphate",2.4.2.19,C00354,,FRUCTOSE-16-DIPHOSPHATE,,,-,Escherichia coli,EcoCyc,fdp,CHEBI:37736,nndpr
 398155,ReactionID=MALIC-NADP-RXN,,1.1.1.40,,,FUM,,,-,Escherichia coli,EcoCyc,fum,CHEBI:29806,me2
 398156,ReactionID=GLUTDECARBOX-RXN,,4.1.1.15,,,FUM,,,-,Escherichia coli,EcoCyc,fum,CHEBI:29806,asp1dc
 398157,ReactionID=GLUTDECARBOX-RXN,,4.1.1.15,,,FUM,,,-,Escherichia coli,EcoCyc,fum,CHEBI:29806,asp1dc
