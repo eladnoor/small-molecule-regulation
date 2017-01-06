@@ -30,11 +30,17 @@ def map_brenda_to_chebi():
     ligand_id_table.sort_values('LigandID', inplace=True)
 
     # Add remove all references to CHEBI:33206, which is probably a mistake
-    ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:33206', 'chebiID'] = None
-    
+    ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:33206', 'chebiID'] = \
+        None
+
+    # map beta-fructose-1,6P instances to the more canonical ID used by BiGG
+    ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:28013', 'chebiID'] = \
+        'CHEBI:37736'
+
     # replace the ID for glycerol-1-phosphate with glycerol-3-phosphate which
     # is much more common in models (CHEBI:14336 -> CHEBI:57597)
-    ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:14336', 'chebiID'] = 'CHEBI:57597'
+    ligand_id_table.loc[ligand_id_table['chebiID'] == 'CHEBI:14336', 'chebiID'] = \
+        'CHEBI:57597'
 
     # divide the table into three groups:
     # 1) ligands that are already mapped to ChEBI in the ligand_id_table
@@ -119,6 +125,11 @@ def rebuild_cache():
     # load the EcoCyc data and merge with BRENDA
     ecocyc_reg_df = pd.DataFrame.from_csv(settings.ECOCYC_REG_FNAME,
                                           index_col=None)
+    # replace the EcoCyc chebi ID for fructose-1,6P to be more consistent with
+    # BiGG (it is the same compound, except in EcoCyc they use the -4 charges
+    # pseudoisomer)
+    ecocyc_reg_df.loc[ecocyc_reg_df['chebiID'] == 'CHEBI:32966', 'chebiID'] = \
+        'CHEBI:37736'
     ecocyc_reg_df['Commentary'] = ecocyc_reg_df['ReactionID'].map(
         lambda i: 'ReactionID=%s' % i)
     ecocyc_reg_df['Source'] = 'EcoCyc'

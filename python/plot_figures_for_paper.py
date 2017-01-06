@@ -649,7 +649,7 @@ class FigurePlotter(object):
 
     def draw_pathway_histogram(self):
         pathways = set(self.regulation['bigg.subsystem.reaction'])
-        pathways.update(self.regulation['bigg.sub.metabolite'])
+        pathways.update(self.regulation['bigg.subsystem.metabolite'])
         pathways = sorted(pathways)
         if np.nan in pathways:
             pathways.remove(np.nan)
@@ -971,24 +971,24 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-    fp = FigurePlotter(rebuild_cache=True)
-#    fp = FigurePlotter()
-#    fp.draw_2D_histograms()
-#    fp.draw_thermodynamics_cdf()
+#    fp = FigurePlotter(rebuild_cache=True)
+    fp = FigurePlotter()
+    fp.draw_2D_histograms()
+    fp.draw_thermodynamics_cdf()
 
-#    fp.draw_ccm_thermodynamics_cdf()
-#
-#    fp.draw_pathway_met_histogram()
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
+    fp.draw_ccm_thermodynamics_cdf()
+
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
     fp.draw_cdf_plots()
-#
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
-#
-#    fp.print_ccm_table()
+
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+    fp.draw_full_heapmats(filter_using_model=False)
+
+    fp.print_ccm_table()
     plt.close('all')
