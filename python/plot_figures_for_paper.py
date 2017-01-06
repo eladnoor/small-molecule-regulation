@@ -200,11 +200,15 @@ class FigurePlotter(object):
         # filtering out the non-native EC reactions (in order to
         # make the full heatmap)
         km_raw_unfiltered = self.get_kinetic_param('km', 'KM_Value')
+        self.km_unfiltered_ALL = km_raw_unfiltered
+        
         self.km_unfiltered = FigurePlotter.calc_sat(
             km_raw_unfiltered, 'KM_Value', self.met_conc_mean)
 
         regulation_unfiltered = self.get_kinetic_param(
             'regulation', 'KI_Value')
+            
+        self.ki_unfiltered_ALL = regulation_unfiltered
 
         ki_raw_unfiltered = regulation_unfiltered[
             ~pd.isnull(regulation_unfiltered['KI_Value'])]
@@ -458,7 +462,7 @@ class FigurePlotter(object):
         ax.set_title(r'Measured $K_{\rm S}$ values')
 
         ranksum_res = ranksums(km_values, ki_values)
-        ax.text(0.5, 0.1, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+        ax.text(0.05, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
                 horizontalalignment='left',
                 verticalalignment='top',
                 transform=ax.transAxes)
@@ -477,6 +481,34 @@ class FigurePlotter(object):
         sns.kdeplot(ki_saturation, cumulative=True, ax=ax, bw=.01,
                     label='inhibitors(N = %d)' % ki_saturation.shape[0],
                     linewidth=linewidth, color=ki_color)
+                    
+        # Find positions for horizontal annotations
+        ki_8 = float(ki_saturation[ki_saturation <= 0.8].shape[0])/ki_saturation.shape[0]
+        ki_2 = float(ki_saturation[ki_saturation <= 0.2].shape[0])/ki_saturation.shape[0]
+        
+        km_8 = float(km_saturation[km_saturation <= 0.8].shape[0])/km_saturation.shape[0]
+        km_2 = float(km_saturation[km_saturation <= 0.2].shape[0])/km_saturation.shape[0]
+        
+        # Add vertical lines
+        ax.plot( (0.2,0.2),(0,np.max([ki_2,km_2])),'k--' )
+        ax.plot( (0.8,0.8),(0,np.max([ki_8,km_8])),'k--' )
+        
+        # Add horizontal lines
+        ax.plot( (1,0.2),(km_2,km_2),color = km_color,linestyle = '--' )
+        ax.plot( (1,0.8),(km_8,km_8),color = km_color,linestyle = '--' )
+        ax.plot( (0,0.2),(ki_2,ki_2),color = ki_color,linestyle = '--' )
+        ax.plot( (0,0.8),(ki_8,ki_8),color = ki_color,linestyle = '--' )
+        
+        # Annotate
+        ax.annotate(s='', xytext=(.05,ki_2), xy=(.05,ki_8), arrowprops=dict(facecolor=ki_color, width = 3))
+        
+        ax.annotate(s='', xytext=(.85,km_2), xy=(.85,km_8), arrowprops=dict(facecolor=km_color, width = 3))
+        
+        ax.text(0.9, 0.2, format((km_8-km_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top',transform=ax.transAxes, color = km_color)
+        
+        ax.text(0.1, 0.4, format((ki_8-ki_2)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes,color = ki_color)
+        
+        
         ax.grid(visible=False)
         ax.set_xlim(-0.01, 1.01)
         ax.set_ylim(0, 1)
@@ -485,7 +517,7 @@ class FigurePlotter(object):
         ax.legend(loc='upper left')
 
         ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.1, '$p_{ranksum}$ < 10$^{%d}$' %
+        ax.text(0.05, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
                 np.ceil(np.log10(ranksum_res.pvalue)),
                 horizontalalignment='left',
                 verticalalignment='top',
@@ -967,6 +999,71 @@ class FigurePlotter(object):
 
         fig.tight_layout()
         settings.savefig(fig, 'gibbs_histogram_ccm_curated')
+        
+    def compare_km_ki(self, filter_using_model=False):
+    
+        from statsmodels.sandbox.stats.multicomp import multipletests as padjust
+        import scipy.stats as st
+
+        km = self.km if filter_using_model else self.km_unfiltered_ALL
+        ki = self.ki if filter_using_model else self.ki_unfiltered_ALL
+        
+        # Get rid of non-positive entries
+        km = km[km['KM_Value'] > 0]
+        ki = ki[ki['KI_Value'] > 0]
+        
+        # Drop duplicates for multiple conditions
+        km = km.drop_duplicates(subset = ['EC_number', 'bigg.metabolite','KM_Value'])
+        ki = ki.drop_duplicates(subset = ['EC_number', 'bigg.metabolite','KI_Value'])
+        
+        res = pd.DataFrame()
+
+        res['KI_Values'] = ki.groupby('bigg.metabolite')['KI_Value'].mean()
+        res['KI_Number'] = ki.groupby('bigg.metabolite')['EC_number'].nunique()
+        res['KM_Values'] = km.groupby('bigg.metabolite')['KM_Value'].mean()
+        res['KM_Number'] = km.groupby('bigg.metabolite')['EC_number'].nunique()
+        
+        # Drop rows where we don't have data for both
+        res = res.dropna()
+        
+        # Keep only metabolites with at least 2 measurements of each
+        res = res[res['KI_Number'] > 1]
+        res = res[res['KM_Number'] > 1]
+        
+        res['PValue'] = np.nan
+        
+        # for each metabolite, if there is sufficient data, test
+        for ii in res.index:
+            kid = ki[ki['bigg.metabolite'] == ii]['KI_Value']
+            kmd = km[km['bigg.metabolite'] == ii]['KM_Value']
+        
+            s,p = st.mannwhitneyu( kid,kmd )
+            res.at[ii,'PValue'] = p
+            res['QValue'] = padjust(res['PValue'],method = 'fdr_bh')[1]
+        res = res.sort_values('PValue')
+        
+        maxval = 2*np.max( [res['KI_Values'].max(),res['KM_Values'].max()] )
+        minval = 0.5*np.min( [res['KI_Values'].min(),res['KM_Values'].min()] )
+        
+        fig,ax = plt.subplots(figsize = (8,8))
+        ax.scatter(res['KI_Values'],res['KM_Values'],s = 10*res['KI_Number'], color = 'grey')
+        ax.axis([minval,maxval,minval,maxval])
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        
+        # Calculate log ratio of values
+        res['Ratio'] = np.log2( res['KI_Values'] / res['KM_Values'] )
+        
+        for ii in res.index:
+            if res.at[ii,'QValue'] < 0.1:
+            	ax.scatter(res.at[ii,'KI_Values'], res.at[ii,'KM_Values'], color = 'r', s = 10*res.at[ii,'KI_Number'])
+                ax.text(1.2*res.at[ii,'KI_Values'],res.at[ii,'KM_Values'],ii)
+        plt.xlabel('Mean KI')
+        plt.ylabel('Mean KM')
+        
+        diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
+        
+        settings.savefig(fig, 'km_vs_ki')
 
 ###############################################################################
 if __name__ == "__main__":
@@ -991,4 +1088,5 @@ if __name__ == "__main__":
     fp.draw_full_heapmats(filter_using_model=False)
 
     fp.print_ccm_table()
+    fp.compare_km_ki()
     plt.close('all')
