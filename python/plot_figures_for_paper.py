@@ -446,11 +446,11 @@ class FigurePlotter(object):
         ax = axs[1]
         km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
         ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
-        sns.kdeplot(-np.log10(km_values), cumulative=True,
+        sns.kdeplot(np.log10(km_values), cumulative=True,
                     ax=ax, bw=.15, color=km_color,
                     label='substrates (N = %d)' % km_values.shape[0],
                     linewidth=linewidth)
-        sns.kdeplot(-np.log10(ki_values), cumulative=True,
+        sns.kdeplot(np.log10(ki_values), cumulative=True,
                     ax=ax, bw=.15, color=ki_color,
                     label='inhibitors (N = %d)' % ki_values.shape[0],
                     linewidth=linewidth)
@@ -462,11 +462,11 @@ class FigurePlotter(object):
         ax.set_title(r'Measured $K_{\rm S}$ values')
 
         ranksum_res = ranksums(km_values, ki_values)
-        ax.text(0.05, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+        ax.text(0.5, 0.3, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
                 horizontalalignment='left',
                 verticalalignment='top',
                 transform=ax.transAxes)
-        ax.legend(loc='upper left')
+        ax.legend(loc='lower right')
 
         # compare Km and Ki for the intersection of EC numbers
 
