@@ -281,13 +281,31 @@ class FigurePlotter(object):
             draw heat maps of the [S]/Ki and [S]/Km values across
             the 8 conditions
         """
+        def count_values(k, value_col):
+            _tmp = k.groupby(('bigg.metabolite', 'growth condition'))
+            _tmp = _tmp.count().reset_index().groupby('bigg.metabolite').max()
+            return _tmp[value_col].apply(int)
+
         km_sat_agg = FigurePlotter.calc_agg_sat(self.km, agg_type)
         ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki, agg_type)
+
+        # count how many K_M/K_I values we have for each metabolite
+        # (i.e. how many different EC numbers)
+        km_counts = count_values(self.km, 'KM_Value')
+        ki_counts = count_values(self.ki, 'KI_Value')
+        counts = pd.DataFrame([km_counts, ki_counts]).transpose()
+        # make a dictionary mapping from the metabolite name to the same
+        # name, followed by the counts (km, ki)
+        index_mapping = {}
+        for i, row in counts.iterrows():
+            index_mapping[i] = '%s (%g,%g)' % (i, row['KM_Value'],
+                                               row['KI_Value'])
         sat_joined = km_sat_agg.join(ki_sat_agg, how='inner',
                                      lsuffix='_sub', rsuffix='_inh')
         ind = sat_joined.mean(axis=1).sort_values(axis=0,
                                                   ascending=False).index
         sat_joined = sat_joined.reindex_axis(ind, axis=0)
+        sat_joined.rename(index=index_mapping, inplace=True)
 
         fig, ax = plt.subplots(1, 1, figsize=(12, 10))
         clb = matplotlib.colorbar.make_axes(ax)
@@ -1100,10 +1118,10 @@ if __name__ == "__main__":
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
-    fp.draw_cdf_plots()
+#    fp.draw_cdf_plots()
 #
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
+    fp.draw_agg_heatmaps(agg_type='gmean')
+    fp.draw_agg_heatmaps(agg_type='median')
 #
 #    fp.draw_full_heapmats()
 #    fp.draw_full_heapmats(filter_using_model=False)
