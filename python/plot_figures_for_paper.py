@@ -241,8 +241,8 @@ class FigurePlotter(object):
                                                on='EC_number', how='left')
 
         # write out SMRN prior to mapping to subsystems
-        self.regulation.to_csv(os.path.join(settings.RESULT_DIR,
-                                            'iJO1366_SMRN.csv'))
+        self.regulation.to_csv(os.path.join(settings.CACHE_DIR,
+                                            'iJO1366_SMRN.csv'), index=False)
 
         reaction_subsystem_df, metabolite_subsystem_df = \
             FigurePlotter.get_subsystem_data()
