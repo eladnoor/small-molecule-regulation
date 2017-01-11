@@ -139,7 +139,11 @@ def rebuild_cache():
     ecocyc_reg_df.drop('ReactionID', axis=1, inplace=True)
     ecocyc_reg_df = ecocyc_reg_df.join(chebi2bigg, how='left', on='chebiID')
     ecocyc_reg_df = ecocyc_reg_df.join(chebi2kegg, how='left', on='chebiID')
-    reg_df = pd.concat([reg_df, ecocyc_reg_df], ignore_index=True)
+
+    # load the manually curated KI data
+    manual_df = pd.DataFrame.from_csv(settings.MANUAL_REG_FNAME,
+                                      index_col=None)
+    reg_df = pd.concat([reg_df, ecocyc_reg_df, manual_df], ignore_index=True)
 
     settings.write_cache('regulation', reg_df)
     return reg_df

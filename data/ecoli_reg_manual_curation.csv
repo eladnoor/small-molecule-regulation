@@ -1,0 +1,5 @@
+Commentary,Compound,EC_number,KEGG_ID,KI_Value,bigg.metabolite,Organism,Source,Literature,chebiID
+,phosphoenolpyruvate,1.1.1.41,C00074,0.31,pep,Escherichia coli,Manual,17142397,CHEBI:44897
+KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,pep,Escherichia coli,Manual,10.1006/jtbi.1996.0013,CHEBI:44897
+approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,pep,Escherichia coli,Manual,4229913,CHEBI:44897
+,2-oxoglutarate,2.7.9.2,C00026,1.27,akg,Escherichia coli,Manual,4572511,CHEBI:16810
