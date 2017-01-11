@@ -5,8 +5,7 @@ Created on Wed Mar 23 16:36:02 2016
 @author: noore
 """
 
-import os, sys, re
-import __main__ as main
+import os, sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +16,6 @@ import urllib2
 from contextlib import closing
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-#SCRIPT_DIR = os.path.dirname(os.path.abspath(main.__file__))
 BASE_DIR = os.path.join(*os.path.split(SCRIPT_DIR)[0:-1])
 
 DATA_DIR = os.path.join(BASE_DIR, 'data')
