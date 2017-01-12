@@ -19,6 +19,7 @@ from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
 import pdb  # this is a reminder for Elad not to remove this pdb import
+from topology import calculate_distances
 
 sns.set('paper', style='white')
 
@@ -38,6 +39,9 @@ STAT_TABLE_INDEX = ['all entries',
 N_ACT_LABEL = 'Number of activating interactions'
 N_INH_LABEL = 'Number of inhibiting interactions'
 
+CONDITIONS = ['Glucose', 'Fructose', 'Galactose', 'Gluconate', 'Mannitol',
+              'Sorbitol',  'Mannose', 'Glycerol', 'Pyruvate', 'Lactate',
+              'Acetate', 'Succinate', 'glcNAc']
 
 class FigurePlotter(object):
 
@@ -184,8 +188,12 @@ class FigurePlotter(object):
 
     def get_data(self):
         _df = pd.DataFrame.from_csv(settings.ECOLI_METAB_FNAME)
-        self.met_conc_mean = _df.iloc[:, 1:9]  # take only the data columns
-        self.met_conc_std = _df.iloc[:, 10:]
+
+        mean_data_cols = sum(_df.columns.str.findall('(.*\(mean\).*)'), [])
+        std_data_cols = sum(_df.columns.str.findall('(.*\(std\).*)'), [])
+
+        self.met_conc_mean = _df.loc[:, mean_data_cols]  # take only the data columns
+        self.met_conc_std = _df.loc[:, std_data_cols]
 
         # remove the _c suffix from the compound names and convert to lowercase
         self.met_conc_mean.index = self.met_conc_mean.index.map(
@@ -289,6 +297,10 @@ class FigurePlotter(object):
         km_sat_agg = FigurePlotter.calc_agg_sat(self.km, agg_type)
         ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki, agg_type)
 
+        # keep and reorder only the conditions that were pre-selected
+        km_sat_agg = km_sat_agg.loc[:, CONDITIONS]
+        ki_sat_agg = ki_sat_agg.loc[:, CONDITIONS]
+
         # count how many K_M/K_I values we have for each metabolite
         # (i.e. how many different EC numbers)
         km_counts = count_values(self.km, 'KM_Value')
@@ -298,7 +310,7 @@ class FigurePlotter(object):
         # name, followed by the counts (km, ki)
         index_mapping = {}
         for i, row in counts.iterrows():
-            index_mapping[i] = '%s (%g,%g)' % (i, row['KM_Value'],
+            index_mapping[i] = '%s (%g,%g)' % (str(i).upper(), row['KM_Value'],
                                                row['KI_Value'])
         sat_joined = km_sat_agg.join(ki_sat_agg, how='inner',
                                      lsuffix='_sub', rsuffix='_inh')
@@ -307,10 +319,11 @@ class FigurePlotter(object):
         sat_joined = sat_joined.reindex_axis(ind, axis=0)
         sat_joined.rename(index=index_mapping, inplace=True)
 
-        fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+        fig, ax = plt.subplots(1, 1, figsize=(18, 10))
         clb = matplotlib.colorbar.make_axes(ax)
 
-        sns.heatmap(sat_joined, ax=ax, mask=sat_joined.isnull(), annot=True,
+        sns.heatmap(sat_joined,
+                    ax=ax, mask=sat_joined.isnull(), annot=True,
                     cbar=True, vmin=0, vmax=1, cmap='viridis', cbar_ax=clb[0],
                     annot_kws={'fontdict': {'fontsize': 12}})
 
@@ -345,6 +358,12 @@ class FigurePlotter(object):
         ki = self.ki if filter_using_model else self.ki_unfiltered
         km_pivoted = pivot_and_sort(km)
         ki_pivoted = pivot_and_sort(ki)
+        km_pivoted.index = km_pivoted.index.str.upper()
+        ki_pivoted.index = ki_pivoted.index.str.upper()
+
+        # keep and reorder only the conditions that were pre-selected
+        km_pivoted = km_pivoted.loc[:, CONDITIONS]
+        ki_pivoted = ki_pivoted.loc[:, CONDITIONS]
 
         fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
         sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
@@ -1104,6 +1123,58 @@ class FigurePlotter(object):
         #ax.plot( (0,0),(0,highq),'k--' ) # vertical line
         #ax.plot( (-highfc,highfc),(0,0),'k--' ) # horizontal line
         settings.savefig(fig, 'km_vs_ki_volcano')
+
+    def draw_distance_histograms(self):
+        smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
+                                        'iJO1366_SMRN.csv'), index_col=None)
+        smrn_dist, all_distances = calculate_distances(smrn)
+        smrn_merged = pd.merge(smrn, smrn_dist, on=['bigg.metabolite',
+                                                    'bigg.reaction'])
+        dist_mode_df = smrn_merged.groupby(('bigg.metabolite',
+                                            'bigg.reaction', 'Mode')).first()
+        dist_mode_df = dist_mode_df[['distance']].reset_index()
+        inh_distances = dist_mode_df.loc[dist_mode_df['Mode'] == '-', 'distance']
+        act_distances = dist_mode_df.loc[dist_mode_df['Mode'] == '+', 'distance']
+
+        Nmax = 9
+        bins = range(Nmax+1)
+        args = {'alpha': 1, 'normed': True, 'align': 'left', 'bins': bins,
+                'linewidth': 0, 'rwidth': 0.8}
+        fig, axs = plt.subplots(2, 2, figsize=(12, 8), sharex=False)
+        axs[0, 0].hist(all_distances, color='#939598', **args)
+        axs[1, 0].hist(smrn_dist['distance'], color='#8a5ec9', **args)
+        axs[0, 1].hist(inh_distances, color='#f5821f', **args)
+        axs[1, 1].hist(act_distances, color='#00aeef', **args)
+
+        for i in range(2):
+            axs[i, 0].set_ylabel('Fraction of metabolite-enzyme pairs')
+            axs[1, i].set_xlabel('Distance in # reactions between '
+                                 'metabolite and enzyme')
+        for i, ax in enumerate(axs.flat):
+            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=20)
+            ax.set_xticks(np.arange(Nmax+1))
+            ax.set_xlim(-1, Nmax+1)
+
+        axs[0, 0].annotate('all iJO1366 pairs', xy=(0.9, 0.9),
+                        xycoords='axes fraction', ha='right', va='top',
+                        size=14)
+        axs[1, 0].annotate('all SMRN pairs', xy=(0.9, 0.9),
+                        xycoords='axes fraction', ha='right', va='top',
+                        size=14)
+        axs[0, 1].annotate('only inhibition', xy=(0.9, 0.9),
+                        xycoords='axes fraction', ha='right', va='top',
+                        size=14)
+        axs[1, 1].annotate('only activation', xy=(0.9, 0.9),
+                        xycoords='axes fraction', ha='right', va='top',
+                        size=14)
+
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_distances.pdf'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_distances.png'))
+        smrn_dist.to_csv(os.path.join(settings.CACHE_DIR,
+                                      'iJO1366_SMRN_dist.csv'), index=False)
+
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
@@ -1128,4 +1199,7 @@ if __name__ == "__main__":
 
     fp.print_ccm_table()
     fp.compare_km_ki()
+
+    fp.draw_distance_histograms()
+
     plt.close('all')
