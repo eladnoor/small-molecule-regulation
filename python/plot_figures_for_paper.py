@@ -252,11 +252,12 @@ class FigurePlotter(object):
         self.regulation.to_csv(os.path.join(settings.CACHE_DIR,
                                             'iJO1366_SMRN.csv'), index=False)
 
-        reaction_subsystem_df, metabolite_subsystem_df = \
+        self.reaction_subsystem_df, self.metabolite_subsystem_df = \
             FigurePlotter.get_subsystem_data()
-        self.regulation = self.regulation.join(reaction_subsystem_df,
+        self.regulation = self.regulation.join(self.reaction_subsystem_df,
                                                on='bigg.reaction', how='left')
-        self.regulation = pd.merge(self.regulation, metabolite_subsystem_df,
+        self.regulation = pd.merge(self.regulation,
+                                   self.metabolite_subsystem_df,
                                    on='bigg.metabolite', how='left')
 
         self.ki.to_csv(os.path.join(settings.RESULT_DIR,
@@ -1151,9 +1152,9 @@ class FigurePlotter(object):
             axs[1, i].set_xlabel('Distance in # reactions between '
                                  'metabolite and enzyme')
         for i, ax in enumerate(axs.flat):
-            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=20)
+            #ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+            #            xycoords='axes fraction', ha='left', va='top',
+            #            size=20)
             ax.set_xticks(np.arange(Nmax+1))
             ax.set_xlim(-1, Nmax+1)
 
@@ -1175,31 +1176,87 @@ class FigurePlotter(object):
         smrn_dist.to_csv(os.path.join(settings.CACHE_DIR,
                                       'iJO1366_SMRN_dist.csv'), index=False)
 
+    def draw_degree_histograms(self):
+        smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
+                                        'iJO1366_SMRN.csv'), index_col=None)
+        rxn_hist = self.reaction_subsystem_df.copy()
+        rxn_hist['no. regulators'] = smrn.groupby('bigg.reaction')['bigg.metabolite'].nunique()
+        rxn_hist['no. regulators'].fillna(0, inplace=True)
+        rxn_hist_ccm = rxn_hist[rxn_hist['bigg.subsystem.reaction'].isin(settings.CCM_SUBSYSTEMS)]
+
+        _mets = self.metabolite_subsystem_df
+        all_mets = set(_mets['bigg.metabolite'])
+        _mets = _mets[_mets['bigg.subsystem.metabolite'].isin(settings.CCM_SUBSYSTEMS)]
+        ccm_mets = set(_mets['bigg.metabolite'])
+        # metabolites are not associated to unique subsystems, but we will chose
+        # one arbitrarily
+        met_hist = pd.DataFrame(index=all_mets)
+        met_hist['no. regulators'] = smrn.groupby('bigg.metabolite')['bigg.reaction'].nunique()
+        met_hist['no. regulators'].fillna(0, inplace=True)
+        met_hist_ccm = met_hist.loc[ccm_mets, :]
+
+        Nmax = 15
+        bins = range(Nmax+1)
+        args = {'alpha': 1, 'normed': True, 'align': 'left', 'bins': bins,
+                'linewidth': 0, 'rwidth': 0.8}
+        fig, axs = plt.subplots(2, 2, figsize=(12, 8), sharex=False)
+        axs[0, 0].hist(rxn_hist['no. regulators'], color='#808080', **args)
+        axs[1, 0].hist(met_hist['no. regulators'], color='#808080', **args)
+        axs[0, 1].hist(rxn_hist_ccm['no. regulators'], color='#7060ef', **args)
+        axs[1, 1].hist(met_hist_ccm['no. regulators'], color='#7060ef', **args)
+
+        axs[0, 0].set_ylabel('Fraction of reactions')
+        axs[1, 0].set_ylabel('Fraction of metabolites')
+        for i in range(2):
+            axs[1, i].set_xlabel('Number of interactions')
+        for i, ax in enumerate(axs.flat):
+            #ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+            #            xycoords='axes fraction', ha='left', va='top',
+            #            size=20)
+            ax.set_xticks(np.arange(Nmax+1))
+            ax.set_xlim(-1, Nmax+1)
+
+        axs[0, 0].annotate('all E. coli reactions (N = %d)' % rxn_hist.shape[0],
+                           xy=(0.9, 0.9), size=14,
+                           xycoords='axes fraction', ha='right', va='top')
+        axs[1, 0].annotate('all E. coli metabolites (N = %d)' % met_hist.shape[0],
+                           xy=(0.9, 0.9), size=14,
+                           xycoords='axes fraction', ha='right', va='top')
+        axs[0, 1].annotate('only CCM reactions (N = %d)' % rxn_hist_ccm.shape[0],
+                           xy=(0.9, 0.9), size=14,
+                           xycoords='axes fraction', ha='right', va='top')
+        axs[1, 1].annotate('only CCM metabolites (N = %d)' % met_hist_ccm.shape[0],
+                           xy=(0.9, 0.9), size=14,
+                           xycoords='axes fraction', ha='right', va='top')
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_degrees.pdf'))
+        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_degrees.png'))
+
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_2D_histograms()
-    fp.draw_thermodynamics_cdf()
+#    fp.draw_2D_histograms()
+#    fp.draw_thermodynamics_cdf()
+#
+#    fp.draw_ccm_thermodynamics_cdf()
+#
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
+#
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
+#    fp.compare_km_ki()
 
-    fp.draw_ccm_thermodynamics_cdf()
-
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
-    fp.compare_km_ki()
-
-    fp.draw_distance_histograms()
+    fp.draw_degree_histograms()
+#    fp.draw_distance_histograms()
 
     plt.close('all')

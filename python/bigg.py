@@ -119,6 +119,9 @@ class BiGG(object):
                 bigg2subsystem[rid] = r['subsystem']
             else:
                 bigg2subsystem[rid] = None
+        bigg2subsystem = pd.DataFrame(columns=['bigg.subsystem'],
+                                      data=bigg2subsystem.values(),
+                                      index=bigg2subsystem.keys())
         return bigg2subsystem
 
 if __name__ == '__main__':

@@ -123,7 +123,7 @@ class reaction_thermodynamics(object):
         res_df = pd.DataFrame(
             index=map(lambda r: r.id.lower(), self.reactions), dtype=float)
         res_df['EC_number'] = map(self.bigg2ec.get, res_df.index)
-        res_df['subsystem'] = map(self.bigg2subsystem.get, res_df.index)
+        res_df['subsystem'] = self.bigg2subsystem['bigg.subsystem']
         res_df['dG0_prime'] = dG0_prime
         res_df['dG0_prime_std'] = dG0_cov
         res_df['dGm_prime'] = dGm_prime
