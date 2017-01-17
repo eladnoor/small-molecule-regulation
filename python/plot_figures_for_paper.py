@@ -323,9 +323,9 @@ class FigurePlotter(object):
         fig, ax = plt.subplots(1, 1, figsize=(18, 10))
         clb = matplotlib.colorbar.make_axes(ax)
 
-        sns.heatmap(sat_joined,
-                    ax=ax, mask=sat_joined.isnull(), annot=True,
-                    cbar=True, vmin=0, vmax=1, cmap='viridis', cbar_ax=clb[0],
+        sns.heatmap(sat_joined*100.0,
+                    ax=ax, mask=sat_joined.isnull(), annot=True, fmt='.0f',
+                    cbar=True, vmin=0, vmax=100, cmap='viridis', cbar_ax=clb[0],
                     annot_kws={'fontdict': {'fontsize': 12}})
 
         # change xtick labels back to the original strings
@@ -342,23 +342,27 @@ class FigurePlotter(object):
         ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
         clb[0].set_ylabel('%s saturation over all reactions' % agg_type,
                           fontsize=16)
-        clb[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
+        clb[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
+                               fontsize=12)
 
         ax.axvline(sat_joined.shape[1]/2, 0, 1, color='r')
 
         settings.savefig(fig, 'heatmap_saturation_%s' % agg_type, dpi=300)
 
     def draw_full_heapmats(self, filter_using_model=True):
-        def pivot_and_sort(k):
+        def pivot_and_sort(k, sort_by='mean'):
             k_piv = k.pivot('met:EC', 'growth condition', 'saturation')
-            ind = k_piv.mean(axis=1).sort_values(axis=0, ascending=True).index
+            if sort_by == 'mean':
+                ind = k_piv.mean(axis=1).sort_values(axis=0, ascending=True).index
+            elif sort_by == 'index':
+                ind = sorted(k_piv.index)
             k_piv = k_piv.reindex_axis(ind, axis=0)
             return k_piv
 
         km = self.km if filter_using_model else self.km_unfiltered
         ki = self.ki if filter_using_model else self.ki_unfiltered
-        km_pivoted = pivot_and_sort(km)
-        ki_pivoted = pivot_and_sort(ki)
+        km_pivoted = pivot_and_sort(km, sort_by='index')
+        ki_pivoted = pivot_and_sort(ki, sort_by='index')
         km_pivoted.index = km_pivoted.index.str.upper()
         ki_pivoted.index = ki_pivoted.index.str.upper()
 
@@ -366,9 +370,9 @@ class FigurePlotter(object):
         km_pivoted = km_pivoted.loc[:, CONDITIONS]
         ki_pivoted = ki_pivoted.loc[:, CONDITIONS]
 
-        fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(15, 30))
-        sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
-                    cbar=False, vmin=0, vmax=1, cmap='viridis')
+        fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(18, 30))
+        sns.heatmap(km_pivoted*100.0, ax=ax0, mask=km_pivoted.isnull(),
+                    cbar=False, vmin=0, vmax=100, cmap='viridis', fmt='.0f')
         ax0.set_xticklabels(list(km_pivoted.columns), fontsize=12, rotation=90)
         ax0.set_yticklabels(reversed(km_pivoted.index), rotation=0, fontsize=6)
         ax0.set_title('substrates', fontsize=20)
@@ -376,9 +380,9 @@ class FigurePlotter(object):
         ax0.set_ylabel('')
 
         clb1 = matplotlib.colorbar.make_axes(ax1)
-        sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
-                    cbar=True, vmin=0, vmax=1, annot=True, cmap='viridis',
-                    cbar_ax=clb1[0])
+        sns.heatmap(ki_pivoted*100.0, ax=ax1, mask=ki_pivoted.isnull(),
+                    cbar=True, vmin=0, vmax=100, annot=True, cmap='viridis',
+                    cbar_ax=clb1[0], fmt='.0f')
         ax1.set_xticklabels(list(ki_pivoted.columns), fontsize=12, rotation=90)
         ax1.set_title('inhibitors', fontsize=20)
         ax1.set_yticklabels(reversed(ki_pivoted.index),
@@ -386,7 +390,8 @@ class FigurePlotter(object):
         ax1.set_xlabel('growth condition', fontsize=16)
         ax1.set_ylabel('')
         clb1[0].set_ylabel('saturation', fontsize=16)
-        clb1[0].set_yticklabels(np.linspace(0.0, 1.0, 6), fontsize=12)
+        clb1[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
+                               fontsize=12)
 
         if filter_using_model:
             settings.savefig(fig, 'heatmap_saturation', dpi=200)
@@ -1238,27 +1243,27 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_2D_histograms()
-    fp.draw_thermodynamics_cdf()
+#    fp.draw_2D_histograms()
+#    fp.draw_thermodynamics_cdf()
+#
+#    fp.draw_ccm_thermodynamics_cdf()
+#
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
 
-    fp.draw_ccm_thermodynamics_cdf()
-
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='gmean')
-    fp.draw_agg_heatmaps(agg_type='median')
-
+#    fp.draw_agg_heatmaps(agg_type='gmean')
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
     fp.draw_full_heapmats()
-    fp.draw_full_heapmats(filter_using_model=False)
-
-    fp.print_ccm_table()
-    fp.compare_km_ki()
-
-    fp.draw_degree_histograms()
+#    fp.draw_full_heapmats(filter_using_model=False)
+#
+#    fp.print_ccm_table()
+#    fp.compare_km_ki()
+#
+#    fp.draw_degree_histograms()
 #    fp.draw_distance_histograms()
 
     plt.close('all')
