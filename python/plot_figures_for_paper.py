@@ -24,9 +24,6 @@ from topology import calculate_distances
 sns.set('paper', style='white')
 
 ORGANISM = 'Escherichia coli'
-SAT_FORMULA_S = r'$[S]/\left([S] + K_S\right)$'
-SAT_FORMULA_M = r'$[S]/\left([S] + K_M\right)$'
-SAT_FORMULA_I = r'$[S]/\left([S] + K_I\right)$'
 
 STAT_TABLE_INDEX = ['all entries',
                     'keeping only E. coli data',
@@ -115,7 +112,7 @@ class FigurePlotter(object):
         return k
 
     @staticmethod
-    def calc_agg_sat(k, agg_type='gmean'):
+    def calc_agg_sat(k, agg_type='gmean', value_col='activity'):
         """
             calculates the [S]/K_S for all matching EC-metabolite pairs,
             in log2-fold-change.
@@ -131,9 +128,9 @@ class FigurePlotter(object):
         elif agg_type == 'gmean':
             fc_med = k_grp.agg(lambda x: gmean(list(x)))
 
-        fc_med = fc_med[['saturation']].reset_index()
+        fc_med = fc_med[[value_col]].reset_index()
         fc_med = fc_med.pivot('bigg.metabolite', 'growth condition',
-                              'saturation')
+                              value_col)
         return fc_med.sort_index(axis=0)
 
     @staticmethod
@@ -237,11 +234,13 @@ class FigurePlotter(object):
 
         self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value',
                                          self.met_conc_mean)
+        self.km['activity'] = self.km['saturation']
         self.km = self.km.join(ec2bigg, on='EC_number', how='left')
 
         self.ki = FigurePlotter.calc_sat(
             self.regulation[~pd.isnull(self.regulation['KI_Value'])],
             'KI_Value', self.met_conc_mean)
+        self.ki['activity'] = 1.0 - self.ki['saturation']
 
         self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
 
@@ -340,7 +339,7 @@ class FigurePlotter(object):
         ax.set_xlabel('growth condition', fontsize=16)
         ax.set_ylabel('')
         ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
-        clb[0].set_ylabel('%s saturation over all reactions' % agg_type,
+        clb[0].set_ylabel('%s percent of maximal activity' % agg_type,
                           fontsize=16)
         clb[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
                                fontsize=12)
@@ -351,7 +350,7 @@ class FigurePlotter(object):
 
     def draw_full_heapmats(self, filter_using_model=True):
         def pivot_and_sort(k, sort_by='mean'):
-            k_piv = k.pivot('met:EC', 'growth condition', 'saturation')
+            k_piv = k.pivot('met:EC', 'growth condition', 'activity')
             if sort_by == 'mean':
                 ind = k_piv.mean(axis=1).sort_values(axis=0, ascending=True).index
             elif sort_by == 'index':
@@ -389,7 +388,7 @@ class FigurePlotter(object):
                             rotation=0, fontsize=10)
         ax1.set_xlabel('growth condition', fontsize=16)
         ax1.set_ylabel('')
-        clb1[0].set_ylabel('saturation', fontsize=16)
+        clb1[0].set_ylabel('percent of maximal activity', fontsize=16)
         clb1[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
                                fontsize=12)
 
@@ -484,6 +483,8 @@ class FigurePlotter(object):
         ax.set_ylim(0, 1)
         ax.set_xlabel(r'$[S]$ (in mM)')
         ax.set_ylabel(r'Cumulative distribution')
+        ax.set_yticks(np.arange(0, 1.01, 0.2))
+        ax.set_yticklabels(map(lambda x: '%.0f%%' % x, np.arange(0, 101, 20)))
         ax.set_title('Measured metabolite conc.')
 
         ax = axs[1]
@@ -522,51 +523,52 @@ class FigurePlotter(object):
                     label='substrates (N = %d)' % km_saturation.shape[0],
                     linewidth=linewidth, color=km_color)
         sns.kdeplot(ki_saturation, cumulative=True, ax=ax, bw=.01,
-                    label='inhibitors(N = %d)' % ki_saturation.shape[0],
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
                     linewidth=linewidth, color=ki_color)
 
         # Find positions for horizontal annotations
         highval = 0.8
-        lowval = 0
-        ki_high = float(ki_saturation[ki_saturation <= highval ].shape[0])/ ki_saturation.shape[0]
-        ki_low = float(ki_saturation[ki_saturation <= lowval].shape[0])/ ki_saturation.shape[0]
-
+        ki_high = float(ki_saturation[ki_saturation <= highval].shape[0])/ ki_saturation.shape[0]
         km_high = float(km_saturation[km_saturation <= highval].shape[0])/ km_saturation.shape[0]
-        km_low = float(km_saturation[km_saturation <= lowval].shape[0])/ km_saturation.shape[0]
 
         # Add vertical lines
-        #ax.plot( (lowval,lowval),(0,np.max([ki_low,km_low])),'k--' )
-        ax.plot( (highval,highval),(0,np.max([ki_high,km_high])),'k--' )
+        ax.plot((highval, highval), (0, np.max([ki_high, km_high])),
+                color='black', linestyle='-', linewidth=1, alpha=0.5)
 
         # Add horizontal lines
-        ax.plot( (1,lowval),(km_low,km_low),color = km_color,linestyle = '--' )
-        ax.plot( (1,highval),(km_high,km_high),color = km_color,linestyle = '--' )
-        ax.plot( (0,lowval),(ki_low,ki_low),color = ki_color,linestyle = '--' )
-        ax.plot( (0,highval),(ki_high,ki_high),color = ki_color,linestyle = '--' )
+        ax.plot((1, highval), (km_high, km_high),
+                color='black', linestyle='-', linewidth=1, alpha=0.5)
+        ax.plot((1, highval), (ki_high, ki_high),
+                color='black', linestyle='-', linewidth=1, alpha=0.5)
 
-        # Annotate
-        ax.annotate(s='', xytext=(.05,ki_low), xy=(.05,ki_high), arrowprops=dict(facecolor=ki_color, width = 3))
-
-        ax.annotate(s='', xytext=(.85,km_low), xy=(.85,km_high), arrowprops=dict(facecolor=km_color, width = 3))
-
-        ax.text(0.88, 0.2, format((km_high-km_low)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top',transform=ax.transAxes, color = km_color)
-
-        ax.text(0.1, 0.4, format((ki_high-ki_low)*100,'.0f') + '%', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes,color = ki_color)
-
+        # Annotate the 80% activity point
+        ax.text(1.01, km_high, '%.0f%%' % (km_high*100),
+                horizontalalignment='left', verticalalignment='center',
+                color=km_color)
+        ax.text(1.01, ki_high, '%.0f%%' % (ki_high*100),
+                horizontalalignment='left', verticalalignment='center',
+                color=ki_color)
 
         ax.grid(visible=False)
-        ax.set_xlim(-0.01, 1.01)
+        ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
-        ax.set_xlabel(SAT_FORMULA_S)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        #ax.set_xticklabels(map(lambda x: '%.0f%%' % x, np.arange(0, 101, 20)))
+        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
         ax.set_title(r'Saturation levels')
-        ax.legend(loc='upper left')
+        ax.legend(loc='upper center')
 
         ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.05, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
                 np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='left',
+                horizontalalignment='center',
                 verticalalignment='top',
                 transform=ax.transAxes)
+
+        for i, ax in enumerate(axs):
+            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=14)
         fig.tight_layout()
 
         settings.savefig(fig, 'cdf_saturation')
@@ -953,27 +955,48 @@ class FigurePlotter(object):
         ki_ind = reg_thermo_df['EC_number'].isin(ecs_with_ki)
         reg_thermo_df.loc[ki_ind, 'KI_Value'] = 'has $K_I$'
 
-        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
-            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
-                                          data=reg_thermo_df, ax=axs[i])
-            axs[i].set_xlim(0, 15)
+        ccm_thermo_df = reg_thermo_df[
+            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
+
+#        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
+#        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
+#            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
+#                                          data=reg_thermo_df, ax=axs[i])
+#            axs[i].set_xlim(0, 15)
+#
+#        fig.tight_layout()
+#        settings.savefig(fig, 'gibbs_histogram')
+#
+#        # repeat analysis only for CCM reactions
+#        ccm_thermo_df = reg_thermo_df[
+#            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
+#        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
+#
+#        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
+#            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
+#                                          data=ccm_thermo_df, ax=axs[i])
+#            axs[i].set_xlim(0, 15)
+#
+#        fig.tight_layout()
+#        settings.savefig(fig, 'gibbs_histogram_ccm')
+
+        fig, axs = plt.subplots(1, 2, figsize=(5, 3), sharey=True)
+        ax = axs[0]
+        FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
+                                      data=reg_thermo_df, ax=ax)
+        ax.set_xlim(0, 15)
+        ax = axs[1]
+        FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
+                                      data=ccm_thermo_df, ax=ax)
+        ax.set_xlim(0, 15)
+
+        for i, ax in enumerate(axs):
+            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=14)
 
         fig.tight_layout()
         settings.savefig(fig, 'gibbs_histogram')
-
-        # repeat analysis only for CCM reactions
-        ccm_thermo_df = reg_thermo_df[
-            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
-        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-
-        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
-            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
-                                          data=ccm_thermo_df, ax=axs[i])
-            axs[i].set_xlim(0, 15)
-
-        fig.tight_layout()
-        settings.savefig(fig, 'gibbs_histogram_ccm')
 
         # correlate irreversibility also with the number of references and
         # unique regulating metabolites
@@ -1244,7 +1267,7 @@ if __name__ == "__main__":
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
 #    fp.draw_2D_histograms()
-#    fp.draw_thermodynamics_cdf()
+    fp.draw_thermodynamics_cdf()
 #
 #    fp.draw_ccm_thermodynamics_cdf()
 #
@@ -1257,7 +1280,7 @@ if __name__ == "__main__":
 #    fp.draw_agg_heatmaps(agg_type='gmean')
 #    fp.draw_agg_heatmaps(agg_type='median')
 #
-    fp.draw_full_heapmats()
+#    fp.draw_full_heapmats()
 #    fp.draw_full_heapmats(filter_using_model=False)
 #
 #    fp.print_ccm_table()
