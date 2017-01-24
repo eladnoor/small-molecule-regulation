@@ -6,23 +6,30 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \begin{document}
-Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law, with non-competitive inhibition:
+Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
 \begin{eqnarray}
-    v &=& V_{max} \cdot \frac{s}{K_M + s} \cdot \left(1 - \frac{i}{K_I + i}\right)
+    v &=& V_{max} \cdot \frac{s}{K_M + s}
 \end{eqnarray}
-where $s$ and $i$ are the substrate and inhibitor concentrations.
+where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the Michaelis-Menten coefficient (also in molar).
 
 The scaled elasticities for $s$ and $i$ are given by:
 \begin{eqnarray}
-    \epsilon_s^v &=& \frac{\partial \log(v)}{\partial \log(s)} = \frac{\partial v}{\partial s}\cdot\frac{s}{v} = V_{max} \cdot \left(1 - \frac{i}{K_I + i}\right) \cdot \frac{K_M + s - s}{(K_M + s)^2} \cdot \frac{s}{v} \nonumber \\
+    \epsilon_s^v &=& \frac{\partial \log(v)}{\partial \log(s)} = \frac{\partial v}{\partial s}\cdot\frac{s}{v} = V_{max} \cdot \frac{K_M + s - s}{(K_M + s)^2} \cdot \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} \cdot (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}
 \end{eqnarray}
-and
+
+Now, we add a cooperative non-competitive inhibitor $I$, with a Hill coefficient $h$, described by the rate law:
 \begin{eqnarray}
-    \epsilon_i^v &=& \frac{\partial \log(v)}{\partial \log(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot \frac{s}{K_M + s} \cdot \left(-\frac{K_I + i - i}{(K_I + i)^2}\right) \cdot \frac{i}{v} \nonumber \\
-    &=& -\frac{K_I}{(K_I + i)^2} \cdot \frac{i}{1 - \frac{i}{K_I + i}} = -\frac{K_I}{(K_I + i)^2} \cdot \frac{i (K_I + i)}{K_I} = -\frac{i}{K_I + i}~.
+    v &=& V_{max} \cdot \frac{s}{K_M + s} \cdot \left(1 - \frac{i^h}{K_I + i^h}\right) =
+    V_{max} \cdot \frac{s}{K_M + s} \cdot \frac{K_I}{K_I + i^h}
+\end{eqnarray}
+where $i$ is the concentration of the inhibitor.
+In this case, the elasticity with regards to the inhibitor concentration would be:
+\begin{eqnarray}
+    \epsilon_i^v &=& \frac{\partial \log(v)}{\partial \log(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot \frac{s \cdot K_I}{K_M + s} \cdot \frac{- h \cdot i^{h-1}}{(K_I + i^h)^2} \cdot \frac{i}{v} \nonumber \\
+    &=& -\frac{h \cdot i^h \cdot (K_I + i^h)}{(K_I + i^h)^2} = -h \cdot \frac{i^h}{(K_I + i^h)}~.
 \end{eqnarray}
 
-This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($\epsilon_i^v \rightarrow -1$) when they are saturated ($i \gg K_I$).
+This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($\epsilon_i^v \rightarrow -h$) when they are saturated ($i \gg K_I$).
 
 \end{document}
