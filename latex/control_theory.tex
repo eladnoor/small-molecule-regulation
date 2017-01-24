@@ -18,7 +18,7 @@ where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the 
 
 The scaled elasticities for $s$ and $i$ are given by:
 \begin{eqnarray}
-    \epsilon_s^v &=& \frac{\partial \log(v)}{\partial \log(s)} = \frac{\partial v}{\partial s}\cdot\frac{s}{v} = V_{max} \cdot \frac{K_M + s - s}{(K_M + s)^2} \cdot \frac{s}{v} \nonumber \\
+    \epsilon_s^v &=& \frac{\partial \ln(v)}{\partial \ln(s)} = \frac{\partial v}{\partial s}\cdot\frac{s}{v} = V_{max} \cdot \frac{K_M + s - s}{(K_M + s)^2} \cdot \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} \cdot (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}
 \end{eqnarray}
 
@@ -40,8 +40,8 @@ The following plot shows the response of $v$ to the concentration $i$ in log-log
 
 In this case, the elasticity with regards to the inhibitor concentration would be:
 \begin{eqnarray}
-    \epsilon_i^v &=& \frac{\partial \log(v)}{\partial \log(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot \frac{s \cdot K_I^h}{K_M + s} \cdot \frac{- h \cdot i^{h-1}}{(K_I^h + i^h)^2} \cdot \frac{i}{v} \nonumber \\
-    &=& -\frac{h \cdot i^h \cdot (K_I^h + i^h)}{(K_I^h + i^h)^2} = -h \cdot \frac{i^h}{K_I^h + i^h}~.
+    \epsilon_i^v &=& \frac{\partial \ln(v)}{\partial \ln(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} ~ \frac{s ~ K_I^h}{K_M + s} ~ \frac{- h ~ i^{h-1}}{(K_I^h + i^h)^2} ~ \frac{i}{v} \nonumber \\
+    &=& -\frac{h ~ i^h ~ (K_I^h + i^h)}{(K_I^h + i^h)^2} = -h ~ \frac{i^h}{K_I^h + i^h}~.
 \end{eqnarray}
 
 Plotting the elasticity as a function of $i$, we see that it is a monotonically decreasing negative function:
@@ -56,5 +56,18 @@ This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) 
 
 
 \subsection{Competitive Inhibition}
+Described by the rate law:
+\begin{eqnarray}
+    v &=& V_{max} \cdot \frac{s}{K_M \left(1 + \frac{i^h}{K_I^h}\right) + s}
+\end{eqnarray}
+Solving for the elasticity:
+\begin{eqnarray}
+    \epsilon_i^v &=& \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot s \cdot \frac{-K_M ~ K_I^{-h} ~ h~i^{h-1}}{\left(K_M \left(1 + \frac{i^h}{K_I^h}\right) + s\right)^2} \cdot \frac{i}{v} \nonumber \\
+    &=& -h~\frac{K_M ~ K_I^{-h} ~ i^h}{K_M \left(1 + \frac{i^h}{K_I^h}\right) + s} =
+        -h~\frac{i^h}{K_I^h ~ (1 + s / K_M) + i^h} \nonumber \\
+    &=& -h~\frac{i^h}{K_E^h + i^h}
+\end{eqnarray}
+where we define $K_E \equiv K_I \sqrt[h]{1 + s/K_M}$, the effective inhibition constant. It is thus obvious, that the competitive inhibition case is equivalent to the non-competitive case, with a shift to the effective $K_I$ which depends on the substrate saturation level.
+
 
 \end{document}
