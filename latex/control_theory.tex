@@ -5,7 +5,11 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
 \begin{document}
+\section{Control Theory}
+\subsection{Single-substrate Control}
 Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
 \begin{eqnarray}
     v &=& V_{max} \cdot \frac{s}{K_M + s}
@@ -18,18 +22,39 @@ The scaled elasticities for $s$ and $i$ are given by:
     &=& \frac{K_M}{(K_M + s)^2} \cdot (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}
 \end{eqnarray}
 
+\subsection{Non-competitive Inhibition}
 Now, we add a cooperative non-competitive inhibitor $I$, with a Hill coefficient $h$, described by the rate law:
 \begin{eqnarray}
-    v &=& V_{max} \cdot \frac{s}{K_M + s} \cdot \left(1 - \frac{i^h}{K_I + i^h}\right) =
-    V_{max} \cdot \frac{s}{K_M + s} \cdot \frac{K_I}{K_I + i^h}
+    v &=& V_{max} \cdot \frac{s}{K_M + s} \cdot \left(1 - \frac{i^h}{K_I^h + i^h}\right) =
+    V_{max} \cdot \frac{s}{K_M + s} \cdot \frac{K_I^h}{K_I^h + i^h}
 \end{eqnarray}
 where $i$ is the concentration of the inhibitor.
+
+The following plot shows the response of $v$ to the concentration $i$ in log-log scale, when the Hill coefficient is $h = 2$. For simplicity, we assume that $\frac{s}{K_M + s} = 1$.
+
+\begin{tikzpicture}
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$v/V_{max}$]
+		\addplot+[mark=none,smooth] (\x,{(1 - (\x^2/(1+\x^2))});
+	\end{loglogaxis}
+\end{tikzpicture}
+
 In this case, the elasticity with regards to the inhibitor concentration would be:
 \begin{eqnarray}
-    \epsilon_i^v &=& \frac{\partial \log(v)}{\partial \log(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot \frac{s \cdot K_I}{K_M + s} \cdot \frac{- h \cdot i^{h-1}}{(K_I + i^h)^2} \cdot \frac{i}{v} \nonumber \\
-    &=& -\frac{h \cdot i^h \cdot (K_I + i^h)}{(K_I + i^h)^2} = -h \cdot \frac{i^h}{(K_I + i^h)}~.
+    \epsilon_i^v &=& \frac{\partial \log(v)}{\partial \log(i)} = \frac{\partial v}{\partial i}\cdot\frac{i}{v} = V_{max} \cdot \frac{s \cdot K_I^h}{K_M + s} \cdot \frac{- h \cdot i^{h-1}}{(K_I^h + i^h)^2} \cdot \frac{i}{v} \nonumber \\
+    &=& -\frac{h \cdot i^h \cdot (K_I^h + i^h)}{(K_I^h + i^h)^2} = -h \cdot \frac{i^h}{K_I^h + i^h}~.
 \end{eqnarray}
 
+Plotting the elasticity as a function of $i$, we see that it is a monotonically decreasing negative function:
+
+\begin{tikzpicture}
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$\epsilon_i^v$]
+		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});
+	\end{semilogxaxis}
+\end{tikzpicture}
+
 This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($\epsilon_i^v \rightarrow -h$) when they are saturated ($i \gg K_I$).
+
+
+\subsection{Competitive Inhibition}
 
 \end{document}
