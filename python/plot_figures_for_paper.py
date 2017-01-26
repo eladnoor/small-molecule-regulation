@@ -459,14 +459,14 @@ class FigurePlotter(object):
         ki_color = '#fe86a4'  # rosa
         km_color = '#3eaf76'  # dark seafoam green
 
-        fig, axs = plt.subplots(1, 3, figsize=(7.5, 3), sharey=True)
+        fig, axs = plt.subplots(2, 2, figsize=(6 , 6), sharey=True)
 
         met_intersection = set(self.km['bigg.metabolite']).intersection(
             self.ki['bigg.metabolite'])
         km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
         ki_inter = self.ki[self.ki['bigg.metabolite'].isin(met_intersection)]
 
-        ax = axs[0]
+        ax = axs[0, 0]
 
         concentrations = pd.melt(self.met_conc_mean)['value']
         concentrations = concentrations[~pd.isnull(concentrations)]
@@ -483,7 +483,7 @@ class FigurePlotter(object):
         ax.set_yticklabels(map(lambda x: '%.0f%%' % x, np.arange(0, 101, 20)))
         ax.set_title('Measured metabolite conc.')
 
-        ax = axs[1]
+        ax = axs[0, 1]
         km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
         ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
         sns.kdeplot(np.log10(km_values), cumulative=True,
@@ -510,7 +510,7 @@ class FigurePlotter(object):
 
         # compare Km and Ki for the intersection of EC numbers
 
-        ax = axs[2]
+        ax = axs[1, 0]
         ki_saturation = ki_inter['saturation']
         ki_saturation = ki_saturation[~pd.isnull(ki_saturation)]
         km_saturation = km_inter['saturation']
@@ -522,10 +522,53 @@ class FigurePlotter(object):
                     label='inhibitors (N = %d)' % ki_saturation.shape[0],
                     linewidth=linewidth, color=ki_color)
 
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
+        ax.set_ylabel(r'Cumulative distribution')
+        ax.set_title(r'Saturation levels')
+        ax.legend(loc='upper center')
+
+        ranksum_res = ranksums(km_saturation, ki_saturation)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
+        ax = axs[1, 1]
+        ki_elasticity = ki_inter['elasticity'].abs()
+        ki_elasticity = ki_elasticity[~pd.isnull(ki_elasticity)]
+        km_elasticity = km_inter['elasticity'].abs()
+        km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
+        sns.kdeplot(km_elasticity, cumulative=True, ax=ax, bw=.01,
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=linewidth, color=km_color)
+        sns.kdeplot(ki_elasticity, cumulative=True, ax=ax, bw=.01,
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
+                    linewidth=linewidth, color=ki_color)
+
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$|\epsilon_s^v|$')
+        ax.set_title(r'Elasticities')
+        ax.legend(loc='lower center')
+
+        ranksum_res = ranksums(km_elasticity, ki_elasticity)
+        ax.text(0.5, 0.3, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
         # Find positions for horizontal annotations
         highval = 0.8
-        ki_high = float(ki_saturation[ki_saturation <= highval].shape[0])/ ki_saturation.shape[0]
-        km_high = float(km_saturation[km_saturation <= highval].shape[0])/ km_saturation.shape[0]
+        ki_high = float(ki_elasticity[ki_elasticity <= highval].shape[0])/ ki_elasticity.shape[0]
+        km_high = float(km_elasticity[km_elasticity <= highval].shape[0])/ km_elasticity.shape[0]
 
         # Add vertical lines
         ax.plot((highval, highval), (0, np.max([ki_high, km_high])),
@@ -545,23 +588,7 @@ class FigurePlotter(object):
                 horizontalalignment='left', verticalalignment='center',
                 color=ki_color)
 
-        ax.grid(visible=False)
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.set_xticks(np.arange(0, 1.01, 0.2))
-        #ax.set_xticklabels(map(lambda x: '%.0f%%' % x, np.arange(0, 101, 20)))
-        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
-        ax.set_title(r'Saturation levels')
-        ax.legend(loc='upper center')
-
-        ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
-                np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='center',
-                verticalalignment='top',
-                transform=ax.transAxes)
-
-        for i, ax in enumerate(axs):
+        for i, ax in enumerate(axs.flat):
             ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
                         xycoords='axes fraction', ha='left', va='top',
                         size=14)
@@ -1262,6 +1289,8 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
+    fp.draw_cdf_plots()
+
     fp.draw_2D_histograms()
     fp.draw_thermodynamics_cdf()
 
