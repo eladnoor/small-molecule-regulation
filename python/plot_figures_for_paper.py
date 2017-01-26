@@ -112,7 +112,7 @@ class FigurePlotter(object):
         return k
 
     @staticmethod
-    def calc_agg_sat(k, agg_type='gmean', value_col='activity'):
+    def calc_agg_sat(k, agg_type='gmean', value_col='elasticity'):
         """
             calculates the [S]/K_S for all matching EC-metabolite pairs,
             in log2-fold-change.
@@ -234,13 +234,13 @@ class FigurePlotter(object):
 
         self.km = FigurePlotter.calc_sat(km_raw, 'KM_Value',
                                          self.met_conc_mean)
-        self.km['activity'] = self.km['saturation']
+        self.km['elasticity'] = 1.0 - self.km['saturation']
         self.km = self.km.join(ec2bigg, on='EC_number', how='left')
 
         self.ki = FigurePlotter.calc_sat(
             self.regulation[~pd.isnull(self.regulation['KI_Value'])],
             'KI_Value', self.met_conc_mean)
-        self.ki['activity'] = 1.0 - self.ki['saturation']
+        self.ki['elasticity'] = -self.ki['saturation']
 
         self.ki = self.ki.join(ec2bigg, on='EC_number', how='left')
 
@@ -322,9 +322,9 @@ class FigurePlotter(object):
         fig, ax = plt.subplots(1, 1, figsize=(18, 10))
         clb = matplotlib.colorbar.make_axes(ax)
 
-        sns.heatmap(sat_joined*100.0,
-                    ax=ax, mask=sat_joined.isnull(), annot=True, fmt='.0f',
-                    cbar=True, vmin=0, vmax=100, cmap='viridis', cbar_ax=clb[0],
+        sns.heatmap(sat_joined,
+                    ax=ax, mask=sat_joined.isnull(), annot=True, fmt='.2f',
+                    cbar=True, vmin=-1, vmax=1, cmap='bwr', cbar_ax=clb[0],
                     annot_kws={'fontdict': {'fontsize': 12}})
 
         # change xtick labels back to the original strings
@@ -339,10 +339,8 @@ class FigurePlotter(object):
         ax.set_xlabel('growth condition', fontsize=16)
         ax.set_ylabel('')
         ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
-        clb[0].set_ylabel('%s percent of maximal activity' % agg_type,
+        clb[0].set_ylabel('%s(elasticity)' % agg_type,
                           fontsize=16)
-        clb[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
-                               fontsize=12)
 
         ax.axvline(sat_joined.shape[1]/2, 0, 1, color='r')
 
@@ -350,7 +348,7 @@ class FigurePlotter(object):
 
     def draw_full_heapmats(self, filter_using_model=True):
         def pivot_and_sort(k, sort_by='mean'):
-            k_piv = k.pivot('met:EC', 'growth condition', 'activity')
+            k_piv = k.pivot('met:EC', 'growth condition', 'elasticity')
             if sort_by == 'mean':
                 ind = k_piv.mean(axis=1).sort_values(axis=0, ascending=True).index
             elif sort_by == 'index':
@@ -370,8 +368,8 @@ class FigurePlotter(object):
         ki_pivoted = ki_pivoted.loc[:, CONDITIONS]
 
         fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(18, 30))
-        sns.heatmap(km_pivoted*100.0, ax=ax0, mask=km_pivoted.isnull(),
-                    cbar=False, vmin=0, vmax=100, cmap='viridis', fmt='.0f')
+        sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
+                    cbar=False, vmin=-1, vmax=1, cmap='bwr', fmt='.2f')
         ax0.set_xticklabels(list(km_pivoted.columns), fontsize=12, rotation=90)
         ax0.set_yticklabels(reversed(km_pivoted.index), rotation=0, fontsize=6)
         ax0.set_title('substrates', fontsize=20)
@@ -379,18 +377,16 @@ class FigurePlotter(object):
         ax0.set_ylabel('')
 
         clb1 = matplotlib.colorbar.make_axes(ax1)
-        sns.heatmap(ki_pivoted*100.0, ax=ax1, mask=ki_pivoted.isnull(),
-                    cbar=True, vmin=0, vmax=100, annot=True, cmap='viridis',
-                    cbar_ax=clb1[0], fmt='.0f')
+        sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
+                    cbar=True, vmin=-1, vmax=1, annot=True, cmap='bwr',
+                    cbar_ax=clb1[0], fmt='.2f')
         ax1.set_xticklabels(list(ki_pivoted.columns), fontsize=12, rotation=90)
         ax1.set_title('inhibitors', fontsize=20)
         ax1.set_yticklabels(reversed(ki_pivoted.index),
                             rotation=0, fontsize=10)
         ax1.set_xlabel('growth condition', fontsize=16)
         ax1.set_ylabel('')
-        clb1[0].set_ylabel('percent of maximal activity', fontsize=16)
-        clb1[0].set_yticklabels(['%.0f%%' % x for x in np.linspace(0, 100, 6)],
-                               fontsize=12)
+        clb1[0].set_ylabel('elasticity', fontsize=16)
 
         if filter_using_model:
             settings.savefig(fig, 'heatmap_saturation', dpi=200)
@@ -1266,27 +1262,25 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-#    fp.draw_2D_histograms()
+    fp.draw_2D_histograms()
     fp.draw_thermodynamics_cdf()
-#
-#    fp.draw_ccm_thermodynamics_cdf()
-#
-#    fp.draw_pathway_met_histogram()
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_cdf_plots()
 
-#    fp.draw_agg_heatmaps(agg_type='gmean')
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#    fp.draw_full_heapmats(filter_using_model=False)
-#
-#    fp.print_ccm_table()
-#    fp.compare_km_ki()
-#
-#    fp.draw_degree_histograms()
-#    fp.draw_distance_histograms()
+    fp.draw_ccm_thermodynamics_cdf()
+
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
+    fp.draw_cdf_plots()
+
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+
+    fp.print_ccm_table()
+    fp.compare_km_ki()
+
+    fp.draw_degree_histograms()
+    fp.draw_distance_histograms()
 
     plt.close('all')
