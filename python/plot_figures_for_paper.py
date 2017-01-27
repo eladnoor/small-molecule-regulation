@@ -902,7 +902,7 @@ class FigurePlotter(object):
         return leaves
 
     @staticmethod
-    def comparative_cdf(x, y, data, ax, linewidth=2):
+    def comparative_cdf(x, y, data, ax, linewidth=2, title=None):
         xvals = data[x].unique()
         for xval in xvals:
             d = data.loc[data[x] == xval, y]
@@ -914,12 +914,16 @@ class FigurePlotter(object):
         ax.set_xlabel(y)
         ax.plot([1e3, 1e3], [0, 1], '-', alpha=0.3)
 
+        if title is None:
+            title = x
         if len(xvals) == 2:
             ranksum_res = ranksums(data.loc[data[x] == xvals[0], y],
                                    data.loc[data[x] == xvals[1], y])
-            ax.set_title(x + '\n$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
+            ax.set_title(title + '\n$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
+            return ranksum_res.pvalue
         else:
-            ax.set_title(x)
+            ax.set_title(title)
+            return None
 
     def draw_thermodynamics_cdf(self):
         """
@@ -981,37 +985,18 @@ class FigurePlotter(object):
         ccm_thermo_df = reg_thermo_df[
             reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
 
-#        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-#        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
-#            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
-#                                          data=reg_thermo_df, ax=axs[i])
-#            axs[i].set_xlim(0, 15)
-#
-#        fig.tight_layout()
-#        settings.savefig(fig, 'gibbs_histogram')
-#
-#        # repeat analysis only for CCM reactions
-#        ccm_thermo_df = reg_thermo_df[
-#            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
-#        fig, axs = plt.subplots(1, 4, figsize=(10, 3), sharey=True)
-#
-#        for i, x_l in enumerate(reg_thermo_df.columns[4:]):
-#            FigurePlotter.comparative_cdf(x=x_l, y=irr_index_l,
-#                                          data=ccm_thermo_df, ax=axs[i])
-#            axs[i].set_xlim(0, 15)
-#
-#        fig.tight_layout()
-#        settings.savefig(fig, 'gibbs_histogram_ccm')
-
         fig, axs = plt.subplots(1, 2, figsize=(5, 3), sharey=True)
         ax = axs[0]
         FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
-                                      data=reg_thermo_df, ax=ax)
+                                      data=reg_thermo_df, ax=ax,
+                                      title='all E. coli reactions')
         ax.set_xlim(0, 15)
         ax = axs[1]
         FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
-                                      data=ccm_thermo_df, ax=ax)
+                                      data=ccm_thermo_df, ax=ax,
+                                      title='only CCM reactions')
         ax.set_xlim(0, 15)
+        ax.set_ylable(None)
 
         for i, ax in enumerate(axs):
             ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
@@ -1060,36 +1045,6 @@ class FigurePlotter(object):
         settings.savefig(fig2, 'gibbs_literature_plot')
 
         return thermo_df
-
-    def draw_ccm_thermodynamics_cdf(self):
-        ccm_thermo_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_THERMO_FNAME)
-        irr_index_l = r"$| log(\Gamma) |$"
-        ccm_thermo_df[irr_index_l] = ccm_thermo_df['logRI'].abs()
-
-        from scipy.stats import mannwhitneyu as mwu
-        fig, ax = plt.subplots(1, 1, figsize=(8, 8), sharey=True)
-        sns.boxplot(x='is regulated', y=irr_index_l, data=ccm_thermo_df, ax=ax)
-        plt.xlabel('Is Regulated')
-        plt.ylabel('Log Reversibility Index')
-
-        regulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'yes',
-                                     irr_index_l]
-        notregulated = ccm_thermo_df.ix[ccm_thermo_df['is regulated'] == 'no',
-                                        irr_index_l]
-        stat, p = mwu(regulated, notregulated)
-
-        plt.title('Mann Whitney P Value: ' + str(p))
-        settings.savefig(fig, 'gibbs_boxplot_ccm_curated')
-        plt.close('boxplot')
-
-        fig, ax = plt.subplots(1, 1, figsize=(3, 3))
-        FigurePlotter.comparative_cdf(x='is regulated', y=irr_index_l,
-                                      data=ccm_thermo_df, ax=ax)
-        ax.set_xlabel(irr_index_l)
-        ax.set_xlim(0, 15)
-
-        fig.tight_layout()
-        settings.savefig(fig, 'gibbs_histogram_ccm_curated')
 
     def compare_km_ki(self, filter_using_model=False):
 
@@ -1284,32 +1239,31 @@ class FigurePlotter(object):
         fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_degrees.png'),
                     dpi=300)
 
+#%%
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_cdf_plots()
+    #fp.draw_cdf_plots()
 
-    fp.draw_2D_histograms()
+    #fp.draw_2D_histograms()
     fp.draw_thermodynamics_cdf()
 
-    fp.draw_ccm_thermodynamics_cdf()
-
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_cdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-
-    fp.print_ccm_table()
-    fp.compare_km_ki()
-
-    fp.draw_degree_histograms()
-    fp.draw_distance_histograms()
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_cdf_plots()
+#
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#
+#    fp.print_ccm_table()
+#    fp.compare_km_ki()
+#
+#    fp.draw_degree_histograms()
+#    fp.draw_distance_histograms()
 
     plt.close('all')
