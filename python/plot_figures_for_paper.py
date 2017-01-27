@@ -37,8 +37,16 @@ N_ACT_LABEL = 'Number of activating interactions'
 N_INH_LABEL = 'Number of inhibiting interactions'
 
 CONDITIONS = ['Glucose', 'Fructose', 'Galactose', 'Gluconate', 'Mannitol',
-              'Sorbitol',  'Mannose', 'Glycerol', 'Pyruvate', 'Lactate',
+              'Sorbitol', 'Mannose', 'Glycerol', 'Pyruvate', 'Lactate',
               'Acetate', 'Succinate', 'glcNAc']
+
+GENERAL_COLOR   = '#939598'
+CCM_COLOR       = '#556B2f'
+ACTIVATOR_COLOR = '#ee4444'
+INHIBITOR_COLOR = '#4444ee'
+BOTH_COLOR      = '#993399'
+
+
 
 class FigurePlotter(object):
 
@@ -1148,10 +1156,10 @@ class FigurePlotter(object):
         args = {'alpha': 1, 'normed': True, 'align': 'left', 'bins': bins,
                 'linewidth': 0, 'rwidth': 0.8}
         fig, axs = plt.subplots(2, 2, figsize=(12, 8), sharex=False)
-        axs[0, 0].hist(all_distances, color='#939598', **args)
-        axs[1, 0].hist(smrn_dist['distance'], color='#8a5ec9', **args)
-        axs[0, 1].hist(inh_distances, color='#f5821f', **args)
-        axs[1, 1].hist(act_distances, color='#00aeef', **args)
+        axs[0, 0].hist(all_distances, color=GENERAL_COLOR, **args)
+        axs[1, 0].hist(smrn_dist['distance'], color=BOTH_COLOR, **args)
+        axs[0, 1].hist(inh_distances, color=INHIBITOR_COLOR , **args)
+        axs[1, 1].hist(act_distances, color=ACTIVATOR_COLOR, **args)
 
         for i in range(2):
             axs[i, 0].set_ylabel('Fraction of metabolite-enzyme pairs')
@@ -1207,10 +1215,10 @@ class FigurePlotter(object):
         args = {'alpha': 1, 'normed': False, 'align': 'left', 'bins': bins,
                 'linewidth': 0, 'rwidth': 0.8}
         fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=False)
-        axs[0, 0].hist(rxn_hist['bigg.metabolite'], color='#808080', **args)
-        axs[1, 0].hist(met_hist['bigg.reaction'], color='#808080', **args)
-        axs[0, 1].hist(rxn_hist_ccm['bigg.metabolite'], color='#7060ef', **args)
-        axs[1, 1].hist(met_hist_ccm['bigg.reaction'], color='#7060ef', **args)
+        axs[0, 0].hist(rxn_hist['bigg.metabolite'], color=GENERAL_COLOR, **args)
+        axs[1, 0].hist(met_hist['bigg.reaction'], color=GENERAL_COLOR, **args)
+        axs[0, 1].hist(rxn_hist_ccm['bigg.metabolite'], color=CCM_COLOR, **args)
+        axs[1, 1].hist(met_hist_ccm['bigg.reaction'], color=CCM_COLOR, **args)
 
         axs[0, 0].set_ylabel('No. of reactions')
         axs[1, 0].set_ylabel('No. of metabolites')
@@ -1248,7 +1256,7 @@ if __name__ == "__main__":
     #fp.draw_cdf_plots()
 
     #fp.draw_2D_histograms()
-    fp.draw_thermodynamics_cdf()
+#    fp.draw_thermodynamics_cdf()
 
 #    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
@@ -1263,7 +1271,7 @@ if __name__ == "__main__":
 #    fp.print_ccm_table()
 #    fp.compare_km_ki()
 #
-#    fp.draw_degree_histograms()
-#    fp.draw_distance_histograms()
+    fp.draw_degree_histograms()
+    fp.draw_distance_histograms()
 
     plt.close('all')
