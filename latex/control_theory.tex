@@ -51,7 +51,7 @@ As far as we know, previous publications have not dealt specifically with elasti
 where we add a multiplicative term $\theta(x)$ that will represent the decrease of activity due to the small-molecule regulation ($x$). As long as $\theta(x)$ is the only term affected by $x$, i.e. $\frac{\partial \kappa}{\partial x} = \frac{\partial \gamma}{\partial x} = 0$, the exact forms of $\kappa$ and $\gamma$ are irrelevant.
 
 \subsubsection{Activation}
-First, consider a cooperative activator with Hill coefficient $h$ and activation coefficient $K_A$:
+First, consider a cooperative \cite{Barcroft1910-rx, Monod1965-dq} activator with Hill coefficient $h$ and activation coefficient $K_A$:
 \begin{eqnarray}
     \theta &=& \frac{x^h}{K_A^h + x^h}~.
 \end{eqnarray}
@@ -107,11 +107,13 @@ Solving for the elasticity:
 where we define $K_E \equiv K_I \sqrt[h]{1 + s/K_M}$, the effective inhibition constant. It is thus obvious, that the competitive inhibition case is equivalent to the non-competitive case, with a shift to the effective $K_I$ which depends on the substrate saturation level. It is, however, difficult to 
 
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
-By taking the absolute value of the elasticity, we can compress the results for activators (equation \ref{eq:eps_act}) and non-competitive inhibitors (equation \ref{eq:eps_inh}) into one formula:
+By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and non-competitive inhibitors (Equation \ref{eq:eps_inh}) into one formula:
 \begin{eqnarray}
-|\epsilon_x^v| = h (1 - \theta)~.
+|\epsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
 \end{eqnarray}
-Since $\theta$ represents the fraction of active enzyme, we see here that there is direct trade-off between the activity of the enzyme and the elasticity. It should be noted, that evolution can easily adjust $\theta$ for an individual enzyme by changing the $K_A$ or $K_I$ values, even without changing the concentration of the small-molecule effector (assuming it has other crucial functions in the cell). Therefore, evolution needs to weight between how much of the enzyme is "wasted" by inhibition (or by inactivation), versus how much control it has on the flux. This can be viewed as a trade-off between the short-term goal of being able to adjust things quickly and the long-term goal of allocating resources efficiently in order to grow as fast as possible.
+Since $\theta$ represents the fraction of active enzyme, we see here that there is direct trade-off between the activity of the enzyme and the elasticity. It should be noted, that evolution can easily adjust $\theta$ for an individual enzyme by changing the $K_A$ or $K_I$ values, even without changing the concentration of the small-molecule effector (assuming it has other crucial functions in the cell). Therefore, evolution needs to weigh between how much of the enzyme is "wasted" by inhibition (or by inactivation), versus how much control it has on the flux. This can be viewed as a trade-off between the short-term goal of being able to adjust things quickly and the long-term goal of allocating resources efficiently in order to grow as fast as possible.
+
+Another corollary of Equation \ref{eq:abs_elast} is that the control can be increased by changing the Hill coefficient ($h$). This could be a reason why mechanisms with very high cooperativity evolve for allosteric regulation \cite{Monod1965-dq}, as it increases elasticity without the added cost of loosing enzyme activity.
 
 \bibliographystyle{ieeetr}
 \bibliography{control_theory}
