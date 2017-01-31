@@ -97,17 +97,21 @@ Competitive inhibition is a special case, where a separable kinetic rate law is 
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s}
 \end{eqnarray}
-Solving for the elasticity:
+In this case, we can define an \emph{effective} inhibition constants $K_E$, that will allow us to rewrite this rate law in a form identical to non-competitive inhibition:
 \begin{eqnarray}
-    \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = V^+ ~ s ~ \frac{-K_M ~ K_I^{-h} ~ h~x^{h-1}}{\left(K_M \left(1 + \frac{x^h}{K_I^h}\right) + s\right)^2} ~ \frac{x}{v} \nonumber \\
-    &=& -h~\frac{K_M ~ K_I^{-h} ~ x^h}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s} =
-        -h~\frac{x^h}{K_I^h ~ (1 + s / K_M) + x^h} \nonumber \\
-    &=& -h~\frac{x^h}{K_E^h + x^h}
+    K_E &\equiv& K_I \sqrt[h]{\frac{K_M + s}{K_M}} \nonumber\\
+    v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s} =
+          V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h~(K_M + s)}{K_E^h~K_M}\right) + s} = \nonumber\\
+      &=& V^+ ~ \frac{s}{K_M + s + \frac{x^h~(K_M + s)}{K_E^h}} = 
+          V^+ ~ \frac{s}{K_M + s} \cdot \frac{1}{1 + \frac{x^h}{K_E^h}} \label{eq:eps_comp_inh}
 \end{eqnarray}
-where we define $K_E \equiv K_I \sqrt[h]{1 + s/K_M}$, the effective inhibition constant. It is thus obvious, that the competitive inhibition case is equivalent to the non-competitive case, with a shift to the effective $K_I$ which depends on the substrate saturation level. It is, however, difficult to 
+so we can see here that in this case $\theta = \frac{K_E^h}{K_E^h~+~x^h}$, exactly like in the case of non-competitive inhibition. Of course, the difference here is that $K_E$ is not a binding constant but rather a function of $s$ and $K_M$. Nevertheless, we can use the same formula for the elasticity (since $K_E$ is a constant with regards to $x$):
+\begin{eqnarray}
+    \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)
+\end{eqnarray}
 
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
-By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and non-competitive inhibitors (Equation \ref{eq:eps_inh}) into one formula:
+By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh} and \ref{eq:eps_comp_inh}) into one formula:
 \begin{eqnarray}
 |\epsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
 \end{eqnarray}
