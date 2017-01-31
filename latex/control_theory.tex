@@ -14,10 +14,9 @@
 \begin{document}
 \section{Control Theory}
 \subsection{What is elasticity?}
-[THIS SECTION NEED MORE WORK]
-Control theory \cite{Fell1996-be}. Scaled elasticity is the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
+Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework that is widely used to dynamic systems such as metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify the control of some variables, such as fluxes, depend on other features of the system. The \emph{scaled elasticity} is the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
 \begin{eqnarray}
-    \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(s)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
+    \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
 \end{eqnarray}
 
 \subsection{Single-substrate Control}
@@ -69,11 +68,13 @@ First, consider a non-competitive inhibitor with Hill coefficient $h$ and inhibi
 
 The following plot shows the response of $\theta$ to the concentration $x$ in log-log scale, when the Hill coefficient is $h = 2$.
 
+\begin{center}
 \begin{tikzpicture}
-	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$x/K_I$, ylabel=$\theta$]
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$x/K_I$, ylabel=$\theta$ (relative activity)]
 		\addplot+[mark=none,smooth] (\x,{(1 - (\x^2/(1+\x^2))});
 	\end{loglogaxis}
 \end{tikzpicture}
+\end{center}
 
 In this case, the elasticity with regards to the inhibitor concentration would be:
 \begin{eqnarray}
@@ -83,11 +84,13 @@ In this case, the elasticity with regards to the inhibitor concentration would b
 
 Plotting the elasticity as a function of $x$, we see that it is a monotonically decreasing negative function:
 
+\begin{center}
 \begin{tikzpicture}
 	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$\epsilon_x^v$]
 		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});
 	\end{semilogxaxis}
 \end{tikzpicture}
+\end{center}
 
 This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($\epsilon_x^v \rightarrow -h$) when they are saturated ($i \gg K_I$).
 
@@ -115,9 +118,19 @@ By taking the absolute value of the elasticity, we can compress the results for 
 \begin{eqnarray}
 |\epsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
 \end{eqnarray}
+This relationship can be visualized in the following plot (for the case of $h = 2$):
+\begin{center}
+\begin{tikzpicture}
+	\begin{axis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=0:1, xlabel=$\theta$ (relative activity), ylabel=$\epsilon_x^v$ (elasticity)]
+		\addplot+[mark=none,smooth] (\x,{2 * (1 - \x)});
+	\end{axis}
+\end{tikzpicture}
+\end{center}
+
 Since $\theta$ represents the fraction of active enzyme, we see here that there is direct trade-off between the activity of the enzyme and the elasticity. It should be noted, that evolution can easily adjust $\theta$ for an individual enzyme by changing the $K_A$ or $K_I$ values, even without changing the concentration of the small-molecule effector (assuming it has other crucial functions in the cell). Therefore, evolution needs to weigh between how much of the enzyme is "wasted" by inhibition (or by inactivation), versus how much control it has on the flux. This can be viewed as a trade-off between the short-term goal of being able to adjust things quickly and the long-term goal of allocating resources efficiently in order to grow as fast as possible.
 
-Another corollary of Equation \ref{eq:abs_elast} is that the control can be increased by changing the Hill coefficient ($h$). This could be a reason why mechanisms with very high cooperativity evolve for allosteric regulation \cite{Monod1965-dq}, as it increases elasticity without the added cost of loosing enzyme activity.
+Another corollary of Equation \ref{eq:abs_elast} is that the control can be increased by changing the Hill coefficient ($h$). This could be a reason why mechanisms with very high cooperativity evolve for allosteric regulation \cite{Monod1965-dq}, as it increases elasticity without the added cost of losing enzyme activity.
+
 
 \bibliographystyle{ieeetr}
 \bibliography{control_theory}
