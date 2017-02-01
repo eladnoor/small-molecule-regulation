@@ -8,6 +8,7 @@ from bigg import BiGG
 from kegg import KEGG
 import settings
 import map_ligands
+import husl
 
 import pandas as pd
 import os
@@ -625,23 +626,6 @@ class FigurePlotter(object):
         grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
         return grouped_by_met, grouped_by_rxn
 
-    def draw_subsystem_stacked_bars(self, n_colors=10):
-        """
-            for each subsystem in E. coli, draw a stacked bar plot
-            of the different metabolites regulating them
-            (giving unique colors only for the first 'n')
-        """
-        subsys = fp.regulation[['bigg.subsystem.reaction', 'bigg.reaction',
-                                'bigg.metabolite','Mode']].drop_duplicates()
-        subsys = subsys.groupby(['bigg.subsystem.reaction',
-                                 'bigg.metabolite','Mode']).count().reset_index()
-        inh_ind = subsys[subsys['Mode'] == '-'].index
-        counts = subsys.loc[inh_ind,:].pivot(index='bigg.subsystem.reaction',
-                                             columns='bigg.metabolite',
-                                             values='bigg.reaction')
-        counts.plot.bar(stacked=True)
-        counts.sort_rows()
-
     def print_ccm_table(self):
         ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
                                        index_col=None)
@@ -730,7 +714,22 @@ class FigurePlotter(object):
         inh_table.to_csv(os.path.join(settings.RESULT_DIR,
                                       'pathway_histograms_inhibiting.csv'))
 
-    def draw_pathway_met_histogram(self):
+    def draw_pathway_met_histogram(self, n_colors=30):
+
+        def husl2rgb(h, s, l):
+            return matplotlib.colors.hex2color(husl.husl_to_hex(h, s, l))
+
+        def create_random_colormap(labels):
+            np.random.seed(99)
+            h_values = np.random.randint(0, 360, len(labels))
+            s_values = np.random.randint(30, 80, len(labels))
+            l_values = np.random.randint(30, 80, len(labels))
+            rgb_values = [husl2rgb(h, s, l) for h, s, l in
+                          zip(h_values, s_values, l_values)]
+            label2rgb = dict(zip(labels, rgb_values))
+            label2rgb.update({'other': husl2rgb(0, 0, 80)})
+            return label2rgb
+
         cols = ['bigg.metabolite', 'bigg.reaction',
                 'bigg.subsystem.reaction', 'Mode']
         reg_unique = self.regulation[cols].drop_duplicates()
@@ -753,6 +752,30 @@ class FigurePlotter(object):
             settings.RESULT_DIR, 'pathway_met_histograms_activating.csv'))
         inh_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
+
+        # for each subsystem in E. coli, draw a stacked bar plot
+        # of the different metabolites regulating them
+        # (giving unique colors only for the first 'n')
+        #inh_table.fillna(0, inplace=True)
+        # sort the subsystems by number of interactions
+        inh_table = inh_table[
+                inh_table.sum(0).sort_values(ascending=False).index]
+
+        # keep only the n metabolites with the most interactions
+        ind = inh_table.sum(1).sort_values(ascending=False).index
+        other = inh_table.loc[ind[n_colors:], :].sum(0).to_frame().transpose()
+        counts_cutoff = pd.concat([other, inh_table.loc[ind[0:n_colors], :]])
+        counts_cutoff.rename(index={0: 'other'}, inplace=True)
+
+        met2rgb = create_random_colormap(counts_cutoff.index)
+        colors = map(met2rgb.get, counts_cutoff.index)
+
+        fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+        counts_cutoff.transpose().plot.bar(stacked=True, ax=ax,
+                                           color=colors)
+        ax.set_title('Distinct reactions inhibited by small molecules')
+        fig.tight_layout()
+        settings.savefig(fig, 'subsystem_stacked_bar', dpi=300)
 
         # Remove metabolites and pathways with insufficient numbers of
         # data points
@@ -1019,7 +1042,7 @@ class FigurePlotter(object):
 
         for ii in res.index:
             if res.at[ii,'QValue'] < 0.1:
-            	ax.scatter(res.at[ii,'KI_Values'], res.at[ii,'KM_Values'], color = 'r', s = 10*res.at[ii,'KI_Number'])
+                ax.scatter(res.at[ii,'KI_Values'], res.at[ii,'KM_Values'], color = 'r', s = 10*res.at[ii,'KI_Number'])
                 ax.text(1.2*res.at[ii,'KI_Values'],res.at[ii,'KM_Values'],ii)
         plt.xlabel('Mean KI')
         plt.ylabel('Mean KM')
@@ -1034,7 +1057,7 @@ class FigurePlotter(object):
 
         for ii in res.index:
             if res.at[ii,'QValue'] < 0.1 and np.abs(res.at[ii,'Ratio']) > 1:
-            	ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']), color = 'r', s = 4*(res['KI_Number'] + res['KM_Number']) )
+                ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']), color = 'r', s = 4*(res['KI_Number'] + res['KM_Number']) )
                 ax.text(1.2*res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']),ii)
 
         plt.xlabel('Log2 (Mean KI/Mean KM)')
@@ -1162,12 +1185,11 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_subsystem_stacked_bars()
 #    fp.draw_cdf_plots()
 #
 #    fp.draw_thermodynamics_cdf()
 #
-#    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
