@@ -30,7 +30,7 @@ def literaturestring( subdf ):
 
 # Set some parameters
 tax2use = 'kingdom'
-minsize = 6
+minsize = 10
 
 # Read in central carbon metabolism reactions
 ccm = S.read_cache('CCM_Reactions')
@@ -93,7 +93,7 @@ for dtype in ['ki','act']:
     
     for g in merge2use.groups.keys():
 
-        if len(merge2use.groups[ g ]) > minsize:
+        if len(merge2use.groups[ g ]) >= minsize:
         
             # Get counts for each taxon
             ixname = dtype + ':' + ':'.join(list(g))
@@ -131,18 +131,18 @@ res['DeltaEntropy'] = res['Entropy'] - res['NullEntropy']
 # Write
 res.to_csv('../res/Regulation_by_taxon.csv')
 
-# Plot results 
-plt.plot( res['NullEntropy'],res['Entropy'],'o')
-plt.ylabel('Entropy')
-plt.xlabel('Null Entropy')
+# Reduce to just highly confident interactions
+res_reduced = res[ res['NumReferences'] >= 10]
+res_reduced = res_reduced[ res_reduced['LigandID'] != '2' ]
+
+# Keep only data with at least 10 references and ligand id 2 (= "more")
+res_reduced.to_csv('../res/Regulation_by_taxon_highconfidence.csv')
 
 # Reduce data to only the EC's in central carbon metabolism
-res_reduced = res[ res['EC_number'].isin(ccm['EC']) ]
-res_reduced['EcoliGene'] = np.nan
-for ii in res_reduced.index:
-    res_reduced.at[ii,'EColigene'] = ccm.at[ res_reduced.at[ii,'EC_number'],'EcoliGene' ]
+res_reduced_EC = res_reduced[ res_reduced['EC_number'].isin(ccm['EC']) ]
+res_reduced_EC['EcoliGene'] = np.nan
+for ii in res_reduced_EC.index:
+    res_reduced_EC.at[ii,'EColigene'] = ccm.at[ res_reduced_EC.at[ii,'EC_number'],'EcoliGene' ]
     
 # Keep only data with at least 10 references and ligand id 2 (= "more")
-res_reduced = res_reduced[ res_reduced['NumReferences'] >= 10]
-res_reduced = res_reduced[ res_reduced['LigandID'] != '2' ]
-res_reduced.to_csv('../res/Regulation_by_taxon_CCM.csv')
+res_reduced_EC.to_csv('../res/Regulation_by_taxon_CCM.csv')
