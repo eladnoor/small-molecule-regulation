@@ -625,118 +625,22 @@ class FigurePlotter(object):
         grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
         return grouped_by_met, grouped_by_rxn
 
-    def draw_2D_histograms(self, tax2use='kingdom', minsize=10):
+    def draw_subsystem_stacked_bars(self, n_colors=10):
         """
-            Draw 2D histograms of the number of activating and
-            inhibiting reactions
-            grouped by metabolite and grouped by reaction
+            for each subsystem in E. coli, draw a stacked bar plot
+            of the different metabolites regulating them
+            (giving unique colors only for the first 'n')
         """
-
-        def plot_2d_hist(data, xlabel, ylabel, ax, xmax, ymax):
-            """
-                plot the histogram as a heatmap, and make sure
-                empty bins are easily distinguishable from ones that have
-                at least 1 hit.
-            """
-            x = data[xlabel]
-            y = data[ylabel]
-
-            bins = (np.arange(0, xmax+2), np.arange(0, ymax+2))
-            H, _, _ = np.histogram2d(x, y, bins=bins)
-            # in a heatmap, the matrix columns become rows and vice versa
-            # so we use H.T instead of H
-            sns.heatmap(np.log2(H.T), mask=(H.T == 0), ax=ax, annot=False,
-                        cbar=True, vmin=0, vmax=8, cmap='viridis')
-            ax.invert_yaxis()
-            ax.set_xlabel(xlabel)
-            ax.set_ylabel(ylabel)
-            ax.set_xticks(0.5+np.arange(0, xmax+1, 5))
-            ax.set_xticklabels(np.arange(0, xmax+1, 5), rotation=0)
-
-            cax = plt.gcf().axes[-1]
-            cax.set_yticks(np.arange(0, 9, 1))
-            cax.set_yticklabels(2**np.arange(0, 9, 1))
-
-            for i in data.index:
-                x_i = data.at[i, xlabel]
-                y_i = data.at[i, ylabel]
-                if (x_i > 12 or y_i > 5) and (H[x_i, y_i] == 1):
-                    # print i, x_i, y_i, H[x_i, y_i]
-                    ax.annotate(i, xy=(x_i, ymax-y_i),
-                                xytext=(x_i+1, ymax-y_i-1),
-                                ha='center', va='top', size=6,
-                                textcoords='data')
-
-        def plot_jointhist(data, xlabel, ylabel, xmax, ymax):
-            """
-                plot the histogram as a scatter plot with marginal histograms,
-                and ensure empty bins are easily distinguishable from ones
-                that have at least 1 hit.
-            """
-            x = data[xlabel]
-            y = data[ylabel]
-
-            # First, plot the scatter plot
-            g = sns.JointGrid(x=x, y=y, size=4,
-                              xlim=(-1, xmax+1), ylim=(-1, ymax+1))
-            g = g.plot_joint(plt.scatter, alpha=0.2)
-            plt.gcf()
-
-            plt.xlabel(xlabel)
-            plt.ylabel(ylabel)
-
-            # annotate only unique points
-            # annotate only unique points
-            ann_df = data.drop_duplicates((xlabel, ylabel), keep=False)
-            ann_df = ann_df[(ann_df[xlabel] > 12) | (ann_df[ylabel] > 5)]
-            for i, row in ann_df.iterrows():
-                    plt.annotate(i, xy=(row[xlabel], row[ylabel]),
-                                 xytext=(row[xlabel]+1, row[ylabel]+1),
-                                 ha='center', va='top', size=10,
-                                 textcoords='data')
-
-            # Next, plot the marginal histograms
-            g = g.plot_marginals(sns.distplot, kde=False)
-
-            return plt.gcf()
-
-        grouped_by_met, grouped_by_rxn = self.get_grouped_data()
-
-        # plot the data as 2D histograms
-
-        fig, axs = plt.subplots(2, 1, figsize=(7, 5), sharex=False)
-        axs[0].annotate('grouped by metabolite', xy=(0.5, 0.98),
-                        xycoords='axes fraction', ha='center',
-                        va='top', size=12)
-        axs[1].annotate('grouped by reaction', xy=(0.5, 0.98),
-                        xycoords='axes fraction', ha='center',
-                        va='top', size=12)
-        axs[0].annotate('c', xy=(0.98, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=20)
-        axs[1].annotate('d', xy=(0.98, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=20)
-        xmax = max(grouped_by_met[N_INH_LABEL].max(),
-                   grouped_by_rxn[N_INH_LABEL].max())
-        ymax = max(grouped_by_met[N_ACT_LABEL].max(),
-                   grouped_by_rxn[N_ACT_LABEL].max())
-
-        plot_2d_hist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
-                     axs[0], xmax, ymax)
-        axs[0].set_xlabel('')
-        plot_2d_hist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
-                     axs[1], xmax, ymax)
-
-        settings.savefig(fig, '2D_histograms_heatmap')
-
-        fig = plot_jointhist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
-                             xmax, ymax)
-        settings.savefig(fig, 'jointplot_met')
-
-        fig = plot_jointhist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
-                             xmax, ymax)
-        settings.savefig(fig, 'jointplot_rxn')
+        subsys = fp.regulation[['bigg.subsystem.reaction', 'bigg.reaction',
+                                'bigg.metabolite','Mode']].drop_duplicates()
+        subsys = subsys.groupby(['bigg.subsystem.reaction',
+                                 'bigg.metabolite','Mode']).count().reset_index()
+        inh_ind = subsys[subsys['Mode'] == '-'].index
+        counts = subsys.loc[inh_ind,:].pivot(index='bigg.subsystem.reaction',
+                                             columns='bigg.metabolite',
+                                             values='bigg.reaction')
+        counts.plot.bar(stacked=True)
+        counts.sort_rows()
 
     def print_ccm_table(self):
         ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
@@ -967,6 +871,8 @@ class FigurePlotter(object):
 
         # for each EC number, check if it regulated, and if it it positive (+),
         # negative (-) or both (+/-)
+        self.regulation.to_csv(os.path.join(settings.RESULT_DIR,
+                                            'regulation.csv'))
         mode_df = self.regulation.groupby('EC_number')['Mode']
         mode_df = mode_df.apply(set).str.join('/')  # convert to short string
         ecs_with_ki = self.regulation.loc[
@@ -993,6 +899,9 @@ class FigurePlotter(object):
         ccm_thermo_df = reg_thermo_df[
             reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
 
+        ccm_thermo_df.to_csv(os.path.join(settings.RESULT_DIR,
+                             'CCM_thermodynamics.csv'))
+
         fig, axs = plt.subplots(1, 2, figsize=(5, 3), sharey=True)
         ax = axs[0]
         FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
@@ -1004,7 +913,7 @@ class FigurePlotter(object):
                                       data=ccm_thermo_df, ax=ax,
                                       title='only CCM reactions')
         ax.set_xlim(0, 15)
-        ax.set_ylable(None)
+        ax.set_ylabel('')
 
         for i, ax in enumerate(axs):
             ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
@@ -1253,11 +1162,11 @@ if __name__ == "__main__":
     plt.close('all')
 #    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    #fp.draw_cdf_plots()
-
-    #fp.draw_2D_histograms()
+    fp.draw_subsystem_stacked_bars()
+#    fp.draw_cdf_plots()
+#
 #    fp.draw_thermodynamics_cdf()
-
+#
 #    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
@@ -1271,7 +1180,7 @@ if __name__ == "__main__":
 #    fp.print_ccm_table()
 #    fp.compare_km_ki()
 #
-    fp.draw_degree_histograms()
-    fp.draw_distance_histograms()
+#    fp.draw_degree_histograms()
+#    fp.draw_distance_histograms()
 
     plt.close('all')

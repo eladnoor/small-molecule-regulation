@@ -5484,6 +5484,6 @@ ReactionID=GLUTDECARBOX-RXN,Zinc cation,4.1.1.15,C00038,,ZN+2,,,-,Escherichia co
 ReactionID=3-NUCLEOTID-RXN,Zinc cation,3.1.3.6,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,3ntd2pp
 ReactionID=D-PPENTOMUT-RXN,Zinc cation,5.4.2.7,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,ppm2
 ReactionID=GLYCOLALD-DEHYDROG-RXN,Zinc cation,1.2.1.21,C00038,,ZN+2,,,-,Escherichia coli,EcoCyc,zn2,CHEBI:29105,gcaldd
-KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk
-approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk
-,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps
+KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk
+approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk
+,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps
