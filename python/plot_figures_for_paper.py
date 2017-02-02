@@ -9,6 +9,7 @@ from kegg import KEGG
 import settings
 import map_ligands
 import husl
+import colorsys
 
 import pandas as pd
 import os
@@ -714,21 +715,17 @@ class FigurePlotter(object):
         inh_table.to_csv(os.path.join(settings.RESULT_DIR,
                                       'pathway_histograms_inhibiting.csv'))
 
-    def draw_pathway_met_histogram(self, n_colors=30):
+    def draw_pathway_met_histogram(self, n_colors=20):
 
-        def husl2rgb(h, s, l):
-            return matplotlib.colors.hex2color(husl.husl_to_hex(h, s, l))
-
-        def create_random_colormap(labels):
-            np.random.seed(99)
-            h_values = np.random.randint(0, 360, len(labels))
-            s_values = np.random.randint(30, 80, len(labels))
-            l_values = np.random.randint(30, 80, len(labels))
-            rgb_values = [husl2rgb(h, s, l) for h, s, l in
-                          zip(h_values, s_values, l_values)]
-            label2rgb = dict(zip(labels, rgb_values))
-            label2rgb.update({'other': husl2rgb(0, 0, 80)})
-            return label2rgb
+        def create_random_colormap(n):
+            np.random.seed(60)
+            colors = [(0.5, 0.5, 0.5)]
+            h_values = np.random.permutation(n-1) * (1.0/n)
+            s_values = 0.3 + 0.4 * np.random.rand(n-1)
+            v_values = 0.3 + 0.4 * np.random.rand(n-1)
+            colors += [colorsys.hsv_to_rgb(h, s, l) for h, s, l in
+                       zip(h_values, s_values, v_values)]
+            return colors
 
         cols = ['bigg.metabolite', 'bigg.reaction',
                 'bigg.subsystem.reaction', 'Mode']
@@ -756,23 +753,43 @@ class FigurePlotter(object):
         # for each subsystem in E. coli, draw a stacked bar plot
         # of the different metabolites regulating them
         # (giving unique colors only for the first 'n')
-        #inh_table.fillna(0, inplace=True)
         # sort the subsystems by number of interactions
         inh_table = inh_table[
                 inh_table.sum(0).sort_values(ascending=False).index]
 
-        # keep only the n metabolites with the most interactions
-        ind = inh_table.sum(1).sort_values(ascending=False).index
-        other = inh_table.loc[ind[n_colors:], :].sum(0).to_frame().transpose()
-        counts_cutoff = pd.concat([other, inh_table.loc[ind[0:n_colors], :]])
-        counts_cutoff.rename(index={0: 'other'}, inplace=True)
+        # lump some of the metabolites into more general groups
+        lump_dict = {'divalent cations': ['CA2', 'CD2', 'CU2', 'MN2', 'MG2',
+                                          'HG2', 'NI2', 'ZN2', 'FE2',
+                                          'COBALT2'],
+                     'monovalent cations': ['K', 'NA1'],
+                     'ATP/ADP/AMP': ['AMP', 'ADP', 'ATP'],
+                     'GTP/GDP/GMP': ['GMP', 'GDP', 'GTP'],
+                     'CTP/CDP/CMP': ['CMP', 'CDP', 'CTP'],
+                     'UTP/UDP/UMP': ['UMP', 'UDP', 'UTP'],
+                     'ITP/IDP/IMP': ['IMP', 'ITP'],
+                     'Pi/PPi': ['PI', 'PPI'],
+                     'NAD(P)(H)': ['NAD', 'NADH', 'NADP', 'NADPH'],
+                     'amino acids': ['CYS__L', 'ALA__L', 'SER__L', 'GLU__L',
+                                     'PRO__L', 'TYR__L', 'TRP__L', 'THR__L',
+                                     'VAL__L', 'MET__L', 'ILE__L', 'HOM__L',
+                                     'HIS__L', 'GLN__L', 'ARG__L', 'ASP__L']}
+        inh_table_lumped = inh_table.transpose()
+        inh_table_lumped.columns = map(str.upper, inh_table_lumped.columns)
+        for k, v in lump_dict.iteritems():
+            inh_table_lumped[k] = inh_table_lumped[v].sum(1)
+            inh_table_lumped.drop(v, axis=1, inplace=True)
 
-        met2rgb = create_random_colormap(counts_cutoff.index)
-        colors = map(met2rgb.get, counts_cutoff.index)
+        # keep only the n metabolites with the most interactions
+        ind = inh_table_lumped.sum(0).sort_values(ascending=False).index
+        other = inh_table_lumped[ind[n_colors:]].sum(1).to_frame()
+        counts_cutoff = pd.concat([other, inh_table_lumped[ind[0:n_colors]]],
+                                  axis=1)
+        counts_cutoff.rename(columns={0: 'other'}, inplace=True)
+
+        colors = create_random_colormap(counts_cutoff.shape[1])
 
         fig, ax = plt.subplots(1, 1, figsize=(10, 10))
-        counts_cutoff.transpose().plot.bar(stacked=True, ax=ax,
-                                           color=colors)
+        counts_cutoff.plot.bar(stacked=True, ax=ax, color=colors)
         ax.set_title('Distinct reactions inhibited by small molecules')
         fig.tight_layout()
         settings.savefig(fig, 'subsystem_stacked_bar', dpi=300)
