@@ -8,7 +8,6 @@ from bigg import BiGG
 from kegg import KEGG
 import settings
 import map_ligands
-import husl
 import colorsys
 
 import pandas as pd
@@ -717,15 +716,22 @@ class FigurePlotter(object):
 
     def draw_pathway_met_histogram(self, n_colors=20):
 
-        def create_random_colormap(n):
+        def create_random_colormap(labels):
             np.random.seed(60)
-            colors = [(0.5, 0.5, 0.5)]
-            h_values = np.random.permutation(n-1) * (1.0/n)
-            s_values = 0.3 + 0.4 * np.random.rand(n-1)
-            v_values = 0.3 + 0.4 * np.random.rand(n-1)
-            colors += [colorsys.hsv_to_rgb(h, s, l) for h, s, l in
-                       zip(h_values, s_values, v_values)]
-            return colors
+            n = len(labels)
+            h_values = np.random.permutation(n) / (1.0*n)
+            s_values = 0.3 + 0.4 * (np.arange(n) % 2)
+            v_values = 0.3 + 0.2 * (np.arange(n) % 3)
+
+            s_values[0] = 0
+            v_values[0] = 0.5
+            colors = [colorsys.hsv_to_rgb(h, s, l) for h, s, l in
+                      zip(h_values, s_values, v_values)]
+
+            return dict(zip(labels, colors))
+
+        subsys = self.bigg.get_reaction_subsystems()
+        subsys_count = subsys.reset_index().groupby('bigg.subsystem').count()
 
         cols = ['bigg.metabolite', 'bigg.reaction',
                 'bigg.subsystem.reaction', 'Mode']
@@ -750,12 +756,14 @@ class FigurePlotter(object):
         inh_table.to_csv(os.path.join(
             settings.RESULT_DIR, 'pathway_met_histograms_inhibiting.csv'))
 
+        # TODO: calculate the total number of reactions in each subsystem
+        # and use it to normalize the number of interactions
+
         # for each subsystem in E. coli, draw a stacked bar plot
         # of the different metabolites regulating them
         # (giving unique colors only for the first 'n')
         # sort the subsystems by number of interactions
-        inh_table = inh_table[
-                inh_table.sum(0).sort_values(ascending=False).index]
+        inh_table = inh_table[inh_table.sum(0).sort_values().index]
 
         # lump some of the metabolites into more general groups
         lump_dict = {'divalent cations': ['CA2', 'CD2', 'CU2', 'MN2', 'MG2',
@@ -786,11 +794,16 @@ class FigurePlotter(object):
                                   axis=1)
         counts_cutoff.rename(columns={0: 'other'}, inplace=True)
 
-        colors = create_random_colormap(counts_cutoff.shape[1])
+        colors = create_random_colormap(counts_cutoff.columns)
+        colors['CYAN'] = (0.0, 0.8, 0.8)
+        colors['UREA'] = (0.8, 0.8, 0.0)
+        colors['Pi/PPi'] = (0.3, 0.8, 0.3)
 
-        fig, ax = plt.subplots(1, 1, figsize=(10, 10))
-        counts_cutoff.plot.bar(stacked=True, ax=ax, color=colors)
-        ax.set_title('Distinct reactions inhibited by small molecules')
+        fig, ax = plt.subplots(1, 1, figsize=(6, 8))
+        counts_cutoff.plot.barh(stacked=True, ax=ax,
+                                color=map(colors.get, counts_cutoff.columns))
+        ax.set_xlabel('# inhibitions')
+        ax.set_ylabel('')
         fig.tight_layout()
         settings.savefig(fig, 'subsystem_stacked_bar', dpi=300)
 
