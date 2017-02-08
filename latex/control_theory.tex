@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\usepackage[square,numbers]{natbib}
 \pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
@@ -60,7 +61,7 @@ The elasticity with respect to the activator concentration $x$ will thus be:
     &=& h~\frac{K_A^h}{K_A^h + x^h} = h (1 - \theta) \label{eq:eps_act}
 \end{eqnarray}
 
-\subsubsection{Non-competitive Inhibition}
+\subsubsection{Pure non-Competitive Inhibition}
 First, consider a non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
 \begin{eqnarray}
     \theta &=& 1 - \frac{x^h}{K_I^h + x^h} = \frac{K_I^h}{K_I^h + x^h}
@@ -96,22 +97,71 @@ This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) 
 
 
 \subsubsection{Competitive Inhibition}
-Competitive inhibition is a special case, where a separable kinetic rate law is not sufficient since $\frac{\partial \kappa}{\partial x} \neq 0$. To analyze this case, we pick a simple one-substrate irreversible reaction, where the inhibitor affects the $K_M$ according to the following formula:
+Competitive inhibition is a one case, where a separable kinetic rate law is not sufficient since $\frac{\partial \kappa}{\partial x} \neq 0$. To analyze this case, we pick a simple one-substrate irreversible reaction, where the inhibitor affects the $K_M$ according to the following formula:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s}
 \end{eqnarray}
-In this case, we can define an \emph{effective} inhibition constants $K_E$, that will allow us to rewrite this rate law in a form identical to non-competitive inhibition:
+In this case, we can define an \emph{effective} inhibition constants $K_{IC}$, that will allow us to rewrite this rate law in a form identical to non-competitive inhibition:
 \begin{eqnarray}
-    K_E &\equiv& K_I \sqrt[h]{\frac{K_M + s}{K_M}} \nonumber\\
+    K_{IC} &\equiv& K_I \sqrt[h]{\frac{K_M + s}{K_M}} \nonumber\\
     v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s} =
-          V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h~(K_M + s)}{K_E^h~K_M}\right) + s} = \nonumber\\
-      &=& V^+ ~ \frac{s}{K_M + s + \frac{x^h~(K_M + s)}{K_E^h}} = 
-          V^+ ~ \frac{s}{K_M + s} \cdot \frac{1}{1 + \frac{x^h}{K_E^h}} \label{eq:eps_comp_inh}
+          V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h~(K_M + s)}{K_{IC}^h~K_M}\right) + s} = \nonumber\\
+      &=& V^+ ~ \frac{s}{K_M + s + \frac{x^h~(K_M + s)}{K_{IC}^h}} = 
+          V^+ ~ \frac{s}{K_M + s} \cdot \frac{1}{1 + \frac{x^h}{K_{IC}^h}} \label{eq:eps_comp_inh}
 \end{eqnarray}
-so we can see here that in this case $\theta = \frac{K_E^h}{K_E^h~+~x^h}$, exactly like in the case of non-competitive inhibition. Of course, the difference here is that $K_E$ is not a binding constant but rather a function of $s$ and $K_M$. Nevertheless, we can use the same formula for the elasticity (since $K_E$ is a constant with regards to $x$):
+so we can see here that in this case $\theta = \frac{K_{IC}^h}{K_{IC}^h~+~x^h}$, exactly like in the case of non-competitive inhibition. Of course, the difference here is that $K_{IC}$ is not a binding constant but rather a function of $s$, $K_M$, and $K_I$. Nevertheless, we can use the same formula for the elasticity (since $K_{IC}$ is a constant with regards to $x$):
 \begin{eqnarray}
     \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)
 \end{eqnarray}
+
+\subsubsection{Uncompetitive Inhibition}
+Uncompetitive inhibition is another case where substrate and inhibitor saturations are entangled:
+\begin{eqnarray}
+    v &=& V^+ ~ \frac{s}{K_M + s \left(1 + \frac{x^h}{K_I^h}\right)}
+\end{eqnarray}
+However, the same procedure as in competitive inhibition can also be used here, by defining an effective constant $K_{IU}$, that will allow us to rewrite this rate law in a form identical to non-competitive inhibition:
+\begin{eqnarray}
+    K_{IU} &\equiv& K_I \sqrt[h]{\frac{K_M + s}{s}} \nonumber\\
+    v &=& V^+ ~ \frac{s}{K_M + s \left(1 + \frac{x^h}{K_I^h}\right)} =
+          V^+ ~ \frac{s}{K_M + s \left(1 + \frac{x^h~(K_M + s)}{K_{IU}^h~s}\right)} = \nonumber\\
+      &=& V^+ ~ \frac{s}{K_M + s + \frac{x^h~(K_M + s)}{K_{IU}^h}} = 
+          V^+ ~ \frac{s}{K_M + s} \cdot \frac{1}{1 + \frac{x^h}{K_{IU}^h}} \label{eq:eps_comp_inh}
+\end{eqnarray}
+which shows that just like in the case of competitive inhibition, $\theta = \frac{K_{IU}^h}{K_{IU}^h~+~x^h}$, and the formula for elasticity remains $\epsilon_x^v = -h(1 - \theta)$.
+
+\subsubsection{Generalized Inhibition Model}
+A general formula for reversible reactions with non-cooperative competitive, uncompetitive, mixed and pure non-competitive inhibition is given in Chapter 5 of \citet{Sauro2011-op}:
+\begin{eqnarray}
+    v &=& \frac{\frac{V_m}{K_S}\left(S - \frac{P}{K_{eq}}\right)\left(1 + b \frac{x}{aK_I}\right)}{\left(1 + \frac{S}{K_S} + \frac{P}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{S}{aK_S} + \frac{P}{aK_P}\right)}\,.
+\end{eqnarray}
+The parameter $b$ represents the amount of inhibition, i.e. the activity of the enzyme when the inhibitor is bound to it. If we assume there is no activity in the bound state, also known as \textbf{complete inhibition}, then we can set $b = 0$. 
+Then, depending on the value of $a$, the above formula converges to the different cases discussed earlier. For example, if $a \rightarrow \infty$, then this rate law is equivalent to competitive inhibition. When $a = 1$ it is equivalent to pure non-competitive inhibition. Finally, if $a \rightarrow 0$ (more precisely, when $K_I \gg a K_I$), it becomes uncompetitive inhibition.
+
+The elasticity we get for this general form is:
+\begin{eqnarray}
+\epsilon_x^v &=& \frac{b \frac{x}{aK_I}}{1 + b \frac{x}{aK_I}} ~-~ \frac{\frac{x}{K_I} \left(1 + \frac{S}{aK_S} + \frac{P}{aK_P}\right)}{\left(1 + \frac{S}{K_S} + \frac{P}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{S}{aK_S} + \frac{P}{aK_P}\right)}
+\end{eqnarray}
+as with previous cases, we can define an effective $K_E$:
+\begin{eqnarray}
+    K_{E1} & \equiv & K_I ~ \frac{a}{b} \\
+    K_{E2} & \equiv & K_I ~ \frac{1 + \frac{S}{K_S} + \frac{P}{K_P}}{1 + \frac{S}{aK_S} + \frac{P}{aK_P}}
+\end{eqnarray}
+and therefore that we get:
+\begin{eqnarray}
+v &=& \frac{\frac{V_m}{K_S}\left(S - \frac{P}{K_{eq}}\right)}{\left(1 + \frac{S}{K_S} + \frac{P}{K_P}\right)} \cdot \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} \nonumber \\
+\epsilon_x^v &=& \frac{x}{K_{E1} + x} ~-~ \frac{x}{K_{E2} + x}
+\end{eqnarray}
+As expected, in all cases of complete inhibition ($b \rightarrow 0$ which means that $K_{E1} \rightarrow \infty$), we reach exactly the same conclusion as in the extreme cases, namely:
+\begin{eqnarray}
+\theta = \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} &\rightarrow& \frac{K_{E2}}{K_{E2} + x} \nonumber\\
+\epsilon_x^v &\rightarrow& -(1 - \theta)
+\end{eqnarray}
+
+For incomplete inhibition, however, there is a more complex relationship between relative activity and inhibition.
+
+
+\subsubsection{The Monod-Changeux-Jacob model}
+Probably the most widespread model for cooperativity of substrate and effector binding was proposed by \citet{Monod1965-dq}. In this model
 
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
 By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh} and \ref{eq:eps_comp_inh}) into one formula:
@@ -132,7 +182,7 @@ Since $\theta$ represents the fraction of active enzyme, we see here that there 
 Another corollary of Equation \ref{eq:abs_elast} is that the control can be increased by changing the Hill coefficient ($h$). This could be a reason why mechanisms with very high cooperativity evolve for allosteric regulation \cite{Monod1965-dq}, as it increases elasticity without the added cost of losing enzyme activity.
 
 
-\bibliographystyle{ieeetr}
+\bibliographystyle{unsrtnat}
 \bibliography{control_theory}
 
 \end{document}
