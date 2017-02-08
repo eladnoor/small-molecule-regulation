@@ -459,7 +459,125 @@ class FigurePlotter(object):
         _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
         self.regulation.to_csv(_fname, 'w')
 
-    def draw_cdf_plots(self, linewidth=2):
+    def draw_elasticity_pdf_plots(self, linewidth=2):
+        """
+            Compare the CDFs of the two fold-change types (for Ki and Km)
+        """
+
+        met_color = '#fedf08'  # dandelion
+        ki_color = '#fe86a4'  # rosa
+        km_color = '#3eaf76'  # dark seafoam green
+
+        fig, axs = plt.subplots(2, 2, figsize=(6 , 6), sharey=False)
+
+        met_intersection = set(self.km['bigg.metabolite']).intersection(
+            self.ki['bigg.metabolite'])
+        km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
+        ki_inter = self.ki[self.ki['bigg.metabolite'].isin(met_intersection)]
+
+        ax = axs[0, 0]
+
+        concentrations = pd.melt(self.met_conc_mean)['value']
+        concentrations = concentrations[~pd.isnull(concentrations)]
+
+        sns.kdeplot(np.log10(concentrations), cumulative=False, ax=ax, bw=.25,
+                    linewidth=linewidth, color=met_color, legend=False)
+        ax.set_xlim(-2.1, 2.1)
+        ax.set_xticks(np.arange(-2, 3, 1))
+        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
+        ax.set_xlabel(r'$[S]$ (in mM)')
+        ax.set_ylabel(r'Probability density')
+        ax.set_title('Measured metabolite conc.')
+
+        ax = axs[0, 1]
+        km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
+        ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
+        sns.kdeplot(np.log10(km_values), cumulative=False,
+                    ax=ax, bw=.25, color=km_color,
+                    label='substrates (N = %d)' % km_values.shape[0],
+                    linewidth=linewidth)
+        sns.kdeplot(np.log10(ki_values), cumulative=False,
+                    ax=ax, bw=.25, color=ki_color,
+                    label='inhibitors (N = %d)' % ki_values.shape[0],
+                    linewidth=linewidth)
+        ax.set_xlim(-2.1, 2.7)
+        ax.set_ylim(0, 0.7)
+        ax.set_xticks(np.arange(-2, 3, 1))
+        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
+        ax.set_xlabel(r'$K_S$ (in mM)')
+        ax.set_title(r'Measured $K_{\rm S}$ values')
+
+        ranksum_res = ranksums(km_values, ki_values)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+                horizontalalignment='left',
+                verticalalignment='top',
+                transform=ax.transAxes)
+        ax.legend(loc='upper right')
+
+        # compare Km and Ki for the intersection of EC numbers
+
+        ax = axs[1, 0]
+        ki_saturation = ki_inter['saturation']
+        ki_saturation = ki_saturation[~pd.isnull(ki_saturation)]
+        km_saturation = km_inter['saturation']
+        km_saturation = km_saturation[~pd.isnull(km_saturation)]
+        sns.kdeplot(km_saturation, cumulative=False, ax=ax, bw=.1,
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=linewidth, color=km_color)
+        sns.kdeplot(ki_saturation, cumulative=False, ax=ax, bw=.1,
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
+                    linewidth=linewidth, color=ki_color)
+
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
+        ax.set_ylabel(r'Probability density')
+        ax.set_title(r'Saturation levels')
+        ax.legend(loc='upper center')
+
+        ranksum_res = ranksums(km_saturation, ki_saturation)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
+        ax = axs[1, 1]
+        ki_elasticity = ki_inter['elasticity'].abs()
+        ki_elasticity = ki_elasticity[~pd.isnull(ki_elasticity)]
+        km_elasticity = km_inter['elasticity'].abs()
+        km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
+        sns.kdeplot(km_elasticity, cumulative=False, ax=ax, bw=.1,
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=linewidth, color=km_color)
+        sns.kdeplot(ki_elasticity, cumulative=False, ax=ax, bw=.1,
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
+                    linewidth=linewidth, color=ki_color)
+
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$|\epsilon_s^v|$')
+        ax.set_title(r'Elasticities')
+        ax.legend(loc='upper center')
+
+        ranksum_res = ranksums(km_elasticity, ki_elasticity)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
+        for i, ax in enumerate(axs.flat):
+            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=14)
+        fig.tight_layout()
+
+        settings.savefig(fig, 'elasticity_pdf')
+
+    def draw_elasticity_cdf_plots(self, linewidth=2):
         """
             Compare the CDFs of the two fold-change types (for Ki and Km)
         """
@@ -603,7 +721,7 @@ class FigurePlotter(object):
                         size=14)
         fig.tight_layout()
 
-        settings.savefig(fig, 'cdf_saturation')
+        settings.savefig(fig, 'elasticity_cdf')
 
     def get_grouped_data(self):
         """
@@ -1219,11 +1337,12 @@ if __name__ == "__main__":
 #
 #    fp.draw_thermodynamics_cdf()
 #
-    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_met_histogram()
 #    fp.draw_pathway_histogram()
 #    fp.draw_venn_diagrams()
 #
-#    fp.draw_cdf_plots()
+#    fp.draw_elasticity_cdf_plots()
+    fp.draw_elasticity_pdf_plots()
 #
 #    fp.draw_agg_heatmaps(agg_type='median')
 #
