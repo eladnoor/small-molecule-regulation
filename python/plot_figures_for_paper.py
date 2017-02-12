@@ -457,7 +457,8 @@ class FigurePlotter(object):
         with open(_fname, 'w') as fp:
             json.dump(res, fp, indent=4)
         _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
-        self.regulation.to_csv(_fname, 'w')
+        #self.regulation.to_csv(_fname, 'w')
+        self.regulation.to_csv(_fname)
 
     def draw_elasticity_pdf_plots(self, linewidth=2):
         """
@@ -1331,27 +1332,27 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-#    fp = FigurePlotter(rebuild_cache=True)
+    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-#    fp.draw_cdf_plots()
-#
-#    fp.draw_thermodynamics_cdf()
-#
-#    fp.draw_pathway_met_histogram()
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_elasticity_cdf_plots()
+    fp.draw_cdf_plots()
+
+    fp.draw_thermodynamics_cdf()
+
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
+    fp.draw_elasticity_cdf_plots()
     fp.draw_elasticity_pdf_plots()
-#
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#
-#    fp.print_ccm_table()
-#    fp.compare_km_ki()
-#
-#    fp.draw_degree_histograms()
-#    fp.draw_distance_histograms()
+
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+
+    fp.print_ccm_table()
+    fp.compare_km_ki()
+
+    fp.draw_degree_histograms()
+    fp.draw_distance_histograms()
 
     plt.close('all')
