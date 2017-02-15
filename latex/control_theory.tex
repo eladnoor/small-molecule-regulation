@@ -67,13 +67,18 @@ First, consider a non-competitive inhibitor with Hill coefficient $h$ and inhibi
     \theta &=& 1 - \frac{x^h}{K_I^h + x^h} = \frac{K_I^h}{K_I^h + x^h}
 \end{eqnarray}
 
-The following plot shows the response of $\theta$ to the concentration $x$ in log-log scale, when the Hill coefficient is $h = 2$.
+The following plot shows the response of $\theta$ to the concentration $x$ in log-log scale.
 
 \begin{center}
 \begin{tikzpicture}
-	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$x/K_I$, ylabel=$\theta$ (relative activity)]
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$x/K_I$, ylabel=$\theta$ (relative activity)]
+		\addplot+[mark=none,smooth] (\x,{(1 - (\x/(1+\x))});
 		\addplot+[mark=none,smooth] (\x,{(1 - (\x^2/(1+\x^2))});
-	\end{loglogaxis}
+		\addplot+[mark=none,smooth] (\x,{(1 - (\x^3/(1+\x^3))});
+		\end{loglogaxis}
+	\node[rotate=-35] at (4.1, 3.2) {h = 1};
+	\node[rotate=-55] at (4.2, 1.5) {h = 2};
+	\node[rotate=-70] at (3.2, 1) {h = 3};
 \end{tikzpicture}
 \end{center}
 
@@ -88,7 +93,10 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 \begin{center}
 \begin{tikzpicture}
 	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$\epsilon_x^v$]
-		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});
+		\addplot+[mark=none,smooth] (\x,{-1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{-3 * (\x^3/(1+\x^3))});
+	\node[rotate=1] at (10, -0.6) {h = 1};
+	\node[rotate=1] at (10, -1.7) {h = 2};
+	\node[rotate=1] at (10, -2.7) {h = 3};
 	\end{semilogxaxis}
 \end{tikzpicture}
 \end{center}
