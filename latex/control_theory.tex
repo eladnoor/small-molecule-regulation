@@ -10,7 +10,7 @@
 \pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
-
+\newcommand{\wolf}[1]{{\color{red} [#1]}}
 
 \begin{document}
 \section{Control Theory}
@@ -55,14 +55,16 @@ As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be gen
     \kappa &\equiv& \frac{s/K_S}{1 + s/K_S + p/K_P} \\
     \gamma &\equiv& 1 - \frac{p/s}{K_{eq}'}
 \end{eqnarray}
-where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate and product are:
+where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate is:
 \begin{eqnarray}
     \epsilon_s^v &=& \gamma^{-1} - \kappa
 \end{eqnarray}
 which converges to equation \ref{eq:eps_s_v_irr} as $p \rightarrow 0$.
 
 \subsection{Regulatory Effectors}
-As far as we know, previous publications have not dealt specifically with elasticities associated with small-molecule effectors such as allosteric regulators. Without loss of generality, we will keep the separable form of the rate law
+Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.
+
+Without loss of generality, we will keep the separable form of the rate law
 \[v = V^+ \cdot \kappa \cdot \gamma \cdot \theta(x)\]
 where we add a multiplicative term $\theta(x)$ that will represent the decrease of activity due to the small-molecule regulation ($x$). As long as $\theta(x)$ is the only term affected by $x$, i.e. $\frac{\partial \kappa}{\partial x} = \frac{\partial \gamma}{\partial x} = 0$, the exact forms of $\kappa$ and $\gamma$ are irrelevant.
 
@@ -76,6 +78,12 @@ The elasticity with respect to the activator concentration $x$ will thus be:
     \epsilon_a^v &=& \frac{\partial v}{\partial a} ~ \frac{a}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{h~a^{h-1} (K_A^h + a^h) - h~a^{h-1} a^h}{(K_A^h + a^h)^2}~\frac{a}{v} \nonumber \\
     &=& h~\frac{K_A^h}{K_A^h + a^h} = h (1 - \theta) \label{eq:eps_act}
 \end{eqnarray}
+\wolf{to make this even more general, we can also mention the case
+	of an activator that increases an already existing activity: instead
+	of $\theta$, we get $\alpha + (1-\alpha) \theta$ with a constant
+	relative baseline activity $\alpha$. In this case, the elasticity
+	formula remains the same, except for a constant prefactor; the same
+	logic can also be applied to inhibitors.}
 
 \subsubsection{Pure non-Competitive Inhibition}
 First, consider a non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
