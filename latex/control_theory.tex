@@ -15,7 +15,7 @@
 \begin{document}
 \section{Control Theory}
 \subsection{What is elasticity?}
-Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework that is widely used to dynamic systems such as metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify the control of some variables, such as fluxes, depend on other features of the system. The \emph{scaled elasticity} is the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
+Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework that is widely applied to dynamic systems such as metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of some variables, such as fluxes, depend on other features of the system. \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
 \begin{eqnarray}
     \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
 \end{eqnarray}
@@ -27,7 +27,7 @@ Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible
 \end{eqnarray}
 where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the Michaelis-Menten coefficient (also in molar).
 
-The scaled elasticities for $s$ and $i$ are given by:
+The scaled elasticity for $s$ is given by:
 \begin{eqnarray}
     \epsilon_s^v &=& \frac{\partial v}{\partial s} ~ \frac{s}{v} = V^+ ~ \frac{K_M + s - s}{(K_M + s)^2} ~ \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} ~ (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}\label{eq:eps_s_v_irr}
@@ -62,7 +62,7 @@ The elasticity with respect to the activator concentration $x$ will thus be:
 \end{eqnarray}
 
 \subsubsection{Pure non-Competitive Inhibition}
-First, consider a non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
+Next, we consider a pure non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
 \begin{eqnarray}
     \theta &=& 1 - \frac{x^h}{K_I^h + x^h} = \frac{K_I^h}{K_I^h + x^h}
 \end{eqnarray}
@@ -92,7 +92,7 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 
 \begin{center}
 \begin{tikzpicture}
-	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$\epsilon_x^v$]
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$x/K_I$, ylabel=$\epsilon_x^v$]
 		\addplot+[mark=none,smooth] (\x,{-1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{-3 * (\x^3/(1+\x^3))});
 	\node[rotate=1] at (10, -0.6) {h = 1};
 	\node[rotate=1] at (10, -1.7) {h = 2};
@@ -101,11 +101,11 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 \end{tikzpicture}
 \end{center}
 
-This means that substrates have the most control ($\epsilon_s^v \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($\epsilon_x^v \rightarrow -h$) when they are saturated ($i \gg K_I$).
+This means that substrates have the most control ($|\epsilon_s^v| \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($|\epsilon_x^v| \rightarrow h$) when they are saturated ($x \gg K_I$).
 
 
 \subsubsection{Competitive Inhibition}
-Competitive inhibition is a one case, where a separable kinetic rate law is not sufficient since $\frac{\partial \kappa}{\partial x} \neq 0$. To analyze this case, we pick a simple one-substrate irreversible reaction, where the inhibitor affects the $K_M$ according to the following formula:
+Competitive inhibition is one case, where a separable kinetic rate law is not sufficient since $\frac{\partial \kappa}{\partial x} \neq 0$. To analyze this case, we pick a simple one-substrate irreversible reaction, where the inhibitor affects the $K_M$ according to the following formula:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s}
 \end{eqnarray}
