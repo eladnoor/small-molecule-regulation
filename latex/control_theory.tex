@@ -10,7 +10,7 @@
 \pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
-
+\newcommand{\wolf}[1]{{\color{red} [#1]}}
 
 \begin{document}
 \section{Control Theory}
@@ -27,11 +27,27 @@ Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible
 \end{eqnarray}
 where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the Michaelis-Menten coefficient (also in molar).
 
+\begin{center}
+	\begin{tikzpicture}
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\frac{s}{K_M + s}$]
+	\addplot+[mark=none,smooth] (\x,{(\x/(1+\x))});
+	\end{loglogaxis}
+	\end{tikzpicture}
+\end{center}
+
 The scaled elasticity for $s$ is given by:
 \begin{eqnarray}
     \epsilon_s^v &=& \frac{\partial v}{\partial s} ~ \frac{s}{v} = V^+ ~ \frac{K_M + s - s}{(K_M + s)^2} ~ \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} ~ (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}\label{eq:eps_s_v_irr}
 \end{eqnarray}
+
+\begin{center}
+	\begin{tikzpicture}
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\epsilon_s^v$]
+	\addplot+[mark=none,smooth] (\x,{(1/(1+\x))});
+	\end{semilogxaxis}
+	\end{tikzpicture}
+\end{center}
 
 As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions, where the saturation term is separated from the thermodynamic term:
 \begin{eqnarray}
@@ -39,14 +55,16 @@ As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be gen
     \kappa &\equiv& \frac{s/K_S}{1 + s/K_S + p/K_P} \\
     \gamma &\equiv& 1 - \frac{p/s}{K_{eq}'}
 \end{eqnarray}
-where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate and product are:
+where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate is:
 \begin{eqnarray}
     \epsilon_s^v &=& \gamma^{-1} - \kappa
 \end{eqnarray}
 which converges to equation \ref{eq:eps_s_v_irr} as $p \rightarrow 0$.
 
 \subsection{Regulatory Effectors}
-As far as we know, previous publications have not dealt specifically with elasticities associated with small-molecule effectors such as allosteric regulators. Without loss of generality, we will keep the separable form of the rate law
+Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.
+
+Without loss of generality, we will keep the separable form of the rate law
 \[v = V^+ \cdot \kappa \cdot \gamma \cdot \theta(x)\]
 where we add a multiplicative term $\theta(x)$ that will represent the decrease of activity due to the small-molecule regulation ($x$). As long as $\theta(x)$ is the only term affected by $x$, i.e. $\frac{\partial \kappa}{\partial x} = \frac{\partial \gamma}{\partial x} = 0$, the exact forms of $\kappa$ and $\gamma$ are irrelevant.
 
@@ -60,6 +78,12 @@ The elasticity with respect to the activator concentration $x$ will thus be:
     \epsilon_a^v &=& \frac{\partial v}{\partial a} ~ \frac{a}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{h~a^{h-1} (K_A^h + a^h) - h~a^{h-1} a^h}{(K_A^h + a^h)^2}~\frac{a}{v} \nonumber \\
     &=& h~\frac{K_A^h}{K_A^h + a^h} = h (1 - \theta) \label{eq:eps_act}
 \end{eqnarray}
+\wolf{to make this even more general, we can also mention the case
+	of an activator that increases an already existing activity: instead
+	of $\theta$, we get $\alpha + (1-\alpha) \theta$ with a constant
+	relative baseline activity $\alpha$. In this case, the elasticity
+	formula remains the same, except for a constant prefactor; the same
+	logic can also be applied to inhibitors.}
 
 \subsubsection{Pure non-Competitive Inhibition}
 Next, we consider a pure non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
@@ -92,11 +116,11 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 
 \begin{center}
 \begin{tikzpicture}
-	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$x/K_I$, ylabel=$\epsilon_x^v$]
-		\addplot+[mark=none,smooth] (\x,{-1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{-3 * (\x^3/(1+\x^3))});
-	\node[rotate=1] at (10, -0.6) {h = 1};
-	\node[rotate=1] at (10, -1.7) {h = 2};
-	\node[rotate=1] at (10, -2.7) {h = 3};
+\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$|\epsilon_x^v|$]
+		\addplot+[mark=none,smooth] (\x,{1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{3 * (\x^3/(1+\x^3))});
+	\node[rotate=1] at (10, 0.6) {h = 1};
+	\node[rotate=1] at (10, 1.7) {h = 2};
+	\node[rotate=1] at (10, 2.7) {h = 3};
 	\end{semilogxaxis}
 \end{tikzpicture}
 \end{center}
