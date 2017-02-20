@@ -27,11 +27,27 @@ Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible
 \end{eqnarray}
 where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the Michaelis-Menten coefficient (also in molar).
 
+\begin{center}
+	\begin{tikzpicture}
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\frac{s}{K_M + s}$]
+	\addplot+[mark=none,smooth] (\x,{(\x/(1+\x))});
+	\end{loglogaxis}
+	\end{tikzpicture}
+\end{center}
+
 The scaled elasticities for $s$ and $i$ are given by:
 \begin{eqnarray}
     \epsilon_s^v &=& \frac{\partial v}{\partial s} ~ \frac{s}{v} = V^+ ~ \frac{K_M + s - s}{(K_M + s)^2} ~ \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} ~ (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}\label{eq:eps_s_v_irr}
 \end{eqnarray}
+
+\begin{center}
+	\begin{tikzpicture}
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\epsilon_s^v$]
+	\addplot+[mark=none,smooth] (\x,{(1/(1+\x))});
+	\end{semilogxaxis}
+	\end{tikzpicture}
+\end{center}
 
 As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions, where the saturation term is separated from the thermodynamic term:
 \begin{eqnarray}
@@ -92,11 +108,11 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 
 \begin{center}
 \begin{tikzpicture}
-	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$\epsilon_x^v$]
-		\addplot+[mark=none,smooth] (\x,{-1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{-2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{-3 * (\x^3/(1+\x^3))});
-	\node[rotate=1] at (10, -0.6) {h = 1};
-	\node[rotate=1] at (10, -1.7) {h = 2};
-	\node[rotate=1] at (10, -2.7) {h = 3};
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$|\epsilon_x^v|$]
+		\addplot+[mark=none,smooth] (\x,{1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{3 * (\x^3/(1+\x^3))});
+	\node[rotate=1] at (10, 0.6) {h = 1};
+	\node[rotate=1] at (10, 1.7) {h = 2};
+	\node[rotate=1] at (10, 2.7) {h = 3};
 	\end{semilogxaxis}
 \end{tikzpicture}
 \end{center}
