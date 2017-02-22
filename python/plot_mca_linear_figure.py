@@ -30,7 +30,8 @@ arrowprops = dict(facecolor='black', shrink=0.01, width=1.5, headwidth=4)
 x_low = 0.1
 x_high = 45.0
 
-
+fig.text(0.5, 0.95, 'Michaelis-Menten kinetics', fontsize=17, ha='center')
+fig.text(0.5, 0.47, 'non-competitive inhibition', fontsize=17, ha='center')
 ###############################################################################
 ax = axs[0, 0]
 ax.plot(s_range, map(v, s_range), '-')
@@ -47,7 +48,7 @@ ax.annotate(r'$|\epsilon_s^v| \approx 0$', xy=(x_high, v(x_high)), xycoords='dat
             xytext=(0, -30), textcoords='offset points', va='center', ha='center',
             fontsize=12,
             arrowprops=arrowprops)
-ax.set_title('Michaelis-Menten')
+ax.set_title('rate law')
 ax.annotate(r'$v = V^+ \, \frac{s}{K_M + s}$', color=(0.2, 0.4, 1.0),
             xy=(0.5, 0.5), xycoords='axes fraction', fontsize=14,
             ha='center', va='center')
@@ -92,7 +93,7 @@ ax.annotate(r'$|\epsilon_I^v| \approx 0$', xy=(x_high, v(x_high)),
             xytext=(0, 30), textcoords='offset points', va='center', ha='center',
             fontsize=12,
             arrowprops=dict(facecolor='black', shrink=0.01, width=1.5, headwidth=4))
-ax.set_title('non-competitive inhibition')
+ax.set_title('rate law')
 ax.annotate(r'$v = V^+ ( 1 - \frac{I}{K_I + I} ) $', color=(0.2, 0.4, 1.0),
             xy=(0.5, 0.5), xycoords='axes fraction', fontsize=14,
             ha='center', va='center')
@@ -119,5 +120,5 @@ ax.annotate(r'$\epsilon_I^v = -\frac{I}{K_I + I}$', color=(0.2, 0.4, 1.0),
 ax.set_title('inhibitor elasticity')
 
 ###############################################################################
-fig.tight_layout()
+fig.tight_layout(pad=4, h_pad=5, w_pad=1)
 fig.savefig(os.path.join(RESULT_DIR, 'mca_linear.pdf'))
