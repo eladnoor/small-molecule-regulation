@@ -62,3 +62,7 @@ target/
 .ipynb_checkpoints
 /data/.Rhistory
 /python/.spyderworkspace
+/latex/control_theory.aux
+/latex/control_theory.bbl
+/latex/control_theory.blg
+/latex/control_theory.synctex.gz

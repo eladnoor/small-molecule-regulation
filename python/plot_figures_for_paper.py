@@ -1153,9 +1153,9 @@ class FigurePlotter(object):
 
         res = pd.DataFrame()
 
-        res['KI_Values'] = ki.groupby('bigg.metabolite')['KI_Value'].mean()
+        res['KI_Values'] = ki.groupby('bigg.metabolite')['KI_Value'].median()
         res['KI_Number'] = ki.groupby('bigg.metabolite')['EC_number'].nunique()
-        res['KM_Values'] = km.groupby('bigg.metabolite')['KM_Value'].mean()
+        res['KM_Values'] = km.groupby('bigg.metabolite')['KM_Value'].median()
         res['KM_Number'] = km.groupby('bigg.metabolite')['EC_number'].nunique()
 
         # Drop rows where we don't have data for both
@@ -1165,6 +1165,8 @@ class FigurePlotter(object):
         res = res[res['KI_Number'] > 1]
         res = res[res['KM_Number'] > 1]
 
+        print "Found %d metabolites with more than 2 KMs and more than 2 KIs" % res.shape[0]
+
         res['PValue'] = np.nan
 
         # for each metabolite, if there is sufficient data, test
@@ -1172,45 +1174,56 @@ class FigurePlotter(object):
             kid = ki[ki['bigg.metabolite'] == ii]['KI_Value']
             kmd = km[km['bigg.metabolite'] == ii]['KM_Value']
 
-            s,p = st.mannwhitneyu( kid,kmd )
-            res.at[ii,'PValue'] = p
-            res['QValue'] = padjust(res['PValue'],method = 'fdr_bh')[1]
+            s,p = st.mannwhitneyu(kid, kmd)
+            res.at[ii, 'PValue'] = p
+            res['QValue'] = padjust(res['PValue'], method='fdr_bh')[1]
         res = res.sort_values('PValue')
-
-        maxval = 2*np.max( [res['KI_Values'].max(),res['KM_Values'].max()] )
-        minval = 0.5*np.min( [res['KI_Values'].min(),res['KM_Values'].min()] )
-
-        fig,ax = plt.subplots(figsize = (8,8))
-        ax.scatter(res['KI_Values'],res['KM_Values'],s = 10*res['KI_Number'], color = 'grey')
-        ax.axis([minval,maxval,minval,maxval])
-        ax.set_xscale('log')
-        ax.set_yscale('log')
 
         # Calculate log ratio of values
         res['Ratio'] = np.log2( res['KI_Values'] / res['KM_Values'] )
+        res['size'] = 2 * (res['KI_Number'] + res['KM_Number'])
 
-        for ii in res.index:
-            if res.at[ii,'QValue'] < 0.1:
-                ax.scatter(res.at[ii,'KI_Values'], res.at[ii,'KM_Values'], color = 'r', s = 10*res.at[ii,'KI_Number'])
-                ax.text(1.2*res.at[ii,'KI_Values'],res.at[ii,'KM_Values'],ii)
-        plt.xlabel('Mean KI')
-        plt.ylabel('Mean KM')
+        # make a log-log scatter plots and mark the significant metabolites
+        # in red
+        c_not_significant = (0.8, 0.7, 1.0)
+        c_significant = (0.9, 0.2, 0.2)
 
-        diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3")
+        fig, ax = plt.subplots(figsize=(5, 5),
+                               subplot_kw={'xscale':'log', 'yscale':'log'})
+        ax.scatter(res['KI_Values'], res['KM_Values'],
+                   s=res['size'], color=c_not_significant)
+        for ii, row in res.iterrows():
+            if row['QValue'] < 0.1:
+                ax.scatter(row['KI_Values'], row['KM_Values'],
+                           color=c_significant, s=row['size'])
+                ax.annotate(ii, xy=(row['KI_Values'], row['KM_Values']),
+                            xytext=(10, 20), textcoords='offset points',
+                            ha='left', va='center',
+                            arrowprops=dict(facecolor='black', shrink=0.05, width=1.5, headwidth=4))
+        plt.xlabel('median $K_I$')
+        plt.ylabel('median $K_M$')
+
+        diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3",
+                             color='grey' )
 
         settings.savefig(fig, 'km_vs_ki')
 
         # Make volcano plot
-        fig,ax = plt.subplots(figsize = (8,8))
-        ax.scatter(res['Ratio'],-np.log10(res['QValue']),color = 'grey',s = 4*(res['KI_Number'] + res['KM_Number']) )
+        fig, ax = plt.subplots(figsize=(5, 5))
+        ax.scatter(res['Ratio'], -np.log10(res['QValue']),
+                   color=c_not_significant,
+                   s=4*(res['KI_Number'] + res['KM_Number']))
 
         for ii in res.index:
-            if res.at[ii,'QValue'] < 0.1 and np.abs(res.at[ii,'Ratio']) > 1:
-                ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']), color = 'r', s = 4*(res['KI_Number'] + res['KM_Number']) )
-                ax.text(1.2*res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']),ii)
+            if res.at[ii,'QValue'] < 0.1 and np.abs(res.at[ii, 'Ratio']) > 1:
+                ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']),
+                           color=c_significant, s=res['size'])
+                ax.text(res.at[ii, 'Ratio'],
+                        -np.log10(res.at[ii,'QValue']),
+                        ii)
 
-        plt.xlabel('Log2 (Mean KI/Mean KM)')
-        plt.ylabel('-Log10 Q Value')
+        plt.xlabel('$log_2$ (median $K_I$/median $K_M$)')
+        plt.ylabel('-$log_{10} (Q-value)')
 
         # Plot some lines
         highq = -np.log10(res['QValue'].min()) + .1
@@ -1332,27 +1345,27 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-    fp = FigurePlotter(rebuild_cache=True)
+#    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_cdf_plots()
-
-    fp.draw_thermodynamics_cdf()
-
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_elasticity_cdf_plots()
-    fp.draw_elasticity_pdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-
-    fp.print_ccm_table()
+#    fp.draw_cdf_plots()
+#
+#    fp.draw_thermodynamics_cdf()
+#
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_elasticity_cdf_plots()
+#    fp.draw_elasticity_pdf_plots()
+#
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#
+#    fp.print_ccm_table()
     fp.compare_km_ki()
 
-    fp.draw_degree_histograms()
-    fp.draw_distance_histograms()
+#    fp.draw_degree_histograms()
+#    fp.draw_distance_histograms()
 
     plt.close('all')
