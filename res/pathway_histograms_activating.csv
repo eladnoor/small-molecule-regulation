@@ -1,6 +1,6 @@
 bigg.subsystem.metabolite,Alanine and Aspartate Metabolism,Alternate Carbon Metabolism,Anaplerotic Reactions,Arginine and Proline Metabolism,Cell Envelope Biosynthesis,Citric Acid Cycle,Cofactor and Prosthetic Group Biosynthesis,Cysteine Metabolism,Folate Metabolism,Glutamate Metabolism,Glycerophospholipid Metabolism,Glycine and Serine Metabolism,Glycolysis/Gluconeogenesis,Glyoxylate Metabolism,Histidine Metabolism,Inorganic Ion Transport and Metabolism,Lipopolysaccharide Biosynthesis / Recycling,Membrane Lipid Metabolism,Methionine Metabolism,Methylglyoxal Metabolism,Nitrogen Metabolism,Nucleotide Salvage Pathway,Oxidative Phosphorylation,Pentose Phosphate Pathway,Purine and Pyrimidine Biosynthesis,Pyruvate Metabolism,Threonine and Lysine Metabolism,"Transport, Inner Membrane","Tyrosine, Tryptophan, and Phenylalanine Metabolism",Unassigned,tRNA Charging
 Alanine and Aspartate Metabolism,5.0,5.0,3.0,1.0,0.0,0.0,4.0,0.0,0.0,2.0,4.0,0.0,5.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,7.0,2.0,0.0,1.0,1.0,6.0,0.0,0.0,0.0,0.0
-Alternate Carbon Metabolism,4.0,14.0,4.0,2.0,8.0,2.0,3.0,0.0,0.0,2.0,4.0,0.0,21.0,0.0,0.0,2.0,0.0,0.0,0.0,2.0,0.0,7.0,4.0,1.0,4.0,3.0,8.0,0.0,1.0,0.0,0.0
+Alternate Carbon Metabolism,4.0,14.0,5.0,2.0,8.0,2.0,3.0,0.0,0.0,2.0,4.0,0.0,23.0,0.0,0.0,2.0,0.0,0.0,0.0,2.0,0.0,7.0,4.0,1.0,4.0,3.0,8.0,0.0,1.0,0.0,0.0
 Anaplerotic Reactions,2.0,7.0,3.0,2.0,4.0,2.0,2.0,0.0,0.0,1.0,3.0,0.0,8.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,3.0,3.0,0.0,3.0,2.0,6.0,0.0,1.0,0.0,0.0
 Arginine and Proline Metabolism,4.0,6.0,5.0,3.0,5.0,2.0,4.0,0.0,0.0,3.0,5.0,0.0,7.0,0.0,0.0,2.0,0.0,0.0,2.0,0.0,0.0,9.0,4.0,1.0,2.0,1.0,5.0,0.0,0.0,0.0,2.0
 Biomass and maintenance functions,7.0,20.0,9.0,12.0,12.0,3.0,10.0,5.0,2.0,3.0,4.0,3.0,7.0,1.0,1.0,4.0,1.0,1.0,4.0,0.0,1.0,29.0,5.0,2.0,7.0,1.0,4.0,0.0,1.0,2.0,2.0
@@ -12,7 +12,7 @@ Folate Metabolism,0.0,4.0,1.0,1.0,5.0,1.0,3.0,0.0,0.0,1.0,2.0,0.0,3.0,0.0,0.0,2.
 Glutamate Metabolism,1.0,3.0,2.0,1.0,3.0,1.0,3.0,0.0,0.0,1.0,2.0,0.0,4.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,5.0,3.0,0.0,1.0,0.0,4.0,0.0,0.0,0.0,0.0
 Glycerophospholipid Metabolism,3.0,6.0,2.0,1.0,2.0,1.0,3.0,0.0,0.0,3.0,7.0,1.0,6.0,0.0,0.0,4.0,0.0,0.0,2.0,0.0,0.0,5.0,4.0,0.0,2.0,1.0,4.0,0.0,0.0,0.0,0.0
 Glycine and Serine Metabolism,1.0,6.0,4.0,2.0,4.0,2.0,2.0,0.0,0.0,1.0,3.0,1.0,6.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,8.0,3.0,1.0,1.0,2.0,6.0,0.0,0.0,0.0,0.0
-Glycolysis/Gluconeogenesis,2.0,8.0,3.0,2.0,2.0,2.0,2.0,0.0,0.0,2.0,4.0,0.0,15.0,0.0,0.0,2.0,0.0,0.0,0.0,1.0,0.0,3.0,4.0,0.0,1.0,2.0,7.0,0.0,1.0,0.0,0.0
+Glycolysis/Gluconeogenesis,2.0,8.0,4.0,2.0,2.0,2.0,2.0,0.0,0.0,2.0,4.0,0.0,17.0,0.0,0.0,2.0,0.0,0.0,0.0,1.0,0.0,3.0,4.0,0.0,1.0,2.0,7.0,0.0,1.0,0.0,0.0
 Glyoxylate Metabolism,0.0,4.0,1.0,0.0,3.0,1.0,2.0,0.0,0.0,1.0,2.0,0.0,4.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,3.0,2.0,0.0,1.0,1.0,4.0,0.0,0.0,0.0,0.0
 Histidine Metabolism,3.0,4.0,2.0,1.0,2.0,0.0,3.0,0.0,0.0,2.0,3.0,0.0,4.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,6.0,3.0,0.0,2.0,1.0,4.0,0.0,0.0,1.0,0.0
 Inorganic Ion Transport and Metabolism,3.0,15.0,4.0,10.0,11.0,2.0,7.0,4.0,0.0,1.0,3.0,2.0,9.0,2.0,1.0,2.0,1.0,1.0,2.0,0.0,0.0,11.0,4.0,1.0,2.0,0.0,4.0,1.0,1.0,1.0,0.0

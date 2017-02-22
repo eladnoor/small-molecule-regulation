@@ -6147,6 +6147,20 @@
 64828,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,GDP,,,+,Escherichia coli,EcoCyc,gdp,CHEBI:58189,pfk,Glycolysis/Gluconeogenesis,Cysteine Metabolism,Glycolysis,pfk
 65245,ReactionID=6PFRUCTPHOS-RXN,Potassium cation,2.7.1.11,C00238,,K+,,,-,Escherichia coli,EcoCyc,k,CHEBI:29103,pfk,Glycolysis/Gluconeogenesis,Biomass and maintenance functions,Glycolysis,pfk
 65246,ReactionID=6PFRUCTPHOS-RXN,Potassium cation,2.7.1.11,C00238,,K+,,,-,Escherichia coli,EcoCyc,k,CHEBI:29103,pfk,Glycolysis/Gluconeogenesis,Inorganic Ion Transport and Metabolism,Glycolysis,pfk
+67461,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
+67462,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
+67463,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
+67464,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+67465,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
+67466,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
+67467,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
+67468,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
+67469,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
+67470,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
+67471,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+67472,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
+67473,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
+67474,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
 24308,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,"640421, 640463",-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
 24309,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,"640421, 640463",-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
 24310,,Phosphoenolpyruvate,2.7.1.11,C00074,,51,phosphoenolpyruvate,"640421, 640463",-,Escherichia coli,BRENDA,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
@@ -6175,34 +6189,20 @@
 66452,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
 66453,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
 66454,ReactionID=6PFRUCTPHOS-RXN,,2.7.1.11,,,PHOSPHO-ENOL-PYRUVATE,,,-,Escherichia coli,EcoCyc,pep,CHEBI:58702,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
-67461,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
-67462,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
-67463,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
-67464,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
-67465,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
-67466,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
-67467,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,0.35,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
-67468,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
-67469,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
-67470,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
-67471,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
-67472,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
-67473,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
-67474,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,0.3,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
-67461,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
-67462,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
-67463,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
-67464,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
-67465,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
-67466,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
-67467,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
-67468,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
-67469,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
-67470,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
-67471,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
-67472,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
-67473,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
-67474,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
+67461,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
+67462,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
+67463,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
+67464,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+67465,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
+67466,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
+67467,KI value chosen as center of range 0.1-0.5,phosphoenolpyruvate,2.7.1.11,C00074,,,,10.1006/jtbi.1996.0013,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
+67468,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,pfk
+67469,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,pfk
+67470,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,pfk
+67471,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,pfk
+67472,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,pfk
+67473,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Anaplerotic Reactions,Glycolysis,pfk
+67474,approximated visually from Fig 17,phosphoenolpyruvate,2.7.1.11,C00074,,,,4229913,-,Escherichia coli,Manual,pep,CHEBI:44897,pfk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pfk
 63170,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,AMP,,,+,Escherichia coli,EcoCyc,amp,CHEBI:456215,pyk,Glycolysis/Gluconeogenesis,Glycerophospholipid Metabolism,Glycolysis,pykF
 63171,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,AMP,,,+,Escherichia coli,EcoCyc,amp,CHEBI:456215,pyk,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,pykF
 63172,ReactionID=PEPDEPHOS-RXN,,2.7.1.40,,,AMP,,,+,Escherichia coli,EcoCyc,amp,CHEBI:456215,pyk,Glycolysis/Gluconeogenesis,Pyruvate Metabolism,Glycolysis,pykF
@@ -6472,6 +6472,20 @@
 62222,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,pps,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,ppsA
 62223,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,ADP,,,-,Escherichia coli,EcoCyc,adp,CHEBI:456216,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
 31218,weak,ADP-glucose,2.7.9.2,C00498,,598,ADP-glucose,645473,-,Escherichia coli,BRENDA,adpglc,CHEBI:15751,pps,Glycolysis/Gluconeogenesis,Glycolysis/Gluconeogenesis,Glycolysis,ppsA
+67475,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Arginine and Proline Metabolism,Glycolysis,ppsA
+67476,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
+67477,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,ppsA
+67478,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alanine and Aspartate Metabolism,Glycolysis,ppsA
+67479,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glutamate Metabolism,Glycolysis,ppsA
+67480,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Histidine Metabolism,Glycolysis,ppsA
+67481,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Valine, Leucine, and Isoleucine Metabolism",Glycolysis,ppsA
+67482,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cofactor and Prosthetic Group Biosynthesis,Glycolysis,ppsA
+67483,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,ppsA
+67484,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glycine and Serine Metabolism,Glycolysis,ppsA
+67485,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Threonine and Lysine Metabolism,Glycolysis,ppsA
+67486,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,ppsA
+67487,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
+67488,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,ppsA
 31018,,2-Oxoglutarate,2.7.9.2,C00026,,34,2-oxoglutarate,"645472, 645473",-,Escherichia coli,BRENDA,akg,CHEBI:30915,pps,Glycolysis/Gluconeogenesis,Arginine and Proline Metabolism,Glycolysis,ppsA
 31019,,2-Oxoglutarate,2.7.9.2,C00026,,34,2-oxoglutarate,"645472, 645473",-,Escherichia coli,BRENDA,akg,CHEBI:30915,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
 31020,,2-Oxoglutarate,2.7.9.2,C00026,,34,2-oxoglutarate,"645472, 645473",-,Escherichia coli,BRENDA,akg,CHEBI:30915,pps,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,ppsA
@@ -6514,34 +6528,20 @@
 61949,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,ppsA
 61950,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
 61951,ReactionID=PEPSYNTH-RXN,,2.7.9.2,,,2-KETOGLUTARATE,,,-,Escherichia coli,EcoCyc,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,ppsA
-67475,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Arginine and Proline Metabolism,Glycolysis,ppsA
-67476,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
-67477,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,ppsA
-67478,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alanine and Aspartate Metabolism,Glycolysis,ppsA
-67479,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glutamate Metabolism,Glycolysis,ppsA
-67480,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Histidine Metabolism,Glycolysis,ppsA
-67481,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Valine, Leucine, and Isoleucine Metabolism",Glycolysis,ppsA
-67482,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cofactor and Prosthetic Group Biosynthesis,Glycolysis,ppsA
-67483,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,ppsA
-67484,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glycine and Serine Metabolism,Glycolysis,ppsA
-67485,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Threonine and Lysine Metabolism,Glycolysis,ppsA
-67486,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,ppsA
-67487,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
-67488,,2-oxoglutarate,2.7.9.2,C00026,1.27,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,ppsA
-67475,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Arginine and Proline Metabolism,Glycolysis,ppsA
-67476,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
-67477,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,ppsA
-67478,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alanine and Aspartate Metabolism,Glycolysis,ppsA
-67479,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glutamate Metabolism,Glycolysis,ppsA
-67480,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Histidine Metabolism,Glycolysis,ppsA
-67481,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Valine, Leucine, and Isoleucine Metabolism",Glycolysis,ppsA
-67482,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cofactor and Prosthetic Group Biosynthesis,Glycolysis,ppsA
-67483,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,ppsA
-67484,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glycine and Serine Metabolism,Glycolysis,ppsA
-67485,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Threonine and Lysine Metabolism,Glycolysis,ppsA
-67486,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,ppsA
-67487,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
-67488,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,ppsA
+67475,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Arginine and Proline Metabolism,Glycolysis,ppsA
+67476,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Citric Acid Cycle,Glycolysis,ppsA
+67477,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Transport, Inner Membrane",Glycolysis,ppsA
+67478,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alanine and Aspartate Metabolism,Glycolysis,ppsA
+67479,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glutamate Metabolism,Glycolysis,ppsA
+67480,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Histidine Metabolism,Glycolysis,ppsA
+67481,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Valine, Leucine, and Isoleucine Metabolism",Glycolysis,ppsA
+67482,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cofactor and Prosthetic Group Biosynthesis,Glycolysis,ppsA
+67483,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Glycolysis,ppsA
+67484,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Glycine and Serine Metabolism,Glycolysis,ppsA
+67485,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Threonine and Lysine Metabolism,Glycolysis,ppsA
+67486,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Alternate Carbon Metabolism,Glycolysis,ppsA
+67487,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
+67488,,2-oxoglutarate,2.7.9.2,C00026,,,,4572511,-,Escherichia coli,Manual,akg,CHEBI:16810,pps,Glycolysis/Gluconeogenesis,Lipopolysaccharide Biosynthesis / Recycling,Glycolysis,ppsA
 31219,,AMP,2.7.9.2,C00020,,30,AMP,645473,-,Escherichia coli,BRENDA,amp,CHEBI:16027,pps,Glycolysis/Gluconeogenesis,Glycerophospholipid Metabolism,Glycolysis,ppsA
 31220,,AMP,2.7.9.2,C00020,,30,AMP,645473,-,Escherichia coli,BRENDA,amp,CHEBI:16027,pps,Glycolysis/Gluconeogenesis,Cell Envelope Biosynthesis,Glycolysis,ppsA
 31221,,AMP,2.7.9.2,C00020,,30,AMP,645473,-,Escherichia coli,BRENDA,amp,CHEBI:16027,pps,Glycolysis/Gluconeogenesis,Pyruvate Metabolism,Glycolysis,ppsA
