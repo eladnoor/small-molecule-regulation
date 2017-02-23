@@ -333,7 +333,7 @@ class FigurePlotter(object):
 
         sns.heatmap(sat_joined,
                     ax=ax, mask=sat_joined.isnull(), annot=True, fmt='.2f',
-                    cbar=True, vmin=-1, vmax=1, cmap='bwr', cbar_ax=clb[0],
+                    cbar=True, vmin=-1, vmax=1, cmap=settings.HEATMAP_COLORMAP, cbar_ax=clb[0],
                     annot_kws={'fontdict': {'fontsize': 12}})
 
         # change xtick labels back to the original strings
@@ -378,7 +378,7 @@ class FigurePlotter(object):
 
         fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(18, 30))
         sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
-                    cbar=False, vmin=-1, vmax=1, cmap='bwr', fmt='.2f')
+                    cbar=False, vmin=-1, vmax=1, cmap=settings.HEATMAP_COLORMAP, fmt='.2f')
         ax0.set_xticklabels(list(km_pivoted.columns), fontsize=12, rotation=90)
         ax0.set_yticklabels(reversed(km_pivoted.index), rotation=0, fontsize=6)
         ax0.set_title('substrates', fontsize=20)
@@ -387,7 +387,7 @@ class FigurePlotter(object):
 
         clb1 = matplotlib.colorbar.make_axes(ax1)
         sns.heatmap(ki_pivoted, ax=ax1, mask=ki_pivoted.isnull(),
-                    cbar=True, vmin=-1, vmax=1, annot=True, cmap='bwr',
+                    cbar=True, vmin=-1, vmax=1, annot=True, cmap=settings.HEATMAP_COLORMAP,
                     cbar_ax=clb1[0], fmt='.2f')
         ax1.set_xticklabels(list(ki_pivoted.columns), fontsize=12, rotation=90)
         ax1.set_title('inhibitors', fontsize=20)
@@ -1197,9 +1197,8 @@ class FigurePlotter(object):
                 ax.scatter(row['KI_Values'], row['KM_Values'],
                            color=c_significant, s=row['size'])
                 ax.annotate(ii, xy=(row['KI_Values'], row['KM_Values']),
-                            xytext=(10, 20), textcoords='offset points',
-                            ha='left', va='center',
-                            arrowprops=dict(facecolor='black', shrink=0.05, width=1.5, headwidth=4))
+                            xytext=(5, 10), textcoords='offset points',
+                            ha='left', va='center', color=c_significant)
         plt.xlabel('median $K_I$')
         plt.ylabel('median $K_M$')
 
@@ -1345,27 +1344,28 @@ class FigurePlotter(object):
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
-#    fp = FigurePlotter(rebuild_cache=True)
+
+    fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-#    fp.draw_cdf_plots()
-#
-#    fp.draw_thermodynamics_cdf()
-#
-#    fp.draw_pathway_met_histogram()
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_elasticity_cdf_plots()
-#    fp.draw_elasticity_pdf_plots()
-#
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#
-#    fp.print_ccm_table()
+    fp.draw_cdf_plots()
+
+    fp.draw_thermodynamics_cdf()
+
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
+    fp.draw_elasticity_cdf_plots()
+    fp.draw_elasticity_pdf_plots()
+
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+
+    fp.print_ccm_table()
     fp.compare_km_ki()
 
-#    fp.draw_degree_histograms()
-#    fp.draw_distance_histograms()
+    fp.draw_degree_histograms()
+    fp.draw_distance_histograms()
 
     plt.close('all')

@@ -8,10 +8,8 @@ Created on Wed Feb 22 15:43:18 2017
 
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-from matplotlib import cm
 import numpy as np
-import os
-from settings import RESULT_DIR
+import settings
 
 rcParams['font.family'] = 'sans-serif'
 rcParams['mathtext.sf'] = 'serif'
@@ -119,24 +117,25 @@ ax.set_title('inhibitor elasticity')
 
 ###############################################################################
 fig.tight_layout(pad=4, h_pad=5, w_pad=1)
-fig.savefig(os.path.join(RESULT_DIR, 'mca_log.pdf'))
-
+settings.savefig(fig, 'mca_log', dpi=300)
 
 ###############################################################################
 # make a small version of the figure to be placed as a subplot in the heatmap
 # figures
 #%%
-fig, axs = plt.subplots(1, 2, figsize=(8, 4), sharey=True)
-axs[0].set_facecolor('#BBBBBB')
-axs[1].set_facecolor('#BBBBBB')
+fig, axs = plt.subplots(1, 2, figsize=(4, 2), sharey=True)
+#axs[0].set_facecolor('#BBBBBB')
+#axs[1].set_facecolor('#BBBBBB')
 
 s_range = np.logspace(-3, 3, 1000) # 10 uM - 100 mM
 eps = map(eps_s_v, s_range)
-axs[0].plot([1e-3, 1e3], [0, 0], 'w-')
-axs[0].scatter(s_range, eps, c=eps, cmap=cm.bwr, edgecolor='none', s=15, vmin=-1, vmax=1)
+axs[0].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
+axs[0].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
+               edgecolor='none', s=15, vmin=-1, vmax=1)
 eps = map(eps_x_v, s_range)
-axs[1].plot([1e-3, 1e3], [0, 0], 'w-')
-axs[1].scatter(s_range, eps, c=eps, cmap=cm.bwr, edgecolor='none', s=15, vmin=-1, vmax=1)
+axs[1].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
+axs[1].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
+               edgecolor='none', s=15, vmin=-1, vmax=1)
 axs[0].set_title('substrates')
 axs[1].set_title('inhibitors')
 axs[0].set_xlabel('substrate conc. $s$ [mM]')
@@ -148,4 +147,4 @@ axs[1].set_xscale('log')
 axs[0].set_xlim(1e-3, 1e3)
 axs[1].set_xlim(1e-3, 1e3)
 axs[0].set_ylim(-1, 1)
-fig.savefig(os.path.join(RESULT_DIR, 'elasticity_comparison.pdf'))
+settings.savefig(fig, 'elasticity_comparison', dpi=300)

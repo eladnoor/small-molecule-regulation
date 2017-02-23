@@ -61,6 +61,8 @@ CCM_SUBSYSTEMS = ['Glycolysis/Gluconeogenesis',
                   'Pentose Phosphate Pathway',
                   'Anaplerotic Reactions']
 
+HEATMAP_COLORMAP = 'coolwarm'
+
 def get_data_df(fname):
     return pd.DataFrame.from_csv(os.path.join(DATA_DIR, fname + '.csv'), header=0, index_col=None)
 
