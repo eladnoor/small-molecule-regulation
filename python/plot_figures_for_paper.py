@@ -1337,25 +1337,25 @@ if __name__ == "__main__":
 
     fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-#    fp.draw_cdf_plots()
+    fp.draw_cdf_plots()
 
     fp.draw_thermodynamics_cdf()
 
-#    fp.draw_pathway_met_histogram()
-#    fp.draw_pathway_histogram()
-#    fp.draw_venn_diagrams()
-#
-#    fp.draw_elasticity_cdf_plots()
-#    fp.draw_elasticity_pdf_plots()
-#
-#    fp.draw_agg_heatmaps(agg_type='median')
-#
-#    fp.draw_full_heapmats()
-#
-#    fp.print_ccm_table()
-#    fp.compare_km_ki()
-#
-#    fp.draw_degree_histograms()
-#    fp.draw_distance_histograms()
-#
-#    plt.close('all')
+    fp.draw_pathway_met_histogram()
+    fp.draw_pathway_histogram()
+    fp.draw_venn_diagrams()
+
+    fp.draw_elasticity_cdf_plots()
+    fp.draw_elasticity_pdf_plots()
+
+    fp.draw_agg_heatmaps(agg_type='median')
+
+    fp.draw_full_heapmats()
+
+    fp.print_ccm_table()
+    fp.compare_km_ki()
+
+    fp.draw_degree_histograms()
+    fp.draw_distance_histograms()
+
+    plt.close('all')
