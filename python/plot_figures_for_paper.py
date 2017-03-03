@@ -987,7 +987,7 @@ class FigurePlotter(object):
 
     @staticmethod
     def comparative_cdf(x, y, data, ax, linewidth=2, title=None):
-        xvals = data[x].unique()
+        xvals = sorted(data[x].unique())
         for xval in xvals:
             d = data.loc[data[x] == xval, y]
             sns.kdeplot(d, cumulative=True, ax=ax, bw=.15,
@@ -1026,7 +1026,7 @@ class FigurePlotter(object):
         # select the median value of log(gamma) for each EC number
         # (in general, there should be only one value for each
         # EC number anyway)
-        irr_index_l = r"$| log(\Gamma) |$"
+        irr_index_l = r"$| log_{10}(\Gamma) |$"
         thermo_df[irr_index_l] = thermo_df['logRI'].abs()
         thermo_df = thermo_df[~pd.isnull(thermo_df.EC_number)]
 
@@ -1041,32 +1041,22 @@ class FigurePlotter(object):
         reg_thermo_df = thermo_df.groupby(['EC_number', 'subsystem'])
         reg_thermo_df = reg_thermo_df[irr_index_l].median().reset_index()
 
-        # for each EC number, check if it regulated, and if it it positive (+),
-        # negative (-) or both (+/-)
-        self.regulation.to_csv(os.path.join(settings.RESULT_DIR,
-                                            'regulation.csv'))
-        mode_df = self.regulation.groupby('EC_number')['Mode']
-        mode_df = mode_df.apply(set).str.join('/')  # convert to short string
-        ecs_with_ki = self.regulation.loc[
-            ~pd.isnull(self.regulation['KI_Value']), 'EC_number'].unique()
+        # count how many unique interaction each EC number has
+        # counting by metabolites (ignoring the modes)
+        reg_count_df = self.regulation.groupby('EC_number')['bigg.metabolite'].nunique()
+        reg_thermo_df = reg_thermo_df.join(reg_count_df, on='EC_number', how='left')
+        reg_thermo_df.fillna(0, inplace=True)
 
-        reg_thermo_df = reg_thermo_df.join(mode_df, on='EC_number')
+        reg_thermo_df['num_regulators'] = ''
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'num_regulators'] = '0 regulators'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'].isin((1, 2)), 'num_regulators'] = '1-2 regulators'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 2, 'num_regulators'] = '3+ regulators'
 
-        reg_thermo_df['Regulation'] = 'regulated'
-        unreg_ind = pd.isnull(reg_thermo_df['Mode'])
-        reg_thermo_df.loc[unreg_ind, 'Regulation'] = 'not regulated'
+        reg_thermo_df['Regulation'] = ''
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'Regulation'] = 'not regulated'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 0, 'Regulation'] = 'regulated'
 
-        reg_thermo_df['Activation'] = 'not activated'
-        act_ind = reg_thermo_df['Mode'].isin(['+', '+/-'])
-        reg_thermo_df.loc[act_ind, 'Activation'] = 'activated'
-
-        reg_thermo_df['Inhibition'] = 'not inhibited'
-        inh_ind = reg_thermo_df['Mode'].isin(['-', '+/-'])
-        reg_thermo_df.loc[inh_ind, 'Inhibition'] = 'inhibited'
-
-        reg_thermo_df['KI_Value'] = 'no $K_I$'
-        ki_ind = reg_thermo_df['EC_number'].isin(ecs_with_ki)
-        reg_thermo_df.loc[ki_ind, 'KI_Value'] = 'has $K_I$'
+        reg_thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'reg_thermo.csv'))
 
         ccm_thermo_df = reg_thermo_df[
             reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
@@ -1076,12 +1066,12 @@ class FigurePlotter(object):
 
         fig, axs = plt.subplots(1, 2, figsize=(5, 3), sharey=True)
         ax = axs[0]
-        FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
+        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
                                       data=reg_thermo_df, ax=ax,
                                       title='all E. coli reactions')
         ax.set_xlim(0, 15)
         ax = axs[1]
-        FigurePlotter.comparative_cdf(x='Regulation', y=irr_index_l,
+        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
                                       data=ccm_thermo_df, ax=ax,
                                       title='only CCM reactions')
         ax.set_xlim(0, 15)
@@ -1347,25 +1337,25 @@ if __name__ == "__main__":
 
     fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_cdf_plots()
+#    fp.draw_cdf_plots()
 
     fp.draw_thermodynamics_cdf()
 
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
-
-    fp.draw_elasticity_cdf_plots()
-    fp.draw_elasticity_pdf_plots()
-
-    fp.draw_agg_heatmaps(agg_type='median')
-
-    fp.draw_full_heapmats()
-
-    fp.print_ccm_table()
-    fp.compare_km_ki()
-
-    fp.draw_degree_histograms()
-    fp.draw_distance_histograms()
-
-    plt.close('all')
+#    fp.draw_pathway_met_histogram()
+#    fp.draw_pathway_histogram()
+#    fp.draw_venn_diagrams()
+#
+#    fp.draw_elasticity_cdf_plots()
+#    fp.draw_elasticity_pdf_plots()
+#
+#    fp.draw_agg_heatmaps(agg_type='median')
+#
+#    fp.draw_full_heapmats()
+#
+#    fp.print_ccm_table()
+#    fp.compare_km_ki()
+#
+#    fp.draw_degree_histograms()
+#    fp.draw_distance_histograms()
+#
+#    plt.close('all')
