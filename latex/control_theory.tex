@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage[square,numbers]{natbib}
-\pgfplotsset{compat=1.13}
+%\pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
 \newcommand{\wolf}[1]{{\color{red} [#1]}}
@@ -15,13 +15,15 @@
 \begin{document}
 \section{Control Theory}
 \subsection{What is elasticity?}
-Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework that is widely applied to dynamic systems such as metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of some variables, such as fluxes, depend on other features of the system. \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
+Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to understanding the dynamics and control of metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of metabolic fluxes depends on other quantities in the system (\textit{i.e.} the topology of the metabolic network, and the levels of metabolites). \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
 \begin{eqnarray}
     \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
 \end{eqnarray}
 
-\subsection{Single-substrate Control}
-Consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
+The elasticity has several properties which make it desirable for modeling metabolic systems. In particular, for a variety of kinetic rate laws (\textit{e.g.} Michaelis-Menten kinetics), the elasticity (for Michaelis-Menten kinetics, the substrate elasticity is bounded between 0 and 1). 
+
+\subsection{Single-substrate Control in Michaelis-Menten Kinetics}
+To illustrate the concept of elasticity, let us consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M + s}
 \end{eqnarray}
@@ -49,6 +51,8 @@ The scaled elasticity for $s$ is given by:
 	\end{tikzpicture}
 \end{center}
 
+Note that the scaled elasticity is bounded between 0 and 1. More specifically, $\epsilon_s^v$ is maximized (\textit{i.e.} the substrate has the highest control potential) at low substrate concentrations, and minimized at high substrate concentrations.
+
 As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions, where the saturation term is separated from the thermodynamic term:
 \begin{eqnarray}
     v &=& V^+ \cdot \kappa \cdot \gamma \\
@@ -62,7 +66,7 @@ where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten
 which converges to equation \ref{eq:eps_s_v_irr} as $p \rightarrow 0$.
 
 \subsection{Regulatory Effectors}
-Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.
+Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, \emph{there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.}
 
 Without loss of generality, we will keep the separable form of the rate law
 \[v = V^+ \cdot \kappa \cdot \gamma \cdot \theta(x)\]
