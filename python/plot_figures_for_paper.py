@@ -293,6 +293,208 @@ class FigurePlotter(object):
         self.stat_df[value_col].iat[6] = \
             k_val.groupby('EC_number').first().shape[0]
 
+    def plot_fig4(self):
+        """
+            Panels a-b are for testing the  hypothesis that irreversible
+            reactions are more likely to be regulated allosterically.
+            Panels c-f show the difference between the distributions of
+            substrate-enzyme interactions and regulator-enzyme interactions
+            in terms of Km/Ki, saturation and elasticity.
+        """
+        fig, axs = plt.subplots(3, 2, figsize=(6, 9))
+
+        # get the irreversibility constant (absolute) for all reactions
+        # in the BiGG iJO1336 model
+        thermo_df = pd.DataFrame.from_csv(settings.ECOLI_THERMO_CACHE_FNAME)
+
+        # remove data about reactions with std=0 (i.e. known values)
+        # and reactions with std > 20 (high uncertainty)
+        thermo_df = thermo_df[(thermo_df["dG0_prime_std"] > 0) &
+                              (thermo_df["dG0_prime_std"] < 20)]
+
+        # select the median value of log(gamma) for each EC number
+        # (in general, there should be only one value for each
+        # EC number anyway)
+        irr_index_l = r"$| log_{10}(\Gamma) |$"
+        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
+        thermo_df = thermo_df[~pd.isnull(thermo_df.EC_number)]
+
+        # print the regulation table joined with the irreversibility values
+        _temp_df = self.regulation.join(thermo_df[irr_index_l],
+                                        on='EC_number')
+        _temp_df.to_csv(os.path.join(settings.RESULT_DIR,
+                                     'regulation_with_thermo.csv'))
+
+        # group the thermo table by EC number and subsystem, while
+        # taking the median value of the irreversibility index
+        reg_thermo_df = thermo_df.groupby(['EC_number', 'subsystem'])
+        reg_thermo_df = reg_thermo_df[irr_index_l].median().reset_index()
+
+        # count how many unique interaction each EC number has
+        # counting by metabolites (ignoring the modes)
+        reg_count_df = self.regulation.groupby('EC_number')['bigg.metabolite'].nunique()
+        reg_thermo_df = reg_thermo_df.join(reg_count_df, on='EC_number', how='left')
+        reg_thermo_df.fillna(0, inplace=True)
+
+        reg_thermo_df['num_regulators'] = ''
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'num_regulators'] = '0 regulators'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'].isin((1, 2)), 'num_regulators'] = '1-2 regulators'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 2, 'num_regulators'] = '3+ regulators'
+
+        reg_thermo_df['Regulation'] = ''
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'Regulation'] = 'not regulated'
+        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 0, 'Regulation'] = 'regulated'
+
+        reg_thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'reg_thermo.csv'))
+
+        ccm_thermo_df = reg_thermo_df[
+            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
+
+        ccm_thermo_df.to_csv(os.path.join(settings.RESULT_DIR,
+                             'CCM_thermodynamics.csv'))
+
+        sns.set_palette('Set2', 8, 1)
+        ax = axs[0, 0]
+        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
+                                      data=reg_thermo_df, ax=ax,
+                                      title='all E. coli reactions')
+        ax.set_xlim(0, 15)
+        ax = axs[0, 1]
+        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
+                                      data=ccm_thermo_df, ax=ax,
+                                      title='only CCM reactions')
+        ax.set_xlim(0, 15)
+        ax.set_ylabel('')
+
+        # correlate irreversibility also with the number of references and
+        # unique regulating metabolites
+
+        num_refs = self.regulation.groupby(
+             'bigg.reaction')['Literature'].nunique()
+        ixrefs = num_refs.index.intersection(thermo_df.index)
+        thermo_df['Num_Refs'] = 0
+        thermo_df.loc[ixrefs, 'Num_Refs'] = num_refs.loc[ixrefs]
+
+        num_regs = self.regulation.groupby(
+            'bigg.reaction')['bigg.metabolite'].nunique()
+        ixmets = num_regs.index.intersection(thermo_df.index)
+        thermo_df['Num_Regs'] = 0
+        thermo_df.loc[ixmets, 'Num_Regs'] = num_regs.loc[ixmets]
+        thermo_df['is regulated'] = 'No'
+        thermo_df.ix[thermo_df['Num_Regs'] > 0, 'is regulated'] = 'Yes'
+
+        met_color = sns.color_palette('Set2')[3]
+        km_color = sns.color_palette('coolwarm')[-1]
+        ki_color = sns.color_palette('coolwarm')[0]
+
+        met_intersection = set(self.km['bigg.metabolite']).intersection(
+            self.ki['bigg.metabolite'])
+        km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
+        ki_inter = self.ki[self.ki['bigg.metabolite'].isin(met_intersection)]
+
+        ax = axs[1, 0]
+
+        concentrations = pd.melt(self.met_conc_mean)['value']
+        concentrations = concentrations[~pd.isnull(concentrations)]
+
+        sns.kdeplot(np.log10(concentrations), cumulative=False, ax=ax, bw=.25,
+                    linewidth=2, color=met_color, legend=False)
+        ax.set_xlim(-2.1, 2.1)
+        ax.set_xticks(np.arange(-2, 3, 1))
+        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
+        ax.set_xlabel(r'$[S]$ (in mM)')
+        ax.set_ylabel(r'Probability density')
+        ax.set_title('Measured metabolite conc.')
+
+        ax = axs[1, 1]
+        km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
+        ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
+        sns.kdeplot(np.log10(km_values), cumulative=False,
+                    ax=ax, bw=.25, color=km_color,
+                    label='substrates (N = %d)' % km_values.shape[0],
+                    linewidth=2)
+        sns.kdeplot(np.log10(ki_values), cumulative=False,
+                    ax=ax, bw=.25, color=ki_color,
+                    label='inhibitors (N = %d)' % ki_values.shape[0],
+                    linewidth=2)
+        ax.set_xlim(-2.1, 2.7)
+        ax.set_ylim(0, 0.7)
+        ax.set_xticks(np.arange(-2, 3, 1))
+        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
+        ax.set_xlabel(r'$K_S$ (in mM)')
+        ax.set_title(r'Measured $K_{\rm S}$ values')
+
+        ranksum_res = ranksums(km_values, ki_values)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
+                horizontalalignment='left',
+                verticalalignment='top',
+                transform=ax.transAxes)
+        ax.legend(loc='upper right')
+
+        # compare Km and Ki for the intersection of EC numbers
+
+        ax = axs[2, 0]
+        ki_saturation = ki_inter['saturation']
+        ki_saturation = ki_saturation[~pd.isnull(ki_saturation)]
+        km_saturation = km_inter['saturation']
+        km_saturation = km_saturation[~pd.isnull(km_saturation)]
+        sns.kdeplot(km_saturation, cumulative=False, ax=ax, bw=.1,
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=2, color=km_color)
+        sns.kdeplot(ki_saturation, cumulative=False, ax=ax, bw=.1,
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
+                    linewidth=2, color=ki_color)
+
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
+        ax.set_ylabel(r'Probability density')
+        ax.set_title(r'Saturation levels')
+        ax.legend(loc='upper center')
+
+        ranksum_res = ranksums(km_saturation, ki_saturation)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
+        ax = axs[2, 1]
+        ki_elasticity = ki_inter['elasticity'].abs()
+        ki_elasticity = ki_elasticity[~pd.isnull(ki_elasticity)]
+        km_elasticity = km_inter['elasticity'].abs()
+        km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
+        sns.kdeplot(km_elasticity, cumulative=False, ax=ax, bw=.1,
+                    label='substrates (N = %d)' % km_saturation.shape[0],
+                    linewidth=2, color=km_color)
+        sns.kdeplot(ki_elasticity, cumulative=False, ax=ax, bw=.1,
+                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
+                    linewidth=2, color=ki_color)
+
+        ax.grid(visible=False)
+        ax.set_xlim(0, 1)
+        ax.set_xticks(np.arange(0, 1.01, 0.2))
+        ax.set_xlabel(r'$|\epsilon_s^v|$')
+        ax.set_title(r'Elasticities')
+        ax.legend(loc='upper center')
+
+        ranksum_res = ranksums(km_elasticity, ki_elasticity)
+        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
+                np.ceil(np.log10(ranksum_res.pvalue)),
+                horizontalalignment='center',
+                verticalalignment='top',
+                transform=ax.transAxes)
+
+        for i, ax in enumerate(axs.flat):
+            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
+                        xycoords='axes fraction', ha='left', va='top',
+                        size=14)
+        fig.tight_layout()
+
+        settings.savefig(fig, 'fig4')
+
+
     def draw_agg_heatmaps(self, agg_type='median'):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across
@@ -459,270 +661,6 @@ class FigurePlotter(object):
         _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
         #self.regulation.to_csv(_fname, 'w')
         self.regulation.to_csv(_fname)
-
-    def draw_elasticity_pdf_plots(self, linewidth=2):
-        """
-            Compare the CDFs of the two fold-change types (for Ki and Km)
-        """
-
-        met_color = '#fedf08'  # dandelion
-        ki_color = '#fe86a4'  # rosa
-        km_color = '#3eaf76'  # dark seafoam green
-
-        fig, axs = plt.subplots(2, 2, figsize=(6 , 6), sharey=False)
-
-        met_intersection = set(self.km['bigg.metabolite']).intersection(
-            self.ki['bigg.metabolite'])
-        km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
-        ki_inter = self.ki[self.ki['bigg.metabolite'].isin(met_intersection)]
-
-        ax = axs[0, 0]
-
-        concentrations = pd.melt(self.met_conc_mean)['value']
-        concentrations = concentrations[~pd.isnull(concentrations)]
-
-        sns.kdeplot(np.log10(concentrations), cumulative=False, ax=ax, bw=.25,
-                    linewidth=linewidth, color=met_color, legend=False)
-        ax.set_xlim(-2.1, 2.1)
-        ax.set_xticks(np.arange(-2, 3, 1))
-        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
-        ax.set_xlabel(r'$[S]$ (in mM)')
-        ax.set_ylabel(r'Probability density')
-        ax.set_title('Measured metabolite conc.')
-
-        ax = axs[0, 1]
-        km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
-        ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
-        sns.kdeplot(np.log10(km_values), cumulative=False,
-                    ax=ax, bw=.25, color=km_color,
-                    label='substrates (N = %d)' % km_values.shape[0],
-                    linewidth=linewidth)
-        sns.kdeplot(np.log10(ki_values), cumulative=False,
-                    ax=ax, bw=.25, color=ki_color,
-                    label='inhibitors (N = %d)' % ki_values.shape[0],
-                    linewidth=linewidth)
-        ax.set_xlim(-2.1, 2.7)
-        ax.set_ylim(0, 0.7)
-        ax.set_xticks(np.arange(-2, 3, 1))
-        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
-        ax.set_xlabel(r'$K_S$ (in mM)')
-        ax.set_title(r'Measured $K_{\rm S}$ values')
-
-        ranksum_res = ranksums(km_values, ki_values)
-        ax.text(0.5, 0.8, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
-                horizontalalignment='left',
-                verticalalignment='top',
-                transform=ax.transAxes)
-        ax.legend(loc='upper right')
-
-        # compare Km and Ki for the intersection of EC numbers
-
-        ax = axs[1, 0]
-        ki_saturation = ki_inter['saturation']
-        ki_saturation = ki_saturation[~pd.isnull(ki_saturation)]
-        km_saturation = km_inter['saturation']
-        km_saturation = km_saturation[~pd.isnull(km_saturation)]
-        sns.kdeplot(km_saturation, cumulative=False, ax=ax, bw=.1,
-                    label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=linewidth, color=km_color)
-        sns.kdeplot(ki_saturation, cumulative=False, ax=ax, bw=.1,
-                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=linewidth, color=ki_color)
-
-        ax.grid(visible=False)
-        ax.set_xlim(0, 1)
-        ax.set_xticks(np.arange(0, 1.01, 0.2))
-        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
-        ax.set_ylabel(r'Probability density')
-        ax.set_title(r'Saturation levels')
-        ax.legend(loc='upper center')
-
-        ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
-                np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='center',
-                verticalalignment='top',
-                transform=ax.transAxes)
-
-        ax = axs[1, 1]
-        ki_elasticity = ki_inter['elasticity'].abs()
-        ki_elasticity = ki_elasticity[~pd.isnull(ki_elasticity)]
-        km_elasticity = km_inter['elasticity'].abs()
-        km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
-        sns.kdeplot(km_elasticity, cumulative=False, ax=ax, bw=.1,
-                    label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=linewidth, color=km_color)
-        sns.kdeplot(ki_elasticity, cumulative=False, ax=ax, bw=.1,
-                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=linewidth, color=ki_color)
-
-        ax.grid(visible=False)
-        ax.set_xlim(0, 1)
-        ax.set_xticks(np.arange(0, 1.01, 0.2))
-        ax.set_xlabel(r'$|\epsilon_s^v|$')
-        ax.set_title(r'Elasticities')
-        ax.legend(loc='upper center')
-
-        ranksum_res = ranksums(km_elasticity, ki_elasticity)
-        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
-                np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='center',
-                verticalalignment='top',
-                transform=ax.transAxes)
-
-        for i, ax in enumerate(axs.flat):
-            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=14)
-        fig.tight_layout()
-
-        settings.savefig(fig, 'elasticity_pdf')
-
-    def draw_elasticity_cdf_plots(self, linewidth=2):
-        """
-            Compare the CDFs of the two fold-change types (for Ki and Km)
-        """
-
-        met_color = '#fedf08'  # dandelion
-        ki_color = '#fe86a4'  # rosa
-        km_color = '#3eaf76'  # dark seafoam green
-
-        fig, axs = plt.subplots(2, 2, figsize=(6 , 6), sharey=True)
-
-        met_intersection = set(self.km['bigg.metabolite']).intersection(
-            self.ki['bigg.metabolite'])
-        km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
-        ki_inter = self.ki[self.ki['bigg.metabolite'].isin(met_intersection)]
-
-        ax = axs[0, 0]
-
-        concentrations = pd.melt(self.met_conc_mean)['value']
-        concentrations = concentrations[~pd.isnull(concentrations)]
-
-        sns.kdeplot(np.log10(concentrations), cumulative=True, ax=ax, bw=.15,
-                    linewidth=linewidth, color=met_color, legend=False)
-        ax.set_xlim(-2.1, 2.1)
-        ax.set_xticks(np.arange(-2, 3, 1))
-        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
-        ax.set_ylim(0, 1)
-        ax.set_xlabel(r'$[S]$ (in mM)')
-        ax.set_ylabel(r'Cumulative distribution')
-        ax.set_yticks(np.arange(0, 1.01, 0.2))
-        ax.set_yticklabels(map(lambda x: '%.0f%%' % x, np.arange(0, 101, 20)))
-        ax.set_title('Measured metabolite conc.')
-
-        ax = axs[0, 1]
-        km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
-        ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
-        sns.kdeplot(np.log10(km_values), cumulative=True,
-                    ax=ax, bw=.15, color=km_color,
-                    label='substrates (N = %d)' % km_values.shape[0],
-                    linewidth=linewidth)
-        sns.kdeplot(np.log10(ki_values), cumulative=True,
-                    ax=ax, bw=.15, color=ki_color,
-                    label='inhibitors (N = %d)' % ki_values.shape[0],
-                    linewidth=linewidth)
-        ax.set_xlim(-2.1, 2.7)
-        ax.set_xticks(np.arange(-2, 3, 1))
-        ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
-        ax.set_ylim(0, 1)
-        ax.set_xlabel(r'$K_S$ (in mM)')
-        ax.set_title(r'Measured $K_{\rm S}$ values')
-
-        ranksum_res = ranksums(km_values, ki_values)
-        ax.text(0.5, 0.3, '$p_{ranksum}$ < %.1g' % ranksum_res.pvalue,
-                horizontalalignment='left',
-                verticalalignment='top',
-                transform=ax.transAxes)
-        ax.legend(loc='lower right')
-
-        # compare Km and Ki for the intersection of EC numbers
-
-        ax = axs[1, 0]
-        ki_saturation = ki_inter['saturation']
-        ki_saturation = ki_saturation[~pd.isnull(ki_saturation)]
-        km_saturation = km_inter['saturation']
-        km_saturation = km_saturation[~pd.isnull(km_saturation)]
-        sns.kdeplot(km_saturation, cumulative=True, ax=ax, bw=.01,
-                    label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=linewidth, color=km_color)
-        sns.kdeplot(ki_saturation, cumulative=True, ax=ax, bw=.01,
-                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=linewidth, color=ki_color)
-
-        ax.grid(visible=False)
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.set_xticks(np.arange(0, 1.01, 0.2))
-        ax.set_xlabel(r'$\frac{[S]}{[S] + K_S}$')
-        ax.set_ylabel(r'Cumulative distribution')
-        ax.set_title(r'Saturation levels')
-        ax.legend(loc='upper center')
-
-        ranksum_res = ranksums(km_saturation, ki_saturation)
-        ax.text(0.5, 0.8, '$p_{ranksum}$ < 10$^{%d}$' %
-                np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='center',
-                verticalalignment='top',
-                transform=ax.transAxes)
-
-        ax = axs[1, 1]
-        ki_elasticity = ki_inter['elasticity'].abs()
-        ki_elasticity = ki_elasticity[~pd.isnull(ki_elasticity)]
-        km_elasticity = km_inter['elasticity'].abs()
-        km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
-        sns.kdeplot(km_elasticity, cumulative=True, ax=ax, bw=.01,
-                    label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=linewidth, color=km_color)
-        sns.kdeplot(ki_elasticity, cumulative=True, ax=ax, bw=.01,
-                    label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=linewidth, color=ki_color)
-
-        ax.grid(visible=False)
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.set_xticks(np.arange(0, 1.01, 0.2))
-        ax.set_xlabel(r'$|\epsilon_s^v|$')
-        ax.set_title(r'Elasticities')
-        ax.legend(loc='lower center')
-
-        ranksum_res = ranksums(km_elasticity, ki_elasticity)
-        ax.text(0.5, 0.3, '$p_{ranksum}$ < 10$^{%d}$' %
-                np.ceil(np.log10(ranksum_res.pvalue)),
-                horizontalalignment='center',
-                verticalalignment='top',
-                transform=ax.transAxes)
-
-        # Find positions for horizontal annotations
-        highval = 0.8
-        ki_high = float(ki_elasticity[ki_elasticity <= highval].shape[0])/ ki_elasticity.shape[0]
-        km_high = float(km_elasticity[km_elasticity <= highval].shape[0])/ km_elasticity.shape[0]
-
-        # Add vertical lines
-        ax.plot((highval, highval), (0, np.max([ki_high, km_high])),
-                color='black', linestyle='-', linewidth=1, alpha=0.5)
-
-        # Add horizontal lines
-        ax.plot((1, highval), (km_high, km_high),
-                color='black', linestyle='-', linewidth=1, alpha=0.5)
-        ax.plot((1, highval), (ki_high, ki_high),
-                color='black', linestyle='-', linewidth=1, alpha=0.5)
-
-        # Annotate the 80% activity point
-        ax.text(1.01, km_high, '%.0f%%' % (km_high*100),
-                horizontalalignment='left', verticalalignment='center',
-                color=km_color)
-        ax.text(1.01, ki_high, '%.0f%%' % (ki_high*100),
-                horizontalalignment='left', verticalalignment='center',
-                color=ki_color)
-
-        for i, ax in enumerate(axs.flat):
-            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=14)
-        fig.tight_layout()
-
-        settings.savefig(fig, 'elasticity_cdf')
 
     def get_grouped_data(self):
         """
@@ -988,11 +926,14 @@ class FigurePlotter(object):
     @staticmethod
     def comparative_cdf(x, y, data, ax, linewidth=2, title=None):
         xvals = sorted(data[x].unique())
-        for xval in xvals:
+        plt = sns.cubehelix_palette(len(xvals), start=2.3, rot=-.5,
+                                    gamma=1.5, dark=0.4, light=0.7)
+        for xval, c in zip(xvals, plt):
             d = data.loc[data[x] == xval, y]
             sns.kdeplot(d, cumulative=True, ax=ax, bw=.15,
                         linewidth=linewidth,
-                        label=xval + ' (N = %d)' % d.shape[0])
+                        label=xval + ' (N = %d)' % d.shape[0],
+                        color=c)
         ax.set_ylim(0, 1)
         ax.set_ylabel(r'Cumulative distribution')
         ax.set_xlabel(y)
@@ -1008,122 +949,6 @@ class FigurePlotter(object):
         else:
             ax.set_title(title)
             return None
-
-    def draw_thermodynamics_cdf(self):
-        """
-            Test the hypothesis that irreversible reactions are more likely
-            to be regulated allosterically
-        """
-        # get the irreversibility constant (absolute) for all reactions
-        # in the BiGG iJO1336 model
-        thermo_df = pd.DataFrame.from_csv(settings.ECOLI_THERMO_CACHE_FNAME)
-
-        # remove data about reactions with std=0 (i.e. known values)
-        # and reactions with std > 20 (high uncertainty)
-        thermo_df = thermo_df[(thermo_df["dG0_prime_std"] > 0) &
-                              (thermo_df["dG0_prime_std"] < 20)]
-
-        # select the median value of log(gamma) for each EC number
-        # (in general, there should be only one value for each
-        # EC number anyway)
-        irr_index_l = r"$| log_{10}(\Gamma) |$"
-        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
-        thermo_df = thermo_df[~pd.isnull(thermo_df.EC_number)]
-
-        # print the regulation table joined with the irreversibility values
-        _temp_df = self.regulation.join(thermo_df[irr_index_l],
-                                        on='EC_number')
-        _temp_df.to_csv(os.path.join(settings.RESULT_DIR,
-                                     'regulation_with_thermo.csv'))
-
-        # group the thermo table by EC number and subsystem, while
-        # taking the median value of the irreversibility index
-        reg_thermo_df = thermo_df.groupby(['EC_number', 'subsystem'])
-        reg_thermo_df = reg_thermo_df[irr_index_l].median().reset_index()
-
-        # count how many unique interaction each EC number has
-        # counting by metabolites (ignoring the modes)
-        reg_count_df = self.regulation.groupby('EC_number')['bigg.metabolite'].nunique()
-        reg_thermo_df = reg_thermo_df.join(reg_count_df, on='EC_number', how='left')
-        reg_thermo_df.fillna(0, inplace=True)
-
-        reg_thermo_df['num_regulators'] = ''
-        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'num_regulators'] = '0 regulators'
-        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'].isin((1, 2)), 'num_regulators'] = '1-2 regulators'
-        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 2, 'num_regulators'] = '3+ regulators'
-
-        reg_thermo_df['Regulation'] = ''
-        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, 'Regulation'] = 'not regulated'
-        reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] > 0, 'Regulation'] = 'regulated'
-
-        reg_thermo_df.to_csv(os.path.join(settings.RESULT_DIR, 'reg_thermo.csv'))
-
-        ccm_thermo_df = reg_thermo_df[
-            reg_thermo_df.subsystem.isin(settings.CCM_SUBSYSTEMS)]
-
-        ccm_thermo_df.to_csv(os.path.join(settings.RESULT_DIR,
-                             'CCM_thermodynamics.csv'))
-
-        fig, axs = plt.subplots(1, 2, figsize=(5, 3), sharey=True)
-        ax = axs[0]
-        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
-                                      data=reg_thermo_df, ax=ax,
-                                      title='all E. coli reactions')
-        ax.set_xlim(0, 15)
-        ax = axs[1]
-        FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
-                                      data=ccm_thermo_df, ax=ax,
-                                      title='only CCM reactions')
-        ax.set_xlim(0, 15)
-        ax.set_ylabel('')
-
-        for i, ax in enumerate(axs):
-            ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-                        xycoords='axes fraction', ha='left', va='top',
-                        size=14)
-
-        fig.tight_layout()
-        settings.savefig(fig, 'gibbs_histogram')
-
-        # correlate irreversibility also with the number of references and
-        # unique regulating metabolites
-
-        num_refs = self.regulation.groupby(
-             'bigg.reaction')['Literature'].nunique()
-        ixrefs = num_refs.index.intersection(thermo_df.index)
-        thermo_df['Num_Refs'] = 0
-        thermo_df.loc[ixrefs, 'Num_Refs'] = num_refs.loc[ixrefs]
-
-        num_regs = self.regulation.groupby(
-            'bigg.reaction')['bigg.metabolite'].nunique()
-        ixmets = num_regs.index.intersection(thermo_df.index)
-        thermo_df['Num_Regs'] = 0
-        thermo_df.loc[ixmets, 'Num_Regs'] = num_regs.loc[ixmets]
-        thermo_df['is regulated'] = 'No'
-        thermo_df.ix[thermo_df['Num_Regs'] > 0, 'is regulated'] = 'Yes'
-
-        fig2, axs2 = plt.subplots(1, 4, figsize=(14, 4), sharey=True)
-        thermo_df_nz = thermo_df[thermo_df['Num_Regs'] != 0].copy()
-        thermo_df_nz['# References / # Regulators'] = \
-            thermo_df_nz['Num_Refs'] / thermo_df_nz['Num_Regs']
-        thermo_df_nz.plot(kind='scatter', y=irr_index_l,
-                          x='# References / # Regulators', ax=axs2[0])
-        sns.boxplot(x='Num_Refs', y=irr_index_l, data=thermo_df, ax=axs2[1])
-        sns.boxplot(x='Num_Regs', y=irr_index_l, data=thermo_df, ax=axs2[2])
-
-        from scipy.stats import mannwhitneyu as mwu
-        regulated = thermo_df.ix[thermo_df['is regulated'] == 'Yes',
-                                 irr_index_l]
-        notregulated = thermo_df.ix[thermo_df['is regulated'] == 'No',
-                                    irr_index_l]
-        stat, p = mwu(regulated, notregulated)
-
-        sns.boxplot(x='is regulated', y=irr_index_l, data=thermo_df,
-                    ax=axs2[3])
-        axs2[3].set_title('Mann Whitney P Value = ' + str(p))
-        settings.savefig(fig2, 'gibbs_literature_plot')
-
-        return thermo_df
 
     def compare_km_ki(self, filter_using_model=False):
 
@@ -1337,16 +1162,11 @@ if __name__ == "__main__":
 
     fp = FigurePlotter(rebuild_cache=True)
     fp = FigurePlotter()
-    fp.draw_cdf_plots()
-
-    fp.draw_thermodynamics_cdf()
+    fp.plot_fig4()
 
     fp.draw_pathway_met_histogram()
     fp.draw_pathway_histogram()
     fp.draw_venn_diagrams()
-
-    fp.draw_elasticity_cdf_plots()
-    fp.draw_elasticity_pdf_plots()
 
     fp.draw_agg_heatmaps(agg_type='median')
 
