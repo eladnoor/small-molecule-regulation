@@ -13,8 +13,7 @@
 \newcommand{\wolf}[1]{{\color{red} [#1]}}
 
 \begin{document}
-\section{Control Theory}
-\subsection{What is elasticity?}
+\section{What is elasticity?}
 Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to understanding the dynamics and control of metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of metabolic fluxes depends on other quantities in the system (\textit{i.e.} the topology of the metabolic network, and the levels of metabolites). \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
 \begin{eqnarray}
     \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
@@ -22,7 +21,7 @@ Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to und
 
 The elasticity has several properties which make it desirable for modeling metabolic systems. In particular, for a variety of kinetic rate laws (\textit{e.g.} Michaelis-Menten kinetics), the elasticity (for Michaelis-Menten kinetics, the substrate elasticity is bounded between 0 and 1). 
 
-\subsection{Single-substrate Control in Michaelis-Menten Kinetics}
+\section{Single-substrate Control in Michaelis-Menten Kinetics}
 To illustrate the concept of elasticity, let us consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M + s}
@@ -65,14 +64,14 @@ where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten
 \end{eqnarray}
 which converges to equation \ref{eq:eps_s_v_irr} as $p \rightarrow 0$.
 
-\subsection{Regulatory Effectors}
+\section{Regulatory Effectors}
 Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, \emph{there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.}
 
 Without loss of generality, we will keep the separable form of the rate law
 \[v = V^+ \cdot \kappa \cdot \gamma \cdot \theta(x)\]
 where we add a multiplicative term $\theta(x)$ that will represent the decrease of activity due to the small-molecule regulation ($x$). As long as $\theta(x)$ is the only term affected by $x$, i.e. $\frac{\partial \kappa}{\partial x} = \frac{\partial \gamma}{\partial x} = 0$, the exact forms of $\kappa$ and $\gamma$ are irrelevant.
 
-\subsubsection{Activation}
+\section{Activation}
 First, consider a cooperative \cite{Barcroft1910-rx, Monod1965-dq} activator with Hill coefficient $h$ and activation coefficient $K_A$:
 \begin{eqnarray}
     \theta &=& \frac{a^h}{K_A^h + a^h}~.
@@ -89,7 +88,7 @@ The elasticity with respect to the activator concentration $x$ will thus be:
 	formula remains the same, except for a constant prefactor; the same
 	logic can also be applied to inhibitors.}
 
-\subsubsection{Pure non-Competitive Inhibition}
+\section{Pure non-Competitive Inhibition}
 Next, we consider a pure non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
 \begin{eqnarray}
     \theta &=& 1 - \frac{x^h}{K_I^h + x^h} = \frac{K_I^h}{K_I^h + x^h}
@@ -132,7 +131,7 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 This means that substrates have the most control ($|\epsilon_s^v| \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($|\epsilon_x^v| \rightarrow h$) when they are saturated ($x \gg K_I$).
 
 
-\subsubsection{Competitive Inhibition}
+\section{Competitive Inhibition}
 Competitive inhibition is one case, where a separable kinetic rate law is not sufficient since $\frac{\partial \kappa}{\partial x} \neq 0$. To analyze this case, we pick a simple one-substrate irreversible reaction, where the inhibitor affects the $K_M$ according to the following formula:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right) + s}
@@ -150,7 +149,7 @@ so we can see here that in this case $\theta = \frac{K_{IC}^h}{K_{IC}^h~+~x^h}$,
     \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)
 \end{eqnarray}
 
-\subsubsection{Uncompetitive Inhibition}
+\section{Uncompetitive Inhibition}
 Uncompetitive inhibition is another case where substrate and inhibitor saturations are entangled:
 \begin{eqnarray}
     v &=& V^+ ~ \frac{s}{K_M + s \left(1 + \frac{x^h}{K_I^h}\right)}
@@ -168,7 +167,7 @@ which shows that just like in the case of competitive inhibition, $\theta = \fra
     \epsilon_x^v = -h(1 - \theta)\,. \label{eq:eps_uncomp_inh}
 \end{eqnarray}
 
-\subsubsection{Generalized Inhibition Model}
+\section{Generalized Inhibition Model}
 A general formula for reversible reactions with non-cooperative competitive, uncompetitive, mixed and pure non-competitive inhibition is given in Chapter 5 of \citet{Sauro2011-op}:
 \begin{eqnarray}
     v &=& \frac{\frac{V_m}{K_S}\left(s - \frac{p}{K_{eq}}\right)\left(1 + b \frac{x}{aK_I}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}\,.
@@ -199,7 +198,7 @@ As expected, in all cases of complete inhibition ($b \rightarrow 0$ which means 
 For incomplete inhibition, however, there is a more complex relationship between relative activity and inhibition.
 
 
-\subsubsection{The Monod-Changeux-Jacob model}
+\section{The Monod-Changeux-Jacob model}
 Probably the most widespread model for cooperativity of substrate and effector binding was proposed by \citet{Monod1965-dq}. In this model the rate law is given by the following formula:
 \begin{eqnarray}
 v &=& V^+ \cdot \frac{s}{K_M + s} \cdot \frac{\left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \left(1 + \frac{x}{K_I}\right)^{-h}}{L + \left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \left(1 + \frac{x}{K_I}\right)^{-h}}
@@ -210,13 +209,37 @@ where $a$ is the concentration of an inhibitor, and $K_M$, $K_A$ and $K_I$ are t
 \theta &\equiv& \frac{\left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \left(1 + \frac{x}{K_I}\right)^{-h}}{L + \left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \left(1 + \frac{x}{K_I}\right)^{-h}} \nonumber\\
 v &=& V^+ \cdot \kappa \cdot \theta
 \end{eqnarray}
-In \cite{Heinrich1974-yj}, the elasticity of the inhibitor was calculated for this rate law (denoted as \emph{effector strength} or $X_I$ in the original text):
+To simplify the form of the equations, let 
+\begin{equation}
+g(x) \equiv \left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \left(1 + \frac{x}{K_I}\right)^{-h}
+\end{equation}
+
+\noindent so that $\theta = \frac{g(x)}{L + g(x)}$, which we write in shorthand as $\theta= \frac{g}{L+g}$. Then, 
 \begin{eqnarray}
-\epsilon_x^v = \frac{\partial \ln{v}}{\partial \ln{x}} = \frac{\partial \ln{\theta}}{\partial \ln{x}} = - h~\frac{x}{K_I + x} ~\left(1 - \theta \right)\,.
+\epsilon_x^v =& V^+ \times \kappa \times \frac{\partial\theta}{\partial x} \times \frac{x}{v} \\
+=& V^+ \times \kappa \times \frac{L \frac{\partial g}{\partial x}}{(L+g)^2} \times \frac{x}{v}
 \end{eqnarray}
+
+Now, we can calculate that 
+\begin{equation}
+\frac{\partial g}{\partial x} = \frac{-h}{K_I + x} \times g
+\end{equation}
+
+Substituting this form of $\frac{\partial g}{\partial x}$ into the prior equation, we arrive at 
+\begin{eqnarray}
+\epsilon_x^v =& V^+ \times \kappa \times \frac{g}{L + g} \times \frac{-hx}{K_I + x} \times \frac{L}{L + g} \times \frac{1}{v}
+\end{eqnarray}
+
+\noindent Note that the first three terms are precisely equal to $v$, so they cancel with the last term. Also note that $\frac{L}{L + g} = 1 - \frac{g}{L + g} = 1 - \theta$. Thus, we arrive at
+
+\begin{eqnarray}
+\epsilon_x^v = \frac{\partial \ln{v}}{\partial \ln{x}} = \frac{\partial \ln{\theta}}{\partial \ln{x}} = -h~\frac{x}{K_I + x} ~\left(1 - \theta \right)\,.
+\end{eqnarray}
+
+In \cite{Heinrich1974-yj}, the elasticity of the inhibitor was calculated for this rate law (denoted as \emph{effector strength} or $X_I$ in the original text) and matches the form above.
 Although the final formulae for the elasticities in the MWC case are not identical to the other cases dealt with before, we can still reach a similar conclusion, where the absolute value of the elasticity is larger when the relative activity is smaller.
 
-\subsection{A Trade-off between Enzyme Cost and Flux Control}
+\section{A Trade-off between Enzyme Cost and Flux Control}
 By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh}, \ref{eq:eps_comp_inh}, \ref{eq:eps_uncomp_inh}, and \ref{eq:eps_general_inh}, excluding the MWC model) into one formula:
 \begin{eqnarray}
 |\epsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
