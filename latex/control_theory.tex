@@ -190,8 +190,8 @@ which shows that just like in the case of competitive inhibition, $\theta = \fra
 
 \subsubsection{Generalized Inhibition Model}
 A general formula for reversible reactions with non-cooperative competitive, uncompetitive, mixed and pure non-competitive inhibition is given in Chapter 5 of \citet{Sauro2011-op}:
-\begin{eqnarray}
-    v &=& \frac{\frac{V_m}{K_S}\left(s - \frac{p}{K_{eq}}\right)\left(1 + b \frac{x}{aK_I}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}\,.
+\begin{eqnarray}\label{eq:gen_inh_model}
+    v &=& \frac{\frac{V^+}{K_S}\left(s - \frac{p}{K_{eq}}\right)\left(1 + b \frac{x}{aK_I}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}\,.
 \end{eqnarray}
 The parameter $b$ represents the amount of inhibition, i.e. the activity of the enzyme when the inhibitor is bound to it. If we assume there is no activity in the bound state, also known as \textbf{complete inhibition}, then we can set $b = 0$. 
 Then, depending on the value of $a$, the above formula converges to the different cases discussed earlier. For example, if $a \rightarrow \infty$, then this rate law is equivalent to competitive inhibition. When $a = 1$ it is equivalent to pure non-competitive inhibition. Finally, if $a \rightarrow 0$ (more precisely, when $K_I \gg a K_I$), it becomes uncompetitive inhibition.
@@ -205,19 +205,31 @@ as with previous cases, we can define an effective $K_E$:
     K_{E1} & \equiv & K_I ~ \frac{a}{b} \\
     K_{E2} & \equiv & K_I ~ \frac{1 + \frac{s}{K_S} + \frac{p}{K_P}}{1 + \frac{s}{aK_S} + \frac{P}{aK_P}}
 \end{eqnarray}
-and therefore that we get:
+and therefore that we rewrite the rate law from Eq. \ref{eq:gen_inh_model} as:
 \begin{eqnarray}
-v &=& \frac{\frac{V_m}{K_S}\left(s - \frac{p}{K_{eq}}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right)} \cdot \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} \nonumber \\
-\epsilon_x^v &=& \frac{x}{K_{E1} + x} ~-~ \frac{x}{K_{E2} + x}
+\kappa &\equiv& \frac{1}{K_S \left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right)} \nonumber \\
+\gamma &\equiv& s - \frac{p}{K_{eq}} \nonumber \\
+\theta &\equiv& \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} \nonumber \\
+v &=& V^+ \cdot \kappa \cdot \gamma \cdot \theta
 \end{eqnarray}
-As expected, in all cases of complete inhibition ($b \rightarrow 0$ which means that $K_{E1} \rightarrow \infty$), we reach exactly the same conclusion as in the extreme cases, namely:
+The elasticity thus becomes:
 \begin{eqnarray}
-\theta = \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} &\rightarrow& \frac{K_{E2}}{K_{E2} + x} \nonumber\\
-\epsilon_x^v &\rightarrow& -(1 - \theta) \label{eq:eps_general_inh}
+\epsilon_x^v &=& 
+	\frac{\frac{x}{K_{E1}}}{1 + \frac{x}{K_{E1}}} ~-~ \frac{\frac{x}{K_{E2}}}{1 + \frac{x}{K_{E2}}} = 
+	\left( 1 - \frac{1}{1 + \frac{x}{K_{E1}}} \right) ~-~ \left(1 - \frac{1}{1 + \frac{x}{K_{E2}}} \right) \nonumber\\
+	&=& -\left(\frac{1}{1 + \frac{x}{K_{E1}}} -  \frac{1}{1 + \frac{x}{K_{E2}}} \right) = 
+	-\left( 1 -  \frac{1 + \frac{x}{K_{E1}}}{1 + \frac{x}{K_{E2}}} \right) \cdot \frac{1}{1 + \frac{x}{K_{E1}}} \nonumber\\
+	&=& -(1 - \theta) \cdot  \frac{1}{1 + \frac{x}{K_{E1}}}
+\end{eqnarray}
+and after replacing $K_{E1}$ back with its definition:
+\begin{eqnarray}
+	\epsilon_x^v = -\left(1 - \theta\right) \cdot  \left( 1 + b \frac{x}{aK_I} \right)^{-1}
 \end{eqnarray}
 
-For incomplete inhibition, however, there is a more complex relationship between relative activity and inhibition.
-
+As expected, in all cases of complete inhibition ($b = 0$), we reach exactly the same conclusion as in the extreme cases, namely:
+\begin{eqnarray}
+\epsilon_x^v = -(1 - \theta) \label{eq:eps_general_inh}
+\end{eqnarray}
 
 \subsubsection{The Monod-Changeux-Jacob model}
 Probably the most widespread model for cooperativity of substrate and effector binding was proposed by \citet{Monod1965-dq}. In this model the rate law is given by the following formula:
