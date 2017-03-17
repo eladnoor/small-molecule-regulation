@@ -9,9 +9,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-plt.ion()
-plt.close('all')
-sns.set_style('ticks')
+import os
 
 METS_TO_REMOVE = ['h', 'h2o', 'co2', 'o2', 'pi', 'atp', 'adp', 'amp',
                   'nad', 'nadh', 'nadp', 'nadph', 'coa', 'thf', '5mthf',
@@ -73,3 +71,20 @@ def calculate_distances(smrn):
     # %% Save data
     smrn_dist = smrn_dist.dropna()
     return smrn_dist, all_distances
+
+
+if __name__ == '__main__':
+    # print out a list of all 0-distance interaction, i.e. substrate
+    # or product inhibition
+
+    smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
+                                    'iJO1366_SMRN.csv'), index_col=None)
+    smrn_dist, all_distances = calculate_distances(smrn)
+    smrn_merged = pd.merge(smrn, smrn_dist, on=['bigg.metabolite',
+                                                'bigg.reaction'])
+    dist_mode_df = smrn_merged.groupby(('bigg.metabolite',
+                                        'bigg.reaction', 'Mode')).first()
+    dist_mode_df = dist_mode_df[['distance']].reset_index()
+    react_inhibition = dist_mode_df[(dist_mode_df['Mode'] == '-') & (dist_mode_df['distance'] == 0)]
+
+    react_inhibition.to_excel(os.path.join(settings.RESULT_DIR, 'reactant_inhibition.xls'))
