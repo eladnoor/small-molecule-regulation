@@ -125,4 +125,5 @@ def get_chebi_inchi_df():
 
 def savefig(fig, name, dpi=600):
     fig.savefig(os.path.join(RESULT_DIR, name + '.svg'))
+    fig.savefig(os.path.join(RESULT_DIR, name + '.pdf'))
     fig.savefig(os.path.join(RESULT_DIR, name + '.png'), dpi=dpi)

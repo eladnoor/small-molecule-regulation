@@ -826,7 +826,7 @@ class FigurePlotter(object):
         lump_dict = {'divalent cations': ['CA2', 'CD2', 'CU2', 'MN2', 'MG2',
                                           'HG2', 'NI2', 'ZN2', 'FE2',
                                           'COBALT2'],
-                     'monovalent cations': ['K', 'NA1'],
+                     'monovalent cations': ['K', 'NA1', 'CL'],
                      'ATP/ADP/AMP': ['AMP', 'ADP', 'ATP'],
                      'GTP/GDP/GMP': ['GMP', 'GDP', 'GTP'],
                      'CTP/CDP/CMP': ['CMP', 'CDP', 'CTP'],
@@ -837,7 +837,9 @@ class FigurePlotter(object):
                      'amino acids': ['CYS__L', 'ALA__L', 'SER__L', 'GLU__L',
                                      'PRO__L', 'TYR__L', 'TRP__L', 'THR__L',
                                      'VAL__L', 'MET__L', 'ILE__L', 'HOM__L',
-                                     'HIS__L', 'GLN__L', 'ARG__L', 'ASP__L']}
+                                     'HIS__L', 'GLN__L', 'ARG__L', 'ASP__L'],
+                     'cyanide': ['CYAN']
+                     }
         inh_table_lumped = inh_table.transpose()
         inh_table_lumped.columns = map(str.upper, inh_table_lumped.columns)
         for k, v in lump_dict.iteritems():
@@ -1158,24 +1160,27 @@ class FigurePlotter(object):
 #%%
 ###############################################################################
 if __name__ == "__main__":
-    plt.close('all')
+    #plt.close('all')
 
-    fp = FigurePlotter(rebuild_cache=True)
+    #fp = FigurePlotter(rebuild_cache=True)
+
     fp = FigurePlotter()
-    fp.plot_fig4()
 
-    fp.draw_pathway_met_histogram()
-    fp.draw_pathway_histogram()
-    fp.draw_venn_diagrams()
+    if False:
+        fp.plot_fig4()
 
-    fp.draw_agg_heatmaps(agg_type='median')
+        fp.draw_pathway_met_histogram()
+        fp.draw_pathway_histogram()
+        fp.draw_venn_diagrams()
 
-    fp.draw_full_heapmats()
+        fp.draw_agg_heatmaps(agg_type='median')
 
-    fp.print_ccm_table()
-    fp.compare_km_ki()
+        fp.draw_full_heapmats()
 
-    fp.draw_degree_histograms()
-    fp.draw_distance_histograms()
+        fp.print_ccm_table()
+        fp.compare_km_ki()
 
-    plt.close('all')
+        fp.draw_degree_histograms()
+        fp.draw_distance_histograms()
+
+    #plt.close('all')
