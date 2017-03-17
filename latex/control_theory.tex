@@ -295,55 +295,58 @@ Since $\theta$ represents the fraction of active enzyme, we see here that there 
 
 Another corollary of Equation \ref{eq:abs_elast} is that the control can be increased by changing the Hill coefficient ($h$). This could be a reason why mechanisms with very high cooperativity evolve for allosteric regulation \cite{Monod1965-dq}, as it increases elasticity without the added cost of losing enzyme activity.
 
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{unsrtnat}
+\bibliography{control_theory}
+\clearpage
+
 \section{Supplementary Figures}
-\begin{figure}
+
+\begin{figure}[ht!]
 \includegraphics[width=\textwidth]{../manuscript/figS1.pdf}
 \caption{Distance between metabolites and enzymes in the (a) genome-scale metabolite network iJO1366 and (b)-(d) the SMRN of E. coli. In general, interactions in the SMRN traverse a shorter distance than the typical distance between a randomly chosen metabolite and enzyme in metabolism. Several highly-connected metabolites (i.e. co-factors) that were removed from the network before preparing the bipartite graph: h, h2o, co2, o2, pi, atp, adp, amp, nad, nadh, nadp, nadph, coa, thf, 5mthf, 5fthf, methf, mlthf, nh4, cmp, q8, q8h2, udp, udpg, fad, fadh2, ade, ctp, gtp, h2o2, mql8, mqn8, na1, ppi, acp
 }
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS2.pdf}
 	\caption{Histogram of the number of interactions for reactions and metabolite in the (a)-(b) entire E. coli SMRN, and (c)-(d) in the region of the SMRN restricted to the central carbon metabolism (CCM) of E. coli. }
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS3.pdf}
 	\caption{Number of interactions in the SMRN targeting each pathway in E. coli metabolism. 
 	}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS4.pdf}
 	\caption{Schematic of the relationship between kinetic rate laws and elasticity for (a)-(b) substrates obeying Michaelis-Menten kinetics and (c)-(d) inhibitors obeying non-competitive inhibition. Importantly, substrate elasticity is maximized at low substrate concentrations, and inhibitor elasticity is maximized at high inhibitor concentration.
 	}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=0.8\textwidth]{../manuscript/figS5.pdf}
 	\caption{A heatmap of the median values of each metabolite's elasticities across a variety of nutrient conditions. Left-hand-side corresponds to substrate interactions for that metabolite, and right-hand-side corresponds to inhibitory interactions.
 }
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS6.pdf}
 	\caption{For 45 metabolites, we were able to obtain 2 or more estimates each of KM and KI values. This enabled us to directly compare, on a single-metabolite basis, whether the distributions of its KM and KI values differed substantially. Doing so, we found that 5 metabolites (PEP, ATP, methionine, succinate, and dGMP) each showed significantly higher values of KI values compared to KM values (FDR-adjusted Mann-Whitney p-value < 0.1) and only one metabolite (phosphate) had significantly lower KI values.
 	}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS7.pdf}
 	\caption{A map of the reactions branching from central carbon metabolism for amino acid biosynthesis. Amino acids in red color feedback inhibit the first enzyme of their biosynthesis pathway, based on the SMRN. For the remaining four amino acids (Glycine, Alanine, Aspartate and Glutamate) there is no evidence of feedback inhibition.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS8.pdf}
 	\caption{A map of the CCM reactions that are regulated by small molecule(s) in the SMRN. Orange reactions only show evidence of inhibitory interactions, blue reactions only show evidence of activating interactions, and purple reactions show evidence of both activating and inhibiting interactions.
 	}
 \end{figure}
 
-\addcontentsline{toc}{section}{References}
-\bibliographystyle{unsrtnat}
-\bibliography{control_theory}
 
 \end{document}
