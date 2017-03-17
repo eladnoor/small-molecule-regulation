@@ -31,14 +31,11 @@ def convert_to_bipartite(S):
                        id_vars='bigg.metabolite', value_name='coeff')
     S_sparse = S_sparse[S_sparse.coeff != 0]
 
-    # remove the high-degree metabolites that are we want to ignore for graph
+    # remove the high-degree metabolites that we want to ignore for graph
     # distance
-    met_suff = S_sparse['bigg.metabolite'].str.rsplit('_', 1, expand=True)
-    S_sparse['bigg.metabolite'] = met_suff[0]
-    S_sparse['compartment'] = met_suff[1]
-    S_sparse = S_sparse[~S_sparse['bigg.metabolite'].isin(METS_TO_REMOVE)]
-    S_sparse = S_sparse[S_sparse['compartment'] == 'c']
-    S_sparse.drop('compartment', axis=1, inplace=True)
+    met_comp = S_sparse['bigg.metabolite'].str.rsplit('_', 1, expand=True)
+    S_sparse = S_sparse[(~met_comp[0].isin(METS_TO_REMOVE)) & (met_comp[1] == 'c')]
+    S_sparse['bigg.metabolite'] = met_comp[0].str.upper()
 
     mets = set(S_sparse['bigg.metabolite'].unique())
     rxns = set(S_sparse['bigg.reaction'].unique())
@@ -51,6 +48,8 @@ def convert_to_bipartite(S):
 
 
 def calculate_distances(smrn):
+
+    smrn['bigg.metabolite'] = smrn['bigg.metabolite'].str.upper()
 
     # %% Read BIGG model
     model, S = settings.get_ecoli_json()
@@ -66,7 +65,7 @@ def calculate_distances(smrn):
     for i, row in smrn_dist.iterrows():
         source = row['bigg.metabolite']  # remember we dropped it before
         target = row['bigg.reaction']
-        if source in METS_TO_REMOVE:
+        if source.lower() in METS_TO_REMOVE:
             continue
         if target in spl[source]:
             smrn_dist.at[i, 'distance'] = (spl[source][target] - 1.0) / 2.0

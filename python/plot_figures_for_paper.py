@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#*- coding: utf-8 -*-
 """
 Created on Sun Oct  9 17:37:42 2016
 
@@ -19,6 +19,8 @@ from scipy.stats import gmean, ranksums
 from matplotlib_venn import venn3
 import matplotlib.pyplot as plt
 import matplotlib
+from matplotlib.gridspec import GridSpec
+from matplotlib import rcParams
 import pdb  # this is a reminder for Elad not to remove this pdb import
 from topology import calculate_distances
 
@@ -43,10 +45,22 @@ CONDITIONS = ['Glucose', 'Fructose', 'Galactose', 'Gluconate', 'Mannitol',
 
 GENERAL_COLOR   = '#939598'
 CCM_COLOR       = '#556B2f'
-ACTIVATOR_COLOR = '#ee4444'
-INHIBITOR_COLOR = '#4444ee'
-BOTH_COLOR      = '#993399'
 
+METABOLITE_COLOR = sns.color_palette('Set2')[3]
+ACTIVATOR_COLOR = sns.color_palette('Set2')[0] # green
+SUBSTRATE_COLOR = sns.color_palette(settings.HEATMAP_COLORMAP)[-1]
+INHIBITOR_COLOR = sns.color_palette(settings.HEATMAP_COLORMAP)[0]
+BOTH_COLOR      = sns.color_palette('Set2')[5]
+
+# Michaelis-Menten
+Vmax = 1 # umol/min
+Km = 1 # mM
+s_range = np.logspace(-3, 3, 100) # 10 uM - 100 mM
+v_s = lambda s: Vmax * s / (Km + s)
+eps_s_v = lambda s: 1 - s / (Km + s)
+v_x = lambda s: Vmax * (1 - s / (Km + s))
+eps_x_v = lambda s: -s / (Km + s)
+abs_eps_x_v = lambda s: s / (Km + s)
 
 
 class FigurePlotter(object):
@@ -65,6 +79,10 @@ class FigurePlotter(object):
             map_ligands.rebuild_cache()
 
         self.get_data()
+
+        if rebuild_cache:
+            _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
+            self.regulation.to_csv(_fname)
 
     def get_kinetic_param(self, name, value_col, organism=ORGANISM):
         k = settings.read_cache(name)
@@ -121,7 +139,7 @@ class FigurePlotter(object):
         return k
 
     @staticmethod
-    def calc_agg_sat(k, agg_type='gmean', value_col='elasticity'):
+    def calc_agg_sat(k, agg_type='median', value_col='elasticity'):
         """
             calculates the [S]/K_S for all matching EC-metabolite pairs,
             in log2-fold-change.
@@ -383,10 +401,6 @@ class FigurePlotter(object):
         thermo_df['is regulated'] = 'No'
         thermo_df.ix[thermo_df['Num_Regs'] > 0, 'is regulated'] = 'Yes'
 
-        met_color = sns.color_palette('Set2')[3]
-        km_color = sns.color_palette('coolwarm')[-1]
-        ki_color = sns.color_palette('coolwarm')[0]
-
         met_intersection = set(self.km['bigg.metabolite']).intersection(
             self.ki['bigg.metabolite'])
         km_inter = self.km[self.km['bigg.metabolite'].isin(met_intersection)]
@@ -398,7 +412,7 @@ class FigurePlotter(object):
         concentrations = concentrations[~pd.isnull(concentrations)]
 
         sns.kdeplot(np.log10(concentrations), cumulative=False, ax=ax, bw=.25,
-                    linewidth=2, color=met_color, legend=False)
+                    linewidth=2, color=METABOLITE_COLOR, legend=False)
         ax.set_xlim(-2.1, 2.1)
         ax.set_xticks(np.arange(-2, 3, 1))
         ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
@@ -410,11 +424,11 @@ class FigurePlotter(object):
         km_values = km_inter.groupby(('met:EC')).first()['KM_Value']
         ki_values = ki_inter.groupby(('met:EC')).first()['KI_Value']
         sns.kdeplot(np.log10(km_values), cumulative=False,
-                    ax=ax, bw=.25, color=km_color,
+                    ax=ax, bw=.25, color=SUBSTRATE_COLOR,
                     label='substrates (N = %d)' % km_values.shape[0],
                     linewidth=2)
         sns.kdeplot(np.log10(ki_values), cumulative=False,
-                    ax=ax, bw=.25, color=ki_color,
+                    ax=ax, bw=.25, color=INHIBITOR_COLOR,
                     label='inhibitors (N = %d)' % ki_values.shape[0],
                     linewidth=2)
         ax.set_xlim(-2.1, 2.7)
@@ -440,10 +454,10 @@ class FigurePlotter(object):
         km_saturation = km_saturation[~pd.isnull(km_saturation)]
         sns.kdeplot(km_saturation, cumulative=False, ax=ax, bw=.1,
                     label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=2, color=km_color)
+                    linewidth=2, color=SUBSTRATE_COLOR)
         sns.kdeplot(ki_saturation, cumulative=False, ax=ax, bw=.1,
                     label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=2, color=ki_color)
+                    linewidth=2, color=INHIBITOR_COLOR)
 
         ax.grid(visible=False)
         ax.set_xlim(0, 1)
@@ -467,10 +481,10 @@ class FigurePlotter(object):
         km_elasticity = km_elasticity[~pd.isnull(km_elasticity)]
         sns.kdeplot(km_elasticity, cumulative=False, ax=ax, bw=.1,
                     label='substrates (N = %d)' % km_saturation.shape[0],
-                    linewidth=2, color=km_color)
+                    linewidth=2, color=SUBSTRATE_COLOR)
         sns.kdeplot(ki_elasticity, cumulative=False, ax=ax, bw=.1,
                     label='inhibitors (N = %d)' % ki_saturation.shape[0],
-                    linewidth=2, color=ki_color)
+                    linewidth=2, color=INHIBITOR_COLOR)
 
         ax.grid(visible=False)
         ax.set_xlim(0, 1)
@@ -495,7 +509,7 @@ class FigurePlotter(object):
         settings.savefig(fig, 'fig4')
 
 
-    def draw_agg_heatmaps(self, agg_type='median'):
+    def plot_fig5(self):
         """
             draw heat maps of the [S]/Ki and [S]/Km values across
             the 8 conditions
@@ -505,8 +519,41 @@ class FigurePlotter(object):
             _tmp = _tmp.count().reset_index().groupby('bigg.metabolite').max()
             return _tmp[value_col].apply(int)
 
-        km_sat_agg = FigurePlotter.calc_agg_sat(self.km, agg_type)
-        ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki, agg_type)
+        fig = plt.figure(figsize=(10, 8))
+        gs1 = GridSpec(1, 2)
+        gs1.update(left=0.2, right=0.8, top=0.95, bottom=0.7, wspace=0.2)
+        ax1 = plt.subplot(gs1[0, 0])
+        ax2 = plt.subplot(gs1[0, 1])
+
+        gs2 = GridSpec(1, 1)
+        gs2.update(left=0.15, right=0.9, top=0.6, bottom=0.15, wspace=0.1)
+        ax3 = plt.subplot(gs2[0])
+        axs = [ax1, ax2, ax3]
+
+        s_range = np.logspace(-3, 3, 1000) # 10 uM - 100 mM
+        eps = map(eps_s_v, s_range)
+        axs[0].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
+        axs[0].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
+                       edgecolor='none', s=15, vmin=-1, vmax=1)
+        eps = map(eps_x_v, s_range)
+        axs[1].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
+        axs[1].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
+                       edgecolor='none', s=15, vmin=-1, vmax=1)
+        axs[0].set_title('substrates', fontsize=12)
+        axs[1].set_title('inhibitors', fontsize=12)
+        axs[0].set_xlabel('substrate conc. $s$ [mM]', fontsize=12)
+        axs[1].set_xlabel('inhibitor conc. $I$ [mM]', fontsize=12)
+        axs[0].set_ylabel('elasticity', fontsize=12)
+
+        axs[0].set_xscale('log')
+        axs[1].set_xscale('log')
+        axs[0].set_xlim(1e-3, 1e3)
+        axs[1].set_xlim(1e-3, 1e3)
+        axs[0].set_ylim(-1, 1)
+        axs[1].set_ylim(-1, 1)
+
+        km_sat_agg = FigurePlotter.calc_agg_sat(self.km)
+        ki_sat_agg = FigurePlotter.calc_agg_sat(self.ki)
 
         # keep and reorder only the conditions that were pre-selected
         km_sat_agg = km_sat_agg.loc[:, CONDITIONS]
@@ -530,34 +577,28 @@ class FigurePlotter(object):
         sat_joined = sat_joined.reindex_axis(ind, axis=0)
         sat_joined.rename(index=index_mapping, inplace=True)
 
-        fig, ax = plt.subplots(1, 1, figsize=(18, 10))
-        clb = matplotlib.colorbar.make_axes(ax)
-
         sns.heatmap(sat_joined,
-                    ax=ax, mask=sat_joined.isnull(), annot=True, fmt='.2f',
-                    cbar=True, vmin=-1, vmax=1, cmap=settings.HEATMAP_COLORMAP, cbar_ax=clb[0],
-                    annot_kws={'fontdict': {'fontsize': 12}})
+                    ax=axs[2], mask=sat_joined.isnull(), annot=True, fmt='.2f',
+                    cbar=False, vmin=-1, vmax=1, cmap=settings.HEATMAP_COLORMAP,
+                    annot_kws={'fontdict': {'fontsize': 8}})
 
         # change xtick labels back to the original strings
         # (without the suffixes) and increase the font size
-        ax.set_xticklabels(list(km_sat_agg.columns) + list(ki_sat_agg.columns),
-                           rotation=90, fontsize=12)
+        axs[2].set_xticklabels(list(km_sat_agg.columns) + list(ki_sat_agg.columns),
+                               rotation=90, fontsize=12)
 
         # rotate the metabolite names back to horizontal, and increase
         # the font size
-        ax.set_yticklabels(reversed(sat_joined.index), rotation=0, fontsize=12)
+        axs[2].set_yticklabels(reversed(sat_joined.index), rotation=0, fontsize=10)
 
-        ax.set_xlabel('growth condition', fontsize=16)
-        ax.set_ylabel('')
-        ax.set_title('substrates' + ' '*30 + 'inhibitors', fontsize=20)
-        clb[0].set_ylabel('%s(elasticity)' % agg_type,
-                          fontsize=16)
+        axs[2].set_xlabel('growth condition', fontsize=10)
+        axs[2].set_ylabel('')
+        axs[2].set_title('as substrates' + ' '*50 + 'as inhibitors', fontsize=12)
 
-        ax.axvline(sat_joined.shape[1]/2, 0, 1, color='r')
+        axs[2].axvline(sat_joined.shape[1]/2, 0, 1, color='r')
+        settings.savefig(fig, 'fig5')
 
-        settings.savefig(fig, 'heatmap_saturation_%s' % agg_type, dpi=300)
-
-    def draw_full_heapmats(self, filter_using_model=True):
+    def plot_figS5(self):
         def pivot_and_sort(k, sort_by='mean'):
             k_piv = k.pivot('met:EC', 'growth condition', 'elasticity')
             if sort_by == 'mean':
@@ -567,8 +608,8 @@ class FigurePlotter(object):
             k_piv = k_piv.reindex_axis(ind, axis=0)
             return k_piv
 
-        km = self.km if filter_using_model else self.km_unfiltered
-        ki = self.ki if filter_using_model else self.ki_unfiltered
+        km = self.km
+        ki = self.ki
         km_pivoted = pivot_and_sort(km, sort_by='index')
         ki_pivoted = pivot_and_sort(ki, sort_by='index')
         km_pivoted.index = km_pivoted.index.str.upper()
@@ -599,16 +640,13 @@ class FigurePlotter(object):
         ax1.set_ylabel('')
         clb1[0].set_ylabel('elasticity', fontsize=16)
 
-        if filter_using_model:
-            settings.savefig(fig, 'heatmap_saturation', dpi=200)
-            km_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
-                                           'heatmap_km_saturation.csv'))
-            ki_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
-                                           'heatmap_ki_saturation.csv'))
-        else:
-            settings.savefig(fig, 'heatmap_saturation_unfiltered', dpi=100)
+        settings.savefig(fig, 'figS5')
+        km_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
+                                       'heatmap_km_saturation.csv'))
+        ki_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
+                                       'heatmap_ki_saturation.csv'))
 
-    def draw_venn_diagrams(self):
+    def plot_fig2ab(self):
 
         def venn3_sets(set_a, set_b, set_c, set_labels, ax):
             # order of values for Venn diagram:
@@ -649,7 +687,7 @@ class FigurePlotter(object):
         axs[1].annotate('b', xy=(0.02, 0.98),
                         xycoords='axes fraction', ha='left', va='top',
                         size=20)
-        settings.savefig(fig, 'venn')
+        settings.savefig(fig, 'fig2ab')
 
         res = {'inhibitors': list(inh_met), 'activators': list(act_met),
                'all_metabolites': list(self.native_mets),
@@ -658,15 +696,46 @@ class FigurePlotter(object):
         _fname = os.path.join(settings.RESULT_DIR, 'venn_groups.json')
         with open(_fname, 'w') as fp:
             json.dump(res, fp, indent=4)
-        _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
-        #self.regulation.to_csv(_fname, 'w')
-        self.regulation.to_csv(_fname)
 
-    def get_grouped_data(self):
+    def plot_fig2cd(self):
         """
-            generate dataframes for metabolite and reactions
-            containing counts of activations and inhibitions
+            Draw 2D histograms of the number of activating and
+            inhibiting reactions
+            grouped by metabolite and grouped by reaction
         """
+        def plot_jointhist(data, xlabel, ylabel, xmax, ymax):
+            """
+                plot the histogram as a scatter plot with marginal histograms,
+                and ensure empty bins are easily distinguishable from ones
+                that have at least 1 hit.
+            """
+            x = data[xlabel]
+            y = data[ylabel]
+
+            # First, plot the scatter plot
+            g = sns.JointGrid(x=x, y=y, size=4,
+                              xlim=(-1, xmax+1), ylim=(-1, ymax+1))
+            g = g.plot_joint(plt.scatter, alpha=0.2)
+            plt.gcf()
+
+            plt.xlabel(xlabel)
+            plt.ylabel(ylabel)
+
+            # annotate only unique points
+            # annotate only unique points
+            ann_df = data.drop_duplicates((xlabel, ylabel), keep=False)
+            ann_df = ann_df[(ann_df[xlabel] > 12) | (ann_df[ylabel] > 5)]
+            for i, row in ann_df.iterrows():
+                    plt.annotate(i, xy=(row[xlabel], row[ylabel]),
+                                 xytext=(row[xlabel]+1, row[ylabel]+1),
+                                 ha='center', va='top', size=10,
+                                 textcoords='data')
+
+            # Next, plot the marginal histograms
+            g = g.plot_marginals(sns.distplot, kde=False)
+
+            return plt.gcf()
+
         # join interaction table with bigg.reaction IDs
         # and keep only one copy of each reaction-metabolite pair
         cols = ('bigg.reaction', 'bigg.metabolite')
@@ -681,97 +750,27 @@ class FigurePlotter(object):
 
         grouped_by_met = bigg_effectors.groupby('bigg.metabolite').sum()
         grouped_by_rxn = bigg_effectors.groupby('bigg.reaction').sum()
-        return grouped_by_met, grouped_by_rxn
 
-    def print_ccm_table(self):
-        ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
-                                       index_col=None)
-        ccm_df.set_index('EC_number', inplace=True)
+        xmax = max(grouped_by_met[N_INH_LABEL].max(),
+                   grouped_by_rxn[N_INH_LABEL].max())
+        ymax = max(grouped_by_met[N_ACT_LABEL].max(),
+                   grouped_by_rxn[N_ACT_LABEL].max())
 
-        # select only entries that involve CCM enzymes
-        ccm_ki = self.regulation.join(ccm_df, on='EC_number', how='inner')
-        ccm_ki = ccm_ki[~pd.isnull(ccm_ki['KI_Value'])]
-        ccm_interactions = self.regulation.join(ccm_df,
-                                                on='EC_number', how='inner')
-        ccm_interactions['KI_Value'] = None
+        fig = plot_jointhist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
+                             xmax, ymax)
+        fig.get_axes()[0].annotate('c', xy=(0.02, 0.98),
+                     xycoords='axes fraction', ha='left', va='top',
+                     size=20)
+        settings.savefig(fig, 'fig2c')
 
-        ccm_concat = pd.concat([ccm_ki, ccm_interactions])
-        ccm_concat.sort_values(
-            ['EC_number', 'bigg.metabolite', 'Mode'], inplace=True)
+        fig = plot_jointhist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
+                             xmax, ymax)
+        fig.get_axes()[0].annotate('d', xy=(0.02, 0.98),
+                     xycoords='axes fraction', ha='left', va='top',
+                     size=20)
+        settings.savefig(fig, 'fig2d')
 
-        ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
-        return ccm_concat
-
-    def draw_pathway_histogram(self):
-        pathways = set(self.regulation['bigg.subsystem.reaction'])
-        pathways.update(self.regulation['bigg.subsystem.metabolite'])
-        pathways = sorted(pathways)
-        if np.nan in pathways:
-            pathways.remove(np.nan)
-
-        cols = ['bigg.metabolite', 'bigg.subsystem.metabolite',
-                'bigg.reaction', 'bigg.subsystem.reaction', 'Mode']
-        reg_unique = self.regulation[cols].drop_duplicates()
-
-        ylabel = 'bigg.subsystem.metabolite'
-        met_system_counter = reg_unique.groupby(
-            (ylabel, 'bigg.subsystem.reaction', 'Mode')).count().reset_index()
-
-        act_table = met_system_counter[met_system_counter['Mode'] == '+']
-        act_table = act_table.pivot(index=ylabel,
-                                    columns='bigg.subsystem.reaction',
-                                    values='bigg.reaction').fillna(0)
-
-        inh_table = met_system_counter[met_system_counter['Mode'] == '-']
-        inh_table = inh_table.pivot(index=ylabel,
-                                    columns='bigg.subsystem.reaction',
-                                    values='bigg.reaction').fillna(0)
-
-        N = len(pathways)
-        hist_mat_act = np.zeros((N, N))
-        for i in xrange(N):
-            if pathways[i] in act_table.index:
-                for j in xrange(N):
-                    if pathways[j] in act_table.columns:
-                        hist_mat_act[i, j] = act_table.at[pathways[i],
-                                                          pathways[j]]
-
-        N = len(pathways)
-        hist_mat_inh = np.zeros((N, N))
-        for i in xrange(N):
-            if pathways[i] in inh_table.index:
-                for j in xrange(N):
-                    if pathways[j] in inh_table.columns:
-                        hist_mat_inh[i, j] = inh_table.at[pathways[i],
-                                                          pathways[j]]
-
-        vmax = max(hist_mat_act.max(), hist_mat_inh.max())
-
-        fig, axs = plt.subplots(1, 2, figsize=(20, 9))
-
-        ax = axs[0]
-        sns.heatmap(hist_mat_act, ax=ax, annot=False, cbar=False,
-                    cmap='viridis', xticklabels=pathways, yticklabels=pathways,
-                    vmin=0, vmax=vmax)
-        ax.set_title('activation')
-        ax.set_ylabel(ylabel)
-        ax.set_xlabel('activated enzyme subsystem')
-
-        ax = axs[1]
-        sns.heatmap(hist_mat_inh, ax=ax, annot=False, cbar=True,
-                    cmap='viridis', xticklabels=pathways, yticklabels=False,
-                    vmin=0, vmax=vmax)
-        ax.set_title('inhibition')
-        ax.set_xlabel('inhibited enzyme subsystem')
-
-        fig.tight_layout(pad=4)
-        settings.savefig(fig, 'pathway_histograms', dpi=300)
-        act_table.to_csv(os.path.join(settings.RESULT_DIR,
-                                      'pathway_histograms_activating.csv'))
-        inh_table.to_csv(os.path.join(settings.RESULT_DIR,
-                                      'pathway_histograms_inhibiting.csv'))
-
-    def draw_pathway_met_histogram(self, n_colors=20):
+    def plot_figS3(self, n_colors=20):
 
         def create_random_colormap(labels):
             np.random.seed(60)
@@ -786,9 +785,6 @@ class FigurePlotter(object):
                       zip(h_values, s_values, v_values)]
 
             return dict(zip(labels, colors))
-
-        subsys = self.bigg.get_reaction_subsystems()
-        subsys_count = subsys.reset_index().groupby('bigg.subsystem').count()
 
         cols = ['bigg.metabolite', 'bigg.reaction',
                 'bigg.subsystem.reaction', 'Mode']
@@ -864,51 +860,7 @@ class FigurePlotter(object):
         ax.set_xlabel('# inhibitions')
         ax.set_ylabel('')
         fig.tight_layout()
-        settings.savefig(fig, 'subsystem_stacked_bar', dpi=300)
-
-        # Remove metabolites and pathways with insufficient numbers of
-        # data points
-        act2plot = act_table[act_table.sum(axis=1).fillna(0) > 3]
-        dropcol = act2plot.columns[act2plot.sum(axis=0).fillna(0) < 3]
-        act2plot = act2plot.drop(dropcol, axis=1)
-
-        inh2plot = inh_table[inh_table.sum(axis=1).fillna(0) > 7]
-        dropcol = inh2plot.columns[inh2plot.sum(axis=0).fillna(0) < 7]
-        inh2plot = inh2plot.drop(dropcol, axis=1)
-
-        # Plot activating and inhibiting matrices in seaborn
-
-        act_roworder = FigurePlotter.cluster_matrix(act2plot)
-        act_colorder = FigurePlotter.cluster_matrix(act2plot.T)
-
-        inh_roworder = FigurePlotter.cluster_matrix(inh2plot)
-        inh_colorder = FigurePlotter.cluster_matrix(inh2plot.T)
-
-        fig, axs = plt.subplots(1, 2, figsize=(10, 10), sharey=False)
-
-        ax = axs[0]
-        sns.heatmap(act2plot.ix[act_roworder, act_colorder],
-                    ax=ax, annot=False, cbar=True, cmap='viridis')
-        ax.set_title('activation')
-        ax.set_ylabel(ylabel)
-        ax.set_xlabel('activated enzyme subsystem')
-        for label in ax.get_xticklabels():
-            label.set(rotation=90)
-        for label in ax.get_yticklabels():
-            label.set(rotation=0)
-
-        ax = axs[1]
-        sns.heatmap(inh2plot.ix[inh_roworder, inh_colorder],
-                    ax=ax, annot=False, cbar=True, cmap='viridis')
-        ax.set_title('inhibition')
-        ax.set_xlabel('inhibited enzyme subsystem')
-        for label in ax.get_xticklabels():
-            label.set(rotation=90)
-        for label in ax.get_yticklabels():
-            label.set(rotation=0)
-
-        fig.tight_layout(pad=4)
-        settings.savefig(fig, 'pathway_met_histograms', dpi=300)
+        settings.savefig(fig, 'figS3', dpi=300)
 
     @staticmethod
     def cluster_matrix(X):
@@ -952,7 +904,7 @@ class FigurePlotter(object):
             ax.set_title(title)
             return None
 
-    def compare_km_ki(self, filter_using_model=False):
+    def plot_figS6(self, filter_using_model=False):
 
         from statsmodels.sandbox.stats.multicomp import multipletests as padjust
         import scipy.stats as st
@@ -1022,34 +974,9 @@ class FigurePlotter(object):
         diag_line, = ax.plot(ax.get_xlim(), ax.get_ylim(), ls="--", c=".3",
                              color='grey' )
 
-        settings.savefig(fig, 'km_vs_ki')
+        settings.savefig(fig, 'figS6')
 
-        # Make volcano plot
-        fig, ax = plt.subplots(figsize=(5, 5))
-        ax.scatter(res['Ratio'], -np.log10(res['QValue']),
-                   color=c_not_significant,
-                   s=4*(res['KI_Number'] + res['KM_Number']))
-
-        for ii in res.index:
-            if res.at[ii,'QValue'] < 0.1 and np.abs(res.at[ii, 'Ratio']) > 1:
-                ax.scatter(res.at[ii,'Ratio'], -np.log10(res.at[ii,'QValue']),
-                           color=c_significant, s=res['size'])
-                ax.text(res.at[ii, 'Ratio'],
-                        -np.log10(res.at[ii,'QValue']),
-                        ii)
-
-        plt.xlabel('$log_2$ (median $K_I$/median $K_M$)')
-        plt.ylabel('-$log_{10} (Q-value)')
-
-        # Plot some lines
-        highq = -np.log10(res['QValue'].min()) + .1
-        highfc = res['Ratio'].max() + 1
-        ax.axis([-highfc,highfc,0,highq])
-        #ax.plot( (0,0),(0,highq),'k--' ) # vertical line
-        #ax.plot( (-highfc,highfc),(0,0),'k--' ) # horizontal line
-        settings.savefig(fig, 'km_vs_ki_volcano')
-
-    def draw_distance_histograms(self):
+    def plot_figS1(self):
         smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
                                         'iJO1366_SMRN.csv'), index_col=None)
         smrn_dist, all_distances = calculate_distances(smrn)
@@ -1095,12 +1022,11 @@ class FigurePlotter(object):
                         xycoords='axes fraction', ha='right', va='top',
                         size=14)
 
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_distances.pdf'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_distances.png'))
+        settings.savefig(fig, 'figS1')
         smrn_dist.to_csv(os.path.join(settings.CACHE_DIR,
                                       'iJO1366_SMRN_dist.csv'), index=False)
 
-    def draw_degree_histograms(self):
+    def plot_figS2(self):
         smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
                                         'iJO1366_SMRN.csv'), index_col=None)
         #rxn_hist = smrn.join(self.reaction_subsystem_df, on='bigg.reaction')
@@ -1153,34 +1079,142 @@ class FigurePlotter(object):
         axs[1, 1].annotate('only CCM metabolites (N = %d)' % met_hist_ccm.shape[0],
                            xy=(0.9, 0.9), size=10,
                            xycoords='axes fraction', ha='right', va='top')
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_degrees.pdf'))
-        fig.savefig(os.path.join(settings.RESULT_DIR, 'SMRN_degrees.png'),
-                    dpi=300)
+        settings.savefig(fig, 'figS2')
 
-#%%
+    def plot_figS4(self):
+        rcParams['font.family'] = 'sans-serif'
+        rcParams['mathtext.sf'] = 'serif'
+        rcParams['mathtext.fontset'] = 'cm'
+        fig, axs = plt.subplots(2, 2, figsize=(8, 7))
+
+        # first, plot the MM rate law (as a function of s)
+
+        x_low = 1e-2
+        x_high = 1e2
+
+        arrowprops = dict(facecolor='black', shrink=0.01, width=1.5, headwidth=4)
+
+        fig.text(0.5, 0.95, 'Michaelis-Menten kinetics', fontsize=17, ha='center')
+        fig.text(0.5, 0.47, 'Non-competitive inhibition', fontsize=17, ha='center')
+
+        ax = axs[0, 0]
+        ax.plot(s_range, map(v_s, s_range), '-')
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlabel('substrate conc. $s$ [mM]')
+        ax.set_ylabel('rate $v$ [$\mu$mol/min]')
+
+        ax.annotate(r'$|\epsilon_s^v| \approx 1$', xy=(x_low, v_s(x_low)),
+                    xytext=(60, 0), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.annotate(r'$|\epsilon_s^v| \approx 0$', xy=(x_high, v_s(x_high)),
+                    xytext=(0, -40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.set_title('rate law')
+        ax.annotate(r'$v = V^+ \, \frac{s}{K_M + s}$', color=(0.2, 0.4, 1.0),
+                    xy=(0.5, 0.1), xycoords='axes fraction', fontsize=14)
+
+        ax = axs[0, 1]
+        ax.plot(s_range, map(eps_s_v, s_range), '-')
+        ax.set_xscale('log')
+        ax.set_yscale('linear')
+        ax.set_xlabel('substrate conc. $s$ [mM]')
+        ax.set_ylabel('elasticity $|\epsilon_s^v|$')
+
+        ax.annotate(r'$|\epsilon_s^v| \approx 1$', xy=(x_low, eps_s_v(x_low)),
+                    xytext=(0, -40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.annotate(r'$|\epsilon_s^v| \approx 0$', xy=(x_high, eps_s_v(x_high)),
+                    xytext=(0, 40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.annotate(r'$|\epsilon_s^v| = 1 - \frac{s}{K_M + s}$', color=(0.2, 0.4, 1.0),
+                    xy=(0.05, 0.1), xycoords='axes fraction', fontsize=14)
+        ax.set_title('substrate elasticity')
+
+        ax = axs[1, 0]
+        ax.plot(s_range, map(v_x, s_range), '-')
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlabel('inhibitor conc. $I$ [mM]')
+        ax.set_ylabel('rate $v$ [$\mu$mol/min]')
+
+        ax.annotate(r'$|\epsilon_I^v| \approx 0$', xy=(x_low, v_x(x_low)),
+                    xytext=(0, -40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=dict(facecolor='black', shrink=0.01, width=1.5, headwidth=4))
+        ax.annotate(r'$|\epsilon_I^v| \approx 1$', xy=(x_high, v_x(x_high)),
+                    xytext=(-60, 0), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=dict(facecolor='black', shrink=0.01, width=1.5, headwidth=4))
+        ax.set_title('rate law')
+        ax.annotate(r'$v = V^+ ( 1 - \frac{I}{K_I + I} ) $', color=(0.2, 0.4, 1.0),
+                    xy=(0.05, 0.1), xycoords='axes fraction', fontsize=14)
+
+        ax = axs[1, 1]
+        ax.plot(s_range, map(abs_eps_x_v, s_range), '-')
+        ax.set_xscale('log')
+        ax.set_yscale('linear')
+        ax.set_xlabel('inhibitor conc. $I$ [mM]')
+        ax.set_ylabel('elasticity $|\epsilon_I^v|$')
+
+        ax.annotate(r'$|\epsilon_I^v| \approx 0$', xy=(x_low, abs_eps_x_v(x_low)),
+                    xytext=(0, 40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.annotate(r'$|\epsilon_I^v| \approx 1$', xy=(x_high, abs_eps_x_v(x_high)),
+                    xytext=(0, -40), textcoords='offset points', va='center', ha='center',
+                    fontsize=12,
+                    arrowprops=arrowprops)
+        ax.annotate(r'$|\epsilon_I^v| = \frac{I}{K_I + I}$', color=(0.2, 0.4, 1.0),
+                    xy=(0.5, 0.1), xycoords='axes fraction', fontsize=14)
+        ax.set_title('inhibitor elasticity')
+
+        fig.tight_layout(pad=4, h_pad=5, w_pad=1)
+        settings.savefig(fig, 'figS4', dpi=300)
+
+    def print_ccm_table(self):
+        ccm_df = pd.DataFrame.from_csv(settings.ECOLI_CCM_FNAME,
+                                       index_col=None)
+        ccm_df.set_index('EC_number', inplace=True)
+
+        # select only entries that involve CCM enzymes
+        ccm_ki = self.regulation.join(ccm_df, on='EC_number', how='inner')
+        ccm_ki = ccm_ki[~pd.isnull(ccm_ki['KI_Value'])]
+        ccm_interactions = self.regulation.join(ccm_df,
+                                                on='EC_number', how='inner')
+        ccm_interactions['KI_Value'] = None
+
+        ccm_concat = pd.concat([ccm_ki, ccm_interactions])
+        ccm_concat.sort_values(
+            ['EC_number', 'bigg.metabolite', 'Mode'], inplace=True)
+
+        ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
+        return ccm_concat
+
 ###############################################################################
 if __name__ == "__main__":
-    #plt.close('all')
+    plt.close('all')
 
     #fp = FigurePlotter(rebuild_cache=True)
 
     fp = FigurePlotter()
 
-    if False:
-        fp.plot_fig4()
+    fp.plot_fig2ab()
+    fp.plot_fig2cd()
+    fp.plot_fig4()
+    fp.plot_fig5()
 
-        fp.draw_pathway_met_histogram()
-        fp.draw_pathway_histogram()
-        fp.draw_venn_diagrams()
+    fp.plot_figS1()
+    fp.plot_figS2()
+    fp.plot_figS3()
+    fp.plot_figS4()
+    fp.plot_figS5()
+    fp.plot_figS6()
 
-        fp.draw_agg_heatmaps(agg_type='median')
+    fp.print_ccm_table()
 
-        fp.draw_full_heapmats()
-
-        fp.print_ccm_table()
-        fp.compare_km_ki()
-
-        fp.draw_degree_histograms()
-        fp.draw_distance_histograms()
-
-    #plt.close('all')
+    plt.close('all')
