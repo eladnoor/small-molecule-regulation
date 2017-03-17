@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\usepackage{url}
 \usepackage[square,numbers]{natbib}
 %\pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
@@ -18,8 +19,13 @@
 \tableofcontents
 \pagebreak
 \section{Futile Cycles and Small Molecule Regulation}
-We gathered information regarding reactions that are involved in futile cycling (dissipation of ATP), using the \emph{E. coli} genome scale model \textbf{iJO1366}. We mapped these reactions to enzymes, using EC number information (where available) and ended up with 75 unique reactions that take part in futile cycles (\texttt{FutileCycleReactionsECnumber.csv}). From these, using our SMRN, we find that 37 are regulated by at least one small molecule, whereas 38 are not regulated (\texttt{FutileCycleRegulatoryInfo.csv}).
+We gathered information regarding reactions that are involved in futile cycling (also known as Type II extreme pathways \cite{Price2002-ef}), using the \emph{E. coli} genome scale model iJO1366 \cite{Orth2011-qi} and the COBRApy toolbox \cite{Ebrahim2013-vw}. First, we converted it to an irreversible model, by splitting each reversible reaction into two distinct irreversible ones and allowing only zero or positive fluxes. We constrained all exchange reactions to have no flux, and added the following ATP generating reaction with a constant positive flux (e.g. $1$):
+\begin{equation}
+ADP + P_i + H^+ \rightharpoonup ATP + H2O~.
+\end{equation}
+Then, we solve the mass-balance problem while minimizing the sum of all fluxes, which finds the shortest futile cycle. We then eliminate the cycle by constraining its reaction to have zero flux, and iteratively run the minimization until no more solutions are found. We found 58 non-overlapping futile cycles, majority of which comprising 2 reactions.
 
+We mapped these reactions to enzymes, using EC number information (where available) and ended up with 75 unique reactions that take part in futile cycles (\texttt{FutileCycleReactionsECnumber.csv}). From these, using our SMRN, we find that 37 are regulated by at least one small molecule, whereas 38 are not regulated (\texttt{FutileCycleRegulatoryInfo.csv}).
 
 \begin{center}
 \begin{tabular}{|l|c|c|}
@@ -30,8 +36,8 @@ Not regulated & 38 & 266 \\ \hline
 \end{tabular}
 \end{center}
 
-
 Using a right-tailed Fischer’s exact test (fishertest function, MATLAB) to detect if there are significantly more small molecule regulation in futile cycle participating reactions, we verify that there is no significant overrepresentation of regulation in reactions that take part in futile cycling (p = 0.86).
+The code for this analysis and its results are freely available on our GitHub repository (\url{https://github.com/eladnoor/small-molecule-regulation}).
 
 \section{Metabolic Control Analysis}
 \subsection{What is elasticity?}
