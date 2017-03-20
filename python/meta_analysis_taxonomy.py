@@ -146,3 +146,22 @@ for ii in res_reduced_EC.index:
     
 # Keep only data with at least 10 references and ligand id 2 (= "more")
 res_reduced_EC.to_csv('../res/Regulation_by_taxon_CCM.csv')
+
+# Make a table indicating of the number of interactions for each species
+ki_species = ki.groupby(['Organism'])
+act_species = act.groupby(['Organism'])
+uqspecies = set(ki_species.groups.keys()).union(act_species.groups.keys())
+species_df = pd.DataFrame( columns = ['Inhibition','Activation'] )
+for species in uqspecies:
+
+    if species in ki_species.groups.keys():
+        species_df.at[ species,'Inhibition'] = ki_species.groups[species].size
+    else:
+        species_df.at[ species,'Inhibition'] = 0
+    
+    if species in act_species.groups.keys():
+        species_df.at[ species,'Activation'] = act_species.groups[species].size
+    else:
+        species_df.at[ species,'Activation'] = 0
+species_df['Total'] = species_df['Activation'] + species_df['Inhibition']
+species_df.to_csv('../res/Regulation_by_taxon_speciescounts.csv')
