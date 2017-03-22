@@ -12,7 +12,9 @@
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
 \newcommand{\wolf}[1]{{\color{red} [#1]}}
-\title{Genome-scale analysis of small molecule regulatory networks reveals principles of metabolic regulation - Supplementary Text}
+\renewcommand{\thefigure}  {S\arabic{figure}}
+
+\title{Genome-scale architecture of small molecule regulatory networks and the fundamental trade-off between regulation and enzymatic activity - Supplementary Text}
 
 \begin{document}
 \maketitle
@@ -108,12 +110,6 @@ The elasticity with respect to the activator concentration $x$ will thus be:
     \epsilon_a^v &=& \frac{\partial v}{\partial a} ~ \frac{a}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{h~a^{h-1} (K_A^h + a^h) - h~a^{h-1} a^h}{(K_A^h + a^h)^2}~\frac{a}{v} \nonumber \\
     &=& h~\frac{K_A^h}{K_A^h + a^h} = h (1 - \theta) \label{eq:eps_act}
 \end{eqnarray}
-\wolf{to make this even more general, we can also mention the case
-	of an activator that increases an already existing activity: instead
-	of $\theta$, we get $\alpha + (1-\alpha) \theta$ with a constant
-	relative baseline activity $\alpha$. In this case, the elasticity
-	formula remains the same, except for a constant prefactor; the same
-	logic can also be applied to inhibitors.}
 
 \subsubsection{Pure non-Competitive Inhibition}
 Next, we consider a pure non-competitive inhibitor with Hill coefficient $h$ and inhibition coefficient $K_I$:
@@ -315,7 +311,7 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 \end{figure}
 
 \begin{figure}[ht!]
-	\includegraphics[width=\textwidth]{../manuscript/figS2.pdf}
+	\includegraphics[width=1.1\textwidth]{../manuscript/figS2.pdf}
 	\caption{Histogram of the number of interactions for reactions and metabolite in the (a)-(b) entire E. coli SMRN, and (c)-(d) in the region of the SMRN restricted to the central carbon metabolism (CCM) of E. coli. }
 \end{figure}
 
@@ -326,7 +322,7 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 \end{figure}
 
 \begin{figure}[ht!]
-	\includegraphics[width=\textwidth]{../manuscript/figS4.pdf}
+	\includegraphics[width=1.1\textwidth]{../manuscript/figS4.pdf}
 	\caption{Schematic of the relationship between kinetic rate laws and elasticity for (a)-(b) substrates obeying Michaelis-Menten kinetics and (c)-(d) inhibitors obeying non-competitive inhibition. Importantly, substrate elasticity is maximized at low substrate concentrations, and inhibitor elasticity is maximized at high inhibitor concentration.
 	}
 \end{figure}
