@@ -7,8 +7,10 @@ Created on Sun Oct  9 17:37:42 2016
 from bigg import BiGG
 from kegg import KEGG
 import settings
-import map_ligands
+import cache
 import colorsys
+import sys
+from distutils.util import strtobool
 
 import pandas as pd
 import os
@@ -75,14 +77,10 @@ class FigurePlotter(object):
         self.native_mets = self.bigg.get_mets_in_cytosol()
         self.native_ECs = self.bigg.get_native_EC_numbers()
 
-        if rebuild_cache:
-            map_ligands.rebuild_cache()
-
         self.get_data()
 
-        if rebuild_cache:
-            _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
-            self.regulation.to_csv(_fname)
+        _fname = os.path.join(settings.RESULT_DIR, 'ecoli_interactions.csv')
+        self.regulation.to_csv(_fname)
 
     def get_kinetic_param(self, name, value_col, organism=ORGANISM):
         k = settings.read_cache(name)
@@ -1195,11 +1193,28 @@ class FigurePlotter(object):
         ccm_concat.to_csv(os.path.join(settings.RESULT_DIR, 'ccm_data.csv'))
         return ccm_concat
 
+def user_yes_no_query(question, default=False):
+    if default:
+        sys.stdout.write('%s? [(yes)/no] ' % question)
+    else:
+        sys.stdout.write('%s? [yes/(no)] ' % question)
+
+    while True:
+        try:
+            ri = raw_input().lower()
+            if not ri:
+                return default
+            return strtobool(ri)
+        except ValueError:
+            sys.stdout.write('Please respond with \'y\' or \'n\'.\n')
+
 ###############################################################################
 if __name__ == "__main__":
     plt.close('all')
 
-    #fp = FigurePlotter(rebuild_cache=True)
+    rebuild_cache = user_yes_no_query('Rebuild cache files', default=False)
+    if rebuild_cache:
+        cache.rebuild_cache()
 
     fp = FigurePlotter()
 

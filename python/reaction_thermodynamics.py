@@ -14,7 +14,6 @@ import kegg
 
 import numpy as np
 import pandas as pd
-import json
 from component_contribution.kegg_reaction import KeggReaction
 from component_contribution.kegg_model import KeggModel
 from component_contribution.component_contribution_trainer \

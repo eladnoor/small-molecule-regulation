@@ -2,7 +2,7 @@
 ex_14glucan_e,2.4.1.161,,0.0,0.0,17.11,13.82,C00718 <=> 
 ex_fe3hox_e,,,0.0,0.0,17.11,13.82,C06227 <=> 
 ex_mobd_e,,,0.0,0.0,17.11,13.82,C06232 <=> 
-14glucanabcpp,,"Transport, Inner Membrane",-40.5,0.0,-74.73,-15.08,C00001 + C00002 <=> C00008 + C00009 + C00718
+14glucanabcpp,,"Transport, Inner Membrane",-40.5,0.0,-40.5,-8.17,C00001 + C00002 + C00718 <=> C00008 + C00009
 14glucantexi,2.4.1.161,"Transport, Outer Membrane",0.0,0.0,-17.11,-13.82, <=> C00718
 23pde2pp,3.1.4.16,Nucleotide Salvage Pathway,-37.26,2.93,-37.26,-15.04,C00001 + C02355 <=> C01368
 23pde4pp,3.1.4.16,Nucleotide Salvage Pathway,-36.45,2.93,-36.45,-14.71,C00001 + C02354 <=> C05822
@@ -76,7 +76,6 @@ agdc,3.5.1.25,Alternate Carbon Metabolism,-7.08,3.81,-24.2,-6.51,C00001 + C00357
 agmhe,5.1.3.20,Lipopolysaccharide Biosynthesis / Recycling,0.0,0.0,0.0,0.0,C06397 <=> C06398
 agmt,3.5.3.11,Arginine and Proline Metabolism,-57.68,5.59,-74.79,-20.13,C00001 + C00179 <=> C00086 + C00134
 agpr,1.2.1.38,Arginine and Proline Metabolism,3.36,1.6,20.48,3.31,C00006 + C00009 + C01250 <=> C00005 + C04133
-ahcysns,3.2.2.9,Methionine Metabolism,-14.81,2.74,-31.93,-8.59,C00001 + C00021 <=> C00147 + C03539
 aicart,2.1.2.3,Purine and Pyrimidine Biosynthesis,8.21,2.96,8.21,1.66,C00234 + C04677 <=> C00101 + C04734
 airc2,6.3.4.18,Purine and Pyrimidine Biosynthesis,-65.32,5.46,-65.32,-8.79,C00002 + C00288 + C03373 <=> C00008 + C00009 + C15667
 airc3,5.4.99.18,Purine and Pyrimidine Biosynthesis,-38.14,5.45,-38.14,-15.39,C04751 <=> C15667
@@ -209,8 +208,8 @@ fbp,3.1.3.11,Glycolysis/Gluconeogenesis,-9.37,0.7,-26.48,-7.13,C00001 + C00354 <
 fdmo,1.14.14.5,Inorganic Ion Transport and Metabolism,-107.59,70710.68,-107.59,-14.47,C00007 + C01847 + C05123 <=> C00001 + C00061 + C00094 + C00266
 fdmo2,1.14.14.5,Inorganic Ion Transport and Metabolism,-88.62,70710.68,-88.62,-11.92,C00007 + C01847 + C11145 <=> C00001 + C00061 + C00067 + C00094
 fdmo6,,Inorganic Ion Transport and Metabolism,-106.26,70710.68,-106.26,-14.3,C00007 + C01847 + C14179 <=> C00001 + C00048 + C00061 + C00094
-fe3hoxabcpp,,Inorganic Ion Transport and Metabolism,-40.5,0.0,-74.73,-15.08,C00001 + C00002 <=> C00008 + C00009 + C06227
-fe3hoxtonex,,"Transport, Outer Membrane",0.0,0.0,17.11,13.82,C06227 <=> 
+fe3hoxabcpp,,Inorganic Ion Transport and Metabolism,-40.5,0.0,-40.5,-8.17,C00001 + C00002 + C06227 <=> C00008 + C00009
+fe3hoxtonex,,"Transport, Outer Membrane",0.0,0.0,-17.11,-13.82, <=> C06227
 fe3ri,,Cofactor and Prosthetic Group Biosynthesis,-194.26,8.88,-194.26,-26.14,C01352 + 2 C14819 <=> C00016 + 2 C14818
 feropp,1.16.3.1,Inorganic Ion Transport and Metabolism,-43.22,17.08,-26.11,-2.34,C00007 + 4 C14818 <=> 2 C00001 + 4 C14819
 ffsd,3.2.1.26,Alternate Carbon Metabolism,-30.95,2.88,-48.06,-12.93,C00001 + C02591 <=> C00092 + C00095
@@ -358,10 +357,11 @@ mnlptspp,,"Transport, Inner Membrane",-42.22,1.84,-42.22,-8.52,C00074 + C00392 <
 mnnh,4.2.1.8,Alternate Carbon Metabolism,-37.43,3.71,-37.43,-15.11,C00514 <=> C00001 + C00204
 moat,2.4.99.12,Lipopolysaccharide Biosynthesis / Recycling,-250.42,70710.68,-250.42,-50.54,C04121 + C04919 <=> C00055 + C06024
 moat2,2.4.99.13,Lipopolysaccharide Biosynthesis / Recycling,-244.59,70710.68,-244.59,-49.36,C04121 + C06024 <=> C00055 + C06025
-mobdabcpp,3.6.3.29,Inorganic Ion Transport and Metabolism,-40.5,0.0,-40.5,-8.17,C00001 + C00002 + C06232 <=> C00008 + C00009
-mobdtex,,"Transport, Outer Membrane Porin",0.0,0.0,17.11,13.82,C06232 <=> 
+mobdabcpp,3.6.3.29,Inorganic Ion Transport and Metabolism,-40.5,0.0,-74.73,-15.08,C00001 + C00002 <=> C00008 + C00009 + C06232
+mobdtex,,"Transport, Outer Membrane Porin",0.0,0.0,-17.11,-13.82, <=> C06232
 mohmt,2.1.2.11,Cofactor and Prosthetic Group Biosynthesis,5.58,4.96,5.58,1.13,C00001 + C00141 + C00143 <=> C00101 + C00966
 msar,1.1.1.298,Nucleotide Salvage Pathway,-21.52,2.98,-21.52,-4.34,C00005 + C00222 <=> C00006 + C01013
+mtan,3.2.2.9,Arginine and Proline Metabolism,-11.69,2.21,-28.8,-7.75,C00001 + C00170 <=> C00147 + C03089
 mthfc,3.5.4.9,Folate Metabolism,-5.7,0.92,-5.7,-2.3,C00001 + C00445 <=> C00234
 mthfd,1.5.1.5,Folate Metabolism,7.44,1.15,7.44,1.5,C00006 + C00143 <=> C00005 + C00445
 mthfr2,1.5.1.20,Folate Metabolism,-35.33,4.22,-35.33,-7.13,C00004 + C00143 <=> C00003 + C00440
@@ -416,7 +416,6 @@ ntd9pp,3.1.3.5,Nucleotide Salvage Pathway,-5.49,3.4,-22.61,-6.08,C00001 + C00144
 ntp1,3.6.4.9,Nucleotide Salvage Pathway,-27.09,0.31,-44.2,-11.89,C00001 + C00002 <=> C00008 + C00009
 ntp10,3.6.1.5,Nucleotide Salvage Pathway,-30.81,1.48,-47.92,-12.89,C00001 + C00081 <=> C00009 + C00104
 ntp11,,Nucleotide Salvage Pathway,-29.72,1.27,-46.84,-12.6,C00001 + C01345 <=> C00009 + C01344
-ntp12,3.6.1,Nucleotide Salvage Pathway,-29.72,1.27,-46.84,-12.6,C00001 + C00700 <=> C00009 + C01337
 ntp3,3.6.5.6,Nucleotide Salvage Pathway,-24.59,1.37,-41.71,-11.22,C00001 + C00044 <=> C00009 + C00035
 ntp3pp,3.6.5.6,Nucleotide Salvage Pathway,-24.59,1.37,-41.71,-11.22,C00001 + C00044 <=> C00009 + C00035
 ntp5,3.6.1.5,Nucleotide Salvage Pathway,-26.6,2.32,-43.71,-11.76,C00001 + C00063 <=> C00009 + C00112
@@ -451,7 +450,7 @@ paccoal,6.2.1.30,Alternate Carbon Metabolism,-75.1,2.19,-75.1,-10.1,C00002 + C00
 papsr,1.8.4.8,Cysteine Metabolism,-38.14,6.19,-55.25,-8.92,C00053 + C00342 <=> C00054 + C00094 + C00343
 pde1,3.1.4.53,Nucleotide Salvage Pathway,-43.9,1.14,-43.9,-17.72,C00001 + C00575 <=> C00020
 pde4,3.1.4.35,Nucleotide Salvage Pathway,-40.48,3.16,-40.48,-16.34,C00001 + C00942 <=> C00144
-pdh,2.3.1.12,Glycolysis/Gluconeogenesis,-35.65,3.25,-35.65,-4.8,C00003 + C00010 + C00022 <=> C00004 + C00011 + C00024
+pdh,1.2.4.1,Glycolysis/Gluconeogenesis,-35.65,3.25,-35.65,-4.8,C00003 + C00010 + C00022 <=> C00004 + C00011 + C00024
 pdx5po2,,Cofactor and Prosthetic Group Biosynthesis,18.69,1.01,18.69,3.77,C00003 + C00627 <=> C00004 + C00018
 pdx5poi,1.4.3.5,Cofactor and Prosthetic Group Biosynthesis,-112.24,4.27,-112.24,-22.65,C00007 + C00627 <=> C00018 + C00027
 pdx5ps,,Cofactor and Prosthetic Group Biosynthesis,-231.17,5.48,-248.28,-28.63,C00003 + C06055 + C11437 <=> 2 C00001 + C00004 + C00009 + C00011 + C00627
