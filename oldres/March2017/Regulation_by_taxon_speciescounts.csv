@@ -2,8 +2,8 @@
 Hevea brasiliensis,79,20,99
 Phoenix dactylifera,7,0,7
 Branchiostoma floridae,5,1,6
-Arthrobacter globiformis,83,8,91
-Haemophilus haemolyticus,9,0,9
+Arthrobacter globiformis,82,8,90
+Haemophilus haemolyticus,8,0,8
 Xanthomonas campestris,43,6,49
 Dissostichus mawsoni,3,0,3
 Rhodothermus marinus,16,2,18
@@ -25,14 +25,14 @@ Litopenaeus vannamei,14,5,19
 Acanthoscelides obtectus,6,0,6
 Mya arenaria,0,2,2
 Amaranthus retroflexus,68,1,69
-Camelus dromedarius,56,7,63
+Camelus dromedarius,55,7,62
 Elephantopus scaber,1,0,1
 Roseobacter denitrificans,3,1,4
 Cervidae,1,0,1
 Populus tremula,1,0,1
-Lupinus angustifolius,51,2,53
+Lupinus angustifolius,48,2,50
 Bordetella pertussis,79,3,82
-Cavia porcellus,893,143,1036
+Cavia porcellus,890,143,1033
 Halothiobacillus neapolitanus,7,5,12
 Erinnyis ello,3,0,3
 Sphingobium chungbukense,1,0,1
@@ -60,9 +60,9 @@ Eubacterium barkeri,38,6,44
 Cuphea wrightii,3,0,3
 Didelphis albiventris,4,2,6
 Zygnema cylindricum,1,0,1
-Schistosoma mansoni,209,5,214
+Schistosoma mansoni,208,5,213
 Hominoidea,12,0,12
-Vigna radiata,195,29,224
+Vigna radiata,194,29,223
 Mycoplasma pneumoniae,14,1,15
 Xanthomonas oryzae,8,0,8
 Evernia prunastri,16,4,20
@@ -77,7 +77,7 @@ Amycolatopsis methanolica,41,5,46
 Cricetus cricetus,2,0,2
 Arthrobacter aurescens,55,0,55
 Neisseria sicca,8,0,8
-Enterobacter aerogenes,245,49,294
+Enterobacter aerogenes,244,49,293
 Cenchrus americanus,11,2,13
 Vibrio harveyi,89,11,100
 Eisenia fetida,24,0,24
@@ -115,7 +115,7 @@ Serratia plymuthica,7,0,7
 Photobacterium damselae,9,2,11
 Ambystoma tigrinum,1,0,1
 Liza saliens,6,0,6
-Burkholderia mallei,7,1,8
+Burkholderia mallei,6,1,7
 Salaria basilisca,4,0,4
 Vigna umbellata,17,1,18
 Panax quinquefolius,0,1,1
@@ -134,25 +134,25 @@ Virgibacillus pantothenticus,0,1,1
 Pinus densiflora,31,4,35
 Ranunculaceae,1,0,1
 Cannabis sativa,9,0,9
-Acinetobacter lwoffii,20,4,24
+Acinetobacter lwoffii,19,4,23
 Chaetomiaceae,5,0,5
 Bacteroides uniformis,3,0,3
 Eclipta prostrata,33,0,33
 Diaprepes abbreviatus,6,0,6
 Testudo graeca nabeulensis,5,0,5
 Aeromonas media,6,2,8
-Azotobacter vinelandii,222,40,262
+Azotobacter vinelandii,221,40,261
 Metallosphaera sedula,11,2,13
 Lactobacillus crispatus,1,2,3
 Vibrio anguillarum,6,0,6
 Clostridium tetani,7,1,8
 Gryllus assimilis,3,0,3
 Lactobacillus manihotivorans,5,0,5
-Streptomyces clavuligerus,93,17,110
+Streptomyces clavuligerus,92,17,109
 Erimacrus isenbeckii,3,5,8
 Janthinobacterium lividum,22,9,31
 Methylobacterium rhodesianum,5,0,5
-Ustilago maydis,46,4,50
+Ustilago maydis,45,4,49
 Tecoma stans,64,2,66
 Pediococcus inopinatus,5,1,6
 Erythrina crista-galli,1,0,1
@@ -183,7 +183,7 @@ Pecten maximus,29,2,31
 Lactobacillus delbrueckii,44,4,48
 Cerastes cerastes,3,0,3
 Nocardia farcinica,9,0,9
-Hordeum vulgare,377,101,478
+Hordeum vulgare,375,101,476
 Tetragenococcus halophilus,2,1,3
 Desulfarculus baarsii,3,0,3
 Lactobacillus sanfranciscensis,9,1,10
@@ -192,7 +192,7 @@ Solanum dulcamara,5,0,5
 Macrobdella decora,1,0,1
 Prunus domestica,12,2,14
 Shigella flexneri,24,4,28
-Mus musculus,6520,1376,7896
+Mus musculus,6494,1376,7870
 Weissella cibaria,8,0,8
 Nocardia globerula,6,2,8
 Podiceps nigricollis,9,2,11
@@ -218,7 +218,7 @@ Burkholderia cenocepacia,8,5,13
 Oncorhynchus mykiss,120,32,152
 Bothrops marajoensis,2,2,4
 Pyrococcus woesei,23,4,27
-Brassica oleracea,96,17,113
+Brassica oleracea,94,17,111
 Ulva pertusa,1,0,1
 Daucus carota,151,43,194
 Lactobacillus reuteri,39,4,43
@@ -228,7 +228,7 @@ Cyanea nozakii,5,3,8
 Turbatrix aceti,12,2,14
 Sphingopyxis macrogoltabida,8,1,9
 Salvelinus fontinalis,2,0,2
-Gossypium hirsutum,88,17,105
+Gossypium hirsutum,87,17,104
 Methanosarcina barkeri,53,21,74
 Calotropis procera,6,0,6
 Thermosyntropha lipolytica,3,0,3
@@ -284,7 +284,7 @@ Callithrix jacchus,5,1,6
 Ensifer adhaerens,10,1,11
 Anthonomus grandis,1,0,1
 Euphorbia tirucalli,3,2,5
-Solanum lycopersicum,320,82,402
+Solanum lycopersicum,319,82,401
 Senecio vulgaris,10,0,10
 Pseudoalteromonas atlantica,2,0,2
 Thermoanaerobacterium thermosulfurigenes,19,0,19
@@ -292,7 +292,7 @@ Bacteroides ovatus,17,6,23
 Arthrobacter oxydans,25,0,25
 Homarus americanus,12,1,13
 Weissella viridescens,12,1,13
-Bacillus anthracis,344,23,367
+Bacillus anthracis,342,23,365
 insecta,2,0,2
 Thalassiosira pseudonana,8,5,13
 Aphanocapsa,3,0,3
@@ -306,12 +306,12 @@ Starkeya novella,45,15,60
 Streptomyces thermovulgaris,11,0,11
 Asteroidea,9,3,12
 Caldanaerobacter subterraneus,1,0,1
-Glycine max,930,88,1018
+Glycine max,929,88,1017
 Vicia faba,86,9,95
 Liza aurata,3,0,3
-Crotalus adamanteus,110,7,117
+Crotalus adamanteus,106,7,113
 Methanothermobacter wolfeii,1,0,1
-Cellvibrio japonicus,8,0,8
+Cellvibrio japonicus,4,0,4
 Chaetoceros vixvisibilis,1,0,1
 Chromobacterium violaceum,56,3,59
 Vibrio proteolyticus,135,0,135
@@ -322,7 +322,7 @@ Amphidinium carterae,2,0,2
 Lumbricus castaneus,3,0,3
 Streptomyces megasporus,13,0,13
 Lactobacillus jensenii,5,0,5
-Rhodobacter sphaeroides,281,49,330
+Rhodobacter sphaeroides,279,49,328
 Ficus carica,14,3,17
 Papaver somniferum,47,8,55
 Candida macedoniensis,10,0,10
@@ -331,7 +331,7 @@ Lolium perenne,4,0,4
 Haliotis tuberculata,0,3,3
 Scomber australasicus,8,5,13
 Macaca radiata,58,10,68
-Xenopus laevis,212,68,280
+Xenopus laevis,211,68,279
 Digitalis lanata,15,3,18
 Lindernia dubia,1,1,2
 Clibanarius vittatus,2,1,3
@@ -356,7 +356,7 @@ Methanocaldococcus jannaschii,239,37,276
 Lactobacillus acidophilus,78,17,95
 Gardenia jasminoides,7,0,7
 Enterobius vermicularis,3,0,3
-Mycobacterium tuberculosis,2155,86,2241
+Mycobacterium tuberculosis,2153,86,2239
 Streptococcus suis,12,3,15
 Corallococcus coralloides,12,0,12
 Geobacillus toebii,3,0,3
@@ -372,7 +372,7 @@ Solenocera melantho,3,0,3
 Pteridium aquilinum,3,4,7
 Brevibacillus brevis,69,7,76
 Yersinia mollaretii,4,0,4
-Physarum polycephalum,82,8,90
+Physarum polycephalum,81,8,89
 Caulobacter vibrioides,38,4,42
 Caryophanon latum,1,0,1
 Carassius auratus,30,11,41
@@ -397,13 +397,13 @@ Cimex lectularius,2,0,2
 Methylobacterium extorquens,32,12,44
 Chondrus crispus,6,3,9
 Ictalurus punctatus,2,0,2
-Enterococcus faecium,159,7,166
+Enterococcus faecium,157,7,164
 Lemna gibba,1,0,1
-Cucurbita pepo,76,9,85
+Cucurbita pepo,75,9,84
 Nilssonia gangetica,1,0,1
 Candida tenuis,22,10,32
 Lactobacillus plantarum,132,66,198
-Leuconostoc mesenteroides,135,11,146
+Leuconostoc mesenteroides,131,11,142
 Staphylococcus xylosus,2,2,4
 Helicoverpa zea,17,1,18
 Citrobacter amalonaticus,22,0,22
@@ -450,16 +450,16 @@ Meleagris gallopavo,72,25,97
 Berberidaceae,1,0,1
 Candida intermedia,4,0,4
 Candida sake,4,0,4
-Pedobacter heparinus,93,2,95
+Pedobacter heparinus,92,2,94
 Cryptococcus laurentii,47,5,52
 Dunaliella salina,23,1,24
 Desulfobulbus elongatus,1,0,1
 Weissella paramesenteroides,5,0,5
-Porphyromonas gingivalis,217,36,253
+Porphyromonas gingivalis,216,36,252
 Bordetella parapertussis,4,0,4
-Gallus gallus,1499,282,1781
+Gallus gallus,1490,282,1772
 Zingiber officinale,23,5,28
-Anopheles gambiae,38,4,42
+Anopheles gambiae,37,4,41
 Streptomyces gulbargensis,8,0,8
 Lateolabrax japonicus,18,1,19
 Lachnospira multipara,5,0,5
@@ -469,12 +469,12 @@ Bitis arietans,4,0,4
 Devosia riboflavina,16,1,17
 Hydrilla verticillata,5,2,7
 Pyrus communis,33,22,55
-Oxalobacter formigenes,11,1,12
+Oxalobacter formigenes,10,1,11
 Bellis perennis,9,0,9
 Blaberus craniifer,2,0,2
-Catharanthus roseus,137,17,154
+Catharanthus roseus,136,17,153
 Scorpaena scrofa,4,0,4
-Lysinibacillus sphaericus,190,16,206
+Lysinibacillus sphaericus,188,16,204
 Lepidium sativum,30,1,31
 Nitrosomonas europaea,71,14,85
 Alkalimonas amylolytica,11,0,11
@@ -495,7 +495,7 @@ Flavobacterium aquatile,2,0,2
 Haemophilus parahaemolyticus,5,0,5
 Agave americana,10,0,10
 Pseudomonas mendocina,35,1,36
-Francisella tularensis,31,0,31
+Francisella tularensis,30,0,30
 Batis maritima,1,1,2
 Laticauda semifasciata,0,1,1
 Procambarus clarkii,14,1,15
@@ -508,7 +508,7 @@ Xanthoria parietina,2,0,2
 Alternanthera sessilis,1,2,3
 Methylophaga thalassica,8,0,8
 Monilinia fructicola,2,1,3
-Ureaplasma parvum,13,1,14
+Ureaplasma parvum,12,1,13
 Carassius carassius,0,2,2
 Psophocarpus tetragonolobus,2,0,2
 Eledone moschata,4,0,4
@@ -517,14 +517,14 @@ Chlamydia trachomatis,13,7,20
 Rhizobium phaseoli,4,0,4
 Propionibacterium acidipropionici,4,0,4
 Lablab purpureus,20,2,22
-Deinagkistrodon acutus,19,0,19
+Deinagkistrodon acutus,18,0,18
 Sinomonas atrocyanea,7,11,18
 Bromus erectus,0,2,2
 Finegoldia magna,2,0,2
 Triticum monococcum,6,1,7
 Anacystis marina,10,0,10
 Peltigera rufescens,1,1,2
-Clostridium chauvoei,10,1,11
+Clostridium chauvoei,9,1,10
 Lactobacillus paracasei,12,0,12
 Chrysosplenium americanum,20,2,22
 Alternanthera ficoidea,1,2,3
@@ -555,18 +555,18 @@ Gracilibacillus dipsosauri,7,0,7
 Clostridium sporogenes,17,2,19
 Candida rugosa,21,4,25
 Fucus gardneri,2,3,5
-Pseudomonas putida,1147,105,1252
+Pseudomonas putida,1144,105,1249
 Hanseniaspora uvarum,2,1,3
 Pomacea canaliculata,2,0,2
 Mycoplasma gallinarum,1,0,1
 Bauhinia monandra,15,0,15
 Bruguiera gymnorhiza,1,0,1
-Vitis vinifera,38,5,43
+Vitis vinifera,37,5,42
 Cucurbita maxima,46,8,54
 Xiphophorus couchianus,1,0,1
 Phenylobacterium immobile,2,1,3
-Sorghum bicolor,84,21,105
-Yersinia pestis,90,3,93
+Sorghum bicolor,83,21,104
+Yersinia pestis,88,3,91
 Lactobacillus gasseri,10,6,16
 Methanopyrus kandleri,10,10,20
 Cairina moschata,5,0,5
@@ -576,7 +576,7 @@ Alnus glutinosa,1,0,1
 Tetrahymena,3,0,3
 Xanthomonas axonopodis,8,0,8
 Eleusine indica,8,0,8
-Lupinus albus,85,7,92
+Lupinus albus,84,7,91
 Pelodiscus sinensis,1,0,1
 Trematomus newnesi,1,3,4
 Uca pugilator,7,0,7
@@ -664,10 +664,10 @@ Capnocytophaga granulosa,3,0,3
 Acanthamoeba culbertsoni,21,4,25
 Cymbopogon flexuosus,3,0,3
 Aporrectodea rosea,3,0,3
-Staphylococcus aureus,1625,61,1686
+Staphylococcus aureus,1621,61,1682
 Limonium perezii,5,1,6
 Drosophila virilis,2,7,9
-Photinus pyralis,186,21,207
+Photinus pyralis,184,21,205
 Cicer arietinum,99,14,113
 Leuconostoc lactis,20,1,21
 Bacteroides stercoris,20,3,23
@@ -687,7 +687,7 @@ Fenneropenaeus chinensis,3,0,3
 Chamelea gallina,11,2,13
 Oxyuranus scutellatus,11,3,14
 Paeonia suffruticosa,0,1,1
-Canis lupus familiaris,516,82,598
+Canis lupus familiaris,514,82,596
 Shewanella livingstonensis,2,0,2
 Nitrobacter winogradskyi,34,3,37
 Caldivirga maquilingensis,2,0,2
@@ -698,7 +698,7 @@ Amaranthus spinosus,13,6,19
 Streptomyces endus,4,0,4
 Orobanche ramosa,2,1,3
 Thiohalophilus thiocyanatoxydans,12,0,12
-Alicyclobacillus acidocaldarius,120,2,122
+Alicyclobacillus acidocaldarius,119,2,121
 Dickeya chrysanthemi,42,1,43
 Musca domestica,37,8,45
 Anthocidaris crassispina,25,2,27
@@ -712,7 +712,7 @@ Myroides odoratus,0,2,2
 Mycoplasma hyopneumoniae,7,0,7
 Bacillus fastidiosus,35,0,35
 Clostridium perfringens,167,25,192
-Lactobacillus casei,162,7,169
+Lactobacillus casei,160,7,167
 Acanthaster planci,1,0,1
 Alkalimonas collagenimarina,2,0,2
 Pyrodictium abyssi,8,1,9
@@ -733,7 +733,7 @@ Gordonia alkanivorans,1,0,1
 Listeria innocua,2,0,2
 Macrovipera lebetina,2,1,3
 Thermoanaerobacter acetoethylicus,4,0,4
-Bacillus subtilis,1195,167,1362
+Bacillus subtilis,1192,167,1359
 Providencia rettgeri,9,0,9
 Pseudechis papuanus,1,0,1
 Bactrocera dorsalis,7,0,7
@@ -741,9 +741,9 @@ Clarias batrachus,16,5,21
 Saccharum officinarum,23,4,27
 Halothermothrix orenii,1,0,1
 Populus tremuloides,11,1,12
-Spinacia oleracea,711,180,891
+Spinacia oleracea,706,180,886
 Methylomicrobium album,1,0,1
-Rattus norvegicus,15918,2621,18539
+Rattus norvegicus,15861,2621,18482
 Mesotaenium caldariorum,1,0,1
 Zoogloea ramigera,14,0,14
 Cocos nucifera,11,2,13
@@ -763,7 +763,7 @@ Branchiostoma belcheri,3,0,3
 Passiflora edulis,0,1,1
 Photorhabdus luminescens,0,2,2
 Platycladus orientalis,3,0,3
-Cupriavidus necator,225,24,249
+Cupriavidus necator,224,24,248
 Sporosarcina psychrophila,1,3,4
 Desulfotalea psychrophila,0,1,1
 Vibrio parahaemolyticus,41,2,43
@@ -782,7 +782,7 @@ Achlya bisexualis,2,0,2
 Origanum majorana,9,1,10
 Lemna trisulca,3,0,3
 Kitasatospora griseola,2,2,4
-Sphingomonas paucimobilis,40,18,58
+Sphingomonas paucimobilis,39,18,57
 Desulfomicrobium baculatum,1,0,1
 Corynebacterium pseudotuberculosis,2,0,2
 Lactobacillus johnsonii,1,0,1
@@ -802,7 +802,7 @@ Skeletonema costatum,6,0,6
 Sarda sarda,8,0,8
 Neosartorya fischeri,28,3,31
 Cancer irroratus,0,1,1
-Thermobifida fusca,69,6,75
+Thermobifida fusca,68,6,74
 Thauera butanivorans,4,5,9
 Sardinops sagax,4,0,4
 Sardinella aurita,11,0,11
@@ -838,7 +838,7 @@ Helicobacter acinonychis,3,0,3
 Ceramium rubrum,0,1,1
 Halorubrum xinjiangense,7,13,20
 Streptomyces massasporeus,1,0,1
-Macrobrachium olfersii,12,0,12
+Macrobrachium olfersii,11,0,11
 Megascolides cameroni,4,0,4
 Renilla reniformis,39,2,41
 Apostichopus japonicus,22,2,24
@@ -862,9 +862,9 @@ Cucumis melo,33,3,36
 Trimeresurus gramineus,1,0,1
 Rumex dentatus,1,0,1
 Lampetra fluviatilis,3,0,3
-Vibrio cholerae,203,15,218
+Vibrio cholerae,201,15,216
 Hemiselmis virescens,8,0,8
-Ricinus communis,226,40,266
+Ricinus communis,225,40,265
 Moritella abyssi,2,0,2
 Salinibacter ruber,2,8,10
 Bacillus tequilensis,10,4,14
@@ -924,7 +924,7 @@ Streptomyces griseus,185,9,194
 Furcellaria fastigiata,0,1,1
 Actinoplanes philippinensis,0,1,1
 Clostridium paraputrificum,15,1,16
-Solanum tuberosum,434,118,552
+Solanum tuberosum,430,118,548
 Ucides cordatus,1,0,1
 Arthrobacter viscosus,11,17,28
 Channa striata,2,0,2
@@ -954,7 +954,7 @@ Cystoclonium purpureum,0,1,1
 Populus x canadensis,11,6,17
 Natrialba magadii,4,0,4
 Schlegelella thermodepolymerans,15,0,15
-Candida albicans,738,67,805
+Candida albicans,736,67,803
 Potamopyrgus antipodarum,4,0,4
 Streptomyces tubercidicus,13,0,13
 Ailanthus altissima,1,0,1
@@ -962,7 +962,7 @@ Macropus eugenii,2,4,6
 Shigella dysenteriae,25,19,44
 Leptospira interrogans,26,0,26
 Variovorax paradoxus,6,0,6
-Escherichia coli,8366,1058,9424
+Escherichia coli,8305,1058,9363
 Wedelia biflora,21,0,21
 Pythium debaryanum,0,1,1
 Heimia salicifolia,4,0,4
@@ -971,15 +971,15 @@ Opuntia ficus-indica,1,0,1
 Papilio machaon,4,1,5
 Sea urchin,4,0,4
 Nilaparvata lugens,0,2,2
-Serratia marcescens,246,55,301
+Serratia marcescens,244,55,299
 Sphingosinicella xenopeptidilytica,1,1,2
 Streptomyces chromofuscus,14,7,21
 Afipia felis,0,1,1
 Crotalus ruber ruber,7,0,7
 Festuca rubra,2,0,2
 Streptomyces azureus,4,0,4
-Lathyrus odoratus,16,0,16
-Pseudoalteromonas haloplanktis,26,2,28
+Lathyrus odoratus,14,0,14
+Pseudoalteromonas haloplanktis,25,2,27
 Populus deltoides,0,3,3
 Populus trichocarpa,12,2,14
 Hypericum perforatum,1,0,1
@@ -1008,13 +1008,13 @@ Trigonella foenum-graecum,11,4,15
 Lithospermum erythrorhizon,21,5,26
 Hippoglossus stenolepis,1,0,1
 Sulfolobus tokodaii,124,17,141
-Mesocricetus auratus,305,52,357
+Mesocricetus auratus,304,52,356
 Haemophilus parainfluenzae,2,0,2
 Oscillatoria limnetica,5,0,5
 Polysiphonia nigrescens,0,1,1
 Salmo salar,31,9,40
 Callosobruchus maculatus,9,1,10
-Ovis aries,668,102,770
+Ovis aries,665,102,767
 Quercus rubra,2,0,2
 Desulfurococcus kamchatkensis,3,0,3
 Clostridium sporosphaeroides,0,1,1
@@ -1038,9 +1038,9 @@ Phaseolus lunatus,4,0,4
 Psychrobacter immobilis,1,0,1
 Methylophaga aminisulfidivorans,2,0,2
 Oncorhynchus kisutch,11,0,11
-Aerococcus viridans,15,3,18
+Aerococcus viridans,14,3,17
 Thermotoga hypogea,7,0,7
-Bacillus amyloliquefaciens,90,14,104
+Bacillus amyloliquefaciens,89,14,103
 Elysia chlorotica,1,0,1
 Methanobrevibacter smithii,1,0,1
 Haloferax lucentense,10,0,10
@@ -1104,7 +1104,7 @@ Thermithiobacillus tepidarius,1,1,2
 Cichla ocellaris,15,0,15
 Halorhodospira halochloris,10,3,13
 Burkholderia caryophylli,5,1,6
-Sus scrofa,4540,437,4977
+Sus scrofa,4515,437,4952
 Spirillospora albida,0,1,1
 Candida mycoderma,15,2,17
 Vespula maculifrons,2,0,2
@@ -1115,8 +1115,8 @@ Astragalus racemosus,5,0,5
 Sophora flavescens,7,0,7
 Dactylis glomerata,2,0,2
 Thermoleophilum minutum,1,0,1
-Fasciola hepatica,90,16,106
-Mytilus galloprovincialis,21,9,30
+Fasciola hepatica,89,16,105
+Mytilus galloprovincialis,20,9,29
 Thermodesulfobacterium thermophilum,1,0,1
 Ctenopharyngodon idella,2,0,2
 Flavobacterium saccharophilum,17,0,17
@@ -1146,7 +1146,7 @@ Enterococcus faecalis,584,42,626
 Piaractus mesopotamicus,0,1,1
 Katsuwonus pelamis,12,0,12
 Duboisia leichhardtii,0,4,4
-Pseudopleuronectes yokohamae,6,0,6
+Pseudopleuronectes yokohamae,5,0,5
 Necturus maculosus,4,0,4
 Meriones unguiculatus,23,5,28
 Phleum pratense,2,0,2
@@ -1183,18 +1183,18 @@ Streptomyces nitrosporeus,1,0,1
 Nepenthes ampullaria,2,0,2
 Bacillus clausii,12,2,14
 Pimephales promelas,0,1,1
-Pyrobaculum aerophilum,23,2,25
+Pyrobaculum aerophilum,22,2,24
 Scrobicularia plana,6,0,6
 Helix aspersa,12,6,18
 Pseudoalteromonas carrageenovora,5,0,5
 Gordonia rubripertincta,7,0,7
 Persea americana,29,20,49
 cress,1,0,1
-Caenorhabditis elegans,136,47,183
+Caenorhabditis elegans,135,47,182
 Pinus strobus,1,0,1
 Bacillus alcalophilus,2,1,3
 Ruminococcus flavefaciens,12,0,12
-Dietzia maris,16,0,16
+Dietzia maris,15,0,15
 Streptococcus ratti,3,2,5
 Staphylococcus caprae,3,0,3
 Taxus cuspidata,9,2,11
@@ -1207,7 +1207,7 @@ Thermoplasma acidophilum,119,29,148
 Aptenia cordifolia,13,2,15
 Hemachatus haemachatus,1,0,1
 Geobacillus caldoxylosilyticus,7,2,9
-Clostridium botulinum,207,23,230
+Clostridium botulinum,206,23,229
 Agkistrodon piscivorus leucostoma,3,0,3
 Methanohalophilus mahii,2,0,2
 Desulfitobacterium hafniense,10,1,11
@@ -1226,13 +1226,13 @@ Prevotella denticola,2,0,2
 Prevotella oralis,1,0,1
 Magnetospirillum magnetotacticum,2,0,2
 Hylobates pileatus,2,0,2
-Lathyrus sativus,51,1,52
+Lathyrus sativus,50,1,51
 Tamarindus indica,0,2,2
 Azomonas insignis,1,0,1
 Metallosphaera hakonensis,1,2,3
 Datura stramonium,19,8,27
 Bactris gasipaes,3,1,4
-Ananas comosus,50,14,64
+Ananas comosus,49,14,63
 Olea europaea,37,0,37
 Neobellieria bullata,10,0,10
 Kocuria rosea,47,1,48
@@ -1264,7 +1264,7 @@ Cupiennius salei,8,0,8
 Raja clavata,2,0,2
 Thermoanaerobacter italicus,1,0,1
 Clostridium baratii,7,2,9
-Streptococcus pneumoniae,742,21,763
+Streptococcus pneumoniae,738,21,759
 Alicyclobacillus sendaiensis,1,0,1
 Phytolacca americana,1,0,1
 Bothrops atrox,22,2,24
@@ -1291,7 +1291,7 @@ Solanum habrochaites,1,0,1
 Pimpinella anisum,17,0,17
 Withania somnifera,13,1,14
 Styela plicata,10,0,10
-Helicobacter pylori,468,29,497
+Helicobacter pylori,467,29,496
 Mentha x piperita,37,4,41
 Streptomyces alboniger,2,0,2
 Phaseolus coccineus,5,0,5
@@ -1337,7 +1337,7 @@ Sporobolomyces roseus,1,0,1
 Streptomyces yokosukanensis,6,0,6
 Shigella sonnei,15,0,15
 Anaerobranca gottschalkii,8,1,9
-Acinetobacter johnsonii,20,0,20
+Acinetobacter johnsonii,19,0,19
 Drosera capensis,2,0,2
 Macroptilium atropurpureum,3,0,3
 Haliotis cracherodii,1,0,1
@@ -1401,7 +1401,7 @@ Acer pseudoplatanus,14,1,15
 Tropaeolum majus,23,12,35
 Zobellia galactanivorans,2,0,2
 Chaerophyllum bulbosum,0,2,2
-Klebsiella pneumoniae,314,57,371
+Klebsiella pneumoniae,312,57,369
 Peptoniphilus asaccharolyticus,20,3,23
 Loxosceles gaucho,1,0,1
 Streptomyces plicatus,16,0,16
@@ -1417,7 +1417,7 @@ Haloarcula japonica,1,0,1
 Lactobacillus pentosus,25,2,27
 Caldanaerobius polysaccharolyticus,14,0,14
 Ginglymostoma cirratum,2,0,2
-Dioscorea bulbifera,21,0,21
+Dioscorea bulbifera,18,0,18
 Massilia timonae,2,0,2
 Osmerus mordax,2,0,2
 Plumeria obtusa,4,3,7
@@ -1426,7 +1426,7 @@ Drosophila pseudoobscura,0,2,2
 Ochrobactrum anthropi,41,5,46
 Mastigocladus laminosus,14,2,16
 Misgurnus mizolepis,15,4,19
-Desulfovibrio desulfuricans,50,1,51
+Desulfovibrio desulfuricans,49,1,50
 Lepidochelys kempii,1,1,2
 Zea mays,895,147,1042
 Anguilla anguilla,4,1,5
@@ -1437,7 +1437,7 @@ Bothrops jararacussu,21,0,21
 Actinoplanes auranticolor,0,1,1
 Clostridium purinilyticum,2,0,2
 Bacteroides thetaiotaomicron,32,2,34
-Lactococcus lactis,226,47,273
+Lactococcus lactis,224,47,271
 Ilyobacter tartaricus,1,0,1
 Montipora capitata,5,0,5
 Hanseniaspora valbyensis,10,1,11
@@ -1452,7 +1452,7 @@ Acanthamoeba castellanii,28,13,41
 Burkholderia ambifaria,4,0,4
 Paralithodes camtschaticus,8,0,8
 Dictyoglomus turgidum,5,0,5
-Entamoeba histolytica,222,21,243
+Entamoeba histolytica,221,21,242
 Streptomyces glaucescens,76,0,76
 Methanosarcina thermophila,107,27,134
 Thiobacillus denitrificans,14,0,14
@@ -1464,7 +1464,7 @@ salmon,15,0,15
 Salinivibrio costicola,14,4,18
 Pavlova gyrans,1,0,1
 Oligotropha carboxidovorans,4,0,4
-Pseudomonas stutzeri,103,14,117
+Pseudomonas stutzeri,102,14,116
 Loligo vulgaris,3,0,3
 Haloferax denitrificans,4,0,4
 Thauera selenatis,1,1,2
@@ -1512,7 +1512,7 @@ Sesbania virgata,1,0,1
 Butyrivibrio fibrisolvens,34,4,38
 Pseudomonas indica,6,0,6
 Chaetopterus variopedatus,2,0,2
-Campylobacter jejuni,33,8,41
+Campylobacter jejuni,32,8,40
 Chromohalobacter salexigens,3,2,5
 Lobularia maritima,0,1,1
 Chlorella variegata,3,0,3
@@ -1553,7 +1553,7 @@ Fratercula arctica,1,0,1
 Streptomyces albidoflavus,8,0,8
 Lactobacillus helveticus,79,5,84
 Leucaena leucocephala,31,2,33
-Moraxella catarrhalis,26,0,26
+Moraxella catarrhalis,25,0,25
 Helianthus tuberosus,48,5,53
 Blautia producta,2,0,2
 Thunnus albacares,7,1,8
@@ -1573,7 +1573,7 @@ Loxosceles similis,1,0,1
 Methanococcus aeolicus,20,1,21
 Pseudomonas azotoformans,11,0,11
 Paenibacillus woosongensis,8,1,9
-Desulfovibrio vulgaris,36,8,44
+Desulfovibrio vulgaris,35,8,43
 Streptomyces exfoliatus,18,0,18
 Microbacterium arborescens,1,0,1
 Arthrobacter nicotianae,44,6,50
@@ -1603,14 +1603,14 @@ Linum usitatissimum,14,7,21
 Labeo rohita,7,10,17
 Pteropus alecto,1,0,1
 Eriocheir sinensis,1,0,1
-Bacillus licheniformis,229,59,288
+Bacillus licheniformis,227,59,286
 Allium fistulosum,4,1,5
 Megasphaera elsdenii,16,3,19
 Sulfurospirillum barnesii,1,0,1
 Laribacter hongkongensis,3,0,3
 Forsythia suspensa,2,0,2
 Lactobacillus amylovorus,31,0,31
-Mannheimia haemolytica,28,2,30
+Mannheimia haemolytica,27,2,29
 Thermoanaerobacter kivui,1,2,3
 Salvia splendens,21,0,21
 Thauera aromatica,15,4,19
@@ -1638,14 +1638,14 @@ Loxosceles laeta,2,0,2
 Bacillus megaterium,232,69,301
 Terrabacter ginsenosidimutans,2,0,2
 Virgibacillus halodenitrificans,1,0,1
-Lytechinus variegatus,9,0,9
-Bacteroides fragilis,87,7,94
+Lytechinus variegatus,8,0,8
+Bacteroides fragilis,86,7,93
 Calloselasma rhodostoma,12,0,12
 Dehalobacter restrictus,2,0,2
 Cirrhinus mrigala,11,0,11
 Alternanthera pungens,1,2,3
 Atriplex nummularia,0,1,1
-Strongylocentrotus purpuratus,62,5,67
+Strongylocentrotus purpuratus,61,5,66
 Pseudomonas fragi,50,2,52
 Natronomonas pharaonis,5,0,5
 Nephrolepis cordifolia,3,0,3
@@ -1657,7 +1657,7 @@ Coprothermobacter proteolyticus,5,2,7
 Pseudomonas boreopolis,1,0,1
 Crypthecodinium cohnii,7,0,7
 Phormia regina,34,4,38
-Chlamydomonas reinhardtii,298,68,366
+Chlamydomonas reinhardtii,296,68,364
 Walterinnesia aegyptia,17,0,17
 Hydrogenophaga intermedia,1,0,1
 Papio hamadryas,35,0,35
@@ -1668,8 +1668,8 @@ Sphingobium herbicidovorans,3,2,5
 Gluconobacter cerinus,15,0,15
 Crotalus durissus terrificus,4,0,4
 Picrophilus torridus,92,0,92
-Toxicodendron vernicifluum,5,6,11
-Streptomyces fradiae,56,4,60
+Toxicodendron vernicifluum,4,6,10
+Streptomyces fradiae,54,4,58
 Thiobacillus thioparus,67,7,74
 Seriola quinqueradiata,8,0,8
 Lactobacillus curvatus,14,3,17
@@ -1677,7 +1677,7 @@ Streptomyces nogalater,6,0,6
 Erwinia pyrifoliae,1,1,2
 Paralichthys olivaceus,60,13,73
 Narcissus pseudonarcissus,4,1,5
-Helianthus annuus,74,19,93
+Helianthus annuus,73,19,92
 Kalanchoe daigremontiana,4,0,4
 Taxus brevifolia,4,2,6
 Nicotiana glutinosa,19,2,21
@@ -1692,9 +1692,9 @@ Bacillus halodurans,42,5,47
 Zavarzinia compransoris,0,1,1
 Bromus carinatus,0,2,2
 Moritella profunda,5,1,6
-Triphysaria versicolor,2,0,2
+Triphysaria versicolor,1,0,1
 Atriplex spongiosa,12,3,15
-Phaseolus vulgaris,303,75,378
+Phaseolus vulgaris,302,75,377
 Microbacterium trichothecenolyticum,2,0,2
 Streptococcus gallolyticus,8,3,11
 Chenopodium quinoa,2,0,2
@@ -1712,9 +1712,9 @@ Deinococcus radiophilus,23,0,23
 Microtetraspora glauca,2,0,2
 Ximenia americana,4,0,4
 Streptococcus downei,0,1,1
-Streptococcus dysgalactiae,28,0,28
+Streptococcus dysgalactiae,27,0,27
 Anethum graveolens,3,0,3
-Bacillus cereus,369,50,419
+Bacillus cereus,368,50,418
 Myxococcus xanthus,94,1,95
 Helicobacter hepaticus,0,1,1
 Coix lacryma-jobi,0,1,1
@@ -1724,13 +1724,13 @@ Naja kaouthia,3,0,3
 Syntrophobacter fumaroxidans,1,0,1
 Zabrotes subfasciatus,7,0,7
 Cystoseira tamariscifolia,8,0,8
-Equus caballus,776,36,812
+Equus caballus,775,36,811
 Morella rubra,0,1,1
 Brassica nigra,22,1,23
-Bos taurus,7422,1029,8451
+Bos taurus,7347,1029,8376
 Enterococcus avium,4,0,4
 Pinus pinaster,2,1,3
-Octopus vulgaris,7,5,12
+Octopus vulgaris,6,5,11
 Bartonella bacilliformis,4,0,4
 Mycobacterium gastri,5,0,5
 Charybdis japonica,13,0,13
@@ -1751,7 +1751,7 @@ Ophelia neglecta,4,0,4
 Bacillus circulans,186,26,212
 Viola tricolor,5,0,5
 Cistanche deserticola,12,0,12
-Pseudomonas syringae,62,13,75
+Pseudomonas syringae,61,13,74
 Amorphophallus konjac,9,1,10
 Methanobacterium formicicum,4,3,7
 Pectobacterium carotovorum,47,17,64
@@ -1773,7 +1773,7 @@ Galeus melastomus,1,1,2
 Streptomyces kanamyceticus,0,1,1
 Polyides rotundus,0,1,1
 Periplaneta brunnea,2,0,2
-Macaca fascicularis,43,13,56
+Macaca fascicularis,42,13,55
 Streptomyces parvulus,21,0,21
 Ipomoea carnea,31,1,32
 Burkholderia pseudomallei,19,2,21
@@ -1786,7 +1786,7 @@ Clarias gariepinus,4,5,9
 Sulfolobus shibatae,34,8,42
 Providencia stuartii,39,1,40
 Sepioteuthis sepioidea,1,0,1
-Haemophilus aegyptius,9,0,9
+Haemophilus aegyptius,8,0,8
 Eisenia andrei,7,0,7
 Esox lucius,1,0,1
 Halomonas halodenitrificans,3,0,3
@@ -1811,8 +1811,8 @@ Equisetum arvense,0,1,1
 Arthrobacter crystallopoietes,17,0,17
 Nicotiana glauca,8,3,11
 Lactobacillus panis,1,0,1
-Pieris rapae,3,0,3
-Archaeoglobus fulgidus,108,27,135
+Pieris rapae,2,0,2
+Archaeoglobus fulgidus,106,27,133
 Nephtys hombergii,2,0,2
 Synechococcus elongatus,12,5,17
 Lycium barbarum,3,0,3
@@ -1827,7 +1827,7 @@ Paralabrax nebulifer,1,1,2
 Prosthecochloris vibrioformis,10,1,11
 Triturus carnifex,1,1,2
 Merluccius productus,3,0,3
-Pinus halepensis,2,0,2
+Pinus halepensis,1,0,1
 Gracilaria gracilis,4,0,4
 Engraulis japonicus,6,0,6
 Riccia fluitans,8,8,16
@@ -1836,7 +1836,7 @@ Streptomyces aureofaciens,64,14,78
 Deinococcus radiodurans,63,10,73
 Acidithiobacillus ferrooxidans,58,14,72
 Delftia acidovorans,73,9,82
-Paenibacillus macerans,21,17,38
+Paenibacillus macerans,20,17,37
 Euonymus alatus,35,5,40
 Pituophis deppei,1,0,1
 Streptomyces morookaense,0,3,3
@@ -1865,7 +1865,7 @@ Cellulomonas biazotea,1,0,1
 Ameiurus nebulosus,1,3,4
 Saprolegnia monoica,9,3,12
 Sulfurospirillum multivorans,14,0,14
-Geobacillus stearothermophilus,473,65,538
+Geobacillus stearothermophilus,471,65,536
 Manihot esculenta,43,1,44
 Erwinia rhapontici,5,2,7
 Sorbus aucuparia,2,2,4
@@ -1873,20 +1873,20 @@ Haloarcula vallismortis,27,12,39
 Sulfophobococcus zilligii,3,2,5
 Peltigera aphthosa,2,0,2
 Sphingomonas wittichii,4,0,4
-Agama agama,7,0,7
+Agama agama,6,0,6
 Eleusine coracana,22,4,26
 Clostridium innocuum,1,2,3
 Lactobacillus sakei,29,1,30
 Aeromonas hydrophila,60,28,88
-Todarodes pacificus,38,10,48
+Todarodes pacificus,37,10,47
 Acremonium,4,1,5
 Vitis labrusca,4,0,4
 Pseudomonas anguilliseptica,5,0,5
 Pseudonaja textilis,1,1,2
 Arenicola marina,9,1,10
-Clostridium pasteurianum,92,22,114
+Clostridium pasteurianum,89,22,111
 Thermoproteus tenax,30,16,46
-Streptomyces violaceoruber,17,0,17
+Streptomyces violaceoruber,16,0,16
 Chiloscyllium punctatum,2,1,3
 Nesterenkonia xinjiangensis,5,1,6
 Nephrolepis exaltata,1,0,1
@@ -1926,7 +1926,7 @@ Bothrops alternatus,6,0,6
 Acetobacterium woodii,31,7,38
 Ceratitis capitata,17,0,17
 Sulfurospirillum deleyianum,6,5,11
-Zymomonas mobilis,163,15,178
+Zymomonas mobilis,161,15,176
 Aquifex pyrophilus,4,5,9
 Champsocephalus gunnari,0,1,1
 Pandalus borealis,2,0,2
@@ -1945,7 +1945,7 @@ Thermomicrobium roseum,11,0,11
 Mercenaria mercenaria,8,0,8
 Scomber japonicus,7,0,7
 Microcystis aeruginosa,17,0,17
-Carica papaya,173,20,193
+Carica papaya,169,20,189
 Thermococcus chitonophagus,3,0,3
 Aphis gossypii,4,2,6
 Geobacillus thermoglucosidasius,28,3,31
@@ -1965,12 +1965,12 @@ Bothrops neuwiedi,2,0,2
 Morganella morganii,61,4,65
 Gammarus pulex,4,0,4
 Planomonospora venezuelensis,0,1,1
-Arabidopsis thaliana,1216,277,1493
-Saccharomyces cerevisiae,3862,580,4442
+Arabidopsis thaliana,1208,277,1485
+Saccharomyces cerevisiae,3840,580,4420
 Wolinella succinogenes,8,1,9
 Gloydius shedaoensis,2,0,2
 Lamprobacter modestohalophilus,4,0,4
-Heterodontus portusjacksoni,10,0,10
+Heterodontus portusjacksoni,9,0,9
 Bacillus pumilus,67,4,71
 Bifidobacterium breve,21,4,25
 Xanthobacter agilis,4,0,4
@@ -1980,10 +1980,10 @@ Moraxella osloensis,3,1,4
 Sitobion avenae,5,0,5
 Testudinidae,7,0,7
 Alexandrium minutum,1,0,1
-Haemophilus influenzae,373,26,399
+Haemophilus influenzae,370,26,396
 Bromus tectorum,0,2,2
 Bacillus nealsonii,6,0,6
-Propionibacterium freudenreichii,36,4,40
+Propionibacterium freudenreichii,35,4,39
 Streptomyces rubiginosus,12,0,12
 Photuris pennsylvanica,35,0,35
 Citrus maxima,18,1,19
@@ -1992,11 +1992,11 @@ Acetobacter aceti,42,1,43
 Acidothermus cellulolyticus,1,0,1
 Ficus benghalensis,0,1,1
 Zonotrichia albicollis,4,0,4
-Halobacterium salinarum,77,31,108
+Halobacterium salinarum,76,31,107
 Thermofilum pendens,15,7,22
 Senna obtusifolia,2,0,2
 Agkistrodon piscivorus piscivorus,2,2,4
-Anabaena variabilis,36,12,48
+Anabaena variabilis,35,12,47
 Diceros bicornis,3,2,5
 Rahnella aquatilis,4,0,4
 Bacillus mojavensis,10,0,10
@@ -2006,7 +2006,7 @@ Asterionella formosa,2,1,3
 Arachis hypogaea,122,51,173
 Lepidorhombus boscii,6,0,6
 Euonymus japonicus,12,0,12
-Rhodotorula aurantiaca,8,3,11
+Rhodotorula aurantiaca,6,3,9
 Selaginella lepidophylla,2,4,6
 Bubo virginianus,1,0,1
 Vogesella indigofera,15,1,16
@@ -2057,12 +2057,12 @@ Pantoea agglomerans,45,4,49
 Aneurinibacillus aneurinilyticus,19,2,21
 Chondrichthyes,3,0,3
 Citrullus lanatus,8,1,9
-Onobrychis viciifolia,25,0,25
+Onobrychis viciifolia,24,0,24
 Torulopsis sphaerica,13,0,13
 Sphingobium chlorophenolicum,4,1,5
 Trematomus bernacchii,3,0,3
 Mesorhizobium loti,17,2,19
-Derxia gummosa,38,0,38
+Derxia gummosa,36,0,36
 Thermococcus sibiricus,11,0,11
 Macrobrachium vollenhovenii,10,0,10
 Rickettsia prowazekii,1,1,2
@@ -2074,7 +2074,7 @@ Solanum torvum,4,0,4
 Arenibacter latericius,8,0,8
 Callinectes danae,4,0,4
 Sporobolomyces pararoseus,10,0,10
-Triticum aestivum,459,106,565
+Triticum aestivum,457,106,563
 Loxosceles intermedia,2,0,2
 Papio anubis,9,0,9
 Laceyella sacchari,34,0,34
@@ -2104,7 +2104,7 @@ Diabrotica virgifera,1,0,1
 Arum maculatum,3,0,3
 Natronococcus occultus,3,1,4
 Mangifera indica,1,0,1
-Mammalia,489,122,611
+Mammalia,488,122,610
 Serratia liquefaciens,6,19,25
 Burkholderia stabilis,12,0,12
 Lumbricus rubellus,2,0,2
@@ -2119,7 +2119,7 @@ Mimosa pudica,4,0,4
 Aeromonas sobria,11,0,11
 Calystegia sepium,11,0,11
 Buchnera aphidicola,1,0,1
-Moorella thermoacetica,77,8,85
+Moorella thermoacetica,76,8,84
 Anticarsia gemmatalis,2,0,2
 Salvia officinalis,86,7,93
 Aggregatibacter actinomycetemcomitans,2,0,2
@@ -2146,14 +2146,14 @@ Pseudomonas rhodesiae,1,0,1
 Ceratonia siliqua,3,0,3
 Naja naja,40,2,42
 Carum carvi,4,0,4
-Azospirillum brasilense,53,18,71
+Azospirillum brasilense,50,18,68
 Geobacillus thermocatenulatus,8,3,11
 Mycoplasma hyorhinis,5,0,5
 Narcissus tazetta,4,0,4
 Tyto alba,0,2,2
 Stenotrophomonas rhizophila,0,1,1
 Streptomyces wedmorensis,5,0,5
-Thermotoga maritima,180,47,227
+Thermotoga maritima,178,47,225
 Clostridium bolteae,1,0,1
 Citrobacter braakii,18,3,21
 Stenotrophomonas maltophilia,113,12,125
@@ -2194,9 +2194,9 @@ Sthenoteuthis oualaniensis,10,0,10
 Haloferax mediterranei,34,14,48
 Staphylococcus haemolyticus,15,0,15
 Lysobacter enzymogenes,15,1,16
-Heteropneustes fossilis,10,7,17
+Heteropneustes fossilis,9,7,16
 Picea rubens,1,0,1
-Lilium longiflorum,64,2,66
+Lilium longiflorum,59,2,61
 Trichoplusia ni,22,4,26
 Burkholderia lata,3,0,3
 Pinus koraiensis,0,1,1
@@ -2241,7 +2241,7 @@ Corynebacterium xerosis,4,0,4
 Prochlorococcus marinus,1,1,2
 Pinus contorta,11,0,11
 Brevibacillus thermoruber,0,1,1
-Beta vulgaris,216,39,255
+Beta vulgaris,214,39,253
 Rauvolfia serpentina,57,0,57
 Gadus morhua callarias,7,0,7
 Aplysia californica,26,6,32
@@ -2249,7 +2249,7 @@ Suncus murinus,2,0,2
 Uria aalge,1,0,1
 Clostridium scindens,4,0,4
 Asterias rubens,26,4,30
-Thermus thermophilus,268,63,331
+Thermus thermophilus,265,63,328
 Litchi chinensis,5,0,5
 Camelina sativa,1,1,2
 Pinus sylvestris,5,2,7
@@ -2262,7 +2262,7 @@ Jeotgalibacillus marinus,1,0,1
 Fusobacterium varium,3,1,4
 Cheilocostus speciosus,5,0,5
 Clostridium sphenoides,2,1,3
-Streptococcus mutans,128,22,150
+Streptococcus mutans,127,22,149
 Dickeya dadantii,2,2,4
 Macaca mulatta,60,33,93
 Microlunatus phosphovorus,3,0,3
@@ -2325,7 +2325,7 @@ Methylovorus mays,1,0,1
 Bartonella henselae,6,0,6
 Potorous tridactylus,1,0,1
 Medicago sativa,94,22,116
-Rhodococcus opacus,58,6,64
+Rhodococcus opacus,49,6,55
 Mus musculus domesticus,2,0,2
 Bothrops moojeni,4,3,7
 Gasterosteus aculeatus,0,1,1
@@ -2345,7 +2345,7 @@ Neanthes succinea,2,0,2
 Staphylococcus epidermidis,122,3,125
 Pelobacter acetylenicus,6,3,9
 Trachemys scripta elegans,9,0,9
-Mycobacterium smegmatis,313,47,360
+Mycobacterium smegmatis,311,47,358
 Neisseria gonorrhoeae,89,3,92
 Capsicum annuum,47,13,60
 Nephrops norvegicus,9,3,12
@@ -2356,7 +2356,7 @@ Rhodosporidium toruloides,56,11,67
 Oxydoras sifontesi,1,0,1
 Prevotella oris,1,0,1
 Hippasa partita,3,1,4
-Sulfolobus solfataricus,474,118,592
+Sulfolobus solfataricus,473,118,591
 Culex pipiens,2,1,3
 Neisseria cinerea,1,0,1
 Lycopodium clavatum,0,1,1
@@ -2364,35 +2364,35 @@ Meiothermus ruber,12,0,12
 Pyrus pyrifolia,14,2,16
 Streptomyces albaduncus,5,0,5
 Silene dioica,14,13,27
-Gluconobacter oxydans,173,26,199
+Gluconobacter oxydans,170,26,196
 Nitzschia thermalis,1,0,1
 Larix kaempferi,3,0,3
 Anaplasma marginale,4,0,4
 Xanthobacter autotrophicus,12,4,16
 Sulfolobus metallicus,1,0,1
 Podophyllum peltatum,2,0,2
-Drosophila melanogaster,517,89,606
+Drosophila melanogaster,516,89,605
 Rosa laevigata,0,1,1
 Oreochromis niloticus,64,2,66
 Fragaria vesca,2,1,3
 Chlorella vulgaris,26,21,47
-Homo sapiens,48867,4208,53075
-Pisum sativum,690,115,805
+Homo sapiens,48702,4208,52910
+Pisum sativum,685,115,800
 Clostridium aceticum,0,1,1
 Anas platyrhynchos,62,6,68
 Clostridium butyricum,43,22,65
 Bdellovibrio bacteriovorus,9,2,11
 Streptomyces reticuli,2,3,5
-Pseudomonas aeruginosa,1339,141,1480
+Pseudomonas aeruginosa,1330,141,1471
 Xanthomonas citri,4,0,4
 Vigna angularis,24,7,31
 Sebastes schlegelii,1,1,2
 Acinetobacter radioresistens,4,0,4
 Mycoplasma arginini,1,0,1
 Clostridium cochlearium,11,0,11
-Oryctolagus cuniculus,2838,421,3259
+Oryctolagus cuniculus,2824,421,3245
 Halorubrum lacusprofundi,4,0,4
 Tribolium castaneum,19,3,22
 Ruegeria lacuscaerulensis,8,0,8
 Pyrobaculum calidifontis,13,1,14
-Bacteria,76,22,98
+Bacteria,75,22,97

@@ -9,6 +9,8 @@ import numpy as np
 import pdb
 import scipy.stats as st
 import matplotlib.pyplot as plt
+from pandas.util.testing import assert_series_equal
+from collections import Counter
 plt.ion()
 plt.close('all')
 
@@ -37,9 +39,15 @@ ccm = S.read_cache('CCM_Reactions')
 ccm['EcoliGene'] = ccm.index
 ccm.index = ccm['EC']
 
-ki = S.read_cache('inhibiting')
-act = S.read_cache('activating')
-tax = S.read_cache('TaxonomicData_temp')
+reg = S.read_cache('regulation')
+reg = reg[reg['Source'] == 'BRENDA'] # don't bias with just ecocyc/excluding remainder of biocyc
+
+ki = reg[reg['Mode'] == '-']
+act = reg[reg['Mode'] == '+']
+
+#ki = S.get_data_df('inhibiting')
+#act = S.read_cache('activating')
+tax = S.read_cache('TaxonomicData') # was TaxonomicData_temp
 
 # Drop entries without organism
 ki = ki[pd.notnull(ki['Organism'])]
@@ -165,3 +173,51 @@ for species in uqspecies:
         species_df.at[ species,'Activation'] = 0
 species_df['Total'] = species_df['Activation'] + species_df['Inhibition']
 species_df.to_csv('../res/Regulation_by_taxon_speciescounts.csv')
+
+
+##########################################################################################
+# A last little piece, compare to a prior version of the result to see if anything changed
+oldres = pd.read_csv('../oldres/March2017/Regulation_by_taxon.csv',header = 0,index_col = 0)
+
+# Compare indexes
+print('New result dataframe shape:')
+print(res.shape)
+print('Old result dataframe shape:')
+print(oldres.shape)
+diffix1 = oldres.index.difference(res.index)
+diffix2 = res.index.difference(oldres.index)
+ixix = res.index.intersection(oldres.index)
+
+col2use=['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy	Summary']
+restrim = res.ix[ixix,:].astype(str)
+oldrestrim = oldres.ix[ixix,:].astype(str)
+
+if restrim.equals(oldrestrim):
+    print('Dataframes are equal except for the new indices.')
+else:
+    print('Even for common indices, the old and new results have some differences.')
+    # It's likely that the entropy columns have changed slightly. Don't worry too much about this.
+    diffrows = np.where(restrim!=oldrestrim)[0]
+    diffcols = np.where(restrim!=oldrestrim)[1]
+    colcount = dict( Counter(diffcols) )
+    colcount2 = {restrim.columns[item]:colcount[item] for item in colcount.keys()}
+    print('Here are the different columns:')
+    print(colcount2)
+    
+
+# Also check the CCM data
+oldccm = pd.read_csv('../oldres/March2017/Regulation_by_taxon_CCM.csv',header = 0,index_col = 0)
+
+newccm = res_reduced_EC.copy().astype(str)
+oldccm = oldccm.astype(str)
+if res_reduced_EC.equals(oldccm):
+    print('Central carbon metabolism data is unchanged.')
+else:
+    print('There are some differences in the central carbon metabolism data.')
+    
+    # It's likely that the entropy columns have changed slightly. Don't worry too much about this.
+    diffcols = np.where(newccm!=oldccm)[1]
+    colcount = dict( Counter(diffcols) )
+    colcount2 = {newccm.columns[item]:colcount[item] for item in colcount.keys()}
+    print('Here are the different columns:')
+    print(colcount2)
