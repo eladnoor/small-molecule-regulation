@@ -80,7 +80,9 @@ def map_brenda_to_chebi():
     manually_mapped_ligand_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR, 'ligand_ids_manual_mapping.csv'), index_col=0)
     print "There are %d manually mapped ligands" % manually_mapped_ligand_df.shape[0]
     for lid in manually_mapped_ligand_df.index:
-        ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']] = manually_mapped_ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']]
+        chebi_id, bigg_id = manually_mapped_ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']]
+        print lid, chebi_id, bigg_id
+        ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']] = [chebi_id, bigg_id]
 
     # combine the mapping from CIDs to ChEBIs with the mapping from ligand_IDs
     # to ChEBIs to get a direct mapping from BRENDA to KEGG compound IDs
@@ -97,6 +99,8 @@ def rebuild_cache():
     # read the ligand ID table and remove the word "chebi:"
     # from the beginning of the string
     chebi2kegg, chebi2bigg, ligand_df = map_brenda_to_chebi()
+
+    settings.write_cache('ligands', ligand_df)
 
     # map the BRENDA data that has nothing to do with
     # regulation (i.e. MM-kinetics)

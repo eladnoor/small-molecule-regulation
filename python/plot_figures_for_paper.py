@@ -93,7 +93,9 @@ class FigurePlotter(object):
 
         k = k[(pd.isnull(k['Commentary'])) |
               ((k['Commentary'].str.find('mutant') == -1) &
-               (k['Commentary'].str.find('mutation') == -1))]
+               (k['Commentary'].str.find('mutation') == -1) &
+               (k['Commentary'].str.find('variant') == -1) &
+               (k['Commentary'].str.find('genetically engineered') == -1))]
         self.stat_df[name].iat[2] = k.shape[0]  # filtering mutants
         self.stat_df[value_col].iat[2] = (k[value_col] > 0).sum()
 

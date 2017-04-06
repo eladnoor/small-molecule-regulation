@@ -357,8 +357,8 @@ mnlptspp,,"Transport, Inner Membrane",-42.22,1.84,-42.22,-8.52,C00074 + C00392 <
 mnnh,4.2.1.8,Alternate Carbon Metabolism,-37.43,3.71,-37.43,-15.11,C00514 <=> C00001 + C00204
 moat,2.4.99.12,Lipopolysaccharide Biosynthesis / Recycling,-250.42,70710.68,-250.42,-50.54,C04121 + C04919 <=> C00055 + C06024
 moat2,2.4.99.13,Lipopolysaccharide Biosynthesis / Recycling,-244.59,70710.68,-244.59,-49.36,C04121 + C06024 <=> C00055 + C06025
-mobdabcpp,3.6.3.29,Inorganic Ion Transport and Metabolism,-40.5,0.0,-74.73,-15.08,C00001 + C00002 <=> C00008 + C00009 + C06232
-mobdtex,,"Transport, Outer Membrane Porin",0.0,0.0,-17.11,-13.82, <=> C06232
+mobdabcpp,3.6.3.29,Inorganic Ion Transport and Metabolism,-40.5,0.0,-40.5,-8.17,C00001 + C00002 + C06232 <=> C00008 + C00009
+mobdtex,,"Transport, Outer Membrane Porin",0.0,0.0,17.11,13.82,C06232 <=> 
 mohmt,2.1.2.11,Cofactor and Prosthetic Group Biosynthesis,5.58,4.96,5.58,1.13,C00001 + C00141 + C00143 <=> C00101 + C00966
 msar,1.1.1.298,Nucleotide Salvage Pathway,-21.52,2.98,-21.52,-4.34,C00005 + C00222 <=> C00006 + C01013
 mtan,3.2.2.9,Arginine and Proline Metabolism,-11.69,2.21,-28.8,-7.75,C00001 + C00170 <=> C00147 + C03089

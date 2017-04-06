@@ -5,6 +5,11 @@ Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mo
 ,,1.1.1.169,C00058,,120,formate,286109,+,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,dpr
 ,,1.1.1.169,C00058,,120,2 formate,286109,+,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,dpr
 ,,1.1.1.336,C04501,,3651,N-acetylglucosamine 1-phosphate,720374,+,N-Acetyl-alpha-D-glucosamine 1-phosphate,Escherichia coli,BRENDA,acgam1p,CHEBI:16446,uacmamo
+,,1.2.1.10,C00003,,7,2 NAD+,390164,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,acald
+,,1.2.1.10,C00003,,7,NAD+,390164,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,acald
+,,1.2.1.10,C00003,,7,3 NAD+,390164,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,acald
+,,1.2.1.10,C00003,,7,4 NAD+,390164,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,acald
+,,1.2.1.10,C00003,,7,7 NAD+,390164,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,acald
 ,,1.2.1.21,C00250,,608,pyridoxal,390214,+,Pyridoxal,Escherichia coli,BRENDA,pydx,CHEBI:17310,gcaldd
 ,,1.2.1.21,C00018,,32,pyridoxal 5'-phosphate,390214,+,Pyridoxal phosphate,Escherichia coli,BRENDA,pydx5p,CHEBI:18405,gcaldd
 ,,1.2.1.21,C00314,,1051,pyridoxine,390214,+,Pyridoxine,Escherichia coli,BRENDA,pydxn,CHEBI:16709,gcaldd
@@ -45,6 +50,16 @@ Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mo
 ,,1.6.1.1,C00002,,4,6 ATP,725040,+,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,thd2pp
 ,,1.6.1.1,C00002,,4,3 ATP,725040,+,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,thd2pp
 ,,1.6.1.1,C00002,,4,4 ATP,725040,+,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,thd2pp
+,,1.7.1.4,C00003,,7,2 NAD+,392926,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,NAD+,392926,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,3 NAD+,392926,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,4 NAD+,392926,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,7 NAD+,392926,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,2 NAD+,392928,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,NAD+,392928,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,3 NAD+,392928,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,4 NAD+,392928,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+,,1.7.1.4,C00003,,7,7 NAD+,392928,+,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
 ,,1.8.1.9,,,153,cysteine,394918,+,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,trdr
 ,,1.8.1.9,,,153,2 cysteine,394918,+,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,trdr
 ,,1.8.1.9,,,153,cysteine,394933,+,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,trdr
@@ -229,6 +244,8 @@ Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mo
 ,,2.7.1.21,C00044,,37,3 GTP,641123,+,GTP,Escherichia coli,BRENDA,gtp,CHEBI:15996,durik1
 ,,2.7.1.25,,,74,L-cysteine,641217,+,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,adsk
 ,,2.7.1.25,,,74,2 L-cysteine,641217,+,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,adsk
+,,2.7.1.25,C00342,,121,thioredoxin,641217,+,Thioredoxin,Escherichia coli,BRENDA,trdrd,CHEBI:15033,adsk
+,,2.7.1.25,C00342,,121,2 thioredoxin,641217,+,Thioredoxin,Escherichia coli,BRENDA,trdrd,CHEBI:15033,adsk
 ,,2.7.1.40,C00354,,106,"D-fructose 1,6-bisphosphate",707589,+,"D-Fructose 1,6-bisphosphate",Escherichia coli,BRENDA,fdp,CHEBI:37736,pyk
 ,,2.7.1.40,C00354,,583,"D-fructose 1,6-diphosphate",641557,+,"D-Fructose 1,6-bisphosphate",Escherichia coli,BRENDA,fdp,CHEBI:37736,pyk
 ,,2.7.1.40,C00092,,105,D-glucose 6-phosphate,641557,+,D-Glucose 6-phosphate,Escherichia coli,BRENDA,g6p,CHEBI:4170,pyk
@@ -292,6 +309,16 @@ Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mo
 ,,2.7.7.27,C00673,,1398,deoxyribose 5-phosphate,643144,+,2-Deoxy-D-ribose 5-phosphate,Escherichia coli,BRENDA,2dr5p,CHEBI:55513,glgc
 ,,2.7.7.27,C00661,,574,glyceraldehyde 3-phosphate,643144,+,Glyceraldehyde 3-phosphate,Escherichia coli,BRENDA,g3p,CHEBI:17138,glgc
 ,,2.7.7.27,C00168,,389,hydroxypyruvate,643144,+,Hydroxypyruvate,Escherichia coli,BRENDA,hpyr,CHEBI:30841,glgc
+,,2.7.7.27,C00006,,10,2 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,3 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,14 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,7 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,6 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,4 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,8 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,11 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
+,,2.7.7.27,C00006,,10,5 NADP+,643144,+,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glgc
 ,,2.7.7.27,C00005,,5,2 NADPH,643144,+,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glgc
 ,,2.7.7.27,C00005,,5,NADPH,643144,+,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glgc
 ,,2.7.7.27,C00005,,5,3 NADPH,643144,+,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glgc
@@ -556,6 +583,16 @@ Commentary,Compound,EC_number,KEGG_ID,KI_Value,LigandID,LigandName,Literature,Mo
 ,,1.1.1.3,,,95,L-serine,246398,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,hsdy
 ,,1.1.1.3,,,95,3 L-serine,246398,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,hsdy
 ,,1.1.1.3,,,250,L-threonine,"246387, 246398",-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsdy
+,,1.1.1.3,C00006,,10,2 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,3 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,14 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,7 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,6 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,4 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,8 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,11 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
+,,1.1.1.3,C00006,,10,5 NADP+,246400,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,hsdy
 ,,1.1.1.6,,,19,Cu2+,636295,-,,Escherichia coli,BRENDA,cu2,CHEBI:29036,glycdx
 ,,1.1.1.6,,,19,4 Cu2+,636295,-,,Escherichia coli,BRENDA,cu2,CHEBI:29036,glycdx
 ,,1.1.1.6,C14819,,70,Fe3+,636295,-,Fe3+,Escherichia coli,BRENDA,fe3,CHEBI:29034,glycdx
@@ -670,6 +707,11 @@ non-competitive,,1.1.1.57,C00817,,7175,D-Altronate,287131,-,D-Altronate,Escheric
 ,,1.1.1.57,C00817,,7175,D-Altronate,287132,-,D-Altronate,Escherichia coli,BRENDA,altrn,CHEBI:46644,manao
 competitive at low concentrations; non-competitive,,1.1.1.57,C00817,,7175,D-Altronate,287133,-,D-Altronate,Escherichia coli,BRENDA,altrn,CHEBI:46644,manao
 non-competitive,,1.1.1.57,C00514,,3998,D-mannonate,287131,-,D-Mannonate,Escherichia coli,BRENDA,mana,CHEBI:33076,manao
+competitive,,1.1.1.57,C00003,,7,2 NAD+,287131,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,manao
+competitive,,1.1.1.57,C00003,,7,NAD+,287131,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,manao
+competitive,,1.1.1.57,C00003,,7,3 NAD+,287131,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,manao
+competitive,,1.1.1.57,C00003,,7,4 NAD+,287131,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,manao
+competitive,,1.1.1.57,C00003,,7,7 NAD+,287131,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,manao
 ,,1.1.1.58,C00002,,4,ATP,"287138, 287140",-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,tagurr
 ,,1.1.1.58,C00002,,4,2 ATP,"287138, 287140",-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,tagurr
 ,,1.1.1.58,C00002,,4,16 ATP,"287138, 287140",-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,tagurr
@@ -680,6 +722,16 @@ non-competitive,,1.1.1.57,C00514,,3998,D-mannonate,287131,-,D-Mannonate,Escheric
 inhibitory for forward and reverse reaction,,1.1.1.58,C00514,,94003,mannonate,287140,-,D-Mannonate,Escherichia coli,BRENDA,mana,CHEBI:33076,tagurr
 "with acetolactate as substrate, Mn2+ behaves as a competitive inhibitor in presence of Mg2+",,1.1.1.86,,,11,Mn2+,639175,-,,Escherichia coli,BRENDA,mn2,CHEBI:29035,kara1
 "with acetolactate as substrate, Mn2+ behaves as a competitive inhibitor in presence of Mg2+",,1.1.1.86,,,11,2 Mn2+,639175,-,,Escherichia coli,BRENDA,mn2,CHEBI:29035,kara1
+,,1.1.1.86,C00006,,10,2 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,3 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,14 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,7 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,6 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,4 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,8 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,11 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
+,,1.1.1.86,C00006,,10,5 NADP+,639175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,kara1
 ,,1.1.1.86,C00005,,5,2 NADPH,639183,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
 ,,1.1.1.86,C00005,,5,NADPH,639183,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
 ,,1.1.1.86,C00005,,5,3 NADPH,639183,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
@@ -715,6 +767,31 @@ noncompetitive versus NADP+,,1.1.1.94,C00111,,278,dihydroxyacetone phosphate,669
 competitive inhibitor,,1.1.1.94,C00661,,5971,glyceraldehyde-3-phosphate,689802,-,Glyceraldehyde 3-phosphate,Escherichia coli,BRENDA,g3p,CHEBI:17138,g3pd2
 competitive inhibitor,,1.1.1.94,C00631,,68873,glyceric acid 2-phosphate,689802,-,2-Phospho-D-glycerate,Escherichia coli,BRENDA,2pg,CHEBI:17835,g3pd2
 "50% inhibition with 0.035 mM, sigmoid inhibition curve, competitive inhibition vs. glycerone phosphate, uncompetitive vs. NADPH",,1.1.1.94,,,445,glycerol 3-phosphate,287523,-,,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,g3pd2
+,,1.1.1.94,C00003,,7,2 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+,,1.1.1.94,C00003,,7,NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+,,1.1.1.94,C00003,,7,3 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+,,1.1.1.94,C00003,,7,4 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+,,1.1.1.94,C00003,,7,7 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,2 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,3 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,14 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,7 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,6 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,4 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,8 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,11 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+competitive versus NADPH,,1.1.1.94,C00006,,10,5 NADP+,669175,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,2 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,3 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,14 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,7 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,6 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,4 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,8 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,11 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+,,1.1.1.94,C00006,,10,5 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
 competitive versus NADP+,,1.1.1.94,C00005,,5,2 NADPH,669175,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g3pd2
 competitive versus NADP+,,1.1.1.94,C00005,,5,NADPH,669175,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g3pd2
 competitive versus NADP+,,1.1.1.94,C00005,,5,3 NADPH,669175,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g3pd2
@@ -761,6 +838,16 @@ inhibition of phosphoglycerate oxidation,,1.1.1.95,C00004,,8,NADH,287525,-,NADH,
 inhibition of phosphoglycerate oxidation,,1.1.1.95,C00004,,8,3 NADH,287525,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,pgcd
 inhibition of phosphoglycerate oxidation,,1.1.1.95,C00004,,8,4 NADH,287525,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,pgcd
 inhibition of phosphoglycerate oxidation,,1.1.1.95,C00004,,8,7 NADH,287525,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,pgcd
+competitive product inhibition,,1.1.1.100,C00006,,10,2 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,3 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,14 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,7 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,6 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,4 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,8 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,11 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
+competitive product inhibition,,1.1.1.100,C00006,,10,5 NADP+,669013,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,3oar121
 "potent inhibitor, IC50: 0.0075 mM",,1.1.1.140,C00275,,700,D-mannose 6-phosphate,669655,-,D-Mannose 6-phosphate,Escherichia coli,BRENDA,man6p,CHEBI:48066,sbtpd
 competitive,,1.1.1.169,C00008,,13,ADP,669806,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,dpr
 competitive,,1.1.1.169,C00008,,13,2 ADP,669806,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,dpr
@@ -781,6 +868,16 @@ noncompetitive,,1.1.1.169,C00002,,4,16 ATP,669806,-,ATP,Escherichia coli,BRENDA,
 noncompetitive,,1.1.1.169,C00002,,4,6 ATP,669806,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
 noncompetitive,,1.1.1.169,C00002,,4,3 ATP,669806,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
 noncompetitive,,1.1.1.169,C00002,,4,4 ATP,669806,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,2 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,3 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,14 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,7 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,6 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,4 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,8 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,11 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
+"competitive versus NADPH, noncompetitive versus ketopantoate",,1.1.1.169,C00006,,10,5 NADP+,286108,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,dpr
 noncompetitive versus ketopantoate and NADPH,,1.1.1.169,C00522,,2576,Pantoate,286108,-,(R)-Pantoate,Escherichia coli,BRENDA,pant__r,CHEBI:14737,dpr
 competitive,,1.1.1.169,C00009,,16,phosphate,669806,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,dpr
 competitive,,1.1.1.169,C00009,,16,2 phosphate,669806,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,dpr
@@ -862,6 +959,16 @@ above 0.5 mM,,1.2.1.8,C00576,,831,Betaine aldehyde,390329,-,Betaine aldehyde,Esc
 "100 mM, 35% inhibition",,1.2.1.8,C00189,,456,ethanolamine,390329,-,Ethanolamine,Escherichia coli,BRENDA,etha,CHEBI:16000,betaldhx
 0.0001-0.0005 mM HgCl2,,1.2.1.8,C00703,,33,Hg2+,390329,-,Mercury(2+),Escherichia coli,BRENDA,hg2,CHEBI:16793,betaldhx
 "1 mM, 24% inhibition",,1.2.1.8,,,2750,N-methylglycine,390329,-,,Escherichia coli,BRENDA,sarcs,CHEBI:57433,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,2 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,3 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,14 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,7 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,6 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,4 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,8 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,11 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
+substrate inhibition above 10 mM,,1.2.1.8,C00006,,10,5 NADP+,390329,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,betaldhx
 "1 mM, 54% inhibition",,1.2.1.8,C00601,,769,phenylacetaldehyde,390329,-,Phenylacetaldehyde,Escherichia coli,BRENDA,pacald,CHEBI:16424,betaldhx
 competitive inhibition,,1.2.1.10,C00084,,90,acetaldehyde,724721,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
 competitive inhibition,,1.2.1.10,C00084,,90,2 acetaldehyde,724721,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
@@ -957,6 +1064,26 @@ weak,,1.2.4.1,C00186,,403,L-lactate,348956,-,(S)-Lactate,Escherichia coli,BRENDA
 "at high concentration, competitive with respect to NADPH",,1.3.1.98,C00008,,13,3 ADP,286065,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,uapgr
 "at high concentration, competitive with respect to NADPH",,1.3.1.98,C00008,,13,4 ADP,286065,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,uapgr
 "at high concentration, competitive with respect to NADPH",,1.3.1.98,C13050,,402,ADP-ribose,286065,-,Cyclic ADP-ribose,Escherichia coli,BRENDA,adprib,CHEBI:31445,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,2 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,3 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,14 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,7 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,6 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,4 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,8 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,11 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+noncompetitive with respect to NADPH,,1.3.1.98,C00006,,10,5 NADP+,286065,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,2 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,3 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,14 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,7 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,6 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,4 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,8 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,11 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
+about 78% inhibition at 0.06 mM,,1.3.1.98,C00006,,10,5 NADP+,722831,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,uapgr
 "substrate inhibition at pH 7.0, Ki: 1.6 mM",,1.3.1.98,C00005,,5,2 NADPH,286065,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,uapgr
 "substrate inhibition at pH 7.0, Ki: 1.6 mM",,1.3.1.98,C00005,,5,NADPH,286065,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,uapgr
 "substrate inhibition at pH 7.0, Ki: 1.6 mM",,1.3.1.98,C00005,,5,3 NADPH,286065,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,uapgr
@@ -1032,13 +1159,33 @@ significant inhibitor,,1.4.1.13,,,74,2 L-cysteine,391438,-,,Escherichia coli,BRE
 significant inhibitor,,1.4.1.13,,,349,L-histidine,391438,-,,Escherichia coli,BRENDA,his__l,CHEBI:57595,glusy
 significant inhibitor,,1.4.1.13,,,345,L-homoserine,391438,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,glusy
 19% inhibition at 50 mM,,1.4.1.13,C00149,,247,L-Malate,391438,-,(S)-Malate,Escherichia coli,BRENDA,mal__l,CHEBI:30797,glusy
-50% inhibition at concentrations below 7 mM,,1.4.1.13,,,88,L-methionine,391438,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,glusy
-50% inhibition at concentrations below 7 mM,,1.4.1.13,,,88,2 L-methionine,391438,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,glusy
-50% inhibition at concentrations below 7 mM,,1.4.1.13,,,88,3 L-methionine,391438,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,glusy
-50% inhibition at concentrations below 7 mM,,1.4.1.13,,,88,4 L-methionine,391438,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,glusy
-50% inhibition at concentrations below 7 mM,,1.4.1.13,,,88,5 L-methionine,391438,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00073,,88,L-methionine,391438,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00073,,88,2 L-methionine,391438,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00073,,88,3 L-methionine,391438,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00073,,88,4 L-methionine,391438,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00073,,88,5 L-methionine,391438,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,glusy
 significant inhibitor,,1.4.1.13,,,95,L-serine,391438,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,glusy
 significant inhibitor,,1.4.1.13,,,95,3 L-serine,391438,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,2 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,3 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,14 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,7 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,6 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,4 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,8 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,11 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+50% inhibition at concentrations below 7 mM,,1.4.1.13,C00006,,10,5 NADP+,391438,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,2 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,3 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,14 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,7 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,6 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,4 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,8 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,11 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
+competitive vs. NADPH and noncompetitive vs. L-glutamine,,1.4.1.13,C00006,,10,5 NADP+,391442,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,glusy
 "inactivation of glutamine-dependent activity, 50% inactivation at 0.36 mM in 10 min",,1.4.1.13,C00005,,5,2 NADPH,391457,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glusy
 "inactivation of glutamine-dependent activity, 50% inactivation at 0.36 mM in 10 min",,1.4.1.13,C00005,,5,NADPH,391457,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glusy
 "inactivation of glutamine-dependent activity, 50% inactivation at 0.36 mM in 10 min",,1.4.1.13,C00005,,5,3 NADPH,391457,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,glusy
@@ -1061,12 +1208,27 @@ competitive inhibition,,1.4.3.5,C00018,,32,pyridoxal 5'-phosphate,391903,-,Pyrid
 competitive inhibitor,,1.4.3.5,C00018,,32,pyridoxal 5'-phosphate,724427,-,Pyridoxal phosphate,Escherichia coli,BRENDA,pydx5p,CHEBI:18405,pdx5poi
 substrate inhibition,,1.4.3.5,C00627,,1037,pyridoxine 5'-phosphate,654870,-,Pyridoxine phosphate,Escherichia coli,BRENDA,pdx5p,CHEBI:28803,pdx5poi
 substrate inactivation,,1.4.3.16,C00049,,97,L-aspartate,391756,-,L-Aspartate,Escherichia coli,BRENDA,asp__l,CHEBI:17053,aspo6
+competitive to FAD,,1.4.3.16,C00003,,7,2 NAD+,"391756, 391760",-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,aspo6
+competitive to FAD,,1.4.3.16,C00003,,7,NAD+,"391756, 391760",-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,aspo6
+competitive to FAD,,1.4.3.16,C00003,,7,3 NAD+,"391756, 391760",-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,aspo6
+competitive to FAD,,1.4.3.16,C00003,,7,4 NAD+,"391756, 391760",-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,aspo6
+competitive to FAD,,1.4.3.16,C00003,,7,7 NAD+,"391756, 391760",-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,aspo6
 ,,1.4.3.16,,,116,Urea,391756,-,,Escherichia coli,BRENDA,urea,CHEBI:32285,aspo6
 above 0.16 mM,,1.5.1.2,C00004,,8,2 NADH,392126,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,p5cr
 above 0.16 mM,,1.5.1.2,C00004,,8,NADH,392126,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,p5cr
 above 0.16 mM,,1.5.1.2,C00004,,8,3 NADH,392126,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,p5cr
 above 0.16 mM,,1.5.1.2,C00004,,8,4 NADH,392126,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,p5cr
 above 0.16 mM,,1.5.1.2,C00004,,8,7 NADH,392126,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,p5cr
+,,1.5.1.2,C00006,,10,2 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,3 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,14 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,7 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,6 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,4 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,8 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,11 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
+,,1.5.1.2,C00006,,10,5 NADP+,392126,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,p5cr
 above 0.13 mM,,1.5.1.2,C00005,,5,2 NADPH,392126,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,p5cr
 above 0.13 mM,,1.5.1.2,C00005,,5,NADPH,392126,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,p5cr
 above 0.13 mM,,1.5.1.2,C00005,,5,3 NADPH,392126,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,p5cr
@@ -1128,6 +1290,26 @@ slightly inhibitory,,1.6.1.1,C11143,,896,DMSO,725040,-,Dimethyl sulfoxide,Escher
 "0.5 mM, 62% inhibition",,1.7.1.4,C06697,,397,arsenite,392929,-,Arsenite,Escherichia coli,BRENDA,aso3,CHEBI:49900,ntrir2x
 ,,1.7.1.4,C01326,,159,CN-,392923,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,ntrir2x
 "0.02 mM, 88% inhibition",,1.7.1.4,C01326,,159,CN-,392929,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,ntrir2x
+"hydroxylamine reduction, substrate inhibition at low concentration, mixed inhibition vs. NADH",,1.7.1.4,C00003,,7,2 NAD+,392926,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"hydroxylamine reduction, substrate inhibition at low concentration, mixed inhibition vs. NADH",,1.7.1.4,C00003,,7,NAD+,392926,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"hydroxylamine reduction, substrate inhibition at low concentration, mixed inhibition vs. NADH",,1.7.1.4,C00003,,7,3 NAD+,392926,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"hydroxylamine reduction, substrate inhibition at low concentration, mixed inhibition vs. NADH",,1.7.1.4,C00003,,7,4 NAD+,392926,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"hydroxylamine reduction, substrate inhibition at low concentration, mixed inhibition vs. NADH",,1.7.1.4,C00003,,7,7 NAD+,392926,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"substrate inhibition at high concentration, required for full activity at low concentrations, maximum at 1 mM",,1.7.1.4,C00003,,7,2 NAD+,392928,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"substrate inhibition at high concentration, required for full activity at low concentrations, maximum at 1 mM",,1.7.1.4,C00003,,7,NAD+,392928,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"substrate inhibition at high concentration, required for full activity at low concentrations, maximum at 1 mM",,1.7.1.4,C00003,,7,3 NAD+,392928,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"substrate inhibition at high concentration, required for full activity at low concentrations, maximum at 1 mM",,1.7.1.4,C00003,,7,4 NAD+,392928,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"substrate inhibition at high concentration, required for full activity at low concentrations, maximum at 1 mM",,1.7.1.4,C00003,,7,7 NAD+,392928,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,2 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,3 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,14 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,7 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,6 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,4 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,8 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,11 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
+"0.06 mM, 13% inhibition, 0.27 mM, 43% inhibition",,1.7.1.4,C00006,,10,5 NADP+,392929,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,ntrir2x
 "1 mM, 22% inhibition",,1.7.1.4,C00094,,902,SO32-,392923,-,Sulfite,Escherichia coli,BRENDA,so3,CHEBI:48854,ntrir2x
 weak,,1.7.1.7,C00020,,30,AMP,394292,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gmpr
 weak,,1.7.1.7,C00020,,30,39 AMP,394292,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gmpr
@@ -1164,6 +1346,16 @@ strong inhibition,,1.8.1.2,C14819,,70,4 Fe3+,656421,-,Fe3+,Escherichia coli,BREN
 strong inhibition,,1.8.1.2,C00703,,33,Hg2+,656421,-,Mercury(2+),Escherichia coli,BRENDA,hg2,CHEBI:16793,sulri
 ,,1.8.1.2,,,11,Mn2+,656421,-,,Escherichia coli,BRENDA,mn2,CHEBI:29035,sulri
 ,,1.8.1.2,,,11,2 Mn2+,656421,-,,Escherichia coli,BRENDA,mn2,CHEBI:29035,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,2 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,3 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,14 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,7 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,6 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,4 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,8 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,11 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
+NADPH-dependent activities,,1.8.1.2,C00006,,10,5 NADP+,"392964, 392968",-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,sulri
 ,,1.8.1.2,,,673,NO3-,392964,-,,Escherichia coli,BRENDA,no3,CHEBI:17632,sulri
 ,,1.8.1.2,C00059,,160,sulfate,392964,-,Sulfate,Escherichia coli,BRENDA,so4,CHEBI:26836,sulri
 "reduction of sulfite, nitrite, hydroxylamine by reduced methyl viologen",,1.8.1.2,,,318,Sulfide,348059,-,,Escherichia coli,BRENDA,h2s,CHEBI:29919,sulri
@@ -1171,6 +1363,16 @@ strong inhibition,,1.8.1.2,C00703,,33,Hg2+,656421,-,Mercury(2+),Escherichia coli
 ,,1.8.1.2,C00038,,14,Zn2+,656421,-,Zinc cation,Escherichia coli,BRENDA,zn2,CHEBI:29105,sulri
 ,,1.8.1.9,C06697,,397,arsenite,394931,-,Arsenite,Escherichia coli,BRENDA,aso3,CHEBI:49900,trdr
 ,,1.8.1.9,C00076,,15,Ca2+,"394908, 394952",-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,trdr
+product inhibition,,1.8.1.9,C00006,,10,2 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,3 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,14 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,7 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,6 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,4 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,8 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,11 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+product inhibition,,1.8.1.9,C00006,,10,5 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
 competitive with respect to 5-phosphoadenosine 3-phosphosulfate,,1.8.4.8,C00054,,68,"adenosine 3',5'-bisphosphate",133778,-,"Adenosine 3',5'-bisphosphate",Escherichia coli,BRENDA,pap,CHEBI:17985,papsr
 competitive with respect to 5-phosphoadenosine 3-phosphosulfate,,1.8.4.8,C00054,,68,"2 adenosine 3',5'-bisphosphate",133778,-,"Adenosine 3',5'-bisphosphate",Escherichia coli,BRENDA,pap,CHEBI:17985,papsr
 "reversible inhibition, forms mixed disulfides with the enzymes active site residue Cys239, inactivation kinetics, inhibition is reversible by glutaredoxin, not by DTT, glutaredoxin together with glutathione exhibits regulatory function in vivo",,1.8.4.8,C00127,,1794,oxidized glutathione,659214,-,Glutathione disulfide,Escherichia coli,BRENDA,gthox,CHEBI:17858,papsr
@@ -1234,16 +1436,16 @@ competitive inhibition of CDP reduction,,1.17.4.1,C00015,,26,3 UDP,437938,-,UDP,
 ,,1.17.4.1,C00015,,26,2 UDP,437939,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 ,,1.17.4.1,C00015,,26,28 UDP,437939,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 ,,1.17.4.1,C00015,,26,3 UDP,437939,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
-product inhibition,,2.1.1.10,,,88,L-methionine,441382,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition,,2.1.1.10,,,88,2 L-methionine,441382,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition,,2.1.1.10,,,88,3 L-methionine,441382,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition,,2.1.1.10,,,88,4 L-methionine,441382,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition,,2.1.1.10,,,88,5 L-methionine,441382,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition above 0.5 mM,,2.1.1.10,,,88,L-methionine,692948,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition above 0.5 mM,,2.1.1.10,,,88,2 L-methionine,692948,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition above 0.5 mM,,2.1.1.10,,,88,3 L-methionine,692948,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition above 0.5 mM,,2.1.1.10,,,88,4 L-methionine,692948,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
-product inhibition above 0.5 mM,,2.1.1.10,,,88,5 L-methionine,692948,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hcysmt
+product inhibition,,2.1.1.10,C00073,,88,L-methionine,441382,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition,,2.1.1.10,C00073,,88,2 L-methionine,441382,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition,,2.1.1.10,C00073,,88,3 L-methionine,441382,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition,,2.1.1.10,C00073,,88,4 L-methionine,441382,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition,,2.1.1.10,C00073,,88,5 L-methionine,441382,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition above 0.5 mM,,2.1.1.10,C00073,,88,L-methionine,692948,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition above 0.5 mM,,2.1.1.10,C00073,,88,2 L-methionine,692948,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition above 0.5 mM,,2.1.1.10,C00073,,88,3 L-methionine,692948,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition above 0.5 mM,,2.1.1.10,C00073,,88,4 L-methionine,692948,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
+product inhibition above 0.5 mM,,2.1.1.10,C00073,,88,5 L-methionine,692948,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hcysmt
 product inhibition,,2.1.1.10,,,36,S-adenosyl-L-homocysteine,441382,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,hcysmt
 product inhibition,,2.1.1.10,,,36,3 S-adenosyl-L-homocysteine,441382,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,hcysmt
 product inhibition,,2.1.1.10,,,36,2 S-adenosyl-L-homocysteine,441382,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,hcysmt
@@ -1502,16 +1704,16 @@ noncompetitive against acetyl-CoA,,2.3.1.30,,,103,L-alanine,486778,-,,Escherichi
 ,,2.3.1.41,C00024,,29,3 acetyl-CoA,486914,-,Acetyl-CoA,Escherichia coli,BRENDA,accoa,CHEBI:15351,3oas121
 "about 50% inhibition at 1 M, complete inactivation at 4 M",,2.3.1.41,,,116,Urea,486918,-,,Escherichia coli,BRENDA,urea,CHEBI:32285,3oas121
 slight feed-back inhibition,,2.3.1.46,,,957,D-methionine,487045,-,,Escherichia coli,BRENDA,met__d,CHEBI:57932,hsst
-feed-back inhibition,,2.3.1.46,,,88,L-methionine,"487044, 487045",-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feed-back inhibition,,2.3.1.46,,,88,2 L-methionine,"487044, 487045",-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feed-back inhibition,,2.3.1.46,,,88,3 L-methionine,"487044, 487045",-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feed-back inhibition,,2.3.1.46,,,88,4 L-methionine,"487044, 487045",-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feed-back inhibition,,2.3.1.46,,,88,5 L-methionine,"487044, 487045",-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feedback inhibition,,2.3.1.46,,,88,L-methionine,671413,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feedback inhibition,,2.3.1.46,,,88,2 L-methionine,671413,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feedback inhibition,,2.3.1.46,,,88,3 L-methionine,671413,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feedback inhibition,,2.3.1.46,,,88,4 L-methionine,671413,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
-feedback inhibition,,2.3.1.46,,,88,5 L-methionine,671413,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsst
+feed-back inhibition,,2.3.1.46,C00073,,88,L-methionine,"487044, 487045",-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feed-back inhibition,,2.3.1.46,C00073,,88,2 L-methionine,"487044, 487045",-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feed-back inhibition,,2.3.1.46,C00073,,88,3 L-methionine,"487044, 487045",-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feed-back inhibition,,2.3.1.46,C00073,,88,4 L-methionine,"487044, 487045",-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feed-back inhibition,,2.3.1.46,C00073,,88,5 L-methionine,"487044, 487045",-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feedback inhibition,,2.3.1.46,C00073,,88,L-methionine,671413,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feedback inhibition,,2.3.1.46,C00073,,88,2 L-methionine,671413,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feedback inhibition,,2.3.1.46,C00073,,88,3 L-methionine,671413,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feedback inhibition,,2.3.1.46,C00073,,88,4 L-methionine,671413,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
+feedback inhibition,,2.3.1.46,C00073,,88,5 L-methionine,671413,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,hsst
 feed-back inhibition,,2.3.1.46,C00019,,24,S-adenosyl-L-methionine,487044,-,S-Adenosyl-L-methionine,Escherichia coli,BRENDA,amet,CHEBI:15414,hsst
 feed-back inhibition,,2.3.1.46,C00019,,24,2 S-adenosyl-L-methionine,487044,-,S-Adenosyl-L-methionine,Escherichia coli,BRENDA,amet,CHEBI:15414,hsst
 feed-back inhibition,,2.3.1.46,C00019,,24,3 S-adenosyl-L-methionine,487044,-,S-Adenosyl-L-methionine,Escherichia coli,BRENDA,amet,CHEBI:15414,hsst
@@ -1998,6 +2200,16 @@ above 2.5 mM: gradual inhibition,,2.7.1.15,C00305,,6,Mg2+,641005,-,Magnesium cat
 ,,2.7.1.23,C00004,,8,3 NADH,691390,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,nadk
 ,,2.7.1.23,C00004,,8,4 NADH,691390,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,nadk
 ,,2.7.1.23,C00004,,8,7 NADH,691390,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,2 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,3 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,14 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,7 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,6 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,4 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,8 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,11 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
+"0.1 mM, 21% inhibition",,2.7.1.23,C00006,,10,5 NADP+,641189,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,nadk
 "0.01 mM, 76% inhibition",,2.7.1.23,C00005,,5,2 NADPH,641189,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,nadk
 "0.01 mM, 76% inhibition",,2.7.1.23,C00005,,5,NADPH,641189,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,nadk
 "0.01 mM, 76% inhibition",,2.7.1.23,C00005,,5,3 NADPH,641189,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,nadk
@@ -2303,6 +2515,11 @@ product/substrate inhibition,,2.7.7.12,C00052,,129,UDP-galactose,642838,-,UDP-al
 the product of the forward reaction is a competitive inhibitor with respect to UDP-glucose and a mixed inhibitor with respect to galactose 1-phosphate,,2.7.7.12,C00052,,129,UDP-galactose,722427,-,UDP-alpha-D-galactose,Escherichia coli,BRENDA,udpgal,CHEBI:67119,uglt
 product/substrate inhibition,,2.7.7.12,C00029,,64,UDP-glucose,642838,-,UDP-glucose,Escherichia coli,BRENDA,udpg,CHEBI:46229,uglt
 product/substrate inhibition,,2.7.7.12,C00029,,64,2 UDP-glucose,642838,-,UDP-glucose,Escherichia coli,BRENDA,udpg,CHEBI:46229,uglt
+deamido-NAD+ as substrate,,2.7.7.18,C00003,,7,2 NAD+,642778,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,nmnat
+deamido-NAD+ as substrate,,2.7.7.18,C00003,,7,NAD+,642778,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,nmnat
+deamido-NAD+ as substrate,,2.7.7.18,C00003,,7,3 NAD+,642778,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,nmnat
+deamido-NAD+ as substrate,,2.7.7.18,C00003,,7,4 NAD+,642778,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,nmnat
+deamido-NAD+ as substrate,,2.7.7.18,C00003,,7,7 NAD+,642778,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,nmnat
 slight product inhibition in reverse reaction,,2.7.7.23,C00043,,126,UDP-N-acetyl-D-glucosamine,288685,-,UDP-N-acetyl-alpha-D-glucosamine,Escherichia coli,BRENDA,uacgam,CHEBI:16264,uagdp
 competitive to dTTP,,2.7.7.24,C00842,,903,dTDP-glucose,643081,-,dTDP-glucose,Escherichia coli,BRENDA,dtdpglu,CHEBI:15700,g1ptt
 competitive to dTDPglucose and non-competitive to alpha-D-glucose 1-phosphate,,2.7.7.24,,,145,dTTP,643081,-,,Escherichia coli,BRENDA,dttp,CHEBI:37568,g1ptt
@@ -3278,11 +3495,11 @@ L-Ala,,4.1.99.1,,,369,Ala,37344,-,,Escherichia coli,BRENDA,ala__l,CHEBI:57972,tr
 ,,4.1.99.1,,,103,L-alanine,651028,-,,Escherichia coli,BRENDA,ala__l,CHEBI:57972,trpas2
 competitive,,4.1.99.1,,,468,L-Met,664076,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
 competitive,,4.1.99.1,,,468,2 L-Met,664076,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-,,4.1.99.1,,,88,L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-,,4.1.99.1,,,88,2 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-,,4.1.99.1,,,88,3 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-,,4.1.99.1,,,88,4 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-,,4.1.99.1,,,88,5 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
+,,4.1.99.1,C00073,,88,L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+,,4.1.99.1,C00073,,88,2 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+,,4.1.99.1,C00073,,88,3 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+,,4.1.99.1,C00073,,88,4 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+,,4.1.99.1,C00073,,88,5 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
 ,,4.1.99.1,,,104,L-phenylalanine,651028,-,,Escherichia coli,BRENDA,phe__l,CHEBI:58095,trpas2
 competitive with S-o-nitrophenyl-L-Cys,,4.1.99.1,,,420,L-Trp,37364,-,,Escherichia coli,BRENDA,trp__l,CHEBI:57912,trpas2
 ,,4.1.99.1,,,420,L-Trp,665767,-,,Escherichia coli,BRENDA,trp__l,CHEBI:57912,trpas2
@@ -3401,12 +3618,6 @@ inhibits,,4.2.3.3,C00988,,1317,2-Phosphoglycolate,649962,-,2-Phosphoglycolate,Es
 ,,4.2.3.3,C00009,,16,6 phosphate,"137600, 137601",-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 ,,4.2.3.3,C00009,,16,3 phosphate,"137600, 137601",-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 ,,4.2.3.3,C00009,,16,4 phosphate,"137600, 137601",-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,2 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,16 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,6 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,3 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-acts as competitive inhibitor on the H98Q variant and as an allosteric-type inhibitor on the wild-type enzyme,,4.2.3.3,C00009,,16,4 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 alosteric inhibitor,,4.2.3.3,C00009,,16,phosphate,653942,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 alosteric inhibitor,,4.2.3.3,C00009,,16,2 phosphate,653942,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 alosteric inhibitor,,4.2.3.3,C00009,,16,16 phosphate,653942,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
@@ -3414,7 +3625,6 @@ alosteric inhibitor,,4.2.3.3,C00009,,16,6 phosphate,653942,-,Orthophosphate,Esch
 alosteric inhibitor,,4.2.3.3,C00009,,16,3 phosphate,653942,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 alosteric inhibitor,,4.2.3.3,C00009,,16,4 phosphate,653942,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 ,,4.2.3.3,C00074,,51,phosphoenolpyruvate,"137600, 137601",-,Phosphoenolpyruvate,Escherichia coli,BRENDA,pep,CHEBI:44897,mgsa
-inhibits wild-type enzyme and activates H98Q variant,,4.2.3.3,C00988,,1798,phosphoglycolate,650248,-,2-Phosphoglycolate,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,mgsa
 ,,4.2.3.4,C04691,,45157,3-deoxy-D-arabino-heptulosonic acid 7-phosphonate,137619,-,2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate,Escherichia coli,BRENDA,2dda7p,CHEBI:18150,dhqs
 ,,4.2.3.5,C14818,,25,Fe2+,137655,-,Fe2+,Escherichia coli,BRENDA,fe2,CHEBI:29033,chors
 ,,4.2.3.5,C14818,,25,2 Fe2+,137655,-,Fe2+,Escherichia coli,BRENDA,fe2,CHEBI:29033,chors
@@ -4090,6 +4300,21 @@ pH 7.1,,1.1.1.42,C00074,0.31,51,phosphoenolpyruvate,680481,-,Phosphoenolpyruvate
 "pH 8.0, 22°C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,5 NADPH,639183,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
 "pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,,0.0044,4869,sn-glycerol-3-phosphate,669175,-,,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,g3pd2
 "pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C13050,0.1,402,ADP-ribose,669177,-,Cyclic ADP-ribose,Escherichia coli,BRENDA,adprib,CHEBI:31445,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,2 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,3 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,4 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,7 NAD+,669177,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,2 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,3 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,14 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,7 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,6 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,4 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,8 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,11 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,5 NADP+,669177,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
 "pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,ADP,669177,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
 "pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,2 ADP,669177,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
 "pH 7.4, 23°C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,16 ADP,669177,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
@@ -4131,6 +4356,16 @@ pH 7.6,,1.1.1.169,C00009,27.0,16,4 phosphate,669806,-,Orthophosphate,Escherichia
 ,,1.1.1.205,C00144,0.092,162,GMP,347941,-,GMP,Escherichia coli,BRENDA,gmp,CHEBI:17345,impd
 ,,1.1.1.271,C00035,0.061,53,GDP,389515,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,gdmane
 ,,1.1.1.271,C00035,0.061,53,2 GDP,389515,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,gdmane
+,,1.1.1.271,C00006,0.069,10,2 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,3 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,14 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,7 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,6 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,4 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,8 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,11 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
+,,1.1.1.271,C00006,0.069,10,5 NADP+,389515,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
 "pH 7.5, 24°C",,1.1.99.33,C00058,7.1,120,formate,698687,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
 "pH 7.5, 24°C",,1.1.99.33,C00058,7.1,120,2 formate,698687,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
 ,,1.2.1.8,C00601,0.53,769,phenylacetaldehyde,390329,-,Phenylacetaldehyde,Escherichia coli,BRENDA,pacald,CHEBI:16424,betaldhx
@@ -4175,6 +4410,16 @@ substrate inhibition,,1.4.3.5,C00627,0.05,1037,pyridoxine 5'-phosphate,654870,-,
 "at pH 10.5, reduced enzyme",,1.7.99.4,C01326,0.044,118,cyanide,395167,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,no3r2bpp
 ,,1.8.1.2,C01326,0.006,118,cyanide,392968,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,sulri
 ,,1.8.1.2,C06697,0.08,397,arsenite,392968,-,Arsenite,Escherichia coli,BRENDA,aso3,CHEBI:49900,sulri
+at 25°C,,1.8.1.9,C00006,0.015,10,2 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,3 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,14 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,7 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,6 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,4 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,8 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,11 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25°C,,1.8.1.9,C00006,0.015,10,5 NADP+,393993,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
 competitive vs. CDP,,1.17.4.1,C00035,0.007,53,GDP,437939,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
 competitive vs. CDP,,1.17.4.1,C00035,0.007,53,2 GDP,437939,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
 competitive vs. CDP,,1.17.4.1,C00015,0.5,26,UDP,437939,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
@@ -4234,11 +4479,11 @@ competitive vs. CDP,,1.17.4.1,C00015,0.5,26,3 UDP,437939,-,UDP,Escherichia coli,
 ,,2.1.3.3,,13.5,246,5 L-valine,485898,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,ocbt
 ,,2.1.3.3,,14.0,311,L-isoleucine,485898,-,,Escherichia coli,BRENDA,ile__l,CHEBI:58045,ocbt
 ,,2.1.3.3,,15.0,72,glycine,485898,-,,Escherichia coli,BRENDA,gly,CHEBI:57305,ocbt
-,,2.1.3.3,,40.0,88,L-methionine,485898,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,ocbt
-,,2.1.3.3,,40.0,88,2 L-methionine,485898,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,ocbt
-,,2.1.3.3,,40.0,88,3 L-methionine,485898,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,ocbt
-,,2.1.3.3,,40.0,88,4 L-methionine,485898,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,ocbt
-,,2.1.3.3,,40.0,88,5 L-methionine,485898,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,ocbt
+,,2.1.3.3,C00073,40.0,88,L-methionine,485898,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,ocbt
+,,2.1.3.3,C00073,40.0,88,2 L-methionine,485898,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,ocbt
+,,2.1.3.3,C00073,40.0,88,3 L-methionine,485898,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,ocbt
+,,2.1.3.3,C00073,40.0,88,4 L-methionine,485898,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,ocbt
+,,2.1.3.3,C00073,40.0,88,5 L-methionine,485898,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,ocbt
 ,,2.1.3.3,,63.5,95,L-serine,485898,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,ocbt
 ,,2.1.3.3,,63.5,95,3 L-serine,485898,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,ocbt
 ,,2.1.3.3,,110.0,266,L-asparagine,485898,-,,Escherichia coli,BRENDA,asn__l,CHEBI:58048,ocbt
@@ -4550,21 +4795,14 @@ pH 7.5,,4.1.3.27,C00156,0.002,3660,p-hydroxybenzoate,650373,-,4-Hydroxybenzoate,
 "pH 8.0, 25°C",,4.1.3.39,C00233,6.98,722,4-methyl-2-oxopentanoate,702377,-,4-Methyl-2-oxopentanoate,Escherichia coli,BRENDA,4mop,CHEBI:48430,hopntal
 "pH 7.5, wild-type enzyme",,4.1.3.40,C00156,0.0021,365,4-hydroxybenzoate,650373,-,4-Hydroxybenzoate,Escherichia coli,BRENDA,4hbz,CHEBI:30763,chrpl
 pH 7.8,,4.1.99.1,,0.21,119,L-tryptophan,651028,-,,Escherichia coli,BRENDA,trp__l,CHEBI:57912,trpas2
-pH 7.8,,4.1.99.1,,10.3,88,L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-pH 7.8,,4.1.99.1,,10.3,88,2 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-pH 7.8,,4.1.99.1,,10.3,88,3 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-pH 7.8,,4.1.99.1,,10.3,88,4 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
-pH 7.8,,4.1.99.1,,10.3,88,5 L-methionine,651028,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,trpas2
+pH 7.8,,4.1.99.1,C00073,10.3,88,L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+pH 7.8,,4.1.99.1,C00073,10.3,88,2 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+pH 7.8,,4.1.99.1,C00073,10.3,88,3 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+pH 7.8,,4.1.99.1,C00073,10.3,88,4 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
+pH 7.8,,4.1.99.1,C00073,10.3,88,5 L-methionine,651028,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
 pH 7.8,,4.1.99.1,,14.0,103,L-alanine,651028,-,,Escherichia coli,BRENDA,ala__l,CHEBI:57972,trpas2
 pH 7.8,,4.1.99.1,,14.2,104,L-phenylalanine,651028,-,,Escherichia coli,BRENDA,phe__l,CHEBI:58095,trpas2
 ,,4.2.3.1,,0.006,30785,L-threo-3-hydroxyhomoserine,137559,-,,Escherichia coli,BRENDA,4hthr,CHEBI:60904,4hthrs
-"pH 7, 25°C, H98N variant",,4.2.3.3,C00988,5.8e-06,1798,phosphoglycolate,650248,-,2-Phosphoglycolate,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,2 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,16 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,6 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,3 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
-"pH 7, 25°C, H98Q variant",,4.2.3.3,C00009,9.3e-05,16,4 phosphate,650248,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,mgsa
 ,,4.3.1.1,C00497,0.66,1139,D-malate,649266,-,(R)-Malate,Escherichia coli,BRENDA,mal__d,CHEBI:30796,aspt
 "25°C, pH 7.8",,4.3.1.18,,0.035,29959,"DL-2,3-Diaminopropionic acid",651969,-,,Escherichia coli,BRENDA,23dappa,CHEBI:58468,serd_d
 "25°C, pH 7.8",,4.3.1.18,,0.09,9192,"L-2,3-diaminopropionic acid",651969,-,,Escherichia coli,BRENDA,23dappa,CHEBI:57721,serd_d
