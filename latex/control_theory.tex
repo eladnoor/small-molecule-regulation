@@ -274,6 +274,52 @@ Substituting this form of $\frac{\partial g}{\partial x}$ into the prior equatio
 In \cite{Heinrich1974-yj}, the elasticity of the inhibitor was calculated for this rate law (denoted as \emph{effector strength} or $X_I$ in the original text) and matches the form above.
 Although the final formulae for the elasticities in the MWC case are not identical to the other cases dealt with before, we can still reach a similar conclusion, where the absolute value of the elasticity is larger when the relative activity is smaller.
 
+\subsection{Bisubstrate Reactions}
+Several analyses in the main text calculate elasticitiy assuming a mono-substrate reaction. below, we calculate elasticities for a non-competitive inhibitor and for substrates in a bi-substrate reaction scheme. Assuming irreversible bisubstrate (with substrates $S_1$ and $S_2$) convenience kinetics, we can write the kinetic rate law as 
+
+\begin{align}
+v(S_1,S_2) = \frac{Ek_{cat}S_1S_2}{(S+K_1)(S+K_2) - K_1K_2}
+\end{align}
+
+Assuming non-competitive inhibition, we can add a prefactor to this rate law to model inhibition:
+\begin{align}
+\tilde{v} = v(S_1,S_2) \times \frac{K_I}{K_I + I}
+\end{align}
+
+Then, the elasticity of the inhibitor for this reaction is easily calculated because it is decoupled from any relationship with the substrate, yielding (exactly as in the prior section on non-competitive inhibition).
+\begin{align}
+\epsilon^{\tilde{v}}_I = \frac{-I}{K_I + I}
+\end{align}
+
+Calculating the elasticity of substrate $S_1$ (which is, by symmetry arguments, identical in form to the elasticity of $S_2$), we find
+\begin{align}
+\epsilon^{\tilde{v}}_{S_1} &= \frac{\partial \tilde{v}}{\partial S_1} \times \frac{S_1}{\tilde{v}} \\
+&= \frac{\partial}{\partial S_1}(v(S_1,S_2) \times \frac{K_I}{K_I + I}) \times \frac{S_1(K_I+I)}{K_Iv(S_1,S_2)} \\
+&= \frac{\partial}{\partial S_1}(v(S_1,S_2)) \times \frac{S_1}{v(S_1,S_2)}
+\end{align}
+
+Performing the algebraic calculations, we find that
+\begin{align}
+\frac{\partial}{\partial S_1}(v(S_1,S_2)) &= \frac{Ek_{cat}K_1S_2^2}{\left( (S_1+K_1)(S_2+K_2) - K_1K_2 \right) ^2}
+\end{align}
+
+Then, substituting this quantity into the prior equation, we find
+\begin{align}
+\epsilon^{\tilde{v}}_{S_1} &=\frac{\partial}{\partial S_1}(v(S_1,S_2)) \times \frac{S_1}{v(S_1,S_2)} \\
+&= \frac{K_1S_2}{(S_1+K_1)(S_2+K_2) - K_1K_2} \equiv \epsilon_{Bisubstrate}
+\end{align}
+
+Let us compare the value of the elasticity derived for a substrate $S_1$ assuming a bisubstrate reaction to that derived from assuming a mono-substrate reaction (recall that the elasticity for a mono-substrate reaction is $\epsilon_{Monosubstrate} \equiv \frac{K_1}{S_1 + K_1}$, where we assume that the half-saturation constants $K_1$ from the mono- and bi-substrate formulations are identical). Then, we find
+
+\begin{align}
+\frac{\epsilon_{Bisubstrate}}{\epsilon_{Monosubstrate}} &= \frac{K_1S_2(S_1 + K_1)}{(S_1+K_1)(S_2+K_2) - K_1K_2} \\
+&= \frac{K_1S_2 + S_1S_2}{K_2S_1 + K_1S_2 + S_1S_2} \\
+&= \frac{x}{K_2S_1 + x}, x = K_1S_2 + S_1S_2 \\
+&<1
+\end{align}
+
+Thus, assuming convenience kinetics, the elasticity derived from assuming a mono-substrate reaction scheme is an over-estimate of the true elasticity in a bi-substrate reaction scheme.
+
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
 By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh}, \ref{eq:eps_comp_inh}, \ref{eq:eps_uncomp_inh}, and \ref{eq:eps_general_inh}, excluding the MWC model) into one formula:
 \begin{eqnarray}
