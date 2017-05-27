@@ -91,11 +91,13 @@ where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten
 \begin{eqnarray}\label{eq:reversible_substrate_eps}
     \epsilon_s^v &=& \gamma^{-1} - \kappa
 \end{eqnarray}
-In order to compare this result to the irreversible case (in Equation \ref{eq:eps_s_v_irr}), we note first that $\gamma < 1$ (and therefore $\gamma^{-1} > 1$) and also that $\kappa =  \frac{s/K_S}{1 + s/K_S + p/K_P} < \frac{s/K_S}{1 + s/K_S}$. Therefore, we prove that
+
+Finally, in order to compare this result to the irreversible case, we show that
 \begin{eqnarray}
-\epsilon_{s,\text{reversible}}^v = \gamma^{-1} - \kappa > 1 - \kappa > 1 - \frac{s}{K_M + s} = \epsilon_{s,\text{irreversible}}^v
+\epsilon_{s}^v &=& \gamma^{-1} - \kappa = \left(1 - \frac{p/s}{K_{eq}'}\right)^{-1} - \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
+&>& 1 - \frac{s/K_S}{1 + s/K_S + p/K_P} > 1 - \frac{s/K_S}{1 + s/K_S} = 1 - \frac{s}{K_s + s}\,,
 \end{eqnarray}
-and furthermore, $\epsilon_{s,\text{reversible}}^v \rightarrow \epsilon_{s,\text{irreversible}}^v$ as $p \rightarrow 0$.
+which is exactly the elasticity of the substrate in the irreversible case (Equation \ref{eq:eps_s_v_irr}). So, assuming a reaction is irreversible provides an underestimation of the elasticity. Nevertheless, in cases where $p \rightarrow 0$, we can see that $\epsilon_{s}^v \rightarrow 1 - \frac{s}{K_s + s}$.
 
 \subsection{Regulatory Effectors}
 Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, \emph{there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.}
