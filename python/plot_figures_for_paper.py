@@ -25,6 +25,7 @@ from matplotlib.gridspec import GridSpec
 from matplotlib import rcParams
 import pdb  # this is a reminder for Elad not to remove this pdb import
 from topology import calculate_distances
+import itertools
 
 sns.set('paper', style='white')
 
@@ -697,20 +698,36 @@ class FigurePlotter(object):
         with open(_fname, 'w') as fp:
             json.dump(res, fp, indent=4)
 
-    def plot_fig2cd(self):
+    def plot_fig2cd(self,highconfidence):
         """
             Draw 2D histograms of the number of activating and
             inhibiting reactions
             grouped by metabolite and grouped by reaction
+            
+            Highconfidence indicates that we should only use
+            edges which have two or more literature references
         """
-        def plot_jointhist(data, xlabel, ylabel, xmax, ymax):
+        
+        highc_string = '_highconfidence' if highconfidence else  ''
+        
+        def plot_jointhist(data, xlabel, ylabel, xmax, ymax, highconfidence):
             """
                 plot the histogram as a scatter plot with marginal histograms,
                 and ensure empty bins are easily distinguishable from ones
                 that have at least 1 hit.
+                
+                generally use xcrit = 12,ycrit = 5 unless using only high
+                confidence interactions, then xcrit = 6, ycrit = 2
             """
             x = data[xlabel]
             y = data[ylabel]
+            
+            if highconfidence:
+            	xcrit = 6
+            	ycrit = 2
+            else:
+            	xcrit = 12
+            	ycrit = 5
 
             # First, plot the scatter plot
             g = sns.JointGrid(x=x, y=y, size=4,
@@ -724,7 +741,7 @@ class FigurePlotter(object):
             # annotate only unique points
             # annotate only unique points
             ann_df = data.drop_duplicates((xlabel, ylabel), keep=False)
-            ann_df = ann_df[(ann_df[xlabel] > 12) | (ann_df[ylabel] > 5)]
+            ann_df = ann_df[(ann_df[xlabel] > xcrit) | (ann_df[ylabel] > ycrit)]
             for i, row in ann_df.iterrows():
                     plt.annotate(i, xy=(row[xlabel], row[ylabel]),
                                  xytext=(row[xlabel]+1, row[ylabel]+1),
@@ -735,11 +752,39 @@ class FigurePlotter(object):
             g = g.plot_marginals(sns.distplot, kde=False)
 
             return plt.gcf()
-
+            
+            
+        # if using high confidence edges, then find those edges
+        cols = ('bigg.reaction', 'bigg.metabolite')
+        if highconfidence:
+            reg = self.regulation
+            reg = reg[reg['Source'] == 'BRENDA']
+            reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
+            reg['ShortHand'] = reg['bigg.metabolite'].str.cat('-->' + reg['bigg.reaction'])
+            reglit = reg.groupby(cols)
+            
+            highc = pd.DataFrame( columns = ['NumRef','Refs'] )
+            for ii in reglit.groups.keys():
+                ixs = reglit.groups[ii]
+                tempref = reg.ix[ixs,'RefList']
+                refs = np.unique(list(itertools.chain.from_iterable(tempref)))
+                highc.ix[ii[1] + '-->' + ii[0],] = [len(refs),','.join(refs)]
+                
+            fig, axs = plt.subplots(1, 1, figsize=(6, 5))
+            axs.hist( highc['NumRef'],bins = 0.5 + np.arange(0,highc['NumRef'].max()) )
+            axs.set_xlabel('Number of Literature References')
+            axs.set_ylabel('Number of SMRN edges')
+            settings.savefig(fig, 'histogram_highconfidence_SMRN') 
+            highc.to_csv( os.path.join(settings.RESULT_DIR, 'histogram_highconfidence_SMRN.csv') )
+        
         # join interaction table with bigg.reaction IDs
         # and keep only one copy of each reaction-metabolite pair
-        cols = ('bigg.reaction', 'bigg.metabolite')
-        bigg_effectors = self.regulation.groupby(cols).first().reset_index()
+        if highconfidence:
+            bigg_effectors = reg[reg['ShortHand'].isin(highc[highc['NumRef'] > 1].index)]
+            bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()
+        else:
+            bigg_effectors = self.regulation.groupby(cols).first().reset_index()
+        
         bigg_effectors.drop('KI_Value', axis=1, inplace=True)
 
         # add columns for counting the positive and negative interactions
@@ -757,18 +802,18 @@ class FigurePlotter(object):
                    grouped_by_rxn[N_ACT_LABEL].max())
 
         fig = plot_jointhist(grouped_by_met, N_INH_LABEL, N_ACT_LABEL,
-                             xmax, ymax)
+                             xmax, ymax, highconfidence)
         fig.get_axes()[0].annotate('c', xy=(0.02, 0.98),
                      xycoords='axes fraction', ha='left', va='top',
                      size=20)
-        settings.savefig(fig, 'fig2c')
+        settings.savefig(fig, 'fig2c' + highc_string)
 
         fig = plot_jointhist(grouped_by_rxn, N_INH_LABEL, N_ACT_LABEL,
-                             xmax, ymax)
+                             xmax, ymax, highconfidence)
         fig.get_axes()[0].annotate('d', xy=(0.02, 0.98),
                      xycoords='axes fraction', ha='left', va='top',
                      size=20)
-        settings.savefig(fig, 'fig2d')
+        settings.savefig(fig, 'fig2d' + highc_string)
 
     def plot_figS3(self, n_colors=20):
 
@@ -1220,18 +1265,18 @@ if __name__ == "__main__":
 
     fp = FigurePlotter()
 
-    fp.plot_fig2ab()
-    fp.plot_fig2cd()
-    fp.plot_fig4()
-    fp.plot_fig5()
-
-    fp.plot_figS1()
-    fp.plot_figS2()
-    fp.plot_figS3()
-    fp.plot_figS4()
-    fp.plot_figS5()
-    fp.plot_figS6()
-
-    fp.print_ccm_table()
+#     fp.plot_fig2ab()
+    fp.plot_fig2cd(highconfidence = True)
+#     fp.plot_fig4()
+#     fp.plot_fig5()
+# 
+#     fp.plot_figS1()
+#     fp.plot_figS2()
+#     fp.plot_figS3()
+#     fp.plot_figS4()
+#     fp.plot_figS5()
+#     fp.plot_figS6()
+# 
+#     fp.print_ccm_table()
 
     plt.close('all')
