@@ -41,6 +41,23 @@ Not regulated & 38 & 266 \\ \hline
 Using a right-tailed Fischer’s exact test (fishertest function, MATLAB) to detect if there are significantly more small molecule regulation in futile cycle participating reactions, we verify that there is no significant overrepresentation of regulation in reactions that take part in futile cycling (p = 0.86).
 The code for this analysis and its results are freely available on our GitHub repository (\url{https://github.com/eladnoor/small-molecule-regulation}).
 
+\section{Reaction Reversibility and Small Molecule Regulation}
+
+Focusing on Central Carbon metabolism, we ask whether there is enrichment in the percent of reactions regulated by small-molecules among irreversible reactions. First, we calculate the contingency table for the 40 reaction for which we have thermodynamic information (namely, the $\Delta G'^\circ$):
+
+\begin{center}
+	\begin{tabular}{|l|c|c|}
+		\hline
+		& Reversible ($\Gamma \leq 6.9$) & Irreversible ($\Gamma > 6.9$) \\ \hline
+		Regulated by small molecule & 19 & 7  \\ \hline
+		Not regulated & 13 & 1 \\ \hline
+	\end{tabular}
+\end{center}
+Using the Fischer exact test to see if there is a bias towards irreversible reactions, we find no significance (p-value: ).
+
+We chose the value of $\Gamma = 6.9$ as the threshold for reversibility, to represent a relative concentration range of 1000 for all substrates and products. However, the result might depend on this arbitrary value, therefore we performed an unbiased enrichment analysis, which entails scanning all possible thresholds and taking the maximum. We find only weak significance (p-value = 0.1).
+
+
 \section{Metabolic Control Analysis}
 \subsection{What is elasticity?}
 Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to understanding the dynamics and control of metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of metabolic fluxes depends on other quantities in the system (\textit{i.e.} the topology of the metabolic network, and the levels of metabolites). \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
