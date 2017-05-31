@@ -93,7 +93,7 @@ where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten
 \end{eqnarray}
 
 Finally, in order to compare this result to the irreversible case, we show that
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:reversible_substrate_eps}
 \epsilon_{s}^v &=& \gamma^{-1} - \kappa = \left(1 - \frac{p/s}{K_{eq}'}\right)^{-1} - \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
 &>& 1 - \frac{s/K_S}{1 + s/K_S + p/K_P} > 1 - \frac{s/K_S}{1 + s/K_S} = 1 - \frac{s}{K_s + s}\,,
 \end{eqnarray}
@@ -176,8 +176,22 @@ In this case, we can define an \emph{effective} inhibition constants $K_{IC}$, t
 \end{eqnarray}
 so we can see here that in this case $\theta = \frac{K_{IC}^h}{K_{IC}^h~+~x^h}$, exactly like in the case of non-competitive inhibition. Of course, the difference here is that $K_{IC}$ is not a binding constant but rather a function of $s$, $K_M$, and $K_I$. Nevertheless, we can use the same formula for the elasticity (since $K_{IC}$ is a constant with regards to $x$):
 \begin{eqnarray}
-    \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)
+    \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)\,.
 \end{eqnarray}
+Note, that since $K_{IC} > K_I$, then also $\theta$ in this case is larger (closer to $1$) than the equivalent value of the inhibition term in the non-competitive case, and thus $\epsilon_x^v$ would be higher (closer to zero). Therefore, assuming non-competitive inhibition by default would be an overestimate of the absolute elasticity $|\epsilon_x^v|$.
+
+Unlike for the case of pure non-competitive inhibition, where $\theta$ is a multiplicative term in the rate law, a competitive inhibition also affects the elasticity of the substrate:
+\begin{eqnarray}
+\epsilon_{s}^v &=& 1 - \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right)+ s} < 1 - \frac{s}{K_M + s}
+\end{eqnarray}
+Therefore, as is the case for reversible reactions (Equation \ref{eq:reversible_substrate_eps}), the substrate elasticity would be higher than the simple irreversible elasticity -- i.e. it would be underestimated.
+
+\subsubsection{Product Inhibition}
+It is often the case, that the product of a reaction also acts as a competitive inhibitor, i.e. following this rate law:
+\begin{eqnarray}
+v &=& V^+ ~ \frac{s}{K_S \left(1 + \frac{p^h}{K_P^h}\right) + s}\,.
+\end{eqnarray}
+The product and substrate elasticities would thus follow exactly the case analyzed in the previous section, except for the product $p$ instead of an inhibitor $x$.
 
 \subsubsection{Uncompetitive Inhibition}
 Uncompetitive inhibition is another case where substrate and inhibitor saturations are entangled:
