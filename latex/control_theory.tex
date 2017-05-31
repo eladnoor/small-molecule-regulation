@@ -43,26 +43,33 @@ The code for this analysis and its results are freely available on our GitHub re
 
 \section{Reaction Reversibility and Small Molecule Regulation}
 
-Focusing on Central Carbon metabolism, we ask whether there is enrichment in the percent of reactions regulated by small-molecules among irreversible reactions. First, we calculate the contingency table for the 40 reaction for which we have thermodynamic information (namely, the $\Delta G'^\circ$):
+We used reactions’ $\Delta_r G'^\circ$ together with reaction stoichiometry and standard physiological metabolite concentrations of substrates or products and calculated a reversibility index (denoted $\Gamma$) quantifying the extent to which each reaction is thermodynamically reversible \cite{Noor2012-mp}:
+
+\begin{eqnarray}
+	\ln(\Gamma) &\equiv& \frac{2}{N_s+N_p} \cdot \left( \frac{\Delta_r G'^\circ}{RT} + (N_p - N_s)\cdot \ln (0.001) \right)
+\end{eqnarray}
+where $N_s$ and $N_p$ are the number of substrates and products respectively (excluding water).
+The threshold value we considered for reversibility is $\Gamma$ = 1000, as it represents a relative concentration range of 1000 for all substrates and products. Any reaction with a value of $\Gamma$ higher than 1000 was assumed to be irreversible whereas when $\Gamma < 1000$, it was considered to be reversible. We mapped this information to central carbon metabolism reactions, and ended up with 32 reversible and 8 irreversible reactions. From these, using our SMRN, we found that 19 reversible reactions are known to be regulated by small molecule(s), whereas 13 are not. Regarding irreversible reactions, we found that 7 are known to be regulated, whereas 1 is not known to be regulated by any small molecule. 
 
 \begin{center}
 	\begin{tabular}{|l|c|c|}
 		\hline
-		& Reversible ($\Gamma \leq 6.9$) & Irreversible ($\Gamma > 6.9$) \\ \hline
+		& Reversible & Irreversible \\
+		& $\Gamma \leq 1000$ & $\Gamma > 1000$ \\ \hline
 		Regulated by small molecule & 19 & 7  \\ \hline
 		Not regulated & 13 & 1 \\ \hline
 	\end{tabular}
 \end{center}
-Using the Fischer exact test to see if there is a bias towards irreversible reactions, we find no significance (p-value: ).
-
-We chose the value of $\Gamma = 6.9$ as the threshold for reversibility, to represent a relative concentration range of 1000 for all substrates and products. However, the result might depend on this arbitrary value, therefore we performed an unbiased enrichment analysis, which entails scanning all possible thresholds and taking the maximum. We find only weak significance (p-value = 0.1).
-
+We consequently performed Gene Set Enrichment Analysis using the Fischer exact test and verified that there is no significant over-representation of regulation in reactions with larger reversibility indexes (p-value: 0.1). Expanding our analysis to the full SMRN network, we again find no statistical significance (p-value = 0.25):
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../manuscript/figS10.pdf}
+\end{center}
 
 \section{Metabolic Control Analysis}
 \subsection{What is elasticity?}
 Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to understanding the dynamics and control of metabolic networks. In particular, it defines local properties called elasticities that can be used to quantify how the control of metabolic fluxes depends on other quantities in the system (\textit{i.e.} the topology of the metabolic network, and the levels of metabolites). \emph{Scaled elasticity} is defined as the infinitesimal response of a single flux ($v$) to one of the parameters ($a$), using a partial derivative of the log-scaled functions:
 \begin{eqnarray}
-    \epsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
+    \varepsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
 \end{eqnarray}
 
 The elasticity has several properties which make it desirable for modeling metabolic systems. In particular, for a variety of kinetic rate laws (\textit{e.g.} Michaelis-Menten kinetics), the elasticity (for Michaelis-Menten kinetics, the substrate elasticity is bounded between 0 and 1). 
@@ -84,19 +91,19 @@ where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the 
 
 The scaled elasticity for $s$ is given by:
 \begin{eqnarray}
-    \epsilon_s^v &=& \frac{\partial v}{\partial s} ~ \frac{s}{v} = V^+ ~ \frac{K_M + s - s}{(K_M + s)^2} ~ \frac{s}{v} \nonumber \\
+    \varepsilon_s^v &=& \frac{\partial v}{\partial s} ~ \frac{s}{v} = V^+ ~ \frac{K_M + s - s}{(K_M + s)^2} ~ \frac{s}{v} \nonumber \\
     &=& \frac{K_M}{(K_M + s)^2} ~ (K_M + s) = \frac{K_M}{K_M + s} = 1 - \frac{s}{K_M + s}\label{eq:eps_s_v_irr}
 \end{eqnarray}
 
 \begin{center}
 	\begin{tikzpicture}
-	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\epsilon_s^v$]
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\varepsilon_s^v$]
 	\addplot+[mark=none,smooth] (\x,{(1/(1+\x))});
 	\end{semilogxaxis}
 	\end{tikzpicture}
 \end{center}
 
-Note that the scaled elasticity is bounded between 0 and 1. More specifically, $\epsilon_s^v$ is maximized (\textit{i.e.} the substrate has the highest control potential) at low substrate concentrations, and minimized at high substrate concentrations.
+Note that the scaled elasticity is bounded between 0 and 1. More specifically, $\varepsilon_s^v$ is maximized (\textit{i.e.} the substrate has the highest control potential) at low substrate concentrations, and minimized at high substrate concentrations.
 
 As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions, where the saturation term is separated from the thermodynamic term:
 \begin{eqnarray}
@@ -105,16 +112,16 @@ As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be gen
     \gamma &\equiv& 1 - \frac{p/s}{K_{eq}'}
 \end{eqnarray}
 where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate is:
-\begin{eqnarray}\label{eq:reversible_substrate_eps}
-    \epsilon_s^v &=& \gamma^{-1} - \kappa
+\begin{eqnarray}
+    \varepsilon_s^v &=& \gamma^{-1} - \kappa
 \end{eqnarray}
 
 Finally, in order to compare this result to the irreversible case, we show that
 \begin{eqnarray}\label{eq:reversible_substrate_eps}
-\epsilon_{s}^v &=& \gamma^{-1} - \kappa = \left(1 - \frac{p/s}{K_{eq}'}\right)^{-1} - \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
+\varepsilon_{s}^v &=& \gamma^{-1} - \kappa = \left(1 - \frac{p/s}{K_{eq}'}\right)^{-1} - \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
 &>& 1 - \frac{s/K_S}{1 + s/K_S + p/K_P} > 1 - \frac{s/K_S}{1 + s/K_S} = 1 - \frac{s}{K_s + s}\,,
 \end{eqnarray}
-which is exactly the elasticity of the substrate in the irreversible case (Equation \ref{eq:eps_s_v_irr}). So, assuming a reaction is irreversible provides an underestimation of the elasticity. Nevertheless, in cases where $p \rightarrow 0$, we can see that $\epsilon_{s}^v \rightarrow 1 - \frac{s}{K_s + s}$.
+which is exactly the elasticity of the substrate in the irreversible case (Equation \ref{eq:eps_s_v_irr}). So, assuming a reaction is irreversible provides an underestimation of the elasticity. Nevertheless, in cases where $p \rightarrow 0$, we can see that $\varepsilon_{s}^v \rightarrow 1 - \frac{s}{K_s + s}$.
 
 \subsection{Regulatory Effectors}
 Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, \emph{there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.}
@@ -130,7 +137,7 @@ First, consider a cooperative \cite{Barcroft1910-rx, Monod1965-dq} activator wit
 \end{eqnarray}
 The elasticity with respect to the activator concentration $x$ will thus be:
 \begin{eqnarray}
-    \epsilon_a^v &=& \frac{\partial v}{\partial a} ~ \frac{a}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{h~a^{h-1} (K_A^h + a^h) - h~a^{h-1} a^h}{(K_A^h + a^h)^2}~\frac{a}{v} \nonumber \\
+    \varepsilon_a^v &=& \frac{\partial v}{\partial a} ~ \frac{a}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{h~a^{h-1} (K_A^h + a^h) - h~a^{h-1} a^h}{(K_A^h + a^h)^2}~\frac{a}{v} \nonumber \\
     &=& h~\frac{K_A^h}{K_A^h + a^h} = h (1 - \theta) \label{eq:eps_act}
 \end{eqnarray}
 
@@ -158,7 +165,7 @@ The following plot shows the response of $\theta$ to the concentration $x$ in lo
 
 In this case, the elasticity with regards to the inhibitor concentration would be:
 \begin{eqnarray}
-    \epsilon_x^v &=& \frac{\partial v}{\partial x}\cdot\frac{x}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{- h ~ x^{h-1}}{(K_I^h + x^h)^2} ~ \frac{x}{v} \nonumber \\
+    \varepsilon_x^v &=& \frac{\partial v}{\partial x}\cdot\frac{x}{v} = V^+ ~ \kappa ~ \gamma ~ \frac{- h ~ x^{h-1}}{(K_I^h + x^h)^2} ~ \frac{x}{v} \nonumber \\
     &=& -\frac{h ~ x^h ~ (K_I^h + x^h)}{(K_I^h + x^h)^2} = -h ~ \frac{x^h}{K_I^h + x^h} = -h (1 - \theta)~. \label{eq:eps_inh}
 \end{eqnarray}
 
@@ -166,7 +173,7 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 
 \begin{center}
 \begin{tikzpicture}
-\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$|\epsilon_x^v|$]
+\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e2, xlabel=$i/K_I$, ylabel=$|\varepsilon_x^v|$]
 		\addplot+[mark=none,smooth] (\x,{1 * (\x/(1+\x))});		\addplot+[mark=none,smooth] (\x,{2 * (\x^2/(1+\x^2))});		\addplot+[mark=none,smooth] (\x,{3 * (\x^3/(1+\x^3))});
 	\node[rotate=1] at (10, 0.6) {h = 1};
 	\node[rotate=1] at (10, 1.7) {h = 2};
@@ -175,7 +182,7 @@ Plotting the elasticity as a function of $x$, we see that it is a monotonically 
 \end{tikzpicture}
 \end{center}
 
-This means that substrates have the most control ($|\epsilon_s^v| \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($|\epsilon_x^v| \rightarrow h$) when they are saturated ($x \gg K_I$).
+This means that substrates have the most control ($|\varepsilon_s^v| \rightarrow 1$) when they are much below saturation ($s \ll K_M$) while inhibitors have the most control ($|\varepsilon_x^v| \rightarrow h$) when they are saturated ($x \gg K_I$).
 
 
 \subsubsection{Competitive Inhibition}
@@ -193,13 +200,13 @@ In this case, we can define an \emph{effective} inhibition constants $K_{IC}$, t
 \end{eqnarray}
 so we can see here that in this case $\theta = \frac{K_{IC}^h}{K_{IC}^h~+~x^h}$, exactly like in the case of non-competitive inhibition. Of course, the difference here is that $K_{IC}$ is not a binding constant but rather a function of $s$, $K_M$, and $K_I$. Nevertheless, we can use the same formula for the elasticity (since $K_{IC}$ is a constant with regards to $x$):
 \begin{eqnarray}
-    \epsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)\,.
+    \varepsilon_x^v &=& \frac{\partial v}{\partial x}~\frac{x}{v} = -h(1 - \theta)\,.
 \end{eqnarray}
-Note, that since $K_{IC} > K_I$, then also $\theta$ in this case is larger (closer to $1$) than the equivalent value of the inhibition term in the non-competitive case, and thus $\epsilon_x^v$ would be higher (closer to zero). Therefore, assuming non-competitive inhibition by default would be an overestimate of the absolute elasticity $|\epsilon_x^v|$.
+Note, that since $K_{IC} > K_I$, then also $\theta$ in this case is larger (closer to $1$) than the equivalent value of the inhibition term in the non-competitive case, and thus $\varepsilon_x^v$ would be higher (closer to zero). Therefore, assuming non-competitive inhibition by default would be an overestimate of the absolute elasticity $|\varepsilon_x^v|$.
 
 Unlike for the case of pure non-competitive inhibition, where $\theta$ is a multiplicative term in the rate law, a competitive inhibition also affects the elasticity of the substrate:
 \begin{eqnarray}
-\epsilon_{s}^v &=& 1 - \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right)+ s} < 1 - \frac{s}{K_M + s}
+\varepsilon_{s}^v &=& 1 - \frac{s}{K_M \left(1 + \frac{x^h}{K_I^h}\right)+ s} < 1 - \frac{s}{K_M + s}
 \end{eqnarray}
 Therefore, as is the case for reversible reactions (Equation \ref{eq:reversible_substrate_eps}), the substrate elasticity would be higher than the simple irreversible elasticity -- i.e. it would be underestimated.
 
@@ -225,7 +232,7 @@ However, the same procedure as in competitive inhibition can also be used here, 
 \end{eqnarray}
 which shows that just like in the case of competitive inhibition, $\theta = \frac{K_{IU}^h}{K_{IU}^h~+~x^h}$, and the formula for elasticity remains
 \begin{eqnarray}
-    \epsilon_x^v = -h(1 - \theta)\,. \label{eq:eps_uncomp_inh}
+    \varepsilon_x^v = -h(1 - \theta)\,. \label{eq:eps_uncomp_inh}
 \end{eqnarray}
 
 \subsubsection{Generalized Inhibition Model}
@@ -238,7 +245,7 @@ Then, depending on the value of $a$, the above formula converges to the differen
 
 The elasticity we get for this general form is:
 \begin{eqnarray}
-\epsilon_x^v &=& \frac{b \frac{x}{aK_I}}{1 + b \frac{x}{aK_I}} ~-~ \frac{\frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}
+\varepsilon_x^v &=& \frac{b \frac{x}{aK_I}}{1 + b \frac{x}{aK_I}} ~-~ \frac{\frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}{\left(1 + \frac{s}{K_S} + \frac{p}{K_P}\right) + \frac{x}{K_I} \left(1 + \frac{s}{aK_S} + \frac{p}{aK_P}\right)}
 \end{eqnarray}
 as with previous cases, we can define an effective $K_E$:
 \begin{eqnarray}
@@ -254,7 +261,7 @@ v &=& V^+ \cdot \kappa \cdot \gamma \cdot \theta
 \end{eqnarray}
 The elasticity thus becomes:
 \begin{eqnarray}
-\epsilon_x^v &=& 
+\varepsilon_x^v &=& 
 	\frac{\frac{x}{K_{E1}}}{1 + \frac{x}{K_{E1}}} ~-~ \frac{\frac{x}{K_{E2}}}{1 + \frac{x}{K_{E2}}} = 
 	\left( 1 - \frac{1}{1 + \frac{x}{K_{E1}}} \right) ~-~ \left(1 - \frac{1}{1 + \frac{x}{K_{E2}}} \right) \nonumber\\
 	&=& -\left(\frac{1}{1 + \frac{x}{K_{E1}}} -  \frac{1}{1 + \frac{x}{K_{E2}}} \right) = 
@@ -263,12 +270,12 @@ The elasticity thus becomes:
 \end{eqnarray}
 and after replacing $K_{E1}$ back with its definition:
 \begin{eqnarray}
-	\epsilon_x^v = -\left(1 - \theta\right) \cdot  \left( 1 + b \frac{x}{aK_I} \right)^{-1}
+	\varepsilon_x^v = -\left(1 - \theta\right) \cdot  \left( 1 + b \frac{x}{aK_I} \right)^{-1}
 \end{eqnarray}
 
 As expected, in all cases of complete inhibition ($b = 0$), we reach exactly the same conclusion as in the extreme cases, namely:
 \begin{eqnarray}
-\epsilon_x^v = -(1 - \theta) \label{eq:eps_general_inh}
+\varepsilon_x^v = -(1 - \theta) \label{eq:eps_general_inh}
 \end{eqnarray}
 
 \subsubsection{The Monod-Changeux-Jacob model}
@@ -289,7 +296,7 @@ g(x) \equiv \left(1 + \frac{s}{K_M}\right)^h \left(1 + \frac{a}{K_A}\right)^h \l
 
 \noindent so that $\theta = \frac{g(x)}{L + g(x)}$, which we write in shorthand as $\theta= \frac{g}{L+g}$. Then, 
 \begin{eqnarray}
-\epsilon_x^v = V^+ \cdot \kappa \cdot \frac{\partial\theta}{\partial x} \cdot \frac{x}{v} 
+\varepsilon_x^v = V^+ \cdot \kappa \cdot \frac{\partial\theta}{\partial x} \cdot \frac{x}{v} 
 = V^+ \cdot \kappa \cdot \frac{L}{(L+g)^2} \cdot \frac{\partial g}{\partial x} \cdot \frac{x}{v}
 \end{eqnarray}
 
@@ -300,13 +307,13 @@ Now, we can calculate that
 
 Substituting this form of $\frac{\partial g}{\partial x}$ into the prior equation, we arrive at 
 \begin{eqnarray}
-\epsilon_x^v = V^+ \cdot \kappa \cdot \frac{g}{L + g} \cdot \frac{-hx}{K_I + x} \cdot \frac{L}{L + g} \cdot \frac{1}{v}
+\varepsilon_x^v = V^+ \cdot \kappa \cdot \frac{g}{L + g} \cdot \frac{-hx}{K_I + x} \cdot \frac{L}{L + g} \cdot \frac{1}{v}
 \end{eqnarray}
 
 \noindent Note that the first three terms are precisely equal to $v$, so they cancel with the last term. Also note that $\frac{L}{L + g} = 1 - \frac{g}{L + g} = 1 - \theta$. Thus, we arrive at
 
 \begin{eqnarray}
-\epsilon_x^v = \frac{\partial \ln{v}}{\partial \ln{x}} = \frac{\partial \ln{\theta}}{\partial \ln{x}} = -h~\frac{x}{K_I + x} ~\left(1 - \theta \right)\,.
+\varepsilon_x^v = \frac{\partial \ln{v}}{\partial \ln{x}} = \frac{\partial \ln{\theta}}{\partial \ln{x}} = -h~\frac{x}{K_I + x} ~\left(1 - \theta \right)\,.
 \end{eqnarray}
 
 In \cite{Heinrich1974-yj}, the elasticity of the inhibitor was calculated for this rate law (denoted as \emph{effector strength} or $X_I$ in the original text) and matches the form above.
@@ -321,15 +328,15 @@ v &=& V^+ \cdot \kappa \cdot \theta  \nonumber\\
 
 Here, the elasticity with respect to the inhibitor is a separate multiplicative factor and therefore is exactly the same as in section \ref{sec:non_conpetitive_inhitibion}. Calculating the elasticity of substrate $s_1$ (from symmetry, the elasticity for $s_2$ would be similar), we get
 \begin{eqnarray}
-\epsilon^{v}_{s_1} = \frac{\partial v}{\partial s_1} \cdot \frac{s_1}{v}
+\varepsilon^{v}_{s_1} = \frac{\partial v}{\partial s_1} \cdot \frac{s_1}{v}
  = \frac{\partial \kappa}{\partial s_1} \cdot \frac{s_1}{\kappa} 
  = \frac{s_2 / K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1}\,.
 \end{eqnarray}
-Interestingly, one can see that $\epsilon^{v}_{s_1} + \epsilon^{v}_{s_2} + \kappa = 1$, showing the same inverse relationship between elasticity and activity as in previous cases.
+Interestingly, one can see that $\varepsilon^{v}_{s_1} + \varepsilon^{v}_{s_2} + \kappa = 1$, showing the same inverse relationship between elasticity and activity as in previous cases.
 
 Finally, in order to compare this result to the mono-substrate case, we show that
 \begin{eqnarray}
-\epsilon^{v}_{s_1} &=& \frac{s_2/K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1} = 
+\varepsilon^{v}_{s_1} &=& \frac{s_2/K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1} = 
 \frac{s_2/K_2}{s_2 / K_2 (1 + s_1/K_1)  + s_1/K_1} \nonumber\\
 &<& \frac{s_2/K_2}{s_2 / K_2 (1 + s_1/K_1)} = \frac{1}{1 + s_1/K_1} = 1 - \frac{s_1}{s_1 + K_1}\,,
 \end{eqnarray}
@@ -338,12 +345,12 @@ which is exactly the expression for the substrate elasticity in the case of mono
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
 By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh}, \ref{eq:eps_comp_inh}, \ref{eq:eps_uncomp_inh}, and \ref{eq:eps_general_inh}, excluding the MWC model) into one formula:
 \begin{eqnarray}
-|\epsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
+|\varepsilon_x^v| = h (1 - \theta)~. \label{eq:abs_elast}
 \end{eqnarray}
 This relationship can be visualized in the following plot (for different values of $h$):
 \begin{center}
 \begin{tikzpicture}[scale=1]
-	\begin{axis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=0:1, xlabel=$\theta$ (relative activity), ylabel=$|\epsilon_x^v|$ (absolute elasticity)]
+	\begin{axis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=0:1, xlabel=$\theta$ (relative activity), ylabel=$|\varepsilon_x^v|$ (absolute elasticity)]
 		\addplot+[mark=none,smooth] (\x,{1 * (1 - \x)});
 		\addplot+[mark=none,smooth] (\x,{2 * (1 - \x)});
 		\addplot+[mark=none,smooth] (\x,{3 * (1 - \x)});
@@ -402,14 +409,19 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 
 \begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS7.pdf}
-	\caption{A map of the reactions branching from central carbon metabolism for amino acid biosynthesis. Amino acids in red color feedback inhibit the first enzyme of their biosynthesis pathway, based on the SMRN. For the remaining four amino acids (Glycine, Alanine, Aspartate and Glutamate) there is no evidence of feedback inhibition.}
+	\caption{A map of the reactions branching from central carbon metabolism for amino acid biosynthesis. Amino acids in red color feedback inhibit the first enzyme of their biosynthesis pathway, based on the SMRN. For the remaining four amino acids (Glycine, Alanine, Aspartate and Glutamate) there is no evidence of feedback inhibition.}\label{fig:SI_biosynthesis}
 \end{figure}
 
 \begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS8.pdf}
-	\caption{A map of the Central Metabolism reactions in \emph{E. coli} that are regulated by small molecule(s) in the SMRN. Red reactions only show evidence of inhibitory interactions, green reactions only show evidence of activating interactions, and purple reactions show evidence of both activating and inhibiting interactions.
+	\caption{A map of the Central Metabolism reactions in \emph{E. coli} that are regulated by small molecule(s) in the SMRN. Red reactions only show evidence of inhibitory interactions, green reactions only show evidence of activating interactions, and purple reactions show evidence of both activating and inhibiting interactions. 
 	}
 \end{figure}
 
+\begin{figure}[ht!]
+	\includegraphics[width=\textwidth]{../manuscript/figS9.pdf}
+	\caption{A comparison between the metabolic cost of each amino acid (as defined by \cite{Akashi2002-ew}) and the absolute elasticity of the corresponding inhibited biosynthetic reaction (if it exists) for three growth conditions. We only have information for 4 of the 16 regulated biosynthetic pathways (see Figure \ref{fig:SI_biosynthesis} in the supplementary text). All four non-regulated amino-acids were assumed to have 0 elasticity (marked in blue).
+	}
+\end{figure}
 
 \end{document}

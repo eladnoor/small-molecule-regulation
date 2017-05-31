@@ -68,4 +68,4 @@ reg_thermo_df.sort_values(reg_thermo_df.columns[2], inplace=True)
 feature = (reg_thermo_df['bigg.metabolite'] == 0)
 
 enrichment, I, fig = GSEA(feature, True)
-settings.savefig(fig, 'figS7')
+settings.savefig(fig, 'figS10')

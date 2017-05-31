@@ -1,0 +1,363 @@
+,EC_number,subsystem,$| log_{10}(\Gamma) |$,bigg.metabolite,num_regulators,Regulation
+0,1.1.1.-,Methylglyoxal Metabolism,3.66,0.0,0 regulators,not regulated
+1,1.1.1.1,Unassigned,3.36,0.0,0 regulators,not regulated
+2,1.1.1.130,Alternate Carbon Metabolism,3.66,2.0,1-2 regulators,regulated
+3,1.1.1.133,Cell Envelope Biosynthesis,0.81,0.0,0 regulators,not regulated
+4,1.1.1.140,Alternate Carbon Metabolism,2.64,1.0,1-2 regulators,regulated
+5,1.1.1.17,Alternate Carbon Metabolism,1.75,0.0,0 regulators,not regulated
+6,1.1.1.193,Cofactor and Prosthetic Group Biosynthesis,4.87,0.0,0 regulators,not regulated
+7,1.1.1.205,Purine and Pyrimidine Biosynthesis,3.95,11.0,3+ regulators,regulated
+8,1.1.1.215,Alternate Carbon Metabolism,4.72,0.0,0 regulators,not regulated
+9,1.1.1.22,Cell Envelope Biosynthesis,2.88,2.0,1-2 regulators,regulated
+10,1.1.1.267,Cofactor and Prosthetic Group Biosynthesis,4.02,2.0,1-2 regulators,regulated
+11,1.1.1.271,Cell Envelope Biosynthesis,0.81,2.0,1-2 regulators,regulated
+12,1.1.1.282,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",9.175,0.0,0 regulators,not regulated
+13,1.1.1.290,Cofactor and Prosthetic Group Biosynthesis,3.66,0.0,0 regulators,not regulated
+14,1.1.1.298,Nucleotide Salvage Pathway,4.34,0.0,0 regulators,not regulated
+15,1.1.1.336,Cell Envelope Biosynthesis,3.44,2.0,1-2 regulators,regulated
+16,1.1.1.35,Alternate Carbon Metabolism,3.66,0.0,0 regulators,not regulated
+17,1.1.1.35,Membrane Lipid Metabolism,3.63,0.0,0 regulators,not regulated
+18,1.1.1.350,Alternate Carbon Metabolism,2.53,0.0,0 regulators,not regulated
+19,1.1.1.381,Threonine and Lysine Metabolism,9.22,0.0,0 regulators,not regulated
+20,1.1.1.42,Citric Acid Cycle,1.8,2.0,1-2 regulators,regulated
+21,1.1.1.49,Pentose Phosphate Pathway,1.13,9.0,3+ regulators,regulated
+22,1.1.1.57,Alternate Carbon Metabolism,2.33,8.0,3+ regulators,regulated
+23,1.1.1.58,Alternate Carbon Metabolism,2.42,3.0,3+ regulators,regulated
+24,1.1.1.6,Alternate Carbon Metabolism,4.45,5.0,3+ regulators,regulated
+25,1.1.1.61,Arginine and Proline Metabolism,0.47,0.0,0 regulators,not regulated
+26,1.1.1.69,Alternate Carbon Metabolism,4.65,0.0,0 regulators,not regulated
+27,1.1.1.71,Pyruvate Metabolism,3.87,0.0,0 regulators,not regulated
+28,1.1.1.72,Alternate Carbon Metabolism,7.48,0.0,0 regulators,not regulated
+29,1.1.1.79,Glyoxylate Metabolism,8.51,0.0,0 regulators,not regulated
+30,1.1.1.85,"Valine, Leucine, and Isoleucine Metabolism",6.41,0.0,0 regulators,not regulated
+31,1.1.1.86,"Valine, Leucine, and Isoleucine Metabolism",3.7,3.0,3+ regulators,regulated
+32,1.1.1.94,Alternate Carbon Metabolism,4.84,14.0,3+ regulators,regulated
+33,1.1.1.95,Glycine and Serine Metabolism,6.46,10.0,3+ regulators,regulated
+34,1.1.99.33,Pyruvate Metabolism,1.47,5.0,3+ regulators,regulated
+35,1.11.1.16,Unassigned,80.29,0.0,0 regulators,not regulated
+36,1.11.1.6,Unassigned,47.34,3.0,3+ regulators,regulated
+37,1.13.11.16,Alternate Carbon Metabolism,65.24,1.0,1-2 regulators,regulated
+38,1.14.12.17,Nitrogen Metabolism,46.02,3.0,3+ regulators,regulated
+39,1.14.12.19,Alternate Carbon Metabolism,60.375,0.0,0 regulators,not regulated
+40,1.14.13.127,Alternate Carbon Metabolism,68.09,0.0,0 regulators,not regulated
+41,1.16.3.1,Inorganic Ion Transport and Metabolism,2.34,1.0,1-2 regulators,regulated
+42,1.17.1.2,Cofactor and Prosthetic Group Biosynthesis,12.395,7.0,3+ regulators,regulated
+43,1.17.1.4,Nucleotide Salvage Pathway,3.945,0.0,0 regulators,not regulated
+44,1.17.4.1,Nucleotide Salvage Pathway,8.075,12.0,3+ regulators,regulated
+45,1.2.1.-,Alternate Carbon Metabolism,8.33,0.0,0 regulators,not regulated
+46,1.2.1.10,Pyruvate Metabolism,0.38,4.0,3+ regulators,regulated
+47,1.2.1.11,Threonine and Lysine Metabolism,0.21,5.0,3+ regulators,regulated
+48,1.2.1.21,Folate Metabolism,12.79,11.0,3+ regulators,regulated
+49,1.2.1.24,Arginine and Proline Metabolism,7.65,0.0,0 regulators,not regulated
+50,1.2.1.3,Arginine and Proline Metabolism,10.46,11.0,3+ regulators,regulated
+51,1.2.1.38,Arginine and Proline Metabolism,3.31,5.0,3+ regulators,regulated
+52,1.2.1.41,Arginine and Proline Metabolism,3.81,4.0,3+ regulators,regulated
+53,1.2.1.5,Alternate Carbon Metabolism,10.37,0.0,0 regulators,not regulated
+54,1.2.1.59,Glycolysis/Gluconeogenesis,3.29,0.0,0 regulators,not regulated
+55,1.2.1.71,Arginine and Proline Metabolism,9.05,0.0,0 regulators,not regulated
+56,1.2.1.72,Cofactor and Prosthetic Group Biosynthesis,9.47,1.0,1-2 regulators,regulated
+57,1.2.1.79,Arginine and Proline Metabolism,7.61,0.0,0 regulators,not regulated
+58,1.2.1.8,Unassigned,8.05,12.0,3+ regulators,regulated
+59,1.2.4.1,Glycolysis/Gluconeogenesis,4.8,7.0,3+ regulators,regulated
+60,1.3.1.1,Nucleotide Salvage Pathway,0.16,0.0,0 regulators,not regulated
+61,1.3.1.26,Threonine and Lysine Metabolism,3.69,0.0,0 regulators,not regulated
+62,1.3.1.28,Cofactor and Prosthetic Group Biosynthesis,5.87,0.0,0 regulators,not regulated
+63,1.3.1.87,Alternate Carbon Metabolism,5.88,0.0,0 regulators,not regulated
+64,1.3.1.98,Cell Envelope Biosynthesis,11.79,8.0,3+ regulators,regulated
+65,1.3.3.3,Cofactor and Prosthetic Group Biosynthesis,59.68,1.0,1-2 regulators,regulated
+66,1.3.99.3,Membrane Lipid Metabolism,9.92,0.0,0 regulators,not regulated
+67,1.4.3.5,Cofactor and Prosthetic Group Biosynthesis,22.65,2.0,1-2 regulators,regulated
+68,1.5.1.20,Folate Metabolism,7.13,2.0,1-2 regulators,regulated
+69,1.5.1.3,Cofactor and Prosthetic Group Biosynthesis,4.76,9.0,3+ regulators,regulated
+70,1.5.1.39,Cofactor and Prosthetic Group Biosynthesis,3.91,3.0,3+ regulators,regulated
+71,1.5.1.41,Cofactor and Prosthetic Group Biosynthesis,3.24,0.0,0 regulators,not regulated
+72,1.5.1.42,Cofactor and Prosthetic Group Biosynthesis,3.87,0.0,0 regulators,not regulated
+73,1.5.1.45,Cofactor and Prosthetic Group Biosynthesis,2.36,0.0,0 regulators,not regulated
+74,1.5.1.5,Folate Metabolism,1.5,4.0,3+ regulators,regulated
+75,1.5.3.1,Glycine and Serine Metabolism,15.19,0.0,0 regulators,not regulated
+76,1.6.1.1,Oxidative Phosphorylation,0.04,11.0,3+ regulators,regulated
+77,1.6.1.3,Oxidative Phosphorylation,0.04,0.0,0 regulators,not regulated
+78,1.7.1.14,Nitrogen Metabolism,43.74,0.0,0 regulators,not regulated
+79,1.7.3.3,Unassigned,17.87,0.0,0 regulators,not regulated
+80,1.8.1.2,Cysteine Metabolism,11.87,16.0,3+ regulators,regulated
+81,1.8.1.9,Oxidative Phosphorylation,1.75,6.0,3+ regulators,regulated
+82,1.8.4.8,Cysteine Metabolism,8.92,2.0,1-2 regulators,regulated
+83,2.1.1.45,Nucleotide Salvage Pathway,8.97,5.0,3+ regulators,regulated
+84,2.1.2.-,Purine and Pyrimidine Biosynthesis,0.1,0.0,0 regulators,not regulated
+85,2.1.2.10,Folate Metabolism,27.73,0.0,0 regulators,not regulated
+86,2.1.2.11,Cofactor and Prosthetic Group Biosynthesis,1.13,7.0,3+ regulators,regulated
+87,2.1.2.13,Lipopolysaccharide Biosynthesis / Recycling,0.36,0.0,0 regulators,not regulated
+88,2.1.2.2,Purine and Pyrimidine Biosynthesis,0.53,0.0,0 regulators,not regulated
+89,2.1.2.3,Purine and Pyrimidine Biosynthesis,1.66,0.0,0 regulators,not regulated
+90,2.1.3.5,Unassigned,1.48,0.0,0 regulators,not regulated
+91,2.2.1.2,Pentose Phosphate Pathway,0.14,5.0,3+ regulators,regulated
+92,2.2.1.6,"Valine, Leucine, and Isoleucine Metabolism",3.99,6.0,3+ regulators,regulated
+93,2.2.1.7,Cofactor and Prosthetic Group Biosynthesis,5.43,3.0,3+ regulators,regulated
+94,2.2.1.9,Cofactor and Prosthetic Group Biosynthesis,6.17,1.0,1-2 regulators,regulated
+95,2.3.1.117,Threonine and Lysine Metabolism,4.23,3.0,3+ regulators,regulated
+96,2.3.1.157,Cell Envelope Biosynthesis,5.56,2.0,1-2 regulators,regulated
+97,2.3.1.174,Alternate Carbon Metabolism,5.99,0.0,0 regulators,not regulated
+98,2.3.1.37,Glycine and Serine Metabolism,7.53,0.0,0 regulators,not regulated
+99,2.3.1.37,Threonine and Lysine Metabolism,3.54,0.0,0 regulators,not regulated
+100,2.3.1.54,Alternate Carbon Metabolism,0.42,6.0,3+ regulators,regulated
+101,2.3.1.54,Pyruvate Metabolism,4.27,6.0,3+ regulators,regulated
+102,2.3.1.57,Arginine and Proline Metabolism,4.08,0.0,0 regulators,not regulated
+103,2.3.1.61,Citric Acid Cycle,3.87,0.0,0 regulators,not regulated
+104,2.3.1.79,Alternate Carbon Metabolism,0.55,1.0,1-2 regulators,regulated
+105,2.3.1.8,Alternate Carbon Metabolism,3.54,6.0,3+ regulators,regulated
+106,2.3.1.8,Pyruvate Metabolism,1.9,6.0,3+ regulators,regulated
+107,2.3.1.9,Membrane Lipid Metabolism,6.55,1.0,1-2 regulators,regulated
+108,2.3.3.13,"Valine, Leucine, and Isoleucine Metabolism",5.62,1.0,1-2 regulators,regulated
+109,2.3.3.16,Citric Acid Cycle,7.58,8.0,3+ regulators,regulated
+110,2.3.3.5,Alternate Carbon Metabolism,8.51,0.0,0 regulators,not regulated
+111,2.4.1.1,Alternate Carbon Metabolism,0.57,15.0,3+ regulators,regulated
+112,2.4.1.15,Alternate Carbon Metabolism,3.63,1.0,1-2 regulators,regulated
+113,2.4.2.1,Nucleotide Salvage Pathway,2.11,3.0,3+ regulators,regulated
+114,2.4.2.10,Purine and Pyrimidine Biosynthesis,2.22,7.0,3+ regulators,regulated
+115,2.4.2.15,Nucleotide Salvage Pathway,1.99,0.0,0 regulators,not regulated
+116,2.4.2.18,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",11.11,1.0,1-2 regulators,regulated
+117,2.4.2.19,Cofactor and Prosthetic Group Biosynthesis,5.68,3.0,3+ regulators,regulated
+118,2.4.2.21,Cofactor and Prosthetic Group Biosynthesis,4.81,0.0,0 regulators,not regulated
+119,2.4.2.3,Nucleotide Salvage Pathway,0.23,4.0,3+ regulators,regulated
+120,2.4.2.4,Nucleotide Salvage Pathway,1.465,4.0,3+ regulators,regulated
+121,2.4.2.8,Nucleotide Salvage Pathway,4.84,7.0,3+ regulators,regulated
+122,2.4.2.9,Nucleotide Salvage Pathway,3.09,4.0,3+ regulators,regulated
+123,2.5.1.1,Cofactor and Prosthetic Group Biosynthesis,14.87,0.0,0 regulators,not regulated
+124,2.5.1.10,Cofactor and Prosthetic Group Biosynthesis,15.22,0.0,0 regulators,not regulated
+125,2.5.1.15,Cofactor and Prosthetic Group Biosynthesis,10.28,1.0,1-2 regulators,regulated
+126,2.5.1.19,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",2.58,4.0,3+ regulators,regulated
+127,2.5.1.3,Cofactor and Prosthetic Group Biosynthesis,1.01,8.0,3+ regulators,regulated
+128,2.5.1.39,Cofactor and Prosthetic Group Biosynthesis,15.83,5.0,3+ regulators,regulated
+129,2.5.1.54,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",13.91,14.0,3+ regulators,regulated
+130,2.5.1.55,Lipopolysaccharide Biosynthesis / Recycling,12.87,6.0,3+ regulators,regulated
+131,2.5.1.7,Cell Envelope Biosynthesis,2.53,8.0,3+ regulators,regulated
+132,2.5.1.72,Cofactor and Prosthetic Group Biosynthesis,45.79,2.0,1-2 regulators,regulated
+133,2.5.1.78,Cofactor and Prosthetic Group Biosynthesis,16.82,0.0,0 regulators,not regulated
+134,2.5.1.90,Cofactor and Prosthetic Group Biosynthesis,25.37,0.0,0 regulators,not regulated
+135,2.6.1.29,Arginine and Proline Metabolism,4.06,1.0,1-2 regulators,regulated
+136,2.7.1,Cofactor and Prosthetic Group Biosynthesis,2.67,2.0,1-2 regulators,regulated
+137,2.7.1.11,Glycolysis/Gluconeogenesis,3.58,9.0,3+ regulators,regulated
+138,2.7.1.11,Pentose Phosphate Pathway,2.2,9.0,3+ regulators,regulated
+139,2.7.1.12,Alternate Carbon Metabolism,2.4,0.0,0 regulators,not regulated
+140,2.7.1.121,Alternate Carbon Metabolism,8.19,0.0,0 regulators,not regulated
+141,2.7.1.130,Lipopolysaccharide Biosynthesis / Recycling,2.45,0.0,0 regulators,not regulated
+142,2.7.1.148,Cofactor and Prosthetic Group Biosynthesis,1.61,0.0,0 regulators,not regulated
+143,2.7.1.21,Nucleotide Salvage Pathway,3.165,9.0,3+ regulators,regulated
+144,2.7.1.23,Cofactor and Prosthetic Group Biosynthesis,2.77,3.0,3+ regulators,regulated
+145,2.7.1.24,Cofactor and Prosthetic Group Biosynthesis,0.16,0.0,0 regulators,not regulated
+146,2.7.1.25,Cysteine Metabolism,3.3,11.0,3+ regulators,regulated
+147,2.7.1.26,Cofactor and Prosthetic Group Biosynthesis,0.56,0.0,0 regulators,not regulated
+148,2.7.1.30,Alternate Carbon Metabolism,3.33,5.0,3+ regulators,regulated
+149,2.7.1.35,Cofactor and Prosthetic Group Biosynthesis,2.68,3.0,3+ regulators,regulated
+150,2.7.1.4,Alternate Carbon Metabolism,3.16,0.0,0 regulators,not regulated
+151,2.7.1.40,Glycolysis/Gluconeogenesis,5.21,8.0,3+ regulators,regulated
+152,2.7.1.45,Alternate Carbon Metabolism,4.49,1.0,1-2 regulators,regulated
+153,2.7.1.48,Nucleotide Salvage Pathway,2.565,2.0,1-2 regulators,regulated
+154,2.7.1.49,Cofactor and Prosthetic Group Biosynthesis,2.62,2.0,1-2 regulators,regulated
+155,2.7.1.5,Alternate Carbon Metabolism,0.66,0.0,0 regulators,not regulated
+156,2.7.1.50,Cofactor and Prosthetic Group Biosynthesis,3.65,0.0,0 regulators,not regulated
+157,2.7.1.53,Alternate Carbon Metabolism,3.32,1.0,1-2 regulators,regulated
+158,2.7.1.58,Alternate Carbon Metabolism,3.1,0.0,0 regulators,not regulated
+159,2.7.1.59,Murein Recycling,2.51,1.0,1-2 regulators,regulated
+160,2.7.1.6,Alternate Carbon Metabolism,2.42,0.0,0 regulators,not regulated
+161,2.7.1.60,Alternate Carbon Metabolism,2.82,0.0,0 regulators,not regulated
+162,2.7.1.69,"Transport, Inner Membrane",9.29,3.0,3+ regulators,regulated
+163,2.7.1.7,Alternate Carbon Metabolism,3.59,0.0,0 regulators,not regulated
+164,2.7.1.71,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",1.42,0.0,0 regulators,not regulated
+165,2.7.1.73,Nucleotide Salvage Pathway,4.385,12.0,3+ regulators,regulated
+166,2.7.1.74,Nucleotide Salvage Pathway,2.67,0.0,0 regulators,not regulated
+167,2.7.1.89,Cofactor and Prosthetic Group Biosynthesis,1.04,2.0,1-2 regulators,regulated
+168,2.7.2.15,Alternate Carbon Metabolism,6.71,0.0,0 regulators,not regulated
+169,2.7.2.15,Pyruvate Metabolism,2.92,0.0,0 regulators,not regulated
+170,2.7.2.3,Glycolysis/Gluconeogenesis,3.76,0.0,0 regulators,not regulated
+171,2.7.2.8,Arginine and Proline Metabolism,6.24,2.0,1-2 regulators,regulated
+172,2.7.4.16,Cofactor and Prosthetic Group Biosynthesis,0.36,6.0,3+ regulators,regulated
+173,2.7.4.23,Alternate Carbon Metabolism,1.83,0.0,0 regulators,not regulated
+174,2.7.4.25,Nucleotide Salvage Pathway,0.395,0.0,0 regulators,not regulated
+175,2.7.4.3,Nucleotide Salvage Pathway,0.215,3.0,3+ regulators,regulated
+176,2.7.4.4,Nucleotide Salvage Pathway,0.585,0.0,0 regulators,not regulated
+177,2.7.4.6,Nucleotide Salvage Pathway,0.525,4.0,3+ regulators,regulated
+178,2.7.4.7,Cofactor and Prosthetic Group Biosynthesis,0.61,0.0,0 regulators,not regulated
+179,2.7.4.8,Nucleotide Salvage Pathway,0.35,7.0,3+ regulators,regulated
+180,2.7.4.9,Nucleotide Salvage Pathway,0.52,3.0,3+ regulators,regulated
+181,2.7.6.1,Histidine Metabolism,0.36,4.0,3+ regulators,regulated
+182,2.7.6.3,Cofactor and Prosthetic Group Biosynthesis,2.05,0.0,0 regulators,not regulated
+183,2.7.6.5,Cofactor and Prosthetic Group Biosynthesis,3.31,2.0,1-2 regulators,regulated
+184,2.7.7,Nucleotide Salvage Pathway,0.15,1.0,1-2 regulators,regulated
+185,2.7.7.12,Alternate Carbon Metabolism,0.58,5.0,3+ regulators,regulated
+186,2.7.7.18,Cofactor and Prosthetic Group Biosynthesis,0.44,2.0,1-2 regulators,regulated
+187,2.7.7.18,Nucleotide Salvage Pathway,4.19,2.0,1-2 regulators,regulated
+188,2.7.7.2,Cofactor and Prosthetic Group Biosynthesis,2.7,0.0,0 regulators,not regulated
+189,2.7.7.22,Cell Envelope Biosynthesis,1.37,0.0,0 regulators,not regulated
+190,2.7.7.23,Cell Envelope Biosynthesis,0.26,1.0,1-2 regulators,regulated
+191,2.7.7.24,Cell Envelope Biosynthesis,0.04,4.0,3+ regulators,regulated
+192,2.7.7.27,Glycolysis/Gluconeogenesis,1.42,21.0,3+ regulators,regulated
+193,2.7.7.3,Cofactor and Prosthetic Group Biosynthesis,2.77,4.0,3+ regulators,regulated
+194,2.7.7.4,Cysteine Metabolism,0.77,0.0,0 regulators,not regulated
+195,2.7.7.60,Cofactor and Prosthetic Group Biosynthesis,0.79,1.0,1-2 regulators,regulated
+196,2.7.7.70,Lipopolysaccharide Biosynthesis / Recycling,1.95,0.0,0 regulators,not regulated
+197,2.7.7.9,Cell Envelope Biosynthesis,0.46,2.0,1-2 regulators,regulated
+198,2.7.9.2,Glycolysis/Gluconeogenesis,2.76,12.0,3+ regulators,regulated
+199,2.8.3.1,Alternate Carbon Metabolism,3.5,0.0,0 regulators,not regulated
+200,2.8.3.16,Alternate Carbon Metabolism,0.07,3.0,3+ regulators,regulated
+201,2.8.3.8,Alternate Carbon Metabolism,1.0,0.0,0 regulators,not regulated
+202,3.1.1.31,Pentose Phosphate Pathway,9.6,0.0,0 regulators,not regulated
+203,3.1.2.2,Cell Envelope Biosynthesis,11.92,0.0,0 regulators,not regulated
+204,3.1.2.22,Cell Envelope Biosynthesis,11.18,0.0,0 regulators,not regulated
+205,3.1.3.-,Cofactor and Prosthetic Group Biosynthesis,8.265,0.0,0 regulators,not regulated
+206,3.1.3.10,Alternate Carbon Metabolism,10.08,0.0,0 regulators,not regulated
+207,3.1.3.11,Glycolysis/Gluconeogenesis,7.13,10.0,3+ regulators,regulated
+208,3.1.3.12,Alternate Carbon Metabolism,6.45,0.0,0 regulators,not regulated
+209,3.1.3.15,Histidine Metabolism,9.63,3.0,3+ regulators,regulated
+210,3.1.3.18,Alternate Carbon Metabolism,12.32,1.0,1-2 regulators,regulated
+211,3.1.3.19,Alternate Carbon Metabolism,10.81,0.0,0 regulators,not regulated
+212,3.1.3.21,Alternate Carbon Metabolism,7.45,0.0,0 regulators,not regulated
+213,3.1.3.45,Lipopolysaccharide Biosynthesis / Recycling,7.47,6.0,3+ regulators,regulated
+214,3.1.3.5,Nucleotide Salvage Pathway,6.94,12.0,3+ regulators,regulated
+215,3.1.3.6,Nucleotide Salvage Pathway,8.255,12.0,3+ regulators,regulated
+216,3.1.3.7,Cysteine Metabolism,6.96,2.0,1-2 regulators,regulated
+217,3.1.3.73,Cofactor and Prosthetic Group Biosynthesis,8.36,0.0,0 regulators,not regulated
+218,3.1.3.74,Cofactor and Prosthetic Group Biosynthesis,8.32,0.0,0 regulators,not regulated
+219,3.1.3.89,Nucleotide Salvage Pathway,8.39,10.0,3+ regulators,regulated
+220,3.1.3.91,Nucleotide Salvage Pathway,8.66,0.0,0 regulators,not regulated
+221,3.1.3.94,Alternate Carbon Metabolism,8.67,0.0,0 regulators,not regulated
+222,3.1.4.16,Nucleotide Salvage Pathway,14.71,5.0,3+ regulators,regulated
+223,3.1.4.35,Nucleotide Salvage Pathway,16.34,0.0,0 regulators,not regulated
+224,3.1.4.53,Nucleotide Salvage Pathway,17.72,0.0,0 regulators,not regulated
+225,3.1.7.2,Cofactor and Prosthetic Group Biosynthesis,10.41,1.0,1-2 regulators,regulated
+226,3.2.1.26,Alternate Carbon Metabolism,12.93,0.0,0 regulators,not regulated
+227,3.2.2.10,Nucleotide Salvage Pathway,8.49,0.0,0 regulators,not regulated
+228,3.2.2.14,Cofactor and Prosthetic Group Biosynthesis,11.8,0.0,0 regulators,not regulated
+229,3.2.2.14,"Transport, Inner Membrane",11.8,0.0,0 regulators,not regulated
+230,3.2.2.4,Nucleotide Salvage Pathway,9.8,3.0,3+ regulators,regulated
+231,3.2.2.9,Arginine and Proline Metabolism,7.75,4.0,3+ regulators,regulated
+232,3.3.2.1,Cofactor and Prosthetic Group Biosynthesis,16.32,0.0,0 regulators,not regulated
+233,3.5.1.-,Cofactor and Prosthetic Group Biosynthesis,14.98,0.0,0 regulators,not regulated
+234,3.5.1.10,Folate Metabolism,10.98,2.0,1-2 regulators,regulated
+235,3.5.1.108,Lipopolysaccharide Biosynthesis / Recycling,6.41,1.0,1-2 regulators,regulated
+236,3.5.1.16,Arginine and Proline Metabolism,4.54,8.0,3+ regulators,regulated
+237,3.5.1.18,Threonine and Lysine Metabolism,2.45,0.0,0 regulators,not regulated
+238,3.5.1.25,Alternate Carbon Metabolism,6.51,4.0,3+ regulators,regulated
+239,3.5.2.5,Nitrogen Metabolism,23.28,1.0,1-2 regulators,regulated
+240,3.5.3.11,Arginine and Proline Metabolism,20.13,6.0,3+ regulators,regulated
+241,3.5.4.10,Purine and Pyrimidine Biosynthesis,7.4,0.0,0 regulators,not regulated
+242,3.5.4.16,Cofactor and Prosthetic Group Biosynthesis,30.05,12.0,3+ regulators,regulated
+243,3.5.4.25,Cofactor and Prosthetic Group Biosynthesis,20.76,3.0,3+ regulators,regulated
+244,3.5.4.9,Folate Metabolism,2.3,1.0,1-2 regulators,regulated
+245,3.6.1.-,Cofactor and Prosthetic Group Biosynthesis,8.52,0.0,0 regulators,not regulated
+246,3.6.1.1,Anaplerotic Reactions,8.6,4.0,3+ regulators,regulated
+247,3.6.1.13,Nucleotide Salvage Pathway,12.23,0.0,0 regulators,not regulated
+248,3.6.1.15,Cofactor and Prosthetic Group Biosynthesis,11.41,0.0,0 regulators,not regulated
+249,3.6.1.19,Nucleotide Salvage Pathway,16.24,9.0,3+ regulators,regulated
+250,3.6.1.21,Cell Envelope Biosynthesis,13.13,5.0,3+ regulators,regulated
+251,3.6.1.23,Nucleotide Salvage Pathway,15.49,1.0,1-2 regulators,regulated
+252,3.6.1.40,Cofactor and Prosthetic Group Biosynthesis,10.8,3.0,3+ regulators,regulated
+253,3.6.1.41,Nucleotide Salvage Pathway,14.99,3.0,3+ regulators,regulated
+254,3.6.1.45,Alternate Carbon Metabolism,12.98,2.0,1-2 regulators,regulated
+255,3.6.1.5,Nucleotide Salvage Pathway,12.325,0.0,0 regulators,not regulated
+256,3.6.1.65,Nucleotide Salvage Pathway,15.82,0.0,0 regulators,not regulated
+257,3.6.1.66,Nucleotide Salvage Pathway,16.23,0.0,0 regulators,not regulated
+258,3.6.1.67,Cofactor and Prosthetic Group Biosynthesis,16.25,3.0,3+ regulators,regulated
+259,3.6.1.8,Nucleotide Salvage Pathway,13.92,0.0,0 regulators,not regulated
+260,3.6.1.9,Alternate Carbon Metabolism,13.75,0.0,0 regulators,not regulated
+261,3.6.1.9,Cofactor and Prosthetic Group Biosynthesis,15.42,0.0,0 regulators,not regulated
+262,3.6.3.14,Oxidative Phosphorylation,11.89,5.0,3+ regulators,regulated
+263,3.6.4.9,Nucleotide Salvage Pathway,11.89,0.0,0 regulators,not regulated
+264,3.6.4.9,Unassigned,11.89,0.0,0 regulators,not regulated
+265,3.6.5.6,Nucleotide Salvage Pathway,11.22,0.0,0 regulators,not regulated
+266,3.7.1.14,Alternate Carbon Metabolism,19.28,0.0,0 regulators,not regulated
+267,4.1.1.17,Arginine and Proline Metabolism,16.1,7.0,3+ regulators,regulated
+268,4.1.1.23,Purine and Pyrimidine Biosynthesis,11.61,2.0,1-2 regulators,regulated
+269,4.1.1.3,Pyruvate Metabolism,8.59,0.0,0 regulators,not regulated
+270,4.1.1.31,Anaplerotic Reactions,7.68,11.0,3+ regulators,regulated
+271,4.1.1.36,Cofactor and Prosthetic Group Biosynthesis,10.25,2.0,1-2 regulators,regulated
+272,4.1.1.37,Cofactor and Prosthetic Group Biosynthesis,12.53,0.0,0 regulators,not regulated
+273,4.1.1.47,Glyoxylate Metabolism,3.54,4.0,3+ regulators,regulated
+274,4.1.1.48,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",26.97,1.0,1-2 regulators,regulated
+275,4.1.1.49,Anaplerotic Reactions,0.99,11.0,3+ regulators,regulated
+276,4.1.1.50,Arginine and Proline Metabolism,10.26,11.0,3+ regulators,regulated
+277,4.1.1.8,Alternate Carbon Metabolism,8.73,5.0,3+ regulators,regulated
+278,4.1.1.98,Cofactor and Prosthetic Group Biosynthesis,7.0,2.0,1-2 regulators,regulated
+279,4.1.2.13,Glycolysis/Gluconeogenesis,1.2,11.0,3+ regulators,regulated
+280,4.1.2.13,Pentose Phosphate Pathway,0.82,11.0,3+ regulators,regulated
+281,4.1.2.20,Alternate Carbon Metabolism,1.37,9.0,3+ regulators,regulated
+282,4.1.2.25,Cofactor and Prosthetic Group Biosynthesis,1.36,3.0,3+ regulators,regulated
+283,4.1.2.4,Alternate Carbon Metabolism,0.84,1.0,1-2 regulators,regulated
+284,4.1.2.55,Alternate Carbon Metabolism,0.86,2.0,1-2 regulators,regulated
+285,4.1.2.55,Pentose Phosphate Pathway,0.22,2.0,1-2 regulators,regulated
+286,4.1.3.1,Anaplerotic Reactions,2.07,13.0,3+ regulators,regulated
+287,4.1.3.3,Alternate Carbon Metabolism,2.49,10.0,3+ regulators,regulated
+288,4.1.3.30,Alternate Carbon Metabolism,1.87,1.0,1-2 regulators,regulated
+289,4.1.3.38,Cofactor and Prosthetic Group Biosynthesis,21.67,0.0,0 regulators,not regulated
+290,4.1.3.39,Alternate Carbon Metabolism,1.85,4.0,3+ regulators,regulated
+291,4.1.3.40,Cofactor and Prosthetic Group Biosynthesis,28.21,1.0,1-2 regulators,regulated
+292,4.1.3.6,Citric Acid Cycle,3.15,2.0,1-2 regulators,regulated
+293,4.2.1.1,Unassigned,2.79,1.0,1-2 regulators,regulated
+294,4.2.1.10,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",2.14,8.0,3+ regulators,regulated
+295,4.2.1.11,Glycolysis/Gluconeogenesis,1.65,0.0,0 regulators,not regulated
+296,4.2.1.113,Cofactor and Prosthetic Group Biosynthesis,5.13,0.0,0 regulators,not regulated
+297,4.2.1.12,Pentose Phosphate Pathway,17.38,2.0,1-2 regulators,regulated
+298,4.2.1.134,Membrane Lipid Metabolism,0.28,0.0,0 regulators,not regulated
+299,4.2.1.19,Histidine Metabolism,16.82,1.0,1-2 regulators,regulated
+300,4.2.1.20,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",0.56,0.0,0 regulators,not regulated
+301,4.2.1.24,Cofactor and Prosthetic Group Biosynthesis,25.16,2.0,1-2 regulators,regulated
+302,4.2.1.3,Citric Acid Cycle,1.82,0.0,0 regulators,not regulated
+303,4.2.1.33,"Valine, Leucine, and Isoleucine Metabolism",1.29,0.0,0 regulators,not regulated
+304,4.2.1.40,Alternate Carbon Metabolism,16.91,4.0,3+ regulators,regulated
+305,4.2.1.46,Cell Envelope Biosynthesis,18.65,3.0,3+ regulators,regulated
+306,4.2.1.47,Cell Envelope Biosynthesis,20.71,5.0,3+ regulators,regulated
+307,4.2.1.55,Membrane Lipid Metabolism,1.53,0.0,0 regulators,not regulated
+308,4.2.1.7,Alternate Carbon Metabolism,15.11,4.0,3+ regulators,regulated
+309,4.2.1.74,Membrane Lipid Metabolism,0.28,0.0,0 regulators,not regulated
+310,4.2.1.79,Alternate Carbon Metabolism,0.31,1.0,1-2 regulators,regulated
+311,4.2.1.8,Alternate Carbon Metabolism,15.11,5.0,3+ regulators,regulated
+312,4.2.1.80,Alternate Carbon Metabolism,0.29,0.0,0 regulators,not regulated
+313,4.2.1.9,"Valine, Leucine, and Isoleucine Metabolism",14.33,2.0,1-2 regulators,regulated
+314,4.2.1.91,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",23.45,0.0,0 regulators,not regulated
+315,4.2.1.99,Alternate Carbon Metabolism,0.31,0.0,0 regulators,not regulated
+316,4.2.3.1,Cofactor and Prosthetic Group Biosynthesis,8.28,2.0,1-2 regulators,regulated
+317,4.2.3.3,Methylglyoxal Metabolism,19.71,8.0,3+ regulators,regulated
+318,4.2.3.4,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",39.52,2.0,1-2 regulators,regulated
+319,4.2.3.5,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",17.13,1.0,1-2 regulators,regulated
+320,4.2.99.20,Cofactor and Prosthetic Group Biosynthesis,39.2,0.0,0 regulators,not regulated
+321,4.3.2.2,Purine and Pyrimidine Biosynthesis,0.995,0.0,0 regulators,not regulated
+322,4.6.1.1,Nucleotide Salvage Pathway,3.01,8.0,3+ regulators,regulated
+323,4.6.1.2,Nucleotide Salvage Pathway,3.03,0.0,0 regulators,not regulated
+324,5.1.3.13,Cell Envelope Biosynthesis,4.98,0.0,0 regulators,not regulated
+325,5.1.3.14,Cell Envelope Biosynthesis,0.01,1.0,1-2 regulators,regulated
+326,5.1.3.2,Alternate Carbon Metabolism,1.19,4.0,3+ regulators,regulated
+327,5.1.3.3,Alternate Carbon Metabolism,2.52,0.0,0 regulators,not regulated
+328,5.1.3.9,Alternate Carbon Metabolism,0.88,0.0,0 regulators,not regulated
+329,5.3.1.1,Glycolysis/Gluconeogenesis,2.23,1.0,1-2 regulators,regulated
+330,5.3.1.12,Alternate Carbon Metabolism,0.22,3.0,3+ regulators,regulated
+331,5.3.1.14,Alternate Carbon Metabolism,0.07,0.0,0 regulators,not regulated
+332,5.3.1.16,Histidine Metabolism,2.33,0.0,0 regulators,not regulated
+333,5.3.1.22,Alternate Carbon Metabolism,0.57,0.0,0 regulators,not regulated
+334,5.3.1.24,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",2.34,1.0,1-2 regulators,regulated
+335,5.3.1.28,Lipopolysaccharide Biosynthesis / Recycling,0.6,0.0,0 regulators,not regulated
+336,5.3.1.8,Alternate Carbon Metabolism,0.27,1.0,1-2 regulators,regulated
+337,5.3.1.9,Glycolysis/Gluconeogenesis,1.02,2.0,1-2 regulators,regulated
+338,5.3.3.2,Cofactor and Prosthetic Group Biosynthesis,1.98,0.0,0 regulators,not regulated
+339,5.3.3.7,Unassigned,1.49,0.0,0 regulators,not regulated
+340,5.4.2,Alternate Carbon Metabolism,5.39,0.0,0 regulators,not regulated
+341,5.4.2.10,Cell Envelope Biosynthesis,2.88,3.0,3+ regulators,regulated
+342,5.4.2.12,Glycolysis/Gluconeogenesis,1.68,0.0,0 regulators,not regulated
+343,5.4.2.5,Alternate Carbon Metabolism,2.99,0.0,0 regulators,not regulated
+344,5.4.2.7,Alternate Carbon Metabolism,11.68,9.0,3+ regulators,regulated
+345,5.4.2.8,Alternate Carbon Metabolism,1.74,0.0,0 regulators,not regulated
+346,5.4.3.8,Cofactor and Prosthetic Group Biosynthesis,3.12,1.0,1-2 regulators,regulated
+347,5.4.99.18,Purine and Pyrimidine Biosynthesis,15.39,0.0,0 regulators,not regulated
+348,5.4.99.5,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",8.5,4.0,3+ regulators,regulated
+349,5.4.99.9,Cell Envelope Biosynthesis,1.93,1.0,1-2 regulators,regulated
+350,6.2.1.1,Pyruvate Metabolism,0.79,3.0,3+ regulators,regulated
+351,6.2.1.13,Alternate Carbon Metabolism,2.12,0.0,0 regulators,not regulated
+352,6.2.1.26,Cofactor and Prosthetic Group Biosynthesis,2.1,3.0,3+ regulators,regulated
+353,6.2.1.30,Alternate Carbon Metabolism,10.1,0.0,0 regulators,not regulated
+354,6.2.1.5,Citric Acid Cycle,0.22,5.0,3+ regulators,regulated
+355,6.3.2.10,Cell Envelope Biosynthesis,3.91,4.0,3+ regulators,regulated
+356,6.3.3.3,Cofactor and Prosthetic Group Biosynthesis,0.86,4.0,3+ regulators,regulated
+357,6.3.4.13,Purine and Pyrimidine Biosynthesis,3.1,2.0,1-2 regulators,regulated
+358,6.3.4.18,Purine and Pyrimidine Biosynthesis,8.79,1.0,1-2 regulators,regulated
+359,6.3.4.21,Cofactor and Prosthetic Group Biosynthesis,5.06,0.0,0 regulators,not regulated
+360,6.3.4.3,Folate Metabolism,0.46,0.0,0 regulators,not regulated
+361,6.4.1.2,Membrane Lipid Metabolism,0.81,3.0,3+ regulators,regulated
