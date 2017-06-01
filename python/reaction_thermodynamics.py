@@ -117,7 +117,7 @@ class reaction_thermodynamics(object):
         inv_adj_count = np.matrix(np.diag(
             map(lambda x: 1.0/x, adj_count.flat)))
 
-        logRI = 2.0 * (inv_adj_count * dGm_prime) / (self.RT)
+        ln_RI = 2.0 * (inv_adj_count * dGm_prime) / (self.RT)
 
         res_df = pd.DataFrame(
             index=map(lambda r: r.id.lower(), self.reactions), dtype=float)
@@ -126,7 +126,7 @@ class reaction_thermodynamics(object):
         res_df['dG0_prime'] = dG0_prime
         res_df['dG0_prime_std'] = dG0_cov
         res_df['dGm_prime'] = dGm_prime
-        res_df['logRI'] = logRI
+        res_df['log10(RI)'] = ln_RI / np.log(10)
         res_df['formula'] = self.rstrings
         res_df = res_df.round(2)
         return res_df

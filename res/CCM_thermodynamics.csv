@@ -1,0 +1,33 @@
+,EC_number,subsystem,$| log_{10}(\Gamma) |$,bigg.metabolite,num_regulators,Regulation
+20,1.1.1.42,Citric Acid Cycle,0.78,2.0,1-2 regulators,regulated
+21,1.1.1.49,Pentose Phosphate Pathway,0.49,9.0,3+ regulators,regulated
+29,1.1.1.79,Glyoxylate Metabolism,3.695,0.0,0 regulators,not regulated
+54,1.2.1.59,Glycolysis/Gluconeogenesis,1.43,0.0,0 regulators,not regulated
+59,1.2.4.1,Glycolysis/Gluconeogenesis,2.08,7.0,3+ regulators,regulated
+91,2.2.1.2,Pentose Phosphate Pathway,0.06,5.0,3+ regulators,regulated
+103,2.3.1.61,Citric Acid Cycle,1.68,0.0,0 regulators,not regulated
+109,2.3.3.16,Citric Acid Cycle,3.29,8.0,3+ regulators,regulated
+137,2.7.1.11,Glycolysis/Gluconeogenesis,1.55,9.0,3+ regulators,regulated
+138,2.7.1.11,Pentose Phosphate Pathway,0.96,9.0,3+ regulators,regulated
+151,2.7.1.40,Glycolysis/Gluconeogenesis,2.26,8.0,3+ regulators,regulated
+170,2.7.2.3,Glycolysis/Gluconeogenesis,1.63,0.0,0 regulators,not regulated
+192,2.7.7.27,Glycolysis/Gluconeogenesis,0.62,21.0,3+ regulators,regulated
+198,2.7.9.2,Glycolysis/Gluconeogenesis,1.2,12.0,3+ regulators,regulated
+202,3.1.1.31,Pentose Phosphate Pathway,4.17,0.0,0 regulators,not regulated
+207,3.1.3.11,Glycolysis/Gluconeogenesis,3.09,10.0,3+ regulators,regulated
+246,3.6.1.1,Anaplerotic Reactions,3.74,4.0,3+ regulators,regulated
+270,4.1.1.31,Anaplerotic Reactions,3.34,11.0,3+ regulators,regulated
+273,4.1.1.47,Glyoxylate Metabolism,1.54,4.0,3+ regulators,regulated
+275,4.1.1.49,Anaplerotic Reactions,0.43,11.0,3+ regulators,regulated
+279,4.1.2.13,Glycolysis/Gluconeogenesis,0.52,11.0,3+ regulators,regulated
+280,4.1.2.13,Pentose Phosphate Pathway,0.36,11.0,3+ regulators,regulated
+285,4.1.2.55,Pentose Phosphate Pathway,0.09,2.0,1-2 regulators,regulated
+286,4.1.3.1,Anaplerotic Reactions,0.9,13.0,3+ regulators,regulated
+292,4.1.3.6,Citric Acid Cycle,1.37,2.0,1-2 regulators,regulated
+295,4.2.1.11,Glycolysis/Gluconeogenesis,0.72,0.0,0 regulators,not regulated
+297,4.2.1.12,Pentose Phosphate Pathway,7.55,2.0,1-2 regulators,regulated
+302,4.2.1.3,Citric Acid Cycle,0.79,0.0,0 regulators,not regulated
+329,5.3.1.1,Glycolysis/Gluconeogenesis,0.97,1.0,1-2 regulators,regulated
+337,5.3.1.9,Glycolysis/Gluconeogenesis,0.44,2.0,1-2 regulators,regulated
+342,5.4.2.12,Glycolysis/Gluconeogenesis,0.73,0.0,0 regulators,not regulated
+354,6.2.1.5,Citric Acid Cycle,0.09,5.0,3+ regulators,regulated

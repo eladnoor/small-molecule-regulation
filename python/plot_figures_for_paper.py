@@ -335,7 +335,7 @@ class FigurePlotter(object):
         # (in general, there should be only one value for each
         # EC number anyway)
         irr_index_l = r"$| log_{10}(\Gamma) |$"
-        thermo_df[irr_index_l] = thermo_df['logRI'].abs()
+        thermo_df[irr_index_l] = thermo_df['log10(RI)'].abs()
         thermo_df = thermo_df[~pd.isnull(thermo_df.EC_number)]
 
         # print the regulation table joined with the irreversibility values
@@ -377,13 +377,16 @@ class FigurePlotter(object):
         FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
                                       data=reg_thermo_df, ax=ax,
                                       title='all E. coli reactions')
-        ax.set_xlim(0, 15)
+        ax.set_xlim(0, 10)
+        ax.plot([3, 3], [0, 1], 'k:', alpha=0.3, linewidth=1)
+
         ax = axs[0, 1]
         FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
                                       data=ccm_thermo_df, ax=ax,
                                       title='only CCM reactions')
-        ax.set_xlim(0, 15)
+        ax.set_xlim(0, 10)
         ax.set_ylabel('')
+        ax.plot([3, 3], [0, 1], 'k:', alpha=0.3, linewidth=1)
 
         # correlate irreversibility also with the number of references and
         # unique regulating metabolites
@@ -703,25 +706,25 @@ class FigurePlotter(object):
             Draw 2D histograms of the number of activating and
             inhibiting reactions
             grouped by metabolite and grouped by reaction
-            
+
             Highconfidence indicates that we should only use
             edges which have two or more literature references
         """
-        
+
         highc_string = '_highconfidence' if highconfidence else  ''
-        
+
         def plot_jointhist(data, xlabel, ylabel, xmax, ymax, highconfidence):
             """
                 plot the histogram as a scatter plot with marginal histograms,
                 and ensure empty bins are easily distinguishable from ones
                 that have at least 1 hit.
-                
+
                 generally use xcrit = 12,ycrit = 5 unless using only high
                 confidence interactions, then xcrit = 6, ycrit = 2
             """
             x = data[xlabel]
             y = data[ylabel]
-            
+
             if highconfidence:
             	xcrit = 6
             	ycrit = 2
@@ -752,8 +755,8 @@ class FigurePlotter(object):
             g = g.plot_marginals(sns.distplot, kde=False)
 
             return plt.gcf()
-            
-            
+
+
         # if using high confidence edges, then find those edges
         cols = ('bigg.reaction', 'bigg.metabolite')
         if highconfidence:
@@ -762,21 +765,21 @@ class FigurePlotter(object):
             reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
             reg['ShortHand'] = reg['bigg.metabolite'].str.cat('-->' + reg['bigg.reaction'])
             reglit = reg.groupby(cols)
-            
+
             highc = pd.DataFrame( columns = ['NumRef','Refs'] )
             for ii in reglit.groups.keys():
                 ixs = reglit.groups[ii]
                 tempref = reg.ix[ixs,'RefList']
                 refs = np.unique(list(itertools.chain.from_iterable(tempref)))
                 highc.ix[ii[1] + '-->' + ii[0],] = [len(refs),','.join(refs)]
-                
+
             fig, axs = plt.subplots(1, 1, figsize=(6, 5))
             axs.hist( highc['NumRef'],bins = 0.5 + np.arange(0,highc['NumRef'].max()) )
             axs.set_xlabel('Number of Literature References')
             axs.set_ylabel('Number of SMRN edges')
-            settings.savefig(fig, 'histogram_highconfidence_SMRN') 
+            settings.savefig(fig, 'histogram_highconfidence_SMRN')
             highc.to_csv( os.path.join(settings.RESULT_DIR, 'histogram_highconfidence_SMRN.csv') )
-        
+
         # join interaction table with bigg.reaction IDs
         # and keep only one copy of each reaction-metabolite pair
         if highconfidence:
@@ -784,7 +787,7 @@ class FigurePlotter(object):
             bigg_effectors = bigg_effectors.groupby(cols).first().reset_index()
         else:
             bigg_effectors = self.regulation.groupby(cols).first().reset_index()
-        
+
         bigg_effectors.drop('KI_Value', axis=1, inplace=True)
 
         # add columns for counting the positive and negative interactions
@@ -1266,17 +1269,17 @@ if __name__ == "__main__":
     fp = FigurePlotter()
 
 #     fp.plot_fig2ab()
-    fp.plot_fig2cd(highconfidence = True)
-#     fp.plot_fig4()
+#    fp.plot_fig2cd(highconfidence = True)
+    fp.plot_fig4()
 #     fp.plot_fig5()
-# 
+#
 #     fp.plot_figS1()
 #     fp.plot_figS2()
 #     fp.plot_figS3()
 #     fp.plot_figS4()
 #     fp.plot_figS5()
 #     fp.plot_figS6()
-# 
+#
 #     fp.print_ccm_table()
 
     plt.close('all')
