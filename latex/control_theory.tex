@@ -319,26 +319,26 @@ Substituting this form of $\frac{\partial g}{\partial x}$ into the prior equatio
 In \cite{Heinrich1974-yj}, the elasticity of the inhibitor was calculated for this rate law (denoted as \emph{effector strength} or $X_I$ in the original text) and matches the form above.
 Although the final formulae for the elasticities in the MWC case are not identical to the other cases dealt with before, we can still reach a similar conclusion, where the absolute value of the elasticity is larger when the relative activity is smaller.
 
-\subsection{Bisubstrate Reactions}
-So far, we focused only on reactions that have a single substrate. Below, we calculate elasticities for bi-substrate reactions (with substrates $s_1$ and $s_2$), assuming general irreversible convenience kinetics with a pure non-competitive inhibitor, namely
+\subsection{Multi-substrate Reactions}
+So far, we focused only on reactions that have a single substrate. Below, we calculate elasticities for multi-substrate reactions (with substrates $s_1 \ldots s_n$), assuming general irreversible convenience kinetics with a pure non-competitive inhibitor, namely
 \begin{eqnarray}
 v &=& V^+ \cdot \kappa \cdot \theta  \nonumber\\
-\kappa &=& \frac{s_1/K_1 \cdot s_2/K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1}\,.
+\kappa &=& \frac{\prod_i s_i/K_i}{\prod_i (1 + s_i/K_i) - 1}\,.
 \end{eqnarray}
 
-Here, the elasticity with respect to the inhibitor is a separate multiplicative factor and therefore is exactly the same as in section \ref{sec:non_conpetitive_inhitibion}. Calculating the elasticity of substrate $s_1$ (from symmetry, the elasticity for $s_2$ would be similar), we get
+Here, the elasticity with respect to the inhibitor is a separate multiplicative factor and therefore is exactly the same as in section \ref{sec:non_conpetitive_inhitibion}. Calculating the elasticity of substrate $s_i$, we get 
 \begin{eqnarray}
-\varepsilon^{v}_{s_1} = \frac{\partial v}{\partial s_1} \cdot \frac{s_1}{v}
- = \frac{\partial \kappa}{\partial s_1} \cdot \frac{s_1}{\kappa} 
- = \frac{s_2 / K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1}\,.
+\varepsilon^{v}_{s_j} &=& \frac{\partial v}{\partial s_j} \cdot \frac{s_j}{v}
+ = \frac{\partial \kappa}{\partial s_j} \cdot \frac{s_j}{\kappa} 
+ = \frac{\prod_{i \neq j}(1 + s_i/K_i) - 1}{\prod_j (1 + s_i/K_i) - 1} \nonumber\\
+ &=& 1 - \left(s_j/K_j\right) \cdot \frac{\prod_{i \neq j} (1 + s_i/K_i)}{\prod_i (1 + s_i/K_i) - 1} \nonumber \\
+ &=& 1 - \frac{ s_j/K_j}{1 +  s_j/K_j} \cdot \left(\frac{\prod_i (1 + s_i/K_i)}{\prod_i (1 + s_i/K_i) - 1}\right) 
+ \,.
 \end{eqnarray}
-Interestingly, one can see that $\varepsilon^{v}_{s_1} + \varepsilon^{v}_{s_2} + \kappa = 1$, showing the same inverse relationship between elasticity and activity as in previous cases.
 
-Finally, in order to compare this result to the mono-substrate case, we show that
+In order to compare this result to the mono-substrate case, we first note that the multiplicative term (in parentheses) is larger than 1 since the denominator is obviously smaller than the numerator. Therefore:
 \begin{eqnarray}
-\varepsilon^{v}_{s_1} &=& \frac{s_2/K_2}{(1 + s_1/K_1) (1 + s_2 / K_2) - 1} = 
-\frac{s_2/K_2}{s_2 / K_2 (1 + s_1/K_1)  + s_1/K_1} \nonumber\\
-&<& \frac{s_2/K_2}{s_2 / K_2 (1 + s_1/K_1)} = \frac{1}{1 + s_1/K_1} = 1 - \frac{s_1}{s_1 + K_1}\,,
+\varepsilon^{v}_{s_j} < 1 -  \frac{ s_j/K_j}{1 +  s_j/K_j} = 1 - \frac{ s_j}{K_j +  s_j}\,
 \end{eqnarray}
 which is exactly the expression for the substrate elasticity in the case of mono-substrate irreversible reactions (Equation \ref{eq:eps_s_v_irr}). Thus, we conclude that the mono-substrate reaction scheme is an over-estimate of the true elasticity in a bi-substrate reaction scheme (following convenience kinetics).
 
