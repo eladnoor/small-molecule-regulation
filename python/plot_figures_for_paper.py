@@ -88,7 +88,7 @@ class FigurePlotter(object):
         self.stat_df[name].iat[0] = k.shape[0]  # all entries
         self.stat_df[value_col].iat[0] = (k[value_col] > 0).sum()
 
-        k = k[k['Organism'] == organism]
+        k = k[k['Organism'].str.lower() == organism.lower()]
         self.stat_df[name].iat[1] = k.shape[0]  # filtered by organsim
         self.stat_df[value_col].iat[1] = (k[value_col] > 0).sum()
 
@@ -1262,15 +1262,15 @@ def user_yes_no_query(question, default=False):
 if __name__ == "__main__":
     plt.close('all')
 
-    rebuild_cache = user_yes_no_query('Rebuild cache files', default=False)
-    if rebuild_cache:
-        cache.rebuild_cache()
+    #rebuild_cache = user_yes_no_query('Rebuild cache files', default=False)
+    #if rebuild_cache:
+    #    cache.rebuild_cache()
 
     fp = FigurePlotter()
 
 #     fp.plot_fig2ab()
 #    fp.plot_fig2cd(highconfidence = True)
-    fp.plot_fig4()
+#    fp.plot_fig4()
 #     fp.plot_fig5()
 #
 #     fp.plot_figS1()

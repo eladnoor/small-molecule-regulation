@@ -1,8 +1,8 @@
 ,KM_Value,regulation,KI_Value
-all entries,268335,399050,50854
-keeping only E. coli data,20613,20196,3060
-filtering out data about mutated enzymes,11855,19513,2533
-keeping only data mapping to BiGG model,6253,5726,712
-unique metabolite-enzyme pairs,990,1689,189
+all entries,268335,399073,50854
+keeping only E. coli data,20613,20219,3060
+filtering out data about mutated enzymes,11855,19536,2533
+keeping only data mapping to BiGG model,6253,5727,712
+unique metabolite-enzyme pairs,990,1690,189
 unique metabolites,394,323,112
 unique enzymes,402,365,98
