@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{url}
-\usepackage[square,numbers]{natbib}
+\usepackage[square,numbers,sort&compress]{natbib}
 %\pgfplotsset{compat=1.13}
 \newcommand{\ratelaw}{\theta(\mathbf{s},\mathbf{p})}
 \renewcommand*\rmdefault{bch}
@@ -105,10 +105,10 @@ The scaled elasticity for $s$ is given by:
 
 Note that the scaled elasticity is bounded between 0 and 1. More specifically, $\varepsilon_s^v$ is maximized (\textit{i.e.} the substrate has the highest control potential) at low substrate concentrations, and minimized at high substrate concentrations.
 
-As shown in \cite{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions, where the saturation term is separated from the thermodynamic term:
-\begin{eqnarray}
-    v &=& V^+ \cdot \kappa \cdot \gamma \\
-    \kappa &\equiv& \frac{s/K_S}{1 + s/K_S + p/K_P} \\
+As shown by \citet{Noor2013-vv}, this formula for substrate elasticity can be generalized to reversible Michaelis-Menten reactions \cite{Hofmeyr1995-fl, Rohwer2010-tx}, where the saturation term is separated from the thermodynamic term:
+\begin{eqnarray}\label{eq:rev_mm}
+    v &=& V^+ \cdot \kappa \cdot \gamma \nonumber\\
+    \kappa &\equiv& \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
     \gamma &\equiv& 1 - \frac{p/s}{K_{eq}'}
 \end{eqnarray}
 where $p$ is the product concentration, $K_S$ and $K_P$ are the Michaelis-Menten constants for the substrate and product, and $K_{eq}'$ is the apparent equilibrium constant. In this case, the elasticity of the substrate is:
@@ -122,6 +122,29 @@ Finally, in order to compare this result to the irreversible case, we show that
 &>& 1 - \frac{s/K_S}{1 + s/K_S + p/K_P} > 1 - \frac{s/K_S}{1 + s/K_S} = 1 - \frac{s}{K_s + s}\,,
 \end{eqnarray}
 which is exactly the elasticity of the substrate in the irreversible case (Equation \ref{eq:eps_s_v_irr}). So, assuming a reaction is irreversible provides an underestimation of the elasticity. Nevertheless, in cases where $p \rightarrow 0$, we can see that $\varepsilon_{s}^v \rightarrow 1 - \frac{s}{K_s + s}$.
+
+\subsubsection{Reversible Monod-Wyman-Changeux Kinetics}
+A common model for cooperativity in enzyme kinetics was developed by Monod-Wyman-Changeux (MWC kinetics). It is described by the same 3-term rate law as reversible Michaelis-Menten kinetics (Equation \ref{eq:rev_mm}), but with a different expression for $\kappa$:
+\begin{eqnarray}
+\kappa_n &\equiv& \frac{s/K_S \cdot (1 + s/K_S + p/K_P)^{n-1}}{L + (1 + s/K_S + p/K_P)^n} \,,
+\end{eqnarray}
+where $n$ is the cooperativity coefficient. The substrate elasticity is given by \cite{Rohwer2010-tx}:
+\begin{eqnarray}
+\varepsilon_{s}^v &=& \gamma^{-1} - \frac{s/K_S}{1 + s/K_S + p/K_P} \nonumber\\
+&&+~n \left( \frac{s/K_S}{1 + s/K_S + p/K_P} - \frac{s/K_S \cdot (1 + s/K_S + p/K_P)^{n-1}}{L + (1 + s/K_S + p/K_P)^n}\right) \nonumber\\
+&=& \gamma^{-1} - \kappa + n (\kappa -  \kappa_n)\,.
+\end{eqnarray}
+We note, that 
+\begin{eqnarray}
+\kappa &=& \frac{s/K_S}{1 + s/K_S + p/K_P} = \frac{s/K_S \cdot (1 + s/K_S + p/K_P)^{n-1}}{(1 + s/K_S + p/K_P)^n} \nonumber\\
+&>& \frac{s/K_S \cdot (1 + s/K_S + p/K_P)^{n-1}}{L + (1 + s/K_S + p/K_P)^n} = \kappa_n
+\end{eqnarray}
+and therefore
+\begin{eqnarray}
+\varepsilon_{s}^v = \gamma^{-1} - \kappa + n (\kappa -  \kappa_n) > \gamma^{-1} - \kappa\,.
+\end{eqnarray}
+So, the MWC elasticity is always larger than the reversible Michaelis-Menten elasticity which, in turn, is larger than the irreversible elasticity.
+
 
 \subsection{Regulatory Effectors}
 Although previous publications have derived elasticities associated with small-molecule effectors for different types of rate laws \cite{Heinrich1974-yj, Liebermeister2010-vd}, the relationship between the elasticity and the relative activity of the enzyme has not been discussed. Here, we will demonstrate that in almost all cases, \emph{there is a direct trade-off between the two, namely that a regulator must decrease the activity of the enzyme in order to have a non-zero elasticity.}
@@ -340,7 +363,7 @@ In order to compare this result to the mono-substrate case, we first note that t
 \begin{eqnarray}
 \varepsilon^{v}_{s_j} < 1 -  \frac{ s_j/K_j}{1 +  s_j/K_j} = 1 - \frac{ s_j}{K_j +  s_j}\,
 \end{eqnarray}
-which is exactly the expression for the substrate elasticity in the case of mono-substrate irreversible reactions (Equation \ref{eq:eps_s_v_irr}). Thus, we conclude that the mono-substrate reaction scheme is an over-estimate of the true elasticity in a bi-substrate reaction scheme (following convenience kinetics).
+which is exactly the expression for the substrate elasticity in the case of mono-substrate irreversible reactions (Equation \ref{eq:eps_s_v_irr}). Thus, we conclude that the mono-substrate reaction scheme is an over-estimate of the true elasticity in a multi-substrate reaction scheme (following convenience kinetics).
 
 \subsection{A Trade-off between Enzyme Cost and Flux Control}
 By taking the absolute value of the elasticity, we can compress the results for activators (Equation \ref{eq:eps_act}) and inhibitors (Equations \ref{eq:eps_inh}, \ref{eq:eps_comp_inh}, \ref{eq:eps_uncomp_inh}, and \ref{eq:eps_general_inh}, excluding the MWC model) into one formula:
