@@ -763,6 +763,12 @@ class FigurePlotter(object):
             reg = self.regulation
             reg = reg[reg['Source'] == 'BRENDA']
             reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
+            
+            # Remove whitespace from each item in each list
+            for ii in reg.index:
+                reg.at[ii,'RefList'] = [item.strip() for item in reg.at[ii,'RefList']]
+                
+            # Add shorthand name
             reg['ShortHand'] = reg['bigg.metabolite'].str.cat('-->' + reg['bigg.reaction'])
             reglit = reg.groupby(cols)
 
@@ -771,7 +777,7 @@ class FigurePlotter(object):
                 ixs = reglit.groups[ii]
                 tempref = reg.ix[ixs,'RefList']
                 refs = np.unique(list(itertools.chain.from_iterable(tempref)))
-                highc.ix[ii[1] + '-->' + ii[0],] = [len(refs),','.join(refs)]
+                highc.ix[ii[1] + '-->' + ii[0],] = [len(refs),';'.join(refs)]
 
             fig, axs = plt.subplots(1, 1, figsize=(6, 5))
             axs.hist( highc['NumRef'],bins = 0.5 + np.arange(0,highc['NumRef'].max()) )
@@ -1269,7 +1275,7 @@ if __name__ == "__main__":
     fp = FigurePlotter()
 
 #     fp.plot_fig2ab()
-#    fp.plot_fig2cd(highconfidence = True)
+    fp.plot_fig2cd(highconfidence = True)
 #    fp.plot_fig4()
 #     fp.plot_fig5()
 #

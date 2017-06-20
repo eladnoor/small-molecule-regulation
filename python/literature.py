@@ -8,7 +8,7 @@ plt.close('all')
 reg = pd.read_csv('../res/ecoli_interactions.csv',header = 0,index_col = 0)
 reg = reg[reg['Source'] == 'BRENDA']
 
-#Calculate references
+# Calculate references
 reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
 
 cols = ('bigg.reaction', 'bigg.metabolite')
