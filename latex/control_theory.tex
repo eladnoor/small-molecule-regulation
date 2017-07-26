@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage[margin=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -396,14 +397,8 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 \section{Supplementary Figures}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{../manuscript/figS1.pdf}
-\caption{Distance between metabolites and enzymes in the (a) genome-scale metabolite network iJO1366 and (b)-(d) the SMRN of E. coli. In general, interactions in the SMRN traverse a shorter distance than the typical distance between a randomly chosen metabolite and enzyme in metabolism. Several highly-connected metabolites (i.e. co-factors) that were removed from the network before preparing the bipartite graph: h, h2o, co2, o2, pi, atp, adp, amp, nad, nadh, nadp, nadph, coa, thf, 5mthf, 5fthf, methf, mlthf, nh4, cmp, q8, q8h2, udp, udpg, fad, fadh2, ade, ctp, gtp, h2o2, mql8, mqn8, na1, ppi, acp
-}
-\end{figure}
-
-\begin{figure}[ht!]
-	\includegraphics[width=1.1\textwidth]{../manuscript/figS2.pdf}
-	\caption{Histogram of the number of interactions for reactions and metabolite in the (a)-(b) entire E. coli SMRN, and (c)-(d) in the region of the SMRN restricted to the central carbon metabolism (CCM) of E. coli. }
+\includegraphics[width=0.9\textwidth]{../manuscript/figS1.pdf}	\includegraphics[width=0.9\textwidth]{../manuscript/figS2.pdf}
+\caption{Distance between metabolites and enzymes in the (a) genome-scale metabolite network iJO1366 and (b)-(d) the SMRN of E. coli. In general, interactions in the SMRN traverse a shorter distance than the typical distance between a randomly chosen metabolite and enzyme in metabolism. Several highly-connected metabolites (i.e. co-factors) that were removed from the network before preparing the bipartite graph: h, h2o, co2, o2, pi, atp, adp, amp, nad, nadh, nadp, nadph, coa, thf, 5mthf, 5fthf, methf, mlthf, nh4, cmp, q8, q8h2, udp, udpg, fad, fadh2, ade, ctp, gtp, h2o2, mql8, mqn8, na1, ppi, acp. Histogram of the number of interactions for reactions and metabolite in the (e)-(f) entire \emph{E. coli} SMRN, and (g)-(h) in the region of the SMRN restricted to the central carbon metabolism (CCM) of E. coli. }
 \end{figure}
 
 \begin{figure}[ht!]
@@ -413,15 +408,21 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 \end{figure}
 
 \begin{figure}[ht!]
-	\includegraphics[width=1.1\textwidth]{../manuscript/figS4.pdf}
-	\caption{Schematic of the relationship between kinetic rate laws and elasticity for (a)-(b) substrates obeying Michaelis-Menten kinetics and (c)-(d) inhibitors obeying non-competitive inhibition. Importantly, substrate elasticity is maximized at low substrate concentrations, and inhibitor elasticity is maximized at high inhibitor concentration.
+	\includegraphics[width=\textwidth]{../manuscript/figS8.pdf}
+	\caption{A map of the Central Metabolism reactions in \emph{E. coli} that are regulated by small molecule(s) in the SMRN. Red reactions only show evidence of inhibitory interactions, green reactions only show evidence of activating interactions, and purple reactions show evidence of both activating and inhibiting interactions. 
 	}
 \end{figure}
 
 \begin{figure}[ht!]
-	\includegraphics[width=0.8\textwidth]{../manuscript/figS5.pdf}
-	\caption{A heatmap of the median values of each metabolite's elasticities across a variety of nutrient conditions. Left-hand-side corresponds to substrate interactions for that metabolite, and right-hand-side corresponds to inhibitory interactions.
-}
+	\includegraphics[width=0.5\textwidth]{../manuscript/figS7.pdf}
+	\includegraphics[width=0.5\textwidth]{../manuscript/figS9.pdf}
+	\caption{A map of the reactions branching from central carbon metabolism for amino acid biosynthesis. Amino acids in red color feedback inhibit the first enzyme of their biosynthesis pathway, based on the SMRN. For the remaining four amino acids (Glycine, Alanine, Aspartate and Glutamate) there is no evidence of feedback inhibition. A comparison between the metabolic cost of each amino acid (as defined by \cite{Akashi2002-ew}) and the absolute elasticity of the corresponding inhibited biosynthetic reaction (if it exists) for three growth conditions. We only have information for 4 of the 16 regulated biosynthetic pathways (see Figure \ref{fig:SI_biosynthesis} in the supplementary text). All four non-regulated amino-acids were assumed to have 0 elasticity (marked in blue).}\label{fig:SI_biosynthesis}
+\end{figure}
+
+\begin{figure}[ht!]
+	\includegraphics[width=1.1\textwidth]{../manuscript/figS4.pdf}
+	\caption{Schematic of the relationship between kinetic rate laws and elasticity for (a)-(b) substrates obeying Michaelis-Menten kinetics and (c)-(d) inhibitors obeying non-competitive inhibition. Importantly, substrate elasticity is maximized at low substrate concentrations, and inhibitor elasticity is maximized at high inhibitor concentration.
+	}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -430,26 +431,15 @@ Another corollary of Equation \ref{eq:abs_elast} is that the control can be incr
 	}
 \end{figure}
 
-\begin{figure}[ht!]
-	\includegraphics[width=\textwidth]{../manuscript/figS7.pdf}
-	\caption{A map of the reactions branching from central carbon metabolism for amino acid biosynthesis. Amino acids in red color feedback inhibit the first enzyme of their biosynthesis pathway, based on the SMRN. For the remaining four amino acids (Glycine, Alanine, Aspartate and Glutamate) there is no evidence of feedback inhibition.}\label{fig:SI_biosynthesis}
-\end{figure}
-
-\begin{figure}[ht!]
-	\includegraphics[width=\textwidth]{../manuscript/figS8.pdf}
-	\caption{A map of the Central Metabolism reactions in \emph{E. coli} that are regulated by small molecule(s) in the SMRN. Red reactions only show evidence of inhibitory interactions, green reactions only show evidence of activating interactions, and purple reactions show evidence of both activating and inhibiting interactions. 
-	}
-\end{figure}
-
-\begin{figure}[ht!]
-	\includegraphics[width=\textwidth]{../manuscript/figS9.pdf}
-	\caption{A comparison between the metabolic cost of each amino acid (as defined by \cite{Akashi2002-ew}) and the absolute elasticity of the corresponding inhibited biosynthetic reaction (if it exists) for three growth conditions. We only have information for 4 of the 16 regulated biosynthetic pathways (see Figure \ref{fig:SI_biosynthesis} in the supplementary text). All four non-regulated amino-acids were assumed to have 0 elasticity (marked in blue).
-	}
-\end{figure}
+%\begin{figure}[ht!]
+%	\includegraphics[width=0.8\textwidth]{../manuscript/figS5.pdf}
+%	\caption{A heatmap of the median values of each metabolite's elasticities across a variety of nutrient conditions. Left-hand-side corresponds to substrate interactions for that metabolite, and right-hand-side corresponds to inhibitory interactions.
+%	}
+%\end{figure}
 
 \begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{../manuscript/figS11.pdf}
-	\caption{}
+	\caption{High confidence edges from literature}
 \end{figure}
 
 \end{document}
