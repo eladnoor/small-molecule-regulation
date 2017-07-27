@@ -763,11 +763,11 @@ class FigurePlotter(object):
             reg = self.regulation
             reg = reg[reg['Source'] == 'BRENDA']
             reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
-            
+
             # Remove whitespace from each item in each list
             for ii in reg.index:
                 reg.at[ii,'RefList'] = [item.strip() for item in reg.at[ii,'RefList']]
-                
+
             # Add shorthand name
             reg['ShortHand'] = reg['bigg.metabolite'].str.cat('-->' + reg['bigg.reaction'])
             reglit = reg.groupby(cols)
@@ -1042,11 +1042,11 @@ class FigurePlotter(object):
         inh_distances = dist_mode_df.loc[dist_mode_df['Mode'] == '-', 'distance']
         act_distances = dist_mode_df.loc[dist_mode_df['Mode'] == '+', 'distance']
 
-        Nmax = 9
-        bins = range(Nmax+1)
-        args = {'alpha': 1, 'normed': True, 'align': 'left', 'bins': bins,
+        bins0 = range(10)
+        bins1 = range(1, 16)
+        args = {'alpha': 1, 'normed': True, 'align': 'left', 'bins': bins0,
                 'linewidth': 0, 'rwidth': 0.8}
-        fig, axs = plt.subplots(2, 2, figsize=(12, 8), sharex=False)
+        fig, axs = plt.subplots(4, 2, figsize=(8, 10), sharex=False)
         axs[0, 0].hist(all_distances, color=GENERAL_COLOR, **args)
         axs[1, 0].hist(smrn_dist['distance'], color=BOTH_COLOR, **args)
         axs[0, 1].hist(inh_distances, color=INHIBITOR_COLOR , **args)
@@ -1054,33 +1054,40 @@ class FigurePlotter(object):
 
         for i in range(2):
             axs[i, 0].set_ylabel('Fraction of metabolite-enzyme pairs')
+            axs[0, i].set_xlabel('Distance in # reactions between '
+                                 'metabolite and enzyme')
             axs[1, i].set_xlabel('Distance in # reactions between '
                                  'metabolite and enzyme')
         for i, ax in enumerate(axs.flat):
-            #ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-            #            xycoords='axes fraction', ha='left', va='top',
-            #            size=20)
-            ax.set_xticks(np.arange(Nmax+1))
-            ax.set_xlim(-1, Nmax+1)
+            ax.annotate(chr(ord('a')+i), xy=(0.98, 0.98),
+                        xycoords='axes fraction', ha='right', va='top',
+                        size=14, color='k')
+            if i < 4:
+                ax.set_xticks(bins0)
+                ax.set_xlim(min(bins0)-1, max(bins0)+1)
+                ax.set_xlabel('Distance in # reactions between '
+                              'metabolite and enzyme')
+            else:
+                ax.set_xticks(bins1)
+                ax.set_xlim(min(bins1)-1, max(bins1)+1)
+                ax.set_xlabel('No. of interactions')
 
-        axs[0, 0].annotate('all iJO1366 pairs', xy=(0.9, 0.9),
+        axs[0, 0].annotate('all iJO1366 pairs', xy=(0.85, 0.9),
                         xycoords='axes fraction', ha='right', va='top',
-                        size=14)
-        axs[1, 0].annotate('all SMRN pairs', xy=(0.9, 0.9),
+                        size=8)
+        axs[1, 0].annotate('all SMRN pairs', xy=(0.85, 0.9),
                         xycoords='axes fraction', ha='right', va='top',
-                        size=14)
-        axs[0, 1].annotate('only inhibition', xy=(0.9, 0.9),
+                        size=8)
+        axs[0, 1].annotate('only inhibition', xy=(0.85, 0.9),
                         xycoords='axes fraction', ha='right', va='top',
-                        size=14)
-        axs[1, 1].annotate('only activation', xy=(0.9, 0.9),
+                        size=8)
+        axs[1, 1].annotate('only activation', xy=(0.85, 0.9),
                         xycoords='axes fraction', ha='right', va='top',
-                        size=14)
+                        size=8)
 
-        settings.savefig(fig, 'figS1')
         smrn_dist.to_csv(os.path.join(settings.CACHE_DIR,
                                       'iJO1366_SMRN_dist.csv'), index=False)
 
-    def plot_figS2(self):
         smrn = pd.read_csv(os.path.join(settings.CACHE_DIR,
                                         'iJO1366_SMRN.csv'), index_col=None)
         #rxn_hist = smrn.join(self.reaction_subsystem_df, on='bigg.reaction')
@@ -1100,40 +1107,29 @@ class FigurePlotter(object):
         met_hist = smrn.groupby('bigg.metabolite')['bigg.reaction'].nunique().reset_index()
         met_hist_ccm = met_hist[met_hist['bigg.metabolite'].isin(ccm_mets)]
 
-        Nmax = 15
-        bins = range(1, Nmax+1)
-        args = {'alpha': 1, 'normed': False, 'align': 'left', 'bins': bins,
+        args = {'alpha': 1, 'normed': False, 'align': 'left', 'bins': bins1,
                 'linewidth': 0, 'rwidth': 0.8}
-        fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=False)
-        axs[0, 0].hist(rxn_hist['bigg.metabolite'], color=GENERAL_COLOR, **args)
-        axs[1, 0].hist(met_hist['bigg.reaction'], color=GENERAL_COLOR, **args)
-        axs[0, 1].hist(rxn_hist_ccm['bigg.metabolite'], color=CCM_COLOR, **args)
-        axs[1, 1].hist(met_hist_ccm['bigg.reaction'], color=CCM_COLOR, **args)
+        axs[2, 0].hist(rxn_hist['bigg.metabolite'], color=GENERAL_COLOR, **args)
+        axs[3, 0].hist(met_hist['bigg.reaction'], color=GENERAL_COLOR, **args)
+        axs[2, 1].hist(rxn_hist_ccm['bigg.metabolite'], color=CCM_COLOR, **args)
+        axs[3, 1].hist(met_hist_ccm['bigg.reaction'], color=CCM_COLOR, **args)
 
-        axs[0, 0].set_ylabel('No. of reactions')
-        axs[1, 0].set_ylabel('No. of metabolites')
-        for i in range(2):
-            axs[1, i].set_xlabel('No. of interactions')
-        for i, ax in enumerate(axs.flat):
-            #ax.annotate(chr(ord('a') + i), xy=(0.02, 0.98),
-            #            xycoords='axes fraction', ha='left', va='top',
-            #            size=20)
-            ax.set_xticks(bins)
-            ax.set_xlim(0, Nmax+1)
-
-        axs[0, 0].annotate('all regulated reactions (N = %d)' % rxn_hist.shape[0],
-                           xy=(0.9, 0.9), size=10,
+        axs[2, 0].set_ylabel('No. of reactions')
+        axs[3, 0].set_ylabel('No. of metabolites')
+        axs[2, 0].annotate('all regulated reactions (N = %d)' % rxn_hist.shape[0],
+                           xy=(0.85, 0.9), size=8,
                            xycoords='axes fraction', ha='right', va='top')
-        axs[1, 0].annotate('all regulating metabolites (N = %d)' % met_hist.shape[0],
-                           xy=(0.9, 0.9), size=10,
+        axs[3, 0].annotate('all regulating metabolites (N = %d)' % met_hist.shape[0],
+                           xy=(0.85, 0.9), size=8,
                            xycoords='axes fraction', ha='right', va='top')
-        axs[0, 1].annotate('only CCM reactions (N = %d)' % rxn_hist_ccm.shape[0],
-                           xy=(0.9, 0.9), size=10,
+        axs[2, 1].annotate('only CCM reactions (N = %d)' % rxn_hist_ccm.shape[0],
+                           xy=(0.85, 0.9), size=8,
                            xycoords='axes fraction', ha='right', va='top')
-        axs[1, 1].annotate('only CCM metabolites (N = %d)' % met_hist_ccm.shape[0],
-                           xy=(0.9, 0.9), size=10,
+        axs[3, 1].annotate('only CCM metabolites (N = %d)' % met_hist_ccm.shape[0],
+                           xy=(0.85, 0.9), size=8,
                            xycoords='axes fraction', ha='right', va='top')
-        settings.savefig(fig, 'figS2')
+        fig.tight_layout(pad=4, h_pad=1, w_pad=1)
+        settings.savefig(fig, 'figS1')
 
     def plot_figS4(self):
         rcParams['font.family'] = 'sans-serif'
@@ -1275,11 +1271,11 @@ if __name__ == "__main__":
     fp = FigurePlotter()
 
 #     fp.plot_fig2ab()
-    fp.plot_fig2cd(highconfidence = True)
+#    fp.plot_fig2cd(highconfidence = True)
 #    fp.plot_fig4()
 #     fp.plot_fig5()
 #
-#     fp.plot_figS1()
+    fp.plot_figS1()
 #     fp.plot_figS2()
 #     fp.plot_figS3()
 #     fp.plot_figS4()
