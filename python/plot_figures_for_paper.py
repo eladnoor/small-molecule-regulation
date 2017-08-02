@@ -379,6 +379,9 @@ class FigurePlotter(object):
                                       title='all E. coli reactions')
         ax.set_xlim(0, 10)
         ax.plot([3, 3], [0, 1], 'k:', alpha=0.3, linewidth=1)
+        ranksum_res = ranksums(reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] == 0, irr_index_l],
+                               reg_thermo_df.loc[reg_thermo_df['bigg.metabolite'] >  0, irr_index_l])
+        ax.set_title('all E. coli reactions\n$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
 
         ax = axs[0, 1]
         FigurePlotter.comparative_cdf(x='num_regulators', y=irr_index_l,
@@ -387,6 +390,10 @@ class FigurePlotter(object):
         ax.set_xlim(0, 10)
         ax.set_ylabel('')
         ax.plot([3, 3], [0, 1], 'k:', alpha=0.3, linewidth=1)
+        ranksum_res = ranksums(ccm_thermo_df.loc[ccm_thermo_df['bigg.metabolite'] == 0, irr_index_l],
+                               ccm_thermo_df.loc[ccm_thermo_df['bigg.metabolite'] >  0, irr_index_l])
+        ax.set_title('only CCM reactions\n$p_{ranksum}$ < %.1g' % ranksum_res.pvalue)
+
 
         # correlate irreversibility also with the number of references and
         # unique regulating metabolites
@@ -574,6 +581,11 @@ class FigurePlotter(object):
         for i, row in counts.iterrows():
             index_mapping[i] = '%s (%g,%g)' % (str(i).upper(), row['KM_Value'],
                                                row['KI_Value'])
+        km_sat_agg.to_csv(os.path.join(settings.RESULT_DIR,
+                                       'km_elasticity_agg.csv'))
+        ki_sat_agg.to_csv(os.path.join(settings.RESULT_DIR,
+                                       'ki_elasticity_agg.csv'))
+
         sat_joined = km_sat_agg.join(ki_sat_agg, how='inner',
                                      lsuffix='_sub', rsuffix='_inh')
         ind = sat_joined.mean(axis=1).sort_values(axis=0,
@@ -646,9 +658,9 @@ class FigurePlotter(object):
 
         settings.savefig(fig, 'figS5')
         km_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
-                                       'heatmap_km_saturation.csv'))
+                                       'km_elasticity_full.csv'))
         ki_pivoted.to_csv(os.path.join(settings.RESULT_DIR,
-                                       'heatmap_ki_saturation.csv'))
+                                       'ki_elasticity_full.csv'))
 
     def plot_fig2ab(self):
 
@@ -763,11 +775,11 @@ class FigurePlotter(object):
             reg = self.regulation
             reg = reg[reg['Source'] == 'BRENDA']
             reg['RefList'] = [item.split(',') if pd.notnull(item) else 0 for item in reg['Literature']]
-            
+
             # Remove whitespace from each item in each list
             for ii in reg.index:
                 reg.at[ii,'RefList'] = [item.strip() for item in reg.at[ii,'RefList']]
-                
+
             # Add shorthand name
             reg['ShortHand'] = reg['bigg.metabolite'].str.cat('-->' + reg['bigg.reaction'])
             reglit = reg.groupby(cols)
@@ -1274,18 +1286,18 @@ if __name__ == "__main__":
 
     fp = FigurePlotter()
 
-#     fp.plot_fig2ab()
-    fp.plot_fig2cd(highconfidence = True)
+#    fp.plot_fig2ab()
+#    fp.plot_fig2cd(highconfidence = True)
 #    fp.plot_fig4()
-#     fp.plot_fig5()
+    fp.plot_fig5()
 #
-#     fp.plot_figS1()
-#     fp.plot_figS2()
-#     fp.plot_figS3()
-#     fp.plot_figS4()
-#     fp.plot_figS5()
-#     fp.plot_figS6()
+#    fp.plot_figS1()
+#    fp.plot_figS2()
+#    fp.plot_figS3()
+#    fp.plot_figS4()
+    fp.plot_figS5()
+#    fp.plot_figS6()
 #
-#     fp.print_ccm_table()
+#    fp.print_ccm_table()
 
     plt.close('all')
