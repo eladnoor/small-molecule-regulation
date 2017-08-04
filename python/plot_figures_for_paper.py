@@ -279,6 +279,11 @@ class FigurePlotter(object):
         self.regulation.to_csv(os.path.join(settings.CACHE_DIR,
                                             'iJO1366_SMRN.csv'), index=False)
 
+        smrn_unique = self.regulation.drop(['Compound', 'LigandName'], axis=1)
+        smrn_unique = smrn_unique.drop_duplicates()
+        smrn_unique.to_csv(os.path.join(settings.RESULT_DIR,
+                                       'iJO1366_SMRN.csv'), index=False)
+
         self.reaction_subsystem_df, self.metabolite_subsystem_df = \
             FigurePlotter.get_subsystem_data()
         self.regulation = self.regulation.join(self.reaction_subsystem_df,
@@ -1285,7 +1290,7 @@ if __name__ == "__main__":
 #    fp.plot_fig2ab()
 #    fp.plot_fig2ab()
 #    fp.plot_fig2cd(highconfidence = True)
-#    fp.plot_fig4()
+    fp.plot_fig4()
 #    fp.plot_fig5()
 #
 #    fp.plot_figS1()
