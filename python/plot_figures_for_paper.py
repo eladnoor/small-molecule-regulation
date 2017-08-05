@@ -801,6 +801,7 @@ class FigurePlotter(object):
             axs.set_xlabel('Number of Literature References')
             axs.set_ylabel('Number of SMRN edges')
             settings.savefig(fig, 'histogram_highconfidence_SMRN')
+            highc.sort_values('NumRef', axis=0, ascending=False, inplace=True)
             highc.to_csv( os.path.join(settings.RESULT_DIR, 'histogram_highconfidence_SMRN.csv') )
 
         # join interaction table with bigg.reaction IDs
@@ -840,6 +841,9 @@ class FigurePlotter(object):
                      xycoords='axes fraction', ha='left', va='top',
                      size=20)
         settings.savefig(fig, 'fig2d' + highc_string)
+        
+        # write a table of only the high confidence interactions
+        
 
     def plot_figS3(self, n_colors=20):
 
@@ -1289,8 +1293,8 @@ if __name__ == "__main__":
 
 #    fp.plot_fig2ab()
 #    fp.plot_fig2ab()
-#    fp.plot_fig2cd(highconfidence = True)
-    fp.plot_fig4()
+    fp.plot_fig2cd(highconfidence = True)
+#    fp.plot_fig4()
 #    fp.plot_fig5()
 #
 #    fp.plot_figS1()
