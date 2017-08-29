@@ -546,6 +546,15 @@ class FigurePlotter(object):
         ax3 = plt.subplot(gs2[0])
         axs = [ax1, ax2, ax3]
 
+        ax1.annotate('a', xy=(-0.3, 1.1),
+                     xycoords='axes fraction', ha='left', va='top',
+                     size=16)
+
+        ax3.annotate('b', xy=(-0.04, 1.1),
+                     xycoords='axes fraction', ha='left', va='top',
+                     size=16)
+
+
         s_range = np.logspace(-3, 3, 1000) # 10 uM - 100 mM
         eps = map(eps_s_v, s_range)
         axs[0].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
@@ -1293,9 +1302,9 @@ if __name__ == "__main__":
 
 #    fp.plot_fig2ab()
 #    fp.plot_fig2ab()
-    fp.plot_fig2cd(highconfidence = True)
+#    fp.plot_fig2cd(highconfidence = True)
 #    fp.plot_fig4()
-#    fp.plot_fig5()
+    fp.plot_fig5()
 #
 #    fp.plot_figS1()
 #    fp.plot_figS2()
