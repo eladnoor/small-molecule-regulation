@@ -546,13 +546,13 @@ class FigurePlotter(object):
         ax3 = plt.subplot(gs2[0])
         axs = [ax1, ax2, ax3]
 
-        ax1.annotate('a', xy=(-0.3, 1.1),
+        ax1.annotate('A', xy=(-0.5, 1.1),
                      xycoords='axes fraction', ha='left', va='top',
-                     size=16)
+                     size=10, fontweight='bold')
 
-        ax3.annotate('b', xy=(-0.04, 1.1),
+        ax1.annotate('B', xy=(-0.5, -0.25),
                      xycoords='axes fraction', ha='left', va='top',
-                     size=16)
+                     size=10, fontweight='bold')
 
 
         s_range = np.logspace(-3, 3, 1000) # 10 uM - 100 mM
@@ -619,7 +619,7 @@ class FigurePlotter(object):
 
         # rotate the metabolite names back to horizontal, and increase
         # the font size
-        axs[2].set_yticklabels(reversed(sat_joined.index), rotation=0, fontsize=10)
+        axs[2].set_yticklabels(sat_joined.index, rotation=0, fontsize=10)
 
         axs[2].set_xlabel('growth condition', fontsize=10)
         axs[2].set_ylabel('')
