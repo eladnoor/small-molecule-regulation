@@ -29,7 +29,7 @@ ADP + P_i + H^+ \rightharpoonup ATP + H2O~.
 \end{equation}
 Then, we solve the mass-balance problem while minimizing the sum of all fluxes, which finds the shortest futile cycle. We then eliminate the cycle by constraining its reaction to have zero flux, and iteratively run the minimization until no more solutions are found. We found 58 non-overlapping futile cycles, majority of which comprising 2 reactions.
 
-We mapped these reactions to enzymes, using EC number information (where available) and ended up with 75 unique reactions that take part in futile cycles (\texttt{FutileCycleReactionsECnumber.csv}). From these, using our SMRN, we find that 37 are regulated by at least one small molecule, whereas 38 are not regulated (\texttt{FutileCycleRegulatoryInfo.csv}).
+We mapped these reactions to enzymes, using EC number information (where available) and ended up with 75 unique reactions that take part in futile cycles (\texttt{FutileCycle\-ReactionsECnumber.csv}). From these, using our SMRN, we find that 37 are regulated by at least one small molecule, whereas 38 are not regulated (\texttt{FutileCycleRegulatoryInfo.csv}).
 
 \begin{center}
 \begin{tabular}{|l|c|c|}
