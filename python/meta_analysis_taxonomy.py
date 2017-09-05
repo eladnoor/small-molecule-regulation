@@ -93,7 +93,7 @@ ki = ki.ix[noinhib_ix,:]
 ki_merge = ki.groupby(['EC_number','LigandID'])
 act_merge = act.groupby(['EC_number', 'LigandID'])
 
-res = pd.DataFrame( columns = ['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy','Summary','URL','NullEntropy','NullSummary','Literature','NumReferences'] )
+res = pd.DataFrame( columns = ['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy','Summary','URL','NullEntropy','NullSummary','Literature','NumReferences','Organisms'] )
 
 for dtype in ['ki','act']:
     merge2use = ki_merge if dtype == 'ki' else act_merge
@@ -114,6 +114,7 @@ for dtype in ['ki','act']:
             res.at[ixname,'TotalEntries'] = len(merge2use.groups[ g ] )
         
             subdf = d2use.ix[ merge2use.groups[ g ],:]
+
             res.at[ixname,'Compound'] = ';'.join(subdf['LigandName'].unique())
             res.at[ixname,'Entropy'] = norm_entropy( subdf['taxonomy'].value_counts() )
             res.at[ixname,'Summary'] = summarystring( subdf['taxonomy'].value_counts() )
@@ -125,6 +126,7 @@ for dtype in ['ki','act']:
             uqlit,uqlitstring = literaturestring( subdf )
             res.at[ixname,'Literature'] = uqlitstring
             res.at[ixname,'NumReferences'] = uqlit
+            res.at[ixname,'Organisms'] = ';'.join(subdf['Organism'].unique())
             
             # Also calculate the entropy of all regulators of this EC, to see if it is specific to this metabolite or related to all metabolites
             bigdf = d2use[d2use['EC_number'] == g[0]]['taxonomy'].value_counts()
@@ -189,8 +191,8 @@ diffix2 = res.index.difference(oldres.index)
 ixix = res.index.intersection(oldres.index)
 
 col2use=['Type','Key','EC_number','LigandID','Compound','TotalEntries','Entropy	Summary']
-restrim = res.ix[ixix,:].astype(str)
-oldrestrim = oldres.ix[ixix,:].astype(str)
+restrim = res.ix[ixix,col2use].astype(str)
+oldrestrim = oldres.ix[ixix,col2use].astype(str)
 
 if restrim.equals(oldrestrim):
     print('Dataframes are equal except for the new indices.')
@@ -209,6 +211,7 @@ else:
 oldccm = pd.read_csv('../oldres/March2017/Regulation_by_taxon_CCM.csv',header = 0,index_col = 0)
 
 newccm = res_reduced_EC.copy().astype(str)
+newccm = newccm.drop( 'Organisms',axis = 1)
 oldccm = oldccm.astype(str)
 if res_reduced_EC.equals(oldccm):
     print('Central carbon metabolism data is unchanged.')
