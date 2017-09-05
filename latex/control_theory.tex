@@ -74,7 +74,7 @@ Metabolic Control Analysis \cite{Fell1996-be} is a mathematical framework to und
     \varepsilon_a^v \equiv \frac{\partial \ln(v)}{\partial \ln(a)} = \frac{\partial v}{\partial a} ~ \frac{a}{v}
 \end{eqnarray}
 
-The elasticity has several properties which make it desirable for modeling metabolic systems. In particular, for a variety of kinetic rate laws (\textit{e.g.} Michaelis-Menten kinetics), the elasticity (for Michaelis-Menten kinetics, the substrate elasticity is bounded between 0 and 1). 
+The elasticity has several properties which make it desirable for modeling metabolic systems. In particular, for a variety of kinetic rate laws (\textit{e.g.} Michaelis-Menten kinetics), the substrate elasticity is bounded between 0 and 1. 
 
 \subsection{Single-substrate Control in Michaelis-Menten Kinetics}
 To illustrate the concept of elasticity, let us consider an enzyme-catalyzed reaction, described by a one-substrate irreversible Michaelis-Menten kinetic rate law:
@@ -85,7 +85,7 @@ where $s$ is the substrate concentrations (in units of molar), and $K_M$ is the 
 
 \begin{center}
 	\begin{tikzpicture}
-	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\frac{s}{K_M + s}$]
+	\begin{loglogaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-3:1e3, xlabel=$s/K_M$, ylabel=$\frac{s}{K_M + s}$]
 	\addplot+[mark=none,smooth] (\x,{(\x/(1+\x))});
 	\end{loglogaxis}
 	\end{tikzpicture}
@@ -99,7 +99,7 @@ The scaled elasticity for $s$ is given by:
 
 \begin{center}
 	\begin{tikzpicture}
-	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-2:1e3, xlabel=$s/K_M$, ylabel=$\varepsilon_s^v$]
+	\begin{semilogxaxis}[width=200pt,axis x line=bottom, axis y line=left, tick align=outside, domain=1e-3:1e3, xlabel=$s/K_M$, ylabel=$\varepsilon_s^v$]
 	\addplot+[mark=none,smooth] (\x,{(1/(1+\x))});
 	\end{semilogxaxis}
 	\end{tikzpicture}
@@ -145,7 +145,7 @@ and therefore
 \begin{eqnarray}
 \varepsilon_{s}^v = \gamma^{-1} - \kappa + n (\kappa -  \kappa_n) > \gamma^{-1} - \kappa\,.
 \end{eqnarray}
-So, the MWC elasticity is always larger than the reversible Michaelis-Menten elasticity which, in turn, is larger than the irreversible elasticity.
+So, the MWC elasticity is always larger than the reversible Michaelis-Menten elasticity (compare to Equation \ref{eq:reversible_substrate_eps}) which, in turn, is larger than the irreversible elasticity.
 
 
 \subsection{Regulatory Effectors}
