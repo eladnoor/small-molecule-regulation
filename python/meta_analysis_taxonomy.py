@@ -207,20 +207,20 @@ else:
     print(colcount2)
     
 
-# Also check the CCM data
-oldccm = pd.read_csv('../oldres/March2017/Regulation_by_taxon_CCM.csv',header = 0,index_col = 0)
-
-newccm = res_reduced_EC.copy().astype(str)
-newccm = newccm.drop( 'Organisms',axis = 1)
-oldccm = oldccm.astype(str)
-if res_reduced_EC.equals(oldccm):
-    print('Central carbon metabolism data is unchanged.')
-else:
-    print('There are some differences in the central carbon metabolism data.')
-    
-    # It's likely that the entropy columns have changed slightly. Don't worry too much about this.
-    diffcols = np.where(newccm!=oldccm)[1]
-    colcount = dict( Counter(diffcols) )
-    colcount2 = {newccm.columns[item]:colcount[item] for item in colcount.keys()}
-    print('Here are the different columns:')
-    print(colcount2)
+## Also check the CCM data
+#oldccm = pd.read_csv('../oldres/March2017/Regulation_by_taxon_CCM.csv',header = 0,index_col = 0)
+#
+#newccm = res_reduced_EC.copy().astype(str)
+#newccm = newccm.drop( 'Organisms',axis = 1)
+#oldccm = oldccm.astype(str)
+#if res_reduced_EC.equals(oldccm):
+#    print('Central carbon metabolism data is unchanged.')
+#else:
+#    print('There are some differences in the central carbon metabolism data.')
+#    
+#    # It's likely that the entropy columns have changed slightly. Don't worry too much about this.
+#    diffcols = np.where(newccm!=oldccm)[1]
+#    colcount = dict( Counter(diffcols) )
+#    colcount2 = {newccm.columns[item]:colcount[item] for item in colcount.keys()}
+#    print('Here are the different columns:')
+#    print(colcount2)

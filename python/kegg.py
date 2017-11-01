@@ -22,7 +22,7 @@ class KEGG(object):
     def get_ec_df():
         eco2ec = KEGG.bioservices_kegg.link('eco', 'ec')
         eco2ec = filter(lambda x: len(x) == 2, map(lambda l : l.split('\t'), eco2ec.split('\n')))
-        eco2ec = pd.DataFrame(eco2ec)
+        eco2ec = pd.DataFrame(list(eco2ec))
         eco2ec[0] = eco2ec[0].apply(lambda s: s[3:])
         eco2ec[1] = eco2ec[1].apply(lambda s: s[4:])
         eco2ec.rename(columns={0: 'EC_number', 1: 'b_number'}, inplace=True)
@@ -46,9 +46,9 @@ class KEGG(object):
             for cid in cid2chebi.index:
                 chebi = re.findall('ChEBI: ([\d\s]+)\n', KEGG.bioservices_kegg.get(cid))
                 if len(chebi) == 0:
-                    print 'Cannot find a ChEBI for %s' % cid
+                    print('Cannot find a ChEBI for %s' % cid)
                 elif len(chebi) > 1:
-                    print 'Error parsing compound %s' % cid
+                    print('Error parsing compound %s' % cid)
                 else:
                     cid2chebi.at[cid, 'chebiID'] = chebi[0]
 

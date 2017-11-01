@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import imp
 import json
 import inspect
-import urllib2
+import urllib
 from contextlib import closing
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -70,7 +70,8 @@ def write_cache(fname, df):
     df.to_csv(os.path.join(CACHE_DIR, fname + '.csv'))
 
 def read_cache(fname):
-    return pd.DataFrame.from_csv(os.path.join(CACHE_DIR, fname + '.csv'))
+    return pd.read_csv(os.path.join(CACHE_DIR, fname + '.csv'), index_col=0,
+                       encoding='latin-1')
 
 def get_reaction_table_from_xls():
     with open(ECOLI_XLS_FNAME) as fp:
@@ -103,7 +104,7 @@ def get_ecoli_json():
 
     sparse = []
     for reaction in model['reactions']:
-        for met, coeff in reaction['metabolites'].iteritems():
+        for met, coeff in reaction['metabolites'].items():
             sparse.append([reaction['id'].lower(), met.lower(), coeff])
 
     sparse = pd.DataFrame(sparse, columns=['bigg.reaction',
@@ -115,7 +116,7 @@ def get_ecoli_json():
 
 
 def get_chebi_inchi_df():
-    with closing(urllib2.urlopen(CHEBI2INCHI_URL, 'file')) as r:
+    with closing(urllib.urlopen(CHEBI2INCHI_URL, 'file')) as r:
         chebi_inchi_df = pd.read_csv(r, sep='\t')
     chebi_inchi_df['chebiID'] = chebi_inchi_df['CHEBI_ID'].apply(lambda c: 'CHEBI:%d' % c)
     chebi_inchi_df.rename(columns={'InChI': 'inchi'}, inplace=True)

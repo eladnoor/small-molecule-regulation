@@ -178,7 +178,7 @@ class FigurePlotter(object):
             if 'subsystem' in r:
                 subsystem_data.append((rid, r['subsystem']))
             if 'metabolites' in r:
-                for met, coeff in r['metabolites'].iteritems():
+                for met, coeff in r['metabolites'].items():
                     stoich_data.append((rid, met, coeff))
 
         reaction_subsystem_df = pd.DataFrame(
@@ -556,11 +556,11 @@ class FigurePlotter(object):
 
 
         s_range = np.logspace(-3, 3, 1000) # 10 uM - 100 mM
-        eps = map(eps_s_v, s_range)
+        eps = list(map(eps_s_v, s_range))
         axs[0].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
         axs[0].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
                        edgecolor='none', s=15, vmin=-1, vmax=1)
-        eps = map(eps_x_v, s_range)
+        eps = list(map(eps_x_v, s_range))
         axs[1].plot([1e-3, 1e3], [0, 0], '--', color=(0.8, 0.8, 0.8))
         axs[1].scatter(s_range, eps, c=eps, cmap=settings.HEATMAP_COLORMAP,
                        edgecolor='none', s=15, vmin=-1, vmax=1)
@@ -653,7 +653,7 @@ class FigurePlotter(object):
         sns.heatmap(km_pivoted, ax=ax0, mask=km_pivoted.isnull(),
                     cbar=False, vmin=-1, vmax=1, cmap=settings.HEATMAP_COLORMAP, fmt='.2f')
         ax0.set_xticklabels(list(km_pivoted.columns), fontsize=12, rotation=90)
-        ax0.set_yticklabels(reversed(km_pivoted.index), rotation=0, fontsize=6)
+        ax0.set_yticklabels(km_pivoted.index, rotation=0, fontsize=6)
         ax0.set_title('substrates', fontsize=20)
         ax0.set_xlabel('growth condition', fontsize=16)
         ax0.set_ylabel('')
@@ -664,7 +664,7 @@ class FigurePlotter(object):
                     cbar_ax=clb1[0], fmt='.2f')
         ax1.set_xticklabels(list(ki_pivoted.columns), fontsize=12, rotation=90)
         ax1.set_title('inhibitors', fontsize=20)
-        ax1.set_yticklabels(reversed(ki_pivoted.index),
+        ax1.set_yticklabels(ki_pivoted.index,
                             rotation=0, fontsize=10)
         ax1.set_xlabel('growth condition', fontsize=16)
         ax1.set_ylabel('')
@@ -691,8 +691,8 @@ class FigurePlotter(object):
             venn3(subsets=(Abc, aBc, ABc, abC, AbC, aBC, ABC),
                   set_labels=set_labels, ax=ax)
 
-        print "found %d native interactions in %s" % \
-            (self.regulation.shape[0], ORGANISM)
+        print("found %d native interactions in %s" % \
+            (self.regulation.shape[0], ORGANISM))
 
         ind_inh = self.regulation['Mode'] == '-'
         ind_act = self.regulation['Mode'] == '+'
@@ -922,7 +922,7 @@ class FigurePlotter(object):
                      }
         inh_table_lumped = inh_table.transpose()
         inh_table_lumped.columns = map(str.upper, inh_table_lumped.columns)
-        for k, v in lump_dict.iteritems():
+        for k, v in lump_dict.items():
             inh_table_lumped[k] = inh_table_lumped[v].sum(1)
             inh_table_lumped.drop(v, axis=1, inplace=True)
 
@@ -1018,7 +1018,7 @@ class FigurePlotter(object):
         res = res[res['KI_Number'] > 1]
         res = res[res['KM_Number'] > 1]
 
-        print "Found %d metabolites with more than 2 KMs and more than 2 KIs" % res.shape[0]
+        print("Found %d metabolites with more than 2 KMs and more than 2 KIs" % res.shape[0])
 
         res['PValue'] = np.nan
 
@@ -1178,7 +1178,7 @@ class FigurePlotter(object):
         fig.text(0.5, 0.47, 'Non-competitive inhibition', fontsize=17, ha='center')
 
         ax = axs[0, 0]
-        ax.plot(s_range, map(v_s, s_range), '-')
+        ax.plot(s_range, list(map(v_s, s_range)), '-')
         ax.set_xscale('log')
         ax.set_yscale('log')
         ax.set_xlabel('substrate conc. $s$ [mM]')
@@ -1197,7 +1197,7 @@ class FigurePlotter(object):
                     xy=(0.5, 0.1), xycoords='axes fraction', fontsize=14)
 
         ax = axs[0, 1]
-        ax.plot(s_range, map(eps_s_v, s_range), '-')
+        ax.plot(s_range, list(map(eps_s_v, s_range)), '-')
         ax.set_xscale('log')
         ax.set_yscale('linear')
         ax.set_xlabel('substrate conc. $s$ [mM]')
@@ -1216,7 +1216,7 @@ class FigurePlotter(object):
         ax.set_title('substrate elasticity')
 
         ax = axs[1, 0]
-        ax.plot(s_range, map(v_x, s_range), '-')
+        ax.plot(s_range, list(map(v_x, s_range)), '-')
         ax.set_xscale('log')
         ax.set_yscale('log')
         ax.set_xlabel('inhibitor conc. $I$ [mM]')
@@ -1235,7 +1235,7 @@ class FigurePlotter(object):
                     xy=(0.05, 0.1), xycoords='axes fraction', fontsize=14)
 
         ax = axs[1, 1]
-        ax.plot(s_range, map(abs_eps_x_v, s_range), '-')
+        ax.plot(s_range, list(map(abs_eps_x_v, s_range)), '-')
         ax.set_xscale('log')
         ax.set_yscale('linear')
         ax.set_xlabel('inhibitor conc. $I$ [mM]')
@@ -1304,15 +1304,14 @@ if __name__ == "__main__":
 #    fp.plot_fig2ab()
 #    fp.plot_fig2cd(highconfidence = True)
 #    fp.plot_fig4()
-    fp.plot_fig5()
+#    fp.plot_fig5()
 #
 #    fp.plot_figS1()
-#    fp.plot_figS2()
 #    fp.plot_figS3()
 #    fp.plot_figS4()
-#    fp.plot_figS5()
+    fp.plot_figS5()
 #    fp.plot_figS6()
-#
+
 #    fp.print_ccm_table()
 
     plt.close('all')

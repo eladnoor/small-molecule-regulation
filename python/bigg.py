@@ -24,7 +24,7 @@ class BiGG(object):
         bigg2chebi = []
         with open(settings.BIGG_METABOLITE_FNAME, 'r') as fp:
             csv_reader = csv.reader(fp, delimiter='\t')
-            csv_reader.next()
+            next(csv_reader)
             for row in csv_reader:
                 bigg_id = row[0]
                 universal_bigg_id = row[1]
@@ -66,7 +66,7 @@ class BiGG(object):
 
         with open(settings.BIGG_REACTION_FNAME, 'r') as fp:
             csv_reader = csv.reader(fp, delimiter='\t')
-            csv_reader.next()
+            next(csv_reader)
             for row in csv_reader:
                 bigg_id = row[0].lower()
                 database_links = json.loads(row[3])

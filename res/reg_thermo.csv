@@ -11,7 +11,7 @@
 9,1.1.1.22,Cell Envelope Biosynthesis,1.25,2.0,1-2 regulators,regulated
 10,1.1.1.267,Cofactor and Prosthetic Group Biosynthesis,1.74,2.0,1-2 regulators,regulated
 11,1.1.1.271,Cell Envelope Biosynthesis,0.35,2.0,1-2 regulators,regulated
-12,1.1.1.282,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",3.985,0.0,0 regulators,not regulated
+12,1.1.1.282,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",3.9850000000000003,0.0,0 regulators,not regulated
 13,1.1.1.290,Cofactor and Prosthetic Group Biosynthesis,1.59,0.0,0 regulators,not regulated
 14,1.1.1.298,Nucleotide Salvage Pathway,1.89,0.0,0 regulators,not regulated
 15,1.1.1.336,Cell Envelope Biosynthesis,1.49,2.0,1-2 regulators,regulated
@@ -28,7 +28,7 @@
 26,1.1.1.69,Alternate Carbon Metabolism,2.02,0.0,0 regulators,not regulated
 27,1.1.1.71,Pyruvate Metabolism,1.68,0.0,0 regulators,not regulated
 28,1.1.1.72,Alternate Carbon Metabolism,3.25,0.0,0 regulators,not regulated
-29,1.1.1.79,Glyoxylate Metabolism,3.695,0.0,0 regulators,not regulated
+29,1.1.1.79,Glyoxylate Metabolism,3.6950000000000003,0.0,0 regulators,not regulated
 30,1.1.1.85,"Valine, Leucine, and Isoleucine Metabolism",2.785,0.0,0 regulators,not regulated
 31,1.1.1.86,"Valine, Leucine, and Isoleucine Metabolism",1.61,3.0,3+ regulators,regulated
 32,1.1.1.94,Alternate Carbon Metabolism,2.1,14.0,3+ regulators,regulated
@@ -176,7 +176,7 @@
 174,2.7.4.25,Nucleotide Salvage Pathway,0.17,0.0,0 regulators,not regulated
 175,2.7.4.3,Nucleotide Salvage Pathway,0.095,3.0,3+ regulators,regulated
 176,2.7.4.4,Nucleotide Salvage Pathway,0.25,0.0,0 regulators,not regulated
-177,2.7.4.6,Nucleotide Salvage Pathway,0.23,4.0,3+ regulators,regulated
+177,2.7.4.6,Nucleotide Salvage Pathway,0.22999999999999998,4.0,3+ regulators,regulated
 178,2.7.4.7,Cofactor and Prosthetic Group Biosynthesis,0.27,0.0,0 regulators,not regulated
 179,2.7.4.8,Nucleotide Salvage Pathway,0.15,7.0,3+ regulators,regulated
 180,2.7.4.9,Nucleotide Salvage Pathway,0.23,3.0,3+ regulators,regulated

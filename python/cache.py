@@ -12,7 +12,6 @@ import zipfile
 import os
 from kegg import KEGG
 from bigg import BiGG
-from reaction_thermodynamics import reaction_thermodynamics
 
 # make a concensus table of the BRENDA ligand IDs, ChEBIs, BiGG and KEGG.
 
@@ -54,15 +53,15 @@ def map_brenda_to_chebi():
 
     orphan_ligands = ligand_id_table[(pd.isnull(ligand_id_table['chebiID'])) & (pd.isnull(ligand_id_table['inchi']))]
 
-    print "There are %d mapped, %d unmapped and %d orphan ligands" % \
-        (mapped_ligands.shape[0], unmapped_ligands.shape[0], orphan_ligands.shape[0])
+    print("There are %d mapped, %d unmapped and %d orphan ligands" % \
+        (mapped_ligands.shape[0], unmapped_ligands.shape[0], orphan_ligands.shape[0]))
 
     # load the ChEBI to InChI table
     chebi_inchi_df = settings.get_chebi_inchi_df()
     chebi_inchi_df.groupby('inchi').first()
     newly_mapped_ligands = unmapped_ligands.join(chebi_inchi_df.groupby('inchi').first(), on='inchi', how='inner')
 
-    print "There are %d newly mapped ligands, using direct mapping by InChI to ChEBI" % newly_mapped_ligands.shape[0]
+    print("There are %d newly mapped ligands, using direct mapping by InChI to ChEBI" % newly_mapped_ligands.shape[0])
 
     brenda2chebi = pd.concat([mapped_ligands, newly_mapped_ligands])
     brenda2chebi = brenda2chebi[['LigandID', 'chebiID']].groupby('LigandID').first()
@@ -78,10 +77,10 @@ def map_brenda_to_chebi():
 
     # load the manually mapped ligand table
     manually_mapped_ligand_df = pd.DataFrame.from_csv(os.path.join(settings.DATA_DIR, 'ligand_ids_manual_mapping.csv'), index_col=0)
-    print "There are %d manually mapped ligands" % manually_mapped_ligand_df.shape[0]
+    print("There are %d manually mapped ligands" % manually_mapped_ligand_df.shape[0])
     for lid in manually_mapped_ligand_df.index:
         chebi_id, bigg_id = manually_mapped_ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']]
-        print lid, chebi_id, bigg_id
+        print(lid, chebi_id, bigg_id)
         ligand_df.loc[lid, ['chebiID', 'bigg.metabolite']] = [chebi_id, bigg_id]
 
     # combine the mapping from CIDs to ChEBIs with the mapping from ligand_IDs
@@ -95,7 +94,8 @@ def map_brenda_to_chebi():
 
 
 def rebuild_cache():
-
+    from reaction_thermodynamics import reaction_thermodynamics
+    
     # read the ligand ID table and remove the word "chebi:"
     # from the beginning of the string
     chebi2kegg, chebi2bigg, ligand_df = map_brenda_to_chebi()
@@ -168,36 +168,36 @@ if __name__ == '__main__':
     k = k[['Mode', 'bigg.metabolite', 'EC_number', 'Commentary', 'Organism']]
     k['Counter'] = 1
 
-    print "All Entries"
-    print k.groupby('Mode').sum()['Counter']
+    print("All Entries")
+    print(k.groupby('Mode').sum()['Counter'])
     k = k[k['Organism'] == 'Escherichia coli']
 
-    print "Only E. coli"
-    print k.groupby('Mode').sum()['Counter']
+    print("Only E. coli")
+    print(k.groupby('Mode').sum()['Counter'])
 
     # filter out mutated enzymes
     k = k[(pd.isnull(k['Commentary'])) |
           ((k['Commentary'].str.find('mutant') == -1) &
            (k['Commentary'].str.find('mutation') == -1))]
 
-    print "filtering mutants"
-    print k.groupby('Mode').sum()['Counter']
+    print("filtering mutants")
+    print(k.groupby('Mode').sum()['Counter'])
 
     # remove values with unmatched ligand
     bigg = BiGG()
     k = k[pd.notnull(k['bigg.metabolite'])]
     k['bigg.metabolite'] = k['bigg.metabolite'].str.lower()
     k = k[k['EC_number'].isin(bigg.get_native_EC_numbers())]
-    print "leaving only EC numbers from BiGG"
-    print k.groupby('Mode').sum()['Counter']
+    print("leaving only EC numbers from BiGG")
+    print(k.groupby('Mode').sum()['Counter'])
 
     k = k.groupby(('bigg.metabolite', 'EC_number', 'Mode')).first().reset_index()
-    print "Unique met-EC pairs"
-    print k.groupby('Mode').sum()['Counter']
+    print("Unique met-EC pairs")
+    print(k.groupby('Mode').sum()['Counter'])
 
-    print "Unique metabolites"
-    print k.groupby(('bigg.metabolite', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter']
+    print("Unique metabolites")
+    print(k.groupby(('bigg.metabolite', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter'])
 
-    print "Unique EC numbers"
-    print k.groupby(('EC_number', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter']
+    print("Unique EC numbers")
+    print(k.groupby(('EC_number', 'Mode')).first().reset_index().groupby('Mode').sum()['Counter'])
 

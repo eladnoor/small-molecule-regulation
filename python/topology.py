@@ -7,8 +7,6 @@ import settings
 import networkx as nx
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
 import os
 
 METS_TO_REMOVE = ['h', 'h2o', 'co2', 'o2', 'pi', 'atp', 'adp', 'amp',
@@ -52,10 +50,11 @@ def calculate_distances(smrn):
     # %% Read BIGG model
     model, S = settings.get_ecoli_json()
     B, mets, rxns = convert_to_bipartite(S)
-    spl = nx.shortest_path_length(B)
+    spl = dict(nx.shortest_path_length(B))
     spl_values = []
     for met in mets:
-        spl_values += map(spl[met].get, rxns.intersection(spl[met].keys()))
+        r = rxns.intersection(spl[met].keys())
+        spl_values += list(map(spl[met].get, r))
     all_distances = (np.array(spl_values) - 1.0) / 2
 
     smrn_dist = smrn[['bigg.metabolite', 'bigg.reaction']].drop_duplicates()

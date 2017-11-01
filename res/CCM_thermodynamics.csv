@@ -1,7 +1,7 @@
 ,EC_number,subsystem,$| log_{10}(\Gamma) |$,bigg.metabolite,num_regulators,Regulation
 20,1.1.1.42,Citric Acid Cycle,0.78,2.0,1-2 regulators,regulated
 21,1.1.1.49,Pentose Phosphate Pathway,0.49,9.0,3+ regulators,regulated
-29,1.1.1.79,Glyoxylate Metabolism,3.695,0.0,0 regulators,not regulated
+29,1.1.1.79,Glyoxylate Metabolism,3.6950000000000003,0.0,0 regulators,not regulated
 54,1.2.1.59,Glycolysis/Gluconeogenesis,1.43,0.0,0 regulators,not regulated
 59,1.2.4.1,Glycolysis/Gluconeogenesis,2.08,7.0,3+ regulators,regulated
 91,2.2.1.2,Pentose Phosphate Pathway,0.06,5.0,3+ regulators,regulated

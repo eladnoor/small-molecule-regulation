@@ -2430,7 +2430,7 @@ AAK domain is responsible for inhibition,,2.7.2.11,,,243,L-proline,681421,,-,,Es
 ,,2.7.4.3,C00020,,30,6 AMP,642586,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,adk1
 ,,2.7.4.3,C00020,,30,3 AMP,642586,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,adk1
 ,,2.7.4.3,C04058,,22346,"P1,P5-di(adenosine-5') pentaphosphate",702283,,-,Bis(5'-adenosyl) pentaphosphate,Escherichia coli,BRENDA,ap5a,CHEBI:28898,adk1
-1 킡,,2.7.4.3,C04058,,2151,"P1,P5-di(adenosine-5')pentaphosphate",660819,,-,Bis(5'-adenosyl) pentaphosphate,Escherichia coli,BRENDA,ap5a,CHEBI:28898,adk1
+1 쨉M,,2.7.4.3,C04058,,2151,"P1,P5-di(adenosine-5')pentaphosphate",660819,,-,Bis(5'-adenosyl) pentaphosphate,Escherichia coli,BRENDA,ap5a,CHEBI:28898,adk1
 ,,2.7.4.3,C04058,,2151,"P1,P5-di(adenosine-5')pentaphosphate",675337,,-,Bis(5'-adenosyl) pentaphosphate,Escherichia coli,BRENDA,ap5a,CHEBI:28898,adk1
 ,,2.7.4.9,C00458,,179,dCTP,645198,,-,dCTP,Escherichia coli,BRENDA,dctp,CHEBI:16311,dtmpk
 ,,2.7.4.9,,,145,dTTP,645198,,-,,Escherichia coli,BRENDA,dttp,CHEBI:37568,dtmpk
@@ -3919,12 +3919,12 @@ weak,,6.1.1.21,C00013,,17,21 diphosphate,369,,-,Diphosphate,Escherichia coli,BRE
 "inhibition at 15 mM, optimal activation at 5-10 mM",,6.1.1.21,C00305,,6,Mg2+,369,,-,Magnesium cation,Escherichia coli,BRENDA,mg2,CHEBI:18420,histrs
 ,,6.2.1.5,C00026,,34,2-oxoglutarate,799,,-,2-Oxoglutarate,Escherichia coli,BRENDA,akg,CHEBI:30915,sucoas
 ,,6.2.1.5,C00026,,34,2 2-oxoglutarate,799,,-,2-Oxoglutarate,Escherichia coli,BRENDA,akg,CHEBI:30915,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,2 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,16 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,6 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,3 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
-adenosine 5�-tetraphosphate formation,,6.2.1.5,C00008,,13,4 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,2 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,16 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,6 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,3 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
+adenosine 5쨈-tetraphosphate formation,,6.2.1.5,C00008,,13,4 ADP,823,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,sucoas
 ,,6.2.1.5,C00002,,4,ATP,799,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,sucoas
 ,,6.2.1.5,C00002,,4,2 ATP,799,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,sucoas
 ,,6.2.1.5,C00002,,4,16 ATP,799,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,sucoas
@@ -4211,8 +4211,8 @@ noncompetitive vs. ATP,,6.3.5.4,C00013,,17,21 diphosphate,649836,,-,Diphosphate,
 "0.2 mM, inhibits Gln-dependent activity. No effect on the activity with NH4+ in carbamoyl-phosphate synthase reaction",,6.3.5.5,,,22,2 H2O2,"1725, 1731",,-,,Escherichia coli,BRENDA,h2o2,CHEBI:29192,cbps
 "0.2 mM, inhibits Gln-dependent activity. No effect on the activity with NH4+ in carbamoyl-phosphate synthase reaction",,6.3.5.5,,,22,3 H2O2,"1725, 1731",,-,,Escherichia coli,BRENDA,h2o2,CHEBI:29192,cbps
 "0.2 mM, inhibits Gln-dependent activity. No effect on the activity with NH4+ in carbamoyl-phosphate synthase reaction",,6.3.5.5,,,22,4 H2O2,"1725, 1731",,-,,Escherichia coli,BRENDA,h2o2,CHEBI:29192,cbps
-slight inhibition at 25캜,,6.3.5.5,C00130,,232,IMP,649877,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,cbps
-"binds with good affinity to the enzyme, small effect below 35캜",,6.3.5.5,C00130,,232,IMP,650927,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,cbps
+slight inhibition at 25째C,,6.3.5.5,C00130,,232,IMP,649877,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,cbps
+"binds with good affinity to the enzyme, small effect below 35째C",,6.3.5.5,C00130,,232,IMP,650927,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,cbps
 inhibits two partial reactions catalyzed by the enzyme: bicarbonate-dependent ATPase and ATP synthesis from carbamoyl phosphate,,6.3.5.5,C04058,,94642,"P1,P5-di(adenosine 5')-pentaphosphate",1738,,-,Bis(5'-adenosyl) pentaphosphate,Escherichia coli,BRENDA,ap5a,CHEBI:28898,cbps
 inhibits to a lesser extent than UMP,,6.3.5.5,C00015,,26,UDP,1731,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,cbps
 inhibits to a lesser extent than UMP,,6.3.5.5,C00015,,26,2 UDP,1731,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,cbps
@@ -4248,16 +4248,16 @@ pH 7.1,,1.1.1.42,C00074,0.31,51,phosphoenolpyruvate,680481,,-,Phosphoenolpyruvat
 "pH 8.0, temperature not specified in the publication, varied substrate: NADP+",,1.1.1.49,C00005,0.01,5,8 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: NADP+",,1.1.1.49,C00005,0.01,5,11 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: NADP+",,1.1.1.49,C00005,0.01,5,5 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,2 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,3 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,14 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,7 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,6 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,4 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,8 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,11 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,5 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,2 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,3 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,14 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,7 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,6 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,4 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,8 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,11 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, competitive inhibition constant",,1.1.1.49,C00005,0.038,5,5 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",,1.1.1.49,C00005,0.04,5,2 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",,1.1.1.49,C00005,0.04,5,NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, slope inhibition constant",,1.1.1.49,C00005,0.04,5,3 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
@@ -4278,56 +4278,56 @@ pH 7.1,,1.1.1.42,C00074,0.31,51,phosphoenolpyruvate,680481,,-,Phosphoenolpyruvat
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",,1.1.1.49,C00005,0.18,5,8 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",,1.1.1.49,C00005,0.18,5,11 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
 "pH 8.0, temperature not specified in the publication, varied substrate: glucose 6-phosphate, intercept inhibition constant",,1.1.1.49,C00005,0.18,5,5 NADPH,722577,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,2 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,3 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,14 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,7 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,6 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,4 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,8 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,11 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"25캜, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,5 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,2 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,3 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,14 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,7 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,6 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,4 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,8 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,11 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 8.0, 22캜, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,5 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,,0.0044,4869,sn-glycerol-3-phosphate,669175,,-,,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C13050,0.1,402,ADP-ribose,669177,,-,Cyclic ADP-ribose,Escherichia coli,BRENDA,adprib,CHEBI:31445,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00003,0.2,7,2 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00003,0.2,7,NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00003,0.2,7,3 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00003,0.2,7,4 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00003,0.2,7,7 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,2 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,3 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,14 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,7 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,6 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,4 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,8 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,11 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00006,0.25,10,5 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,2 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,16 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,6 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,3 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00008,0.8,13,4 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,39 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,40 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,41 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,2 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,6 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
-"pH 7.4, 23캜, wild-type enzyme",,1.1.1.94,C00020,5.0,30,3 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,2 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,3 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,14 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,7 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,6 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,4 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,8 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,11 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"25째C, pH 8.0, non-competitive inhibition constant",,1.1.1.49,C00005,2.09,5,5 NADPH,722244,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,g6pdh2r
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,2 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,3 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,14 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,7 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,6 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,4 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,8 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,11 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 8.0, 22째C, wild-type enzyme",,1.1.1.86,C00005,0.0012,5,5 NADPH,639183,,-,NADPH,Escherichia coli,BRENDA,nadph,CHEBI:16474,kara1
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,,0.0044,4869,sn-glycerol-3-phosphate,669175,,-,,Escherichia coli,BRENDA,glyc3p,CHEBI:57597,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C13050,0.1,402,ADP-ribose,669177,,-,Cyclic ADP-ribose,Escherichia coli,BRENDA,adprib,CHEBI:31445,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,2 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,3 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,4 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00003,0.2,7,7 NAD+,669177,,-,NAD+,Escherichia coli,BRENDA,nad,CHEBI:15846,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,2 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,3 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,14 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,7 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,6 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,4 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,8 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,11 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00006,0.25,10,5 NADP+,669177,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,2 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,16 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,6 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,3 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00008,0.8,13,4 ADP,669177,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,39 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,40 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,41 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,2 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,6 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
+"pH 7.4, 23째C, wild-type enzyme",,1.1.1.94,C00020,5.0,30,3 AMP,669177,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,g3pd2
 pH 7.6,,1.1.1.169,C00002,0.61,4,ATP,669806,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
 pH 7.6,,1.1.1.169,C00002,0.61,4,2 ATP,669806,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
 pH 7.6,,1.1.1.169,C00002,0.61,4,16 ATP,669806,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,dpr
@@ -4366,8 +4366,8 @@ pH 7.6,,1.1.1.169,C00009,27.0,16,4 phosphate,669806,,-,Orthophosphate,Escherichi
 ,,1.1.1.271,C00006,0.069,10,8 NADP+,389515,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
 ,,1.1.1.271,C00006,0.069,10,11 NADP+,389515,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
 ,,1.1.1.271,C00006,0.069,10,5 NADP+,389515,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,gdmane
-"pH 7.5, 24캜",,1.1.99.33,C00058,7.1,120,formate,698687,,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
-"pH 7.5, 24캜",,1.1.99.33,C00058,7.1,120,2 formate,698687,,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
+"pH 7.5, 24째C",,1.1.99.33,C00058,7.1,120,formate,698687,,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
+"pH 7.5, 24째C",,1.1.99.33,C00058,7.1,120,2 formate,698687,,-,Formate,Escherichia coli,BRENDA,for,CHEBI:30751,fhl
 ,,1.2.1.8,C00601,0.53,769,phenylacetaldehyde,390329,,-,Phenylacetaldehyde,Escherichia coli,BRENDA,pacald,CHEBI:16424,betaldhx
 ,,1.2.1.8,C00084,5.7,90,acetaldehyde,390329,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,betaldhx
 ,,1.2.1.8,C00084,5.7,90,2 acetaldehyde,390329,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,betaldhx
@@ -4375,8 +4375,8 @@ pH 7.6,,1.1.1.169,C00009,27.0,16,4 phosphate,669806,,-,Orthophosphate,Escherichi
 ,,1.2.1.8,,11.0,149,2 choline,390329,,-,,Escherichia coli,BRENDA,chol,CHEBI:72322,betaldhx
 ,,1.2.1.8,C00189,78.0,456,ethanolamine,390329,,-,Ethanolamine,Escherichia coli,BRENDA,etha,CHEBI:16000,betaldhx
 ,,1.2.1.8,,130.0,2750,N-methylglycine,390329,,-,,Escherichia coli,BRENDA,sarcs,CHEBI:57433,betaldhx
-"at 25캜 in 50 mM Tris/HCl buffer, pH 8.0",,1.2.1.10,C00084,265.0,90,acetaldehyde,724721,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
-"at 25캜 in 50 mM Tris/HCl buffer, pH 8.0",,1.2.1.10,C00084,265.0,90,2 acetaldehyde,724721,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
+"at 25째C in 50 mM Tris/HCl buffer, pH 8.0",,1.2.1.10,C00084,265.0,90,acetaldehyde,724721,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
+"at 25째C in 50 mM Tris/HCl buffer, pH 8.0",,1.2.1.10,C00084,265.0,90,2 acetaldehyde,724721,,-,Acetaldehyde,Escherichia coli,BRENDA,acald,CHEBI:15343,acald
 ,,1.2.1.11,,26.0,1989,tungstate,390200,,-,,Escherichia coli,BRENDA,tungs,CHEBI:36272,asad
 isozyme B,,1.2.1.21,C00160,0.00085,479,glycolate,390213,,-,Glycolate,Escherichia coli,BRENDA,glyclt,CHEBI:17497,gcaldd
 isozyme A,,1.2.1.21,C00266,0.0021,604,glycolaldehyde,390213,,-,Glycolaldehyde,Escherichia coli,BRENDA,gcald,CHEBI:17071,gcaldd
@@ -4405,32 +4405,32 @@ assay with whole enzyme complex,,1.2.4.1,C00109,2.25,29733,alpha-Ketobutyric aci
 ,,1.4.3.5,C00018,0.008,32,pyridoxal 5'-phosphate,"391903, 391904, 654870",,-,Pyridoxal phosphate,Escherichia coli,BRENDA,pydx5p,CHEBI:18405,pdx5poi
 pH and temperature not specified in the publication,,1.4.3.5,C00018,0.008,32,pyridoxal 5'-phosphate,724427,,-,Pyridoxal phosphate,Escherichia coli,BRENDA,pydx5p,CHEBI:18405,pdx5poi
 substrate inhibition,,1.4.3.5,C00627,0.05,1037,pyridoxine 5'-phosphate,654870,,-,Pyridoxine phosphate,Escherichia coli,BRENDA,pdx5p,CHEBI:28803,pdx5poi
-"recombinant wild-type enzyme, pH 7.2, 4캜",,1.5.1.20,,0.061,934,methylenetetrahydrofolate,654771,,-,,Escherichia coli,BRENDA,mlthf,CHEBI:20502,mthfr2
-"wild-type, pH 7.2, 25캜",,1.5.1.20,C00143,0.32,401,"5,10-methylenetetrahydrofolate",696353,,-,"5,10-Methylenetetrahydrofolate",Escherichia coli,BRENDA,mlthf,CHEBI:1989,mthfr2
-"at pH 10.5, reduced enzyme",,1.7.99.4,C01326,0.044,118,cyanide,395167,,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,no3r2bpp
+"recombinant wild-type enzyme, pH 7.2, 4째C",,1.5.1.20,,0.061,934,methylenetetrahydrofolate,654771,,-,,Escherichia coli,BRENDA,mlthf,CHEBI:20502,mthfr2
+"wild-type, pH 7.2, 25째C",,1.5.1.20,C00143,0.32,401,"5,10-methylenetetrahydrofolate",696353,,-,"5,10-Methylenetetrahydrofolate",Escherichia coli,BRENDA,mlthf,CHEBI:1989,mthfr2
+"at pH 10.5, reduced enzyme",,1.7.99.4,C01326,0.044000000000000004,118,cyanide,395167,,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,no3r2bpp
 ,,1.8.1.2,C01326,0.006,118,cyanide,392968,,-,Hydrogen cyanide,Escherichia coli,BRENDA,cyan,CHEBI:18407,sulri
 ,,1.8.1.2,C06697,0.08,397,arsenite,392968,,-,Arsenite,Escherichia coli,BRENDA,aso3,CHEBI:49900,sulri
-at 25캜,,1.8.1.9,C00006,0.015,10,2 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,3 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,14 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,7 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,6 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,4 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,8 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,11 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-at 25캜,,1.8.1.9,C00006,0.015,10,5 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
-competitive vs. CDP,,1.17.4.1,C00035,0.007,53,GDP,437939,,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
-competitive vs. CDP,,1.17.4.1,C00035,0.007,53,2 GDP,437939,,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
+at 25째C,,1.8.1.9,C00006,0.015,10,2 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,3 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,14 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,7 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,6 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,4 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,8 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,11 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+at 25째C,,1.8.1.9,C00006,0.015,10,5 NADP+,393993,,-,NADP+,Escherichia coli,BRENDA,nadp,CHEBI:18009,trdr
+competitive vs. CDP,,1.17.4.1,C00035,0.006999999999999999,53,GDP,437939,,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
+competitive vs. CDP,,1.17.4.1,C00035,0.006999999999999999,53,2 GDP,437939,,-,GDP,Escherichia coli,BRENDA,gdp,CHEBI:17552,rndr1
 competitive vs. CDP,,1.17.4.1,C00015,0.5,26,UDP,437939,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 competitive vs. CDP,,1.17.4.1,C00015,0.5,26,2 UDP,437939,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 competitive vs. CDP,,1.17.4.1,C00015,0.5,26,28 UDP,437939,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 competitive vs. CDP,,1.17.4.1,C00015,0.5,26,3 UDP,437939,,-,UDP,Escherichia coli,BRENDA,udp,CHEBI:17659,rndr1
 ,,2.1.1.79,,0.22,843,S-adenosylhomocysteine,"485626, 485631",,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,cfas160e
 ,,2.1.1.79,,0.22,843,2 S-adenosylhomocysteine,"485626, 485631",,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,cfas160e
-,,2.1.3.2,,0.037,60,CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
-,,2.1.3.2,,0.037,60,2 CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
-,,2.1.3.2,,0.037,60,3 CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
+,,2.1.3.2,,0.037000000000000005,60,CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
+,,2.1.3.2,,0.037000000000000005,60,2 CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
+,,2.1.3.2,,0.037000000000000005,60,3 CTP,485837,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,aspct
 ,,2.1.3.2,C00013,0.051,17,diphosphate,485843,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,aspct
 ,,2.1.3.2,C00013,0.051,17,2 diphosphate,485843,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,aspct
 ,,2.1.3.2,C00013,0.051,17,5 diphosphate,485843,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,aspct
@@ -4487,12 +4487,12 @@ competitive vs. CDP,,1.17.4.1,C00015,0.5,26,3 UDP,437939,,-,UDP,Escherichia coli
 ,,2.1.3.3,,63.5,95,L-serine,485898,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,ocbt
 ,,2.1.3.3,,63.5,95,3 L-serine,485898,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,ocbt
 ,,2.1.3.3,,110.0,266,L-asparagine,485898,,-,,Escherichia coli,BRENDA,asn__l,CHEBI:58048,ocbt
-"pH 8.0, 37캜",,2.2.1.7,C00577,3.2,639,D-glyceraldehyde,719975,,-,D-Glyceraldehyde,Escherichia coli,BRENDA,glyald,CHEBI:17378,dxps
-"pH 8.0, 37캜",,2.2.1.7,C00577,3.2,639,2 D-glyceraldehyde,719975,,-,D-Glyceraldehyde,Escherichia coli,BRENDA,glyald,CHEBI:17378,dxps
-"25캜, pH 7.5, wild-type enzyme",,2.3.1.30,,0.0006,336,L-Cys,676935,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,serat
-"25캜, pH 7.5, wild-type enzyme",,2.3.1.30,,0.0006,336,2 L-Cys,676935,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,serat
+"pH 8.0, 37째C",,2.2.1.7,C00577,3.2,639,D-glyceraldehyde,719975,,-,D-Glyceraldehyde,Escherichia coli,BRENDA,glyald,CHEBI:17378,dxps
+"pH 8.0, 37째C",,2.2.1.7,C00577,3.2,639,2 D-glyceraldehyde,719975,,-,D-Glyceraldehyde,Escherichia coli,BRENDA,glyald,CHEBI:17378,dxps
+"25째C, pH 7.5, wild-type enzyme",,2.3.1.30,,0.0006,336,L-Cys,676935,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,serat
+"25째C, pH 7.5, wild-type enzyme",,2.3.1.30,,0.0006,336,2 L-Cys,676935,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,serat
 wild-type protein,,2.3.3.9,C00209,0.023,185,oxalate,706621,,-,Oxalate,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals
-wild-type protein,,2.3.3.9,C00209,0.037,185,oxalate,706621,,-,Oxalate,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals
+wild-type protein,,2.3.3.9,C00209,0.037000000000000005,185,oxalate,706621,,-,Oxalate,Escherichia coli,BRENDA,oxa,CHEBI:16995,mals
 wild-type protein,,2.3.3.9,C00022,0.65,31,pyruvate,706621,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals
 wild-type protein,,2.3.3.9,C00022,0.65,31,2 pyruvate,706621,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,mals
 wild-type enzyme,,2.3.3.16,C00004,0.0028,8,2 NADH,659254,,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,cs
@@ -4500,7 +4500,7 @@ wild-type enzyme,,2.3.3.16,C00004,0.0028,8,NADH,659254,,-,NADH,Escherichia coli,
 wild-type enzyme,,2.3.3.16,C00004,0.0028,8,3 NADH,659254,,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,cs
 wild-type enzyme,,2.3.3.16,C00004,0.0028,8,4 NADH,659254,,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,cs
 wild-type enzyme,,2.3.3.16,C00004,0.0028,8,7 NADH,659254,,-,NADH,Escherichia coli,BRENDA,nadh,CHEBI:16908,cs
-"wild-type enzyme, in presence of 0.1 M KCl",,2.3.3.16,C00036,0.026,57,oxaloacetate,659254,,-,Oxaloacetate,Escherichia coli,BRENDA,oaa,CHEBI:30744,cs
+"wild-type enzyme, in presence of 0.1 M KCl",,2.3.3.16,C00036,0.026000000000000002,57,oxaloacetate,659254,,-,Oxaloacetate,Escherichia coli,BRENDA,oaa,CHEBI:30744,cs
 wild-type,,2.3.3.16,C00026,0.76,34,2-oxoglutarate,488060,,-,2-Oxoglutarate,Escherichia coli,BRENDA,akg,CHEBI:30915,cs
 wild-type,,2.3.3.16,C00026,0.76,34,2 2-oxoglutarate,488060,,-,2-Oxoglutarate,Escherichia coli,BRENDA,akg,CHEBI:30915,cs
 ,,2.4.1.1,C01478,0.5,255,arsenate,488294,,-,Arsenic acid,Escherichia coli,BRENDA,aso4,CHEBI:18231,glcp2
@@ -4510,8 +4510,8 @@ wild-type,,2.3.3.16,C00026,0.76,34,2 2-oxoglutarate,488060,,-,2-Oxoglutarate,Esc
 ,,2.4.1.1,C00029,2.0,64,2 UDP-glucose,488238,,-,UDP-glucose,Escherichia coli,BRENDA,udpg,CHEBI:46229,glcp2
 ,,2.4.1.1,C00031,2.5,223,glucose,488238,,-,D-Glucose,Escherichia coli,BRENDA,glc__d,CHEBI:4167,glcp2
 ,,2.4.1.1,C00031,2.5,223,4 glucose,488238,,-,D-Glucose,Escherichia coli,BRENDA,glc__d,CHEBI:4167,glcp2
-"in 50 mM potassium phosphate buffer, pH 6.5, 25캜",,2.4.2.4,C00299,0.06,261,uridine,672287,,-,Uridine,Escherichia coli,BRENDA,uri,CHEBI:16704,duripp
-"in 50 mM potassium phosphate buffer, pH 6.5, 25캜",,2.4.2.4,C00299,0.06,261,3 uridine,672287,,-,Uridine,Escherichia coli,BRENDA,uri,CHEBI:16704,duripp
+"in 50 mM potassium phosphate buffer, pH 6.5, 25째C",,2.4.2.4,C00299,0.06,261,uridine,672287,,-,Uridine,Escherichia coli,BRENDA,uri,CHEBI:16704,duripp
+"in 50 mM potassium phosphate buffer, pH 6.5, 25째C",,2.4.2.4,C00299,0.06,261,3 uridine,672287,,-,Uridine,Escherichia coli,BRENDA,uri,CHEBI:16704,duripp
 ,,2.4.2.14,C00020,0.36,30,AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
 ,,2.4.2.14,C00020,0.36,30,39 AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
 ,,2.4.2.14,C00020,0.36,30,40 AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
@@ -4519,101 +4519,101 @@ wild-type,,2.3.3.16,C00026,0.76,34,2 2-oxoglutarate,488060,,-,2-Oxoglutarate,Esc
 ,,2.4.2.14,C00020,0.36,30,2 AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
 ,,2.4.2.14,C00020,0.36,30,6 AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
 ,,2.4.2.14,C00020,0.36,30,3 AMP,489747,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,gluprt
-"pH 7.0, 24캜",,2.5.1.54,,0.02,618,Tyr,639746,,-,,Escherichia coli,BRENDA,tyr__l,CHEBI:58315,ddpa
+"pH 7.0, 24째C",,2.5.1.54,,0.02,618,Tyr,639746,,-,,Escherichia coli,BRENDA,tyr__l,CHEBI:58315,ddpa
 ,,2.6.1.16,C04322,0.023,51635,DL-delta-1-pyrroline-5-carboxylate,639926,,-,Delta1-Pyrroline-5-carboxylate,Escherichia coli,BRENDA,1pyr5c,CHEBI:1372,gf6pta
 wild type enzyme,,2.6.1.16,C00352,0.56,93494,Glucosamine-6-phosphate,672444,,-,D-Glucosamine 6-phosphate,Escherichia coli,BRENDA,gam6p,CHEBI:47987,gf6pta
 pH 7.2,,2.6.1.16,C01096,2.46,22020,D-glucitol 6-phosphate,639929,,-,Sorbitol 6-phosphate,Escherichia coli,BRENDA,sbt6p,CHEBI:17044,gf6pta
-"wild-type, pH 7.8, 25캜",,2.6.1.19,C00042,27.0,58,succinate,661189,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,abta
-"wild-type, pH 7.8, 25캜",,2.6.1.19,C00042,27.0,58,2 succinate,661189,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,abta
-"pH 8.5, 37캜",,2.6.1.62,,0.025,8030,7-Keto-8-aminopelargonic acid,"637092, 637094",,-,,Escherichia coli,BRENDA,8aonn,CHEBI:57532,amaotr
+"wild-type, pH 7.8, 25째C",,2.6.1.19,C00042,27.0,58,succinate,661189,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,abta
+"wild-type, pH 7.8, 25째C",,2.6.1.19,C00042,27.0,58,2 succinate,661189,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,abta
+"pH 8.5, 37째C",,2.6.1.62,,0.025,8030,7-Keto-8-aminopelargonic acid,"637092, 637094",,-,,Escherichia coli,BRENDA,8aonn,CHEBI:57532,amaotr
 native enzyme,,2.6.1.62,,0.025,1494,8-Amino-7-oxononanoate,661047,,-,,Escherichia coli,BRENDA,8aonn,CHEBI:57532,amaotr
-"pH 8.0, 25캜",,2.7.1.25,C00224,0.0004,425,adenosine 5'-phosphosulfate,641215,,-,Adenylyl sulfate,Escherichia coli,BRENDA,aps,CHEBI:17709,adsk
+"pH 8.0, 25째C",,2.7.1.25,C00224,0.0004,425,adenosine 5'-phosphosulfate,641215,,-,Adenylyl sulfate,Escherichia coli,BRENDA,aps,CHEBI:17709,adsk
 in 20% DMSO,,2.7.1.39,,0.1,345,L-homoserine,641473,,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,hsk
 wild-type enzyme,,2.7.1.39,C00025,0.2,1163,L-Glutamic acid,641471,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,hsk
 wild-type enzyme,,2.7.1.39,,0.3,780,L-Thr,641471,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsk
 wild-type enzyme,,2.7.1.39,,0.46,336,L-Cys,641471,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
 wild-type enzyme,,2.7.1.39,,0.46,336,2 L-Cys,641471,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
-"pH 7.8, 37캜",,2.7.1.39,,0.6,780,L-Thr,641470,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsk
-"pH 7.8, 37캜",,2.7.1.39,,1.0,336,L-Cys,641470,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
-"pH 7.8, 37캜",,2.7.1.39,,1.0,336,2 L-Cys,641470,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
-"pH 7.8, 27캜",,2.7.1.39,,1.0,780,L-Thr,641465,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsk
+"pH 7.8, 37째C",,2.7.1.39,,0.6,780,L-Thr,641470,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsk
+"pH 7.8, 37째C",,2.7.1.39,,1.0,336,L-Cys,641470,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
+"pH 7.8, 37째C",,2.7.1.39,,1.0,336,2 L-Cys,641470,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,hsk
+"pH 7.8, 27째C",,2.7.1.39,,1.0,780,L-Thr,641465,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,hsk
 pH 7.6,,2.7.1.39,,2.0,345,L-homoserine,641463,,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,hsk
 ,,2.7.1.39,C01005,2.7,1189,O-phospho-L-serine,641471,,-,O-Phospho-L-serine,Escherichia coli,BRENDA,pser__l,CHEBI:15811,hsk
 "aqueous sulution, pH 8",,2.7.1.39,,3.0,345,L-homoserine,641473,,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,hsk
-"pH 7.8, 37캜",,2.7.1.39,,4.0,305,L-homocysteine,641470,,-,,Escherichia coli,BRENDA,hcys__l,CHEBI:58199,hsk
-"pH 7.8, 37캜",,2.7.1.39,,4.0,305,2 L-homocysteine,641470,,-,,Escherichia coli,BRENDA,hcys__l,CHEBI:58199,hsk
-"pH 7.8, 37캜",,2.7.1.39,,4.5,1074,L-Ile,641470,,-,,Escherichia coli,BRENDA,ile__l,CHEBI:58045,hsk
-"pH 7.8, 37캜",,2.7.1.39,,4.5,1074,2 L-Ile,641470,,-,,Escherichia coli,BRENDA,ile__l,CHEBI:58045,hsk
-"pH 7.8, 37캜",,2.7.1.39,,10.0,835,L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
-"pH 7.8, 37캜",,2.7.1.39,,10.0,835,2 L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
-"pH 7.8, 37캜",,2.7.1.39,,10.0,835,3 L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
-"pH 7.8, 37캜",,2.7.1.39,,27.0,262,L-Ser,641470,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,hsk
-"pH 7.8, 37캜",,2.7.1.39,,35.0,468,L-Met,641470,,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsk
-"pH 7.8, 37캜",,2.7.1.39,,35.0,468,2 L-Met,641470,,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsk
-"pH 6.2, 37캜",,2.7.1.49,C00314,0.0027,1051,pyridoxine,641658,,-,Pyridoxine,Escherichia coli,BRENDA,pydxn,CHEBI:16709,hmpk1
-"pH 6.2, 37캜",,2.7.1.49,C01279,0.09,7509,2-methyl-4-amino-5-hydroxymethylpyrimidine,641658,,-,4-Amino-5-hydroxymethyl-2-methylpyrimidine,Escherichia coli,BRENDA,4ahmmp,CHEBI:16892,hmpk1
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,2 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,16 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,6 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,3 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00008,0.28,13,4 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
-"pH 7.6, 37캜",,2.7.1.56,C00354,6.1,1895,"D-fructose-1,6-bisphosphate",641683,,-,"D-Fructose 1,6-bisphosphate",Escherichia coli,BRENDA,fdp,CHEBI:37736,fruk
+"pH 7.8, 37째C",,2.7.1.39,,4.0,305,L-homocysteine,641470,,-,,Escherichia coli,BRENDA,hcys__l,CHEBI:58199,hsk
+"pH 7.8, 37째C",,2.7.1.39,,4.0,305,2 L-homocysteine,641470,,-,,Escherichia coli,BRENDA,hcys__l,CHEBI:58199,hsk
+"pH 7.8, 37째C",,2.7.1.39,,4.5,1074,L-Ile,641470,,-,,Escherichia coli,BRENDA,ile__l,CHEBI:58045,hsk
+"pH 7.8, 37째C",,2.7.1.39,,4.5,1074,2 L-Ile,641470,,-,,Escherichia coli,BRENDA,ile__l,CHEBI:58045,hsk
+"pH 7.8, 37째C",,2.7.1.39,,10.0,835,L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
+"pH 7.8, 37째C",,2.7.1.39,,10.0,835,2 L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
+"pH 7.8, 37째C",,2.7.1.39,,10.0,835,3 L-Val,641470,,-,,Escherichia coli,BRENDA,val__l,CHEBI:57762,hsk
+"pH 7.8, 37째C",,2.7.1.39,,27.0,262,L-Ser,641470,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,hsk
+"pH 7.8, 37째C",,2.7.1.39,,35.0,468,L-Met,641470,,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsk
+"pH 7.8, 37째C",,2.7.1.39,,35.0,468,2 L-Met,641470,,-,,Escherichia coli,BRENDA,met__l,CHEBI:57844,hsk
+"pH 6.2, 37째C",,2.7.1.49,C00314,0.0027,1051,pyridoxine,641658,,-,Pyridoxine,Escherichia coli,BRENDA,pydxn,CHEBI:16709,hmpk1
+"pH 6.2, 37째C",,2.7.1.49,C01279,0.09,7509,2-methyl-4-amino-5-hydroxymethylpyrimidine,641658,,-,4-Amino-5-hydroxymethyl-2-methylpyrimidine,Escherichia coli,BRENDA,4ahmmp,CHEBI:16892,hmpk1
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,2 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,16 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,6 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,3 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00008,0.28,13,4 ADP,641683,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,fruk
+"pH 7.6, 37째C",,2.7.1.56,C00354,6.1,1895,"D-fructose-1,6-bisphosphate",641683,,-,"D-Fructose 1,6-bisphosphate",Escherichia coli,BRENDA,fdp,CHEBI:37736,fruk
 "recombinant wild-type bifunctional holoenzyme, inhibition of asparate kinase activity",,2.7.2.4,,0.33,250,L-threonine,654640,,-,,Escherichia coli,BRENDA,thr__l,CHEBI:57926,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,,7.7,345,L-homoserine,642329,,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00149,53.0,247,L-Malate,642329,,-,(S)-Malate,Escherichia coli,BRENDA,mal__l,CHEBI:30797,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00025,128.0,41,L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00025,128.0,41,2 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00025,128.0,41,6 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00025,128.0,41,7 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00025,128.0,41,4 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00042,159.0,58,succinate,642329,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,aspk
-"pH 8.0, 25캜, aspartokinase III",,2.7.2.4,C00042,159.0,58,2 succinate,642329,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,aspk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,2 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,16 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,6 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,3 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"wild-type, pH 7.0, 25캜",,2.7.2.8,C00002,30.4,4,4 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,2 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,16 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,6 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,3 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 7.0, 37캜",,2.7.2.11,C00008,0.06,13,4 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
-"pH 8.0, 37튏, D-ribose 5-phosphate 5 mM, Kis value",,2.7.6.1,C00076,0.032,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 5 mM, Kii value",,2.7.6.1,C00076,0.047,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kis value",,2.7.6.1,C00076,0.053,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00076,0.11,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,2 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,16 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,6 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,3 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
-"pH 8.0, 37튏, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.334,13,4 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,,7.7,345,L-homoserine,642329,,-,,Escherichia coli,BRENDA,hom__l,CHEBI:57476,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00149,53.0,247,L-Malate,642329,,-,(S)-Malate,Escherichia coli,BRENDA,mal__l,CHEBI:30797,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00025,128.0,41,L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00025,128.0,41,2 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00025,128.0,41,6 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00025,128.0,41,7 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00025,128.0,41,4 L-glutamate,642329,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00042,159.0,58,succinate,642329,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,aspk
+"pH 8.0, 25째C, aspartokinase III",,2.7.2.4,C00042,159.0,58,2 succinate,642329,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,aspk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,2 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,16 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,6 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,3 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"wild-type, pH 7.0, 25째C",,2.7.2.8,C00002,30.4,4,4 ATP,659704,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,acgk
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,2 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,16 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,6 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,3 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 7.0, 37째C",,2.7.2.11,C00008,0.06,13,4 ADP,642200,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,glu5k
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 5 mM, Kis value",,2.7.6.1,C00076,0.032,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 5 mM, Kii value",,2.7.6.1,C00076,0.047,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kis value",,2.7.6.1,C00076,0.053,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00076,0.11,15,Ca2+,642737,,-,Calcium cation,Escherichia coli,BRENDA,ca2,CHEBI:29108,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,2 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,16 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,6 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,3 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
+"pH 8.0, 37쨘C, D-ribose 5-phosphate 0.5 mM, Kii value",,2.7.6.1,C00008,0.33399999999999996,13,4 ADP,642737,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,prpps
 "Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C01134,0.0084,6013,phosphopantetheine,674344,,-,Pantetheine 4'-phosphate,Escherichia coli,BRENDA,pan4p,CHEBI:4222,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.014,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: dephospho-CoA, Cosubstrate: diphosphate (1.6 mM)",,2.7.7.3,C00010,0.011000000000000001,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: phosphopantetheine, Cosubstrate: ATP (300 microM)",,2.7.7.3,C00010,0.013999999999999999,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
@@ -4625,17 +4625,17 @@ pH 7.6,,2.7.1.39,,2.0,345,L-homoserine,641463,,-,,Escherichia coli,BRENDA,hom__l
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00010,0.07,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
-"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.117,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,2 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,16 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,8 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,4 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,3 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,7 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,9 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,5 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,10 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
+"Substrate: Pyrophosphate, Cosubstrate: dephospho-CoA (300 microM)",,2.7.7.3,C00010,0.11699999999999999,18,6 CoA,674344,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00013,0.12,17,diphosphate,674344,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00013,0.12,17,2 diphosphate,674344,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00013,0.12,17,5 diphosphate,674344,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,ptpati
@@ -4653,53 +4653,53 @@ pH 7.6,,2.7.1.39,,2.0,345,L-homoserine,641463,,-,,Escherichia coli,BRENDA,hom__l
 "Substrate: phosphopantetheine, Cosubstrate: ATP (3.0 mM)",,2.7.7.3,C00882,0.121,2018,dephospho-CoA,674344,,-,Dephospho-CoA,Escherichia coli,BRENDA,dpcoa,CHEBI:15468,ptpati
 "Substrate: diphosphate, Cosubstrate: dephospho-CoA (500 microM)",,2.7.7.3,C01134,0.131,6013,phosphopantetheine,674344,,-,Pantetheine 4'-phosphate,Escherichia coli,BRENDA,pan4p,CHEBI:4222,ptpati
 "Substrate: ATP, Cosubstrate: phosphopantetheine (300 microM)",,2.7.7.3,C00882,0.192,2018,dephospho-CoA,674344,,-,Dephospho-CoA,Escherichia coli,BRENDA,dpcoa,CHEBI:15468,ptpati
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,39 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,40 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,41 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,2 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,6 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.007,30,3 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,39 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,40 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,41 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,2 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,6 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.6, 37캜, wild-type enzyme",,2.7.7.27,C00020,0.04,30,3 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,39 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,40 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,41 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,2 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,6 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7.0, 37캜, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,3 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,39 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,40 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,41 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,2 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,6 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 8.0, 37캜, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,3 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
-"pH 7, 37캜",,2.7.7.41,,0.48,60,CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7, 37캜",,2.7.7.41,,0.48,60,2 CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7, 37캜",,2.7.7.41,,0.48,60,3 CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7.4, 30캜",,2.7.7.41,,0.59,60,CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7.4, 30캜",,2.7.7.41,,0.59,60,2 CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7.4, 30캜",,2.7.7.41,,0.59,60,3 CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
-"pH 7, 37캜",,2.7.7.41,C00458,0.75,179,dCTP,643314,,-,dCTP,Escherichia coli,BRENDA,dctp,CHEBI:16311,dasyn120
-"wild type enzyme, pH 6.5, 23캜",,2.7.7.60,,19.6,60,CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
-"wild type enzyme, pH 6.5, 23캜",,2.7.7.60,,19.6,60,2 CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
-"wild type enzyme, pH 6.5, 23캜",,2.7.7.60,,19.6,60,3 CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
-"pH 7.0, 37캜, E. coli ACP",,2.7.8.7,C03688,0.0006,22286,apo-[Streptomyces sp. granaticin-acyl-carrier protein],645401,,-,Apo-[acyl-carrier-protein],Escherichia coli,BRENDA,apoacp,CHEBI:16139,acps1
-"pH 7.0, 37캜, E. coli ACP",,2.7.8.7,C03688,0.002,1664,apo-acyl-carrier protein,645401,,-,Apo-[acyl-carrier-protein],Escherichia coli,BRENDA,apoacp,CHEBI:16139,acps1
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,39 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,40 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,41 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,2 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,6 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
-"pH 7.2, 37캜",,2.7.9.3,C00020,0.17,30,3 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,39 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,40 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,41 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,2 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,6 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, wild-type enzyme in presence of 0.1 mM fructose-1,6-bisphosphate",,2.7.7.27,C00020,0.006999999999999999,30,3 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,39 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,40 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,41 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,2 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,6 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.6, 37째C, wild-type enzyme",,2.7.7.27,C00020,0.04,30,3 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,39 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,40 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,41 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,2 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,6 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7.0, 37째C, wild-type enzyme, in the presence of a saturating concentration of fructose 1,6-bisphosphate",,2.7.7.27,C00020,0.094,30,3 AMP,643148,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,39 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,40 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,41 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,2 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,6 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 8.0, 37째C, the chimeric enzymes, AE contains the N-terminus of Agrobacterium tumefaciens enzyme and the C-terminus of Escherichia coli enzyme is slightly activated by AMP in the range of 0.1-2 mM",,2.7.7.27,C00020,9.0,30,3 AMP,643152,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,glgc
+"pH 7, 37째C",,2.7.7.41,,0.48,60,CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7, 37째C",,2.7.7.41,,0.48,60,2 CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7, 37째C",,2.7.7.41,,0.48,60,3 CTP,643314,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7.4, 30째C",,2.7.7.41,,0.59,60,CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7.4, 30째C",,2.7.7.41,,0.59,60,2 CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7.4, 30째C",,2.7.7.41,,0.59,60,3 CTP,643308,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,dasyn120
+"pH 7, 37째C",,2.7.7.41,C00458,0.75,179,dCTP,643314,,-,dCTP,Escherichia coli,BRENDA,dctp,CHEBI:16311,dasyn120
+"wild type enzyme, pH 6.5, 23째C",,2.7.7.60,,19.6,60,CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
+"wild type enzyme, pH 6.5, 23째C",,2.7.7.60,,19.6,60,2 CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
+"wild type enzyme, pH 6.5, 23째C",,2.7.7.60,,19.6,60,3 CTP,661089,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,mepct
+"pH 7.0, 37째C, E. coli ACP",,2.7.8.7,C03688,0.0006,22286,apo-[Streptomyces sp. granaticin-acyl-carrier protein],645401,,-,Apo-[acyl-carrier-protein],Escherichia coli,BRENDA,apoacp,CHEBI:16139,acps1
+"pH 7.0, 37째C, E. coli ACP",,2.7.8.7,C03688,0.002,1664,apo-acyl-carrier protein,645401,,-,Apo-[acyl-carrier-protein],Escherichia coli,BRENDA,apoacp,CHEBI:16139,acps1
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,39 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,40 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,41 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,2 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,6 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
+"pH 7.2, 37째C",,2.7.9.3,C00020,0.17,30,3 AMP,645479,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,selnps
 ,,2.8.3.16,C00209,23.0,185,oxalate,692851,,-,Oxalate,Escherichia coli,BRENDA,oxa,CHEBI:16995,forct
 ,,3.1.3.5,C00008,1.3,13,ADP,656266,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,ntd10
 ,,3.1.3.5,C00008,1.3,13,2 ADP,656266,,-,ADP,Escherichia coli,BRENDA,adp,CHEBI:16761,ntd10
@@ -4715,7 +4715,7 @@ pH 7.6,,2.7.1.39,,2.0,345,L-homoserine,641463,,-,,Escherichia coli,BRENDA,hom__l
 ,,3.1.3.5,C00002,1.65,4,6 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
 ,,3.1.3.5,C00002,1.65,4,3 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
 ,,3.1.3.5,C00002,1.65,4,4 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
-"wild-type, pH 7.5, 25캜",,3.1.3.5,C00020,23.0,236,5'-AMP,664087,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,ntd10
+"wild-type, pH 7.5, 25째C",,3.1.3.5,C00020,23.0,236,5'-AMP,664087,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,ntd10
 with 3'-AMP as substrate,,3.1.3.5,C00002,24.1,4,ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
 with 3'-AMP as substrate,,3.1.3.5,C00002,24.1,4,2 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
 with 3'-AMP as substrate,,3.1.3.5,C00002,24.1,4,16 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,ntd10
@@ -4728,13 +4728,13 @@ with 3'-AMP as substrate,,3.1.3.6,C00002,24.1,4,16 ATP,656266,,-,ATP,Escherichia
 with 3'-AMP as substrate,,3.1.3.6,C00002,24.1,4,6 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,3ntd2pp
 with 3'-AMP as substrate,,3.1.3.6,C00002,24.1,4,3 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,3ntd2pp
 with 3'-AMP as substrate,,3.1.3.6,C00002,24.1,4,4 ATP,656266,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,3ntd2pp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,39 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,40 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,41 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,2 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,6 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
-"wild-type, 22캜, pH 7.5",,3.1.3.11,C00020,0.00062,30,3 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,39 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,40 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,41 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,2 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,6 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
+"wild-type, 22째C, pH 7.5",,3.1.3.11,C00020,0.00062,30,3 AMP,665621,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,fbp
 ,,3.1.3.11,C00009,0.35,16,phosphate,651666,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
 ,,3.1.3.11,C00009,0.35,16,2 phosphate,651666,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
 ,,3.1.3.11,C00009,0.35,16,16 phosphate,651666,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
@@ -4743,29 +4743,29 @@ with 3'-AMP as substrate,,3.1.3.6,C00002,24.1,4,4 ATP,656266,,-,ATP,Escherichia 
 ,,3.1.3.11,C00009,0.35,16,4 phosphate,651666,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,fbp
 pH 7.7,,3.1.3.11,,1.0,671,D-Fructose 1-phosphate,651666,,-,,Escherichia coli,BRENDA,f1p,CHEBI:78736,fbp
 ,,3.1.4.16,C00020,0.59,236,5'-AMP,652555,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,23pde2pp
-"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25캜",,3.2.1.23,C00124,21.0,71,D-galactose,706624,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
-"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25캜",,3.2.1.23,C00124,21.0,71,2 D-galactose,706624,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
+"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25째C",,3.2.1.23,C00124,21.0,71,D-galactose,706624,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
+"wild type enzyme, in 30 mM TES buffer, 145 mM NaCl, 0.01 mM Mg2+, pH 7.0 at 25째C",,3.2.1.23,C00124,21.0,71,2 D-galactose,706624,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
 native enzyme,,3.2.1.23,C00124,24.0,71,D-galactose,706614,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
 native enzyme,,3.2.1.23,C00124,24.0,71,2 D-galactose,706614,,-,D-Galactose,Escherichia coli,BRENDA,gal,CHEBI:4139,lacz
-"in 50 mM potassium phosphate (pH 7.0), at 37캜",,3.2.2.9,,0.0024,36,S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
-"in 50 mM potassium phosphate (pH 7.0), at 37캜",,3.2.2.9,,0.0024,36,3 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
-"in 50 mM potassium phosphate (pH 7.0), at 37캜",,3.2.2.9,,0.0024,36,2 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
-"in 50 mM potassium phosphate (pH 7.0), at 37캜",,3.2.2.9,,0.0024,36,4 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
-"in 50 mM potassium phosphate (pH 7.0), at 37캜",,3.2.2.9,C00147,0.3,144,adenine,171857,,-,Adenine,Escherichia coli,BRENDA,ade,CHEBI:16708,ahcysns
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,2 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,5 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,6 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,7 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,8 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,3 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,4 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,9 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,13 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,14 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,19 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,20 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
-"pH 8.5, 37캜",,3.5.4.25,C00013,0.024,17,21 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"in 50 mM potassium phosphate (pH 7.0), at 37째C",,3.2.2.9,,0.0024,36,S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
+"in 50 mM potassium phosphate (pH 7.0), at 37째C",,3.2.2.9,,0.0024,36,3 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
+"in 50 mM potassium phosphate (pH 7.0), at 37째C",,3.2.2.9,,0.0024,36,2 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
+"in 50 mM potassium phosphate (pH 7.0), at 37째C",,3.2.2.9,,0.0024,36,4 S-adenosyl-L-homocysteine,171857,,-,,Escherichia coli,BRENDA,ahcys,CHEBI:57856,ahcysns
+"in 50 mM potassium phosphate (pH 7.0), at 37째C",,3.2.2.9,C00147,0.3,144,adenine,171857,,-,Adenine,Escherichia coli,BRENDA,ade,CHEBI:16708,ahcysns
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,2 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,5 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,6 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,7 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,8 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,3 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,4 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,9 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,13 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,14 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,19 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,20 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
+"pH 8.5, 37째C",,3.5.4.25,C00013,0.024,17,21 diphosphate,656006,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,gtpcii2
 "pH 7.5, in absence of SbIII",,3.6.3.16,C00002,0.792,4,ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
 "pH 7.5, in absence of SbIII",,3.6.3.16,C00002,0.792,4,2 ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
 "pH 7.5, in absence of SbIII",,3.6.3.16,C00002,0.792,4,16 ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
@@ -4778,21 +4778,21 @@ native enzyme,,3.2.1.23,C00124,24.0,71,2 D-galactose,706614,,-,D-Galactose,Esche
 "pH 7.5, in presence of SbIII",,3.6.3.16,C00002,0.945,4,6 ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
 "pH 7.5, in presence of SbIII",,3.6.3.16,C00002,0.945,4,3 ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
 "pH 7.5, in presence of SbIII",,3.6.3.16,C00002,0.945,4,4 ATP,654492,,-,ATP,Escherichia coli,BRENDA,atp,CHEBI:15422,aso3t8pp
-at pH 6.5 and 30캜,,4.1.1.8,C00010,0.08,534,coenzyme A,714955,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,oxcdc
-"uncompetitive inhibition, at pH 6.5, between 4캜 and 10캜",,4.1.1.18,C01228,0.0002377,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
-"noncompetitive inhibition, at pH 6.5, between 4캜 and 10캜",,4.1.1.18,C01228,0.000374,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
-"mixed type inhibition, at pH 6.5, between 4캜 and 10캜",,4.1.1.18,C01228,0.002791,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
+at pH 6.5 and 30째C,,4.1.1.8,C00010,0.08,534,coenzyme A,714955,,-,CoA,Escherichia coli,BRENDA,coa,CHEBI:15346,oxcdc
+"uncompetitive inhibition, at pH 6.5, between 4째C and 10째C",,4.1.1.18,C01228,0.00023769999999999998,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
+"noncompetitive inhibition, at pH 6.5, between 4째C and 10째C",,4.1.1.18,C01228,0.00037400000000000004,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
+"mixed type inhibition, at pH 6.5, between 4째C and 10째C",,4.1.1.18,C01228,0.002791,3703,ppGpp,714832,,-,"Guanosine 3',5'-bis(diphosphate)",Escherichia coli,BRENDA,ppgpp,CHEBI:17633,lysdc
 ,,4.1.1.23,C00105,0.5,133,UMP,649973,,-,UMP,Escherichia coli,BRENDA,ump,CHEBI:16695,ompdc
-"30캜, wild-type enzyme",,4.1.2.13,C00111,0.13,278,dihydroxyacetone phosphate,652787,,-,Glycerone phosphate,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba
+"30째C, wild-type enzyme",,4.1.2.13,C00111,0.13,278,dihydroxyacetone phosphate,652787,,-,Glycerone phosphate,Escherichia coli,BRENDA,dhap,CHEBI:16108,fba
 ,,4.1.2.19,C00175,1.0,23,Co2+,5065,,-,Cobalt ion,Escherichia coli,BRENDA,cobalt2,CHEBI:48828,rmpa
 "in 100 mM potassium phosphate buffer (pH 7.1), 10 mM MgCl2, 12 mM cysteine",,4.1.3.1,C00074,0.893,51,phosphoenolpyruvate,680481,,-,Phosphoenolpyruvate,Escherichia coli,BRENDA,pep,CHEBI:44897,icl
 pH 7.5,,4.1.3.27,C00156,0.002,3660,p-hydroxybenzoate,650373,,-,4-Hydroxybenzoate,Escherichia coli,BRENDA,4hbz,CHEBI:30763,ans
-"pH 8.0, 25캜",,4.1.3.39,C00048,0.4,101,glyoxylate,702377,,-,Glyoxylate,Escherichia coli,BRENDA,glx,CHEBI:16891,hopntal
-"pH 8.0, 25캜",,4.1.3.39,C00048,0.4,101,2 glyoxylate,702377,,-,Glyoxylate,Escherichia coli,BRENDA,glx,CHEBI:16891,hopntal
-"pH 8.0, 25캜",,4.1.3.39,C00109,0.5,3288,2-ketobutanoate,702377,,-,2-Oxobutanoate,Escherichia coli,BRENDA,2obut,CHEBI:30831,hopntal
-"pH 8.0, 25캜",,4.1.3.39,C00022,0.51,31,pyruvate,702377,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,hopntal
-"pH 8.0, 25캜",,4.1.3.39,C00022,0.51,31,2 pyruvate,702377,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,hopntal
-"pH 8.0, 25캜",,4.1.3.39,C00233,6.98,722,4-methyl-2-oxopentanoate,702377,,-,4-Methyl-2-oxopentanoate,Escherichia coli,BRENDA,4mop,CHEBI:48430,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00048,0.4,101,glyoxylate,702377,,-,Glyoxylate,Escherichia coli,BRENDA,glx,CHEBI:16891,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00048,0.4,101,2 glyoxylate,702377,,-,Glyoxylate,Escherichia coli,BRENDA,glx,CHEBI:16891,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00109,0.5,3288,2-ketobutanoate,702377,,-,2-Oxobutanoate,Escherichia coli,BRENDA,2obut,CHEBI:30831,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00022,0.51,31,pyruvate,702377,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00022,0.51,31,2 pyruvate,702377,,-,Pyruvate,Escherichia coli,BRENDA,pyr,CHEBI:32816,hopntal
+"pH 8.0, 25째C",,4.1.3.39,C00233,6.98,722,4-methyl-2-oxopentanoate,702377,,-,4-Methyl-2-oxopentanoate,Escherichia coli,BRENDA,4mop,CHEBI:48430,hopntal
 "pH 7.5, wild-type enzyme",,4.1.3.40,C00156,0.0021,365,4-hydroxybenzoate,650373,,-,4-Hydroxybenzoate,Escherichia coli,BRENDA,4hbz,CHEBI:30763,chrpl
 pH 7.8,,4.1.99.1,,0.21,119,L-tryptophan,651028,,-,,Escherichia coli,BRENDA,trp__l,CHEBI:57912,trpas2
 pH 7.8,,4.1.99.1,C00073,10.3,88,L-methionine,651028,,-,L-Methionine,Escherichia coli,BRENDA,met__l,CHEBI:16643,trpas2
@@ -4804,12 +4804,12 @@ pH 7.8,,4.1.99.1,,14.0,103,L-alanine,651028,,-,,Escherichia coli,BRENDA,ala__l,C
 pH 7.8,,4.1.99.1,,14.2,104,L-phenylalanine,651028,,-,,Escherichia coli,BRENDA,phe__l,CHEBI:58095,trpas2
 ,,4.2.3.1,,0.006,30785,L-threo-3-hydroxyhomoserine,137559,,-,,Escherichia coli,BRENDA,4hthr,CHEBI:60904,4hthrs
 ,,4.3.1.1,C00497,0.66,1139,D-malate,649266,,-,(R)-Malate,Escherichia coli,BRENDA,mal__d,CHEBI:30796,aspt
-"25캜, pH 7.8",,4.3.1.18,,0.035,29959,"DL-2,3-Diaminopropionic acid",651969,,-,,Escherichia coli,BRENDA,23dappa,CHEBI:58468,serd_d
-"25캜, pH 7.8",,4.3.1.18,,0.09,9192,"L-2,3-diaminopropionic acid",651969,,-,,Escherichia coli,BRENDA,23dappa,CHEBI:57721,serd_d
-"25캜, pH 7.8",,4.3.1.18,,3.0,95,L-serine,651969,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,serd_d
-"25캜, pH 7.8",,4.3.1.18,,3.0,95,3 L-serine,651969,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,serd_d
-"25캜, pH 7.8",,4.3.1.18,,4.9,72,glycine,651969,,-,,Escherichia coli,BRENDA,gly,CHEBI:57305,serd_d
-"25캜, pH 7.8",,4.3.1.18,,17.0,103,L-alanine,651969,,-,,Escherichia coli,BRENDA,ala__l,CHEBI:57972,serd_d
+"25째C, pH 7.8",,4.3.1.18,,0.035,29959,"DL-2,3-Diaminopropionic acid",651969,,-,,Escherichia coli,BRENDA,23dappa,CHEBI:58468,serd_d
+"25째C, pH 7.8",,4.3.1.18,,0.09,9192,"L-2,3-diaminopropionic acid",651969,,-,,Escherichia coli,BRENDA,23dappa,CHEBI:57721,serd_d
+"25째C, pH 7.8",,4.3.1.18,,3.0,95,L-serine,651969,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,serd_d
+"25째C, pH 7.8",,4.3.1.18,,3.0,95,3 L-serine,651969,,-,,Escherichia coli,BRENDA,ser__l,CHEBI:33384,serd_d
+"25째C, pH 7.8",,4.3.1.18,,4.9,72,glycine,651969,,-,,Escherichia coli,BRENDA,gly,CHEBI:57305,serd_d
+"25째C, pH 7.8",,4.3.1.18,,17.0,103,L-alanine,651969,,-,,Escherichia coli,BRENDA,ala__l,CHEBI:57972,serd_d
 ,,4.4.1.15,,0.53,74,L-cysteine,648731,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,cysdds
 ,,4.4.1.15,,0.53,74,2 L-cysteine,648731,,-,,Escherichia coli,BRENDA,cys__l,CHEBI:35235,cysdds
 ,,5.3.1.1,C00988,6.0,1317,2-Phosphoglycolate,2586,,-,2-Phosphoglycolate,Escherichia coli,BRENDA,2pglyc,CHEBI:17150,tpi
@@ -4819,76 +4819,76 @@ pH 7.8,,4.1.99.1,,14.2,104,L-phenylalanine,651028,,-,,Escherichia coli,BRENDA,ph
 ,,5.3.1.6,C00009,8.0,16,6 phosphate,653911,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi
 ,,5.3.1.6,C00009,8.0,16,3 phosphate,653911,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi
 ,,5.3.1.6,C00009,8.0,16,4 phosphate,653911,,-,Orthophosphate,Escherichia coli,BRENDA,pi,CHEBI:26078,rpi
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.056,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.12,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00013,0.14,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in absence of KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.35,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.5 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.5,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"in presence of 0.9 mM KCl, pH 7.4, 30캜",,6.1.1.1,C00020,0.9,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
-"wild-type enzyme, pH 7.2, 37캜",,6.1.1.18,C00025,96.0,1163,L-Glutamic acid,651246,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,glntrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.055999999999999994,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.12,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,2 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,5 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,6 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,7 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,8 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,3 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,4 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,9 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,13 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,14 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,19 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,20 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00013,0.14,17,21 diphosphate,650300,,-,Diphosphate,Escherichia coli,BRENDA,ppi,CHEBI:29888,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in absence of KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.35,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.5 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.5,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,39 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,40 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,41 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,2 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,6 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"in presence of 0.9 mM KCl, pH 7.4, 30째C",,6.1.1.1,C00020,0.9,30,3 AMP,650300,,-,AMP,Escherichia coli,BRENDA,amp,CHEBI:16027,tyrtrs
+"wild-type enzyme, pH 7.2, 37째C",,6.1.1.18,C00025,96.0,1163,L-Glutamic acid,651246,,-,L-Glutamate,Escherichia coli,BRENDA,glu__l,CHEBI:16015,glntrs
 above,,6.3.1.2,C02989,5.0,4830,methionine sulfoxide,694057,,-,L-Methionine S-oxide,Escherichia coli,BRENDA,metsox_s__l,CHEBI:17016,glns
-"37캜, Kis, noncompetitive versus ATP; 37캜, Kis, noncompetitive versus L-Asp",,6.3.2.6,C00130,7.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
-"37캜, Kii, noncompetitive versus ATP",,6.3.2.6,C00130,9.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
-"37캜, Kis, competitive versus 1-(5'-phosphoribosyl)-5-amino-4-carboxyimidazole",,6.3.2.6,C00130,9.1,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
-"37캜, Kii, noncompetitive versus L-Asp",,6.3.2.6,C00130,13.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
-"25캜, pH 7.8",,6.3.3.3,C00147,2.2,144,adenine,653958,,-,Adenine,Escherichia coli,BRENDA,ade,CHEBI:16708,dbts
+"37째C, Kis, noncompetitive versus ATP; 37째C, Kis, noncompetitive versus L-Asp",,6.3.2.6,C00130,7.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
+"37째C, Kii, noncompetitive versus ATP",,6.3.2.6,C00130,9.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
+"37째C, Kis, competitive versus 1-(5'-phosphoribosyl)-5-amino-4-carboxyimidazole",,6.3.2.6,C00130,9.1,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
+"37째C, Kii, noncompetitive versus L-Asp",,6.3.2.6,C00130,13.0,232,IMP,661204,,-,IMP,Escherichia coli,BRENDA,imp,CHEBI:17202,prascsi
+"25째C, pH 7.8",,6.3.3.3,C00147,2.2,144,adenine,653958,,-,Adenine,Escherichia coli,BRENDA,ade,CHEBI:16708,dbts
 "pH 7.2, inhibition of glutamine reaction",,6.3.4.2,,0.08,60,CTP,648986,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,ctps2
 "pH 7.2, inhibition of glutamine reaction",,6.3.4.2,,0.08,60,2 CTP,648986,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,ctps2
 "pH 7.2, inhibition of glutamine reaction",,6.3.4.2,,0.08,60,3 CTP,648986,,-,,Escherichia coli,BRENDA,ctp,CHEBI:37563,ctps2
@@ -4907,12 +4907,12 @@ no guanosine,,6.3.4.2,C00044,0.28,37,3 GTP,674909,,-,GTP,Escherichia coli,BRENDA
 ,,6.3.4.2,C00286,0.36,5697,2'-deoxy-GTP,674909,,-,dGTP,Escherichia coli,BRENDA,dgtp,CHEBI:16497,ctps2
 ,,6.3.4.2,,0.39,33430,glutamate gamma-semialdehyde,648963,,-,,Escherichia coli,BRENDA,glu5sa,CHEBI:58066,ctps2
 ,,6.3.4.2,C00081,4.5,229,ITP,674909,,-,ITP,Escherichia coli,BRENDA,itp,CHEBI:16039,ctps2
-"pH 7.7, 25캜, wild-type",,6.3.4.4,C00042,0.89,58,succinate,652356,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
-"pH 7.7, 25캜, wild-type",,6.3.4.4,C00042,0.89,58,2 succinate,652356,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
+"pH 7.7, 25째C, wild-type",,6.3.4.4,C00042,0.89,58,succinate,652356,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
+"pH 7.7, 25째C, wild-type",,6.3.4.4,C00042,0.89,58,2 succinate,652356,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
 ,,6.3.4.4,C00042,1.0,58,succinate,649423,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
 ,,6.3.4.4,C00042,1.0,58,2 succinate,649423,,-,Succinate,Escherichia coli,BRENDA,succ,CHEBI:15741,adss
 ,,6.3.5.2,C00144,0.33,162,GMP,649891,,-,GMP,Escherichia coli,BRENDA,gmp,CHEBI:17345,gmps2
-"pH 8.0, 24캜",,6.3.5.5,C00105,0.004,133,UMP,651292,,-,UMP,Escherichia coli,BRENDA,ump,CHEBI:16695,cbps
+"pH 8.0, 24째C",,6.3.5.5,C00105,0.004,133,UMP,651292,,-,UMP,Escherichia coli,BRENDA,ump,CHEBI:16695,cbps
 ReactionID=METHYLENETHFDEHYDROG-NADP-RXN,,1.5.1.5,,,10-FORMYL-THF,,,,-,,Escherichia Coli,EcoCyc,10fthf,CHEBI:57454,mthfd
 ReactionID=METHENYLTHFCYCLOHYDRO-RXN,,3.5.4.9,,,10-FORMYL-THF,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,10fthf,CHEBI:57454,mthfc
 ReactionID=KDGALDOL-RXN,,4.1.2.20,,,2-KETO-3-DEOXY-6-P-GLUCONATE,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,2ddg6p,CHEBI:57569,glcral
@@ -5222,7 +5222,7 @@ ReactionID=3-DEHYDROQUINATE-DEHYDRATASE-RXN,,4.2.1.10,C00944,,DEHYDROQUINATE,,,,
 ReactionID=RXN0-5055,,6.4.1.2,,,DETHIOBIOTIN,,,NONCOMPETITIVE,-,,Escherichia Coli,EcoCyc,dtbt,CHEBI:57861,accoac
 ReactionID=RXN0-3741,,3.1.3.89,,,DGTP,,,,-,,Escherichia Coli,EcoCyc,dgtp,CHEBI:61429,ntd1
 ReactionID=GUANYL-KIN-RXN,,2.7.4.8,,,DGTP,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,dgtp,CHEBI:61429,dgk1
-ReactionID=GTP-CYCLOHYDRO-I-RXN,,3.5.4.16,,0.00024,DGTP,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,dgtp,CHEBI:61429,gtpci
+ReactionID=GTP-CYCLOHYDRO-I-RXN,,3.5.4.16,,0.00023999999999999998,DGTP,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,dgtp,CHEBI:61429,gtpci
 ReactionID=FOLYLPOLYGLUTAMATESYNTH-RXN,,6.3.2.17,,,DIHYDROFOLATE,,,,-,,Escherichia Coli,EcoCyc,dhf,CHEBI:57451,dhfs
 ReactionID=H2NEOPTERINP3PYROPHOSPHOHYDRO-RXN,,3.6.1.67,,,DIHYDRONEOPTERIN-P,,,,-,,Escherichia Coli,EcoCyc,dhpmp,CHEBI:58762,dntppa
 ReactionID=RXN-1381,,2.3.1.15,,,DIHYDROXY-ACETONE-PHOSPHATE,,,MIXED,-,,Escherichia Coli,EcoCyc,dhap,CHEBI:57642,g3pat120
@@ -5519,7 +5519,7 @@ ReactionID=DEPHOSICITDEHASE-RXN,,3.1.3,C00036,,OXALACETIC_ACID,,,,+,Oxaloacetate
 ReactionID=MALIC-NADP-RXN,,1.1.1.40,C00036,,OXALACETIC_ACID,,,ALLOSTERIC,-,Oxaloacetate,Escherichia Coli,EcoCyc,oaa,CHEBI:16452,me2
 ReactionID=CITLY-RXN,,4.1.3.6,C00036,,OXALACETIC_ACID,,,,-,Oxaloacetate,Escherichia Coli,EcoCyc,oaa,CHEBI:16452,citl
 ReactionID=PEPSYNTH-RXN,,2.7.9.2,C00209,,OXALATE,,,,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,pps
-ReactionID=MALSYN-RXN,,2.3.3.9,C00209,0.037,OXALATE,,,COMPETITIVE,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,mals
+ReactionID=MALSYN-RXN,,2.3.3.9,C00209,0.037000000000000005,OXALATE,,,COMPETITIVE,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,mals
 ReactionID=GLUTDECARBOX-RXN,,4.1.1.15,C00209,,OXALATE,,,COMPETITIVE,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,asp1dc
 ReactionID=MALSYN-RXN,,2.3.3.9,C00209,,OXALATE,,,COMPETITIVE,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,mals
 ReactionID=ISOCIT-CLEAV-RXN,,4.1.3.1,C00209,,OXALATE,,,COMPETITIVE,-,Oxalate,Escherichia Coli,EcoCyc,oxa,CHEBI:30623,icl
@@ -5644,7 +5644,7 @@ ReactionID=HOMOCYSMETB12-RXN,,2.1.1.13,,,THF,,,OTHER,-,,Escherichia Coli,EcoCyc,
 ReactionID=3-CH3-2-OXOBUTANOATE-OH-CH3-XFER-RXN,,2.1.2.11,,,THF,,,,-,,Escherichia Coli,EcoCyc,thf,CHEBI:57453,mohmt
 ReactionID=RXN0-5073,,3.6.1,,,THIAMINE-PYROPHOSPHATE,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,thmpp,CHEBI:58937,ntp12
 ReactionID=HOMOSERKIN-RXN,,2.7.1.39,,,THR,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,thr__l,CHEBI:57926,hsk
-ReactionID=ASPARTATEKIN-RXN,,2.7.2.4,,0.167,THR,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,thr__l,CHEBI:57926,aspk
+ReactionID=ASPARTATEKIN-RXN,,2.7.2.4,,0.16699999999999998,THR,,,COMPETITIVE,-,,Escherichia Coli,EcoCyc,thr__l,CHEBI:57926,aspk
 ReactionID=HOMOSERDEHYDROG-RXN,,1.1.1.3,,,THR,,,,-,,Escherichia Coli,EcoCyc,thr__l,CHEBI:57926,hsdy
 ReactionID=GUANOSINEKIN-RXN,,2.7.1.73,,,TMP,,,,+,,Escherichia Coli,EcoCyc,dtmp,CHEBI:63528,gsnk
 ReactionID=DAHPSYN-RXN,,2.5.1.54,,,TRP,,,,-,,Escherichia Coli,EcoCyc,trp__l,CHEBI:57912,ddpa

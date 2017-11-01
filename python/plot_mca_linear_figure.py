@@ -34,7 +34,7 @@ fig.text(0.5, 0.95, 'Michaelis-Menten kinetics', fontsize=17, ha='center')
 fig.text(0.5, 0.47, 'non-competitive inhibition', fontsize=17, ha='center')
 ###############################################################################
 ax = axs[0, 0]
-ax.plot(s_range, map(v, s_range), '-')
+ax.plot(s_range, list(map(v, s_range)), '-')
 ax.set_xscale('linear')
 ax.set_yscale('linear')
 ax.set_xlabel('substrate conc. $s$ [mM]')
@@ -55,7 +55,7 @@ ax.annotate(r'$v = V^+ \, \frac{s}{K_M + s}$', color=(0.2, 0.4, 1.0),
 
 ###############################################################################
 ax = axs[0, 1]
-ax.plot(s_range, map(eps, s_range), '-')
+ax.plot(s_range, list(map(eps, s_range)), '-')
 ax.set_xscale('linear')
 ax.set_yscale('linear')
 ax.set_xlabel('substrate conc. $s$ [mM]')
@@ -79,7 +79,7 @@ v = lambda s: Vmax * (1 - s / (Km + s))
 eps = lambda s: -s / (Km + s)
 
 ax = axs[1, 0]
-ax.plot(s_range, map(v, s_range), '-')
+ax.plot(s_range, list(map(v, s_range)), '-')
 ax.set_xscale('linear')
 ax.set_yscale('linear')
 ax.set_xlabel('inhibitor conc. $I$ [mM]')
@@ -100,7 +100,7 @@ ax.annotate(r'$v = V^+ ( 1 - \frac{I}{K_I + I} ) $', color=(0.2, 0.4, 1.0),
 
 ###############################################################################
 ax = axs[1, 1]
-ax.plot(s_range, map(eps, s_range), '-')
+ax.plot(s_range, list(map(eps, s_range)), '-')
 ax.set_xscale('linear')
 ax.set_yscale('linear')
 ax.set_xlabel('inhibitor conc. $I$ [mM]')
@@ -121,4 +121,5 @@ ax.set_title('inhibitor elasticity')
 
 ###############################################################################
 fig.tight_layout(pad=4, h_pad=5, w_pad=1)
+fig.savefig(os.path.join(RESULT_DIR, 'mca_linear.svg'))
 fig.savefig(os.path.join(RESULT_DIR, 'mca_linear.pdf'))
